@@ -1,0 +1,44 @@
+{%- if predictive_search.performed -%}
+    <div id="predictive-search-results">
+        <h2>Results</h2>
+        <ul id="predictive-search-results-list" class="predictive-search__results-list list-unstyled flex flex-wrap gap-[40px]" role="listbox" aria-labelledby="predictive-search-products">
+            {%- for product in predictive_search.resources.products -%}
+                {% if product.metafields.custom.hide_product == true %}
+                    {% if content_for_header contains "previewBarInjector.init();" %}
+                        {% assign show_product = true %}
+                    {% elsif content_for_header contains "Shopify.designMode" %}
+                        {% assign show_product = true %}
+                    {% else %}
+                        {% assign show_product = false %}
+                    {% endif %}
+                    {% if settings.hide_products == true %}
+                        {% if content_for_header contains "Shopify.designMode" %}
+                            {% assign show_product = true %}
+                        {% else %}
+                            {% assign show_product = false %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                {% if product.metafields.custom.hide_product != true %}
+                    {% assign show_product = true %}
+                {% endif %}
+                {% if show_product == true %}
+                    <li id="predictive-search-option-{{ forloop.index }}" class="predictive-search__list-item basis-[calc(50%-20px)]" role="option" aria-selected="false">
+                        {% render "component--product-card", product: product, imgClass: 'h-[100px] dk:h-[200px] object-contain' %}
+                    </li>
+                {% endif %}
+            {%- endfor -%}
+        </ul>
+        {%- if predictive_search.resources.products.size == 8 %}
+            <a class="btn btn-primary mt-8 !w-full !max-w-full mb-2" href="/search?q={{ predictive_search.terms }}&type=product&options%5Bprefix%5D=last">See All Results</a>
+        {% endif %}
+
+        <div class="predictive-search__loading-state" aria-hidden="true"></div>
+    </div>
+    <span class="" data-predictive-search-live-region-count-value>
+        {%- if predictive_search.resources.products.size == 0 -%}
+            {{ 'templates.search.no_results' | t: terms: predictive_search.terms }}
+        {%- endif -%}
+    </span>
+
+{%- endif -%}

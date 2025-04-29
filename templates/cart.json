@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "section--cart-items",
+      "blocks": {
+        "ad5919f3-fe76-48dd-a5b3-31b58e84e9bb": {
+          "type": "variant_title",
+          "settings": {
+            "font_scale": 100
+          }
+        },
+        "b7a017ee-b99b-43dc-bddd-b648bd9f7d13": {
+          "type": "title",
+          "settings": {
+            "font_scale": 100
+          }
+        },
+        "d62a4d0e-0758-4660-99bd-2a2e695802f6": {
+          "type": "subscription_display",
+          "settings": {
+            "font_scale": 100
+          }
+        },
+        "4336b775-f1e1-4f21-ace0-69d7c681a2e4": {
+          "type": "price",
+          "settings": {
+            "font_scale": 100
+          }
+        },
+        "12e1bfb7-c416-4199-9e72-0fa3a1cf7860": {
+          "type": "subscription_edit",
+          "settings": {
+            "show_interval": true,
+            "font_scale": 100
+          }
+        },
+        "e6dd8d61-bcab-49a6-8d4f-753e39be6296": {
+          "type": "product_link",
+          "settings": {
+            "link_text": "View Details",
+            "font_scale": 100
+          }
+        }
+      },
+      "block_order": [
+        "ad5919f3-fe76-48dd-a5b3-31b58e84e9bb",
+        "b7a017ee-b99b-43dc-bddd-b648bd9f7d13",
+        "d62a4d0e-0758-4660-99bd-2a2e695802f6",
+        "4336b775-f1e1-4f21-ace0-69d7c681a2e4",
+        "12e1bfb7-c416-4199-9e72-0fa3a1cf7860",
+        "e6dd8d61-bcab-49a6-8d4f-753e39be6296"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "cart-items"
+  ]
+}

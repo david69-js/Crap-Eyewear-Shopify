@@ -1,0 +1,226 @@
+<div class="flex flex-col md:flex-row flex-wrap relative min-h-[125vw] md:min-h-min mb-[var(--mb-m)] dk:mb-[var(--mb-d)]" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.pip_margin_bottom}} background: {{ section.settings.background_color }}; flex-direction: {{ section.settings.pip_alignment }};" data-animation="{{- section.settings.animation -}}">
+    <div {% if section.settings.cta_url != null %}onclick="window.location.href='{{ section.settings.cta_url}}'"{% endif %} class="flex-1 md:grow-[3] relative md:min-h-0 md:aspect-square bg-cover flex justify-center items-center px-2 md:px-16 {% if section.settings.cta_url != null %}cursor-pointer{% endif %}">
+        <div class="h-full w-full absolute top-0 left-0">
+            {% comment %} Brightness for image or video {% endcomment %}
+            <div class="absolute inset-0 bg-black" style="opacity: {{ section.settings.image_brightness }}; z-index: 1;"></div>
+            {% if section.settings.bg_video %}
+                {%- render "component--responsive-video" 
+                    , cover: true,
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    desktop_video: section.settings.bg_video,
+                    mobile_video: section.settings.bg_video, -%}
+            {% else %}
+                {%- render "component--responsive-image" 
+                    , image: section.settings.bg_image,
+                    objectFit: true,
+                    maxSize: 1280 -%}
+            {% endif %}
+        </div>
+        <div class="relative text-faded-lime text-center richtext" style="color: {{ section.settings.font_color }}; z-index: 1;">
+            {{ section.settings.richtext }}
+            {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+                <a href="{{section.settings.cta_url}}" class="!hidden md:!flex btn {{ section.settings.button_style }} !no-underline mt-[15px] mx-auto">{{ section.settings.cta_text }}</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% comment %} On desktop, show inset image with product widget {% endcomment %}
+    <div class="flex-1 hidden md:flex md:grow-[2] md:min-h-0 bg-cover justify-center items-center px-8 relative">
+        <div class="w-full {% if section.settings.pip_video == null %}pb-[125%]{%endif%} bg-white relative">
+            {% if section.settings.sticker_image != null %}
+                <div class="absolute top-0 right-4 w-[33%] max-w-[200px] z-[2] -translate-y-1/2">
+                    {%- render "component--responsive-image" 
+                        , image: section.settings.sticker_image, -%}
+                </div>
+            {% endif %}
+            {% if section.settings.pip_product != empty %}
+                <div class="absolute top-4 left-4" style="z-index: 1;">
+                    {% render "component--product-widget" 
+                       , product: section.settings.pip_product,
+                       card_placement: "below" %}
+                </div>
+            {% endif %}
+            <div class="media bg-faded-lime w-full h-full">
+                {% if section.settings.pip_video %}
+                    {%- render "component--responsive-video" 
+                        , cover: true,
+                        autoplay: true,
+                        muted: true,
+                        loop: true,
+                        containerClasses: "pb-[125%]",
+                        desktop_video: section.settings.pip_video,
+                        mobile_video: section.settings.pip_video, -%}
+                {% else %}
+                    {%- render "component--responsive-image" 
+                        , image: section.settings.pip_image,
+                        objectFit: true,
+                        maxSize: 1280 -%}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% comment %} On mobile, show PIP {% endcomment %}
+    <div class="absolute w-full flex px-[14px] z-20 -bottom-[30px] flex-row items-end justify-between md:hidden" style="flex-direction: {{ section.settings.pip_alignment }};">
+        {% if section.settings.sticker_image != null %}
+            <div class="max-w-[110px]">
+                {%- render "component--responsive-image" 
+                    , image: section.settings.sticker_image, -%}
+            </div>
+        {% endif %}
+
+        {% render "component--pip" 
+           , image: section.settings.pip_image,
+           video: section.settings.pip_video,
+           product: section.settings.pip_product,
+           alignment: section.settings.pip_alignment %}
+    </div>
+</div>
+{% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+    <div class="mx-[15px] md:!hidden mb-[var(--mb-m)]" style="{{section.settings.pip_margin_bottom}}">
+        <a href="{{section.settings.cta_url}}" class="btn {{ section.settings.button_style }} !no-underline">{{ section.settings.cta_text }}</a>
+    </div>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Two Column PIP",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "pip_margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Image"
+            }, {
+                "type": "video",
+                "id": "bg_video",
+                "label": "Video"
+            }, {
+                "type": "range",
+                "id": "image_brightness",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "label": "Darken Media",
+                "default": 0.5
+            }, {
+                "type": "richtext",
+                "id": "richtext",
+                "label": "Text"
+            }, {
+                "type": "text",
+                "id": "cta_text",
+                "label": "CTA Text"
+            }, {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }, {
+                "type": "select",
+                "id": "button_style",
+                "label": "Button Color",
+                "options": [
+                    {
+                        "value": "btn-primary",
+                        "label": "Green"
+                    }, {
+                        "value": "btn-secondary",
+                        "label": "White"
+                    }, {
+                        "value": "",
+                        "label": "Black"
+                    }
+                ],
+                "default": "btn-primary"
+            }, {
+                "type": "image_picker",
+                "id": "pip_image",
+                "label": "PIP Image"
+            }, {
+                "type": "video",
+                "id": "pip_video",
+                "label": "PIP Video"
+            }, {
+                "type": "product",
+                "id": "pip_product",
+                "label": "PIP Product"
+            }, {
+                "type": "select",
+                "id": "pip_alignment",
+                "label": "Widget Alignment",
+                "options": [
+                    {
+                        "value": "row-reverse",
+                        "label": "Left Column"
+                    }, {
+                        "value": "row",
+                        "label": "Right Column"
+                    }
+                ],
+                "default": "row"
+            }, {
+                "type": "image_picker",
+                "id": "sticker_image",
+                "label": "Sticker Image"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Two Column PIP"
+            }
+        ]
+    }
+{% endschema %}

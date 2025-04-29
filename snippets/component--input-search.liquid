@@ -1,0 +1,29 @@
+{%- comment %}
+/**
+ *	Search
+ */
+{% endcomment -%}
+{% liquid
+
+%}
+<input
+	id="{{ section.id }}_search"
+	class="w-full"
+	type="search"
+	name="q"
+	placeholder="{{ "general.search.search" | t }}"
+	value=""
+	{%- if settings.predictive_search_enabled %}
+		role="combobox"
+		aria-expanded="false"
+		aria-owns="predictive-search-results-list"
+		aria-controls="predictive-search-results-list"
+		aria-haspopup="listbox"
+		aria-autocomplete="list" 
+		autocorrect="off"
+		autocomplete="off"
+		autocapitalize="off"
+		spellcheck="false"
+	{%- endif %}
+/>
+<label class="visually-hidden" for="{{ section.id }}_search">Search</label>

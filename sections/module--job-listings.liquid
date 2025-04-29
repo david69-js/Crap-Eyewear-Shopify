@@ -1,0 +1,135 @@
+<div style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} " class="cx pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" data-animation="{{- section.settings.animation -}}">
+    <div style="text-align: {{section.settings.alignment}};" class="h2 richtext mx-auto mb-6 md:mb-12">
+        {{ section.settings.title }}
+    </div>
+    <div class="w-full flex flex-wrap">
+        {% for job in section.blocks %}
+            <div class="w-full flex flex-wrap dk:flex-nowrap border-t border-light-gray py-[30px] md:items-center {% if forloop.last %}border-b{% endif %}">
+                <div class="flex flex-col basis-1/2 dk:basis-2/5 pb-[15px] md:pb-0">
+                    <p class="eyebrow mb-[5px]">{{ job.settings.department }}</p>
+                    <h6 class="grotesk-bold">{{ job.settings.title }}</h6>
+                </div>
+                <div class="flex flex-col basis-1/2 dk:basis-1/5 pb-[15px] md:pb-0">
+                    <p class="eyebrow mb-[5px]">Type of Job</p>
+                    <h6 class="grotesk-bold">{{ job.settings.type_of_job }}</h6>
+                </div>
+                <div class="flex flex-col basis-1/2 dk:basis-1/5 pb-[15px] md:pb-0">
+                    <p class="eyebrow mb-[5px]">Location</p>
+                    <h6 class="grotesk-bold">{{ job.settings.location }}</h6>
+                </div>
+                <div class="basis-full dk:basis-1/5">
+                    <a href="{{- job.settings.listing -}}" class="btn btn-primary max-w-none w-full">Learn more</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Job Listings",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }, {
+                "type": "richtext",
+                "id": "title",
+                "label": "Title"
+            }, {
+                "type": "select",
+                "id": "alignment",
+                "label": "t:settings_schema.general.settings.alignment.label",
+                "info": "t:settings_schema.general.settings.alignment.info",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "t:settings_schema.general.settings.alignment.left.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.alignment.center.label"
+                    }, {
+                        "value": "right",
+                        "label": "t:settings_schema.general.settings.alignment.right.label"
+                    }
+                ],
+                "default": "left"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "job",
+                "name": "Job",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Job Title",
+                        "default": "title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "department",
+                        "label": "Department",
+                        "default": "department"
+                    },
+                    {
+                        "type": "text",
+                        "id": "type_of_job",
+                        "label": "Type of job",
+                        "default": "Full Time"
+                    },
+                    {
+                        "type": "text",
+                        "id": "location",
+                        "label": "Location",
+                        "default": "Remote"
+                    }, {
+                        "type": "url",
+                        "id": "listing",
+                        "label": "Link to job posting"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Job Listings"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,212 @@
+<div id='scasl-app-container' class="new-for-mobile mt-24" style="display:none">
+<div class="bh-sl-container scasl-container" >
+	<div>
+		<h1 class="text-[40px] md:text-7xl text-center md:text-left">Find <strong>Our Store</strong></h1>
+	</div>
+
+	<div class="bh-sl-form-container">
+		<div id="scasl-tab-radius" class="p-0 md:p-5 m-0 md:m-5 mx-[15px] !border-none md:!border-solid">
+			<form id="bh-sl-user-location" class="scasl-distance flex flex-col" method="post" action="#">
+				<div class="form-input">
+					<label for="bh-sl-address" class="text-lg !font-normal">Current Location</label>
+                  	<div class="scasl-address-wrap md:grid grid-cols-2 justify-items-end flex flex-col">
+                      <div class="flex flex-col justify-start !min-w-full">
+                        <input type="text" id="bh-sl-address" name="bh-sl-address" class="!font-primary !py-[17px] !px-[72px] max-w-[439px] max-h-[49px] !w-full order-1 !m-0 !bg-none !pl-2 !my-5 md:!my-0 !border-solid !border-off-black !rounded-none" />
+                      </div>
+                      	<a href="#" class="order-3" id="scapl-geocode-btn" title="Find My Location" style="background-color: none !important; visibility: hidden;">
+                            <img src="{{ 'sca.location-find-location.png' | asset_url }}">
+                        </a>
+                        <button type="button" class="btn btn-primary max-h-[48px] order-2 !font-primary !bg-faded-lime !text-off-black hover:!bg-off-black hover:!text-faded-lime min-w-full md:min-w-min">Find My Location</button>
+                    </div>
+				</div>
+
+              	<div class="flex flex-col lg:flex-row gap-5 justify-between">
+                  <div class="flex flex-col w-full max-w-[439px]">
+                      <label for="scasl-radius-container" class="text-lg">Search Radius</label>
+                      <select class="max-w-[439px] min-h-[47px] max-h-[47px] py-0 pl-3 border-off-black" id="scasl-radius-container" name="bh-sl-maxdistance">
+                      </select>
+                  </div>
+
+                  <div class="flex flex-col w-full max-w-[439px]">
+                      <label for="scasl-lengthUnit" class="text-lg">Search Radius Measurement</label>
+                      <select class="max-w-[439px] min-h-[47px] max-h-[47px] py-0 pl-3 border-off-black" id="scasl-lengthUnit" name="scasl-lengthUnit">
+                          <option value="km">Kilometer</option>
+                          <option value="m">Mile</option>
+                      </select>
+                  </div>
+
+                  <div class="bh-sl-filters-container scasl-tag">
+                      <label for="scasl-tag-list-container">Tags</label>
+                      <ul id="scasl-tag-list-container" class="bh-sl-filters scasl-tag-list">
+                      </ul>
+                  </div>
+                </div>
+				<div class="scasl-search-btn mt-7">
+					<button type="submit" class="btn btn-primary order-2 max-h-[48px] !font-primary !bg-faded-lime !text-off-black hover:!bg-off-black hover:!text-faded-lime min-w-full md:min-w-min" >Search</button>
+				</div>
+			</form>
+			<div class="spinner">
+	            <div class="double-bounce1"></div>
+	            <div class="double-bounce2"></div>
+          	</div>
+		</div>
+	</div>
+
+  	<div id="scasl-tabs" class="tab ml-[15px] mr-[15px] md:ml-0 md:mr-0 !min-w-fit md:min-w-full !flex-row !border-b !border-b-light-gray">
+      <button style="border: none !important;" class="tablinks active !bg-white !text-lg !w-14" onclick="openTab(event, 0)">List</button>
+      <button style="border: none !important;" class="tablinks !bg-white !text-lg !w-14" onclick="openTab(event, 1)">Map</button>
+    </div>
+
+    <div id="bh-sl-map-container" class="bh-sl-map-container mb-[50px] !flex scasl-map-container gap-5 ml-[15px] mr-[15px] md:ml-0 md:mr-0 !w-[-webkit-fill-available] md:w-full">
+      
+      <div style="display: block;" class="bh-sl-loc-list scasl-location-list tabcontent active">
+        <ul class="list"></ul>
+      </div>
+
+      <div id="bh-sl-map" class="bh-sl-map scasl-map tabcontent"></div>
+    </div>
+  </div>
+</div>
+	
+
+</div>
+<br style="clear:both !important;" />
+<script src="https://sl.amaicdn.com/assets/cdn/js/infobubble.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script>
+if("undefined"==typeof Handlebars&&"function"==typeof define&&define.amd){var scasl_tempamd=define.amd;define.amd=void 0;var scasl_fileref=document.createElement("script");scasl_fileref.setAttribute("type","text/javascript"),scasl_fileref.setAttribute("src","//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"),document.getElementsByTagName("head")[0].appendChild(scasl_fileref),setTimeout(function(){define.amd=scasl_tempamd},1e3)}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>
+
+<script id="scasl-infowindow-template" type="text">
+{%raw%}
+{{#location}}
+<div id="scasl-window-container" class="scasl-info-window">
+	<div class="scasl-info-location" {{#if store_image}} style="width:50%" {{/if}}>
+		<div id="scasl-title" class="scasl-field" >{{name}}</div>
+        <div id="scasl-description" class="scasl-field"><p>{{{description}}}</p></div>
+        <div id="scasl-address" class="scasl-field">{{address}}</div>
+        <div id="scasl-address2" class="scasl-field">{{address2}}</div>
+        <div>{{#if city}}<span id="scasl-city" class="scasl-field">{{city}}</span> {{/if}}{{#if state}}<span id="scasl-state" class="scasl-field">{{state}}</span> {{/if}}{{#if postal}}<span id="scasl-zipcode" class="scasl-field">{{postal}}</span> {{/if}}{{#if country}} <span id="scasl-country" class="scasl-field">{{country}}</span>{{/if}}</div>
+        {{#if phone}}<div id="scasl-phone" class="scasl-field"><span id="scasl-phone-label">Ph:</span> <a href="tel:{{phone}}">{{phone}}</a> </div>{{/if}}
+       	{{#if fax}}<div id="scasl-fax" class="scasl-field"><span id="scasl-fax-label">Fax:</span> {{fax}} </div>{{/if}}
+        {{#if email}}<div id="scasl-email" class="scasl-field"><span id="scasl-email-label">Email:</span> <a href="mailto:{{email}}">{{email}}</a> </div>{{/if}}
+        {{#if schedule}}<div id="scasl-schedule" class="scasl-field"><span id="scasl-schedule-label">Schedule:</span> {{{schedule}}} </div>{{/if}}
+        {{#each cfields}}
+        <div id="scasl-extra">
+          <span>{{key}}</span>:<span>{{{value}}}</span>
+        </div>
+        {{/each}}
+        <div id="scasl-tags" class="scasl-field">
+          {{#each tags}}
+          <span class="scasl-tags">{{tag}}</span>
+          {{/each}}
+        </div>
+        {{#if web}}
+        <div id="scasl-web" class="scasl-field"><a href="{{web}}" target="_blank">{{#if webdisplay}}{{webdisplay}}{{else}}{{niceURL web}}{{/if}}</a></div>
+        {{/if}}
+        {{#if distance}}
+        <div id="scasl-distance" class="scasl-field">{{distance}} {{length}}</div>
+        <div id="scasl-direction" class="scasl-field"><a href="https://maps.google.com/maps?saddr={{origin}}&amp;daddr={{address}} {{address2}} {{city}}, {{state}} {{postal}}" target="_blank">Directions</a></div>
+        {{/if}}
+	</div>
+
+	{{#if store_image}}
+	<div id="scasl-store_image" class="scasl-info-image scasl-field">
+		<img src="{{store_image}}" />
+	</div>
+	{{/if}}
+</div>
+{{/location}}
+{%endraw%}
+</script>
+
+<script id="scasl-list-template" type="text">
+{%raw%}
+{{#location}}
+<li id="scasl-list-container" data-markerid="{{markerid}}">
+	<div class="list-details scasl-list-details" {{#if store_image}} style="width:50%" {{/if}}>
+		<div class="list-content scasl-list-content">
+			<div id="scasl-title" class="scasl-field" >{{name}}</div>
+            <div id="scasl-description" class="scasl-field"><p>{{{description}}}</p></div>
+            <div id="scasl-address" class="scasl-field">{{address}}</div>
+            <div id="scasl-address2" class="scasl-field">{{address2}}</div>
+            <div>{{#if city}}<span id="scasl-city" class="scasl-field">{{city}}</span> {{/if}}{{#if state}}<span id="scasl-state" class="scasl-field">{{state}}</span> {{/if}}{{#if postal}}<span id="scasl-zipcode" class="scasl-field">{{postal}}</span> {{/if}}{{#if country}} <span id="scasl-country" class="scasl-field">{{country}}</span>{{/if}}</div>
+            {{#if phone}}<div id="scasl-phone" class="scasl-field"><span id="scasl-phone-label">Ph:</span> <a href="tel:{{phone}}">{{phone}}</a> </div>{{/if}}
+       		{{#if fax}}<div id="scasl-fax" class="scasl-field"><span id="scasl-fax-label">Fax:</span> {{fax}} </div>{{/if}}
+        	{{#if email}}<div id="scasl-email" class="scasl-field"><span id="scasl-email-label">Email:</span> <a href="mailto:{{email}}">{{email}}</a> </div>{{/if}}
+        	{{#if schedule}}<div id="scasl-schedule" class="scasl-field"><span id="scasl-schedule-label">Schedule:</span> {{{schedule}}} </div>{{/if}}
+            {{#each cfields}}
+            <div id="scasl-extra">
+            <span>{{key}}</span>:<span>{{{value}}}</span>
+            </div>
+            {{/each}}
+            <div id="scasl-tags" class="scasl-field">
+            {{#each tags}}
+            <span class="scasl-tags">{{tag}}</span>
+            {{/each}}
+            </div>
+            {{#if web}}
+            <div id="scasl-web" class="scasl-field"><a href="{{web}}" target="_blank">{{#if webdisplay}}{{webdisplay}}{{else}}{{niceURL web}}{{/if}}</a></div>
+            {{/if}}
+            {{#if distance}}
+				<div id="scasl-distance" class="scasl-field">{{distance}} {{length}}</div>
+        		<div id="scasl-direction" class="scasl-field"><a href="https://maps.google.com/maps?saddr={{origin}}&amp;daddr={{address}} {{address2}} {{city}}, {{state}} {{postal}}" target="_blank">Directions</a></div>
+			{{/if}}
+		</div>
+	</div>
+	{{#if store_image}}
+	<div id="scasl-store_image" class="list-image scasl-list-image scasl-field">
+			<img src="{{store_image}}" />
+	</div>
+    {{/if}}
+</li>
+{{/location}}
+{%endraw%}
+</script>
+
+<script id="scasl-viewmap-btn-template" type="text">
+{%raw%}
+<button class="scasl-view-map-btn">View Map</button>
+{%endraw%}
+</script>
+
+<script>
+  function openTab(evt, tabNumber) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    if (i === tabNumber) {
+      tabcontent[i].style.display = "block";
+    } else {
+      tabcontent[i].style.display = "none";
+    }
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  evt.currentTarget.classList.add("active");
+}
+
+</script>
+
+{% schema %}
+  {
+    "name": "StoreLocator",
+    "settings": [],
+
+    "presets": [
+      {
+        "name": "StoreLocator"
+      }
+    ]
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

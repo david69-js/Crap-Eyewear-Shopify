@@ -1,0 +1,298 @@
+<style>
+  .richtext_rise h1 {
+    font-size: 120px !important;
+  }
+  @media screen and (max-width: 768px) {
+    .richtext_rise h1 {
+      font-size: 40px !important;
+    }
+  }
+  .one-col-hero-grid {
+    display: grid;
+    min-height: 143vw;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr min-content min-content;
+    grid-template-areas: '.' 'content' 'cta';
+  }
+  .one-col-hero-grid.half-height {
+    min-height: 75vw;
+  }
+
+  .one-col-hero-content {
+    grid-area: content;
+  }
+
+  .richtext.indent-odd h1:nth-child(odd) {
+    padding-left: 60px;
+  }
+  .richtext.indent-even h1:nth-child(even) {
+    padding-left: 60px;
+    width: 120%;
+  }
+  @media screen and (max-width: 768px) {
+    .richtext.indent-even h1:nth-child(even) {
+      width: auto;
+    }
+  }
+  .one-col-hero-content p {
+    margin-bottom: 0;
+  }
+  .one-col-hero-cta {
+    grid-area: cta;
+  }
+  .one-col-hero-image-1 {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+  }
+  @media screen and (min-width: 768px) {
+    .one-col-hero-grid {
+      display: grid;
+      min-height: 90vh;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: '. .' 'content cta';
+    }
+    .one-col-hero-grid.copy-align-right {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: '. .' 'cta content';
+    }
+    .one-col-hero-grid.half-height {
+      min-height: 50vh;
+    }
+
+    .one-col-hero-content {
+      grid-area: content;
+    }
+    .one-col-hero-image-1 {
+      grid-row: 1 / 4;
+      grid-column: 1 / 3;
+    }
+
+    .richtext.indent-odd p:nth-child(odd) {
+      padding-left: 60px;
+    }
+    .richtext.indent-even p:nth-child(even) {
+      padding-left: 60px;
+    }
+    .one-col-hero-content p {
+      margin-bottom: 0;
+    }
+    .one-col-hero-cta {
+      grid-area: cta;
+    }
+  }
+</style>
+
+<div
+  class="one-col-hero-grid pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] {% if section.settings.copy_alignment == 'right' %} copy-align-right{% endif %} {% if section.settings.half_height == true %} half-height {% endif %}"
+  style="background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}"
+>
+  <div class="relative one-col-hero-image-1 {% if section.settings.image_for_mobile == 'right' %} hidden md:block {% endif %}">
+    {% if section.settings.video_1 %}
+      <div class="h-full">
+        {%-
+          render "component--responsive-video"
+          , cover: true,
+          autoplay: true,
+          muted: true,
+          loop: true,
+          desktop_video: section.settings.video_1,
+          mobile_video: section.settings.video_1_mobile,
+        -%}
+      </div>
+    {% else %}
+      {%- render 'component--responsive-image',
+        image: section.settings.image_1,
+        imageMobile: section.settings.image_1_mobile,
+        objectFit: true,
+        maxSize: 1280
+      -%}
+    {% endif %}
+    <div class="absolute inset-0 bg-black" style="opacity: {{section.settings.image_1_brightness}};"></div>
+  </div>
+
+  <div
+    class="one-col-hero-content relative md:self-end ca {% if section.settings.copy_alignment == 'right' %}md:pl-[50%] pr-4{% endif %}"
+    style="color: {{ section.settings.font_color }};"
+  >
+    {% if section.settings.body_richtext == blank %}
+      <div class="richtext_rise richtext {% if section.settings.body_richtext == blank %} has-xl-h {% endif %} {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+        {{ section.settings.title_richtext }}
+      </div>
+    {% else %}
+      <div class="richtext {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+        {{ section.settings.title_richtext }}
+      </div>
+    {% endif %}
+    {% if section.settings.body_richtext != '' %}
+      <div class="w-full richtext">
+        {{ section.settings.body_richtext }}
+        {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+          <a
+            href="{{section.settings.cta_url}}"
+            class="btn {{ section.settings.button_style }} w-max !no-underline mt-6 md:w-auto"
+          >
+            {{- section.settings.cta_text -}}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.cta_text != blank
+    and section.settings.cta_url != blank
+    and section.settings.body_richtext == blank
+  %}
+    <div class="one-col-hero-cta relative px-4 mb-6  md:self-end md:px-6">
+      <a href="{{section.settings.cta_url}}" class="btn {{ section.settings.button_style }} w-max md:w-auto md:ml-auto">
+        {{- section.settings.cta_text -}}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "One Hero Conjured Refer",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "half_height",
+      "label": "Half Height Hero"
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Bottom Margin",
+      "info": "Optional space at bottom of section",
+      "options": [
+        {
+          "value": "--mb-m: 0px; --mb-d: 0px;",
+          "label": "No margin"
+        },
+        {
+          "value": "--mb-m: 30px; --mb-d: 60px;",
+          "label": "Small Margin"
+        },
+        {
+          "value": "--mb-m: 60px; --mb-d: 120px;",
+          "label": "Large Margin"
+        }
+      ],
+      "default": "--mb-m: 0px; --mb-d: 0px;"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "t:settings_schema.general.settings.font_color.label",
+      "info": "t:settings_schema.general.settings.font_color.info",
+      "default": "#1E1E1E"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings_schema.general.settings.background_color.label",
+      "info": "t:settings_schema.general.settings.background_color.info",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1_mobile",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "video",
+      "id": "video_1",
+      "label": "Background Video"
+    },
+    {
+      "type": "video",
+      "id": "video_1_mobile",
+      "label": "Background Video (Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "image_1_brightness",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Darken Background Media",
+      "default": 0.5
+    },
+    {
+      "type": "richtext",
+      "id": "title_richtext",
+      "label": "Title Text",
+      "info": "For XL heading size, use h1 without any Body Text below."
+    },
+    {
+      "type": "select",
+      "id": "title_indent",
+      "label": "Title Indentation Pattern",
+      "options": [
+        {
+          "value": "even",
+          "label": "Even numbered lines"
+        },
+        {
+          "value": "odd",
+          "label": "Odd numbered lines"
+        },
+        {
+          "value": "none",
+          "label": "No indentation"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "richtext",
+      "id": "body_richtext",
+      "label": "Body Text"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Color",
+      "options": [
+        {
+          "value": "btn-primary",
+          "label": "Green"
+        },
+        {
+          "value": "btn-secondary",
+          "label": "White"
+        },
+        {
+          "value": "",
+          "label": "Black"
+        }
+      ],
+      "default": "btn-primary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "One Column Hero Conjured Refer"
+    }
+  ]
+}
+{% endschema %}

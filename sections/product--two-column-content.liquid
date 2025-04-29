@@ -1,0 +1,92 @@
+{% if product.metafields.custom.lifestyle_grid.value.count > 0 %}
+    <div class="grid cy grid-cols-12 gap-y-[var(--site-gutter)]  pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] " style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.margin_bottom}}" data-animation="{{- section.settings.animation -}}">
+        {% for item in product.metafields.custom.lifestyle_grid.value %}
+            {% assign media_type = item.media.value.media_type %}
+            {% assign width = item.sticker_width | divided_by: 100.00 %}
+            {% assign width = width | times: 200 %}
+
+            {% if forloop.index == 2 or forloop.index == 3 %}
+                {% assign col_class = 'col-span-12 dk:col-span-7' %}
+            {% else %}
+                {% assign col_class = 'col-span-12 dk:col-span-5 cx' %}
+            {% endif %}
+            <div class="{{ col_class  }} relative">
+                {% if media_type == "image" %}
+                    {% render "component--responsive-image", image: item.media.value, objectFit: false %}
+                {% endif %}
+                {% if media_type == "video" %}
+                    {%- render "component--responsive-video", desktop_video: item.media.value, autoplay: true -%}
+                {% endif %}
+                {% if item.sticker_image.value != blank %}
+                    {% assign position_value = item.sticker_position.value | remove: ' ' %}
+                    {%- case position_value -%}
+                        {%- when '["TopLeft"]' %}
+                        {% assign positions = 'top: -4rem; left: 1rem; right: unset; bottom: unset;' %}
+                        {%- when '["TopRight"]' %}
+                        {% assign positions = 'top: -4rem; left: unset; right: 1rem; bottom: unset;' %}
+                        {%- when '["BottomLeft"]' %}
+                        {% assign positions = 'top: unset; left: 1rem; right: unset; bottom: -4rem;' %}
+                        {%- when '["TopRight"]' %}
+                        {% assign positions = 'top: unset; left: unset; right: 1rem; bottom: -4rem;' %}
+                    {%- else -%}
+                        {% assign positions = 'top: -4rem; left: unset; right: 1rem; bottom: unset;' %}
+                    {%- endcase -%}
+                    <div style="--sticker-width: {{ width }}px; {{ positions }}" class="max-w-[var(--sticker-width)] absolute z-[2] pointer-events-none">
+                        {% render 'component--responsive-image', image: item.sticker_image.value, classes: "w-auto h-auto" %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% schema %}
+    {
+        "name": "Product Two Col",
+        "tag": "section",
+        "class": "pdp-async",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product Two Col"
+            }
+        ]
+    }
+{% endschema %}

@@ -1,0 +1,399 @@
+{% include 'shogun-content-handler' %}
+<!doctype html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]--> 
+
+  <title>
+  {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W5V9PJ6');</script>
+	<!-- End Google Tag Manager -->
+
+  <link href="https://vjs.zencdn.net/5.8.7/video-js.css" rel="stylesheet">
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'social/social-icons.css' | global_asset_url | stylesheet_tag }}
+
+  {% include 'open-graph-tags' %}
+  {% include 'twitter-card' %}
+
+  {{ content_for_header }}
+
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js' | script_tag }}
+
+  <!-- Mailchimp Code -->
+  
+  <script type="text/javascript">
+	var $mcGoal = {'settings':{'uuid':'9065f6e81d87539298194c94d','dc':'us4'}};
+	(function() {
+		 var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
+		sp.src = ('https:' == document.location.protocol ? 'https://s3.amazonaws.com/downloads.mailchimp.com' : 'http://downloads.mailchimp.com') + '/js/goal.min.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
+	})(); 
+  </script>
+
+  
+  <!-- End Mailchimp Code -->
+  
+  <meta name="google-site-verification" content="wLgYZr7xukq_9S4UiuoTDl1g9Gw3IOtEt8-NcPUBvPM" />
+  
+  <!-- START: Brickspace Lab / ST#10925 / TK -->
+  <script>
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['site', 'site-01e26a51-www.crapeyewear.com']);
+    window['friendbuy'].push(['track', 'customer',{
+      id: '{{ customer.id }}',
+      email: '{{ customer.email }}',
+      first_name: '{{ customer.first_name }}',
+      last_name: '{{ customer.last_name }}'
+    }]);
+    (function (f, r, n, d, b, y) {
+      b = f.createElement(r), y = f.getElementsByTagName(r)[0];b.async = 1;b.src = n;y.parentNode.insertBefore(b, y);
+    })(document, 'script', '//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js');
+  </script>
+  <script>
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['widget', "dUq-owk"]);
+  </script>
+  <!-- END: Brickspace Lab -->
+  
+
+  
+
+  {% render 'shogun-head' %}
+</head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5V9PJ6"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+  <!-- NEWSLETTER-OVERLAY -->
+  <div id="lightbox" style="display: none;">
+    <div class="overlay-x"></div>
+    <!-- NEWSLETTER POP UP -->
+    <div id="newsletterPopup" class="container" style="display: none;">
+      <div class="row">
+        <div class="six columns offset-by-three">
+          <div class="newsletter-overlay-container">
+            <img src="{{ 'newsletter_form_image.jpg' | asset_url }}" />
+            <h1>{{ settings.newsletter_form_heading }}</h1>
+            <form method="post" action="{{ settings.newsletter_form_action }}">
+              <input type="email" name="EMAIL" placeholder="Enter your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email address'" /><input type="submit" value="Subscribe" />
+            </form>
+            <p>{{ settings.newsletter_form_summary }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /NEWSLETTER POP UP -->
+    {% if template == 'product' or template == 'cart' %}
+      <div id="shippingPopup" class="container" style="display: none;">
+        <h1>{{ pages[settings['product_returns_popup']].title }}</h1>
+        <div class="row">
+          <div class="twelve columns rte">
+            {{ pages[settings['product_returns_popup']].content }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+	<div id="searchPopup" class="container" style="display: none;">
+		<form action="/search" method="get" class="search-form" role="search" autocomplete="off">
+		    <input type="hidden" name="type" value="product">
+            <input class="u-pull-left" name="q" type="search" id="search-overlay-field" placeholder="Enter Keyword..." value="">
+            <input class="u-pull-right" type="submit" id="search-overlay-submit" value="GO">
+        </form>
+	</div>
+  </div>
+  <!-- /NEWSLETTER-OVERLAY -->
+  <div id="CartDrawer" class="cart-drawer drawer drawer--right">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer__header">
+        <div class="cart-drawer__status">
+          <span class="js-ajaxcart-close icon-wrapper">
+            {% include 'icon-close' %}
+          </span>
+          
+          <span class="cart-drawer__spinner icon-wrapper">
+            <i class="icon-spinner"></i>
+          </span>
+          
+          <div class="cart-drawer__logo">
+            <span class="icon-wrapper">
+              {% include 'icon-smiling-sun' %}
+            </span>
+          </div>
+          
+          <div class="cart-drawer__free-shipping" data-region="us">
+            <div class="free-shipping__status">
+              <span class="js-free-shipping-left"></span>
+              <span class="free-shipping__region-toggle"><i></i></span>
+			</div>
+            <div class="free-shipping__progress progress-bar">
+              <span class="js-free-shipping-progress"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul id="CartBody" class="cart-drawer__bd">
+      </ul>
+    </div>
+  </div>
+
+  <!-- MOBILE-SIDR -->
+  <div id="mobile-sidr">
+    <form action="/search" method="get" class="main-menu-search-form mod-sidr" role="search">
+      <input type="image" id="search-submit" value="Search" class="main-menu-search-form-button mod-sidr" src="{{ 'i-search.svg' | asset_url }}">
+      <input name="q" type="search" id="search-field" placeholder="Search" value="Search" class="main-menu-search-form-input mod-sidr">
+    </form>
+
+    <nav class="main-menu mod-sidr">
+      {% capture mainMenuMarkup %}
+        {% for link in linklists['main-menu'].links %}
+          {% assign subList = blank %}
+          {% if link.url contains '/#list-' %}
+            {% assign subList = link.url | remove: '/#list-' %}
+          {% endif %}
+          {% if linklists[subList] != blank %}
+            <a class="main-menu-nav-link mod-sidr accordion-link" href="#">{{ link.title }} <span>+</span></a>
+            <div class="main-menu-accordion-tab mod-sidr">
+              {% for subLink in linklists[subList].links %}
+                <a href="{{ subLink.url }}" class="main-menu-nav-link-sub mod-sidr">{{ subLink.title }}</a>
+              {% endfor %}
+              <!-- START: Brickspace Lab / ST#10925 / TK -->
+              {% if forloop.index == 3 %}
+                <a href="/pages/refer-a-friend" class="main-menu-nav-link-sub mod-sidr">Get $20</a>
+              {% endif %}
+              <!-- END: Brickspace Lab -->
+            </div>
+          {% else %}
+            <a href="{{ link.url }}" class="main-menu-nav-link mod-sidr">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {{ mainMenuMarkup }}
+    </nav>
+  </div>
+  <!-- /MOBILE-SIDR -->
+
+  <!-- DESKTOP-SIDR -->
+  <div id="desktop-sidr">
+    <div class="main-menu-close"></div>
+    <nav class="main-menu mod-sidr">
+      {{ mainMenuMarkup }}
+    </nav>
+  </div>
+  <!-- /DESKTOP-SIDR -->
+  <div id="page-container">
+	<!-- HEADER -->
+    <header>
+      <div class="promo-block">
+        <div class="container">
+          <p>{{ settings.header_promo_1 }} {% if settings.header_promo_2 != '' %}<span class="smiley"></span>{% endif %} <span class="second-promo not-mobile">{{ settings.header_promo_2 }}</span></p>
+        </div>
+      </div>
+      <div class="header-main u-full-width">
+        <div class="mobile-hamburger u-ss"><a id="left-menu" href="#mobile-sidr"> Menu</a></div>
+        <div class="navigation-left u-ls u-pull-left">
+          <ul>
+            {% assign lists = 'shop-header,about-header' | split: ',' %}
+            {% for list in lists %}
+                <li><a href="#">{{ linklists[list].title | remove: ' Header' }}</a>
+                  <div class="drop">
+                    {% for link in linklists[list].links %}
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% endfor %}
+                  </div>
+                </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <h1 class="branding"><a href="/"><b class="srt">Crap Eyewear</b></a></h1>
+        <div class="navigation-right u-pull-right">
+          <div class="item search"><a href="#"><b class="srt">Search</b></a></div>
+          <div class="item basket js-ajaxcart-open js-cart-count"><a href="#">{{ cart.item_count }}</a>
+            {% comment %}
+            <div class="main-mini-cart-box{% if cart.items.size < 1 %} mod-empty{% endif %}">
+              <form action="/cart" method="post">
+              <div class="arrow"></div>
+              <h2>Cart</h2>
+              <hr>
+              <div class="main-mini-cart-box-items">
+                {% for item in cart.items %}
+                  <a href="{{ item.url }}">
+                    <img src="{{ item.image | img_url: 'compact' }}" alt="{{ item.title }}">
+                    <h3>{{ item.product.title | split: ' - ' | first | strip }}</h3>
+                    <p>{{ item.price | money }} x {{ item.quantity }}</p>
+                  </a>
+                  {% unless forloop.last %}<hr>{% endunless %}
+                {% else %}
+                  <span class="empty-cart-text">Your cart is empty :(</span>
+                {% endfor %}
+              </div>
+                <a href="/cart" class="update-cart_link">Update Qty</a>
+              <h4 class="main-mini-cart-total">Total <span>{{ cart.total_price | money }}</span></h4>
+              <div class="clear"></div>
+              <div class="main-mini-cart-checkout-buttons">
+                <a href="#" class="main-mini-cart-close button inverted">Continue Shopping</a>
+                <a href="/checkout" class="button checkout">Checkout</a>
+
+              </div>
+              <div class="main-mini-cart-empty-buttons">
+                <a href="/collections/mens" class="button">Shop Men's</a>
+                <a href="/collections/womens" class="button">Shop Women's</a>
+                </div>
+              </form>
+            </div>
+            <!-- MAIN-MINI-CART -->
+            <div class="main-mini-cart"></div>
+            <!-- END-MINI-CART -->
+            {% endcomment %}
+          </div>
+          <div class="item hamburger"><a id="right-menu" href="#desktop-sidr">Menu</a></div>
+        </div>
+      </div>
+    </header>
+    <!-- /HEADER -->
+    
+    <!-- MAIN -->
+    <section class="main">
+      {{ content_for_layout }}
+    </section>
+    <!-- /MAIN -->
+    
+    <!-- FOOTER -->
+    <footer>
+      <div class="newsletter-block">
+        <div class="container">
+           <h2>{{ settings.newsletter_form_heading }}</h2>
+           <p>{{ settings.newsletter_form_summary }}</p>
+          <div class="row">
+            {% form 'customer' %}
+            {{ form.errors | default_errors }}
+            <input type="email" placeholder="Email Address" name="contact[email]" id="email-input">
+            <input type="hidden" name="contact[tags]" value="Footer">
+            <input type="submit" class="button" value="Add Me" name="subscribe" id="email-submit">
+            {% endform %}
+          </div>
+
+           <style>
+            .success_msg_hide form {
+              border-bottom: none;
+            }
+          </style>
+          <div class="row success_msg_hide">
+            {% form 'customer' %}
+            {% if form.posted_successfully? %}
+            <p class="note form-success">
+              You're now plugged in — welcome to the family :)
+            </p>
+            {% endif %}
+            {% endform %}
+          </div>
+
+          <div class="row">
+            {% assign lists = 'shop,about,customers' | split: ',' %}
+            {% for list in lists %}
+              <div class="one-third column">
+                <h3>{{ linklists[list].title }}</h3>
+                <ul class="footer-links">
+                  {% for link in linklists[list].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                  <!-- START: Brickspace Lab / ST#10925 / TK -->
+                  {% if forloop.index == 3 %}
+                    <li><a href="#" class="friendbuy-dUq-owk">Refer A Friend</a></li>
+                  {% endif %}
+                  <!-- END: Brickspace Lab -->
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="row">
+            <div class="lower-footer">
+              <ul class="social">
+                <li class="icon-i"><a target="_blank" href="{{ settings.social_url_instagram }}"><b class="srt">Instagram</b></a></li>
+                <li class="icon-fb"><a target="_blank" href="{{ settings.social_url_facebook }}"><b class="srt">Facebook</b></a></li>
+                <li class="icon-t"><a target="_blank" href="{{ settings.social_url_twitter }}"><b class="srt">Twiiter</b></a></li>
+                <li class="icon-p"><a target="_blank" href="{{ settings.social_url_pinterest }}"><b class="srt">Pinterest</b></a></li>
+                <li class="icon-yt"><a target="_blank" href="{{ settings.social_url_youtube }}"><b class="srt">Youtube</b></a></li>
+                <li class="icon-s"><a target="_blank" href="{{ settings.social_url_soundcloud }}"><b class="srt">Soundcloud</b></a></li>
+                <!--<li class="icon-g"><a target="_blank" href="{{ settings.social_url_google }}"><b class="srt">Google Plus</b></a></li>-->
+              </ul>
+              <p>&copy; {{ "now" | date: "%Y" }} Crap Eyewear <span class="smile">&#9786;</span> <a href="{{ linklists['footer'].links[0].url }}">{{ linklists['footer'].links[0].title }}</a> &amp; <a href="{{ linklists['footer'].links[1].url }}">{{ linklists['footer'].links[1].title }}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /FOOTER -->
+  </div>
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% if template contains 'customers' %}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+  {{ 'shopify_common.js'  | asset_url | script_tag }}
+   {% if product.available %} 
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+  {% if template contains 'product' %}
+  {{ 'iphone-inline-video.min.js' | asset_url | script_tag }} 
+  {% else %}
+<!--   <script src="https://vjs.zencdn.net/5.8.7/video.js"></script> -->
+  {% endif %}
+  
+  {{ 'shopify-api.js' | asset_url | script_tag }}
+  {{ 'theme.plugins.js' | asset_url | script_tag }}
+  {{ 'theme.js'  | asset_url | script_tag }}
+  {% include 'ajaxcart-template' %}
+  
+  <!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+  var google_tag_params = {
+  ecomm_prodid: 'REPLACE_WITH_VALUE',
+  ecomm_pagetype: 'REPLACE_WITH_VALUE',
+  ecomm_totalvalue: 'REPLACE_WITH_VALUE',
+  };
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 956219375;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/956219375/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+</body>
+</html>

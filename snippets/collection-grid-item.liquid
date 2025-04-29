@@ -1,0 +1,16 @@
+<div class="main-collection-item u-center">
+  <a href="{{ product.url }}">
+    {% include 'zero-product-badges' %}
+    <div class="main-collection-item-image">
+      <img class="top" src="{{ product.images[0] | img_url: '720x'}}" alt="{{ product.title }}">
+      {% if product.images.size > 1 %}
+        <img class="bottom" src="{{ product.images[1] | img_url: '720x'}}" alt="{{ product.title }}">
+      {% endif %}
+    </div>
+    <div class="main-collection-item-details">
+      <h3>{{ product.title | split: ' - ' | first }}</h3>
+      <p>{{ product.metafields.c_f['Product Mini Description'] }}</p>
+      <p class="price">{{ product.price | money }}{% if on_sale %}<s class="compare-at-price">{{ product.compare_at_price | money }}</s>{% endif %}
+    </div>
+  </a>
+</div> 

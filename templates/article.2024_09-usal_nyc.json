@@ -1,0 +1,144 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "module_spacer_rGbmBF": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "section--blog-hero",
+      "settings": {
+        "animation": ""
+      }
+    },
+    "body": {
+      "type": "section--blog-content",
+      "settings": {
+        "animation": ""
+      }
+    },
+    "module_one_column_richtext_RLBp8B": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "button_AmVafn": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/usalproject.com\/collections\/NYC",
+            "text": "Learn More",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "button_AmVafn"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_spacer_CMCpeF": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_wU8Bic": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "xl_heading_YWiKew": {
+          "type": "xl_heading",
+          "disabled": true,
+          "settings": {
+            "richtext": "<h1>Featured <em>Style<\/em><\/h1>",
+            "alignment": "center"
+          }
+        },
+        "richtext_nWc998": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h2><em>Shop<\/em> <strong>The Marquee Rox<\/strong><\/h2>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "xl_heading_YWiKew",
+        "richtext_nWc998"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_product_slider_iTz8jD": {
+      "type": "module--product-slider",
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "collection": "the-marquee-rox",
+        "cta_text": "Shop Frame",
+        "cta_url": "shopify:\/\/collections\/the-marquee-rox",
+        "button_style": "btn-primary"
+      }
+    },
+    "81cdde8e-aeb7-4915-afc7-fd3a189cd18a": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/refer-a-friend",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_1.png",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, <br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "module_spacer_rGbmBF",
+    "main",
+    "body",
+    "module_one_column_richtext_RLBp8B",
+    "module_spacer_CMCpeF",
+    "module_one_column_richtext_wU8Bic",
+    "module_product_slider_iTz8jD",
+    "81cdde8e-aeb7-4915-afc7-fd3a189cd18a"
+  ]
+}

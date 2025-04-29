@@ -1,0 +1,97 @@
+{% assign yt_id = section.settings.youtube_video | split: 'v=' %}
+{% assign embdedString = 'https://www.youtube.com/embed/yt_id?&modestbranding=1' | replace: 'yt_id', yt_id[1] %}
+
+<div style="{{section.settings.margin_bottom}} --media-aspect: {{ section.settings.media_aspect_ratio }}; {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} " class="w-full aspect-[var(--media-aspect)] pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] {% if section.settings.margin_x == true %} cx {% endif %}" data-animation="{{- section.settings.animation -}}">
+    <iframe class="w-full h-full" src="{{ embdedString }}" title="YouTube video player" frameborder="0" allow="" allowfullscreen></iframe>
+</div>
+
+{% schema %}
+    {
+        "name": "Fullscreen Embedded Media",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "checkbox",
+                "id": "margin_x",
+                "label": "Left/Right Margin"
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "video_url",
+                "id": "youtube_video",
+                "label": "Youtube Video",
+                "accept": ["youtube"]
+            }, {
+                "type": "select",
+                "id": "media_aspect_ratio",
+                "label": "Lock Aspect Ration",
+                "info": "t:settings_schema.general.settings.aspect_ratio.info",
+                "options": [
+                    {
+                        "value": "16 / 9",
+                        "label": "16 / 9"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1 / 1"
+                    },
+                    {
+                        "value": "4 / 3",
+                        "label": "4 / 3"
+                    },
+                    {
+                        "value": "3 / 4",
+                        "label": "3 / 4"
+                    }, {
+                        "value": "1 / 2",
+                        "label": "1 / 2"
+                    }
+                ],
+                "default": "16 / 9"
+            }
+        ],
+        "blocks": [],
+        "presets": [
+            {
+                "name": "Fullscreen Embedded Media"
+            }
+        ]
+    }
+{% endschema %}

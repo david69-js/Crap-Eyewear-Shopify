@@ -1,0 +1,20 @@
+{%- comment -%}
+TODO: IF - QUICKSHOP
+{%- endcomment -%}
+{%- liquid
+
+assign id = id | default: section.id
+assign product = product
+assign variant = variant | default: product.selected_or_first_available_variant
+assign url = url | default: product.url
+
+assign appended_id = "_quickshop_" | append: product.id
+
+-%}
+<div id="{{- id -}}" class="overlay overlay-contained">
+	<div class="fade-el absolute top-0 left-0 w-full h-full z-0 bg-black bg-opacity-60 opacity-0 invisible" data-close></div>
+	<div class="slide-el absolute top-0 right-0 transform translate-x-full p-4 bg-white w-x90 h-full z-10">
+		<div class="absolute right-4" data-close>Close X</div>
+		{%- render "component--add-to-cart", product: product, variant_override: variant, request_url: request_url, variants: true, variant_picker: "button", quantity: true, variant_index: 1, quantity_index: 0, form_id: section.id, append_id: appended_id, show_dynamic_checkout: false, update: false -%}
+	</div>
+</div>

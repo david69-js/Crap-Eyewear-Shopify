@@ -1,0 +1,570 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>The<\/em> Supa Phreek II<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=hkBMTPZrHiQ",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "57069e23-6353-401d-ba54-0ce13677911e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bbb3293f-6e80-4960-93f1-dff640e21d12": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-03-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-01-insta-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bbb3293f-6e80-4960-93f1-dff640e21d12",
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f5978b6b-97ff-4624-b436-77114799c5bb": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "c8837666-6c84-49e5-b73b-10e7b330d71c": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-supa-phreek-ii-black-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "c8837666-6c84-49e5-b73b-10e7b330d71c"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-04-landscape-web_lookbook.jpg",
+        "caption": ""
+      }
+    },
+    "f54b14e2-25b8-493c-a866-37a1edd54413": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "59e39b19-2ddb-4ed0-ad99-02366426b372": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-05-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "e47a9a51-dac5-4f19-9e44-cd681d917646": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-06-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "59e39b19-2ddb-4ed0-ad99-02366426b372",
+        "e47a9a51-dac5-4f19-9e44-cd681d917646"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "dcd55982-bc4a-4f27-af7c-317b1986f321": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-product-06-insta-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "8728d075-1d94-418d-b351-a97ad20fb97c": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-supa-phreek-ii-black-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "dcd55982-bc4a-4f27-af7c-317b1986f321",
+        "8728d075-1d94-418d-b351-a97ad20fb97c"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "19b06a26-f3d3-4344-aebd-563a3ce1273f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "26aebe5e-43c8-48ad-b088-7feab2bf60ce": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-10-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "26aebe5e-43c8-48ad-b088-7feab2bf60ce"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "39fff7ab-5793-4f4f-9211-2f0083fe89ac": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "dcb7e52f-799e-4a44-95ab-986bc37fb78f": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-supa-phreek-ii-glass-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "dcb7e52f-799e-4a44-95ab-986bc37fb78f"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-product-07-landscape-web_lookbook.jpg",
+        "caption": ""
+      }
+    },
+    "893dc3ea-5f8a-4582-ba38-ceb468f68388": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f49a897c-d562-4f2a-a6a8-b4c42b5c0b5c": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-08-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "dfd2cda4-a79b-4b4b-8f21-594edefc1ba7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-09-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f49a897c-d562-4f2a-a6a8-b4c42b5c0b5c",
+        "dfd2cda4-a79b-4b4b-8f21-594edefc1ba7"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6780517d-eae0-4703-bdc4-3fcce8dcd961": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "202ac9e7-38e8-4579-b948-12bb95143d86": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-01-reedit-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "202ac9e7-38e8-4579-b948-12bb95143d86"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-11-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "abc5f652-be05-468e-8fcb-9c5390e36d07": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-10-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df",
+        "abc5f652-be05-468e-8fcb-9c5390e36d07"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-supa-phreek-ii",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Supa_Phreek-II-black-Michael-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "0371c6d1-7cdb-4af0-84f4-9a05c91f094b": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "2997e35c-5373-48bc-8e55-8bc74580be52": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-08-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "1bef99a6-f514-4c25-aa81-f463f907b0c6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-09-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "2997e35c-5373-48bc-8e55-8bc74580be52",
+        "1bef99a6-f514-4c25-aa81-f463f907b0c6"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6f2a0597-02db-4bf5-96ec-40e7c8e5cf1c": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e0147222-ba1d-4e34-b413-644f71c24bc1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-product-01-insta-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "d5c7e7b6-3df4-408b-8858-06031b747615": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-supa-phreek-ii-agave-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "e0147222-ba1d-4e34-b413-644f71c24bc1",
+        "d5c7e7b6-3df4-408b-8858-06031b747615"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "579408ea-3530-4958-9a8b-40c72545223a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-04-web_lookbook.jpg",
+            "caption": ""
+          }
+        },
+        "9127d268-574c-4d7a-869d-29edaea8acc2": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-06-web_lookbook.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4",
+        "9127d268-574c-4d7a-869d-29edaea8acc2"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "the-supa-phreek-ii",
+        "cta_url": "",
+        "cta_text": "Shop Frame",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>The Supa Phreek II<\/strong><br\/>Shot on location in Los Angeles, 2023.<\/p><p>Starring: Charity Hardaway (<a href=\"https:\/\/www.instagram.com\/charitylikesbeards\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/charitylikesbeards\/\">@charitylikesbeards<\/a>) & Michael Luciano Rosales (<a href=\"https:\/\/www.instagram.com\/michaelucian0\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/michaelucian0\/\">@michaelucian0<\/a>)<br\/>Photographer: Victoria Moura (<a href=\"https:\/\/www.instagram.com\/victoriamoura\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/victoriamoura\/\">@victoriamoura<\/a>)<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marleyarviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marleyarviso\/\">@marleyarviso<\/a>) & Tony Accosta<br\/>Styling: Jenna Johnson (<a href=\"https:\/\/www.instagram.com\/jennyfromtheblock_\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/jennyfromtheblock_\/\">@jennyfromtheblock_<\/a>)<br\/>Video & Edit: Victoria Moura (<a href=\"https:\/\/www.instagram.com\/victoriamoura\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/victoriamoura\/\">@victoriamoura<\/a>)<br\/>Song: 'Urge 2 Move' by Oye Manny (<a href=\"https:\/\/www.instagram.com\/oye_manny\/?hl=en\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/oye_manny\/?hl=en\">@oye_manny<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "bc9ad23c-5cd3-407c-b4e8-da99583c3976": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_collection_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/lookbooks-hot-lava-2023"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_carousel.jpg",
+            "caption": "The Perma Joy",
+            "url": "shopify:\/\/pages\/lookbooks-perma-joy"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "bc9ad23c-5cd3-407c-b4e8-da99583c3976",
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58",
+        "0c157896-df2f-4297-ad50-783a2ff1021c"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "57069e23-6353-401d-ba54-0ce13677911e",
+    "f5978b6b-97ff-4624-b436-77114799c5bb",
+    "f54b14e2-25b8-493c-a866-37a1edd54413",
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f",
+    "19b06a26-f3d3-4344-aebd-563a3ce1273f",
+    "39fff7ab-5793-4f4f-9211-2f0083fe89ac",
+    "893dc3ea-5f8a-4582-ba38-ceb468f68388",
+    "6780517d-eae0-4703-bdc4-3fcce8dcd961",
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "0371c6d1-7cdb-4af0-84f4-9a05c91f094b",
+    "6f2a0597-02db-4bf5-96ec-40e7c8e5cf1c",
+    "579408ea-3530-4958-9a8b-40c72545223a",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

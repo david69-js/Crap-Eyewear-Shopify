@@ -1,0 +1,108 @@
+{%- liquid
+  assign sort_by = search.sort_by | default: search.default_sort_by
+  assign terms = search.terms | escape
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+-%}
+
+<div class="{% unless search.performed and search.results_count > 0 %} search-empty{% endunless %}">
+    <div class="">
+        <div class="cx pt-36 w-full flex flex-col justify-center">
+            {%- if search.performed -%}
+                {%- if search.results.size == 0 -%}
+                    <p class="h1 mb-12">No Results :(</p>
+                    <a href="/collections/best-sellers" class="btn btn-primary">Shop Best Sellers</a>
+                {%- else -%}
+                    <div class="w-full">
+                        <p class="h1">Search Results</p>
+                        <p class="font-secondary my-4 text-x80">{{ search.results | where: "object_type", "product" | size }} Results</p>
+                    </div>
+                {%- endif -%}
+            {%- endif -%}
+        </div>
+    </div>
+    {%- if search.performed -%}
+        {%- if search.results.size == 0 and search.filters != empty -%}
+            <p class="h1">No Results :(</p>
+            <a href="/collections/best-sellers" class="btn btn-primary">Shop Best Sellers</a>
+        {%- else -%}
+            {% paginate search.results by section.settings.products_per_page %}
+                <div data-id="{{ section.id }}">
+                    <ul role="list" class="collection-grid pagination-grid grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-[30px] w-full m-auto cx mb-24">
+                        {%- for item in search.results -%}
+                            {% assign lazy_load = false %}
+                            {%- if forloop.index > 2 -%}
+                                {%- assign lazy_load = true -%}
+                            {%- endif -%}
+                            {%- case item.object_type -%}
+                                {%- when 'product' -%}
+                                {% if item.metafields.custom.hide_product == true %}
+                                    {% if content_for_header contains "previewBarInjector.init();" %}
+                                        {% assign show_product = true %}
+                                    {% elsif content_for_header contains "Shopify.designMode" %}
+                                        {% assign show_product = true %}
+                                    {% else %}
+                                        {% assign show_product = false %}
+                                    {% endif %}
+                                    {% if settings.hide_products == true %}
+                                        {% if content_for_header contains "Shopify.designMode" %}
+                                            {% assign show_product = true %}
+                                        {% else %}
+                                            {% assign show_product = false %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                                {% if item.metafields.custom.hide_product != true %}
+                                    {% assign show_product = true %}
+                                {% endif %}
+                                {% if show_product == true %}
+                                    <li class="pagination-result">
+                                        {% render "component--product-card", product: item, showPrice: true, %}
+                                    </li>
+                                {% endif %}
+                            {%- endcase -%}
+                        {%- endfor -%}
+                    </ul>
+                    {%- if paginate.pages > 1 -%}
+                        {% render 'molecule--pagination', paginate: paginate %}
+                    {%- endif -%}
+                </div>
+            {% endpaginate %}
+        {%- endif -%}
+    {%- endif -%}
+</div>
+
+{% schema %}
+    {
+        "name": "t:sections.main-search.name",
+        "tag": "section",
+        "class": "section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "products_per_page",
+                "min": 8,
+                "max": 48,
+                "step": 4,
+                "default": 16,
+                "label": "Products per page"
+            }, {
+                "type": "select",
+                "id": "pagination_type",
+                "options": [
+                    {
+                        "value": "infinite",
+                        "label": "Infinite scroll"
+                    }, {
+                        "value": "load-more",
+                        "label": "Load More button"
+                    }, {
+                        "value": "pages",
+                        "label": "Pages"
+                    }
+                ],
+                "default": "infinite",
+                "label": "Pagination type"
+            }
+        ]
+    }
+{% endschema %}

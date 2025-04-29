@@ -1,0 +1,161 @@
+<div style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}" class="flex flex-col md:flex-row flex-wrap pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" data-animation="{{- section.settings.animation -}}">
+    {% if template.name == 'product' %}
+        <div data-animation="FixedAddToCartEntrance" data-scroll="up"></div>
+        <div data-animation="FixedAddToCartExit" data-scroll="down"></div>
+    {% endif %}
+    <div {% if section.settings.cta_1_url != null %}onclick="window.location.href='{{ section.settings.cta_1_url}}'"{% endif %} class="{%if section.settings.cta_1_url != null %} cursor-pointer {%endif%} flex-1 min-h-[500px] overflow-hidden md:min-h-0 md:aspect-square bg-cover flex justify-center items-center px-2 md:px-16 relative [&_video]:object-cover [&_video]:w-full [&_video]:h-full [&_video]:absolute" style="background-image: linear-gradient(rgba(0,0,0,{{ section.settings.image_1_brightness }}), rgba(0,0,0,{{ section.settings.image_1_brightness }})), url({{ section.settings.image_1 | image_url }});">
+        {% if section.settings.video_1 != empty %}
+            {% render 'component--responsive-video' 
+               , mobile_video: section.settings.video_1,
+               desktop_video: section.settings.video_1,
+               containerClasses: '!absolute w-full h-full',
+               autoplay: true,
+               muted: true,
+               loop: true %}
+            {% comment %} {{ section.settings.video_1 | video_tag: autoplay: true, loop: true, muted: true, image_size: '500x' }} {% endcomment %}
+        {% endif %}
+        <div class="text-faded-lime text-center richtext z-10 hide-fixed-atc">
+            {{ section.settings.richtext_1 }}
+            {% if section.settings.cta_1_url != '' and section.settings.cta_1_text != '' %}
+                <a href="{{ section.settings.cta_1_url }}" class="btn btn-primary !no-underline max-w-[200px] md:mt-12 mx-auto">
+                    {{- section.settings.cta_1_text -}}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    <div {% if section.settings.cta_2_url != null %}onclick="window.location.href='{{ section.settings.cta_2_url}}'"{% endif %}class="{%if section.settings.cta_2_url != null %} cursor-pointer {%endif%} flex-1 min-h-[500px] md:min-h-0 md:aspect-square bg-cover flex justify-center items-center px-2 md:px-16 relative [&_video]:object-cover [&_video]:w-full [&_video]:h-full [&_video]:absolute"style="background-image: linear-gradient(rgba(0,0,0,{{ section.settings.image_2_brightness }}), rgba(0,0,0,{{ section.settings.image_2_brightness }})), url({{ section.settings.image_2 | image_url }});">
+        {% if section.settings.video_2 != empty %}
+            {% render 'component--responsive-video' 
+               , mobile_video: section.settings.video_2,
+               desktop_video: section.settings.video_2,
+               containerClasses: '!absolute w-full h-full',
+               autoplay: true,
+               muted: true,
+               loop: true %}
+        {% endif %}
+        <div class="text-faded-lime text-center richtext z-10">
+            {{ section.settings.richtext_2 }}
+            {% if section.settings.cta_2_url != '' and section.settings.cta_2_text != '' %}
+                <a href="{{ section.settings.cta_2_url }}" class="btn btn-primary !no-underline max-w-[200px] mx-auto z-10">
+                    {{- section.settings.cta_2_text -}}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Two Column Image CTA",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_1",
+                "label": "Left Column Image"
+            }, {
+                "type": "video",
+                "id": "video_1",
+                "label": "Left Column Video"
+            }, {
+                "type": "range",
+                "id": "image_1_brightness",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "label": "Darken Left Column Image",
+                "default": 0.5
+            }, {
+                "type": "richtext",
+                "id": "richtext_1",
+                "label": "Left Column Text"
+            }, {
+                "type": "text",
+                "id": "cta_1_text",
+                "label": "Left Column CTA Text"
+            }, {
+                "type": "url",
+                "id": "cta_1_url",
+                "label": "Left Column CTA URL"
+            }, {
+                "type": "image_picker",
+                "id": "image_2",
+                "label": "Right Column Image"
+            }, {
+                "type": "video",
+                "id": "video_2",
+                "label": "Right Column Video"
+            }, {
+                "type": "range",
+                "id": "image_2_brightness",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "label": "Darken Right Column Image",
+                "default": 0.5
+            }, {
+                "type": "richtext",
+                "id": "richtext_2",
+                "label": "Right Column Text"
+            }, {
+                "type": "text",
+                "id": "cta_2_text",
+                "label": "Right Column CTA Text"
+            }, {
+                "type": "url",
+                "id": "cta_2_url",
+                "label": "Right Column CTA URL"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Two Column Image CTA"
+            }
+        ]
+    }
+{% endschema %}

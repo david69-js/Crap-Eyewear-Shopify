@@ -1,0 +1,110 @@
+<div class="ambassadors-specific">
+  <div class="container">
+    <div class="ambassadors-specific-breadcrumb u-center">
+      {% include 'breadcrumb' %}
+    </div>
+    <div class="ambassador-slideshow">
+      {% if article.metafields.c_f['Slide Video'] != null %}
+      <div class="vimeo">
+        {{ article.metafields.c_f['Slide Video'] }}
+        <div class="title">{{ article.metafields.c_f['Slide Video Title']}}</div>
+      </div>
+      {% endif %}
+      {% if article.metafields.c_f['Slide Image 1'] != null %}
+      <div>
+        <img src="{{ article.metafields.c_f['Slide Image 1'] }}" />
+        <div class="title">{{ article.metafields.c_f['Slide Image 1 Title']}}</div>
+      </div>
+      {% endif %}
+      {% if article.metafields.c_f['Slide Image 2'] != null %}
+      <div>
+        <img src="{{ article.metafields.c_f['Slide Image 2'] }}" />
+        <div class="title">{{ article.metafields.c_f['Slide Image 2 Title']}}</div>
+      </div>
+      {% endif %}
+      {% if article.metafields.c_f['Slide Image 3'] != null %}
+      <div>
+        <img src="{{ article.metafields.c_f['Slide Image 3'] }}" />
+        <div class="title">{{ article.metafields.c_f['Slide Image 3 Title']}}</div>
+      </div>
+      {% endif %}
+      {% if article.metafields.c_f['Slide Image 4'] != null %}
+      <div>
+        <img src="{{ article.metafields.c_f['Slide Image 4'] }}" />
+        <div class="title">{{ article.metafields.c_f['Slide Image 4 Title']}}</div>
+      </div>
+      {% endif %}
+      {% if article.metafields.c_f['Slide Image 5'] != null %}
+      <div>
+        <img src="{{ article.metafields.c_f['Slide Image 5'] }}" />
+        <div class="title">{{ article.metafields.c_f['Slide Image 5 Title']}}</div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="ambassadors-intro">
+      <div class="row">
+        <div class="four columns">
+          <div class="intro-name">
+            <h1>{{ article.title }}</h1>
+            <p class="location">{{ article.excerpt }}</p>
+            <ul class="intro-social">
+              {% if article.metafields.c_f['Ambassador Twitter'] != null %}
+              <li class="twitter"><a target="_blank" href="{{ article.metafields.c_f['Ambassador Twitter'] }}"><b class="srt">Twitter</b></a></li>
+              {% endif %}
+              {% if article.metafields.c_f['Ambassador Instagram'] != null %}
+              <li class="instagram"><a target="_blank" href="{{ article.metafields.c_f['Ambassador Instagram'] }}"><b class="srt">Instagram</b></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+        <div class="eight columns">
+          <div class="intro-main">
+            {{ article.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% assign collectiondesc = article.metafields.c_f['Ambassador Favorite Products'] %}
+    {% for product in collections[collectiondesc].products %}
+      {% if forloop.first %}
+        <div class="main-best-sellers family u-center">
+            <div class="row">
+              <h2>{{ article.metafields.c_f['Favorite Products Title'] }}</h2>
+
+              <div class="main-best-sellers-slider">
+            {% endif %}
+            <div class="main-collection-item u-center">
+                  <a href="{{ product.url }}">
+                    <div class="main-collection-item-image">
+                      <img class="top" src="{{ product.images[0] | img_url: 'large'}}" alt="{{ product.title }}">
+                      {% if product.images.size > 1 %}
+                        <img class="bottom" src="{{ product.images[1] | img_url: 'large'}}" alt="{{ product.title }}">
+                      {% endif %}
+                    </div>
+                    <div class="main-collection-item-details">
+                      <h3>{{ product.title | split: ' - ' | first }}</h3>
+                      <p>{{ product.metafields.c_f['Product Mini Description'] }}</p>
+                      <p class="price">{{ product.price | money }}</p>
+                    </div>
+                  </a>
+                </div>
+            {% if forloop.last %}
+              </div>
+          </div>
+          {% if article.metafields.c_f['Collection Button Text'] != null %}
+            <div class="row">
+              <a href="{{ article.metafields.c_f['Collection Button Link'] }}" class="button">{{ article.metafields.c_f['Collection Button Text'] }}</a>
+            </div>
+          {% endif %}
+        </div>
+        <!-- /MAIN-BEST-SELLERS -->
+      {% endif %}
+    {% else %}
+    {% endfor %}
+    <div class="row">
+      <div class="back-to-family u-center">
+        <a href="/blogs/ambassadors/tagged/all">Back to family</a>
+      </div>
+    </div>
+  </div>
+</div>

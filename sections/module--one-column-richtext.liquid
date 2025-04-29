@@ -1,0 +1,767 @@
+{%- liquid
+  assign fadeClass = ''
+
+  if section.settings.animation == 'StaggerFade'
+    assign fadeClass = 'js-stagger'
+  endif
+
+  assign section_padding_class = section.settings.section_padding
+
+  assign fitMobileImage = section.settings.fit_mobile_img | default: false
+
+  if section.settings.section_padding_halved == true and section_padding_class != blank
+    assign section_padding_class = section.settings.section_padding | append: '-1/2'
+  endif
+
+  if section.settings.section_padding_extra == true and section_padding_class != blank
+    assign section_padding_class = section.settings.section_padding | append: '-2x'
+  endif
+-%}
+<div
+  {% if section.settings.background_image != null %}
+    data-bg="{{- section.settings.background_image | image_url: width: 1200 -}}"
+  {% endif %}
+  class="{% if section.settings.background_image != null %}lazy{% endif %} flex relative {%- if section_padding_class != blank %} {{ section_padding_class }} {%- endif -%} bg-no-repeat bg-cover bg-center"
+  style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} --justify: {{- section.settings.flex -}}; --font-color: {{- section.settings.font_color -}}; --mobile-width: {{- section.settings.mobile_width -}}%; --desktop-width: {{- section.settings.desktop_width -}}%; {%- if section.settings.background_color != blank %} background-color:{{- section.settings.background_color -}}; {%- endif %} justify-content: var(--justify);"
+  data-animation="{{- section.settings.animation -}}"
+  data-trigger="observe"
+>
+  <div class="w-[length:var(--mobile-width)] text-[color:var(--font-color)] dk:w-[length:var(--desktop-width)] [&>*]:mb-5 [&>:last-child]:mb-0">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' %}
+          {%- render block %}
+
+        {%- when 'accordion' %}
+          {%- render 'slot--accordion',
+            heading: block.settings.text,
+            headingClasses: 'grotesk-bold py-4 text-x120',
+            content: block.settings.richtext,
+            classes: 'border-b'
+          -%}
+
+        {%- when 'custom_liquid' -%}
+          {%- comment -%}
+            TODO: Wrap this in DIV
+          {%- endcomment -%}
+          {{ block.settings.custom_liquid }}
+
+        {%- when 'xl_heading' %}
+          {%-
+            render 'component--richtext'
+            , content: block.settings.richtext,
+            align: block.settings.alignment,
+            anim_class: fadeClass,
+            classes: "has-xl-h",
+          -%}
+
+        {%- when 'richtext' %}
+          {%-
+            render 'component--richtext'
+            , content: block.settings.richtext,
+            align: block.settings.alignment,
+            anim_class: fadeClass,
+            body_size: block.settings.body_size,
+          -%}
+
+        {%- when 'button' %}
+          {% render 'component--button',
+            link: block.settings.link,
+            style: block.settings.button_style,
+            label: block.settings.text,
+            align: block.settings.alignment,
+            anim_class: fadeClass,
+            classes: 'mt-[30px] first:mt-0'
+          %}
+
+        {%- when 'half_btn' %}
+          {% render 'component--button',
+            link: block.settings.link,
+            style: block.settings.button_style,
+            label: block.settings.text,
+            align: block.settings.alignment,
+            anim_class: fadeClass,
+            classes: '!max-w-[50%] p-0 md:!max-w-[length:var(--btn-width,370px)] md:px-8 mt-[30px] md:mt-[50px]'
+          %}
+
+        {%- when 'triple_buttons' %}
+          <div class="flex flex-col md:flex-row gap-8 justify-center mt-12 mx-12">
+            {% render 'component--button',
+              link: block.settings.link_1,
+              style: block.settings.button_style_1,
+              label: block.settings.text_1,
+              anim_class: fadeClass
+            %}
+            {% if block.settings.link_2 contains 'tel:' %}
+              {% assign sms_link = block.settings.link_2 | replace: 'tel:', 'sms:' %}
+            {% else %}
+              {% assign sms_link = block.settings.link_2 %}
+            {% endif %}
+            {% render 'component--button',
+              link: sms_link,
+              style: block.settings.button_style_2,
+              label: block.settings.text_2,
+              classes: 'dk:hidden',
+              anim_class: fadeClass
+            %}
+            <button class="btn btn-black" onclick="window.GorgiasChat.open()">Live Chat</button>
+          </div>
+
+        {%- when 'image' %}
+          {%- comment -%}
+            TODO: Wrap this in cover class
+          {%- endcomment -%}
+          {% if fitMobileImage == true %}
+            <div class="relative">
+              {%- render 'component--responsive-image',
+                image: block.settings.image,
+                placeholder: true,
+                maxSize: 1280,
+                objectFit: 'mobile',
+                anim_class: fadeClass
+              -%}
+            </div>
+          {% else %}
+            {%- render 'component--responsive-image',
+              image: block.settings.image,
+              placeholder: true,
+              maxSize: 1280,
+              anim_class: fadeClass
+            -%}
+          {% endif %}
+
+        {%- when 'inline_video' %}
+          {%- comment -%}
+            TODO: Wrap this in cover class
+          {%- endcomment -%}
+          {%- render 'component--responsive-video',
+            desktop_video: block.settings.video_desktop,
+            mobile_video: block.settings.video_mobile,
+            autoplay: true,
+            loop: true,
+            muted: true,
+            maxSize: 1280,
+            anim_class: fadeClass
+          -%}
+
+        {% when 'sticker' %}
+          {%
+            render 'component--sticker'
+            , sticker: block,
+            anim_class: fadeClass,
+          %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "One-column Richtext",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings_schema.general.settings.background_color.label",
+      "info": "t:settings_schema.general.settings.background_color.info",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "t:settings_schema.general.settings.font_color.label",
+      "info": "t:settings_schema.general.settings.font_color.info",
+      "default": "#1E1E1E"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "t:settings_schema.animations.settings.animation.label",
+      "info": "t:settings_schema.animations.settings.animation.info",
+      "options": [
+        {
+          "value": "",
+          "label": "t:settings_schema.animations.settings.none.label"
+        },
+        {
+          "value": "Fade",
+          "label": "t:settings_schema.animations.settings.fade.label"
+        },
+        {
+          "value": "StaggerFade",
+          "label": "t:settings_schema.animations.settings.stagger_fade.label"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "desktop_width",
+      "label": "Width - Desktop",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 85
+    },
+    {
+      "type": "range",
+      "id": "mobile_width",
+      "label": "Width - Mobile",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "flex",
+      "label": "t:settings_schema.general.settings.flex.label",
+      "info": "t:settings_schema.general.settings.flex.info",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:settings_schema.general.settings.flex.start.label"
+        },
+        {
+          "value": "center",
+          "label": "t:settings_schema.general.settings.flex.center.label"
+        },
+        {
+          "value": "end",
+          "label": "t:settings_schema.general.settings.flex.end.label"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:settings_schema.components.settings.section_padding.label",
+      "info": "t:settings_schema.components.settings.section_padding.info",
+      "options": [
+        {
+          "value": "",
+          "label": "t:settings_schema.general.settings.section_padding.none.label"
+        },
+        {
+          "value": "ca",
+          "label": "t:settings_schema.general.settings.section_padding.all.label"
+        },
+        {
+          "value": "cx",
+          "label": "t:settings_schema.general.settings.section_padding.horizontal.label"
+        },
+        {
+          "value": "cx ct",
+          "label": "t:settings_schema.general.settings.section_padding.horizontal_top.label"
+        },
+        {
+          "value": "cx cb",
+          "label": "t:settings_schema.general.settings.section_padding.horizontal_bottom.label"
+        },
+        {
+          "value": "cy",
+          "label": "t:settings_schema.general.settings.section_padding.vertical.label"
+        },
+        {
+          "value": "ct",
+          "label": "t:settings_schema.general.settings.section_padding.top.label"
+        },
+        {
+          "value": "cb",
+          "label": "t:settings_schema.general.settings.section_padding.bottom.label"
+        }
+      ],
+      "default": "ca"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_padding_halved",
+      "label": "t:settings_schema.components.settings.section_padding_halved.label",
+      "info": "t:settings_schema.components.settings.section_padding_halved.info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "section_padding_extra",
+      "label": "t:settings_schema.components.settings.section_padding_extra.label",
+      "info": "t:settings_schema.components.settings.section_padding_extra.info",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "xl_heading",
+      "name": "XL Heading",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Use H1 for XL Heading on both desktop and mobile. Use H2 for XL Heading on desktop only."
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "t:settings_schema.general.settings.richtext.label"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:settings_schema.general.settings.alignment.label",
+          "info": "t:settings_schema.general.settings.alignment.info",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:settings_schema.general.settings.alignment.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:settings_schema.general.settings.alignment.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:settings_schema.general.settings.alignment.right.label"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "t:settings_schema.components.settings.richtext.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "t:settings_schema.general.settings.richtext.label",
+          "info": "t:settings_schema.general.settings.richtext.info"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:settings_schema.general.settings.alignment.label",
+          "info": "t:settings_schema.general.settings.alignment.info",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:settings_schema.general.settings.alignment.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:settings_schema.general.settings.alignment.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:settings_schema.general.settings.alignment.right.label"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "body_size",
+          "label": "Paragraph size",
+          "info": "Does not affect heading size.",
+          "options": [
+            {
+              "value": "body-large",
+              "label": "Large"
+            },
+            {
+              "value": "body-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "body-small",
+              "label": "Small"
+            }
+          ],
+          "default": "body-primary"
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "t:settings_schema.components.settings.accordion.name",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "info": "t:settings_schema.components.settings.accordion.settings.text.info",
+          "label": "t:settings_schema.general.settings.text.label"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "info": "t:settings_schema.components.settings.accordion.settings.richtext.info",
+          "label": "t:settings_schema.general.settings.richtext.label"
+        }
+      ]
+    },
+    {
+      "name": "Inline Image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:settings_schema.components.settings.image.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Image Content"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "label": "Width - Desktop",
+          "min": 20,
+          "max": 100,
+          "step": 5,
+          "default": 85
+        },
+        {
+          "type": "range",
+          "id": "mobile_width",
+          "label": "Width - Mobile",
+          "min": 20,
+          "max": 100,
+          "step": 5,
+          "default": 100
+        },
+        {
+          "type": "select",
+          "id": "justify",
+          "label": "Justify",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Middle"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "inline_video",
+      "name": "Inline Video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video_desktop",
+          "label": "Video Desktop"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Video Desktop"
+        }
+      ]
+    },
+    {
+      "type": "sticker",
+      "name": "Sticker",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "svg",
+          "label": "SVG Code"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "alt text",
+          "info": "Text to describe the image"
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "label": "Sticker Width (%)",
+          "min": 5,
+          "max": 100,
+          "step": 1,
+          "default": 25
+        },
+        {
+          "type": "range",
+          "id": "width_mobile",
+          "label": "Mobile Sticker Width (%)",
+          "min": 5,
+          "max": 100,
+          "step": 1,
+          "default": 25
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Sticker position",
+          "options": [
+            {
+              "label": "default",
+              "value": ""
+            },
+            {
+              "label": "Top Left",
+              "value": "tl"
+            },
+            {
+              "label": "Top Right",
+              "value": "tr"
+            },
+            {
+              "label": "Bottom Left",
+              "value": "bl"
+            },
+            {
+              "label": "Bottom right",
+              "value": "br"
+            }
+          ],
+          "default": ""
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:settings_schema.components.settings.button.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:settings_schema.components.settings.button.content"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings_schema.general.settings.button_link.label",
+          "info": "t:settings_schema.general.settings.button_link.info"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:settings_schema.general.settings.button_text.label",
+          "info": "t:settings_schema.general.settings.button_text.info"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "t:settings_schema.general.settings.button_style.label",
+          "info": "t:settings_schema.general.settings.button_style.info",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Green"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "White"
+            },
+            {
+              "value": "btn-black",
+              "label": "Black"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ],
+          "default": "btn-primary"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:settings_schema.general.settings.alignment.label",
+          "info": "t:settings_schema.general.settings.alignment.info",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:settings_schema.general.settings.alignment.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:settings_schema.general.settings.alignment.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:settings_schema.general.settings.alignment.right.label"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "half_btn",
+      "name": "Btn (1/2 Size Mobile)",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:settings_schema.components.settings.button.content"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings_schema.general.settings.button_link.label",
+          "info": "t:settings_schema.general.settings.button_link.info"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:settings_schema.general.settings.button_text.label",
+          "info": "t:settings_schema.general.settings.button_text.info"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "t:settings_schema.general.settings.button_style.label",
+          "info": "t:settings_schema.general.settings.button_style.info",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Green"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "White"
+            },
+            {
+              "value": "btn-black",
+              "label": "Black"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ],
+          "default": "btn-primary"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:settings_schema.general.settings.alignment.label",
+          "info": "t:settings_schema.general.settings.alignment.info",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:settings_schema.general.settings.alignment.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:settings_schema.general.settings.alignment.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:settings_schema.general.settings.alignment.right.label"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "triple_buttons",
+      "name": "Triple CTA",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "CTA 1 - Link"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "CTA 1 - Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_1",
+          "label": "CTA 1 - Style",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Green"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "White"
+            },
+            {
+              "value": "btn-black",
+              "label": "Black"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ],
+          "default": "btn-primary"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "CTA 2 - Link"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "CTA 2 - Text"
+        },
+        {
+          "type": "select",
+          "id": "button_style_2",
+          "label": "CTA 2 - Style",
+          "options": [
+            {
+              "value": "btn-primary",
+              "label": "Green"
+            },
+            {
+              "value": "btn-secondary",
+              "label": "White"
+            },
+            {
+              "value": "btn-black",
+              "label": "Black"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ],
+          "default": "btn-primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "One-column Richtext"
+    }
+  ]
+}
+{% endschema %}

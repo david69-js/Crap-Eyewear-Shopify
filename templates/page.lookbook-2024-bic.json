@@ -1,0 +1,703 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_yYRnj4": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h2><strong>BLACK IMAGE CENTER<\/strong><br\/>x Crap® Eyewear<\/h2>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_nYK9A9": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_yYRnj4",
+        "8218651a-101e-45af-b080-b5177b0ef8e1",
+        "richtext_nYK9A9"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ct",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f8cfeb1f-0b44-441e-9a25-fc6799b198af": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/1-Crap_Eyewear-2024_Spring-Black_Image_Center-02.jpg",
+        "caption": ""
+      }
+    },
+    "fd7a47c1-e10b-441a-8703-057e6b776d66": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4>Introducing a signature edition of <strong>The Dream Cassette,<\/strong> part of our ongoing partnership with <strong>Black Image Center.<\/strong><\/h4>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_two_col_hCwnJw": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_8xnCxy": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-Crap_Eyewear-2024_Spring-Black_Image_Center-09.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_8xnCxy"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 90,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_p34PJj": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_MLE36P": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>The Black Image Center is a nonprofit enhancing Los Angeles's cultural landscape by supporting and uplifting the city's Black storytelling community. Through initiatives focused on engagement, education, and job opportunities, it amplifies Black voices, preserves vital contributions to LA's cultural tapestry, and reclaims overlooked narratives. <\/h5><h5>The Center’s goal is to help broaden the collective consciousness, fostering understanding and empathy, and enriching the creative output of the world we live in.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_MLE36P"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-Crap_Eyewear-2024_Spring-Black_Image_Center-06.jpg",
+            "caption": ""
+          }
+        },
+        "ebe8df0e-085e-4869-9aab-3766f4d96eb2": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4-Crap_Eyewear-2024_Spring-Black_Image_Center-23.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76",
+        "ebe8df0e-085e-4869-9aab-3766f4d96eb2"
+      ],
+      "settings": {
+        "media_aspect_ratio": "4 \/ 3",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "4d138d53-7f23-4449-8aad-cf88d9179882": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Our last project with the Black Image Center team helped raise funds to secure a physical space for the organization, now firmly established and thriving on La Cienega. <\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_MBhpxd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5><strong>20% of sales from this product will be donated directly to the Center in support of their ongoing programming.<\/strong><\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "4d138d53-7f23-4449-8aad-cf88d9179882",
+        "richtext_MBhpxd"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 70,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx ct",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "module_one_column_richtext_J3LnGU": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "button_KcKbEG": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/www.crapeyewear.com\/products\/the-dream-cassette-black-image-center-cinnamon-bioacetate-polarized-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "button_pggYta": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/www.blackimagecenter.org\/donate\/",
+            "text": "Donate Directly",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "button_KcKbEG",
+        "button_pggYta"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_fullscreen_rjRNmf": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "product_widget_FyapYU": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-dream-cassette-black-image-center-cinnamon-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "product_widget_FyapYU"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/5-Crap_Eyewear-2024_Spring-Black_Image_Center-11.jpg",
+        "caption": ""
+      }
+    },
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5><strong>Featured photographer: Mary Osunlana<\/strong><\/h5><h6>Mary Osunlana is a Nigerian born, South Florida raised, Los Angeles based photographer. Her work documents how marginalized folk imagine and create personal and collective utopias. Explore Mary's work <a href=\"https:\/\/www.instagram.com\/maryosunlana\/\" target=\"_blank\">here<\/a>.<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_two_col_BBW67F": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_Nf4AFm": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6-Crap_Eyewear-2024_Spring-Black_Image_Center-15.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_Nf4AFm"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "77af1673-6c32-4e4e-a77a-363145146504": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "dda303c5-7b82-4345-8dcc-4d59e8277e83": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-dream-cassette-black-image-center-cinnamon-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "dda303c5-7b82-4345-8dcc-4d59e8277e83"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "4 \/ 3",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/7-Crap_Eyewear-2024_Spring-Black_Image_Center-03.jpg",
+        "caption": ""
+      }
+    },
+    "89c87b31-894b-44a8-8b57-1f70ee859da0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_8x4zjp": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10-Crap_Eyewear-2024_Spring-Black_Image_Center-25.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_dJiMYV": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11-Crap_Eyewear-2024_Spring-Black_Image_Center-31.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_8x4zjp",
+        "media_col_dJiMYV"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_fullscreen_bx6NNA": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "4 \/ 3",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/9-Crap_Eyewear-2024_Spring-Black_Image_Center-19.jpg",
+        "caption": ""
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "black-image-center",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Dream_Cassette-BIC-blessing-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "lookbook_fullscreen_aEdby8": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "4 \/ 3",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/12-Crap_Eyewear-2024_Spring-Black_Image_Center-18.jpg",
+        "caption": ""
+      }
+    },
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_pxQgiB": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/15-Crap_Eyewear-2024_Spring-Black_Image_Center-34.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_iEd9xk": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/13-Crap_Eyewear-2024_Spring-Black_Image_Center-01.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_pxQgiB",
+        "media_col_iEd9xk"
+      ],
+      "settings": {
+        "media_aspect_ratio": "4 \/ 3",
+        "animation": "Fade",
+        "column_basis": 75,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_fullscreen_rwa4FJ": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "product_widget_bffM6B": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-dream-cassette-black-image-center-cinnamon-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "product_widget_bffM6B"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "4 \/ 3",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/14-Crap_Eyewear-2024_Spring-Black_Image_Center-08.jpg",
+        "caption": ""
+      }
+    },
+    "lookbook_two_col_RHtz6d": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_hyjt8F": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/16-Crap_Eyewear-2024_Spring-Black_Image_Center-27.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_qcwmrg": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17-Crap_Eyewear-2024_Spring-Black_Image_Center-41_cd79f04f-f7b7-44d5-a0fa-9f904b867fca.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_hyjt8F",
+        "media_col_qcwmrg"
+      ],
+      "settings": {
+        "media_aspect_ratio": "1",
+        "animation": "Fade",
+        "column_basis": 45,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_UBVaX7": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_FPB3FG": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17-Crap_Eyewear-2024_Spring-Black_Image_Center-41_35240912-0682-467d-a73f-78cb1f93bb9a.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_FPB3FG"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_one_column_richtext_gj7NRz": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "button_n7W8tA": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/products\/the-dream-cassette-black-image-center-cinnamon-bioacetate-polarized-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "button_nqF7xK": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/www.blackimagecenter.org\/donate\/",
+            "text": "Donate Directly",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "richtext_nkPbEj": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><\/p><p><\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "button_n7W8tA",
+        "button_nqF7xK",
+        "richtext_nkPbEj"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6><strong>Black Image Center x Crap® Eyewear<br\/><\/strong>Shot on location in Los Angeles, CA, 2024.<\/h6><h6>Starring: Blessing (<a href=\"https:\/\/www.instagram.com\/b13ss1ng\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/b13ss1ng\/\">@b13ss1ng<\/a>) & D (<a href=\"https:\/\/www.instagram.com\/d.slatt_\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/d.slatt_\/\">@d.slatt_<\/a>)<br\/>Photographer: Mary Osunlana (<a href=\"https:\/\/www.instagram.com\/maryosunlana\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/maryosunlana\/\">@maryosunlana<\/a>)<br\/>Production Design: Black Image Center (<a href=\"https:\/\/www.instagram.com\/blackimagecenter\/\" title=\"https:\/\/www.instagram.com\/blackimagecenter\/\">@blackimagecenter<\/a>)<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fc209f1e-5112-4ec9-9322-6ce346334b64": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/lookbooks-hot-lava-2023"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook-old"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        }
+      },
+      "block_order": [
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>More <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f8cfeb1f-0b44-441e-9a25-fc6799b198af",
+    "fd7a47c1-e10b-441a-8703-057e6b776d66",
+    "lookbook_two_col_hCwnJw",
+    "module_one_column_richtext_p34PJj",
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb",
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81",
+    "module_one_column_richtext_J3LnGU",
+    "lookbook_fullscreen_rjRNmf",
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919",
+    "lookbook_two_col_BBW67F",
+    "77af1673-6c32-4e4e-a77a-363145146504",
+    "89c87b31-894b-44a8-8b57-1f70ee859da0",
+    "lookbook_fullscreen_bx6NNA",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "lookbook_fullscreen_aEdby8",
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc",
+    "lookbook_fullscreen_rwa4FJ",
+    "lookbook_two_col_RHtz6d",
+    "lookbook_two_col_UBVaX7",
+    "module_one_column_richtext_gj7NRz",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "fc209f1e-5112-4ec9-9322-6ce346334b64",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

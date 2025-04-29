@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "section--customer-forms",
+      "settings": {
+        "form_types": "customer_login",
+        "form_title": "<p>Log in<\/p>",
+        "reset_title": "<p>Reset <strong>Password<\/strong><\/p>",
+        "form_description": "",
+        "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "alignment": "center",
+        "card_alignment": "center",
+        "card_background_color": "#ebebeb",
+        "font_color": "#000000",
+        "animation": "",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "email_label": "Ur email",
+        "password_label": "Ur password",
+        "confirm_password_label": "Confirm password",
+        "name_label": "Ur name",
+        "button_signIn": "Sign In",
+        "button_create_account": "Create Account"
+      }
+    },
+    "c34fbed0-bb67-447a-a04d-5aea6f60cacf": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Rectangle_161.png",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3><strong>$20 OFF <\/strong>when you refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn more",
+        "cta_1_url": "shopify:\/\/pages\/refer-a-friend",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_1.png",
+        "image_2_brightness": 0.3,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, <br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c34fbed0-bb67-447a-a04d-5aea6f60cacf"
+  ]
+}

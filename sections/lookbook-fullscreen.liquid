@@ -1,0 +1,220 @@
+{%- if section.settings.media_aspect_ratio == 'false' -%}
+    {%- assign aspect_lock = false -%}
+{%- else %}
+    {%- assign aspect_lock = true -%}
+{%- endif -%} 
+{%- assign aspect = 'unset' -%}
+{%- if aspect_lock -%}
+    {%- assign aspect = section.settings.media_aspect_ratio -%}
+{%- endif -%}
+
+
+{% capture column_widgets_0 %}
+{%- for item in section.blocks -%}
+    {%- if item.type == 'product_widget' -%}
+        {% assign temp = item.settings.product.title | split: '-' %}
+        {% render "component--product-widget", product: item.settings.product, display_text: temp[0], hover_state: 'false', card_placement:'above' %}
+    {%- endif -%}
+{%- endfor -%}
+{% endcapture %}
+
+
+{%- capture columns -%}
+    {% for item in section.blocks %}
+        {% if item.type == 'media_col' %}
+            <div class="basis-full dk:basis-[calc(50%-(var(--site-gutter)/2))] mx-auto">
+                {% if item.settings.video != nil %}
+                <div class="relative">
+                    <video class="w-full h-auto object-cover lazy aspect-[var(--media-aspect)]" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="{{item.settings.video.sources[1].url}}">
+                        <source src="{{item.settings.video.sources[1].url}}" type="video/mp4"></source>
+                    </video>
+                    <div class="absolute bottom-4 right-4 flex gap-2" style="z-index: 1;">
+                        {% if forloop.index0 == 0 and column_widgets_0 != '' %}
+                            {{ column_widgets_0  }}
+                        {% endif %}
+                        {% if forloop.index0 == 1 and column_widgets_1 != '' %}
+                            {{ column_widgets_1  }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="aspect-[var(--media-aspect)] relative">
+                    {%- render "component--responsive-image", image: item.settings.image, objectFit: aspect_lock -%}
+                    <div class="absolute bottom-4 right-4 flex gap-2" style="z-index: 1;">
+                        {% if forloop.index0 == 0 and column_widgets_0 != '' %}
+                            {{ column_widgets_0  }}
+                        {% endif %}
+                        {% if forloop.index0 == 1 and column_widgets_1 != '' %}
+                            {{ column_widgets_1  }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {%- if item.settings.caption != '' -%}
+                    <div class="richtext mt-[10px]">
+                        {{ item.settings.caption }}
+                    </div>
+                {%- endif -%}
+            </div>
+        {% endif %}
+    {% endfor %}
+{%- endcapture -%}
+<div 
+class=" pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" 
+style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} "
+data-animation="{{- section.settings.animation -}}"
+>
+<div style="--media-aspect: {{ aspect }};" class="w-full relative aspect-[var(--media-aspect)]">
+    {% if section.settings.hosted_video %}
+    <video-wrapper class="relative flex items-center justify-center">
+        <video class="w-full h-auto object-cover lazy aspect-[var(--media-aspect)]" preload="metadata" src="{{section.settings.hosted_video.sources[1].url}}">
+            <source src="{{section.settings.hosted_video.sources[1].url}}" type="video/mp4"></source>
+        </video>
+        <div class="play-btn cursor-pointer absolute">
+           <svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M114.851 43.2417C112.706 38.5441 110.363 35.4587 105.503 31.9789C100.412 28.3368 96.9322 29.0211 94.1023 26.1329C93.3136 25.089 92.9077 23.7899 93.128 22.978C93.5687 21.3541 94.7865 20.5189 97.3613 20.6117C99.7737 20.7045 101.212 21.1569 101.989 19.939C102.29 19.4634 102.279 17.4568 98.266 14.8701C93.9283 12.0747 90.2981 10.7524 84.3251 10.4625C78.1317 10.1609 75.557 12.5735 71.6832 11.75C71.6368 11.7384 71.5904 11.7268 71.5556 11.7152C70.3494 11.2628 69.3404 10.3929 69.0853 9.60412C68.5865 8.00343 69.1548 6.63473 71.3701 5.32402C73.4461 4.09451 74.9075 3.68854 74.9075 2.25024C74.9075 1.69348 73.8173 0 69.0505 0C63.8893 0 60.12 0.858339 54.9356 3.83933C49.5773 6.92471 48.7075 10.3349 45.0309 11.75C44.9845 11.7616 44.9381 11.7732 44.9033 11.7848C43.6275 12.0747 42.2706 11.9008 41.6327 11.3556C40.3453 10.2769 40.0901 8.81537 41.2383 6.51874C42.3286 4.34969 43.3376 3.23617 42.5605 2.01826C42.259 1.54269 40.4265 0.719149 36.4251 3.30576C32.0875 6.10117 29.3735 8.86177 26.6248 14.1858C23.7833 19.6954 24.8967 23.036 22.5423 26.2257C21.6144 27.2117 20.3386 27.838 19.4688 27.7336C17.8103 27.5248 16.8012 26.4345 16.5345 23.8711C16.2793 21.4585 16.5345 19.9738 15.2123 19.3706C14.702 19.1386 12.7187 19.4286 10.7355 23.7783C8.58982 28.476 7.80115 32.2689 8.35785 38.2425C8.93776 44.4828 11.7329 46.6751 11.4081 50.7C11.1414 51.9875 10.4223 53.1474 9.65684 53.5186C8.14909 54.2493 6.71093 53.8782 5.0988 51.8599C3.59105 49.9692 2.98796 48.5773 1.5614 48.7861C1.00469 48.8673 -0.503057 50.1896 0.16963 54.9221C0.900307 60.0373 2.28047 63.6563 5.96866 68.3771C9.83081 73.3068 13.3566 73.6432 15.2587 77.2041C15.7226 78.4336 15.7458 79.7907 15.3051 80.5099C14.4236 81.9366 13.0203 82.4005 10.5847 81.5886C8.28827 80.823 7.03568 79.9763 5.95706 80.9274C5.53953 81.2986 4.97122 83.2241 8.1027 86.8314C11.4777 90.7403 14.5976 93.037 20.2459 94.9972C26.1261 97.0503 29.2691 95.438 32.7834 97.3635C33.862 98.1406 34.6274 99.3005 34.6506 100.159C34.6854 101.841 33.746 102.989 31.2524 103.627C28.9096 104.219 27.4019 104.195 26.9959 105.576C26.8335 106.109 27.4135 108.046 31.9831 109.392C36.9355 110.853 40.786 111.085 46.5966 109.682C52.6508 108.22 54.4253 105.158 58.4035 104.88C59.7256 104.949 61.0014 105.506 61.4885 106.214C62.4164 107.606 62.254 109.09 60.5027 110.969C58.8558 112.744 57.5684 113.533 57.9743 114.913C58.1367 115.447 59.656 116.757 64.2257 115.412C69.178 113.95 72.5531 112.071 76.682 107.733C81.0196 103.186 80.8225 99.6253 84.1163 97.2243C85.2529 96.6095 86.5751 96.4007 87.329 96.7371C88.8599 97.3983 89.521 98.7322 89.0687 101.272C88.6396 103.65 87.9785 105.019 89.0687 105.958C89.4862 106.33 91.4811 106.608 94.601 102.989C97.976 99.0802 99.7969 95.67 100.945 89.7776C102.128 83.688 100.11 80.7882 101.479 77.0649C102.093 75.8586 103.137 74.9075 103.995 74.7567C105.642 74.4899 106.918 75.2439 107.904 77.6333C108.82 79.8719 109.006 81.3682 110.432 81.577C110.989 81.6582 112.81 80.8114 113.483 76.079C114.213 70.9637 113.912 67.1012 111.685 61.5336C109.388 55.7572 106.129 54.4233 105.271 50.5376C105.144 49.2037 105.515 47.835 106.153 47.255C107.394 46.1299 108.878 46.0835 110.989 47.5566C112.972 48.9369 113.935 50.1084 115.245 49.5053C115.756 49.2733 116.834 47.5798 114.851 43.2301V43.2417Z" fill="#DEFF7B"/>
+                <path d="M74 58.5L50.75 71.9234L50.75 45.0766L74 58.5Z" fill="#1E1E1E"/>
+            </svg>
+        </div>
+    </video-wrapper>
+    {% else %}
+    {%- render "component--responsive-image", image: section.settings.image, objectFit: aspect_lock -%}
+    {% endif %}
+    <div class="absolute bottom-4 right-4 flex gap-2" style="z-index: 1;">
+        {{ column_widgets_0  }}
+    </div>
+</div>
+{% if section.settings.caption != blank %}
+<div class="richtext cx mt-[10px]">
+    {{ section.settings.caption }}
+</div>
+</div>
+{% endif %}
+{% schema %}
+{
+    "name": "Lookbook - FullScreen",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        },
+        {
+            "type": "select",
+            "id": "media_aspect_ratio",
+            "label": "Lock Aspect Ration",
+            "info": "t:settings_schema.general.settings.aspect_ratio.info",
+            "options": [
+                {
+                    "value": "false",
+                    "label": "Original"
+                },
+                {
+                    "value": "1",
+                    "label": "1 / 1"
+                },
+                {
+                    "value": "4 / 3",
+                    "label": "4 / 3"
+                },
+                {
+                    "value": "3 / 4",
+                    "label": "3 / 4"
+                },
+                {
+                    "value": "1 / 2",
+                    "label": "1 / 2"
+                }
+            ],
+            "default": "false"
+        },
+        {
+            "type": "select",
+            "id": "margin_bottom",
+            "label": "Bottom Margin",
+            "info": "Optional space at bottom of section",
+            "options": [
+                {
+                    "value": "--mb-m: 0px; --mb-d: 0px;",
+                    "label": "No margin"
+                },
+                {
+                    "value": "--mb-m: 30px; --mb-d: 60px;",
+                    "label": "Small Margin"
+                },
+                {
+                    "value": "--mb-m: 60px; --mb-d: 120px;",
+                    "label": "Large Margin"
+                }
+            ],
+            "default": "--mb-m: 0px; --mb-d: 0px;"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:settings_schema.general.settings.image.label",
+            "info": "t:settings_schema.general.settings.image.info"
+        },
+        {
+            "type": "video",
+            "id": "hosted_video",
+            "label": "Video"
+        },
+        {
+            "type": "richtext",
+            "id": "caption",
+            "label": "Caption"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "product_widget",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "select",
+                    "id": "col",
+                    "label": "Tagged Column",
+                    "options": [
+                        {
+                            "label": "first",
+                            "value": "0"
+                        },
+                        {
+                            "label": "second",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Lookbook - FullScreen"
+        }
+    ]
+}
+{% endschema %}

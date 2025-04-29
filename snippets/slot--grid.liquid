@@ -1,0 +1,90 @@
+{%- comment %}
+                    /** @typedef {object} json
+                     * @property {string} slot
+                     * @property {string} cols
+                     *
+                     */
+                    // TODO: Add notes around breakpoint skips
+                    // TODO: Bind masonry style?
+{% endcomment -%}
+{% liquid
+
+if cols
+	assign cols = cols | split: ","
+else
+	assign cols = "1,2,4" | split: ","
+endif
+
+if gaps
+	assign gaps = gaps | split: ","
+else
+	assign gaps = "4,8" | split: ","
+endif
+
+assign len = cols | size
+assign gapLen = gaps | size
+assign tw = ",xs,sm,md,lg,xl,2xl,3xl,4xl" | split: ","
+assign prevCol = ""
+assign prevGap = ""
+assign anim = anim | default: ""
+assign trigger = trigger | default: ""
+assign class_list = classes | default: ""
+
+capture gridClasses
+	for col in cols
+
+		assign thisIndex = forloop.index0
+
+		if len < 6
+			if len == 2
+				assign tw = ",dk" | split: ","
+			else
+				assign thisIndex = thisIndex | plus: thisIndex
+			endif
+		endif
+
+		if prevCol == col
+			continue
+		else
+			assign prevCol = col
+		endif
+
+		if tw[thisIndex] != blank
+			echo " " | append: tw[thisIndex] | append: ":grid-cols-" | append: col
+		else
+			echo " " | append: "grid-cols-" | append: col
+		endif
+	endfor
+endcapture
+
+if noGap != true
+	capture gapClasses
+		for gap in gaps
+
+			assign thisIndex = forloop.index0
+
+			if gapLen < 6
+				assign thisIndex = thisIndex | plus: thisIndex
+			endif
+
+			if prevGap == gap
+				continue
+			else
+				assign prevGap = gap
+			endif
+
+			if tw[thisIndex] != blank
+				echo " " | append: tw[thisIndex] | append: ":gap-" | append: gap
+			else
+				echo " " | append: "gap-" | append: gap
+			endif
+		endfor
+	endcapture
+else
+	assign gapClasses = "gap-0"
+endif
+
+-%}
+<div class="grid {{ gridClasses -}} {%- if class_list != blank %} {{ class_list -}} {%- endif -%}" {%- if anim != blank %} data-animation="{{- anim -}}" {%- endif -%} {%- if trigger != blank %} data-trigger="{{- trigger -}}" {%- endif -%}>
+    {{ slot }}
+</div>

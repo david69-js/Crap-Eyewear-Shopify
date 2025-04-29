@@ -1,0 +1,133 @@
+{%- comment -%} Displays title and WYSIWYG editor from Shopify Page {%- endcomment -%}
+{%- comment -%} See WYSIWYG.scss for style details {%- endcomment -%}
+    <div style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.margin_bottom}} --justify: {{- section.settings.flex -}}; --font-color: {{- section.settings.font_color -}}; --mobile-width: {{- section.settings.mobile_width -}}%; --desktop-width: {{- section.settings.desktop_width -}}%; {%- if section.settings.background_color != blank %} background:{{- section.settings.background_color -}}; {%- endif %} justify-content: var(--justify);" class="text-[color:var(--font-color)] pagebuilder flex pb-[length:var(--mb-m)] md:pb-[length:var(--mb-d)]" data-animation="{{- section.settings.animation -}}"> <div class="cx wysiwyg w-[length:var(--mobile-width)] md:w-[length:var(--desktop-width)]">
+        {% if section.settings.show_page_title %}
+            <h1 style="text-align: {{ section.settings.title_alignment }}" class="h1 mb-8">
+                {{ page.title | escape }}
+            </h1>
+        {% endif %}
+        {{ page.content }}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Page Content (WYSIWYG)",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_page_title",
+                "label": "Show Page Title",
+                "default": true
+            }, {
+                "type": "select",
+                "id": "title_alignment",
+                "label": "Title Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    }, {
+                        "value": "center",
+                        "label": "Center"
+                    }, {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            }, {
+                "type": "range",
+                "id": "desktop_width",
+                "label": "Width - Desktop",
+                "min": 20,
+                "max": 100,
+                "step": 10,
+                "default": 80
+            }, {
+                "type": "range",
+                "id": "mobile_width",
+                "label": "Width - Mobile",
+                "min": 20,
+                "max": 100,
+                "step": 10,
+                "default": 100
+            }, {
+                "type": "select",
+                "id": "flex",
+                "label": "t:settings_schema.general.settings.flex.label",
+                "info": "t:settings_schema.general.settings.flex.info",
+                "options": [
+                    {
+                        "value": "start",
+                        "label": "t:settings_schema.general.settings.flex.start.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.flex.center.label"
+                    }, {
+                        "value": "end",
+                        "label": "t:settings_schema.general.settings.flex.end.label"
+                    }
+                ],
+                "default": "start"
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Page Content (WYSIWYG)"
+            }
+        ]
+    }
+{% endschema %}

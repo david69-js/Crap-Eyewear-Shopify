@@ -1,0 +1,48 @@
+{%- comment -%}
+  /**
+  * Blog Content
+  */
+{%- endcomment -%}
+<div class="cx pt-7 dk:py-14 flex justify-center" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} " data-animation="{{- section.settings.animation -}}">
+  <div class="richtext max-w-[910px] mx-auto w-full [&_img]:w-full">
+    {{ article.content }}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Blog Content",
+    "settings": [
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "Blog Content"
+        }
+    ],
+    "templates": [
+        "article"
+    ]
+}
+{% endschema %}

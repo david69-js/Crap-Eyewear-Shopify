@@ -1,0 +1,13 @@
+{%- liquid
+unless min
+	assign min = 1
+endunless
+
+unless max
+	assign max = 9999999999
+endunless
+
+assign diff = max | minus: min
+assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min
+-%}
+{{- randomNumber | md5 -}}

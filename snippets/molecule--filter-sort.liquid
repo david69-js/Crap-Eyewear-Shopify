@@ -1,0 +1,257 @@
+{%- comment %}
+                                                                                                                                                                                                                    /**
+                                                                                                                                                                                                                     * @property {object} results  Collection or Search object
+                                                                                                                                                                                                                     * @property {boolean} enable_filtering  Show filtering when true
+                                                                                                                                                                                                                     * @property {boolean} enable_sorting  Show sorting when true
+                                                                                                                                                                                                                     *
+                                                                                                                                                                                                                     * https://apps.shopify.com/search-and-discovery
+                                                                                                                                                                                                                     */
+{% endcomment -%}
+{%- liquid
+
+assign classes = classes | default: ""
+assign enable_filtering = enable_filtering | default: true
+assign enable_sorting = enable_sorting | default: true
+assign filter_style = filter_style | default: "side"
+assign sort_by = results.sort_by | default: results.default_sort_by
+assign total_active_values = 0
+assign default_open = open | default: false
+assign sub_nav = sub_nav | default: ""
+
+if results.url
+	assign results_url = results.url
+else
+	assign terms = results.terms | escape
+	assign results_url = '?q=' | append: terms | append: '&options[prefix]=last&sort_by=' | append: sort_by
+endif
+
+-%}
+<div class="filter-drawer-2">
+    <drawer-overlay data-external-trigger="dd">
+        <div class="drawer-2 fixed z-50 top-0 bottom-0 right-0 h-full w-[92%] dk:w-full max-w-[588px] translate-x-full border-l-[5px] border-[rgba(255,255,255,0.2)]">
+            <div class="bg-white w-full h-full overflow-y-auto">
+            <div class="header bg-faded-lime cx cy flex items-center justify-between">
+                <h6 class="grotesk-bold">Filter & Sort</h6>
+                <div class="js-close w-[20px] cursor-pointer">
+                    {% render 'icon--close' %}
+                </div>
+            </div>
+            {%- if section.settings.enable_sorting == true -%}
+						<div class="flex flex-col items-start cx mt-8">
+							<label for="sort_by_trigger" class="grotesk-bold h6 mb-4">Sort by</label>
+							<select class="py-4 pl-6 pr-10 border-off-black w-full" name="sort_by_trigger" aria-describedby="a11y-refresh-page-message">
+								{%- for option in collection.sort_options -%}
+									<option value="{{- option.value | escape -}}"{%- if option.value == sort_by %} selected="selected"{%- endif -%}>{{- option.name | escape -}}</option>
+								{%- endfor -%}
+							</select>
+						</div>
+					{%- endif -%}
+            <filter-form data-section="{{- section.id -}}" data-open="{{- default_open -}}">
+                <aside class="filter-drawer">
+                    <div>
+                        {%- if sub_nav != blank -%}
+                            <ul class="mb-4">
+                                {%- for nav in sub_nav.links -%}
+                                    <li class="mb-5 dk:mb-3{%- if results.url == nav.url %} underline pointer-events-none {%- endif -%}">
+                                        <a href="{{ nav.url }}">{{ nav.title }}</a>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        {%- endif -%}
+                        <form>
+                            {%- if results.current_vendor or results.current_type -%}
+                                <input type="hidden" name="q" value="{{ results.current_vendor }}{{ results.current_type }}" />
+                            {%- endif -%}
+                            {%- if results.terms -%}
+                                <input type="hidden" name="q" value="{{- results.terms | escape -}}" />
+                                <input name="options[prefix]" type="hidden" value="last" />
+                            {%- endif -%}
+
+                            {%- if enable_sorting == true -%}
+                                <ul class="radio-group pt-5 border-t sr-only">
+                                    <li class="mb-5 leading-none text-[length:14px] tracking-normal font-accent">Sort By</li>
+                                    {%- for option in results.sort_options -%}
+                                        <li class="mb-5">
+                                            <label for="filter-{{- option.name | handleize -}}-{{- forloop.index -}}" class="flex items-center">
+                                                <input id="filter-{{- option.name | handleize -}}-{{- forloop.index -}}" type="radio" name="sort_by" value="{{- option.value -}}" {% if option.value == sort_by -%} checked {% endif -%} />
+                                                <span>{{- option.name | escape }}</span>
+                                            </label>
+                                        </li>
+                                    {%- endfor -%}
+                                </ul>
+
+                            {%- endif -%}
+                            {% capture fits %}
+                                {%- for filter in results.filters -%}
+                                    {%- for value in filter.values -%}
+                                        {%- if value.label contains 'fit' -%}
+                                            <div class="flex h-[50px] items-center justify-center grow border border-off-black grow mb-5 dk:mb-3 {% if value.label contains "narrow" %} order-first {% else %} order-none {% endif %}">
+                                                <label style="--checked-bg-color: #1E1E1E; --checked-text-color: #FFFFFF;" for="filter-{{- label | handle -}}-{{- forloop.index | handle -}}" class="flex w-full h-full items-center justify-center filter-container {%- if value.count == 0 and value.active == false %} disabled {%- endif -%}">
+                                                    <input class="hidden filter-input" id="filter-{{- label -}}-{{- forloop.index -}}" type="checkbox" name="{{- value.param_name -}}" value="{{- value.value -}}" {% if value.active -%} checked {% endif -%} {%- if value.count == 0 and value.active == false -%} disabled {% endif -%} />
+                                                    <span class="filter-content flex w-full h-full items-center justify-center cursor-pointer capitalize">
+                                                        {{- value.label | escape | remove: 'fit: '  }}
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endfor -%}
+                            {% endcapture %}
+                            {% capture frame_shapes %}
+                                {%- for filter in results.filters -%}
+                                    {%- for value in filter.values -%}
+                                        {%- if value.label contains 'shape' -%}
+                                            <div class="mb-5 dk:mb-3 basis-[calc(33%-10px)]">
+                                                <label style="--checked-text-color: #DEFF7B;" for="{{- value.label | handle -}}" class="flex items-center filter-container cursor-pointer {%- if value.count == 0 and value.active == false %} disabled {%- endif -%}">
+                                                    {% assign shape_label = value.label | escape | remove: 'shape:' | strip %}    
+                                                <input class="hidden filter-input" id="{{- value.label | handle -}}" type="checkbox" name="{{- value.param_name -}}" value="{{- value.value -}}" {% if value.active -%} checked {% endif -%} {%- if value.count == 0 and value.active == false -%} disabled {% endif -%} />
+                                                    <span class="flex flex-col gap-[16px] items-center filter-content">
+                                                        {% render 'icon--shape-filters', shape: shape_label %}
+                                                        <span class="font-script text-[20px] dk:text-[24px] capitalize">{{ shape_label }}</span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endfor -%}
+                            {% endcapture %}
+                            {% capture colors %}
+                                {%- for filter in results.filters -%}
+                                    {%- for value in filter.values -%}
+                                        {%- if value.label contains 'frame color' -%}
+                                            <div class="border border-off-black rounded-[10px] overflow-hidden basis-[calc(33%-10px)] dk:basis-[unset] flex items-center justify-center">
+                                                <label style="--checked-bg-color: #1E1E1E; --checked-text-color: #FFFFFF;" for="filter-{{- label | handle -}}-{{- forloop.index | handle -}}" class="flex items-center justify-center filter-container cursor-pointer h-[50px] w-full dk:w-[77px] {%- if value.count == 0 and value.active == false %} disabled {%- endif -%}">
+                                                    {% assign frame_color_label = value.label | escape | remove: 'frame color:' | strip %}       
+                                                <input class="hidden filter-input" id="filter-{{- label -}}-{{- forloop.index -}}" type="checkbox" name="{{- value.param_name -}}" value="{{- value.value -}}" {% if value.active -%} checked {% endif -%} {%- if value.count == 0 and value.active == false -%} disabled {% endif -%} />
+                                                    <span class="capitalize filter-content flex w-full h-full items-center justify-center">
+                                                        {{ frame_color_label  }}
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endfor -%}
+                            {% endcapture %}
+                            {% capture lens_colors %}
+                                {%- for filter in results.filters -%}
+                                    {%- for value in filter.values -%}
+                                        {%- if value.label contains 'lens color' -%}
+                                            <div class="border border-off-black rounded-[100%] overflow-hidden basis-[calc(33%-10px)] dk:basis-[unset] flex items-center justify-center">
+                                                <label style="--checked-bg-color: #1E1E1E; --checked-text-color: #FFFFFF;" for="filter-{{- label | handle -}}-{{- forloop.index | handle -}}" class="flex items-center filter-container cursor-pointer h-[48px] w-full dk:w-[77px] {%- if value.count == 0 and value.active == false %} disabled {%- endif -%}">
+                                                    {% assign lens_color_label = value.label | escape | remove: 'lens color:' | strip %}         
+                                                <input class="hidden filter-input" id="filter-{{- label -}}-{{- forloop.index -}}" type="checkbox" name="{{- value.param_name -}}" value="{{- value.value -}}" {% if value.active -%} checked {% endif -%} {%- if value.count == 0 and value.active == false -%} disabled {% endif -%} />
+                                                    <span class="capitalize filter-content flex w-full h-full items-center justify-center">
+                                                        {{ lens_color_label }}
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endfor -%}
+                            {% endcapture %}
+                            {%- if enable_filtering == true -%}
+                                <div class="filters" style="--icon-inline-size: 24px;">
+                                    {%- for filter in results.filters -%}
+                                        {%- case filter.type -%}
+                                            {%- when "list" -%}
+                                            {%- capture custom_filter_markup -%}
+                                                {%- assign label = filter.label | handleize -%}
+                                                <div class="filters pt-4 mb-4">
+                                                    <div class="cx">
+                                                        <h6 class="grotesk-bold mb-4">Fit</h6>
+                                                        <div class="flex gap-[10px]">
+                                                            {{ fits }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="cx">
+                                                        <h6 class="grotesk-bold mb-4">Frame Shape</h6>
+                                                        <div class="flex flex-wrap gap-[10px] frame-shapes-filter-container">
+                                                            {{ frame_shapes }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="cx mb-4">
+                                                        <h6 class="grotesk-bold mb-4">Color</h6>
+                                                        <div class="flex flex-wrap gap-[10px]">
+                                                            {{ colors }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="cx">
+                                                        <h6 class="grotesk-bold mb-4">Lens Color</h6>
+                                                        <div class="flex flex-wrap gap-[10px]">
+                                                            {{ lens_colors }}
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex w-full cx gap-4 sticky bottom-0 left-0 right-0 bg-white border-t border-off-black py-4">
+                                                    <div class="js-clear basis-1/2">
+                                                        <filter-remove class="clear-all btn btn-secondary w-full max-w-none" data-filter="all">
+                                                            <a href="{{- filter.url_to_remove -}}" class="w-full h-full flex items-center justify-center">{{- "products.facets.clear" | t -}} {%- if total_active > 0 -%}({{ total_active }}){%- endif -%}</a>
+                                                        </filter-remove>
+                                                        <button type="button" class="visually-hidden btn btn--primary">{{- "products.facets.apply" | t -}}</button>
+                                                        <noscript>
+                                                            <button class="btn btn--primary">{{- "products.facets.apply" | t -}}</button>
+                                                        </noscript>
+                                                    </div>
+                                                    <div class="btn btn-primary basis-1/2 max-w-none js-close">See Results</div>
+                                                </div>
+                                            {%- endcapture -%}
+                                            {%- assign totalValues = 0 -%}
+                                            {%- for value in filter.values -%}
+                                                {%- if value.count > 0 -%}
+                                                    {%- assign totalValues = totalValues | plus: value.count -%}
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                            {%- if totalValues >= 0 -%}
+                                                {{ custom_filter_markup }}
+                                            {%- endif -%}
+
+                                            {%- when "price_range" -%}
+                                            {%- capture markup -%}
+                                                <div>
+                                                    <range-price>
+                                                        <div class="flex pt-4 mb-3">
+                                                            <div class="grid grid-cols-6 items-center mr-4">
+                                                                <span>{{- cart.currency.symbol -}}</span>
+                                                                <input class=" col-start-2 col-span-full" id="filter-{{- filter.label | handleize -}}-gte" name="{{- filter.min_value.param_name -}}" {%- if filter.min_value.value %} value="{{- filter.min_value.value | money_without_currency | replace: ",", "" -}}" {% endif -%} type="number" placeholder="0" min="0" inputmode="decimal" max="{{- filter.range_max | money_without_currency | replace: ",", "" -}}" />
+                                                                <label class="row-start-2 mt-1 text-xs opacity-80 col-start-2 col-span-full" for="filter-{{- filter.label | handleize -}}-gte">{{- "products.facets.from" | t -}}</label>
+                                                            </div>
+                                                            <div class="grid grid-cols-6 items-center">
+                                                                <span>{{- cart.currency.symbol -}}</span>
+                                                                <input class="col-start-2 col-span-full" id="filter-{{- filter.label | handleize -}}-lte" name="{{- filter.max_value.param_name -}}" {%- if filter.max_value.value %} value="{{- filter.max_value.value | money_without_currency | replace: ",", "" -}}" {% endif -%} type="number" placeholder="{{- filter.range_max | money_without_currency -}}" min="0" inputmode="decimal" max="{{- filter.range_max | money_without_currency | replace: ",", "" -}}" />
+                                                                <label class="row-start-2 mt-1 text-xs opacity-80 col-start-2 col-span-full" for="filter-{{- filter.label | handleize -}}-lte">{{- "products.facets.to" | t -}}</label>
+                                                            </div>
+                                                        </div>
+                                                        {%- comment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                												<button type="button" class="btn btn--primary max-w-full box-border">{{- "products.facets.apply" | t -}}</button>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            												{%- endcomment -%}
+                                                    </range-price>
+                                                </div>
+                                                <div class="js-clear {%- if filter.active_values.size == 0 %} hidden {%- endif -%}">
+                                                    <filter-remove>
+                                                        <a href="{{- filter.url_to_remove -}}" class="text-sm underline">{{- "products.facets.clear" | t -}}</a>
+                                                    </filter-remove>
+                                                    <button type="button" class="visually-hidden btn btn--primary">{{- "products.facets.apply" | t -}}</button>
+                                                    <noscript>
+                                                        <button class="btn btn--primary">{{- "products.facets.apply" | t -}}</button>
+                                                    </noscript>
+                                                </div>
+                                            {%- endcapture -%}
+                                            {%- assign attribute = "data-index='" | append: forloop.index | append: "'" -%}
+                                            {%- assign heading = filter.label | escape -%}
+                                            {{ markup }}
+
+                                        {%- endcase -%}
+                                    {%- endfor -%}
+                                </div>
+                            {%- endif -%}
+
+                        </form>
+                    </div>
+                </aside>
+            </filter-form>
+        </div>
+        </div>
+        <div class="drawer-bg js-close fixed inset-0 opacity-0 z-40 bg-off-black inset-0 opacity-0 pointer-events-none"></div>
+    </drawer-overlay>
+</div>

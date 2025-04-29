@@ -1,0 +1,37 @@
+{%- comment -%}
+/**
+ * Image array, for images mapped to product.metafields.custom.NAMESPACE.images
+ */
+{%- endcomment -%}
+{%- liquid
+
+assign data = data | default: collections["all"]
+assign type = type | default: "collection"
+assign namespace = namespace | default: "accent_images"
+
+-%}
+{%- capture output -%}
+	{%- comment -%} --- Single Product --- {%- endcomment -%}
+	{%- if type == "product" -%}
+		{%- assign accent_images = product.metafields.custom[namespace].value -%}
+		{%- if accent_images != blank -%}
+			{%- for image in accent_images -%}
+				{%- if forloop.index > 1 -%} , {%- endif -%}
+				{"product_id":{{- product.id -}},"id":{{- image.id -}},"aspect_ratio":{{- image.aspect_ratio -}},"alt":"{{- image.alt -}}","width":{{- image.width -}},"height":{{- image.height -}},"url":"{{- image | image_url: width: 400 -}}"}
+			{%- endfor -%}
+		{%- endif -%}
+	{%- comment -%} --- Collection of Products --- {%- endcomment -%}
+	{%- else -%}
+		{%- for product in data.products -%}
+			{%- assign accent_images = product.metafields.custom[namespace].value -%}
+			{%- if accent_images != blank -%}
+				{%- if forloop.index > 1 -%} , {%- endif -%}
+				{%- for image in accent_images -%}
+					{%- if forloop.index > 1 -%} , {%- endif -%}
+					{"product_id":{{- product.id -}},"id":{{- image.id -}},"aspect_ratio":{{- image.aspect_ratio -}},"alt":"{{- image.alt -}}","width":{{- image.width -}},"height":{{- image.height -}},"url":"{{- image | image_url: width: 400 -}}"}
+				{%- endfor -%}
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endif -%}
+{%- endcapture -%}
+[{{- output | escape -}}]

@@ -1,0 +1,16 @@
+{%- comment %}
+/** Clean word processor characters out of string
+ * @property {string} 
+ */
+{% endcomment -%}
+{%- assign string = string | default: "" -%}
+{%- comment %} --- Remove "&nbsp;" --- {% endcomment -%}
+{%- assign string = string | replace: " " -%}
+{%- comment %} --- Strip whitespace from ends of string --- {% endcomment -%}
+{%- assign string = string | strip -%}
+{%- comment %} --- IF Downcase --- {% endcomment -%}
+{%- if lowercase == true -%}
+	{%- assign string = string | downcase -%}
+{%- endif -%}
+{%- comment %} --- Return String --- {% endcomment -%}
+{{- string -}}

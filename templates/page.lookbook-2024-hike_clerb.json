@@ -1,0 +1,734 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "lookbook_fullscreen_qng6Qh": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "1",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-191-web_f7e4c408-0b96-4f54-a39e-a1489a8dd942.jpg",
+        "caption": ""
+      }
+    },
+    "lookbook_two_col_x8CLcL": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_MaBwPc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HC_ladybug_1_a4f8543a-ef1e-45fe-b819-70d71932e41e.png",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_MaBwPc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 40,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "fd7a47c1-e10b-441a-8703-057e6b776d66": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3>Introducing a signature collection by <strong>Hike Clerb,<\/strong>  part of our ongoing partnership with the nonprofit organization.<\/h3>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 95,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_two_col_hCwnJw": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_8xnCxy": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-354-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_8xnCxy"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 60,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_33eqFj": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_B8YEX9": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5><strong>Hike Clerb<\/strong> is a decolonial BIWOC-led collective reimagining an <strong>equitable and inclusive outdoors. <\/strong><\/h5><h6>They equip Black, Indigenous and other racialized women, transgender, and gender nonconforming people with the tools, resources, education, and experiences they need to collectively heal in nature.<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_B8YEX9"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 95,
+        "flex": "center",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_two_col_9CFhAe": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_nUGcia": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Warp_Zone-971-RETOUCHED-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_heggiM": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-warp-zone-hike-clerb-pistachio-sport-wraparound-polarized-sunglasses-warp-zone-pistachio-polarized-green-mirror",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_nUGcia",
+        "product_widget_heggiM"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_one_column_richtext_nDfncw": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_MC6LgP": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3><strong>“When we create spaces through an intersectional lens that ensures safe access in the outdoors and care to Black and Brown people, everyone benefits as a result.” <\/strong><\/h3>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_xHzUgV": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>Evelynn Escobar, Hike Clerb Founder<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_QYj4Ax": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p>    <\/p><p>   <br\/>   <br\/>   <br\/>  <\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_MC6LgP",
+        "richtext_xHzUgV",
+        "richtext_QYj4Ax"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 75,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "lookbook_two_col_tPfHFp": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_afVDXL": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-557-web_PDP_lifestyle.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_zUK8pe": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-hike-clerb-dusty-seafoam-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_afVDXL",
+        "product_widget_zUK8pe"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 60,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_one_column_richtext_3Wrp7B": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_X6yCAX": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6><strong>20% of sales<\/strong> from this collection will be <strong>donated directly to Hike Clerb<\/strong> in support of their ongoing programming.<\/h6><h6><\/h6><h6>  <\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_fgJRDm": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/collections\/hike-clerb",
+            "text": "Shop Collection",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "button_LA49ni": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/givebutter.com\/hike-clerb",
+            "text": "Donate Directly",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_X6yCAX",
+        "button_fgJRDm",
+        "button_LA49ni"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 95,
+        "flex": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Heavy_Tropix_Sport-905-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_d6wdz3": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Heavy_Tropix_Sport-854-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_YK38Yd": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-sport-hike-clerb-faded-berry-bioacetate-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76",
+        "media_col_d6wdz3",
+        "product_widget_YK38Yd"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_pxQgiB": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Heavy_Tropix_Sport-687-web_a65f6aaa-dc60-4f1a-9edf-dbe70d038a8a.jpg",
+            "caption": "<p>Freseney in <a href=\"\/products\/the-heavy-tropix-sport-hike-clerb-faded-berry-bioacetate-polarized-sunglasses\" title=\"The Heavy Tropix Sport - Hike Clerb Faded Berry Bio Polarized\">The Heavy Tropix Sport<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_pxQgiB"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 60,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "89c87b31-894b-44a8-8b57-1f70ee859da0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_dJiMYV": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-343-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_X8qMqM": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-hike-clerb-dusty-seafoam-bioacetate-sunglasses",
+            "col": "0"
+          }
+        },
+        "media_col_8x4zjp": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-609-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_dJiMYV",
+        "product_widget_X8qMqM",
+        "media_col_8x4zjp"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_BBW67F": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_Nf4AFm": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-510-web.jpg",
+            "caption": "<p>Ann Krisha in <a href=\"\/products\/the-void-pixie-hike-clerb-dusty-seafoam-bioacetate-sunglasses\" title=\"The Void Pixie - Hike Clerb Dusty Aqua Bio\">The Void Pixie<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_Nf4AFm"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_6krWkt": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_CqdGLg": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Warp_Zone-155-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_PwnFHn": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-warp-zone-hike-clerb-pistachio-sport-wraparound-polarized-sunglasses-warp-zone-pistachio-polarized-green-mirror",
+            "col": "0"
+          }
+        },
+        "media_col_XwqpTR": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Warp_Zone-973-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_CqdGLg",
+        "product_widget_PwnFHn",
+        "media_col_XwqpTR"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_YzAzWD": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_7V9yMh": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Warp_Zone-971-RETOUCHED-web_d076d99a-6e0c-49b4-a73b-21cb878ea625.jpg",
+            "caption": "<p>Tamia in <a href=\"\/products\/the-warp-zone-hike-clerb-pistachio-sport-wraparound-polarized-sunglasses-warp-zone-pistachio-polarized-green-mirror\" title=\"The Warp Zone - Hike Clerb Matte Pistachio Polarized\">The Warp Zone<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_7V9yMh"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_G677Gk": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_YpK4k8": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Heavy_Tropix_Sport-Case-387-web.jpg",
+            "caption": "<p>Carabiner Case included with all styles<\/p>"
+          }
+        },
+        "product_widget_RTieYT": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-sport-hike-clerb-faded-berry-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_YpK4k8",
+        "product_widget_RTieYT"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_fHcd3P": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_PpbwAk": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Case-453-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_PpbwAk"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_ckXfQW": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_ge4cKW": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Case-470-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_ne84Ud": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Case-482-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_ge4cKW",
+        "media_col_ne84Ud"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Hike Clerb x Crap® Eyewear<br\/><\/strong>Shot on location in Southern California, 2024.<\/p><p><strong>Starring:<\/strong> Tamia Mathis (<a href=\"https:\/\/www.instagram.com\/tamiamathis?igsh=MzRlODBiNWFlZA%3D%3D\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/tamiamathis?igsh=MzRlODBiNWFlZA%3D%3D\">@tamiamathis<\/a>), Freseney Mengesha (<a href=\"https:\/\/www.instagram.com\/fresenay__?igsh=MzRlODBiNWFlZA%3D%3D\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/fresenay__?igsh=MzRlODBiNWFlZA%3D%3D\">@freseney_<\/a>) & Ann Krisha Buenaobra (<a href=\"https:\/\/www.instagram.com\/annkrisha_?igsh=MzRlODBiNWFlZA%3D%3D\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/annkrisha_?igsh=MzRlODBiNWFlZA%3D%3D\">@annkrisha_<\/a>)<br\/><strong>Photographer:<\/strong> Yasmína Antonio(<a href=\"https:\/\/www.instagram.com\/yasmeanuh?igsh=MzRlODBiNWFlZA%3D%3D\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/yasmeanuh?igsh=MzRlODBiNWFlZA%3D%3D\">@yasmeanuh<\/a>)<br\/><strong>Videographer:<\/strong> Amandla Baraka (<a href=\"https:\/\/www.instagram.com\/totheppl\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/totheppl\/\">@totheppl<\/a>)<br\/><strong>Creative Direction: <\/strong>Stephanie Sleiman (<a href=\"https:\/\/www.instagram.com\/ru7hte\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/ru7hte\/\">@ru7hte<\/a>)<br\/><strong>Executive Producer:<\/strong> Evelynn Escobar (<a href=\"https:\/\/www.instagram.com\/evelynnworld\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/evelynnworld\/\">@evelynnworld<\/a>)<br\/><strong>Stylist: <\/strong>Londyn Douglas (<a href=\"https:\/\/instagram.com\/londyndouglas\/\" target=\"_blank\" title=\"https:\/\/instagram.com\/londyndouglas\/\">@londyndouglas<\/a>)<\/p><p><\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fc209f1e-5112-4ec9-9322-6ce346334b64": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "marquee_card_EXVxxz": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Heavy_Tropix_Sport-look_02-Polar_Sangria-Polar_G15-2-web_lookbook_marquee.jpg",
+            "caption": "The Heavy Tropix Sport",
+            "url": "shopify:\/\/pages\/lookbooks-2024-ht-sport"
+          }
+        },
+        "marquee_card_9J3kMn": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-18-web_lookbook_grid.jpg",
+            "caption": "The No Wave",
+            "url": "https:\/\/www.crapeyewear.com\/pages\/lookbooks-2024-summer-no_wave"
+          }
+        },
+        "marquee_card_NGJ7wR": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-30-web_lookbooks_hero.jpg",
+            "caption": "The Glass Bubble",
+            "url": "shopify:\/\/pages\/lookbooks-glass-bubble"
+          }
+        },
+        "marquee_card_WJJNYq": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "caption": "Summer 2024",
+            "url": "shopify:\/\/pages\/lookbook-2024-summer"
+          }
+        },
+        "marquee_card_JHDwC6": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-iggy-lookbook-collage-Nico_3-web_lookbooks_carousel.jpg",
+            "caption": "iggy. x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/iggy"
+          }
+        },
+        "marquee_card_4hPiE7": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-No_Wave-Look_02-Licorice-Black_Tort-2-we_lookbooks_carousel.jpg",
+            "caption": "The No Wave",
+            "url": "shopify:\/\/pages\/lookbooks-no-wave"
+          }
+        },
+        "marquee_card_YPEH6G": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20-Crap_Eyewear-2024_Spring-Warp_Zone-look-03-Metallic_Olive-Black_Cherry-11-web_lookbooks_landing.jpg",
+            "caption": "The Warp Zone",
+            "url": "shopify:\/\/pages\/lookbooks-warp-zone"
+          }
+        },
+        "marquee_card_4B4Cdc": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond-web.jpg",
+            "caption": "Spring 2024",
+            "url": "shopify:\/\/pages\/lookbook-2024-spring"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lookbook_grid.jpg",
+            "caption": "The Marquee Rox",
+            "url": "shopify:\/\/pages\/lookbook-marquee-rox"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-5-web_lookbooks_hero_desktop_099dd0b6-924b-45f7-8bbc-812c2bd515ee.jpg",
+            "caption": "The Void Pixie",
+            "url": "shopify:\/\/pages\/lookbooks-void-pixie"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_card_EXVxxz",
+        "marquee_card_9J3kMn",
+        "marquee_card_NGJ7wR",
+        "marquee_card_WJJNYq",
+        "marquee_card_JHDwC6",
+        "marquee_card_4hPiE7",
+        "marquee_card_YPEH6G",
+        "marquee_card_4B4Cdc",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>More <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "lookbook_fullscreen_qng6Qh",
+    "lookbook_two_col_x8CLcL",
+    "fd7a47c1-e10b-441a-8703-057e6b776d66",
+    "lookbook_two_col_hCwnJw",
+    "module_one_column_richtext_33eqFj",
+    "lookbook_two_col_9CFhAe",
+    "module_one_column_richtext_nDfncw",
+    "lookbook_two_col_tPfHFp",
+    "module_one_column_richtext_3Wrp7B",
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb",
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc",
+    "89c87b31-894b-44a8-8b57-1f70ee859da0",
+    "lookbook_two_col_BBW67F",
+    "lookbook_two_col_6krWkt",
+    "lookbook_two_col_YzAzWD",
+    "lookbook_two_col_G677Gk",
+    "lookbook_two_col_fHcd3P",
+    "lookbook_two_col_ckXfQW",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "fc209f1e-5112-4ec9-9322-6ce346334b64",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

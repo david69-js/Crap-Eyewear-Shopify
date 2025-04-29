@@ -1,0 +1,19 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{%- comment %}
+/**
+ * @property {string} url
+ * @property {boolean} autoplay		autoplaying animation
+ * @property {number} framerate		speed of the animation, 1-100 divided by: 100
+ */
+{% endcomment -%}
+{%- liquid
+
+unless autoplay
+	assign autoplay = true
+endunless
+
+unless framerate
+	assign framerate = 100
+endunless
+-%}
+<lottie-file class="w-full" data-url="{{- url -}}" data-autoplay="{{- autoplay -}}" data-framerate="{{- framerate | divided_by: 100 -}}"></lottie-file>

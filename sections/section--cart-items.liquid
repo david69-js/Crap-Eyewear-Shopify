@@ -1,0 +1,242 @@
+<cart-wrapper>
+    <div class="h-full {%- if cart == empty %} hidden {% endif %}">
+        {%- assign form_id = section.id -%}
+        <form class="cart h-full pt-[90px] md:pt-[105px] px-[15px]" id="{{ form_id }}" action="{{ routes.cart_url }}" method="post">
+            <div class="flex flex-col overflow-auto h-full max-h-full relative">
+                {% comment %} Line Items {% endcomment %}
+                <div class="flex-1 overflow-auto relative bg-white">
+                    <div id="{{ form_id }}_screen" class="w-full h-full absolute top-0 left-0 z-10 bg-white bg-opacity-70 hidden" tabindex="-1"></div>
+                    <div id="{{ form_id }}_lines" class="">
+                        {%- for item in cart.items -%}
+                            {%- render "component--cart-line-item" 
+                                , item: item,
+                                form_id: form_id,
+                                currency: cart.currency,
+                                blocks: section.blocks,
+                                index: forloop.index -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+
+                <div class="col-span-12 mt-auto w-full bg-white">
+                    <div>
+                        <div class="border-t py-2 md:py-4">
+                            {% comment %} Calculate total discount: {% endcomment %}
+                            {% comment %} Cart level discount, such as BOGO or 20% off sitewide {% endcomment %}
+                            {% assign discount = cart.total_discount %}
+                                {% for item in cart.items %}
+                                {% comment %} Discounts that are manually applied at product level {% endcomment %}
+                                    {% if item.product.compare_at_price != blank %}
+                                    {% assign productDiscount = item.product.compare_at_price | minus: item.original_price | times: item.quantity %}
+                                {% else %}
+                                    {% assign productDiscount = 0 %}
+                                {% endif %}
+                                {% assign discount = discount | plus: productDiscount %}
+                            {% endfor %}
+
+                            {% if discount > 0 %}
+                                <div class="flex items-center justify-between md:mb-4">
+                                    <p>Discounts</p>
+                                    <p>-{{ discount | money }}</p>
+                                </div>
+                            {% endif %}
+
+                            <div class="flex items-center justify-between md:mb-4">
+                                <p>Subtotal</p>
+                                <p data-display-total>{{ cart.items_subtotal_price | money_without_trailing_zeros }}</p>
+                            </div>
+                            <div id="shipping-total" class="hidden items-center justify-between md:mb-4">
+                                <p>Shipping</p>
+                                <p>Free</p>
+                            </div>
+
+                            <div class="border-t text-center mt-2 py-2 md:py-4">
+                                <tool-tip class="block relative">
+                                    <div>4 payments of {{ cart.items_subtotal_price | divided_by: 4 | money }} with
+                                        <span class="underline hover-trigger cursor-pointer">Afterpay</span>
+                                    </div>
+                                    <div class="tooltip-el bottom-8 absolute opacity-0 z-10">
+                                        <div class="bg-white p-4 border border-off-black mt-4">
+                                            <p class="text-center">Afterpay is a tool that allows you to shop now and pay later in four equal installments every two weeks. For eligibility criteria and more details on how to use Afterpay see our
+                                                <a href="/pages/faq" class="underline">FAQ</a>.</p>
+                                        </div>
+                                    </div>
+                                </tool-tip>
+                                <p class="mt-1">Carbon neutral transaction</p>
+                            </div>
+                            <noscript>
+                                <button class="btn btn-secondary" type="submit" form="{{- form_id -}}">
+                                    Update
+                                </button>
+                            </noscript>
+                            <button id="checkout-btn" class="btn btn-primary max-w-none hover:[&>*]:fill-faded-lime" type="submit" name="checkout" form="{{- form_id -}}">
+                                Secure Checkout
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="15px" height="15px" class="ml-2 fill-off-black">
+                                    <path d="M 15 2 C 11.145666 2 8 5.1456661 8 9 L 8 11 L 6 11 C 4.895 11 4 11.895 4 13 L 4 25 C 4 26.105 4.895 27 6 27 L 24 27 C 25.105 27 26 26.105 26 25 L 26 13 C 26 11.895 25.105 11 24 11 L 22 11 L 22 9 C 22 5.2715823 19.036581 2.2685653 15.355469 2.0722656 A 1.0001 1.0001 0 0 0 15 2 z M 15 4 C 17.773666 4 20 6.2263339 20 9 L 20 11 L 10 11 L 10 9 C 10 6.2263339 12.226334 4 15 4 z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</cart-wrapper>
+{% style %}
+    cart-wrapper {
+        height: 100%;
+    }
+    #checkout-btn:hover svg {
+        fill: #DEFF7B;
+        transition: fill 0.25s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+{% endstyle %}
+
+<div id="cart-empty-state" class="min-h-full relative flex flex-col cx pt-[90px] pb-[15px] empty-state {% if cart != empty %} hidden {% endif %}" id="{{- section.id -}}_empty">
+    <div aria-label="You cart is empty :(" role="contentinfo" class="flex-1 flex items-center justify-center">
+        <p class="body text-[16px] text-center">Your cart is empty :(</p>
+    </div>
+    <div class="ca absolute left-0 right-0 bottom-0">
+        <a href="/collections/all" class="btn btn-primary !w-full !max-w-full mt-auto">Shop Now</a>
+    </div>
+</div>
+
+{%- comment -%}
+                    /**
+                     * Debug this object by using the render line
+                     */
+                    {%- render "debug--json", object: cart %}
+{%- endcomment -%}{% schema %}
+    {
+        "name": "Cart Line Items",
+        "class": "h-full flex flex-col tab-content tab-cart active",
+        "settings": [],
+        "blocks": [
+            {
+                "type": "@app"
+            },
+            {
+                "type": "title",
+                "name": "Title",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "t:settings_schema.components.settings.heading.content"
+                    }, {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            },
+            {
+                "type": "variant_title",
+                "name": "Variant Title",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            },
+            {
+                "type": "price",
+                "name": "t:sections.main-product.blocks.price.name",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            }, {
+                "type": "vendor",
+                "name": "t:sections.main-product.blocks.vendor.name",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            }, {
+                "type": "subscription_display",
+                "name": "t:sections.main-product.blocks.subscription_display.name",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            }, {
+                "type": "subscription_edit",
+                "name": "t:sections.main-product.blocks.subscription_edit.name",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "checkbox",
+                        "id": "show_interval",
+                        "label": "Show Interval Selection",
+                        "default": true
+                    }, {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            }, {
+                "type": "product_link",
+                "name": "t:sections.main-product.blocks.product_link.name",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "link_text",
+                        "label": "Link Text",
+                        "default": "View Details"
+                    }, {
+                        "type": "range",
+                        "id": "font_scale",
+                        "label": "Font Scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100
+                    }
+                ]
+            }
+        ],
+        "default": {}
+    }
+{% endschema %}

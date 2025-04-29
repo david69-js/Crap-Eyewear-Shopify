@@ -1,0 +1,141 @@
+{%- comment %}
+  /** @typedef {object} json
+  * @property {object[]} data  section.settings
+  * @property {string} animation
+  * @property {boolean} autoplay
+  * @property {boolean} centered
+  * @property {number} timing
+  * @property {boolean} loops
+  *
+  */
+{%- endcomment %}
+{%- liquid
+  assign animation = animation | default: 'slide'
+  assign autoplay = autoplay | default: false
+  assign centered = centered | default: false
+  assign direction = direction | default: 'horizontal'
+  assign height = height | default: false
+  assign timing = timing | default: 5000
+  assign loops = loops | default: false
+  assign speed = speed | default: 300
+  assign effect = effect
+  assign gutter = gutter | default: false
+  assign mobileOnly = mobileOnly | default: false
+  assign overflowHidden = overflowHidden | default: false
+  assign classes = classes | default: ''
+  assign subclasses = subclasses | default: ''
+  assign sliderClasses = sliderClasses | default: ''
+  assign sectionID = sectionID | default: false
+
+  assign pagination = pagination | default: false
+  assign paginationClasses = paginationClasses | default: ''
+  assign paginationType = paginationType | default: 'bullets'
+  assign arrows = arrows | default: false
+  assign scrollbar = scrollbar | default: false
+  assign thumbs = thumbs | default: false
+  assign mouse = mouse | default: true
+  assign isThumbnails = isThumbnails | default: false
+  assign slidesPerView = slidesPerView | default: 'auto'
+  assign slidesPerViewMobile = slidesPerViewMobile | default: 'auto'
+  assign initialSlide = initialSlide | default: 0
+  assign loadNext = loadNext | default: false
+  assign freeMode = free | default: false
+  assign draggable = true
+  if drag == false
+    assign draggable = false
+  endif
+-%}
+<carousel-wrapper
+  class="w-full {%- if classes != empty %} {{ classes -}} {%- endif -%}"
+  style="--progress-duration: {{ speed | plus: timing }}ms;"
+>
+  <div
+    class="slider {{ sliderClasses  }} {% if overflowHidden == true %} overflow-hidden {% endif %}"
+    data-load-next="{{ loadNext  }}"
+    data-section="{{- sectionID -}}"
+    data-animation-type="{{- animation -}}"
+    data-timing="{{- timing -}}"
+    data-initial-slide="{{- initialSlide -}}"
+    data-slides-per-view="{{- slidesPerView -}}"
+    data-slides-per-view-mobile="{{- slidesPerViewMobile -}}"
+    data-speed="{{- speed -}}"
+    {% if loops == true %}
+      data-loops
+    {% endif %}
+    {% if loadPrevNext == true %}
+      data-loadprevnext
+    {% endif %}
+    {% if mouse == true %}
+      data-mouse
+    {% endif %}
+    {% if freeMode == true %}
+      data-free
+    {% endif %}
+    {% if centered == true %}
+      data-centered
+    {% endif %}
+    {% if draggable == true %}
+      data-drag
+    {% endif %}
+    {% if isThumbnails == true %}
+      thumbsSlider=""
+    {% endif -%}
+    {% if autoplay == true %}
+      data-autoplay
+    {% endif %}
+    {% if height != false %}
+      data-height="{{- height -}}"
+    {% endif %}
+    {% if mobileOnly == true %}
+      data-mobile-only="mobile-only"
+    {% endif %}
+    {% if effect != blank %}
+      data-effect="{{- effect -}}"
+    {% endif -%}
+    {% if gutter != blank %}
+      data-gutter="{{- gutter -}}"
+    {% endif -%}
+    {% if thumbs != blank %}
+      data-thumbs-selector="{{- thumbs -}}"
+    {% endif -%}
+    {% if direction != false %}
+      data-direction="{{- direction -}}"
+    {% endif %}
+    {% if onClick != blank %}
+      data-click="{{- onClick -}}"
+    {% endif %}
+  >
+    <div class="slider-slides {{ subclasses -}}">
+      {{- slot -}}
+    </div>
+
+    {%- if pagination != false and paginationType == 'bullets' -%}
+      <div class="slider-pagination z-10 p-4 absolute w-full bottom-0 flex {{ paginationClasses }}"></div>
+    {%- endif -%}
+    {%- if scrollbar != false -%}
+      <div class="slider-scrollbar"></div>
+    {%- endif -%}
+  </div>
+  {%- if arrows != false -%}
+    {% if arrows == 'taparea' %}
+      <div class="slider-buttons cursor-pointer absolute w-full h-full z-10 left-0 top-0 opacity-50">
+        <div class="slider-button-prev w-1/2 h-full absolute left-0"></div>
+        <div class="slider-button-next w-1/2 h-full absolute left-1/2"></div>
+      </div>
+    {% else %}
+      <div class="slider-buttons">
+        <div class="slider-button-prev">
+          {% render 'icon--arrow-prev' %}
+        </div>
+
+        {%- if pagination != false and paginationType == 'fraction' -%}
+          <div class="slider-pagination-fraction-{{sectionID}} px-2"></div>
+        {%- endif -%}
+
+        <div class="slider-button-next">
+          {% render 'icon--arrow-next' %}
+        </div>
+      </div>
+    {% endif %}
+  {%- endif -%}
+</carousel-wrapper>

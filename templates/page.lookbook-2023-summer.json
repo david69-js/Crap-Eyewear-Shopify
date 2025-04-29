@@ -1,0 +1,750 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><\/h1><h1><\/h1><h1><em>Summer<\/em> 2023<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=a3PUM6DjD6E",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "6b2bb36c-40bd-41f2-9ae7-95984fed8a12": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ed5e062c-9449-475f-8dda-3b09bdb5ecb9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-07-web.jpg",
+            "caption": ""
+          }
+        },
+        "a07f039b-7e2e-4a02-bb71-b99d85b5148e": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-08-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "ed5e062c-9449-475f-8dda-3b09bdb5ecb9",
+        "a07f039b-7e2e-4a02-bb71-b99d85b5148e"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "4778099d-aaef-4318-9c49-5a641d0e5cfa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "943b0319-3b53-431b-8ab8-197bf05a10c7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "c0d7df4a-e03f-4d05-ac3a-3180810893c9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-06-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "943b0319-3b53-431b-8ab8-197bf05a10c7",
+        "c0d7df4a-e03f-4d05-ac3a-3180810893c9"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "c268be1c-6f92-410c-94f4-1353f7cb9474": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-product-10-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "1f78f923-e8d5-46b5-bf44-cbdd0dbbc83c": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-funk-punk-smoke-tortoise-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0",
+        "1f78f923-e8d5-46b5-bf44-cbdd0dbbc83c"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "3beb77a1-1ac8-4c8d-85e4-1fa3d3df70c3": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e079d129-5152-430e-b54c-6802269326fc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-02-web.jpg",
+            "caption": ""
+          }
+        },
+        "245a2edd-a9f8-46f9-918b-708ea3ba92e5": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-blonde-tortoise-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "e079d129-5152-430e-b54c-6802269326fc",
+        "245a2edd-a9f8-46f9-918b-708ea3ba92e5"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "e78b027c-3043-43b1-b857-ee2c5198169e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "b11d4980-b4ac-419d-8a41-7ff3bf6aca08": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-03-web.jpg",
+            "caption": ""
+          }
+        },
+        "46742201-1884-43d4-bb2a-080dd0bb241a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-15-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "b11d4980-b4ac-419d-8a41-7ff3bf6aca08",
+        "46742201-1884-43d4-bb2a-080dd0bb241a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-10-web.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-funk-punk-smoke-tortoise-bioacetate-polarized-sunglasses\" title=\"The Funk Punk - Smoke Tortoise Bio Polarized\">The Funk Punk<\/a>, <a href=\"\/products\/the-heavy-tropix-blonde-tortoise-bioacetate-polarized-sunglasses\" title=\"The Heavy Tropix - Blonde Tortoise Bio Polarized\">The Heavy Tropix<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b66eedf6-df64-4f5c-9b5d-af194dec4cba": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "003235d5-e23f-43e8-ae9c-b745553e79da": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-11-web.jpg",
+            "caption": ""
+          }
+        },
+        "66905e06-70ca-4d73-be41-dc821ca2af96": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-12-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "003235d5-e23f-43e8-ae9c-b745553e79da",
+        "66905e06-70ca-4d73-be41-dc821ca2af96"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "5a971678-587b-486f-a267-c08cc9802b61": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "a51e9f45-bec1-4fad-a01d-06c2c4ea69f0": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-04-web.jpg",
+            "caption": ""
+          }
+        },
+        "f65c1d9e-4fec-440e-8a8e-eca2047506d1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-product-03-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "9b0a4f69-8fbc-4b24-81f2-e17d4a7b8877": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-spaced-ranger-mauve-rose-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "a51e9f45-bec1-4fad-a01d-06c2c4ea69f0",
+        "f65c1d9e-4fec-440e-8a8e-eca2047506d1",
+        "9b0a4f69-8fbc-4b24-81f2-e17d4a7b8877"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "2492211f-7ec0-4512-8490-214c0a6fac50": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ec59ee31-38f2-4d07-8b20-2725217257da": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-01-insta-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "ec59ee31-38f2-4d07-8b20-2725217257da"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f3104c75-b75f-4e7a-8351-203dd2936139": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-02-web.jpg",
+            "caption": ""
+          }
+        },
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-product-01-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "c6121c7a-50f5-46be-94e4-7673b5393f67": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-blonde-tortoise-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b",
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55",
+        "c6121c7a-50f5-46be-94e4-7673b5393f67"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "63d612fe-5378-440f-97db-f4902986d29a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "c2910479-988a-427c-b4c0-7cd479728216": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-03-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "c2910479-988a-427c-b4c0-7cd479728216"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6c7dbbb4-7e5e-4c3a-a224-f565f703d2f0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "38bef947-fbf5-4889-a046-204ea5e4c81d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-7-web.jpg",
+            "caption": ""
+          }
+        },
+        "06f2a60a-a329-4591-a6cd-be4c48db5f38": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look1-9-web_ceb34431-4b15-4941-94b9-aa91edc3fa5a.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "38bef947-fbf5-4889-a046-204ea5e4c81d",
+        "06f2a60a-a329-4591-a6cd-be4c48db5f38"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "2a86fe99-c6c6-4246-89cf-590a2b6ff9fc": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f20bea94-6c91-46b7-aa7d-5c1d428e3c18": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look2-02-web.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-head-rattle-black-flames-bioacetate-sunglasses\" title=\"The Head Rattle - Black Flames Bio\">The Head Rattle<\/a>, <a href=\"\/products\/the-chaos-vault-limeade-glitter-bioacetate-wraparound-sunglasses\" title=\"The Chaos Vault - Limeade Glitter Bio\">The Chaos Vault<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f20bea94-6c91-46b7-aa7d-5c1d428e3c18"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look2-04-web.jpg",
+            "caption": ""
+          }
+        },
+        "40798995-7947-4c4c-b2eb-2da608c681d4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-product-06-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "5a930b91-a7d8-40aa-b478-1c18ad0ca797": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-head-rattle-black-flames-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf",
+        "40798995-7947-4c4c-b2eb-2da608c681d4",
+        "5a930b91-a7d8-40aa-b478-1c18ad0ca797"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "0d67df41-71fa-4c32-ab17-c4b435ebcc83": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "a21f1029-87e4-4e8b-8de6-deb86472b30a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look2-11-web.jpg",
+            "caption": ""
+          }
+        },
+        "f9428348-8078-49a7-8f46-de7b262532ce": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look2-03-insta-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "a21f1029-87e4-4e8b-8de6-deb86472b30a",
+        "f9428348-8078-49a7-8f46-de7b262532ce"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "b81e283c-e8e5-4661-a9bd-df112d802e70": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-04-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "1300bc44-a51d-4312-b553-3b17898ea008": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "6c51c761-d354-41bc-b68b-2488f04ad6c7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-01-web.jpg",
+            "caption": ""
+          }
+        },
+        "aa6c2210-dd1d-4ec1-82de-4ff8e2363840": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-03-web.jpg",
+            "caption": ""
+          }
+        },
+        "637fae7d-c44c-4b20-8383-e34d86a8f28d": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-funk-punk-smoke-tortoise-bioacetate-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "6c51c761-d354-41bc-b68b-2488f04ad6c7",
+        "aa6c2210-dd1d-4ec1-82de-4ff8e2363840",
+        "637fae7d-c44c-4b20-8383-e34d86a8f28d"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "034e7096-83f8-4c99-8586-0464c7757e20": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "cc07c09c-9ae6-4644-aff1-3ab7cd24dd03": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-06-web.jpg",
+            "caption": ""
+          }
+        },
+        "b9f0d975-7c68-45e1-8886-7c7e1d874785": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "9afc8668-9c58-40ae-9257-70187e483803": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-spaced-ranger-mauve-rose-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "cc07c09c-9ae6-4644-aff1-3ab7cd24dd03",
+        "b9f0d975-7c68-45e1-8886-7c7e1d874785",
+        "9afc8668-9c58-40ae-9257-70187e483803"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "1879d6f5-1750-43c1-a98d-14cb44d95c56": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bc594b2e-189b-416b-a690-5b3e739e4eab": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-11-web.jpg",
+            "caption": ""
+          }
+        },
+        "97f38428-5d8c-4504-b183-f1d2ecb7269a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look3-12-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bc594b2e-189b-416b-a690-5b3e739e4eab",
+        "97f38428-5d8c-4504-b183-f1d2ecb7269a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "new-arrivals",
+        "cta_url": "",
+        "cta_text": "Shop New",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Summer 2023 Lookbook<\/strong><br\/>Shot on location in Los Angeles, 2023.<\/p><p>Starring: Maleah Goldberg (<a href=\"https:\/\/www.instagram.com\/maleah.goldberg\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/maleah.goldberg\/\">@maleah<\/a>) & Gilbert Wallace (<a href=\"https:\/\/www.instagram.com\/gilberttwallace\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/gilberttwallace\/\">@gilberttwallace<\/a>)<br\/>Photographer: Tony Accosta<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marley.arviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marley.arviso\/\">@marley.arviso<\/a>) & Tony Accosta<br\/>Styling: Kailee Takashima (<a href=\"https:\/\/www.instagram.com\/kaileetakashima\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/kaileetakashima\/\">@kaileetakashima<\/a>)<br\/>Video & Edit: Cole Walton (<a href=\"https:\/\/www.instagram.com\/colewaltonbro\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/colewaltonbro\/\">@colewaltonbro<\/a>)<br\/>Song: 'Things You Don't Say' by Real Action feat. JONES (<a href=\"https:\/\/www.instagram.com\/_realaction\/?hl=en\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/_realaction\/?hl=en\">@_realaction<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/lookbooks-hot-lava-2023"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "7772ca3d-f499-4e62-9134-c65c0f389197"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><\/h1><h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "6b2bb36c-40bd-41f2-9ae7-95984fed8a12",
+    "4778099d-aaef-4318-9c49-5a641d0e5cfa",
+    "c268be1c-6f92-410c-94f4-1353f7cb9474",
+    "3beb77a1-1ac8-4c8d-85e4-1fa3d3df70c3",
+    "e78b027c-3043-43b1-b857-ee2c5198169e",
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa",
+    "b66eedf6-df64-4f5c-9b5d-af194dec4cba",
+    "5a971678-587b-486f-a267-c08cc9802b61",
+    "2492211f-7ec0-4512-8490-214c0a6fac50",
+    "f3104c75-b75f-4e7a-8351-203dd2936139",
+    "63d612fe-5378-440f-97db-f4902986d29a",
+    "6c7dbbb4-7e5e-4c3a-a224-f565f703d2f0",
+    "2a86fe99-c6c6-4246-89cf-590a2b6ff9fc",
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49",
+    "0d67df41-71fa-4c32-ab17-c4b435ebcc83",
+    "b81e283c-e8e5-4661-a9bd-df112d802e70",
+    "1300bc44-a51d-4312-b553-3b17898ea008",
+    "034e7096-83f8-4c99-8586-0464c7757e20",
+    "1879d6f5-1750-43c1-a98d-14cb44d95c56",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

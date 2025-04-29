@@ -1,0 +1,67 @@
+{%- comment %}
+/**
+ * @property {integer} index
+ * @property {integer} offset
+ * @property {string} type
+ * @property {object[]} data
+ * @property {string} data.nav_label
+ * @property {string} data.nav_url
+ * @property {string} data.nav_list
+ * @property {string} data.nav_columns
+ * @property {string} data.font_color
+ * @property {string} data.background_color
+ */
+{% endcomment -%}
+{%- liquid
+
+%}
+<nav role="navigation" aria-label="Search" data-index="{{ index }}">
+	<div class="ml-7 -mr-2 relative cursor-pointer" tabindex="0">
+		<div class="w-10 h-10 flex items-center justify-center">
+			<div class="w-[18px] h-[19px]">
+				{%- render "icon--search" %}
+			</div>
+		</div>
+	</div>
+
+	{%- comment %} --- Mega Menu --- {%- endcomment %}
+	<div class="menu absolute w-full h-0 invisible flex items-end left-0 overflow-hidden top-[{{ offset }}px]" style="color:#1e1e1e;background:#FFFFFF;">
+		<div class="cx-1/2 cy-1/2 w-full flex flex-col justify-center">
+			<site-search class="w-full m-auto" data-type="{%- if settings.predictive_search_enabled -%}predictive{%- else -%}search{%- endif -%}">
+				<form action="{{ routes.search_url }}" method="get" role="search" class="search">
+					<div class="flex flex-grow items-center max-w-[600px] w-full m-auto relative">
+						{%- render "component--input-search" %}
+						{%- comment %} --- Predictive Search --- {%- endcomment %}
+						{%- if settings.predictive_search_enabled %}
+							<div id="predictive-search"></div>
+						{%- endif -%}
+						<input type="hidden" name="options[prefix]" value="last" />
+						<button class="" type="submit" aria-label="{{ "general.search.search" | t }}">
+							<div class="w-10 h-10 flex items-center justify-center">
+								<div class="w-[18px] h-[19px]">
+									{%- render "icon--search" %}
+								</div>
+							</div>	
+						</button>
+
+						{%- comment %} --- Predictive Search --- {%- endcomment %}
+						{%- if settings.predictive_search_enabled %}
+
+							<div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+								<div class="predictive-search__loading-state">
+									<svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+										<circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+									</svg>
+								</div>
+							</div>
+
+							<span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+						{%- endif -%}
+					</div>
+				</form>
+			</site-search>
+		</div>
+	</div>
+
+	{%- render "schema--search" -%}
+</nav>

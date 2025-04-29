@@ -1,0 +1,32 @@
+{%- assign title_format = product.title | split: '-' -%}
+{%- assign showPrice = showPrice | default: false -%}
+{%- assign imgClass = imgClass | default: '' -%}
+
+<div class="product-card flex flex-wrap relative product-{{- product.handle -}}" data-handle="{{- product.handle -}}">
+    <a class="block basis-full" href="{{product.url}}">
+        <img class="w-full h-auto" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}" src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.featured_image.alt }}">
+    </a>
+    <div class="product-card-caption pt-[10px] basis-full">
+        <div class="flex items-center justify-between relative z-[3]">
+            <p class="title grotesk-bold text-[14px] dk:text-[18px] max-w-[calc(100%-23px)]">{{ title_format[0] }}</p>
+            <div class="favorite-btn favorite-wrapper absolute right-[5px] dk:right-[10px] -top-[5px]">
+                <favorite-button>
+                    <button aria-label="{{aria_label}}" class="w-4 h-4 favorite-button is-favorite" data-customer="{{customer.id}}" data-favorites='{{ customer.metafields.customer_fields.favorites }}' data-handle="{{product.handle}}" data-route="{{ routes.account_login_url }}">
+                        <span>{% render "icon--heart" %}</span>
+                    </button>
+                </favorite-button>
+            </div>
+        </div>
+        {% if product.metafields.custom.variant_short_title != empty %}
+            <p class="text-[12px] dk:text-[14px]">
+                {% if product.tags contains "badge: bioacetate" %}
+                    {% render "icon--bio" %}{% endif %}
+                {{ product.metafields.custom.variant_short_title }}</p>
+        {% endif %}
+    </div>
+    <div class="flex items-center justify-between atc-wrap mt-2 dk:mt-[30px] basis-full self-end">
+        <div class="grow">
+            {%- render 'component--add-to-cart' product: product, btn_classes: "btn-secondary w-full fave-btn" -%}
+        </div>
+    </div>
+</div>

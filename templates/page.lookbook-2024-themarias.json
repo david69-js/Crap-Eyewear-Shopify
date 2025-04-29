@@ -1,0 +1,624 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "44876b03-1bba-4bfe-a900-8b35c4ed5d86": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>SUBMARINE<\/strong><br\/>by<em> The<\/em> Marías<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "f8cfeb1f-0b44-441e-9a25-fc6799b198af": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-11-restock-web.jpg",
+        "caption": ""
+      }
+    },
+    "fd7a47c1-e10b-441a-8703-057e6b776d66": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Introducing CINEMA, a signature frame by The Marías.<br\/><br\/>Inspired by band’s most recent record, CINEMA is a sleek oval silhouette steeped in timeless silver screen elegance. The frame features Crap’s biodegradable bioacetate frame construction, and is available now in Black (\"Side A”) and Cream (“Side B”).<br\/><br\/>The Marías have been longtime Crap supporters, so this project is a special one &lt;3<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-15-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "4d138d53-7f23-4449-8aad-cf88d9179882": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6>The Marías are the psychedelic-soul lovechild of Puerto Rican-bred, Atlanta-raised María Zardoya and Los Angeles native, Josh Conway. Drawing inspiration from both their vastly diverse backgrounds and the intimacy of their mystic Hollywood Hills commune, Josh and María write, record, and produce within the walls of their own home with their dog, Lucy.<br\/><br\/>In their live show, with María on lead vocals and Josh on drums, the couple is joined by their closest friends. On guitar, Jesse Perlman, born and bred of LA, with ‘tones that can melt steel,’ say his bandmates. On keys, Edward James.<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "4d138d53-7f23-4449-8aad-cf88d9179882"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-14-web.jpg",
+            "caption": ""
+          }
+        },
+        "ebe8df0e-085e-4869-9aab-3766f4d96eb2": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-18-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76",
+        "ebe8df0e-085e-4869-9aab-3766f4d96eb2"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "bb652183-d069-4bd2-90dd-39a0332ffbde": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "46e05494-ad37-4fef-b4df-8df75d0da7f5": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-17-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "46e05494-ad37-4fef-b4df-8df75d0da7f5"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "77af1673-6c32-4e4e-a77a-363145146504": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "dda303c5-7b82-4345-8dcc-4d59e8277e83": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-marias-cinema-side-a-black-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "dda303c5-7b82-4345-8dcc-4d59e8277e83"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-09-web.jpg",
+        "caption": ""
+      }
+    },
+    "4ccdc13c-8cef-4ec3-b38c-715d4515c64a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e47b74d3-ae14-4d81-bfae-4f547fb30c53": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-20-web.jpg",
+            "caption": ""
+          }
+        },
+        "e024b7c1-a62c-48d5-a04b-a1ea7bfe76ca": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-19-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "e47b74d3-ae14-4d81-bfae-4f547fb30c53",
+        "e024b7c1-a62c-48d5-a04b-a1ea7bfe76ca"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "cinema-by-the-marias",
+        "collection_video": "shopify:\/\/files\/videos\/crap_eyewear-2022_Cinema-side-a_black_bio-webres_alt.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>“Our very own CINEMA sunglasses to celebrate CINEMA's one year! Side A in black and Side B in cream. This is a dreammmm come true as we’ve been wearing their sunglasses for the longest time.”<\/strong><\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "26f871dc-972d-487e-8295-2c55f148d648": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6>The Marías<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3",
+        "26f871dc-972d-487e-8295-2c55f148d648"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "89c87b31-894b-44a8-8b57-1f70ee859da0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0c45c555-8df7-4dda-866e-1cb0a90fc97d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-08-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "0c45c555-8df7-4dda-866e-1cb0a90fc97d"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0097b9fa-ad39-4aa4-ae86-8deb504c58a3": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-07-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "0097b9fa-ad39-4aa4-ae86-8deb504c58a3"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "bc5ced0c-9ce4-41f3-af91-71dea78873be": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "3e23ab7c-b20d-4143-b016-0844f9f660df": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-06-web.jpg",
+            "caption": ""
+          }
+        },
+        "0889d82a-40a4-48fe-94cf-b396d7ae8b8d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-05-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "3e23ab7c-b20d-4143-b016-0844f9f660df",
+        "0889d82a-40a4-48fe-94cf-b396d7ae8b8d"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "b27e329d-c87f-4ec1-97c8-aeb8946b52eb": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "ff893898-de8a-498e-bbc6-7da5e4a9f60e": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-marias-cinema-side-b-cream-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "ff893898-de8a-498e-bbc6-7da5e4a9f60e"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-13-restock-web.jpg",
+        "caption": ""
+      }
+    },
+    "612bb351-3678-43eb-a52c-7be0901c60b2": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "eb0e88ab-b037-4bd5-99eb-e7f6d7d7900d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-21-web.jpg",
+            "caption": ""
+          }
+        },
+        "67e91bb5-37d2-4c90-b56e-b86c593568bd": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-22-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "eb0e88ab-b037-4bd5-99eb-e7f6d7d7900d",
+        "67e91bb5-37d2-4c90-b56e-b86c593568bd"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "cd4034b2-a861-475a-997f-94820c98d54f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "38d15fdf-ea77-45da-8dba-2a655522f581": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-23-web_111d589b-7343-49b0-beba-7717633d83ea.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "38d15fdf-ea77-45da-8dba-2a655522f581"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "4e77ce5e-263f-4046-88ef-a66960129f01": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f0f0852b-ba66-4bb3-b544-b6a0aa8de734": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-25-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f0f0852b-ba66-4bb3-b544-b6a0aa8de734"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "22691af4-5827-431f-a7ce-f518453845a8": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-24-web.jpg",
+        "caption": ""
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Collection",
+        "collection_source": "cinema-by-the-marias",
+        "cta_url": "",
+        "cta_text": "Shop Frame",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6><strong>CINEMA by The Marías<br\/><\/strong>Shot on location in Hollywood, CA, 2022.<\/h6><h6>Starring: The Marías (<a href=\"https:\/\/www.instagram.com\/themarias\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/themarias\/\">@themarias<\/a>)<br\/>Photographer: Ashley Olah (<a href=\"https:\/\/www.instagram.com\/ashleydarianolah\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/ashleydarianolah\/\">@ashleydarianolah<\/a>)<br\/>Stylist: Harper Slate (<a href=\"https:\/\/www.instagram.com\/harperslate\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/harperslate\/\">@harperslate<\/a>)<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fc209f1e-5112-4ec9-9322-6ce346334b64": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/lookbooks-hot-lava-2023"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook-old"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        }
+      },
+      "block_order": [
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>More <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "44876b03-1bba-4bfe-a900-8b35c4ed5d86",
+    "main",
+    "f8cfeb1f-0b44-441e-9a25-fc6799b198af",
+    "fd7a47c1-e10b-441a-8703-057e6b776d66",
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00",
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81",
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb",
+    "bb652183-d069-4bd2-90dd-39a0332ffbde",
+    "77af1673-6c32-4e4e-a77a-363145146504",
+    "4ccdc13c-8cef-4ec3-b38c-715d4515c64a",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919",
+    "89c87b31-894b-44a8-8b57-1f70ee859da0",
+    "ac412e97-1e25-4c70-b512-c79c354fa2fc",
+    "bc5ced0c-9ce4-41f3-af91-71dea78873be",
+    "b27e329d-c87f-4ec1-97c8-aeb8946b52eb",
+    "612bb351-3678-43eb-a52c-7be0901c60b2",
+    "cd4034b2-a861-475a-997f-94820c98d54f",
+    "4e77ce5e-263f-4046-88ef-a66960129f01",
+    "22691af4-5827-431f-a7ce-f518453845a8",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "fc209f1e-5112-4ec9-9322-6ce346334b64",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

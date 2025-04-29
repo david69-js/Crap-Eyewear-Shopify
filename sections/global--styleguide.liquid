@@ -1,0 +1,219 @@
+<div class="w-full m-auto max-w-[1440px] cy">
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Primary Brand Typeface</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    <div class="flex">
+        <div class="w-full dk:w-1/2">
+            <h1 class="font-primary">Alte Haas Grotesk</h1>
+        </div>
+        <div class="w-full dk:w-1/2">
+            <h3 class="font-primary break-words">
+                Alte Haas Grotesk Regular AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+            </h3>
+            <h3 class="font-primary grotesk-bold break-words">
+                Alte Haas Grotesk Bold AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+            </h3>
+        </div>
+    </div>
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Secondary Brand Typeface</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    <div class="flex">
+        <div class="w-full dk:w-1/2">
+            <h1 class="font-secondary">Courier New</h1>
+        </div>
+        <div class="w-full dk:w-1/2">
+            <h3 class="font-secondary break-words">
+                Courier New Regular AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+            </h3>
+        </div>
+    </div>
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Tertiary Brand Typeface</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    <div class="flex">
+        <div class="w-full dk:w-1/2">
+            <h1 class="font-script">Brush Script STD</h1>
+        </div>
+        <div class="w-full dk:w-1/2">
+            <h3 class="font-script break-words">
+                Brush Script STD Medium AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+            </h3>
+        </div>
+    </div>
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Mixed Product Title</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    <div class="flex mb-4">
+        {% render 'component--product-title' title: 'The Heavy Tropix' %}
+    </div>
+    <div class="flex mb-4">
+        {% render 'component--product-title' title: 'The Prima Donna by Emma Chamberlain' %}
+    </div>
+    <div class="flex mb-4">
+        {% render 'component--product-title' title: 'Cinema by The Marías' %}
+    </div>
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Primary Color</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    {% capture brandColorsEl %}
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">White</p>
+            <div class="bg-white pb-[100%] border border-gray-300"></div>
+        </div>
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">Off Black</p>
+            <div class="bg-off-black pb-[100%] border border-gray-300"></div>
+        </div>
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">faded lime</p>
+            <div class="bg-faded-lime pb-[100%] border border-gray-300"></div>
+        </div>
+    {% endcapture %}
+    {% render "slot--grid", cols: "3", slot: brandColorsEl, gaps: "5" %}
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Color</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+    {% capture slottedEl %}
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">Magenta</p>
+            <div class="bg-Magenta h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">Yellow</p>
+            <div class="bg-yellow h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">Blue</p>
+            <div class="bg-blue h-10 border border-gray-300"></div>
+        </div>
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">Burnt Orange</p>
+            <div class="bg-burnt-orange h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">Olive</p>
+            <div class="bg-olive h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">Purple</p>
+            <div class="bg-purple h-10 border border-gray-300"></div>
+        </div>
+        <div class="grid-cols-1">
+            <p class="uppercase text-[11px]">Orange</p>
+            <div class="bg-orange h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">Cyan</p>
+            <div class="bg-cyan h-10 border border-gray-300"></div>
+            <p class="mt-4 uppercase text-[11px]">bubblegum</p>
+            <div class="bg-bubblegum h-10 border border-gray-300"></div>
+        </div>
+    {% endcapture %}
+    {% render "slot--grid", cols: "3", slot: slottedEl, gaps: "5" %}
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Heirarchy</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+
+    <h4 class="mb-4 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 1 — H1</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h1 class="xl-h">
+        XL Head
+    </h1>
+    <h1 class="xl-h grotesk-bold">
+        XL Head
+    </h1>
+
+    <h4 class="mb-4 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 1 — H1</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h1>
+        Headline 1
+    </h1>
+    <h1 class="grotesk-bold">
+        Headline 1
+    </h1>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 2 — H2</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h2>
+        Lorem ipsum
+    </h2>
+    <h2 class="grotesk-bold">Lorem Ipsum</h2>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 3 — H3</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h3>
+        Lorem ipsum
+        <br>
+        Lorem ipsum
+    </h3>
+    <h3 class="grotesk-bold">Lorem Ipsum</h3>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 4 — H4</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h4>
+        Lorem ipsum
+        <br>
+        Lorem ipsum
+    </h4>
+    <h4 class="grotesk-bold">Lorem Ipsum</h4>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 5 — H5</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h5>
+        Lorem ipsum dolor sit amet
+        <br>
+        Lorem ipsum dolor sit amet
+    </h5>
+    <h5 class="grotesk-bold">Lorem Ipsum</h5>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Heading 6 — H6</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <h6>
+        Lorem ipsum dolor sit amet
+        <br>
+        Lorem ipsum dolor sit amet
+    </h6>
+    <h6 class="grotesk-bold">Lorem Ipsum</h6>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Body</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque justo tellus, mattis ac nisl ut, bibendum blandit quam.
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque justo tellus, mattis ac nisl ut, bibendum blandit quam.
+    </p>
+
+    <h4 class="mb-4 mt-8 font-body grotesk-bold eyebrow text-[11px] leading-[12px] uppercase">Utility</h4>
+    <div class="mb-4 bg-gray-300 w-full h-px"></div>
+    <p class="utility">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque justo tellus, mattis ac nisl ut, bibendum blandit quam.
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque justo tellus, mattis ac nisl ut, bibendum blandit quam.
+    </p>
+
+    <h3 class="mb-4 mt-20 font-body grotesk-bold eyebrow text-[13px] leading-[14px] uppercase">Buttons</h3>
+    <div class="mb-20 bg-black w-full h-px"></div>
+    {% capture slottedEl %}
+        <div class="col-span-1">
+            <button class="btn btn-primary">Button — Primary</button>
+            <button class="btn mt-4 btn-secondary">Button — Secondary</button>
+            <a class="btn mt-4 btn-tertiary" class="javascript:void(0);">Button — Tertiary</a>
+        </div>
+        <div class="col-span-1">
+            <button class="btn btn-quarternary">Button — Quaternary</button>
+            <button class="btn mt-4 btn-quinary">Button — Quinary</button>
+            <a class="btn mt-4 btn-outline" class="javascript:void(0);">Button — Outline</a>
+        </div>
+    {% endcapture %}
+    {% render "slot--grid", cols: "1,1,1,2", slot: slottedEl, gaps: "5,5,10" %}
+
+</div>
+
+{% schema %}
+    {
+        "name": "Styleguide",
+        "tag": "section",
+        "settings": [],
+        "presets": [
+            {
+                "name": "Styleguide"
+            }
+        ]
+    }
+{% endschema %}

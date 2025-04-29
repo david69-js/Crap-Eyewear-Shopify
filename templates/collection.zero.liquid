@@ -1,0 +1,621 @@
+{% include 'shogun-products', content: collection %}
+{{collection.metafields.shogun.above}}
+
+
+
+<div id="collection-zero">
+  {% include 'zero-flower' %}
+
+  <!--                 FIXED ELEMENTS HERE                      -->
+
+
+  <section id="pnp-offscreen-wrapper" class="">
+    <div id="pnp-slide-bg"></div>
+    {% unless collection.metafields.c_f['Section 1 Popup Video 1'] == blank and collection.metafields.c_f['Section 1 Popup Image 1'] == blank %}
+      <div class="pnp-slide-deck">
+        <div class="pnp-slide-deck-wrapper">
+          <div class="pnp-slide is-first is-selected">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 1 Popup Product 1']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 1 Popup Image 1'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video class="preload" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 1 Popup Video 1'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 1 Popup Video 1'] }}">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap  slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 1 Popup Image 1'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% unless collection.metafields.c_f['Section 1 Popup Video 2'] == blank and collection.metafields.c_f['Section 1 Popup Image 2'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 1 Popup Product 2']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 1 Popup Image 2'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 1 Popup Video 2'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 1 Popup Image 2'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+        {% unless collection.metafields.c_f['Section 1 Popup Video 3'] == blank and collection.metafields.c_f['Section 1 Popup Image 3'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 1 Popup Product 3']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 1 Popup Image 3'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 1 Popup Video 3'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 1 Popup Image 3'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+
+        </div>
+        <button class="arrow arrow-back">{% include 'zero-slider-left' %}</button>
+        <button class="arrow arrow-forward">{% include 'zero-slider-right' %}</button>
+      </div>
+    {% endunless %}
+
+    {% unless collection.metafields.c_f['Section 2 Popup Video 1'] == blank and collection.metafields.c_f['Section 2 Popup Image 1'] == blank %}
+      <div class="pnp-slide-deck">
+        <div class="pnp-slide-deck-wrapper">
+          <div class="pnp-slide is-first is-selected">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 2 Popup Product 1']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 2 Popup Image 1'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 2 Popup Video 1'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap  slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 2 Popup Image 1'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% unless collection.metafields.c_f['Section 2 Popup Video 2'] == blank and collection.metafields.c_f['Section 2 Popup Image 2'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 2 Popup Product 2']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 2 Popup Image 2'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 2 Popup Video 2'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 2 Popup Image 2'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+        {% unless collection.metafields.c_f['Section 2 Popup Video 3'] == blank and collection.metafields.c_f['Section 2 Popup Image 3'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 2 Popup Product 3']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 2 Popup Image 3'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 2 Popup Video 3'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 2 Popup Image 3'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+
+        </div>
+        <button class="arrow arrow-back">{% include 'zero-slider-left' %}</button>
+        <button class="arrow arrow-forward">{% include 'zero-slider-right' %}</button>
+      </div>
+    {% endunless %}
+
+    {% unless collection.metafields.c_f['Section 3 Popup Video 1'] == blank and collection.metafields.c_f['Section 3 Popup Image 1'] == blank %}
+      <div class="pnp-slide-deck">
+        <div class="pnp-slide-deck-wrapper">
+          <div class="pnp-slide is-first is-selected">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 3 Popup Product 1']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 3 Popup Image 1'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 3 Popup Video 1'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap  slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 3 Popup Image 1'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% unless collection.metafields.c_f['Section 3 Popup Video 2'] == blank and collection.metafields.c_f['Section 3 Popup Image 2'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 3 Popup Product 2']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 3 Popup Image 2'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 3 Popup Video 2'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 3 Popup Image 2'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+        {% unless collection.metafields.c_f['Section 3 Popup Video 3'] == blank and collection.metafields.c_f['Section 3 Popup Image 3'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 3 Popup Product 3']] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 3 Popup Image 3'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinlinep>
+                    <source src="{{ collection.metafields.c_f['Section 3 Popup Video 3'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 3 Popup Image 3'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+
+        </div>
+        <button class="arrow arrow-back">{% include 'zero-slider-left' %}</button>
+        <button class="arrow arrow-forward">{% include 'zero-slider-right' %}</button>
+      </div>
+    {% endunless %}
+
+    {% unless collection.metafields.c_f['Section 4 Popup Video 1'] == blank and collection.metafields.c_f['Section 4 Popup Image 1'] == blank %}
+      <div class="pnp-slide-deck">
+        <div class="pnp-slide-deck-wrapper">
+          <div class="pnp-slide is-first is-selected">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 4 Popup Product 1'] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 4 Popup Image 1'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 4 Popup Video 1'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 4 Popup Image 1'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% unless collection.metafields.c_f['Section 4 Popup Video 2'] == blank and collection.metafields.c_f['Section 4 Popup Image 2'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 4 Popup Product 2'] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 4 Popup Image 2'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 4 Popup Video 2'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 4 Popup Image 2'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+        {% unless collection.metafields.c_f['Section 4 Popup Video 3'] == blank and collection.metafields.c_f['Section 4 Popup Image 3'] == blank %}
+
+          <div class="pnp-slide">
+            <div class="shadow-wrap">
+              {% assign product = all_products[collection.metafields.c_f['Section 4 Popup Product 3'] %}
+              {% include 'zero-product-badges' %}
+              {% if collection.metafields.c_f['Section 4 Popup Image 3'] == blank %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="video-wrap slide-inner">
+                  <video autoplay muted="muted" loop="loop" preload="metadata" playsinline>
+                    <source src="{{ collection.metafields.c_f['Section 4 Popup Video 3'] }}" type="video/mp4">
+                  </video>
+                </div>
+              {% else %}
+                <button class="pnp-slide-deck-close">{% include 'zero-modal-close' %}</button>
+                <div class="image-wrap slide-inner">
+                  <img class="" src="{{ collection.metafields.c_f['Section 4 Popup Image 3'] }}" alt="">
+                </div>
+              {% endif %}
+              <a class="zero-shop-btn" href="{{ product.url }}">Shop</a>
+            </div>
+          </div>
+
+        {% endunless %}
+
+        </div>
+        <button class="arrow arrow-back">{% include 'zero-slider-left' %}</button>
+        <button class="arrow arrow-forward">{% include 'zero-slider-right' %}</button>
+      </div>
+    {% endunless %}
+  </section>
+
+
+  <div id="zero-mobile-pnp">
+      <div class="pnp-video">
+        <div class="pnp-mobile-open">
+            {% include 'icon-pnp-open' %}
+        </div>
+        <div class="video-wrapper">
+          <video class="preload-critical visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 1 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 1 Video Thumbnail'] }}">
+          </video>
+        </div>
+        <div class="pnp-mobile-cover">
+            {% include 'icon-pnp-caret' %}
+        </div>
+        <button class="pnp-mobile-close">
+          {% include 'icon-pnp-close' %}
+        </button>
+      </div>
+    {% unless collection.metafields.c_f['Section 2 Video Thumbnail'] == blank %}
+      <div class="pnp-video">
+        <div class="pnp-mobile-open">
+            {% include 'icon-pnp-open' %}
+        </div>
+        <div class="video-wrapper">
+          <video class="preload-critical visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 2 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 2 Video Thumbnail'] }}">
+          </video>
+        </div>
+        <div class="pnp-mobile-cover">
+            {% include 'icon-pnp-caret' %}
+        </div>
+        <button class="pnp-mobile-close">
+          {% include 'icon-pnp-close' %}
+        </button>
+      </div>
+    {% endunless %}
+    {% unless collection.metafields.c_f['Section 3 Video Thumbnail'] == blank %}
+      <div class="pnp-video">
+        <div class="pnp-mobile-open">
+            {% include 'icon-pnp-open' %}
+        </div>
+        <div class="video-wrapper">
+          <video class="preload-critical visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 3 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 3 Video Thumbnail'] }}">
+          </video>
+        </div>
+        <div class="pnp-mobile-cover">
+            {% include 'icon-pnp-caret' %}
+        </div>
+        <button class="pnp-mobile-close">
+          {% include 'icon-pnp-close' %}
+        </button>
+      </div>
+    {% endunless %}
+    {% unless collection.metafields.c_f['Section 4 Video Thumbnail'] == blank %}
+      <div class="pnp-video">
+        <div class="pnp-mobile-open">
+            {% include 'icon-pnp-open' %}
+        </div>
+        <div class="video-wrapper">
+          <video class="preload-critical visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 4 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 4 Video Thumbnail'] }}">
+          </video>
+        </div>
+        <div class="pnp-mobile-cover">
+            {% include 'icon-pnp-caret' %}
+        </div>
+        <button class="pnp-mobile-close">
+          {% include 'icon-pnp-close' %}
+        </button>
+      </div>
+    {% endunless %}
+  </div>
+
+
+  <!-- MAIN-COLLECTION -->
+  <div id="zero-main-collection">
+
+  <div id="pnp-images-spacer"></div>
+
+  <section id="pnp-images-wrapper" class="pnp-images-wrapper unfixed-top">
+    {% assign bi_arr = collection.metafields.c_f['Collection Hero Sticker'] | split: '/' %}
+    {% assign bi = bi_arr | last %}
+    <div class="preload-critical hero-badge {{ collection.metafields.c_f['Collection Hero Sticker Align'] }}" data-preload-desktop="{{ bi | | file_img_url: '380x' }}" data-preload-mobile="{{ bi | | file_img_url: '280x' }}"></div>
+
+      <div class="pnp-feature is-selected is-first">
+        {% if collection.metafields.c_f['Section 1 Featured Image'] == blank %}
+          <video class="preload-critical bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{collection.metafields.c_f['Section 1 Featured Video']}}" data-preload-mobile="{{collection.metafields.c_f['Section 1 Featured Video']}}">
+          </video>
+        {% else %}
+          <img class="preload-critical bg-img" alt="" data-preload-desktop="{{collection.metafields.c_f['Section 1 Featured Image']}}" data-preload-mobile="{{collection.metafields.c_f['Section 1 Featured Image']}}">
+        {% endif %}
+      </div>
+
+
+    {% unless collection.metafields.c_f['Section 2 Featured Image'] == blank and collection.metafields.c_f['Section 2 Featured Video'] == blank %}
+      <div class="pnp-feature">
+        {% if collection.metafields.c_f['Section 2 Featured Image'] == blank %}
+          <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{collection.metafields.c_f['Section 2 Featured Video']}}" data-preload-mobile="{{collection.metafields.c_f['Section 2 Featured Video']}}">
+          </video>
+        {% else %}
+          <img class="preload bg-img" alt="" data-preload-desktop="{{collection.metafields.c_f['Section 2 Featured Image']}}" data-preload-mobile="{{collection.metafields.c_f['Section 2 Featured Image']}}">
+        {% endif %}
+        <div class="pnp-video">
+          <div class="video-wrapper">
+            <video class="preload visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 2 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 2 Video Thumbnail'] }}">
+            </video>
+          </div>
+          <button class="expand-btn">
+            {% include 'pnp-expand-icon' %}
+          </button>
+        </div>
+      </div>
+    {% endunless %}
+    {% unless collection.metafields.c_f['Section 3 Featured Image'] == blank and collection.metafields.c_f['Section 3 Featured Video'] == blank %}
+      <div class="pnp-feature">
+        {% if collection.metafields.c_f['Section 3 Featured Image'] == blank %}
+          <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{collection.metafields.c_f['Section 3 Featured Video']}}" data-preload-mobile="{{collection.metafields.c_f['Section 3 Featured Video']}}">
+          </video>
+        {% else %}
+          <img class="preload bg-img" alt="" data-preload-desktop="{{collection.metafields.c_f['Section 3 Featured Image']}}" data-preload-mobile="{{collection.metafields.c_f['Section 3 Featured Image']}}">
+        {% endif %}
+        <div class="pnp-video">
+          <div class="video-wrapper">
+            <video class="preload visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 3 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 3 Video Thumbnail'] }}">
+            </video>
+          </div>
+          <button class="expand-btn">
+            {% include 'pnp-expand-icon' %}
+          </button>
+        </div>
+      </div>
+    {% endunless %}
+    {% unless collection.metafields.c_f['Section 4 Featured Image'] == blank and collection.metafields.c_f['Section 4 Featured Video'] == blank %}
+      <div class="pnp-feature">
+        {% if collection.metafields.c_f['Section 4 Featured Image'] == blank %}
+          <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{collection.metafields.c_f['Section 4 Featured Video']}}" data-preload-mobile="{{collection.metafields.c_f['Section 4 Featured Video']}}">
+          </video>
+        {% else %}
+          <img class="preload bg-img" alt="" data-preload-desktop="{{collection.metafields.c_f['Section 4 Featured Image']}}" data-preload-mobile="{{collection.metafields.c_f['Section 4 Featured Image']}}">
+        {% endif %}
+        <div class="pnp-video">
+          <div class="video-wrapper">
+            <video class="preload visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Section 4 Video Thumbnail'] }}" data-preload-mobile="{{ collection.metafields.c_f['Section 4 Video Thumbnail'] }}">
+            </video>
+          </div>
+          <button class="expand-btn">
+            {% include 'pnp-expand-icon' %}
+          </button>
+        </div>
+      </div>
+    {% endunless %}
+  </section>
+
+
+    <div id="zero-collection-wrapper">
+      <div class="main-collection-loading">
+        {% include 'loading-spinner' %}
+      </div>
+      <!--      HEADER MODULE      -->
+      <div class="collection-header">
+        <img class="preload-critical title-img" src="{{ collection.metafields.c_f['Collection Title Image'] }}" alt="" data-preload-desktop="{{ collection.metafields.c_f['Collection Title Image'] }}" data-preload-mobile="{{ collection.metafields.c_f['Collection Title Image'] }}">
+      </div>
+
+      <!--      MOBILE SLIDER MODULE      -->
+      <div id="zero-mobile-header-slider">
+        <div class="preload-critical hero-badge {{ collection.metafields.c_f['Collection Hero Sticker Align'] }}" style="background-image: url('{{ collection.metafields.c_f['Collection Hero Sticker'] }}');" data-preload-desktop="{{ collection.metafields.c_f['Collection Hero Sticker'] }}" data-preload-mobile="{{ collection.metafields.c_f['Collection Hero Sticker'] }}"></div>
+        <div class="slide-container">
+          <div class="mobile-slide is-first is-selected">
+            {% if collection.metafields.c_f['Hero Featured Image Mobile 1'] == blank %}
+              <video class="preload-critical bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Video Mobile 1'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Video Mobile 1'] }}">
+              </video>
+            {% else %}
+              <img class="preload-critical bg-img" alt="" data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Image Mobile 1'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Image Mobile 1'] }}">
+            {% endif %}
+          </div>
+          {% unless collection.metafields.c_f['Hero Featured Image Mobile 2'] == blank and collection.metafields.c_f['Hero Featured Video Mobile 2'] == blank %}
+            <div class="mobile-slide">
+              {% if collection.metafields.c_f['Hero Featured Image Mobile 2'] == blank %}
+                <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Video Mobile 2'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Video Mobile 2'] }}">
+                </video>
+              {% else %}
+                <img class="preload bg-img" alt="" data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Image Mobile 2'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Image Mobile 2'] }}">
+              {% endif %}
+            </div>
+          {% endunless %}
+          {% unless collection.metafields.c_f['Hero Featured Image Mobile 3'] == blank and collection.metafields.c_f['Hero Featured Video Mobile 3'] == blank %}
+            <div class="mobile-slide">
+              {% if collection.metafields.c_f['Hero Featured Image Mobile 3'] == blank %}
+                <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Video Mobile 3'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Video Mobile 3'] }}">
+                </video>
+              {% else %}
+                <img class="preload bg-img" alt="" data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Image Mobile 3'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Image Mobile 3'] }}">
+              {% endif %}
+            </div>
+          {% endunless %}
+          {% unless collection.metafields.c_f['Hero Featured Image Mobile 4'] == blank and collection.metafields.c_f['Hero Featured Video Mobile 4'] == blank %}
+            <div class="mobile-slide">
+              {% if collection.metafields.c_f['Hero Featured Image Mobile 4'] == blank %}
+                <video class="preload bg-video visible-video" autoplay muted="muted" loop="loop" preload="metadata" playsinline data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Video Mobile 4'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Video Mobile 4'] }}">
+                </video>
+              {% else %}
+                <img class="preload bg-img" alt="" data-preload-desktop="{{ collection.metafields.c_f['Hero Featured Image Mobile 4'] }}" data-preload-mobile="{{ collection.metafields.c_f['Hero Featured Image Mobile 4'] }}">
+              {% endif %}
+            </div>
+          {% endunless %}
+        </div>
+      </div>
+
+
+
+      <div class="main-collection-grid">
+        <div class="collection-section">
+        {% assign index1 = 0 %}
+        {% assign index2 = blank %}
+        {% assign index3 = blank %}
+        {% assign index4 = blank %}
+        {% assign inline1 = 3 %}
+        {% assign inline2 = blank %}
+        {% assign inline3 = blank %}
+
+        {% unless collection.metafields.c_f['Section 2 Start Index'] == blank %}
+          {% assign index2 = collection.metafields.c_f['Section 2 Start Index'] | minus: 1 %}
+          {% assign inline2 = index2 | plus: 3 %}
+        {% endunless %}
+
+        {% unless collection.metafields.c_f['Section 3 Start Index'] == blank %}
+          {% assign index3 = collection.metafields.c_f['Section 3 Start Index'] | minus: 1 %}
+          {% assign inline3 = index3 | plus: 3 %}
+        {% endunless %}
+
+        {% unless collection.metafields.c_f['Section 4 Start Index'] == blank %}
+          {% assign index4 = collection.metafields.c_f['Section 4 Start Index'] | minus: 1 %}
+        {% endunless %}
+
+
+        {% for product in collection.products %}
+          <!--   ASSIGN PRODUCT INDEX LOOP LOGIC HERE   -->
+          {% if forloop.index0 == 0 %}
+              {% include 'zero-featured-product' %}
+          {% elsif forloop.index0 == inline1 %}
+              {% include 'zero-inline-collab' %}
+              {% include 'zero-product' %}
+          {% elsif index2 != blank and forloop.index0 == index2 %}
+            </div>
+            {% include 'zero-product-review' %}
+            <div class="collection-section section-two">
+              <div id="alien-wrapper">
+                <div id="alien-banner" class=""></div>
+              </div>
+              {% include 'zero-featured-product' %}
+          {% elsif inline2 != blank and forloop.index0 == inline2 %}
+              {% include 'zero-inline-collab-2' %}
+              {% include 'zero-product' %}
+          {% elsif index3 != blank and forloop.index0 == index3 %}
+              </div>
+              {% include 'zero-insta' %}
+              <div class="collection-section">
+              {% include 'zero-featured-product' %}
+          {% elsif inline3 != blank and forloop.index0 == inline3 %}
+              {% include 'zero-product' %}
+              {% include 'zero-inline-review' %}
+          {% elsif index4 != blank and forloop.index0 == index4 %}
+              </div>
+              {% include 'zero-img-cta' %}
+              <div class="collection-section">
+              {% include 'zero-featured-product' %}
+          {% else %}
+              {% include 'zero-product' %}
+          {% endif %}
+            
+        {% endfor %}
+        </div>
+
+      </div>
+
+
+    </div>
+  
+
+  </div>
+
+  {% include 'zero-recirculation-footer' %}
+
+</div>
+
+
+
+
+
+
+
+<script>window.currentTags = {{ current_tags | json }}; window.collectionHandle = {{ collection.handle | json }};</script>
+
+
+{{collection.metafields.shogun.below}}

@@ -1,0 +1,37 @@
+<div>
+    <h1 class="cx mb-4">{{blog.title}}</h1>
+    <div class="cx cy flex flex-wrap gap-2.5">
+        <a href="/blogs/crappenings" class="border border-black px-[20px] flex items-center justify-center h-[45px] {% if request.path contains "tagged" %}  not {% else %} active text-white bg-off-black {% endif %}">All Crappenings</a>
+        {% for block in section.blocks %}
+            {% assign url = '/blogs/crappenings/tagged/' | append: block.settings.tag_name %}
+            <a href="{{- url -}}" class="border border-black px-[20px] flex items-center justify-center h-[45px] {% if request.path contains block.settings.tag_name %} active text-white bg-off-black {% endif %}">{{ block.settings.tag_name }}</a>
+        {% endfor %}
+    </div>    
+</div>
+
+{% schema %}
+    {
+        "name": "Blog Nav",
+        "tag": "section",
+        "settings": [],
+        "blocks": [
+            {
+                "type": "tag",
+                "name": "tag",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "tag_name",
+                        "placeholder": "tag name",
+                        "label": "Tag Name"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Blog Nav"
+            }
+        ]
+    }
+{% endschema %}

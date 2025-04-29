@@ -1,0 +1,23 @@
+{%- comment %}
+/** Form Message
+ * @property {object} form
+ *
+ */
+{% endcomment -%}
+{%- assign message = message | default: "" -%}
+{%- assign success = success | default: false -%}
+<div class="{%- if success == true -%} success-wrapper {%- else %} error-wrapper {%- endif -%}" tabindex="-1" autofocus>
+	<div class="flex flex-grow items-start">
+		{%- if success == true -%}
+			<span class="visually-hidden">{{- "accessibility.success" | t -}}</span>
+			{%- render "output--icon", icon: "success" -%}
+		{%- else -%}
+			<span class="visually-hidden">{{- "accessibility.error" | t -}}</span>
+			{%- render "output--icon", icon: "error" -%}
+		{%- endif -%}
+		{%- if message != blank -%}
+			{{- message -}}
+		{%- endif -%}
+	</div>
+	{{- form.errors | default_errors -}}
+</div>

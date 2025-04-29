@@ -1,0 +1,192 @@
+{% capture cards %}
+    {% for block in section.blocks %}
+        {% liquid
+			assign is_block_post = false
+
+			if block.settings.article != empty
+				assign is_block_post = true
+			endif
+
+			if is_block_post
+				assign title = block.settings.article.title
+				assign url = block.settings.article.url
+				assign tags = block.settings.article.tags
+			else
+				assign title = block.settings.card_title
+				assign url = block.settings.card_url
+			endif
+
+			assign image = block.settings.card_image
+
+		%}
+
+        <a href="{{ url }}" class="slide w-[80%] md:w-full shrink-0 md:flex-1 md:px-[15px]">
+            {% render 'component--responsive-image' 
+               , image: image,
+               placeholder: true,
+               maxSize: 1920 %}
+            <div class="richtext mt-[10px]">
+                <h6>
+                    <strong>{{ title }}</strong>
+                </h6>
+            </div>
+
+            {% if is_block_post and tags.size > 0 %}
+                <div class="tags mt-3">
+                    {% render 'component--tag-list', tags: tags %}
+                </div>
+            {% endif %}
+        </a>
+    {% endfor %}
+{% endcapture %}
+
+<div class="w-full pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] cx px-[15px] overflow-hidden" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}" data-animation="{{- section.settings.animation -}}">
+    {% if section.settings.title != empty %}
+        <div class="richtext mx-auto text-center !mb-[30px] md:!mb-[50px]" style="color: {{ section.settings.font_color }};">
+            {{ section.settings.richtext }}
+        </div>
+    {% endif %}
+
+    {% comment %}
+                    <div class="flex gap-[40px] w-full p-8 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
+                        {{ cards }}
+                    </div>
+            {% endcomment %}
+    {% render "slot--carousel" 
+       , slot: cards,
+       pagination: false,
+       mobileOnly: true,
+       gutter: 15, %}
+
+    <div class="">
+        <a href="{{ section.settings.cta_url }}" class="btn {{ section.settings.button_style }} mx-auto">{{ section.settings.cta_text }}</a>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Three Col Cards",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "richtext",
+                "id": "richtext",
+                "label": "Title"
+            }, {
+                "type": "text",
+                "id": "cta_text",
+                "label": "CTA Text"
+            }, {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }, {
+                "type": "select",
+                "id": "button_style",
+                "label": "Button Color",
+                "options": [
+                    {
+                        "value": "btn-primary",
+                        "label": "Green"
+                    }, {
+                        "value": "btn-secondary",
+                        "label": "White"
+                    }, {
+                        "value": "",
+                        "label": "Black"
+                    }
+                ],
+                "default": "btn-primary"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "card",
+                "name": "Card",
+                "limit": 3,
+                "settings": [
+                    {
+                        "type": "article",
+                        "id": "article",
+                        "label": "Blog post",
+                        "info": "If the card points to a Blog Post, choose post and leave title and URL inputs blank"
+                    },
+                    {
+                        "type": "paragraph",
+                        "content": "OR"
+                    },
+                    {
+                        "type": "text",
+                        "id": "card_title",
+                        "label": "Card title"
+                    },
+                    {
+                        "type": "url",
+                        "id": "card_url",
+                        "label": "Card URL"
+                    }, {
+                        "type": "image_picker",
+                        "id": "card_image",
+                        "label": "Card image"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Three Col Cards"
+            }
+        ]
+    }
+{% endschema %}

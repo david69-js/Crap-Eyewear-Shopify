@@ -1,0 +1,107 @@
+{%- comment -%}
+                                  /**
+                                  * Product Pricing Display
+                                  */
+{%- endcomment -%}
+{%- liquid
+
+if use_variant
+	assign target = product.selected_or_first_available_variant
+else
+	assign target = product
+endif
+
+assign compare = target.compare_at_price
+assign price = target.price
+assign available = target.available | default: false
+
+if product.tags contains "sold-out"
+    assign available = false
+endif
+
+assign displayPrice = price | money_without_trailing_zeros
+assign compareDisplayPrice = compare | money_without_trailing_zeros
+assign splitPrice = displayPrice | split: "."
+assign classes = price_class | default: ""
+assign show_varies = false
+
+if use_varies and product.price_varies
+	assign show_varies = true
+endif
+
+if settings.superscript_price
+
+	assign displayPrice = splitPrice[0]
+
+	if splitPrice[1] != blank
+		assign displayPrice = displayPrice | append: "." | append: "<sup>" | append: splitPrice[1] | append: "</sup>"
+	endif
+endif
+
+if compare != blank and compare > price
+
+	assign compareSplitPrice = compareDisplayPrice | split: "."
+
+	if settings.superscript_price
+
+		assign compareDisplayPrice = compareSplitPrice[0]
+
+		if compareSplitPrice[1] != blank
+			assign compareDisplayPrice = compareDisplayPrice | append: "." | append: "<sup>" | append: compareSplitPrice[1] | append: "</sup>"
+		endif
+	endif
+endif
+
+if target == product and show_varies == true
+	assign displayPrice = "products.product.price.from_price_html" | t: price: displayPrice
+endif
+
+if settings.currency_code_enabled == true
+
+	assign displayPrice = displayPrice | append: " " | append: shop.currency
+
+	if compareDisplayPrice
+		assign compareDisplayPrice = compareDisplayPrice | append: " " | append: shop.currency
+	endif
+endif
+
+-%}
+    <div class="flex {{ classes }}">
+    {% if available %}
+        <h2 style="font-size: inherit;" class="grotesk-bold {% if compare != blank and show_varies == false %} {% if template.name == "collection" %} text-burnt-orange {% endif %} mr-2 {% endif %}" data-price="{{- price -}}" data-sup="{{- settings.superscript_price -}}" {% if settings.currency_code_enabled == true -%}data-currency="{{- shop.currency -}}"{%- endif %}>{{- displayPrice -}}
+        </h2>
+        {%- if compare != blank and show_varies == false -%}
+            <h2 style="font-size: inherit; color: #666666;" class="grotesk-bold after:content-['_'] after:absolute after:h-px after:bg-current after:w-full after:top-[50%] after:left-0 relative" data-price="{{ compare }}" data-sup="{{ settings.superscript_price }}" {% if settings.currency_code_enabled == true %}data-currency="{{- currency.iso_code -}}"{% endif %}>{{- compareDisplayPrice -}}</h2>
+        {%- else -%}
+            <p>&nbsp;</p>
+        {%- endif -%}
+    {% else %}
+        <h2 style="font-size: inherit;" class="grotesk-bold off-black {%- if compare != blank and show_varies == false -%} ml-2 {%- endif -%}">{{- "products.product.sold_out" | t -}}</h2>
+    {% endif %}
+
+    {%- comment -%}
+                                                                    TODO: UNIT PRICE
+                                                                    {%- if item.variant.available and item.unit_price_measurement -%}
+                                                                    <div class="unit-price caption">
+                                                                    <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                                                                    {{ item.variant.unit_price | money }}
+                                                                    <span aria-hidden="true">/</span>
+                                                                    <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                                                                    {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+                                                                    {{- item.variant.unit_price_measurement.reference_value -}}
+                                                                    {%- endif -%}
+                                                                    {{ item.variant.unit_price_measurement.reference_unit }}
+                                                                    </div>
+                                                                    {%- endif -%}
+                                  {%- endcomment -%}
+    {%- comment -%}
+                                                                    TODO: Should we have sale/sold out badges?
+                                  {%- endcomment -%}{%- if show_badges -%}
+        {%- if compare > price -%}
+            <div class="ml-2 text-sm text-white bg-secondary rounded-md h-auto w-auto px-2 py-[2px]">{{- "products.product.on_sale" | t -}}</div>
+        {%- endif -%}
+        {%- if available == false -%}
+            <div class="ml-2 text-white bg-secondary rounded-md h-auto w-auto px-2 py-1">{{- "products.product.sold_out" | t -}}</div>
+        {%- endif -%}
+    {%- endif -%}
+</div>

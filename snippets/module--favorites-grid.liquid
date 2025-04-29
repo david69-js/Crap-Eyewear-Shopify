@@ -1,0 +1,43 @@
+{% assign grid_columns = grid_columns | default: '2' %}
+{% assign hide_atc = hide_atc | default: false %}
+{% assign limit = limit | default: 99 %}
+
+<favorites-grid class="block w-full col-span-full relative {% if hide_atc %} hide-atc {% endif %}" data-customer="{{customer.id}}" data-limit="{{- limit -}}">
+    {% if customer %}
+        {% if customer.metafields.customer_fields.favorites != blank %}
+            {% assign customer_favorites = customer.metafields.customer_fields.favorites | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
+            {% if customer_favorites contains "," %}
+                {% assign has_favorites = true %}
+                {% assign customer_favorites = customer_favorites | split: "," %}
+                {% assign favorite_count = customer_favorites | size %}
+            {% else %}
+                {% if customer_favorites != "" %}
+                    {% assign has_favorites = true %}
+                    {% assign favorite_count = 1 %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        {% if has_favorites %}
+            {% capture slottedEl %}
+                {% for ref_handle in customer_favorites %}
+                    {% assign product_ref = all_products[ref_handle] %}
+                    {% if product_ref and product_ref != blank %}
+                        {%- render "component--fave-card", product: product_ref -%}
+                    {% endif %}
+                    {% if forloop.index == limit %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+            {% endcapture %}
+        {% endif %}
+        <div style="--cols: repeat({{ grid_columns }}, minmax(0, 1fr));" class="w-full grid gap-4 grid-cols-2 dk:grid-cols-[var(--cols)] faves-grid customer-faves">
+            {{ slottedEl }}
+        </div>
+        <div class="empty-state absolute inset-0 z-1 {% if has_favorites %} hidden pointer-events-none {% endif %}">
+            {{ empty_state }}
+        </div>
+    {% else %}
+        <div style="--cols: repeat({{ grid_columns }}, minmax(0, 1fr));" class="w-full guest faves-grid grid gap-4 grid-cols-2 dk:grid-cols-[var(--cols)]"></div>
+        {{ empty_state }}
+    {% endif %}
+</favorites-grid>

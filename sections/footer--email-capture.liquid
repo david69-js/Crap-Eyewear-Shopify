@@ -1,0 +1,53 @@
+<style>
+    .title-to-h2-footer {
+        font-size: 24px !important;
+        letter-spacing: -.03em !important;
+        line-height: 110% !important;
+      }
+      @media (min-width: 769px) {
+        .title-to-h2-footer {
+            font-size: 32px !important;
+        }
+      }
+</style>
+<div id="footer-email-capture" class="bg-faded-lime flex flex-col md:flex-row px-[15px] gap-8 md:gap-4 md:px-[30px] py-[40px] md:py-[60px] md:items-end text-off-black">
+    <div class="md:grow-[2]">
+        <div class="richtext has-xl-h text-off-black">
+            {{ section.settings.title }}
+            <h2 class="title-to-h2-footer mt-[30px] md:mt-[60px] !mb-0 text-off-black">{{ section.settings.subtitle }}</h2>
+        </div>
+    </div>
+    <div class="md:grow relative pt-16 md:pt-0">
+        <div class="klaviyo-form-Smhuh3"></div>
+        <div class="email-sticker flex justify-center items-center text-center leading-5 absolute top-4 md:-top-12 -right-2 md:-right-4 bg-contain bg-no-repeat bg-center" style="background-image: url({{ section.settings.sticker_bg | image_url }});">
+            {{ section.settings.sticker_text }}
+        </div>
+    </div>
+
+</div>
+{% schema %}
+    {
+        "name": "Footer Email Capture",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "title",
+                "label": "Title",
+                "info": "Use H1 for XL Heading on both desktop and mobile. Use H2 for XL Heading on desktop only."
+            }, {
+                "type": "text",
+                "id": "subtitle",
+                "label": "Subtitle"
+            }, {
+                "type": "richtext",
+                "id": "sticker_text",
+                "label": "Sticker Text"
+            }, {
+                "type": "image_picker",
+                "id": "sticker_bg",
+                "label": "Sticker Background"
+            }
+        ]
+    }
+{% endschema %}

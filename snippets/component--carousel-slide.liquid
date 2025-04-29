@@ -1,0 +1,15 @@
+{%- comment %}
+/** @typedef {object} json  Optionally slotted
+ * @property {object[]} data  block.settings
+ * @property {slot} slot
+ * @property {string} data.link
+ * @property {string} data.link_text
+ * @property {string} data.heading_tag
+ * @property {string} data.text
+ */
+{% endcomment -%}
+<div class="slide">
+	{%- if slot != blank %}
+		{{ slot }}
+	{%- endif %}
+</div>

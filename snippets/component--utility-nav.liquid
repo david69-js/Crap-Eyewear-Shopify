@@ -1,0 +1,7 @@
+  <div class="utility-nav-snippet">
+    <div class="utility-nav-snippet-inner flex flex-col">
+      {%- for link in utility_nav.links -%}
+        <a href="{{ link.url }}">{{link.title}}</a>
+      {%- endfor -%}
+    </div>
+  </div>

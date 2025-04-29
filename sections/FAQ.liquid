@@ -1,0 +1,273 @@
+<style>
+#page_container {margin-bottom: 15px;max-width:960px;}
+#accordion_search_bar_container {
+  position: relative;
+  &:after { 
+    content: '\e003';
+    font-family: Glyphicons Halflings;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px; 
+  }
+} 
+  #accordion_search_bar {
+    display: block;
+    margin: 50px auto 30px;
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    outline: 0;
+  }
+.panel-title {margin-bottom:0;font-size:16px;}
+.panel-title a {display: block;} 
+.panel-heading {padding:5px 0;}
+.panel {border-bottom:1px solid #ccc;}
+.panel-body {margin-bottom:20px;padding-left: 20px;padding-top: 5px;}
+.panel-body a {text-decoration:underline;}
+.collapse {display: none;}
+.collapse.show {display: block;}
+.collapsing {position: relative; height: 0; overflow: hidden; transition: height 0.35s ease;}
+.cat-bar {margin-bottom:20px;}
+.cat-bar a {text-transform:uppercase; margin-right:10px;display:inline-block;}
+.cat-bar a.active {font-weight:bold;}
+.cat-block {margin-bottom:30px;margin-left:25px;}
+.cat-trigger {padding: 30px 0;display: block;cursor:pointer;}
+a.cat-trigger:hover {border-bottom:1px solid {{ settings.color_borders }};}  
+.cat-trigger h2 {margin-bottom:0;font-size: 2.0rem;}
+.cat-trigger svg {width: 14px;height: 14px;margin-right:5px;vertical-align:middle;}
+.cat-trigger svg rect {stroke: #000;}
+.cat-trigger svg g {fill:#000;}
+.cat-trigger svg.minus {margin-top:-4px;width: 12px;height: 12px;margin-right: 7px;}
+.panel-title svg {width: 10px;height: 10px;margin-right:5px;vertical-align:middle;}
+ #page_container #accordion h2, #page_container h3 {text-align:left;} 
+.bottom-buttons {margin:80px 0 40px;} 
+.bottom-buttons a {margin:0 12px;}
+.bottom-buttons .button {background-color:#FFF798;color:#847f3b;border:none;padding:20px 10px;}
+.faq-banner {margin-bottom:40px;font-weight:bold;} 
+.faq-banner .main-hero-slide-content {color:#000;}  
+.faq-banner img {width:100%;}
+@media (max-width: 768px) {
+  .cat-trigger h2 {font-size: 1.7rem;}
+}
+
+</style>
+<div class="faq-banner">
+<div class="about-hero">
+  <div class="main-hero-slide">  
+  <img class="u-ls" src="{{ section.settings.banner_image | img_url: '2048x' }}" alt="help center banner" />
+  <img class="u-ss" src="{{ section.settings.banner_image_mobile | img_url: '1400x' }}" alt="help center banner mobile" />   
+  </div>
+</div>    
+</div>
+
+<h1>{{ page.title }}</h1>
+<div class="container" id="page_container">
+{% if section.settings.enable_search %}  
+  <div id="accordion_search_bar_container">
+      <input type="search" id="accordion_search_bar" placeholder="Search help topics"/>
+      <img src="{{ 'search.svg' | asset_url }}" height="18" width="18" alt="search icon" style="position: absolute;right: 12px;top: 12px;" />
+  </div>
+{% endif %}  
+  {% if section.settings.enable_categories %}
+  <div class="cat-bar">
+  {% for block in section.blocks %}
+    {% case block.type %}
+    	{% when 'category' %} 
+  			<a href="#" {% if forloop.first %}class="active"{% endif %} data-cat="{{ block.settings.faq_category | handleize }}"><h2 class="h5">{{ block.settings.faq_category }}</h2></a>
+    {% endcase %}
+  {% endfor %}
+  </div>
+  {% endif %}
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+   {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'category' %}    
+    <div id="{{ block.settings.faq_category | handleize }}" class="cat-trigger"><h2 class="h5"><span class="arrow">{% include 'icon-plus' %}</span> <span class="arrow" style="display:none;">{% include 'icon-minus' %}</span> {{ block.settings.faq_category }}</h2></div>
+    <div class="cat-block {{ block.settings.faq_category | handleize }}" style="display:none;">
+    {% when 'faq' %}
+    <div class="panel" id="collapse{{ forloop.index }}_container">
+      <div class="panel-heading" role="tab" id="heading{{ forloop.index }}">
+        <h3 class="panel-title h5">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.index }}" aria-expanded="true" aria-controls="collapse{{ forloop.index }}">
+            <span class="arrow">{% include 'icon-chevron-right' %}</span> <span class="arrow" style="display:none;">{% include 'icon-chevron-down' %}</span> {{ block.settings.faq_question }}
+          </a>
+        </h3>
+      </div>
+      <div id="collapse{{ forloop.index }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{ forloop.index }}">
+        <div class="panel-body">
+          {{ block.settings.faq_answer }}
+        </div>
+      </div>
+    </div>
+    {% when 'end' %}    
+    </div>        
+    {% endcase %}    
+   {% endfor %}
+  </div>
+  <div class="bottom-buttons text-center">
+    <h2>Still have questions? Give us a shout:</h2>
+    <a href="mailto:store@crapeyewear.com"><div class="button"><span class="button-fix">{{ section.settings.contact_button }}</span></div></a>
+    <a href="#" onclick="Smooch.open();"><div class="button"><span class="button-fix">{{ section.settings.chat_button }}</span></div></a>
+  </div>
+</div>
+{{ 'faq.js' | asset_url | script_tag }}
+<script>
+  $('.cat-trigger').click(function(){
+    
+    $(this).next('.cat-block').slideToggle();
+    $(this).closest('.cat-trigger').find('.arrow').toggle();
+  });
+  $('.panel-title a').click(function(){
+    $(this).closest('.panel').find('.arrow').toggle();
+  });    
+{% if section.settings.enable_categories %}  
+$(document).ready(function(){
+  $( ".cat-bar a.active" ).trigger( "click" );
+});  
+
+  $('.cat-bar a').click(function(){
+    $('.cat-bar a').removeClass('active');
+    $(this).addClass('active');
+  	var catx = $(this).data('cat');
+    $('.panel').hide();
+    $('.' + catx + ' .panel').show();
+  });   
+{% endif %} 
+{% if section.settings.enable_search %}     
+(function(){
+  var searchTerm, panelContainerId;
+  // Create a new contains that is case insensitive
+  $.expr[':'].containsCaseInsensitive = function (n, i, m) {
+    return jQuery(n).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+  };
+  
+  $('#accordion_search_bar').on('change keyup paste click', function () {
+    searchTerm = $(this).val();
+    $('#accordion .panel').each(function () {
+      panelContainerId = '#' + $(this).attr('id');
+      $(panelContainerId + ':not(:containsCaseInsensitive(' + searchTerm + '))').hide();
+      $(panelContainerId + ':containsCaseInsensitive(' + searchTerm + ')').show();
+      $('.cat-block').show();
+      $('.cat-trigger').hide();
+    });
+    if (searchTerm.length === 0 ) {
+      $('.cat-block').hide();
+      $('.cat-trigger').show();    	
+    }
+  }); 
+}());
+{% endif %}  
+{% if section.settings.enable_categories %}   
+$('#accordion_search_bar').on('change keyup click', function() {
+    if( !$(this).val() ) {
+       $( ".cat-bar a.active" ).trigger( "click" );
+    }
+});   
+{% endif %}
+$(document).ready(function(){  
+$('.panel-heading a').on('click', function() {
+	$(this).toggleClass('active'); 
+  }); 
+
+  var url = window.location.href;
+  if (url.indexOf('#') > -1) {
+  var catx = url.split('#')[1];
+  $('.cat-trigger#' + catx).trigger('click'); 
+  };
+});  
+</script>
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "faqpage",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner image"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image_mobile",
+        "label": "Banner image mobile"
+      },
+      {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Banner text"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_categories",
+        "label": "Use Categories"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_search",
+        "label": "Use Search"
+      },
+      {
+        "type": "text",
+        "id": "contact_button",
+        "label": "Contact Button"
+      },
+      {
+        "type": "text",
+        "id": "chat_button",
+        "label": "Chat Button"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "faq_question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "faq_answer",
+            "label": "Answer",
+			"default": "<p>content</p>"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_category",
+            "label": "Category"
+          }
+        ]
+      },
+      {
+        "type": "end",
+        "name": "End Category",
+        "settings": [
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "faq"
+          },
+          {
+            "type": "faq"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

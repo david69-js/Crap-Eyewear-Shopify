@@ -1,0 +1,722 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>The<\/em> Void Pixie<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=xAf2djwl0kY",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "module_one_column_richtext_U9jPjd": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_d389BE": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3>Introducing <strong>The Void Pixie,<\/strong> a flattering silhouette with organic proportions. May as well feel <strong>cool n comfy<\/strong> as you enter the <strong>infinite chasm of existence...<\/strong><\/h3><h3><\/h3><h3><\/h3>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_cUeJkX": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/products\/the-void-pixie-artichoke-green-bioacetate-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "richtext_hPzkqe": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_d389BE",
+        "button_cUeJkX",
+        "richtext_hPzkqe"
+      ],
+      "settings": {
+        "background_color": "#FFFFFF",
+        "font_color": "#1E1E1E",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-5-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "57069e23-6353-401d-ba54-0ce13677911e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bbb3293f-6e80-4960-93f1-dff640e21d12": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-6-web.jpg",
+            "caption": ""
+          }
+        },
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-4-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_xc9Wie": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-artichoke-green-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "bbb3293f-6e80-4960-93f1-dff640e21d12",
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413",
+        "product_widget_xc9Wie"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-void-pixie",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Void_Pixie-artichoke_Isabelle-fit.mp4.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "9ac4fdac-1add-4129-9714-5d17b48b058d": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "6a5e0dd6-3469-4132-b55e-aed9090ca1ed": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-8-2-web.jpg",
+            "caption": ""
+          }
+        },
+        "79859a9c-31a5-4b6e-90b7-2c33083ce1c9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-11-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "6a5e0dd6-3469-4132-b55e-aed9090ca1ed",
+        "79859a9c-31a5-4b6e-90b7-2c33083ce1c9"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b79cdddf-c022-4009-957e-aee86fb516ea": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-7-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "01913645-c052-4b6d-95f4-bfb5dd6e1497": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "1efd1fa4-3fbf-4bc3-be66-3b83f8c3ce17": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-14-web.jpg",
+            "caption": ""
+          }
+        },
+        "ab82d721-dbca-4c29-ad73-06b03c04b024": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-13-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "1efd1fa4-3fbf-4bc3-be66-3b83f8c3ce17",
+        "ab82d721-dbca-4c29-ad73-06b03c04b024"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_xUg4gX": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_9NTe3x": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Product-2-3.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_GVYhNn": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-artichoke-green-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_9NTe3x",
+        "product_widget_GVYhNn"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "dcd55982-bc4a-4f27-af7c-317b1986f321": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-10-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "dcd55982-bc4a-4f27-af7c-317b1986f321"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "abc5f652-be05-468e-8fcb-9c5390e36d07": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-9-web.jpg",
+            "caption": ""
+          }
+        },
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-1-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "abc5f652-be05-468e-8fcb-9c5390e36d07",
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "579408ea-3530-4958-9a8b-40c72545223a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "9127d268-574c-4d7a-869d-29edaea8acc2": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-11-web.jpg",
+            "caption": ""
+          }
+        },
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-8-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "9127d268-574c-4d7a-869d-29edaea8acc2",
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "5dca5032-f893-46c9-8c51-d1f9757607c4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "8a546e7f-587c-494a-b755-a4695e0546c8": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-5-web.jpg",
+            "caption": ""
+          }
+        },
+        "31edb7c2-ac9f-4249-8746-416163d4303d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-6-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "8a546e7f-587c-494a-b755-a4695e0546c8",
+        "31edb7c2-ac9f-4249-8746-416163d4303d"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f4f4b625-1b06-41f6-b0e0-869c0cad934b": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f26ec1eb-0fab-4b97-8590-8fb708a97de8": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-7-web.jpg",
+            "caption": ""
+          }
+        },
+        "3c12b7fd-e07e-4ef9-a9df-1ca210dfeff5": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-12-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f26ec1eb-0fab-4b97-8590-8fb708a97de8",
+        "3c12b7fd-e07e-4ef9-a9df-1ca210dfeff5"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_HH83Mi": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_bqBiYr": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Product-1.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_4ba8cc": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-crystal-smoke-grey-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_bqBiYr",
+        "product_widget_4ba8cc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "37226ef0-e00b-4f9f-93c6-63d05ded682f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "a4117274-5550-48ab-b228-237ff7549b48": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-17-web.jpg",
+            "caption": ""
+          }
+        },
+        "a363b92e-a901-43cb-8e9f-d10f730b13a4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-15-2-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "a4117274-5550-48ab-b228-237ff7549b48",
+        "a363b92e-a901-43cb-8e9f-d10f730b13a4"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_YpHbB8": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_BHKLgB": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Product-5-2.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_CdJ9Up": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-void-pixie-desert-tortoise-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_BHKLgB",
+        "product_widget_CdJ9Up"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_Wepkch": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_BQgNdh": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-18-2-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_aUw4yW": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_1-19-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_BQgNdh",
+        "media_col_aUw4yW"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_product_slider_9HXMFy": {
+      "type": "module--product-slider",
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1E1E1E",
+        "background_color": "#FFFFFF",
+        "collection": "the-void-pixie",
+        "cta_text": "Shop Frame",
+        "cta_url": "shopify:\/\/products\/the-void-pixie-desert-tortoise-bioacetate-polarized-sunglasses",
+        "button_style": "btn-primary"
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>The Void Pixie<\/strong><br\/>Shot on location in Los Angeles, 2024.<\/p><p>Starring: Isabella Morris & Torrey (<a href=\"https:\/\/www.instagram.com\/2rrey\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/2rrey\/\">@2rrey<\/a>)<br\/>Photographer: Tony Accosta<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marleyarviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marleyarviso\/\">@marleyarviso<\/a>) & Tony Accosta<br\/>Video & Edit: Cole Walton (<a href=\"https:\/\/www.instagram.com\/colewaltonbro\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/colewaltonbro\/\">@colewaltonbro<\/a>)<br\/>Song: 'spiral' by untitled (halo) (<a href=\"https:\/\/www.instagram.com\/untitledhalo\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/untitledhalo\/\">@untitledhalo<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "marquee_card_a8MXWK": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Jack_Greer-look1-4-web_lookbooks_carousel.jpg",
+            "caption": "The Glam Rodeo",
+            "url": "shopify:\/\/pages\/lookbooks-glam-rodeo"
+          }
+        },
+        "marquee_card_gyXzPy": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1-web_lookbooks_carousel_ae8ef64b-9b7c-45cc-83d0-2a4e4a606191.jpg",
+            "caption": "The Petal Bomb",
+            "url": "shopify:\/\/pages\/lookbooks-petal-bomb"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_collection_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "2d6fc86b-8f2a-4e80-b0c2-c0b8caca2010": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-01-reedit-web_collection_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58": {
+          "type": "marquee-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_carousel.jpg",
+            "caption": "The Perma Joy",
+            "url": "shopify:\/\/pages\/lookbooks-perma-joy"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_card_a8MXWK",
+        "marquee_card_gyXzPy",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa",
+        "2d6fc86b-8f2a-4e80-b0c2-c0b8caca2010",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "module_one_column_richtext_U9jPjd",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "57069e23-6353-401d-ba54-0ce13677911e",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "9ac4fdac-1add-4129-9714-5d17b48b058d",
+    "b79cdddf-c022-4009-957e-aee86fb516ea",
+    "01913645-c052-4b6d-95f4-bfb5dd6e1497",
+    "lookbook_two_col_xUg4gX",
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f",
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4",
+    "579408ea-3530-4958-9a8b-40c72545223a",
+    "5dca5032-f893-46c9-8c51-d1f9757607c4",
+    "f4f4b625-1b06-41f6-b0e0-869c0cad934b",
+    "lookbook_two_col_HH83Mi",
+    "37226ef0-e00b-4f9f-93c6-63d05ded682f",
+    "lookbook_two_col_YpHbB8",
+    "lookbook_two_col_Wepkch",
+    "module_product_slider_9HXMFy",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

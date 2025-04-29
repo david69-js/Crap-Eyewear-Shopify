@@ -1,0 +1,158 @@
+<div class="text-columns-bg hp-load-section" style="background-color:{{ section.settings.bg_color }};">
+  <div {% unless section.settings.remove_wrapper %}class="container"{% endunless %}>
+    {% if section.settings.title != blank %}
+      <div class="section-header text-center">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+  
+    <div class="text-columns grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %}">
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+      {%- assign image_size = '600x' -%}
+      {% case section.blocks.size %}
+        {% when 1 %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+          {%- assign image_size = '530x' -%}
+        {% when 2 %}
+          {%- assign grid_item_width = ' one-half' -%}
+          {%- assign image_size = '530x' -%}
+        {% when 4 %}
+          {%- assign grid_item_width = 'one-half' -%}
+          {%- assign image_size = '530x' -%}
+      {% endcase %}
+      {% for block in section.blocks %}
+        {% if section.blocks.size == 5 and forloop.index < 3 %}
+          {%- assign column_width = 'medium-up--one-half' -%}
+        {% else %}
+          {%- assign column_width = grid_item_width -%}
+        {% endif %}
+        <div class="grid__item column {{ column_width }} col-{{ forloop.index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="text-center">
+                <a class="block-link block-container" style="position: relative;" href="{{ block.settings.button_link }}">
+                  <img class="preload lazyload feature-row__image" loading="lazy" data-preload-desktop="{{ block.settings.image | img_url: '800x1000', crop:'center' }}" data-preload-mobile="{{ block.settings.image | img_url: '600x750', crop:'center' }}">
+                  
+                  {% if block.settings.image_child_gif_1 %}
+                  <img class="preload child_image-gift child_image-left lazyload" loading="lazy" style="position: absolute;" data-preload-desktop="{{ block.settings.image_child_gif_1 | img_url: '300X400', crop:'center' }}" data-preload-mobile="{{ block.settings.image_child_gif_1 | img_url: '300x300', crop:'center' }}">
+                  {% endif %}
+                 {% if block.settings.image_child_gif_2 %}
+                 <img class="preload child_image-gift child_image-right lazyload" loading="lazy" style="position: absolute;" data-preload-desktop="{{ block.settings.image_child_gif_2 | img_url: '300X300', crop:'center' }}" data-preload-mobile="{{ block.settings.image_child_gif_2 | img_url: '300x300', crop:'center' }}">
+                 {% endif %}
+                </a>
+              </div>
+            {% else %}
+              <p>
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </p>
+            {% endif %}
+          {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+            <a href="{{ block.settings.button_link }}" class="button colbtn-{{ forloop.index }}">
+              <span class="button-fix">{{ block.settings.button_label }}</span>
+            </a>
+          {% endif %}
+          <style>a.colbtn-{{ forloop.index }} {color:{{ block.settings.button_color }};background:{{ block.settings.button_bg_color }};} a.button.colbtn-{{ forloop.index }}:hover, a.button.colbtn-{{ forloop.index }}:focus {background:{{ block.settings.button_hover_bg_color }} !important;color:{{ block.settings.button_hover_color }} !important;border-color:{{ block.settings.button_bg_border_color }} !important;}</style>                       
+        </div>
+      {% endfor %}
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  </div>
+  {% schema %}
+    {
+      "name": "Columns with images",
+      "class": "index-section",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "remove_wrapper",
+          "label": "Remove Wrapper"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Text columns with images"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "image_block",
+          "name": "Column",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_child_gif_1",
+              "label": "Add gif"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_child_gif_2",
+              "label": "Add gif"
+            },
+            {
+              "type": "text",
+              "id": "button_label",
+              "label": "Button label"
+            },
+            {
+              "type": "url",
+              "id": "button_link",
+              "label": "Button link"
+            },
+            {
+              "type": "color",
+              "id": "button_color",
+              "label": "Button text color"
+            },
+            {
+              "type": "color",
+              "id": "button_bg_color",
+              "label": "Button background color"
+            },
+            {
+            "type": "color",
+            "id": "button_bg_border_color",
+            "label": "Button hover border color",
+        "default": "#000"
+            },
+            {
+            "type": "color",
+            "id": "button_hover_bg_color",
+            "label": "Button hover background color",
+        "default": "#fff"
+            },
+            {
+            "type": "color",
+            "id": "button_hover_color",
+            "label": "Button hover text color",
+        "default": "#000"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Columns with images",
+          "category": "Text",
+          "blocks": [
+            {
+              "type": "image_block"
+            },
+            {
+              "type": "image_block"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}

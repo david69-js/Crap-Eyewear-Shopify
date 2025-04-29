@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ec061e7f-ec29-4b3e-80df-aad9e074af35": {
+      "type": "module--one-col-hero-conjured-refer",
+      "settings": {
+        "half_height": false,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "image_1": "shopify:\/\/shop_images\/Rectangle_160.png",
+        "image_1_mobile": "shopify:\/\/shop_images\/Rectangle_160_1.png",
+        "image_1_brightness": 0.1,
+        "title_richtext": "<h1>Share the<\/h1><h1><strong>CRAPPINESS :)<\/strong><\/h1>",
+        "title_indent": "even",
+        "body_richtext": "",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "8316c771-27bb-4ef3-b288-a46c9a7b5db5": {
+      "type": "module--conjured-refer",
+      "settings": {
+        "content": "<h1>Hook your friends up with <strong>$20 off their first order & score a $20 credit for urself <\/strong>once they do.<\/h1>"
+      }
+    },
+    "f3d073be-0cfa-4a62-b190-82abbe038ed8": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify:\/\/files\/videos\/2021_Spring-The_Heavy_Tropix-Deep_Rose (1).mp4",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3>Meet Our <em>Favorites<\/em><\/h3>",
+        "cta_1_text": "Shop The Hits",
+        "cta_1_url": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_1.png",
+        "image_2_brightness": 0.3,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, <br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "ec061e7f-ec29-4b3e-80df-aad9e074af35",
+    "main",
+    "8316c771-27bb-4ef3-b288-a46c9a7b5db5",
+    "f3d073be-0cfa-4a62-b190-82abbe038ed8"
+  ]
+}

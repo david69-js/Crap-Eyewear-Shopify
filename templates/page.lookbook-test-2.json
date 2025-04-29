@@ -1,0 +1,569 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>Fall<\/em> 2022<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fbdb3600-ae23-4015-a25b-103e1deaf5b5": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/image_941.png",
+        "caption": ""
+      }
+    },
+    "6b2bb36c-40bd-41f2-9ae7-95984fed8a12": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ed5e062c-9449-475f-8dda-3b09bdb5ecb9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_935.png",
+            "caption": "<p>Featured: <a href=\"\/products\/the-lucid-blur-black-bioacetate-polarized-sunglasses\" title=\"The Lucid Blur - Black Bio Polarized\">The Lucid Blur<\/a>, <a href=\"\/products\/the-heavy-tropix-agave-yellow-polarized-olive-green-square-sunglasses\" title=\"The Heavy Tropix - Agave Bio Polarized\">The Heavy Tropix<\/a>.<\/p>"
+          }
+        },
+        "a07f039b-7e2e-4a02-bb71-b99d85b5148e": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_936.png",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "ed5e062c-9449-475f-8dda-3b09bdb5ecb9",
+        "a07f039b-7e2e-4a02-bb71-b99d85b5148e"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_937.png",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "c268be1c-6f92-410c-94f4-1353f7cb9474": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_938.png",
+            "caption": ""
+          }
+        },
+        "78b9e35e-06dd-432d-a826-2b542fb7c2bf": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-black-bioacetate-polarized-dune-gradient-square-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0",
+        "78b9e35e-06dd-432d-a826-2b542fb7c2bf"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "df431eed-8f80-4dc1-a3a9-01813eb1be58": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/Lookbook-Test-FullScreen.jpg",
+        "caption": ""
+      }
+    },
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lookbook-Media-Test.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-kiss-of-dume-lime-marble-bioacetate-sunglasses\" title=\"The Kiss of Dume - Lime Marble Bio\">The Kiss of Dume in Lime Marble Bio<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-sweet-leaf",
+        "collection_image": "shopify:\/\/shop_images\/Lookbook-detail-carousel.jpg",
+        "image_brightness": 0.5,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "QA TICKET - Need option to hide CTA if content isn't entered"
+      }
+    },
+    "77af1673-6c32-4e4e-a77a-363145146504": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/lookbook-test-fullscreen2.jpg",
+        "caption": ""
+      }
+    },
+    "d75ed2b3-3d8e-41a5-9470-7a09ec05536f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "c72f2666-c965-4774-ac0b-979e322d925d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-media-2uptest1.jpg",
+            "caption": ""
+          }
+        },
+        "0b36dd8e-3af4-4b38-a191-860debc1f597": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-media-2uptest2.jpg",
+            "caption": ""
+          }
+        },
+        "e86753d8-f00e-4ab8-a947-fd723c027cd3": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-anti-matter-dark-tortoise-purple-tint-bioacetate-sunglasses",
+            "col": "1"
+          }
+        },
+        "6dcf1363-0339-442d-93ec-7b4808608330": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-astro-dazey-havana-demi-orange-tint-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "c72f2666-c965-4774-ac0b-979e322d925d",
+        "0b36dd8e-3af4-4b38-a191-860debc1f597",
+        "e86753d8-f00e-4ab8-a947-fd723c027cd3",
+        "6dcf1363-0339-442d-93ec-7b4808608330"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "c5b48c15-a4ba-4850-b7b1-43588185f96e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f1c1859b-1df4-4d8e-95f8-2ac00ce460b7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-media-2uptest3.jpg",
+            "caption": ""
+          }
+        },
+        "858806d0-ce98-4020-844b-edee669e7ced": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-media-2uptest4.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f1c1859b-1df4-4d8e-95f8-2ac00ce460b7",
+        "858806d0-ce98-4020-844b-edee669e7ced"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "18b7270d-a4a5-4703-80df-ae7a48091b87": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/lookbook-fullscreen-test3.jpg",
+        "caption": ""
+      }
+    },
+    "d0799199-c253-44b5-b9a8-b2f259d48c62": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "1fb6d83f-5859-4786-943f-906e2a6bfd9e": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-media-centered.jpg",
+            "caption": ""
+          }
+        },
+        "001faa2c-b522-413e-833e-af15c5ed41dc": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-bikini-vision-bone-white-square-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "1fb6d83f-5859-4786-943f-906e2a6bfd9e",
+        "001faa2c-b522-413e-833e-af15c5ed41dc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "981f6118-964e-46cc-8311-03e0d37c0560": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/fullscreen-lookbook-test.jpg",
+        "caption": ""
+      }
+    },
+    "68b1768e-1851-43de-8610-f4b9c671afc5": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f096d2d6-5249-4198-824b-701e01948c04": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-portrait.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "f096d2d6-5249-4198-824b-701e01948c04"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "4a2843ce-75f9-47d4-b522-62b958e9961b": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "c5985d03-0c02-430c-917c-9fe662fa4b16": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-test-centered.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "c5985d03-0c02-430c-917c-9fe662fa4b16"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "cadd6620-d2d4-443a-a238-ccfcd6ebb765": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0f658803-3864-4ca9-a639-df5a40c9026e": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-portrait-2.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "0f658803-3864-4ca9-a639-df5a40c9026e"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f9cbacb5-7a06-4fea-a80e-ee2d7a0d6af3": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/fullscreen-lookbook-test2.jpg",
+        "caption": ""
+      }
+    },
+    "ebd6d975-c4be-47b1-90f1-2b6a2c9e38b4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "269722b9-2dff-4312-8e1c-950d8743233f": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-2-up1.jpg",
+            "caption": ""
+          }
+        },
+        "fc8aed09-44bd-4159-a521-03d39f9767f8": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-2up2.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "269722b9-2dff-4312-8e1c-950d8743233f",
+        "fc8aed09-44bd-4159-a521-03d39f9767f8"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Fall 2022 Lookbook<\/strong><br\/>Shot on location in Los Angeles, 2022.<\/p><p>Starring: Kamilah Zadi (@kamilahzadi) & Jordan Norwood (@jordannorwood1)<br\/>Photographer: Victoria Moura (@victoriamoura)<br\/>Production Design: Marley Arviso (@marleyarviso) & Tony Accosta (@tonyaccosta)<br\/>Styling: Kailee Takashima (@kaileetakashima)<br\/>Video: Victoria Moura (@victoriamoura)<br\/>Song: 'Dazed Return' by Satin Sheets (@satinsheetsworldwide)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758.jpg",
+            "caption": "Fall 2021 Lookbook",
+            "url": ""
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image7758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image1758.jpg",
+            "caption": "Lookbook Caption",
+            "url": ""
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-2242.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image7758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1>More <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "fbdb3600-ae23-4015-a25b-103e1deaf5b5",
+    "6b2bb36c-40bd-41f2-9ae7-95984fed8a12",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "c268be1c-6f92-410c-94f4-1353f7cb9474",
+    "df431eed-8f80-4dc1-a3a9-01813eb1be58",
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "77af1673-6c32-4e4e-a77a-363145146504",
+    "d75ed2b3-3d8e-41a5-9470-7a09ec05536f",
+    "c5b48c15-a4ba-4850-b7b1-43588185f96e",
+    "18b7270d-a4a5-4703-80df-ae7a48091b87",
+    "d0799199-c253-44b5-b9a8-b2f259d48c62",
+    "981f6118-964e-46cc-8311-03e0d37c0560",
+    "68b1768e-1851-43de-8610-f4b9c671afc5",
+    "4a2843ce-75f9-47d4-b522-62b958e9961b",
+    "cadd6620-d2d4-443a-a238-ccfcd6ebb765",
+    "f9cbacb5-7a06-4fea-a80e-ee2d7a0d6af3",
+    "ebd6d975-c4be-47b1-90f1-2b6a2c9e38b4",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

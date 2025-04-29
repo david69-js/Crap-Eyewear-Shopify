@@ -1,0 +1,197 @@
+{%- capture messages -%}
+    {%- for block in section.blocks -%}
+        {%- case block.type -%}
+            {%- when "announcement" -%}
+            <div data-index="{{ forloop.index }}" class="announcement-text inline-block" style="{%if forloop.index != 1 %}display: none; opacity:0;{% endif %}" role="region" aria-label="{{- "sections.header.announcement" | t -}}">
+                {{ block.settings.text }}
+            </div>
+        {%- endcase -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{% comment %} Precise styles for .announcement-text in _components/navigation.scss {% endcomment %}
+<announcement-bar {% if section.settings.auto_next == true and section.settings.show_bogo == false %} data-auto-next="true" data-speed="{{ section.settings.autoplay_speed }}" {% endif %}>
+    {% comment %} fixed top-0 z-40 {% endcomment %}
+    <div id="fixed-announcement-bar" class="w-full {% if section.settings.show_bogo == true %} h-[60px] {%else%} h-[30px] {%endif%} overflow-hidden">
+        <div id="pencil-wrapper" class="w-full h-full box-border py-1 bg-faded-lime text-off-black eyebrow flex gap-1 dk:gap-4 justify-center items-center">
+            <div id="global-announcements" class="text-center {% if section.settings.show_bogo == true %} hidden {%- endif -%}">
+                {%- if section.blocks.size > 1 -%}
+                    <label class="visually-hidden" for="AnnouncementPrev">Previous announcement</label>
+                    <button id="AnnouncementPrev" class="announcement-prev px-2 cursor-pointer" name="prevAnnouncement" aria-label="Previous Announcement in the list">
+                        <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <title>Previous</title>
+                            <desc>This arrow points to the left, indicating the previous item in a list.</desc>
+                            <path d="M4 1L1 4L4 7" stroke="black" />
+                        </svg>
+                    </button>
+                {%- endif -%}
+                {{ messages }}
+                {%- if section.blocks.size > 1 -%}
+                    <label class="visually-hidden" for="AnnouncementNext">Next announcement</label>
+                    <button id="AnnouncementNext" class="announcement-next px-2 cursor-pointer" name="nextAnnouncement" aria-label="Next Announcement in the list">
+                        <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <title>Next</title>
+                            <desc>This arrow points to the right, indicating the next item in a list.</desc>
+                            <path d="M1 7L4 4L0.999999 1" stroke="black" />
+                        </svg>
+                    </button>
+                {%- endif -%}
+
+            </div>
+            {% if section.settings.show_bogo == true %}
+                <div class="richtext md:w-max countdown-richtext !text-[18px] ml-[10px] md:ml-0" style="display: block !important; color: {{ section.settings.top_bar_countdown_text_color }} !important;">{{ section.settings.bogo_text }}</div>
+                <countdown-clock id="countdown-container" data-target-date="{{ section.settings.date_picker }}" data-target-hour="{{ section.settings.hour_picker }}" style="display: none;"></countdown-clock>
+                <div id="second-countdown" class="hidde-coutndown"><div id="tiles"><span>00</span><span>00</span><span>00</span><span>00</span></div><div class="labels"><li>Days</li><li>Hr</li><li>Min</li><li>Sec</li></div></div>
+                <a href="{{section.settings.top_bar_countdown_cta_url}}" class="top_bar_countdown_btn_shop_now">{{section.settings.top_bar_countdown_cta_text}}</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="spacer"></div>
+</announcement-bar>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function() {
+        var countdownContainer = document.getElementById("countdown-container");
+        var secondCountdown = document.getElementById("second-countdown");
+
+        if (countdownContainer.style.display === "none") {
+            secondCountdown.classList.remove("hidde-coutndown");
+        }
+        else {
+            secondCountdown.classList.add("hidde-coutndown");
+        }
+    }, 1000)
+    
+});
+
+</script>
+<style>
+    #second-countdown {
+        width: 218px;
+        height: 50px;
+      margin: 8px 0;
+        text-align: center;
+      position: relative;
+    }
+    #second-countdown #tiles {
+        position: relative;
+        z-index: 1;
+        display: flex;
+    }
+    
+    #second-countdown #tiles > span {
+        width: 40px;
+        font-size: 18px;
+      font-family: "Alte Haas Grotesk Bold", "Helvetica", "Arial", "sans-serif";
+        text-align: center;
+        color: {{ section.settings.top_bar_countdown_timer_text_color }};
+        background-color: {{ section.settings.top_bar_countdown_bgcolor_timer }};
+        border-radius: 3px;
+        margin: 0 7px;
+        padding: 5px 0;
+        display: inline-block;
+        position: relative;
+    }
+    #countdown-container #tiles > span {
+        color: {{ section.settings.top_bar_countdown_timer_text_color }} !important;
+        background-color: {{ section.settings.top_bar_countdown_bgcolor_timer }} !important;
+    }
+    #pencil-wrapper {
+        background-color: {{ section.settings.top_bar_countdown_bgcolor }} !important;
+    }
+    
+    #second-countdown .labels {
+        width: 100%;
+        text-align: center;
+    }
+    
+    #second-countdown .labels li {
+        width: 40px;
+      margin: 0 7px;
+        font-family: "Alte Haas Grotesk", "Helvetica", "Arial", "sans-serif";
+      font-size: 10px;
+        color: #1E1E1E;
+        text-align: center;
+        display: inline-block;
+    }
+    .hidde-coutndown {
+        display: none !important;
+    }
+</style>
+{% schema %}
+    {
+        "name": "t:sections.announcement-bar.name",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "auto_next",
+                "label": "Automatically switch messages"
+            },
+            {
+                "type": "number",
+                "id": "autoplay_speed",
+                "label": "Autoplay Speed (in seconds)",
+                "default": 10
+            },
+            {
+                "type": "richtext",
+                "id": "bogo_text",
+                "label": "Countdown Text"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_bogo",
+                "label": "Show Countdown Timer",
+                "info": "If active, pencil bar will display a countdown timer and message until the date and hour entered. If the date has passed the countdown will display at 00:00:00:00. This banner will override the regular pencil bar banner."
+            }, {
+                "type": "text",
+                "id": "date_picker",
+                "label": "Choose date",
+                "default": "2023-06-01",
+                "info": "e.g. YYYY-MM-DD"
+            }, {
+                "type": "number",
+                "id": "hour_picker",
+                "label": "Choose hour",
+                "default": 9,
+                "info": "24 hour clock"
+            },
+            {
+                "type": "color",
+                "id": "top_bar_countdown_bgcolor",
+                "label": "Background Color countdown",
+                "default": "#DEFF7B"
+            },
+            {
+                "type": "color",
+                "id": "top_bar_countdown_text_color",
+                "label": "Text Color countdown",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "color",
+                "id": "top_bar_countdown_bgcolor_timer",
+                "label": "Background Color countdown timer",
+                "default": "#CAEE5F"
+            },
+            {
+                "type": "color",
+                "id": "top_bar_countdown_timer_text_color",
+                "label": "Text Color countdown timer",
+                "default": "#1E1E1E"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "announcement",
+                "name": "t:sections.announcement-bar.blocks.announcement.name",
+                "settings": [
+                    {
+                        "type": "richtext",
+                        "id": "text",
+                        "label": "Message"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

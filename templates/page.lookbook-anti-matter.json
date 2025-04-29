@@ -1,0 +1,518 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>The<\/em> Anti Matter<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=-arrk_ZsofA",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "b7ca7d64-ef4b-44c5-b7c0-55cd431d83a4": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-03-web.jpg",
+        "caption": ""
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-06-web.jpg",
+            "caption": ""
+          }
+        },
+        "a055a470-1d60-454d-99c8-0b6eca972c5b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-01-web_d9c61b0d-d1e2-435a-9c4e-076f3137a3f9.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd",
+        "a055a470-1d60-454d-99c8-0b6eca972c5b"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "89d9e97c-e445-4be2-ac56-636740c22dd1": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "42fa6f48-87e5-4c7c-91e7-42dfbcd42634": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-product_02-web.jpg",
+            "caption": ""
+          }
+        },
+        "809a8886-94b1-4e06-8170-2966b1c60531": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-anti-matter-crystal-sage-green-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "42fa6f48-87e5-4c7c-91e7-42dfbcd42634",
+        "809a8886-94b1-4e06-8170-2966b1c60531"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "7f602993-fe4d-451b-ad9f-0d4cb57e7cc5": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-07-web.jpg",
+        "caption": ""
+      }
+    },
+    "3b842b2f-6e7d-41b5-9141-2609c9f2a890": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "5cdfc0a6-3b6b-43b6-b79d-0342bf3ce5e9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-09-web.jpg",
+            "caption": ""
+          }
+        },
+        "31b86af3-c841-4523-852b-e585d848fb11": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-08-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "5cdfc0a6-3b6b-43b6-b79d-0342bf3ce5e9",
+        "31b86af3-c841-4523-852b-e585d848fb11"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-anti-matter",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Anti_Matter-Sage-Wyatt-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "66348b2f-31dd-4484-8105-97d85a0f09ff": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "131eaa98-6427-470e-8391-799f275ee26c": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-11-web.jpg",
+            "caption": ""
+          }
+        },
+        "87052cca-e76a-430d-b1ce-117fd81ecdef": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-12-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "131eaa98-6427-470e-8391-799f275ee26c",
+        "87052cca-e76a-430d-b1ce-117fd81ecdef"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "a264c5a9-cd08-42d8-b9ae-3a2279dd4afe": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "b24a8a21-e595-4927-be96-bbcb864dd70a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-13-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "b24a8a21-e595-4927-be96-bbcb864dd70a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "e132fd05-f3d6-4f8c-8649-430f0b2dcb96": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-anti-matter",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Anti_Matter-Polar-Bethaney-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "ceee5eb5-d830-4aa5-b50a-399566436474": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0be588be-ba1a-45af-b4ab-9d318e015621": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-product_06-web.jpg",
+            "caption": ""
+          }
+        },
+        "89b3c88e-b76f-498c-a648-b9cc213b6dfb": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-anti-matter-black-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "0be588be-ba1a-45af-b4ab-9d318e015621",
+        "89b3c88e-b76f-498c-a648-b9cc213b6dfb"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "57069e23-6353-401d-ba54-0ce13677911e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bbb3293f-6e80-4960-93f1-dff640e21d12": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look2-03-web.jpg",
+            "caption": ""
+          }
+        },
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look2-04-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bbb3293f-6e80-4960-93f1-dff640e21d12",
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "007f9d39-cab9-434c-9fe6-b479f71cfac0": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look2-07-web.jpg",
+        "caption": ""
+      }
+    },
+    "b8e4462b-205e-4bb6-b4ec-fdecf3f38321": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "7eac58e6-a0c5-43d5-9b7c-b45306540422": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look2-05-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "7eac58e6-a0c5-43d5-9b7c-b45306540422"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Looks",
+        "collection_source": "the-anti-matter",
+        "cta_url": "",
+        "cta_text": "Shop Frame",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>The Anti Matter<\/strong><br\/>Shot on location in Los Angeles, 2023.<\/p><p>Starring: Bethaney Valverde (<a href=\"https:\/\/www.instagram.com\/beeeeeeffff\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/beeeeeeffff\/\">@beeeeeeffff<\/a>) & Wyatt Muller (<a href=\"https:\/\/www.instagram.com\/godsdream33\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/godsdream33\/\">@godsdream33<\/a>)<br\/>Photographer: Victoria Moura (<a href=\"https:\/\/www.instagram.com\/victoriamoura\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/victoriamoura\/\">@victoriamoura<\/a>)<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marleyarviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marleyarviso\/\">@marleyarviso<\/a>) & Tony Accosta (<a href=\"https:\/\/www.instagram.com\/tonyaccosta\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/tonyaccosta\/\">@tonyaccosta<\/a>)<br\/>Styling: Kailee Takashima (<a href=\"https:\/\/www.instagram.com\/kaileetakashima\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/kaileetakashima\/\">@kaileetakashima<\/a>)<br\/>Video & Edit: Victoria Moura (<a href=\"https:\/\/www.instagram.com\/victoriamoura\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/victoriamoura\/\">@victoriamoura<\/a>)<br\/>Song: 'On & On' by Xyla (<a href=\"https:\/\/www.instagram.com\/xylalyx\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/xylalyx\/\">@xylalyx<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook"
+          }
+        },
+        "791175d0-39b9-4ad8-b7d2-ead0967c62f0": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/lookbooks-hot-lava-2023"
+          }
+        },
+        "450ced32-beeb-4a54-83d2-015a3b5f93a6": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_carousel.jpg",
+            "caption": "The Perma Joy",
+            "url": "shopify:\/\/pages\/lookbooks-perma-joy"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        }
+      },
+      "block_order": [
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "791175d0-39b9-4ad8-b7d2-ead0967c62f0",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "450ced32-beeb-4a54-83d2-015a3b5f93a6",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "b7ca7d64-ef4b-44c5-b7c0-55cd431d83a4",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2",
+    "89d9e97c-e445-4be2-ac56-636740c22dd1",
+    "7f602993-fe4d-451b-ad9f-0d4cb57e7cc5",
+    "3b842b2f-6e7d-41b5-9141-2609c9f2a890",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "66348b2f-31dd-4484-8105-97d85a0f09ff",
+    "a264c5a9-cd08-42d8-b9ae-3a2279dd4afe",
+    "e132fd05-f3d6-4f8c-8649-430f0b2dcb96",
+    "ceee5eb5-d830-4aa5-b50a-399566436474",
+    "57069e23-6353-401d-ba54-0ce13677911e",
+    "007f9d39-cab9-434c-9fe6-b479f71cfac0",
+    "b8e4462b-205e-4bb6-b4ec-fdecf3f38321",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

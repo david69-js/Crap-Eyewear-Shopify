@@ -1,0 +1,728 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "module_spacer_LzMyek": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_xbk49D": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_RQy9BU": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h2><strong>Soccer Mommy </strong>x Crap® Eyewear</h2><h2> </h2>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_FHjxN6": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_RQy9BU",
+        "richtext_FHjxN6"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_fullscreen_media_3gcbYr": {
+      "type": "module--fullscreen-media",
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-420010-web.jpg",
+        "fit_image_mobile": false,
+        "aspect_ratio": "0.5625",
+        "media_position": "center",
+        "card_alignment": "left",
+        "card_width": 800,
+        "card_background_color": "#ffffff",
+        "section_padding": "cb",
+        "section_padding_halved": false
+      }
+    },
+    "lookbook_two_col_F9JkFb": {
+      "type": "lookbook-two-col",
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_rMwbgi": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_rxPKMd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4> </h4>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_8NXJVf": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We worked with <strong>Soccer Mommy</strong> on a signature version of her fav Crap frame, <strong>The Sweet Leaf. </strong></h5><h5>Sophie Allison, aka Soccer Mommy, is one of our favorite indie rockers and a perennial feature on Crap Eyewear radio. Hailing from Nashville, Tennessee, Soccer Mommy is known for her hazy, beautiful reflections of life and its changes.</h5><h5>This limited edition Sweet Leaf features a <strong>faded berry bioacetate</strong> frame, <strong>wildflower temple logos</strong> and a <strong>signature lens cloth</strong> inspired by her new album, <a href=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\" target=\"_blank\" title=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\"><strong>Evergreen.</strong></a></h5><h5><strong>Available now</strong> on our website, Venice Showroom and at Soccer Mommy<strong> tour dates</strong> in a city near you &lt;3</h5><h5></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_8WbLwy": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_Rx4yxQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "https://www.crapeyewear.com/products/the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_rxPKMd",
+        "richtext_8NXJVf",
+        "richtext_8WbLwy",
+        "button_Rx4yxQ"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_one_column_richtext_8Udnxm": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "button_MMAThd": {
+          "type": "button",
+          "settings": {
+            "link": "https://www.crapeyewear.com/products/the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        },
+        "richtext_nTkyBH": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "button_MMAThd",
+        "richtext_nTkyBH"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "lookbook_two_col_6AFPHJ": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_gkBGdX": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-410034-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_KNtgJT": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-420022-web_0ec5039c-8229-4122-8ccf-23defa2b3bb9.jpg",
+            "caption": "<p>Soccer Mommy in <a href=\"https://www.crapeyewear.com/products/the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses\" target=\"_blank\" title=\"https://www.crapeyewear.com/products/the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses\">The Sweet Leaf</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_gkBGdX",
+        "media_col_KNtgJT"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_fullscreen_yKiYYC": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "product_widget_qqAHph": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "product_widget_qqAHph"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-9-lens_adjustment-web.jpg",
+        "caption": ""
+      }
+    },
+    "lookbook_two_col_KqDCKR": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_3FyD8k": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-380004-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_XNrbPF": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_3FyD8k",
+        "product_widget_XNrbPF"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-420004-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_dyrVqR": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6",
+        "product_widget_dyrVqR"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 65,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "89c87b31-894b-44a8-8b57-1f70ee859da0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_aE6azH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-13-earth-v1-web_7b4c874f-7ae1-42f0-b577-ec457aaf7601.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_9Lxf7E": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-380005-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_F6hRXC": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_aE6azH",
+        "media_col_9Lxf7E",
+        "product_widget_F6hRXC"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_one_column_richtext_ztyrUN": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_xB4GQm": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>This limited edition Sweet Leaf features a <strong>faded berry bioacetate</strong> frame, <strong>wildflower temple logos</strong> and a <strong>signature lens cloth</strong> inspired by her new album, <a href=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\" target=\"_blank\" title=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\"><strong>Evergreen.</strong></a></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_xB4GQm"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "4d138d53-7f23-4449-8aad-cf88d9179882": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>This limited edition Sweet Leaf features a <strong>faded berry bioacetate</strong> frame, <strong>wildflower temple logos</strong> and a <strong>signature lens cloth</strong> inspired by her new album, <a href=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\" target=\"_blank\" title=\"https://open.spotify.com/album/1IN1QBfV9tNR6fFgR7PsUl?si=E4aekp75R0KWQlrpxreVag\"><strong>Evergreen.</strong></a></h5><h5><strong>Available now</strong> on our website, Venice Showroom and at Soccer Mommy<strong> tour dates</strong> in a city near you &lt;3</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_Nxejiw": {
+          "type": "button",
+          "settings": {
+            "link": "https://www.crapeyewear.com/products/the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "text": "Shop Frame",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "4d138d53-7f23-4449-8aad-cf88d9179882",
+        "button_Nxejiw"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3><strong>“Introducing the Submarine sunglasses. We wanted to revive 90s grunge in a way that was scuba-chic to fit this new era. Side A is in black and Side B is in a beautiful crystal smoke. Let’s make this summer freaky.”</strong></h3>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "26f871dc-972d-487e-8295-2c55f148d648": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6>The Marías</h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3",
+        "26f871dc-972d-487e-8295-2c55f148d648"
+      ],
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-410025-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_Jmm9af": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76",
+        "product_widget_Jmm9af"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_ATytFh": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_HXh4NF": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-914-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_fAK7xU": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-935-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_HXh4NF",
+        "media_col_fAK7xU"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "module_one_column_richtext_JAfMwf": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_fWQLn9": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Listen to Soccer Mommy's<strong> </strong>new album, <strong>Evergreen:</strong></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "richtext_Gr94Hh": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_fWQLn9",
+        "richtext_Gr94Hh"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "shogun_custom_html_fBCJRK": {
+      "type": "shogun-custom-html",
+      "settings": {
+        "html": "<div align=\"center\"><iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/7n8Q0KwanjDMOiqejTb8lI?utm_source=generator&amp;theme=0\" width=\"85%\" height=\"300\" frameborder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe></div>"
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Soccer Mommy x Crap® Eyewear<br/></strong>Starring: Soccer Mommy (<a href=\"https://www.instagram.com/soccermommyband/\" target=\"_blank\" title=\"https://www.instagram.com/soccermommyband/\">@soccermommyband</a>)<br/>Photographer: Anna Pollack (<a href=\"https://www.instagram.com/annamalize/\" target=\"_blank\" title=\"https://www.instagram.com/annamalize/\">@annamalize</a>)<br/><br/><strong>Product Photography</strong><br/>Photographer: Tony Accosta</p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 90,
+        "flex": "center",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "marquee_card_Bt4NcE": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Fall-Holiday-Untitled_Halo-5-web.jpg",
+            "caption": "Holiday 2024",
+            "url": "shopify://pages/lookbooks-2024-holiday"
+          }
+        },
+        "marquee_card_mqLdXx": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-8-web_lookbook_grid.jpg",
+            "caption": "Eyedress x Crap® Eyewear",
+            "url": "shopify://pages/eyedress"
+          }
+        },
+        "marquee_card_4RXmAj": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Heavy_Tropix_Sport-look_02-Polar_Sangria-Polar_G15-2-web.jpg",
+            "caption": "The Heavy Tropix Sport",
+            "url": "shopify://pages/lookbooks-2024-ht-sport"
+          }
+        },
+        "marquee_card_VFA3mz": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-557-web_lookbook_marquee.jpg",
+            "caption": "Hike Clerb x Crap® Eyewear",
+            "url": "shopify://pages/lookbooks-2024-hike_clerb"
+          }
+        },
+        "marquee_card_yCptx8": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-02-19-web.jpg",
+            "caption": "Summer No Waves",
+            "url": "shopify://pages/lookbooks-2024-summer-no_wave"
+          }
+        },
+        "marquee_card_BQMVaq": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-30-web_lookbooks_hero.jpg",
+            "caption": "The Glass Bubble",
+            "url": "shopify://pages/lookbooks-glass-bubble"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "caption": "Summer 2024",
+            "url": "shopify://pages/lookbook-2024-summer"
+          }
+        },
+        "marquee_card_BN6BUj": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-No_Wave-Look_02-Licorice-Black_Tort-2-we_lookbooks_carousel.jpg",
+            "caption": "The No Wave",
+            "url": "shopify://pages/lookbooks-no-wave"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-iggy-lookbook-collage-Nico_3-web_lookbooks_carousel.jpg",
+            "caption": "iggy x Crap® Eyewear",
+            "url": "shopify://pages/iggy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lifestyle_card.png",
+            "caption": "The Marquee Rox",
+            "url": "shopify://pages/lookbook-marquee-rox"
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/9-Crap_Eyewear-2024_Spring-Black_Image_Center-19-web_lookbooks_landing.jpg",
+            "caption": "Black Image Center x Crap® Eyewear",
+            "url": "shopify://pages/blackimagecenter"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/20-Crap_Eyewear-2024_Spring-Warp_Zone-look-03-Metallic_Olive-Black_Cherry-11-web_lookbooks-carousel.jpg",
+            "caption": "The Warp Zone",
+            "url": "shopify://pages/lookbooks-warp-zone"
+          }
+        },
+        "marquee_card_bqHDAY": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond-web.jpg",
+            "caption": "Spring 2024",
+            "url": "shopify://pages/lookbook-2024-spring"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_card_Bt4NcE",
+        "marquee_card_mqLdXx",
+        "marquee_card_4RXmAj",
+        "marquee_card_VFA3mz",
+        "marquee_card_yCptx8",
+        "marquee_card_BQMVaq",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "marquee_card_BN6BUj",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "marquee_card_bqHDAY"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1></h1><h1></h1><h1>More <em>Lookbooks</em></h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify://pages/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF</strong> when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/about-us",
+        "image_2": "shopify://shop_images/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14,<br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "module_spacer_LzMyek",
+    "module_one_column_richtext_xbk49D",
+    "module_fullscreen_media_3gcbYr",
+    "lookbook_two_col_F9JkFb",
+    "module_one_column_richtext_rMwbgi",
+    "module_one_column_richtext_8Udnxm",
+    "lookbook_two_col_6AFPHJ",
+    "lookbook_fullscreen_yKiYYC",
+    "lookbook_two_col_KqDCKR",
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00",
+    "89c87b31-894b-44a8-8b57-1f70ee859da0",
+    "module_one_column_richtext_ztyrUN",
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81",
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919",
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb",
+    "lookbook_two_col_ATytFh",
+    "module_one_column_richtext_JAfMwf",
+    "shogun_custom_html_fBCJRK",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

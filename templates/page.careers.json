@@ -1,0 +1,399 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "20140bba-da12-4660-b134-c6098d635923": {
+      "type": "module--one-col-hero",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "half_height": false,
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "image_1": "shopify:\/\/shop_images\/Careers-Hero.jpg",
+        "image_1_mobile": "shopify:\/\/shop_images\/Careers-Hero-Mobile.jpg",
+        "image_1_brightness": 0,
+        "title_richtext": "<h1>Careers<\/h1>",
+        "title_indent": "none",
+        "body_richtext": "",
+        "desktop_content_width": 50,
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "75159a36-1039-450e-aed4-5d6272e73c9c": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "f41608b9-d40a-41e1-9fed-a61fad63c697": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>Crap Eyewear<\/strong> is a lifestyle brand independently owned and operated beachside in <em>Los Angeles, CA.<\/em><\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "acce56fa-90bc-4a44-9521-bcd91043dcb8": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Born in reaction to an overpriced and overly serious sunglass market, we’re on a mission to create funky, bioacetate eyewear without the heavy retail markup. Although our brand name is lighthearted, we take our work, products, customers, employees and surrounding community very seriously. Our organization is Climate Neutral Certified and a proud member of 1% For The Planet.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "f41608b9-d40a-41e1-9fed-a61fad63c697",
+        "acce56fa-90bc-4a44-9521-bcd91043dcb8"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "17f49550-2fd2-4e1e-9f0f-3ade3f45dae9": {
+      "type": "module--two-column-general",
+      "blocks": {
+        "1aace79a-8a05-43f7-9b62-ec5e16b94fd3": {
+          "type": "inline_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Careers-2-up-1-2.jpg",
+            "svg": "",
+            "fit_mobile_image": true,
+            "alt": ""
+          }
+        },
+        "a80b4fc8-27fc-41a7-8d83-a30f85e85b32": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_FunLogo_5.svg",
+            "svg": "",
+            "alt": "",
+            "width": 25,
+            "width_mobile": 25,
+            "position": "tr"
+          }
+        }
+      },
+      "block_order": [
+        "1aace79a-8a05-43f7-9b62-ec5e16b94fd3",
+        "a80b4fc8-27fc-41a7-8d83-a30f85e85b32"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "image": "shopify:\/\/shop_images\/Careers-2-up-1-1.jpg",
+        "justify": "right",
+        "aspect_ratio": "",
+        "col_span": "7",
+        "media_position": "center",
+        "section_padding": "",
+        "section_padding_halved": false,
+        "footer_cta_text": "",
+        "footer_cta_url": "",
+        "footer_cta_style": "btn-primary"
+      }
+    },
+    "4555e64a-4f42-40dc-9611-0048cc34b150": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "7091cfff-bd82-4923-ae59-8daae8eb8db1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>Don’t worry, <strong>be crappy.<\/strong><\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "a7a781b1-872b-453e-8106-0c53f3778d0f": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>As a growing business we work hard to reach challenging goals and benchmarks – but also value our time outside the office with friends, family and coworkers. The Crap Eyewear brand is an extension of our company: deeply rooted in Southern California culture. Our tight-knit team has an eclectic extracurricular resume of everything from surfing and skateboarding to dance and music.<\/h5><h5>Simply put, we’re looking for smart, hard-working, resourceful problem solvers to become an integral part of our growing business.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "7091cfff-bd82-4923-ae59-8daae8eb8db1",
+        "a7a781b1-872b-453e-8106-0c53f3778d0f"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "9a43758d-c710-456d-8a3a-dba742c246b8": {
+      "type": "module--two-column-general",
+      "blocks": {
+        "9ecfea94-6796-4494-8d7d-cdafbe075342": {
+          "type": "inline_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Careers-2-up-2-1.jpg",
+            "svg": "",
+            "fit_mobile_image": false,
+            "alt": ""
+          }
+        },
+        "df03350c-111c-4f89-9987-cba00abf8c78": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Logo_1.svg",
+            "svg": "",
+            "alt": "",
+            "width": 25,
+            "width_mobile": 25,
+            "position": "tl"
+          }
+        }
+      },
+      "block_order": [
+        "9ecfea94-6796-4494-8d7d-cdafbe075342",
+        "df03350c-111c-4f89-9987-cba00abf8c78"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "image": "shopify:\/\/shop_images\/Careers-2-up-2-2.jpg",
+        "justify": "left",
+        "aspect_ratio": "",
+        "col_span": "7",
+        "media_position": "center",
+        "section_padding": "",
+        "section_padding_halved": false,
+        "footer_cta_text": "",
+        "footer_cta_url": "",
+        "footer_cta_style": "btn-primary"
+      }
+    },
+    "6b291674-0d43-44d3-9e35-ecb13edcea37": {
+      "type": "module--value-props",
+      "blocks": {
+        "277c04f6-1936-43a6-ad1f-883c4ce77a0d": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Dollar.png",
+            "card_title": "<h5>Competitive <strong>salary & benefits<\/strong><\/h5>"
+          }
+        },
+        "64a44eb8-ee3d-4278-85bb-ac7104864634": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Glasses.png",
+            "card_title": "<h5><strong>Sunglasses<\/strong> to keep you and your friends <em>Styling<\/em><\/h5>"
+          }
+        },
+        "d2a2780d-389b-44e7-bbf7-d80bd99fbd34": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Dog.png",
+            "card_title": "<h5>Dog-friendly HQ <strong>two blocks from the beach<\/strong> in <em>Venice<\/em><\/h5>"
+          }
+        }
+      },
+      "block_order": [
+        "277c04f6-1936-43a6-ad1f-883c4ce77a0d",
+        "64a44eb8-ee3d-4278-85bb-ac7104864634",
+        "d2a2780d-389b-44e7-bbf7-d80bd99fbd34"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "<h1>Join <strong>our team<\/strong><\/h1>",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "5d7d6c8e-1f06-4d2a-b5c5-3bedc0520825": {
+      "type": "module--job-listings",
+      "blocks": {
+        "ff98539a-02fd-435a-b65f-cdcd619cc7fb": {
+          "type": "job",
+          "settings": {
+            "title": "Showroom Associate",
+            "department": "Operations",
+            "type_of_job": "Part-Time",
+            "location": "Venice, CA (On-Site)",
+            "listing": "https:\/\/www.crapeyewear.com\/pages\/careers-showroom-associate"
+          }
+        },
+        "8be3e9db-e996-4ad3-bab8-f95b6de516bf": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Social Media Manager",
+            "department": "Communications",
+            "type_of_job": "Full-Time",
+            "location": "Venice, CA",
+            "listing": "https:\/\/www.google.com"
+          }
+        },
+        "f6b9bb63-6492-42e3-9d55-53249616fd41": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Graphic Designer",
+            "department": "Creative",
+            "type_of_job": "Part-Time",
+            "location": "Remote",
+            "listing": "https:\/\/www.google.com"
+          }
+        },
+        "7322eb6a-a255-4ff5-9551-f5ebb70c8acb": {
+          "type": "job",
+          "disabled": true,
+          "settings": {
+            "title": "Digital Marketing Intern",
+            "department": "Marketing",
+            "type_of_job": "Part-Time",
+            "location": "Hybrid",
+            "listing": "shopify:\/\/pages\/careers-digital-marketing-intern"
+          }
+        }
+      },
+      "block_order": [
+        "ff98539a-02fd-435a-b65f-cdcd619cc7fb",
+        "8be3e9db-e996-4ad3-bab8-f95b6de516bf",
+        "f6b9bb63-6492-42e3-9d55-53249616fd41",
+        "7322eb6a-a255-4ff5-9551-f5ebb70c8acb"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "title": "<h1><em>Open<\/em> jobs<\/h1>",
+        "alignment": "left"
+      }
+    },
+    "423c72a6-b805-48c7-afe0-e93f055661ea": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "a9e04d41-f83a-4c6f-9714-811037daa4a3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>Internships<\/strong><\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "782df1e3-951c-4bbe-bb94-2eda816e6976": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Paid internships in various departments are available throughout the year. Not seeing the role for you above? Please email us your resume and a cover letter outlining what department\/discipline you’re interested in.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "a9e04d41-f83a-4c6f-9714-811037daa4a3",
+        "782df1e3-951c-4bbe-bb94-2eda816e6976"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "96325f81-8fed-425e-8024-16252036b0be": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "d92120ca-105d-4851-a05f-d2cd236282c8": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4><strong>Stay connected<\/strong> for the latest on Crappy job opportunities.<\/h4>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        },
+        "d4ae12c8-1402-4178-8fb7-9139d88e1c8a": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/www.linkedin.com\/company\/crapeyewear",
+            "text": "Follow on LinkedIn",
+            "button_style": "btn-black",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "d92120ca-105d-4851-a05f-d2cd236282c8",
+        "d4ae12c8-1402-4178-8fb7-9139d88e1c8a"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "3c72e7b5-6552-420b-9ab6-db8f9fdfc1f5": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify:\/\/files\/videos\/Crap_Eyewear-meet_the_favs-heavy_tropix-deep_rose-web_home_primary.mp4",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3>Meet Our <br\/><em>Favorites<\/em><\/h3>",
+        "cta_1_text": "Shop The Hits",
+        "cta_1_url": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom<br\/><\/strong>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "20140bba-da12-4660-b134-c6098d635923",
+    "75159a36-1039-450e-aed4-5d6272e73c9c",
+    "17f49550-2fd2-4e1e-9f0f-3ade3f45dae9",
+    "4555e64a-4f42-40dc-9611-0048cc34b150",
+    "9a43758d-c710-456d-8a3a-dba742c246b8",
+    "6b291674-0d43-44d3-9e35-ecb13edcea37",
+    "5d7d6c8e-1f06-4d2a-b5c5-3bedc0520825",
+    "423c72a6-b805-48c7-afe0-e93f055661ea",
+    "96325f81-8fed-425e-8024-16252036b0be",
+    "3c72e7b5-6552-420b-9ab6-db8f9fdfc1f5"
+  ]
+}

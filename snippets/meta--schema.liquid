@@ -1,0 +1,11 @@
+
+{% liquid
+
+if request.page_type == "product"
+	render "schema--product"
+elsif request.page_type == "article"
+	render "schema--article"
+elsif request.page_type == "collection"
+	render "schema--collection"
+endif
+%}

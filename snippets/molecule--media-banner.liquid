@@ -1,0 +1,29 @@
+{%- comment -%}
+/**
+ * @property {*}
+ *
+ * https://apps.shopify.com/search-and-discovery
+ */
+{%- endcomment -%}
+{%- liquid
+
+assign title = title | default: collection.title
+assign image = image | default: collection.image
+assign description = description | default: collection.description
+
+-%}
+<div class="cx flex dk:flex-grow">
+	{%- if image != blank -%}
+		<div class="w-full dk:w-1/2 h-[395px] dk:h-[720px] relative">
+			{% render "component--responsive-image", image: image, objectFit: true %}
+		</div>
+	{%- endif -%}
+	<div class="w-full {% if image %} dk:w-1/2 {% endif %} flex flex-col justify-end">
+		<h1>{{- title -}}</h1>
+		{%- if description != blank -%}
+			<div class="richtext max-w-[592px] mt-10">
+				{{- description -}}
+			</div>
+		{%- endif -%}
+	</div>
+</div>

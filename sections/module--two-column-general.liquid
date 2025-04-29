@@ -1,0 +1,652 @@
+{%- liquid
+
+assign cover = false
+
+if section.settings.aspect_ratio != blank
+    assign cover = true
+endif
+
+assign gridClass = "col-span-6"
+
+if section.settings.justify == "right"
+	assign gridClass = "col-span-6"
+endif
+
+if section.settings.col_span != 6
+	assign gridClass = "col-span-" | append: section.settings.col_span
+assign number = section.settings.col_span
+assign remainderClass =  12 | minus: number | prepend: "col-span-"
+endif
+
+assign fadeClass = ""
+assign trigger = "observe"
+
+if section.settings.animation == "StaggerFade"
+	assign fadeClass = "js-stagger"
+endif
+
+assign section_padding_class = section.settings.section_padding
+
+if section.settings.section_padding_halved == true and section_padding_class != blank
+	assign section_padding_class = section.settings.section_padding | append: "-1/2"
+endif
+
+-%}
+{%- comment -%} --- Capture our media element --- {%- endcomment -%}
+{%- capture media -%}
+    <div style="{%- if cover == true -%} --media-ratio:calc(100% * {{ section.settings.aspect_ratio }}); --media-position: {{ section.settings.media_position }}; {%- endif -%} {%- if section.settings.background_color != blank %} --background-color: {{- section.settings.background_color -}}; {%- endif -%}" class="order-first dk:-order-none flex w-full bg-[color:var(--background-color)] {{ fadeClass }} {{ gridClass }}">
+        {%- if cover == true -%}
+            <div class="w-full min-h-full h-0 pb-[var(--media-ratio)] [&>*]:object-[var(--media-position)] relative overflow-hidden">
+            {%- endif -%}
+            {%- unless section.settings.video != blank -%}
+                {%- render "component--responsive-image", image: section.settings.image, objectFit: cover, placeholder: true, maxSize: 1280 -%}
+            {%- else -%}
+                {%- render "component--responsive-video" 
+                    , autoplay: true,
+                    muted: true,
+                    loop: true,
+                    desktop_video: section.settings.video,
+                    mobile_video: section.settings.video -%}
+            {%- endunless -%}
+            {%- if cover == true -%}
+            </div>
+        {%- endif -%}
+    </div>
+{%- endcapture -%}
+
+{%- comment -%} --- Construct the markup --- {%- endcomment -%}
+{%- capture markup -%}
+    {%- if section.settings.justify == "right" -%}
+        {{- media -}}
+    {%- endif -%}
+
+    <div style="--font-color:{{ section.settings.font_color }}; --background-color:{{ section.settings.background_color }};" class="flex ca items-center bg-[color:var(--background-color)] {%- if section.settings.media_width == 6 %} col-span-6 {% else %} {{ remainderClass }} {% endif -%}">
+        <div class="w-full [&>*]:mb-4 [&>:last-child]:mb-0 relative">
+            {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                    {%- when "heading" %}
+                    {%- render "component--text", tag: block.settings.tag, content: block.settings.text, align: block.settings.alignment, font_scale: block.settings.font_scale, classes: "leading-none", anim_class: fadeClass -%}
+
+                    {%- when "richtext" %}
+                    {%- render "component--richtext", content: block.settings.richtext, align: block.settings.alignment, anim_class: fadeClass -%}
+
+                    {%- when "eyebrow" %}
+                    {%- render "component--text", tag: "small", content: block.settings.text, align: "left", classes: "uppercase", anim_class: fadeClass -%}
+
+                    {%- when "button" %}
+
+                    {%- render "component--button", link: block.settings.button_link, label: block.settings.button_text, button_style: block.settings.button_style, anim_class: fadeClass -%}
+
+                    {%- when "inline_image" %}
+                    {% unless block.settings.svg != blank %}
+                        {%- render "component--responsive-image" 
+                            , image: block.settings.image,
+                            objectFit: contain,
+                            placeholder: true,
+                            max_width: block.settings.max_width,
+                            use_max_width: block.settings.use_max_width,
+                            anim_class: fadeClass,
+                            classes: 'mx-auto dk:max-w-full block' -%}
+                    {% else %}
+                        <div class="inline-svg">
+                            {{- block.settings.svg -}}
+                        </div>
+                    {% endunless %}
+
+                    {%- when "sticker" %}
+                    {% render 'component--sticker' 
+                       , sticker: block,
+                       anim_class: fadeClass %}
+
+                {%- endcase -%}
+            {% endfor %}
+        </div>
+    </div>
+    {%- if section.settings.justify == "left" -%}
+        {{- media -}}
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- comment -%} --- Output in Grid slot --- {%- endcomment -%}
+<div class="pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %}" data-animation="{{- section.settings.animation -}}">
+    {%- render "slot--grid", slot: markup, cols: "1,12", noGap: true, classes: section_padding_class, anim: section.settings.animation, trigger: trigger -%}
+    {%- if section.settings.footer_cta_text and section.settings.footer_cta_url -%}
+        <div class="cx md:mt-[50px]">
+            <a class="mx-auto btn {{ section.settings.footer_cta_style }}" href="{{ section.settings.footer_cta_url }}">{{ section.settings.footer_cta_text }}</a>
+        </div>
+    {%- endif -%}
+</div>
+
+{% schema %}
+    {
+        "name": "Two-column - General",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            }, {
+                "type": "image_picker",
+                "id": "image",
+                "label": "t:settings_schema.general.settings.image.label",
+                "info": "t:settings_schema.general.settings.image.info"
+            }, {
+                "type": "video",
+                "id": "video",
+                "label": "t:settings_schema.general.settings.video.label",
+                "info": "t:settings_schema.general.settings.video.info"
+            }, {
+                "type": "select",
+                "id": "justify",
+                "label": "t:settings_schema.general.settings.justify.label",
+                "info": "t:settings_schema.general.settings.justify.info",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "t:settings_schema.general.settings.alignment.left.label"
+                    }, {
+                        "value": "right",
+                        "label": "t:settings_schema.general.settings.alignment.right.label"
+                    }
+                ],
+                "default": "left"
+            }, {
+                "type": "select",
+                "id": "aspect_ratio",
+                "label": "t:settings_schema.general.settings.aspect_ratio.label",
+                "info": "t:settings_schema.general.settings.aspect_ratio.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.general.settings.aspect_ratio.default.label"
+                    },
+                    {
+                        "value": "1",
+                        "label": "t:settings_schema.general.settings.aspect_ratio.square.label"
+                    },
+                    {
+                        "value": "1.25",
+                        "label": "t:settings_schema.general.settings.aspect_ratio.portrait.label"
+                    },
+                    {
+                        "value": "0.75",
+                        "label": "t:settings_schema.general.settings.aspect_ratio.landscape.label"
+                    }, {
+                        "value": "0.5625",
+                        "label": "t:settings_schema.general.settings.aspect_ratio.film.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "col_span",
+                "label": "t:settings_schema.general.settings.col_span.label",
+                "info": "t:settings_schema.general.settings.col_span.info",
+                "options": [
+                    {
+                        "value": "6",
+                        "label": "Both elements equally"
+                    },
+                    {
+                        "value": "7",
+                        "label": "Span 7 of 12 columns"
+                    },
+                    {
+                        "value": "8",
+                        "label": "Span 8 of 12 columns"
+                    },
+                    {
+                        "value": "9",
+                        "label": "Span 9 of 12 columns"
+                    }, {
+                        "value": "10",
+                        "label": "Span 10 of 12 columns"
+                    }, {
+                        "value": "11",
+                        "label": "Span 11 of 12 columns"
+                    }
+                ],
+                "default": "6"
+            }, {
+                "type": "select",
+                "id": "media_position",
+                "label": "t:settings_schema.components.settings.media_position.label",
+                "info": "t:settings_schema.components.settings.media_position.info",
+                "options": [
+                    {
+                        "value": "top",
+                        "label": "t:settings_schema.general.settings.position.top.label"
+                    },
+                    {
+                        "value": "right",
+                        "label": "t:settings_schema.general.settings.position.right.label"
+                    },
+                    {
+                        "value": "bottom",
+                        "label": "t:settings_schema.general.settings.position.bottom.label"
+                    },
+                    {
+                        "value": "left",
+                        "label": "t:settings_schema.general.settings.position.left.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.position.center.label"
+                    }
+                ],
+                "default": "center"
+            }, {
+                "type": "select",
+                "id": "section_padding",
+                "label": "t:settings_schema.components.settings.section_padding.label",
+                "info": "t:settings_schema.components.settings.section_padding.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.general.settings.section_padding.none.label"
+                    },
+                    {
+                        "value": "ca",
+                        "label": "t:settings_schema.general.settings.section_padding.all.label"
+                    },
+                    {
+                        "value": "cx",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal.label"
+                    },
+                    {
+                        "value": "cx ct",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal_top.label"
+                    }, {
+                        "value": "cx cb",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal_bottom.label"
+                    }, {
+                        "value": "cy",
+                        "label": "t:settings_schema.general.settings.section_padding.vertical.label"
+                    }, {
+                        "value": "ct",
+                        "label": "t:settings_schema.general.settings.section_padding.top.label"
+                    }, {
+                        "value": "cb",
+                        "label": "t:settings_schema.general.settings.section_padding.bottom.label"
+                    }
+                ],
+                "default": "ca"
+            }, {
+                "type": "checkbox",
+                "id": "section_padding_halved",
+                "label": "t:settings_schema.components.settings.section_padding_halved.label",
+                "info": "t:settings_schema.components.settings.section_padding_halved.info",
+                "default": false
+            }, {
+                "type": "text",
+                "id": "footer_cta_text",
+                "label": "Footer CTA Text"
+            }, {
+                "type": "url",
+                "id": "footer_cta_url",
+                "label": "Footer CTA URL"
+            }, {
+                "type": "select",
+                "id": "footer_cta_style",
+                "label": "Footer CTA Color",
+                "options": [
+                    {
+                        "value": "btn-primary",
+                        "label": "Green"
+                    }, {
+                        "value": "btn-secondary",
+                        "label": "White"
+                    }, {
+                        "value": "",
+                        "label": "Black"
+                    }
+                ],
+                "default": "btn-primary"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "heading",
+                "name": "t:settings_schema.components.settings.heading.name",
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "t:settings_schema.components.settings.heading.content"
+                    },
+                    {
+                        "type": "text",
+                        "id": "text",
+                        "label": "t:settings_schema.general.settings.text.label",
+                        "info": "t:settings_schema.general.settings.text.info"
+                    },
+                    {
+                        "type": "select",
+                        "id": "tag",
+                        "label": "t:settings_schema.general.settings.heading.label",
+                        "info": "t:settings_schema.general.settings.heading.info",
+                        "options": [
+                            {
+                                "value": "h1",
+                                "label": "t:settings_schema.general.settings.tag.h1.label"
+                            },
+                            {
+                                "value": "h2",
+                                "label": "t:settings_schema.general.settings.tag.h2.label"
+                            },
+                            {
+                                "value": "h3",
+                                "label": "t:settings_schema.general.settings.tag.h3.label"
+                            },
+                            {
+                                "value": "h4",
+                                "label": "t:settings_schema.general.settings.tag.h4.label"
+                            }, {
+                                "value": "h5",
+                                "label": "t:settings_schema.general.settings.tag.h5.label"
+                            }, {
+                                "value": "h6",
+                                "label": "t:settings_schema.general.settings.tag.h6.label"
+                            }
+                        ],
+                        "default": "h2"
+                    },
+                    {
+                        "type": "range",
+                        "id": "font_scale",
+                        "min": 50,
+                        "max": 150,
+                        "step": 10,
+                        "default": 100,
+                        "label": "t:settings_schema.general.settings.font_scale.label",
+                        "info": "t:settings_schema.general.settings.font_scale.info"
+                    }, {
+                        "type": "select",
+                        "id": "alignment",
+                        "label": "t:settings_schema.general.settings.alignment.label",
+                        "info": "t:settings_schema.general.settings.alignment.info",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "t:settings_schema.general.settings.alignment.left.label"
+                            }, {
+                                "value": "center",
+                                "label": "t:settings_schema.general.settings.alignment.center.label"
+                            }, {
+                                "value": "right",
+                                "label": "t:settings_schema.general.settings.alignment.right.label"
+                            }
+                        ],
+                        "default": "left"
+                    }
+                ]
+            },
+            {
+                "type": "richtext",
+                "name": "t:settings_schema.components.settings.richtext.name",
+                "settings": [
+                    {
+                        "type": "richtext",
+                        "id": "richtext",
+                        "label": "t:settings_schema.general.settings.richtext.label",
+                        "info": "t:settings_schema.general.settings.richtext.info"
+                    }, {
+                        "type": "select",
+                        "id": "alignment",
+                        "label": "t:settings_schema.general.settings.alignment.label",
+                        "info": "t:settings_schema.general.settings.alignment.info",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "t:settings_schema.general.settings.alignment.left.label"
+                            }, {
+                                "value": "center",
+                                "label": "t:settings_schema.general.settings.alignment.center.label"
+                            }, {
+                                "value": "right",
+                                "label": "t:settings_schema.general.settings.alignment.right.label"
+                            }
+                        ],
+                        "default": "left"
+                    }, {
+                        "type": "select",
+                        "id": "body_size",
+                        "label": "Paragraph size",
+                        "info": "Does not affect heading size.",
+                        "options": [
+                            {
+                                "value": "body-large",
+                                "label": "Large"
+                            }, {
+                                "value": "body-primary",
+                                "label": "Primary"
+                            }, {
+                                "value": "body-small",
+                                "label": "Small"
+                            }
+                        ],
+                        "default": "body-primary"
+                    }
+                ]
+            },
+            {
+                "type": "eyebrow",
+                "name": "t:settings_schema.components.settings.eyebrow.name",
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "t:settings_schema.components.settings.eyebrow.content"
+                    }, {
+                        "type": "text",
+                        "id": "text",
+                        "label": "t:settings_schema.general.settings.text.label",
+                        "info": "t:settings_schema.general.settings.text.info"
+                    }
+                ]
+            },
+            {
+                "type": "button",
+                "name": "t:settings_schema.components.settings.button.name",
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "t:settings_schema.components.settings.button.content"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "t:settings_schema.general.settings.button_link.label",
+                        "info": "t:settings_schema.general.settings.button_link.info"
+                    },
+                    {
+                        "type": "text",
+                        "id": "text",
+                        "label": "t:settings_schema.general.settings.button_text.label",
+                        "info": "t:settings_schema.general.settings.button_text.info"
+                    },
+                    {
+                        "type": "select",
+                        "id": "button_style",
+                        "label": "t:settings_schema.general.settings.button_style.label",
+                        "info": "t:settings_schema.general.settings.button_style.info",
+                        "options": [
+                            {
+                                "value": "btn-primary",
+                                "label": "Green"
+                            }, {
+                                "value": "btn-secondary",
+                                "label": "White"
+                            }, {
+                                "value": "btn-black",
+                                "label": "Black"
+                            }, {
+                                "value": "link",
+                                "label": "Link"
+                            }
+                        ],
+                        "default": "btn-primary"
+                    }, {
+                        "type": "select",
+                        "id": "alignment",
+                        "label": "t:settings_schema.general.settings.alignment.label",
+                        "info": "t:settings_schema.general.settings.alignment.info",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "t:settings_schema.general.settings.alignment.left.label"
+                            }, {
+                                "value": "center",
+                                "label": "t:settings_schema.general.settings.alignment.center.label"
+                            }, {
+                                "value": "right",
+                                "label": "t:settings_schema.general.settings.alignment.right.label"
+                            }
+                        ],
+                        "default": "left"
+                    }
+                ]
+            }, {
+                "type": "inline_image",
+                "name": "Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image",
+                        "info": "Image"
+                    }, {
+                        "type": "textarea",
+                        "id": "svg",
+                        "label": "SVG Code"
+                    }, {
+                        "type": "checkbox",
+                        "id": "fit_mobile_image",
+                        "label": "Portrait Mobile Image",
+                        "info": "Check to extend image vetically on Mobile"
+                    }, {
+                        "type": "text",
+                        "id": "alt",
+                        "label": "alt text",
+                        "info": "Text to describe the image"
+                    }
+                ]
+            }, {
+                "type": "sticker",
+                "name": "Sticker",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image",
+                        "info": "Image"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "svg",
+                        "label": "SVG Code"
+                    },
+                    {
+                        "type": "text",
+                        "id": "alt",
+                        "label": "alt text",
+                        "info": "Text to describe the image"
+                    },
+                    {
+                        "type": "range",
+                        "id": "width",
+                        "label": "Sticker Width (%)",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25
+                    }, {
+                        "type": "range",
+                        "id": "width_mobile",
+                        "label": "Mobile Sticker Width (%)",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25
+                    }, {
+                        "type": "select",
+                        "id": "position",
+                        "label": "Sticker position",
+                        "options": [
+                            {
+                                "label": "default",
+                                "value": ""
+                            },
+                            {
+                                "label": "Top Left",
+                                "value": "tl"
+                            },
+                            {
+                                "label": "Top Right",
+                                "value": "tr"
+                            },
+                            {
+                                "label": "Bottom Left",
+                                "value": "bl"
+                            }, {
+                                "label": "Bottom right",
+                                "value": "br"
+                            }
+                        ],
+                        "default": ""
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Two-column - General"
+            }
+        ]
+    }
+{% endschema %}

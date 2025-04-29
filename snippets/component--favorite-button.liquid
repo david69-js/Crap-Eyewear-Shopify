@@ -1,0 +1,39 @@
+{%- liquid
+  assign aria_label = "Add to favorite products"
+  assign is_favorite = false
+  assign favorite_class = ""
+-%}
+
+{% if customer and customer.metafields.customer_fields.favorites and customer.metafields.customer_fields.favorites != blank and customer.metafields.customer_fields.favorites != "[]" %}
+  {% assign customer_favorites = customer.metafields.customer_fields.favorites | replace: '[', '' | replace: ']', '' | replace: '"', '' %}
+  {% if customer_favorites contains "," %}
+      {% assign customer_favorites = customer_favorites | split: "," %}
+      {% for ref_handle in customer_favorites %}
+          {% if ref_handle == product.handle %}
+              {% assign is_favorite = true %}
+          {% endif %}
+      {% endfor %}
+  {% else %}
+      {% if customer_favorites == product.handle %}
+          {% assign is_favorite = true %}
+      {% endif %}
+  {% endif %}
+{% endif %}
+
+{% if is_favorite %}
+  {% assign favorite_class = "is-favorite" %}
+{% endif %}
+{% comment %} {{ product.handle }}
+                                      {{ customer.id }}
+                                      {{ customer.metafields.customer_fields.favorites }}
+                                      {{ customer_favorites }}
+{{ is_favorite }} {% endcomment %}
+
+<favorite-button>
+  <button aria-label="{{aria_label}}" data-product-name="{{ product.title }}" data-product-id="{{ product.id }}" class="w-full wishlist-button h-full relative favorite-button {{favorite_class}}" data-customer="{{customer.id}}" data-favorites='{{ customer.metafields.customer_fields.favorites }}' data-handle="{{product.handle}}" data-route="{{ routes.account_login_url }}">
+      {% render "icon--heart" %}
+  </button>
+  <div class="hidden fave-card">
+      {% render 'component--fave-card' product: product %}
+  </div>
+</favorite-button>

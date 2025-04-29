@@ -1,0 +1,8 @@
+{% for media in product.media %}
+    {% assign check = media | split: '-front2' %}
+    {% assign troof = check | size %}
+
+    {% if troof > 1 %}
+        {% render "component--responsive-image", image: media, objectFit: false %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,274 @@
+{% include 'shogun-products', content: collection %}
+{{collection.metafields.shogun.above}}
+
+<!-- spurit_po-added -->
+{% include 'spurit_po-collection-snippet' %}
+<!-- /spurit_po-added -->
+{% comment %}Assign whether this is an accessories collection or not{% endcomment %}
+{% assign hideFilters = false %}
+{% if collection.handle == 'accessories' or collection.handle == 'extras' %}
+  {% assign hideFilters = true %}
+{% endif %}
+
+{% if collection.products.size > 0 or current_tags.size > 0 %}
+  {% paginate collection.products by 150 %}
+  <div class="main-collection-filters-list u-center">
+    <div class="container">
+      <ul>
+        {% for subCollection in linklists['collection-filters'].links %}
+        <li><a{% if subCollection.handle == collection.handle %} class="mod-selected"{% endif %} href="{{ subCollection.url }}"><span class="button-fix">{{ subCollection.title }}</span></a></li>
+        {% endfor %}
+        <li><a{% if collection.handle == 'all' %} class="mod-selected"{% endif %} href="/collections/all"><span class="button-fix">All</span></a></li>
+      </ul>
+    </div>
+  </div>
+  {% if collection.image %}
+  <!-- MAIN-COLLECTION-IMAGE -->
+  <div class="main-collection-image u-center" style="background-image: url('{{ collection.image | img_url: '2048x' }}')">
+    {% assign parts = collection.description | split: '[' %}
+	{% unless collection.title contains 'Sale' %}
+    <div class="main-collection-content-mobile">
+      <h2 class="mobile-collection-title mobile-only">{{ collection.title }}</h2>
+    </div>
+    {% endunless %}
+
+    <div class="main-collection-content">
+
+      {% if parts.size == 2 %}
+        {{ collection.description | split: '[' | first }}
+        <a href="{{ collection.description | split: '[' | last | split: '=' | last | remove: ']' | strip_html }}" class="button inverted white">{{ collection.description | split: '[' | last | split: '=' | first | strip_html }}</a>
+      {% else %}
+        {{ collection.description }}
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- /MAIN-COLLECTION-IMAGE -->
+  {% endif %}
+  <div class="clear"></div>
+
+
+  <!-- MAIN-COLLECTION-FILTERS -->
+  {% for tag in collection.all_tags %}
+    {% assign tagDown = tag | downcase %}
+    {% if tagDown contains 'shape:' %}
+      {% assign shapes = shapes | append: tag | append: '|' %}
+    {% elsif tagDown contains 'frame color:' %}
+      {% assign frameColors = frameColors | append: tag | append: '|' %}
+    {% elsif tagDown contains 'lens color:' %}
+      {% assign lensColors = lensColors | append: tag | append: '|' %}
+    {% endif %}
+  {% endfor %}
+  {% assign shapes = shapes | remove_last: '|' | split: '|' %}
+  {% assign frameColors = frameColors | remove_last: '|' | split: '|' %}
+  {% assign lensColors = lensColors | remove_last: '|' | split: '|' %}
+  <!-- /MAIN-COLLECTION-FILTERS -->
+
+
+  <div class="clear"></div>
+  <!-- MAIN-COLLECTION -->
+  <div class="main-collection">
+
+    {% unless hideFilters %}
+    <div class="main-collection-filters-toggle u-center">
+      <a href="#">Filter Products <span>+</span></a>
+    </div>
+    {% endunless %}
+
+    <div class="main-collection-filters-wrap">
+      <div class="row">
+        <div class="six columns offset-by-three main-collection-filters-categories-row">&nbsp;
+          {% unless hideFilters %}
+          <ul class="main-collection-filters-categories">
+            <li data-category="frame-shape"><span class="button-fix">Frame Shape</span></li>
+            <li data-category="frame-color"><span class="button-fix">Frame Color</span></li>
+            <li data-category="lens-color"><span class="button-fix">Lens Color</span></li>
+          </ul>
+          {% endunless %}
+        </div>
+        <div class="three columns">
+          <div class="main-collection-filters-sort u-text-pull-right">
+            <div class="link" href="#">Sort
+              <ul>
+                {% assign tagHandle = blank %}
+                {% assign tagString = blank %}
+                {% for tag in current_tags %}
+                  {% assign tagHandle = tag | handle %}
+                  {% assign tagString = tagString | append: tagHandle %}
+                  {% unless forloop.last %}
+                    {% assign tagString = tagString | append: '+' %}
+                  {% endunless %}
+                {% endfor %}
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'price-ascending' }}">Price (Low - High)</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'price-descending' }}">Price (High - Low)</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'created-descending' }}">New Arrivals</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'title-ascending' }}">A-Z</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'best-selling' }}">Popularity</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <ul class="main-collection-filters mod-frame-shape">
+          {% for shape in shapes %}
+          	{% unless shape contains 'wayfarer' %}
+            <li data-tag="{{ shape }}" {% if current_tags contains shape %}class="mod-selected"{% endif %}>{% if current_tags contains shape %}<img src="{{ shape | handle | append: '-active.svg' | asset_url }}" alt="{{ shape | remove: 'shape:' | strip | capitalize }}">{% else %}<img src="{{ shape | handle | append: '.svg' | asset_url }}" alt="{{ shape | remove: 'shape:' | strip | capitalize }}">{% endif %}<span>{{ shape | remove: 'shape:' | strip }}</span></li>
+          	{% endunless %}
+          {% endfor %}
+          <span class="u-cf">&nbsp;</span>
+        </ul>
+        <ul class="main-collection-filters mod-frame-color">
+          {% for color in frameColors %}
+            <li data-tag="{{ color }}" {% if current_tags contains color %}class="mod-selected"{% endif %}><span>{{ color | remove: 'frame color:' | strip }}</span></li>
+          {% endfor %}
+          <span class="u-cf">&nbsp;</span>
+        </ul>
+        <ul class="main-collection-filters mod-lens-color">
+          {% for color in lensColors %}
+            <li data-tag="{{ color }}" {% if current_tags contains color %}class="mod-selected"{% endif %}><span>{{ color | remove: 'lens color:' | strip }}</span></li>
+          {% endfor %}
+          <span class="u-cf">&nbsp;</span>
+        </ul>
+      </div>
+      <div class="row main-collection-filters-mobile-buttons">
+        <button class="button inverted clear-filters"><span class="button-fix">Clear Filters</span></button>
+        <button class="button apply-filters"><span class="button-fix">Apply Filters</span></button>
+      </div>
+
+    </div>
+    <div class="container u-full-width">
+      <div class="main-collection-filters-actions">
+        <ul class="main-collection-filters-breadcrumbs">
+          {% if current_tags %}
+            {% for tag in current_tags %}
+          		{% unless tag contains "Group:" %}
+              <li data-tag="{{ tag }}" class="main-collection-filters-breadcrumb"><span>{{ tag | remove: 'frame shape:' | remove: 'shape:' | remove: 'lens color:' | remove: 'Group:' | strip }}</span></li>
+          		{% endunless %}
+            {% endfor %}
+          <li data-tag="clear-all" class="main-collection-filters-breadcrumb mod-clear-filters"><a href="{{ collection.url }}">Clear Filters</a></li>
+          {% endif %}
+          </ul>
+          <div class="main-collection-filters-sort u-text-pull-right mod-mobile">
+            <div class="link" href="#">Sort
+              <ul>
+                {% assign tagHandle = blank %}
+                {% assign tagString = blank %}
+                {% for tag in current_tags %}
+                  {% assign tagHandle = tag | handle %}
+                  {% assign tagString = tagString | append: tagHandle %}
+                  {% unless forloop.last %}
+                    {% assign tagString = tagString | append: '+' %}
+                  {% endunless %}
+                {% endfor %}
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'price-ascending' }}">Price (Low - High)</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'price-descending' }}">Price (High - Low)</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'created-descending' }}">New Arrivals</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'title-ascending' }}">A-Z</a></li>
+                <li><a href="{{ collection.url | append: '/' | append: tagString | sort_by: 'best-selling' }}">Popularity</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="main-collection-loading">
+          {% include 'loading-spinner' %}
+        </div>
+        <div class="main-collection-grid">
+          {% if collection.metafields.c_f['Featured Product'] != blank and all_products[collection.metafields.c_f['Featured Product']] != blank %}
+            {% capture featured %}
+              </div>
+              <div class="main-collection-featured">
+                <div class="container">
+                  <div class="row">
+                    <div class="one-half column u-center">
+                      <h3>{{ all_products[collection.metafields.c_f['Featured Product']].title | split: ' - ' | first }}</h3>
+                      <p>{{ all_products[collection.metafields.c_f['Featured Product']].description | split: '<ul>' | first | strip_html }}</p>
+                      <a href="{{ all_products[collection.metafields.c_f['Featured Product']].url }}" class="button">Shop Now</a>
+                    </div>
+                    <div class="one-half column u-center">
+                      <a href="{{ all_products[collection.metafields.c_f['Featured Product']].url }}">
+                      <img src="{{ all_products[collection.metafields.c_f['Featured Product']].featured_image | img_url: '800x', scale: '2' }}" alt="{{ all_products[collection.metafields.c_f['Featured Product']].title }}">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container">
+            {% endcapture %}
+          {% endif %}
+          {% assign featuredRendered = false %}
+          {% for product in collection.products %}
+            {% assign on_sale = false %}
+            {% if product.compare_at_price > product.price %}
+              {% assign on_sale = true %}
+            {% endif %}
+            {% cycle 'rowStart': '<div class="row">', '', '' %}
+              <div class="one-third column">
+              {% include 'collection-grid-item' %}
+              </div>
+            {% if featured != blank and forloop.index0 == 5 %}
+              {{ featured }}
+              {% assign featuredRendered = true %}
+            {% endif %}
+            {% if forloop.last %}
+              </div>
+              {% if featuredRendered == false and featured != blank %}{{ featured }}{% endif %}
+            {% else %}
+              {% cycle 'rowEnd': '', '', '</div>' %}
+            {% endif %}
+          {% else %}
+            <div class="rte">
+                <p class="u-center">Your filters returned no results, refine your search or click <a href="/collections/all">here</a> to continue shopping.</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+<!-- SALE FOOTER
+{% if collection.handle == 'crappy-thanksgiving-sale' %}
+  <div class="rte">
+    <p class="u-center"><strong>Looking for even more hot deals?  Check out our Final Clearance section <a href="/collections/clearance">here</a>.</strong></p>
+  </div>
+{% endif %}
+{% if collection.handle == 'clearance' %}
+  <div class="rte">
+    <p class="u-center"><strong>Looking for even more hot deals?  Check out our Crappy Thanksgiving Sale section <a href="/collections/crappy-thanksgiving-sale">here</a>.</strong></p>
+  </div>
+{% endif %}
+
+END SALE FOOTER -->
+
+
+{% if paginate.pages > 1 %}
+	<div id="pagination" style="text-align:center;padding: 20px 0;">
+		{{ paginate | default_pagination }}
+	</div>
+  {% endif %}
+      <div class="main-collection-cta u-center" style="background-image: url({{ 'collectioncta.jpg' | asset_url }})">
+        <div class="main-collection-cta-content">
+          <h3>{{ settings.footer_cta_heading }}</h3>
+          <a href="{{ settings.footer_cta_link_url }}" class="button inverted"><span class="button-fix">{{ settings.footer_cta_link_text }}</span></a>
+        </div>
+      </div>
+    </div>
+  <!-- /MAIN-COLLECTION -->
+  </section>
+  <!-- /MAIN -->
+  {% endpaginate %}
+
+
+{% else %}
+  <div class="container">
+    <h1>{{ collection.title }}</h1>
+    <div class="rte">
+        <p class="u-center">There are no products in this collection yet! Click <a href="/collections/all">here</a> to continue shopping.</p>
+    </div>
+  </div>
+{% endif %}
+
+<script>window.currentTags = {{ current_tags | json }}; window.collectionHandle = {{ collection.handle | json }};</script>
+
+
+{{collection.metafields.shogun.below}}
+

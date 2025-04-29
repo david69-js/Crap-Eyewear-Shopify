@@ -1,0 +1,22 @@
+{%- liquid
+    unless title
+        assign title = 'Default Title Value' 
+    endunless
+    unless classes
+        assign classes = '' 
+    endunless
+    assign titleWithoutVariant = title | split: ' - '
+    assign xSplit = titleWithoutVariant[0] | split: " by "
+    assign tag = tag | default: 'h1' 
+-%}
+{% capture titleFormatted %}
+    {% for phrase in xSplit %}
+        {% if forloop.index == 1 %}
+            <span class="grotesk-bold uppercase">{{ phrase | replace: 'The ', '<span class="font-script font-normal normal-case">The </span>' }}</span>
+        {% else %}
+            by {{ phrase }}
+        {% endif %}
+    {% endfor %}
+{% endcapture %}
+
+<{{tag}} class="font-primary {{classes}}">{{ titleFormatted }}</{{tag}}>

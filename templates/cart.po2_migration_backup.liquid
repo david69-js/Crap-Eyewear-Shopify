@@ -1,0 +1,200 @@
+
+<!-- spurit_po-added -->
+{% include 'spurit_po-cart-snippet' %}
+<!-- /spurit_po-added -->
+<!-- MAIN-CART -->
+<div class="main-cart">
+  <form method="post">
+      {% if settings.enable_coupon %}
+      <input class="js-form-discount" type="hidden" name="discount" value="{{ settings.coupon_code }}">
+      {% endif %}    
+    <div class="container">
+      <h2>{{ settings.cart_title }}</h2>
+      {% if cart.item_count > 0 %}
+        <div class="row">
+          <table>
+            <thead>
+              <th>Items</th>
+              <th class="u-ls">&nbsp;</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Total</th>
+              <th>&nbsp;</th>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+              <tr>
+                <td>
+                  <a href="{{ item.url }}">
+                    <img src="{{ item.image | img_url: 'medium' }}" />
+                  </a>
+                </td>
+                <td class="desc u-ls">
+                  {% assign titleParts = item.product.title | split: ' - ' %}
+                  <a href="{{ item.url }}">
+                    <h3>{{ titleParts[0] | strip }}</h3>
+                  </a>
+                  <p>{{ titleParts[1] }} {{ titleParts[3] }} {{ titleParts[2] }} {% if item.product.title contains 'T-Shirt' %} {{ item.variant.title }}{% endif %}</p>
+                  
+<!-- PRE ORDER CALL OUT
+          {% for tag in item.tags %}
+          {% if tag contains 'badge: preorder' %}
+          <p style="color:red"><strong>*Pre-Order</strong></p>
+          {% endif %}
+          {% endfor %}
+END PRE ORDER CALL OUT -->
+                </td>
+                <td class="price">
+                  {{ item.price | money }}
+                </td>
+                <td>
+                  <select name="quantity" pattern="\d*" data-variant-id="{{ item.variant.id }}">
+                  {% for i in (1..10) %}
+                    {% if i == item.quantity %}
+                      <option selected value="{{ i }}">{{ i }}</option>
+                    {% else %}
+                      <option value="{{ i }}">{{ i }}</option>
+                    {% endif %}
+                  {% endfor %}
+                  </select>
+                </td>
+                <td class="price">
+                  {{ item.line_price | money }}
+                </td>
+                <td>
+                  <a href="/cart/change/{{ item.variant.id }}?quantity=0"><img src="{{ 'cart-remove.png' | asset_url }}" /></a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="row">
+          <div class="four columns">
+            <div class="main-cart-footnote u-center u-ls">
+              <div class="center-content">
+                 <div class="clear"></div>
+                 <h5>Easy ways to pay</h5>
+                 <div class="clear"></div>
+                 <p>We accept all major credit cards and Paypal. All payments are safe using Shopify Secure payments.</p>
+                 <img src="{{ 'creditcards.jpg' | asset_url }}" />
+              </div>
+
+            </div>
+          </div>
+          {% if settings['cart_upsell'] != blank %}
+          <div class="four columns main-cart-upsell-desktop">
+            <div class="main-cart-upsell">
+              <div class="center-content">
+                {% assign product = all_products[settings['cart_upsell']] %}
+                {% include 'collection-grid-item' %}
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          <div class="four columns {% if settings['cart_upsell'] == blank %}offset-by-four{% endif %}">
+            <div class="main-cart-actions">
+			{% if settings.enable_discount %}
+            <p class="ajaxcart__subtotal flex--center-between discount-row total" style="border:none;">
+              <span>30% off savings</span><span class="discount"></span>
+            </p> 
+          	{% endif %}              
+              <p class="total ajaxcart__subtotal">Total <span class="subtotal"><span>{{ cart.total_price | money }}</span></span></p>
+              <ul>
+                {% assign valueProps = settings.cart_value_props | newline_to_br | split: '<br />' %}
+                {% for prop in valueProps %}
+                  <li>{{ prop }}</li>
+                {% endfor %}
+              </ul>
+              <div class="clear"></div>
+              <p class="small"><a id="showShippingPopup" href="/pages/shipping-returns">Shipping &amp; Returns details</a></p>
+              <input type="submit" class="button" value="Checkout" name="checkout">
+            </div>
+          </div>
+          {% if settings['cart_upsell'] != blank %}
+          <div class="four columns main-cart-upsell-mobile">
+            <div class="main-cart-upsell">
+              {% assign product = all_products[settings['cart_upsell']] %}
+              {% include 'collection-grid-item' %}
+            </div>
+          </div>
+          {% endif %}
+          <div class="four columns">
+            <div class="main-cart-footnote u-center u-ss">
+              <img src="{{ 'cc.png' | asset_url }}" />
+               <div class="clear"></div>
+              <h5>Easy ways to pay</h5>
+              <div class="clear"></div>
+              <p>We accept all major credit cards and Paypal. All payments are safe using Shopify Secure payments.</p>
+              <img src="{{ 'creditcards.jpg' | asset_url }}" />
+            </div>
+        </div>
+      {% else %}
+        <p class="empty-cart">There are no items in your cart.</p>
+        <div class="main-best-sellers u-center">
+          <div class="container">
+            <div class="row">
+              <h2>Check out these Crap Eyewear favorites!</h2>
+              <div class="main-best-sellers-slider">
+                {% for prod in collections[settings.cart_empty_colection].products limit: 12 %}
+                  {% unless prod.handle == product.handle %}
+                    <div class="main-collection-item u-center">
+                      <a href="{{ prod.url }}">
+                        <div class="main-collection-item-image">
+                          <img class="top" src="{{ prod.images[0] | img_url: 'large'}}" alt="{{ prod.title }}">
+                          {% if prod.images.size > 1 %}
+                            <img class="bottom" src="{{ prod.images[1] | img_url: 'large'}}" alt="{{ prod.title }}">
+                          {% endif %}
+                        </div>
+                        <div class="main-collection-item-details">
+                            <h3>{{ prod.title | split: ' - ' | first | strip }}</h3>
+                            <p>{{ prod.metafields.c_f['Product Mini Description'] }}</p>
+                            <p class="price">{{ prod.price | money }}</p>
+                          </div>
+                      </a>
+                    </div>
+                  {% endunless %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </form>
+</div>
+<!-- END-CART -->
+  
+{% comment %}
+<script>
+  $( document ).ready(function() {
+    var s1 = $('.main-cart-footnote').height();
+    var s2 = $('.main-cart-upsell').height();
+    if (s1 > s2) {
+      $('.main-cart-upsell').css('height', s1 + "px");
+      $('.main-cart-footnote').css('height', s1 + "px");
+    } else {
+      $('.main-cart-upsell').css('height', s2 + "px");
+      $('.main-cart-footnote').css('height', s2 + "px");
+    }
+  });
+</script>
+  {% endcomment %}
+
+<script type="application/javascript" src="https://static-us.afterpay.com/javascript/present-afterpay.js" ></script>
+
+<script>
+const apConfig = {
+ 'priceSelector': ".main-cart-actions p.total",   // REQUIRED: set to the div
+ 'locale': 'en_US',            // REQUIRED: set to the locale for your site
+ 'afterpayLogoColor': 'black', // optional: set to use black or white logo
+ 'amount': {{ cart.total_price | json }},              // optional: set to the item price or total order amount
+ 'minMaxThreshold': {          // optional: set to your min and max order value
+     'min': 3500, 
+     'max': 100000 
+  },    
+ };
+      
+new presentAfterpay(apConfig).init();
+</script>

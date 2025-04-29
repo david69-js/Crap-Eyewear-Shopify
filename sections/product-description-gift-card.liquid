@@ -1,0 +1,138 @@
+{% assign images = 0 %}
+
+{% for item in product.metafields.custom.description_media.value %}
+    {% assign images = images | plus: 1 %}
+{% endfor %}
+
+{% if images == 1 %}
+    {% for media in product.metafields.custom.description_media.value %}
+        {% capture markup %}
+            <div class="relative w-full mx-auto max-w-[calc(100%-var(--site-gutter)*2)] dk:max-w-none">
+                {% if media.media_type == 'image' %}
+                    {% render "component--responsive-image", image: media %}
+                {% endif %}
+                {% if media.media_type == 'video' %}
+                    <video class="w-full h-auto object-cover lazy" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="{{media.sources[1].url}}">
+                        <source src="{{media.sources[1].url}}" type="video/mp4"></source>
+                    </video>
+                {% endif %}
+            </div>
+        {% endcapture %}
+    {% endfor %}
+{% endif %}
+
+{% capture section_markup %}
+    <div class="grid mt-5 mb-[60px] dk:my-[30px] auto-rows-auto dk:grid-rows-1 grid-cols-12 gap-y-[30px] dk:gap-y-[var(--site-gutter)]">
+        <div class="row-start-2 cx w-fit dk:row-start-auto col-span-12 dk:col-span-5 bg-white product-description h5">
+            {{ product.description }}
+        </div>
+        <div class="row-start-1 dk:pr-[var(--site-gutter)] dk:row-start-auto col-span-12 dk:col-span-7 overflow-hidden">
+            {{ markup }}
+        </div>
+    </div>
+{% endcapture %}
+
+<div 
+class="description pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]"
+style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.margin_bottom}}"
+data-animation="{{- section.settings.animation -}}"
+>
+    {% if section.settings.is_accordion %}
+        {% render 'slot--accordion' heading: section.settings.heading, headingTag: 'h2', headingClasses: 'h4 py-4', content: section_markup, open: section.settings.open, summaryClasses: 'mx-[var(--site-gutter)] w-auto border-giftCard', borderClasses: 'mx-[var(--site-gutter)] w-auto border-b border-b-light-gray' %}
+    {% else %}
+        <h2 class="h4 cx cy">Description</h2>
+        {{ section_markup }}
+    {% endif %}
+</div>
+{% style %}
+    .richtext .product-description p {
+        letter-spacing: -0.03em !important;
+        line-height: 110% !important;
+    }
+  
+    .border-giftCard {
+      border-top: solid 1px #D9D9D9;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Product Description Gift",
+    "tag": "section",
+    "class": "description pdp-async",
+    "settings": [
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        },
+        {
+            "type": "select",
+            "id": "margin_bottom",
+            "label": "Bottom Margin",
+            "info": "Optional space at bottom of section",
+            "options": [
+                {
+                    "value": "--mb-m: 0px; --mb-d: 0px;",
+                    "label": "No margin"
+                },
+                {
+                    "value": "--mb-m: 20px; --mb-d: 40px;",
+                    "label": "Small Margin"
+                },
+                {
+                    "value": "--mb-m: 40px; --mb-d: 100px;",
+                    "label": "Large Margin"
+                }
+            ],
+            "default": "--mb-m: 0px; --mb-d: 0px;"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Description"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_accordion",
+            "default": false,
+            "label": "Make Section Accordion"
+        },
+        {
+            "type": "checkbox",
+            "id": "open",
+            "default": false,
+            "label": "Open"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Description Gift Card"
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "product"
+        ]
+    }
+}
+{% endschema %}

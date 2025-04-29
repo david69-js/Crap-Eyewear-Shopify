@@ -1,0 +1,159 @@
+{% if block.settings.top_countdown_enable %}
+<div class="top_bar_countdown">
+    <div class="top_bar_countdown_container" id="top_bar_countdown">
+            <div class="top_bar_countdown_order_by">{{block.settings.top_bar_countdown_order_by_date_final_date_text}}</div>
+            <div class="top_bar_countdown_timer" id="top_bar_countdown_timer">    
+                <div class="countDown_timer-text">
+                    <div class="countDown_timer-text-item">
+                        <div class="countDow_timer_text_container">
+                            <span class="countDown_timer-text-item-number countDown_timer_text-days">00</span>
+                        </div>
+                        <span class="countDown_timer-text-item-text">Days</span>
+                    </div>
+                    <div class="countDown_timer-text-item">
+                        <div class="countDow_timer_text_container">
+                            <span class="countDown_timer-text-item-number countDown_timer_text-hrs">00</span>
+                        </div>
+                        <span class="countDown_timer-text-item-text">Hrs</span>
+                    </div>
+                    <div class="countDown_timer-text-item">
+                        <div class="countDow_timer_text_container">
+                           <span class="countDown_timer-text-item-number countDown_timer_text-mins">00</span>
+                        </div>
+                        <span class="countDown_timer-text-item-text">Mins</span>
+                    </div>
+                        <div class="countDown_timer-text-item">
+                            <div class="countDow_timer_text_container">
+                                <span class="countDown_timer-text-item-number countDown_timer_text-secs">00</span>
+                            </div>
+                            <span class="countDown_timer-text-item-text">Secs</span>
+                    </div>
+                </div>
+            </div>
+            <a href="{{block.settings.top_bar_countdown_cta_url}}" class="top_bar_countdown_btn_shop_now">{{block.settings.top_bar_countdown_cta_text}}</a>
+    </div>
+</div>
+{% endif %}
+<style>
+    {% if block.settings.top_countdown_enable %}
+        .bars.grid.grid--no-gutters{
+            display: none !important;
+        }
+        .main {
+            margin-top: 105px;
+        }
+    {% endif %}
+    .top_bar_countdown_btn_shop_now{
+        background: {{block.settings.top_bar_countdown_cta_color}};
+        color: {{block.settings.top_bar_countdown_cta_text_color}};
+    }
+    
+    {% if block.settings.top_bar_countdown_cta_hover_color != 'rgba(0,0,0,0)'%}
+        .top_bar_countdown_btn_shop_now:hover{
+            background: {{block.settings.top_bar_countdown_cta_hover_color}};
+        }
+    {% endif %}
+    {% if block.settings.top_bar_countdown_cta_hover_border_color != 'rgba(0,0,0,0)'%}
+        .top_bar_countdown_btn_shop_now:hover{
+            border: 2px solid {{block.settings.top_bar_countdown_cta_hover_border_color}} !important;
+        }
+    {% endif %}
+    {% if block.settings.top_bar_countdown_cta_hover_text_color != 'rgba(0,0,0,0)'%}
+
+    .top_bar_countdown_btn_shop_now:hover{
+            color: {{block.settings.top_bar_countdown_cta_hover_text_color}};
+    }
+    {% else %}
+    .top_bar_countdown_btn_shop_now:hover{
+            color: white;
+    }    
+    {% endif %}
+
+    {% if block.settings.top_bar_countdown_bg_color != 'rgba(0,0,0,0)'%}
+    .top_bar_countdown{
+            background: {{block.settings.top_bar_countdown_bg_color}};
+    }
+    {% else %}
+    .top_bar_countdown{
+            background: #D3D24E;
+        }
+    {% endif %}
+
+    {% if block.settings.top_bar_countdown_text_color != 'rgba(0,0,0,0)'%}
+        .top_bar_countdown_order_by{
+                color: {{block.settings.top_bar_countdown_text_color}};
+        }
+    {% else %}
+        .top_bar_countdown_order_by{
+            color: #000000;
+        }
+    {% endif %}
+    
+    {% if block.settings.top_bar_countdown_timer_bg_color != 'rgba(0,0,0,0)'%}
+    .countDow_timer_text_container{
+        background: {{block.settings.top_bar_countdown_timer_bg_color}};
+    }
+    {% else %}
+    .countDow_timer_text_container{
+        background: #D3D24E;
+    }
+    {% endif %}
+
+    {% if block.settings.top_bar_countdown_timer_text_color != 'rgba(0,0,0,0)'%}
+    .countDown_timer-text-item-number{
+            color: {{block.settings.top_bar_countdown_timer_text_color}};
+    }
+    {% else %}
+    .countDown_timer-text-item-number{
+            color: #000000;
+        }
+    {% endif %}
+</style>
+
+
+<script>
+    let countDate = "{{block.settings.top_bar_countdown_date_text}}";
+    let finishHrs = "{{block.settings.top_bar_countdown_time_text}}";
+    let countDate_array = countDate.split('/');   
+    const countDownDateFinal = new Date(`${countDate_array[0]}/${countDate_array[1]}/${countDate_array[2]} ${finishHrs} GMT-8`).getTime();
+        let StartCountDate = setInterval(function() {
+        let currentDate = new Date().getTime();
+        let distanceIntoCurrentDate = countDownDateFinal - currentDate;
+        let days = Math.floor(distanceIntoCurrentDate / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((distanceIntoCurrentDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distanceIntoCurrentDate % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distanceIntoCurrentDate % (1000 * 60)) / 1000);
+        let daysTextTag = document.querySelector('.countDown_timer_text-days');
+        let hoursTextTag = document.querySelector('.countDown_timer_text-hrs');
+        let minsTextTag = document.querySelector('.countDown_timer_text-mins');
+        let secsTextTag = document.querySelector('.countDown_timer_text-secs');    
+
+
+           daysTextTag.innerHTML = days < 10 ? `0${days}` : days; 
+           hoursTextTag.innerHTML = hours < 10 ? `0${hours}` : hours;
+           minsTextTag.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+           secsTextTag.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+            if (distanceIntoCurrentDate < 0) {
+            clearInterval(StartCountDate);
+            daysTextTag.innerHTML = '00'
+            hoursTextTag.innerHTML = '00';
+            minsTextTag.innerHTML = '00';
+            secsTextTag.innerHTML = '00';  
+        }
+    }, 1000);
+
+
+	var heightWindow = 0;
+	var positionWindow = document.getElementById("top_bar_countdown").offsetTop;
+        $(window).scroll(function(event){
+            var positionScroll = $(this).scrollTop();
+            if (positionScroll > (parseInt(positionWindow)+parseInt(heightWindow+30))){
+                document.querySelector('#top_bar_countdown').classList.add('top_bar_countdown_remove');
+                document.querySelector('.main').style.marginTop = '70px';
+            } else {
+                document.querySelector('#top_bar_countdown').classList.remove('top_bar_countdown_remove');
+                document.querySelector('.main').style.marginTop = '105px';
+            }
+            
+        });
+    </script>

@@ -1,0 +1,94 @@
+{% assign title_format = product.title | split: '-' %}
+{% assign showPrice = showPrice | default: false %}
+{% assign imgClass = imgClass | default: '' %}
+{% assign hover_image = hover_image | default: false %}
+{% assign hover_video = hover_video | default: false %}
+
+<div class="product-card relative">
+    {% if product.metafields.custom.badge %}
+        {% assign badge_src = nil %}
+        {% assign badge_alt = nil %}
+        {% case product.metafields.custom.badge %}
+            {% when 'new' %}
+            {% assign badge_src = settings.new_badge %}
+            {% assign badge_alt = "new" %}
+            {% when 'new2' %}
+            {% assign badge_src = settings.new_2_badge %}
+            {% assign badge_alt = "new2" %}
+            {% when 'hot' %}
+            {% assign badge_src = settings.hot_badge %}
+            {% assign badge_alt = "hot" %}
+            {% when 'out now' %}
+            {% assign badge_src = settings.out_now_badge %}
+            {% assign badge_alt = "out now" %}
+            {% when 'back in stock' %}
+            {% assign badge_src = settings.back_in_stock_badge %}
+            {% assign badge_alt = "back in stock" %}
+            {% when 'low stock' %}
+            {% assign badge_src = settings.low_in_stock_badge %}
+            {% assign badge_alt = "low stock" %}
+        {% endcase %}
+        <img class="w-[30px] md:w-[65px] absolute top-0 right-0 z-10" src="{{ badge_src | img_url: 'small' }}" alt="{{ badge_alt }}">
+    {% endif %}
+    <a href="{{product.url}}" class="relative">
+        {% if hover_image and hover_video == false %}
+            {% for media in product.media %}
+                {% if media contains '-left' %}
+                    {% capture right_image %}
+                        {% render "component--responsive-image-PLP", forloop: forloop, image: media, classes: 'hover-img' %}
+                    {% endcapture %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+            {% render "component--responsive-image-PLP", forloop: forloop, image: product.featured_image, placeholder: true, classes: 'main-img' %}
+            {{ right_image }}
+        {% elsif hover_video %}
+            <video-card>
+                <div class="video absolute inset-0 opacity-0 z-[2] pointer-events-none bg-faded-lime">
+                    <video muted="muted" class="w-full h-full object-cover lazy aspect-[var(--media-aspect)]" preload="metadata" src="{{hover_video.sources[1].url}}">
+                        <source src="{{hover_video.sources[1].url}}" type="video/mp4"></source>
+                    </video>
+                </div>
+                {% render "component--responsive-image-PLP", forloop: forloop, image: product.featured_image, placeholder: true, classes: 'main-img-video' %}
+            </video-card>
+        {% else %}
+            {% render "component--responsive-image-PLP", forloop: forloop, image: product.featured_image, placeholder: true %}
+        {% endif %}
+    </a>
+    <div class="product-card-caption p-[10px] dk:px-[20px]">
+        <div class="flex items-center justify-between relative z-[3]">
+            <a href="{{product.url}}" class="title grotesk-bold text-[14px] dk:text-[18px] max-w-[calc(100%-23px)]">{{ title_format[0] }}</a>
+            {% if settings.favorite_button %}
+                <div class="favorite-btn favorite-wrapper absolute -right-[7px] -top-[5px]">
+                    {% render "component--favorite-button" product: product %}
+                </div>
+            {% endif %}
+        </div>
+        {% if product.metafields.custom.variant_short_title != empty %}
+            <p class="text-[12px] dk:text-[14px] mb-[4px] dk:mb-[8px]">
+                {% if product.tags contains "badge: bioacetate" %}
+                    {% render "icon--bio" %}{% endif %}
+                {{ product.metafields.custom.variant_short_title }}</p>
+        {% endif %}
+        <div class="flex items-center justify-between">
+            {% assign frame_count = product.metafields.custom.primary_collection.value.all_products_count | minus: 1  %}
+            <p class="color-info font-secondary text-[12px] dk:text-[12px]">{% if frame_count > 0 %} (+{{ frame_count }} Colors) {% endif %}</p>
+            {%- if showPrice -%}
+                {%- render "component--price", product: product, use_variant: true, show_badges: false, price_class: 'font-primary-bold text-md' -%}
+            {%- endif -%}
+        </div>
+        {%- for tag in product.tags -%}
+            {% case tag %}
+                {% when 'salebanner' %}
+                {% if settings.salebanner_active == true %}
+                    {% if showPrice  == true %}
+                        {% render "component--product-discount-tag", product: product %}
+                    {% endif %}
+                {% endif %}
+            {% endcase %}
+            {% if tag contains 'preorder-' %}
+                <div class="bg-faded-lime w-fit px-3 py-1 mt-[5px] dk:mt-[10px] text-[12px]">Pre-order</div>
+            {% endif %}
+        {%- endfor -%}
+    </div>
+</div>

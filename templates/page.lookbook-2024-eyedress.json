@@ -1,0 +1,745 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "module_spacer_fbQyTK": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>A New Pair Of Eyes<br/><em>by </em><strong>Eyedress</strong></h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": true,
+        "section_padding_extra": false
+      }
+    },
+    "module_one_column_richtext_UbmPpK": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_76x8ki": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_76x8ki"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_fullscreen_media_xjh4Gw": {
+      "type": "module--fullscreen-media",
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look_02-9-web.jpg",
+        "fit_image_mobile": false,
+        "aspect_ratio": "",
+        "media_position": "center",
+        "card_alignment": "left",
+        "card_width": 800,
+        "card_background_color": "#ffffff",
+        "section_padding": "cb",
+        "section_padding_halved": false
+      }
+    },
+    "module_one_column_richtext_rMwbgi": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_8NXJVf": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4>Introducing<strong> </strong><a href=\"https://www.crapeyewear.com/products/eyedress-black-wraparound-sunglasses\" target=\"_blank\" title=\"https://www.crapeyewear.com/products/eyedress-black-wraparound-sunglasses\"><strong>A New Pair Of Eyes</strong></a><strong>,</strong> a signature sunglass collection by <strong>Eyedress.</strong></h4><h5>LA-based musician Eyedress blends a wide array of genres—from lo-fi hip-hop to post-punk and ‘80s-influenced goth—crafting a sound wholly his own.</h5><h5></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_8NXJVf"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_fullscreen_embed_Gz3Qa8": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "youtube_video": "https://www.youtube.com/watch?v=ujIL6ySNYzo",
+        "media_aspect_ratio": "4 / 3"
+      }
+    },
+    "module_one_column_richtext_8pH3aK": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_9kfrAm": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We worked closely with <strong>Eyedress</strong> to design <strong>two distinct interpretations</strong> of the dark glasses that have become his calling card. The first, a <strong>futuristic wraparound</strong> made with lightweight EcoSport nylon, the second a <strong>classic oval silhouette</strong> handcrafted from biodegradable bioacetate. </h5><h5> </h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_9kfrAm"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "lookbook_two_col_CwpL9j": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_PbVewf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-Eyedress-collection-front2-brick_wall-insta-v1_1.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_PbVewf"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "4e77ce5e-263f-4046-88ef-a66960129f01": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f0f0852b-ba66-4bb3-b544-b6a0aa8de734": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-8-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_kYWekb": {
+          "type": "product_widget",
+          "settings": {
+            "product": "eyedress-black-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "f0f0852b-ba66-4bb3-b544-b6a0aa8de734",
+        "product_widget_kYWekb"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "Fade",
+        "column_basis": 55,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_wdTgky": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_CAfHEc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-product-rectangle-1-web.jpg",
+            "caption": "<p><a href=\"/products/eyedress-black-wraparound-sunglasses\" target=\"_blank\" title=\"The Eyedress Wraparound - Black\">Eyedress Wraparound</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_CAfHEc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 75,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "89c87b31-894b-44a8-8b57-1f70ee859da0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_aE6azH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-product-case-1-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_aE6azH"
+      ],
+      "settings": {
+        "media_aspect_ratio": "4 / 3",
+        "animation": "Fade",
+        "column_basis": 60,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_XrfqAc": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>This limited edition collection features contributions by artists <strong>BRVINFREEZE, Antonio Aiello, Izzie Panasci, </strong>&<strong> Penny Nikkel.</strong></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_Nxejiw": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "https://www.crapeyewear.com/products/the-marias-submarine-side-a-black-sunglasses",
+            "text": "Shop Collection",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_XrfqAc",
+        "button_Nxejiw"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "lookbook_two_col_aNpzpx": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_UeEVpj": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-6-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_Q9AzNE": {
+          "type": "product_widget",
+          "settings": {
+            "product": "eyedress-black-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_UeEVpj",
+        "product_widget_Q9AzNE"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_gznUAn": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look_02-jester_mask--rectangle-4-web.jpg",
+            "caption": ""
+          }
+        },
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look_02-jester_mask--rectangle-2-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_dyrVqR": {
+          "type": "product_widget",
+          "settings": {
+            "product": "eyedress-black-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_gznUAn",
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6",
+        "product_widget_dyrVqR"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "77af1673-6c32-4e4e-a77a-363145146504": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-01-10-web.jpg",
+        "caption": ""
+      }
+    },
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5><strong>\"this collection is named 'a new pair of eyes' named after a song off my new album 'occasional stoner'. our collaboration is a modern take on locs popularized by musicians such as eazy e and lou reed. </strong></h5><h5><strong>a new pair of eyes was made for people who want to go against all of societies norms. i hope you love them just as much as i do and happy halloween, hope you choose to dress as me, hat and wig sold separately! 😎\"</strong></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "26f871dc-972d-487e-8295-2c55f148d648": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6>Eyedress</h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3",
+        "26f871dc-972d-487e-8295-2c55f148d648"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-01-8-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_Jmm9af": {
+          "type": "product_widget",
+          "settings": {
+            "product": "eyedress-black-oval-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "f39c68cb-bc02-47bb-90f7-30379dfc5d76",
+        "product_widget_Jmm9af"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 75,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_ebVDg6": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_9BVfFK": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-product-oval-2-RETOUCH-web.jpg",
+            "caption": "<p><a href=\"https://www.crapeyewear.com/products/eyedress-black-oval-sunglasses\" target=\"_blank\" title=\"https://www.crapeyewear.com/products/eyedress-black-oval-sunglasses\">Eyedress Oval</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_9BVfFK"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 55,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_yePb3R": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "richtext_dFJqhK": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Anyone who listens to Crap Eyewear Radio knows we’re huge fans of Eyedress. Hyped on this!</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "button_TT9i4M": {
+          "type": "button",
+          "settings": {
+            "link": "https://www.crapeyewear.com/products/eyedress-black-wraparound-sunglasses",
+            "text": "Shop Collection",
+            "button_style": "btn-primary",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_dFJqhK",
+        "button_TT9i4M"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "bc5ced0c-9ce4-41f3-af91-71dea78873be": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "3e23ab7c-b20d-4143-b016-0844f9f660df": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-3-web_39ac14e9-5dad-48a6-b1c7-c9a05e13bdaa.jpg",
+            "caption": ""
+          }
+        },
+        "0889d82a-40a4-48fe-94cf-b396d7ae8b8d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-7-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_Aq6gQj": {
+          "type": "product_widget",
+          "settings": {
+            "product": "eyedress-black-oval-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "3e23ab7c-b20d-4143-b016-0844f9f660df",
+        "0889d82a-40a4-48fe-94cf-b396d7ae8b8d",
+        "product_widget_Aq6gQj"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 / 4",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "module_fullscreen_media_Aey8YF": {
+      "type": "module--fullscreen-media",
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "image": "shopify://shop_images/Crap_Eyewear-2024_Eyedress-Box-Artwork-v1-webres-eyes_header-web2_1.jpg",
+        "fit_image_mobile": false,
+        "aspect_ratio": "",
+        "media_position": "center",
+        "card_alignment": "left",
+        "card_width": 800,
+        "card_background_color": "#ffffff",
+        "section_padding": "",
+        "section_padding_halved": false
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6><strong>A New Pair of Eyes by Eyedress<br/></strong>Shot on location in Los Angeles, CA, 2024.</h6><h6>Starring: Eyedress (<a href=\"https://www.instagram.com/eyedress/\" target=\"_blank\" title=\"https://www.instagram.com/eyedress/\">@eyedress</a>)<br/>Photographer: Razy Faouri (<a href=\"https://www.instagram.com/razyfaouri/\" target=\"_blank\" title=\"https://www.instagram.com/razyfaouri/\">@razyfaouri</a>)<br/>Artists & Designers: Antonio Aiello (<a href=\"https://www.instagram.com/antonioaiello_/\" target=\"_blank\" title=\"https://www.instagram.com/antonioaiello_/\">@antonioaiello</a>), Izzie Panasci (<a href=\"https://www.instagram.com/miss___izzie/\" target=\"_blank\" title=\"https://www.instagram.com/miss___izzie/\">@miss__izzie</a>),  Penny Nikkel (<a href=\"https://www.instagram.com/very_clean_tramp?igsh=MmdqNWZzeDVha3Ey\" target=\"_blank\" title=\"https://www.instagram.com/very_clean_tramp?igsh=MmdqNWZzeDVha3Ey\">@very_clean_tramp</a>), & BRVINFREEZE (<a href=\"https://www.instagram.com/brvinfreeze/\" target=\"_blank\" title=\"https://www.instagram.com/brvinfreeze/\">@brvinfreeze</a>)</h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "marquee_card_EtURqL": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Marias_Submarine-Lookbook-look_01-12-web_lookbook_carousel.jpg",
+            "caption": "The Marías",
+            "url": "shopify://pages/the-marias-submarine"
+          }
+        },
+        "marquee_card_qgdmPJ": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "caption": "Summer 2024",
+            "url": "shopify://pages/lookbook-2024-summer"
+          }
+        },
+        "marquee_card_t7RNQt": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-557-web_lookbook_marquee.jpg",
+            "caption": "Hike Clerb x Crap® Eyewear",
+            "url": "shopify://pages/lookbooks-2024-hike_clerb"
+          }
+        },
+        "marquee_card_9yCd9y": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Heavy_Tropix_Sport-look_02-Polar_Sangria-Polar_G15-2-web_lookbook_marquee.jpg",
+            "caption": "The Heavy Tropix Sport",
+            "url": "shopify://pages/lookbooks-2024-ht-sport"
+          }
+        },
+        "marquee_card_wLyPtQ": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-18-web_lookbook_grid.jpg",
+            "caption": "Summer No Waves",
+            "url": "https://www.crapeyewear.com/pages/lookbooks-2024-summer-no_wave"
+          }
+        },
+        "marquee_card_BQMVaq": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-30-web_lookbooks_hero.jpg",
+            "caption": "The Glass Bubble",
+            "url": "shopify://pages/lookbooks-glass-bubble"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "caption": "Summer 2024",
+            "url": "shopify://pages/lookbook-2024-summer"
+          }
+        },
+        "marquee_card_BN6BUj": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-No_Wave-Look_02-Licorice-Black_Tort-2-we_lookbooks_carousel.jpg",
+            "caption": "The No Wave",
+            "url": "shopify://pages/lookbooks-no-wave"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024-iggy-lookbook-collage-Nico_3-web_lookbooks_carousel.jpg",
+            "caption": "iggy x Crap® Eyewear",
+            "url": "shopify://pages/iggy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lifestyle_card.png",
+            "caption": "The Marquee Rox",
+            "url": "shopify://pages/lookbook-marquee-rox"
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/9-Crap_Eyewear-2024_Spring-Black_Image_Center-19-web_lookbooks_landing.jpg",
+            "caption": "Black Image Center x Crap® Eyewear",
+            "url": "shopify://pages/blackimagecenter"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/20-Crap_Eyewear-2024_Spring-Warp_Zone-look-03-Metallic_Olive-Black_Cherry-11-web_lookbooks-carousel.jpg",
+            "caption": "The Warp Zone",
+            "url": "shopify://pages/lookbooks-warp-zone"
+          }
+        },
+        "marquee_card_bqHDAY": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond-web.jpg",
+            "caption": "Spring 2024",
+            "url": "shopify://pages/lookbook-2024-spring"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_card_EtURqL",
+        "marquee_card_qgdmPJ",
+        "marquee_card_t7RNQt",
+        "marquee_card_9yCd9y",
+        "marquee_card_wLyPtQ",
+        "marquee_card_BQMVaq",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "marquee_card_BN6BUj",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "marquee_card_bqHDAY"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1></h1><h1></h1><h1>More <em>Lookbooks</em></h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify://pages/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF</strong> when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/about-us",
+        "image_2": "shopify://shop_images/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14,<br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "module_spacer_fbQyTK",
+    "main",
+    "module_one_column_richtext_UbmPpK",
+    "module_fullscreen_media_xjh4Gw",
+    "module_one_column_richtext_rMwbgi",
+    "module_fullscreen_embed_Gz3Qa8",
+    "module_one_column_richtext_8pH3aK",
+    "lookbook_two_col_CwpL9j",
+    "4e77ce5e-263f-4046-88ef-a66960129f01",
+    "lookbook_two_col_wdTgky",
+    "89c87b31-894b-44a8-8b57-1f70ee859da0",
+    "a6430fd2-d6f7-4099-b7c5-81c129e8bf81",
+    "lookbook_two_col_aNpzpx",
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00",
+    "77af1673-6c32-4e4e-a77a-363145146504",
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919",
+    "4965e7d1-c97a-4a58-ae40-498ac09fd7fb",
+    "lookbook_two_col_ebVDg6",
+    "module_one_column_richtext_yePb3R",
+    "bc5ced0c-9ce4-41f3-af91-71dea78873be",
+    "module_fullscreen_media_Aey8YF",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

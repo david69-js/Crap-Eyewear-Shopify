@@ -1,0 +1,44 @@
+{%- comment %}
+/** @typedef {object} json
+ *
+ *
+ */
+{%- endcomment -%}
+{%- liquid
+
+assign drawer_direction = direction | default: "left"
+assign max_width = max_width | default: 600
+assign slot_trigger = slot_trigger | default: "<button class='js-trigger'>Open Drawer</button>"
+
+-%}
+
+<drawer-overlay {%- if external != blank %} data-external-trigger="{{- external -}}" {%- endif -%}>
+	{%- if external == blank %}
+		<div class="drawer-trigger">
+			{{- slot_trigger -}}
+		</div>
+	{%- endif -%}
+	<div class="drawer" style="--drawer-width: {{- max_width -}}px;" data-direction="{{- drawer_direction -}}">
+		<div class="drawer-bg h-full w-full bg-[color:var(--overlay-bg)] opacity-[var(--overlay-opacity)] pointer-events-auto"></div>
+		{%- if drawer_direction == "top" -%}
+			<div class="drawer-wrapper absolute flex w-full bg-white top-0 left-0 transform -translate-y-full pointer-events-auto">
+		{%- elsif drawer_direction == "bottom" -%}
+			<div class="drawer-wrapper absolute flex w-full bg-white bottom-0 left-0 transform translate-y-full pointer-events-auto">
+		{%- elsif drawer_direction == "right" -%}
+			<div class="drawer-wrapper absolute flex w-full h-full max-w-[var(--drawer-width)] bg-white top-0 right-0 transform translate-x-full pointer-events-auto">
+		{%- else -%}
+			<div class="drawer-wrapper absolute flex w-full h-full max-w-[var(--drawer-width)] bg-white top-0 left-0 transform -translate-x-full pointer-events-auto">
+		{%- endif -%}
+			<div class="drawer-header flex items-center cx bg-faded-lime">
+				{%- if heading -%}
+					<h6 class="grotesk-bold">{{ heading }}</h6>
+				{%- endif -%}
+				<div class="js-close" aria-label="Close Drawer">{%- render "output--icon", icon: "close" -%}</div>
+			</div>
+			<div class="flex-grow p-[var(--grid-gutter-x)] drawer-inner">
+				{{- slot -}}
+			</div>
+			<div class="drawer-footer"></div>
+		</div>
+	</div>
+</drawer-overlay>

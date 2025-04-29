@@ -1,0 +1,93 @@
+<!--      INSTAGRAM INTEGRATION MODULE     -->
+<div id="zero-insta" class="instagram-callout lime-green featured img-load-section">
+  <div class="header">
+    <h3>On the gram</h3>
+    <a class="" href="https://www.instagram.com/crapeyewear/" target="_blank" rel="noopener">@crapeyewear</a>
+  </div>
+  <div class="instagram-collection-slider">
+        {% unless collection.metafields.c_f['Insta Callout Image 1'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 1'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 1'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 1'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 2'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 2'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 2'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 2'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 3'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 3'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 3'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 3'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 4'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 4'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 4'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 4'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 5'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 5'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 5'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 5'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 6'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 6'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 6'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 6'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 7'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 7'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 7'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 7'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 8'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 8'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 8'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 8'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 9'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 9'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 9'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 9'] }}</p>
+          </a>
+        {% endunless %}
+        {% unless collection.metafields.c_f['Insta Callout Image 10'] == blank %}
+          {% assign si_arr = collection.metafields.c_f['Insta Callout Image 10'] | split: '/' %}
+          {% assign si = si_arr | last %}
+          <a href="https://www.crapeyewear.com/products/{{ collection.metafields.c_f['Insta Callout Product 10'] }}" class="recirculation-block">
+            <img class="preload" alt="" data-preload-desktop="{{ si | | file_img_url: '500x' }}" data-preload-mobile="{{ si | | file_img_url: '300x' }}">
+            <p>{{ collection.metafields.c_f['Insta Callout User 10'] }}</p>
+          </a>
+        {% endunless %}
+    <div class="spacer">&nbsp;</div>
+  </div>
+  <div class="arrow">
+    {% include 'zero-arrow-right' %}
+  </div>
+</div>

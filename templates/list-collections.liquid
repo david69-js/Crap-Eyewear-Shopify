@@ -1,0 +1,19 @@
+{%- comment -%}
+/**
+ * Debug this object by using the render line
+ */
+{%- render "debug--json", object: cart %}
+{%- endcomment -%}
+{%- liquid
+
+capture full_url
+	render "output--full-url"
+endcapture
+
+-%}
+{%- if full_url contains "products" -%}
+	{% section "section--collection" %}
+{%- endif -%}
+{%- if full_url contains "collections" -%}
+	{% section "section--list-collections" %}
+{%- endif -%}

@@ -1,0 +1,11 @@
+
+
+<a href="/blogs/ambassadors/tagged/all">Family</a>
+    <span>&#62;</span>
+    {% for tag in article.tags %}
+    {% unless tag == 'All' %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag | capitalize }}</a>
+    {% endunless %}
+    {% endfor %}
+    <span>&#62;</span>
+  {{ article.title }}

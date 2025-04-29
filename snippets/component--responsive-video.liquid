@@ -1,0 +1,99 @@
+{%- comment %}
+/** @typedef {object} json
+ * @property {object[]} data
+ * @property {boolean} hasAudio
+ * @property {boolean} hasAutoplay
+ * @property {string} data.source
+ */
+
+desktop_video required (Shopify object)
+mobile_video optional (Shopify object)
+
+
+{% endcomment -%}
+{% liquid
+
+
+assign objectFit = cover | default: false
+assign hasAudio = audio | default: false
+assign hasAutoplay = autoplay | default: false
+
+if anim_class == blank
+	assign anim_class = ''
+endif
+
+assign isMuted = true
+if muted != null
+	assign isMuted = muted
+endif
+
+assign src_desktop = blank
+assign src_mobile = blank
+
+assign ar_desktop = desktop_video.aspect_ratio
+if mobile_video != blank
+	assign ar_mobile = mobile_video.aspect_ratio
+else 
+	assign ar_mobile = desktop_video.aspect_ratio
+endif
+
+for source in desktop_video.sources
+	if source.format != "m3u8"
+		assign src_desktop = source
+	endif
+endfor
+
+if mobile_video
+	for source in mobile_video.sources
+		if source.format != "m3u8"
+			assign src_mobile = source
+		endif
+	endfor
+endif
+
+case src_desktop.format
+	when "webm"
+		assign videoType = "video/webm"
+	when "mov"
+		assign videoType = "video/mp4; codec='hvc1'"
+	when "mp4"
+		assign videoType = "video/mp4"
+	else 
+		assign videoType = blank
+endcase
+
+case src_mobile.format
+	when "webm"
+		assign mobileVideoType = "video/webm"
+	when "mov"
+		assign mobileVideoType = "video/mp4; codec='hvc1'"
+	when "mp4"
+		assign mobileVideoType = "video/mp4"
+	else 
+		assign mobileVideoType = blank
+endcase
+
+
+unless containerClasses
+	assign containerClasses = ""
+endunless
+
+unless classes
+	assign classes = ""
+endunless
+
+%}
+
+{% unless videoType == blank and mobileVideoType == blank -%}
+	<div class="{{ anim_class }} {{ containerClasses }} relative w-full {% if objectFit != false %}h-full{% else %}pb-[var(--ar-mobile)] dk:pb-[var(--ar-desktop)]{% endif %}" style="--ar-mobile: {{ 1 | divided_by: ar_mobile | times: 100.0 }}%; --ar-desktop: {{ 1 | divided_by: ar_desktop | times: 100.0 }}%;">
+		<video {% if desktop_video.alt != null %}title="{{desktop_video.alt}}"{% endif %} class="lazy desktop-video hidden dk:block ar-image {% if hasAudio == true %}click-to-unmute{% endif %} {{ classes }}" {% if hasAutoplay %}autoplay="autoplay"{% endif %} {% if isMuted %}muted="muted"{% endif %} loop="loop" playsinline="playsinline" preload="metadata" data-src="{{ src_desktop.url }}">
+			<source type="{{ videoType }}"></source>
+		</video>
+
+		<video {% if mobile_video.alt != null %}title="{{mobile_video.alt}}"{% endif %} class="lazy mobile-video dk:hidden ar-image {% if hasAudio == true %}click-to-unmute{% endif %} {{ classes }}" {% if hasAutoplay %}autoplay="autoplay"{% endif %} {% if isMuted %}muted="muted"{% endif %} loop="loop" playsinline="playsinline" preload="metadata" data-src="{{ src_mobile.url }}#t=0.001">
+			{%- comment -%} https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/ {%- endcomment -%}
+			<source type="{{ mobileVideoType }}"></source>
+		</video>
+
+	</div>
+{% endunless -%}

@@ -1,0 +1,29 @@
+{%- liquid
+
+assign quantity = quantity | default: 1
+assign name = name | default: "quantity"
+assign id = id | default: section.id
+assign hide_label = hide_label | default: false
+
+-%}
+<quantity-input class="no-js-hidden">
+    {%- if hide_label != true -%}
+        <legend class="utility mb-1">Quantity</legend>
+    {%- endif -%}
+    <div class="flex items-center gap-1 md:gap-0">
+        {%- if settings.qty_input_max != 1 -%}
+            <button class="btn btn-qty rounded-full w-[20px] !min-w-[20px] !min-h-[20px] h-[20px] dk:w-[24px] dk:!min-w-[24px] dk:!min-h-[24px] dk:h-[24px] no-js-hidden" name="minus" type="button">
+                <span class="block pointer-events-none relative w-[60%]">{%- render "output--icon", icon: "minus" -%}</span>
+            </button>
+        {%- endif -%}
+        <input class="grotesk-bold w-4 p-0 h-10 bg-transparent outline-none border-none text-center md:mx-2 appearance-none pointer-events-none" type="number" name="{{ name }}" id="{{ id }}_quantity" min="0" max="{{- settings.qty_input_max -}}" value="{{- quantity -}}" form="{{- id -}}_form" {%- if settings.qty_input_max == 1 %} readonly {%- endif %} />
+        {%- if settings.qty_input_max != 1 -%}
+            <button class="btn btn-qty rounded-full w-[20px] !min-w-[20px] !min-h-[20px] h-[20px] dk:w-[24px] dk:!min-w-[24px] dk:!min-h-[24px] dk:h-[24px] no-js-hidden" name="plus" type="button">
+                <span class="block pointer-events-none relative w-[60%]">{%- render "output--icon", icon: "plus" -%}</span>
+            </button>
+        {%- endif -%}
+    </div>
+</quantity-input>
+<noscript>
+    <input class="w-12 h-10 bg-transparent outline-none border-none text-center px-2 pb-3 mx-2" type="number" name="{{- name -}}" id="{{- id -}}_quantity" min="1" max="{{- settings.qty_input_max -}}" value="{{- quantity -}}" form="{{- id -}}_form" {%- if settings.qty_input_max == 1 %} readonly {%- endif %} />
+</noscript>

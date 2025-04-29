@@ -1,0 +1,188 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "section--collection",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "collection_nav": "",
+        "enable_filtering": false,
+        "filter_style": "drawer",
+        "filter_nav": "",
+        "filter_group_name": false,
+        "filter_open": false,
+        "enable_sorting": true,
+        "pagination_type": "pages"
+      }
+    },
+    "ee1991c6-2b35-493b-b94e-f693d253a79e": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "28104e6c-3911-432d-b07e-e1fa3fca26b0": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4><\/h4><h4><\/h4><h2>Welcome Good Children listeners!!! <br\/><\/h2>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "2898fb48-fd4c-4007-a0f2-d7ec6a248bfe": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Use promo code GOODCHILDREN at check out for 25% off  (cannot be combined with sale discounts)<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "28104e6c-3911-432d-b07e-e1fa3fca26b0",
+        "2898fb48-fd4c-4007-a0f2-d7ec6a248bfe"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88": {
+      "type": "section--party",
+      "blocks": {
+        "b9326c20-5d68-414e-955d-39ded77ce564": {
+          "type": "lifestyle_card",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "caption": "Caption Text",
+            "caption_alignment": "left",
+            "associated_product": "",
+            "card_position": 1
+          }
+        },
+        "0bcd4ff5-c116-488b-8771-b0ec03d60b1a": {
+          "type": "section_break",
+          "settings": {
+            "title": "",
+            "product_end": 8,
+            "column_bg_image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_pcp_hero.jpg",
+            "column_pip_video": "shopify:\/\/files\/videos\/Blake_Speedway.mp4",
+            "column_pip_product": "",
+            "column_sticker_image": "shopify:\/\/shop_images\/Crap_Eyewear-Sticker_Gifs-new_sparkle-purple_green-web_480px_17c787ce-8395-4d64-924b-af31be6a7986.gif",
+            "column_svg": "",
+            "column_sticker_width": 100,
+            "column_sticker_width_mobile": 25,
+            "column_sticker_position": "tl",
+            "show_end_banner": true,
+            "background_color": "#ffffff",
+            "font_color": "#deff7b",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_161_934acc26-d9a9-4960-b155-51bbd8830605.png",
+            "content": "<h2>Earth-friendlier, optical-grade materials. Certified carbon neutral. 100% protection from UV rays and bad vibes.<\/h2>",
+            "section_padding": "ca",
+            "section_padding_halved": false,
+            "section_padding_extra": false
+          }
+        },
+        "0d1af4e9-4668-40f2-b956-c6b23ec78eb7": {
+          "type": "section_break",
+          "settings": {
+            "title": "",
+            "product_end": 16,
+            "column_pip_product": "",
+            "column_svg": "",
+            "column_sticker_width": 100,
+            "column_sticker_width_mobile": 25,
+            "column_sticker_position": "",
+            "show_end_banner": false,
+            "background_color": "#ffffff",
+            "font_color": "#1e1e1e",
+            "content": "",
+            "section_padding": "ca",
+            "section_padding_halved": false,
+            "section_padding_extra": false
+          }
+        }
+      },
+      "block_order": [
+        "b9326c20-5d68-414e-955d-39ded77ce564",
+        "0bcd4ff5-c116-488b-8771-b0ec03d60b1a",
+        "0d1af4e9-4668-40f2-b956-c6b23ec78eb7"
+      ],
+      "settings": {
+        "heading": "<h1><\/h1><h1>Shop All<\/h1>",
+        "empty_collection_message": "",
+        "no_results_message": "",
+        "pagination_type": "infinite",
+        "products_per_page": 250,
+        "media_file": "",
+        "enable_filtering": false,
+        "hide_mode_toggle": true,
+        "default_mode": "business",
+        "filter_nav": "",
+        "filter_group_name": true,
+        "filter_open": true,
+        "enable_sorting": true,
+        "animation": "",
+        "column_pip_product": "",
+        "column_svg": "",
+        "column_sticker_width": 100,
+        "column_sticker_width_mobile": 25,
+        "column_sticker_position": "",
+        "show_end_banner": true,
+        "background_color": "#ffffff",
+        "font_color": "#deff7b",
+        "background_image": "shopify:\/\/shop_images\/EarthFreindlier.jpg",
+        "content": "<h2>Earth-friendlier, optical-grade materials. Certified carbon neutral. 100% protection from UV rays and bad vibes.<\/h2>",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "bdef3a1c-8a0f-4046-9902-366bd91435ca": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "d3dcf728-41d7-4b1d-b329-3bb4c4559e71": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify:\/\/files\/videos\/Crap_Eyewear-meet_the_favs-heavy_tropix-deep_rose-web_home_primary.mp4",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3>Meet Our <em>Favorites<\/em><\/h3>",
+        "cta_1_text": "Shop The Hits",
+        "cta_1_url": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_3.png",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ee1991c6-2b35-493b-b94e-f693d253a79e",
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88",
+    "bdef3a1c-8a0f-4046-9902-366bd91435ca",
+    "d3dcf728-41d7-4b1d-b329-3bb4c4559e71"
+  ]
+}

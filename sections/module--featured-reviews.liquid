@@ -1,0 +1,238 @@
+{% unless product.tags contains "exclude-featured-reviews" %}
+    <style>
+        .h4-to-h3 {
+            font-size: 32px;
+        }
+        @media (min-width: 769px) {
+            .h4-to-h3 {
+                font-size: 48px;
+                line-height: 90%;
+            }
+        }
+    </style>
+    {% capture slides %}
+        {% for review in section.blocks %}
+            <div class="slide w-full flex dk:gap-[var(--site-gutter)] flex-col dk:flex-row">
+                {% assign title_format = review.settings.associated_product.title | split: '-' %}
+                <div class="review-content max-w-[calc(100%-var(--site-gutter)*2)] mx-auto w-full dk:w-7/12 order-2 dk:order-1" data-index="{{ forloop.index0 }}">
+                    <div class="flex items-center justify-between dk:justify-start mb-5 dk:mb-[60px] gap-[20px]">
+                        <div class="flex gap-2">
+                            {% render 'icon--star' %}
+                            {% render 'icon--star' %}
+                            {% render 'icon--star' %}
+                            {% render 'icon--star' %}
+                            {% render 'icon--star' %}
+                        </div>
+                        <h2 class="font-script text-xl">{{ review.settings.title }}</h2>
+                    </div>
+                    {% if review.settings.associated_product.metafields.custom.variant_short_title != nil %}
+                        {% assign short_title = review.settings.associated_product.metafields.custom.variant_short_title %}
+                    {% else %}
+                        {% assign short_title = review.settings.associated_product.selected_or_first_available_variant.title %}
+                    {% endif %}
+                    <h3 class="h4-to-h3">
+                        {{ review.settings.review_content }}
+                    </h3>
+                    <div class="review-test flex flex-row gap-4 dk:items-center {% unless review.settings.fit_text != empty and review.settings.fit_question != empty %} {% if review.settings.press_logo == nil %} border border-black {% endif %} {% endunless %} md:w-max p-2 md:py-0 mt-4">
+                        {% if review.settings.associated_product != nil %}
+                            <a href="{{- review.settings.associated_product.url -}}" class="block w-[104px]">
+                                {% render "molecule--product-crossed", product: review.settings.associated_product %}
+                            </a>
+                        {% elsif review.settings.associated_product_image != nil %}
+                            {% if review.settings.associated_product_url != nil %}
+                                <a href="{{- review.settings.associated_product_url -}}" class="block w-[104px]">
+                                    {% render "component--responsive-image", image: review.settings.associated_product_image, objectFit: false %}
+                                </a>
+                            {% else %}
+                                <div class="block w-[104px]">
+                                    {% render "component--responsive-image", image: review.settings.associated_product_image, objectFit: false %}
+                                </div>
+                            {% endif %}
+                            {% assign short_title = review.settings.associated_product_title %}
+                        {% endif %}
+                        <div class="flex flex-col justify-center">
+                            {% if review.settings.fit_text != empty and review.settings.fit_question != empty %}
+                                <p class="!mb-0">{{ review.settings.name }} in
+                                    <a class="grotesk-bold" href="{{- review.settings.associated_product.url -}}">{{ short_title }}</a>
+                                </p>
+                                <p class="!mb-0">{{ review.settings.fit_question }}
+                                    <span class="grotesk-bold">{{ review.settings.fit_text }}</span>
+                                </p>
+                            {% elsif review.settings.name != empty and review.settings.associated_product != nil %}
+                                <p class="!mb-0">{{ review.settings.name }} in
+                                    <a class="grotesk-bold" href="{{- review.settings.associated_product.url -}}">{{ short_title }}</a>
+                                </p>
+                                <p class="!mb-0">
+                                    {% if product.tags contains "badge: bioacetate" %}
+                                        {% render "icon--bio" %}
+                                    {% endif %}
+                                    {{ short_title }}
+                                </p>
+                            {% endif %}
+                        </div>
+                        {% if review.settings.press_logo != nil %}
+                            <div class="press-logo max-w-[200px]">
+                                {% render "component--responsive-image", image: review.settings.press_logo %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="img-content relative aspect-square w-full dk:w-5/12 order-1 dk:order-2 bg-faded-lime mb-8">
+                    {% if review.settings.slide_video != nil %}
+                        {%- render "component--responsive-video" 
+                            , cover: true,
+                            autoplay: true,
+                            muted: true,
+                            loop: true,
+                            desktop_video: review.settings.slide_video,
+                            mobile_video: review.settings.slide_video, -%}
+                    {% else %}
+                        {% render "component--responsive-image", image: review.settings.image, objectFit: true, placeholder: false %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endcapture %}
+    <div class="featured-reviews dk:cx pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %}" data-animation="{{- section.settings.animation -}}">
+        <div class="grid auto-rows-auto grid-cols-12 dk:px-[var(--site-gutter)]">
+            <div class="col-span-12 dk:col-span-12 overflow-hidden">
+                {% render "slot--carousel" 
+                   , slot: slides,
+                   pagination: true,
+                   mobileOnly: false,
+                   classes: 'main-style featured-reviews cursor-pointer',
+                   sectionID: section.id,
+                   autoplay: false,
+                   onClick: "change-prev-next" %}
+            </div>
+        </div>
+    </div>
+{% endunless %}
+{% schema %}
+    {
+        "name": "Featured Reviews",
+        "tag": "section",
+        "class": "pdp-async",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }, {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Featured Reviews"
+            }, {
+                "type": "collection",
+                "id": "collection_source",
+                "label": "Pull from"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "review",
+                "name": "review",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "default": "Featured Review"
+                    },
+                    {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Reviewer Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "review_content",
+                        "label": "Review"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    }, {
+                        "type": "video",
+                        "id": "slide_video",
+                        "label": "Video"
+                    }, {
+                        "type": "product",
+                        "id": "associated_product",
+                        "label": "Associated Product"
+                    }, {
+                        "type": "text",
+                        "id": "fit_question",
+                        "label": "Fit Question",
+                        "default": "How would you describe your face width?"
+                    }, {
+                        "type": "text",
+                        "id": "fit_text",
+                        "label": "Fit Text"
+                    }, {
+                        "type": "image_picker",
+                        "id": "press_logo",
+                        "label": "Press Logo"
+                    }, {
+                        "type": "header",
+                        "content": "Product Override"
+                    }, {
+                        "type": "image_picker",
+                        "id": "associated_product_image",
+                        "label": "Product Image",
+                        "info": "If associated product is not selected, this image will be used instead"
+                    }, {
+                        "type": "url",
+                        "id": "associated_product_url",
+                        "label": "Product URL",
+                        "info": "If associated product is not selected, this URL will be used instead"
+                    }, {
+                        "type": "text",
+                        "id": "associated_product_title",
+                        "label": "Product Title",
+                        "info": "If associated product is not selected, this title will be used instead"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Featured Reviews"
+            }
+        ]
+    }
+{% endschema %}

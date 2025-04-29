@@ -1,0 +1,55 @@
+{%- comment %}
+  /** Product type subnav
+   * @property {object} product
+   *
+   */
+
+  TODO: Change "Type" to work off parent interaction
+  TODO: Rethink "active"
+  TODO: Make content type agnostic
+  TODO:
+{%- endcomment %}
+{%- liquid
+  assign product_list = product_list | default: collections.all.products
+  assign type = type | default: 'product'
+  assign columns = columns | default: 4
+-%}
+
+{%- if product.type != blank -%}
+  <product-types
+    class="w-full grid grid-cols-5 auto-rows-auto gap-1"
+    data-section="{{ section.id }}"
+    data-type="{{ type }}"
+  >
+    {%- for item in product_list.products -%}
+      {% if item.available == false %}
+        {% unless item.tags contains 'hide-notify-me' %}
+          {% assign state_check = 'notify-reload' %}
+        {% endunless %}
+      {% endif %}
+      <article
+        class="col-span-1 {{ state_check  }} {% if item.id == product.id -%}pointer-events-none border border-off-black {% else %} border border-light-gray {%- endif %}"
+        data-product-id="{{- item.id -}}"
+      >
+        <a href="{{- item.url -}}" class="block relative">
+          {%- if item.featured_image != blank -%}
+            {%- render 'component--responsive-image',
+              image: item.featured_image,
+              maxSize: 200,
+              objectFit: false,
+              placeholder: true
+            -%}
+          {%- else -%}
+            <div class="absolute w-full h-full bg-gray-200">{{ item.title }}</div>
+          {%- endif -%}
+        </a>
+      </article>
+    {%- endfor -%}
+  </product-types>
+{%- endif -%}
+{%- comment -%}
+  /**
+   * Debug this object by using the render line
+   */
+  {%- render "debug--json", object: cart %}
+{%- endcomment -%}

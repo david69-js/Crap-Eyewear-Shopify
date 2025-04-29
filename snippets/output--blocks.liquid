@@ -1,0 +1,34 @@
+{%- liquid
+
+-%}
+
+{%- assign storedBlock = "" -%}
+
+{%- for block in section.blocks -%}
+
+	{%- if storedBlock != block.type and block.type == "button" -%}
+		<div class="">
+	{%- endif -%}
+	
+	{%- case block.type -%}
+		{%- when "heading" %}
+			{%- render "component--text", tag: block.settings.tag, content: block.settings.text, align: block.settings.alignment, font_scale: block.settings.font_scale, classes: "leading-none" -%}
+
+		{%- when "richtext" %}
+			{%- render "component--richtext", content: block.settings.richtext, align: block.settings.alignment -%}
+
+		{%- when "eyebrow" %}
+			{%- render "component--text", tag: "small", content: block.settings.text, classes: "uppercase" -%}
+
+		{%- when "button" %}
+			{%- render "component--button", link: block.settings.link, label: block.settings.text, style: block.settings.button_style -%}
+
+	{%- endcase -%}
+
+	{%- if storedBlock == "button" and block.type != "button" -%}
+		</div>
+	{%- endif -%}
+
+	{%- assign storedBlock = block.type -%}
+
+{%- endfor -%}

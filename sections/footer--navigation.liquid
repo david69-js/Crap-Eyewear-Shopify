@@ -1,0 +1,203 @@
+
+
+{% comment %} Captured navs to pass into accordion drawers on mobile: {% endcomment %}
+{% capture shopNav %}
+  {%- for link in section.settings.shop_nav.links -%}
+    <a href="{{ link.url }}" class="hover:underline block my-2">{{link.title}}</a>
+  {%- endfor -%}
+{% endcapture %}
+
+{% capture aboutNav %}
+  {%- for link in section.settings.about_nav.links -%}
+    <a href="{{ link.url }}"  class="hover:underline block my-2">{{link.title}}</a>
+  {%- endfor -%}
+{% endcapture %}
+
+{% capture helpNav %}
+  {%- for link in section.settings.help_nav.links -%}
+    <a href="{{ link.url }}"  class="hover:underline block my-2 site-footer__linklist-item">{{link.title}}</a>
+  {%- endfor -%}
+{% endcapture %}
+
+<div id="footer-navigation" class="md:flex bg-off-black text-white px-[15px] md:px-[30px] pt-[60px] pb-[20px]">
+  <div class="flex justify-center mb-[40px] md:order-last md:grow-[2] md:justify-end">
+    {{ section.settings.shop_logo }}
+  </div>
+
+  <div class="footer-shop-desktop hidden md:block md:grow">
+    <h2 class="text-x120 grotesk-bold mb-8">Shop</h2>
+    {{ shopNav }}
+  </div>
+  <div class="footer-shop-mobile md:hidden">
+    {%- render 'slot--accordion',
+      heading: 'Shop',
+      headingClasses: 'grotesk-bold py-4 text-x120',
+      content: shopNav,
+      iconColor: 'white',
+      classes: 'border-t border-white'
+    -%}
+  </div>
+
+  <div class="footer-about-desktop hidden md:block md:grow">
+    <h2 class="text-x120 grotesk-bold mb-8">About</h2>
+    {{ aboutNav }}
+  </div>
+  <div class="footer-about-mobile md:hidden">
+    {%- render 'slot--accordion',
+      heading: 'About',
+      headingClasses: 'grotesk-bold py-4 text-x120',
+      content: aboutNav,
+      iconColor: 'white',
+      classes: 'border-t border-white'
+    -%}
+  </div>
+
+  <div class="footer-help-desktop hidden md:block md:grow">
+    <h2 class="text-x120 grotesk-bold mb-8">Help</h2>
+    {{ helpNav }}
+  </div>
+  <div class="footer-help-mobile md:hidden">
+    {%- render 'slot--accordion',
+      heading: 'Help',
+      headingClasses: 'grotesk-bold py-4 text-x120',
+      content: helpNav,
+      iconColor: 'white',
+      classes: 'border-t border-white'
+    -%}
+  </div>
+
+  <div class="border-t border-white md:border-none md:grow">
+    <h2 class="grotesk-bold py-4 text-x120 md:py-0 md:mb-8">Contact</h2>
+    <p class="my-2"><span class="grotesk-bold">Text Us:</span> {{ section.settings.contact_number }}</p>
+    <p class="my-2">
+      <a href="mailto:{{ section.settings.contact_email }}" class="hover:underline">{{ section.settings.contact_email }}</a>
+    </p>
+    <p id="live-chat" class="my-2">
+      <span id="live_indicator">⬤ </span><span style="border-bottom: 1px solid #fff" class="grotesk-bold">Live Chat</span> 11AM — 5PM PST Daily
+    </p>
+    <ul class="global-social-list flex gap-4 pt-8 pb-4 border-b border-white md:border-none md:pb-0 md:mt-10">
+      {%- if section.settings.social_instagram_link != blank -%}
+        <li class="opacity-50">
+          <a href="{{ section.settings.social_instagram_link }}" target="_blank">
+            <svg aria-hidden="true" role="none" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_106_10875)">
+              <rect width="19.645" height="20" fill="#1E1E1E" fill-opacity="0.3"/>
+              <path d="M9.82249 1.80078C12.4469 1.80078 12.7577 1.8125 13.7898 1.85938C14.7491 1.90234 15.2671 2.06641 15.6124 2.20313C16.069 2.38281 16.3989 2.60156 16.7404 2.94922C17.0858 3.30078 17.2968 3.63281 17.4733 4.09766C17.6076 4.44922 17.7687 4.98047 17.8109 5.95313C17.857 7.00781 17.8685 7.32422 17.8685 9.99219C17.8685 12.6641 17.857 12.9805 17.8109 14.0313C17.7687 15.0078 17.6076 15.5352 17.4733 15.8867C17.2968 16.3516 17.0819 16.6875 16.7404 17.0352C16.3951 17.3867 16.069 17.6016 15.6124 17.7813C15.2671 17.918 14.7452 18.082 13.7898 18.125C12.7539 18.1719 12.4431 18.1836 9.82249 18.1836C7.19804 18.1836 6.88725 18.1719 5.85512 18.125C4.8959 18.082 4.37791 17.918 4.03259 17.7813C3.576 17.6016 3.24602 17.3828 2.90454 17.0352C2.55922 16.6836 2.34819 16.3516 2.17169 15.8867C2.0374 15.5352 1.87625 15.0039 1.83404 14.0313C1.788 12.9766 1.77649 12.6602 1.77649 9.99219C1.77649 7.32031 1.788 7.00391 1.83404 5.95313C1.87625 4.97656 2.0374 4.44922 2.17169 4.09766C2.34819 3.63281 2.56305 3.29688 2.90454 2.94922C3.24986 2.59766 3.576 2.38281 4.03259 2.20313C4.37791 2.06641 4.89973 1.90234 5.85512 1.85938C6.88725 1.8125 7.19804 1.80078 9.82249 1.80078ZM9.82249 0C7.15583 0 6.82202 0.0117187 5.77455 0.0585938C4.73091 0.105469 4.01341 0.277344 3.39183 0.523438C2.74339 0.78125 2.19471 1.12109 1.64987 1.67969C1.10119 2.23438 0.767382 2.79297 0.514146 3.44922C0.27242 4.08594 0.103597 4.8125 0.0575536 5.875C0.0115107 6.94531 0 7.28516 0 10C0 12.7148 0.0115107 13.0547 0.0575536 14.1211C0.103597 15.1836 0.27242 15.9141 0.514146 16.5469C0.767382 17.207 1.10119 17.7656 1.64987 18.3203C2.19471 18.875 2.74339 19.2188 3.38799 19.4727C4.01341 19.7188 4.72707 19.8906 5.77071 19.9375C6.81819 19.9844 7.152 19.9961 9.81865 19.9961C12.4853 19.9961 12.8191 19.9844 13.8666 19.9375C14.9102 19.8906 15.6277 19.7188 16.2493 19.4727C16.8939 19.2188 17.4426 18.875 17.9874 18.3203C18.5323 17.7656 18.8699 17.207 19.1193 16.5508C19.361 15.9141 19.5299 15.1875 19.5759 14.125C19.622 13.0586 19.6335 12.7188 19.6335 10.0039C19.6335 7.28906 19.622 6.94922 19.5759 5.88281C19.5299 4.82031 19.361 4.08984 19.1193 3.45703C18.8776 2.79297 18.5438 2.23438 17.9951 1.67969C17.4503 1.125 16.9016 0.78125 16.257 0.527344C15.6316 0.28125 14.9179 0.109375 13.8743 0.0625C12.8229 0.0117188 12.4891 0 9.82249 0Z" fill="white"/>
+              <path d="M9.82239 4.86328C7.03679 4.86328 4.77686 7.16406 4.77686 10C4.77686 12.8359 7.03679 15.1367 9.82239 15.1367C12.608 15.1367 14.8679 12.8359 14.8679 10C14.8679 7.16406 12.608 4.86328 9.82239 4.86328ZM9.82239 13.332C8.01521 13.332 6.54951 11.8398 6.54951 10C6.54951 8.16016 8.01521 6.66797 9.82239 6.66797C11.6296 6.66797 13.0953 8.16016 13.0953 10C13.0953 11.8398 11.6296 13.332 9.82239 13.332Z" fill="white"/>
+              <path d="M16.2455 4.66016C16.2455 5.32422 15.716 5.85938 15.0676 5.85938C14.4153 5.85938 13.8896 5.32031 13.8896 4.66016C13.8896 3.99609 14.4191 3.46094 15.0676 3.46094C15.716 3.46094 16.2455 4 16.2455 4.66016Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_106_10875">
+              <rect width="19.645" height="20" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.social_tiktok_link != blank -%}
+        <li class="opacity-50">
+          <a href="{{ section.settings.social_tiktok_link }}" target="_blank">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>Tiktok logo</title>
+              <rect width="20" height="20" transform="translate(0.64502)" fill="#1E1E1E" fill-opacity="0.3"/>
+              <path d="M14.8722 0H11.5016V13.6232C11.5016 15.2464 10.2053 16.5797 8.59199 16.5797C6.97871 16.5797 5.68234 15.2464 5.68234 13.6232C5.68234 12.029 6.94991 10.7246 8.50558 10.6667V7.24639C5.07737 7.30433 2.31177 10.1159 2.31177 13.6232C2.31177 17.1594 5.13498 20 8.62081 20C12.1066 20 14.9298 17.1304 14.9298 13.6232V6.63767C16.1974 7.56522 17.753 8.11594 19.3951 8.14495V4.72464C16.86 4.63768 14.8722 2.55072 14.8722 0Z" fill="white"/>
+            </svg>
+          </a>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.social_youtube_link != blank -%}
+        <li class="opacity-50">
+          <a href="{{ section.settings.social_youtube_link }}" target="_blank">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>Youtube logo</title>
+              <g clip-path="url(#clip0_106_10877)">
+              <rect width="20" height="20" transform="translate(0.64502)" fill="#1E1E1E" fill-opacity="0.3"/>
+              <path d="M20.4458 6C20.4458 6 20.2505 4.62109 19.6489 4.01563C18.8872 3.21875 18.0356 3.21484 17.645 3.16797C14.8481 2.96484 10.6489 2.96484 10.6489 2.96484H10.6411C10.6411 2.96484 6.44189 2.96484 3.64502 3.16797C3.25439 3.21484 2.40283 3.21875 1.64111 4.01563C1.03955 4.62109 0.848145 6 0.848145 6C0.848145 6 0.64502 7.62109 0.64502 9.23828V10.7539C0.64502 12.3711 0.844238 13.9922 0.844238 13.9922C0.844238 13.9922 1.03955 15.3711 1.63721 15.9766C2.39893 16.7734 3.39893 16.7461 3.84424 16.832C5.4458 16.9844 10.645 17.0313 10.645 17.0313C10.645 17.0313 14.8481 17.0234 17.645 16.8242C18.0356 16.7773 18.8872 16.7734 19.6489 15.9766C20.2505 15.3711 20.4458 13.9922 20.4458 13.9922C20.4458 13.9922 20.645 12.375 20.645 10.7539V9.23828C20.645 7.62109 20.4458 6 20.4458 6ZM8.57861 12.5938V6.97266L13.981 9.79297L8.57861 12.5938Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_106_10877">
+              <rect width="20" height="20" fill="white" transform="translate(0.64502)"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+      {%- endif -%}
+      {%- if section.settings.social_spotify_link != blank -%}
+        <li class="opacity-50">
+          <a href="{{ section.settings.social_spotify_link }}" target="_blank">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>Spotify logo</title>
+              <rect width="20" height="20" transform="translate(0.64502)" fill="#1E1E1E" fill-opacity="0.3"/>
+              <path d="M10.645 0C5.12229 0 0.64502 4.47682 0.64502 10C0.64502 15.5232 5.12229 20 10.645 20C16.1677 20 20.645 15.5232 20.645 10C20.645 4.47682 16.1677 0 10.645 0ZM15.5238 14.4156C15.3632 14.7 15.0678 14.86 14.7632 14.86C14.6208 14.86 14.4738 14.8244 14.339 14.7494C13.0905 14.0494 11.7299 13.6206 10.292 13.475C8.85109 13.3306 7.42835 13.4768 6.06169 13.9132C5.60563 14.0588 5.11472 13.8068 4.96927 13.35C4.8223 12.8924 5.07532 12.4032 5.5329 12.2568C7.12684 11.7476 8.78895 11.5744 10.4677 11.745C12.1435 11.9156 13.7314 12.4156 15.189 13.2326C15.6087 13.4662 15.7586 13.9962 15.5238 14.4156ZM16.7208 11.3782C16.5662 11.6756 16.2632 11.8462 15.9496 11.8462C15.8132 11.8462 15.6768 11.815 15.548 11.7476C14.0132 10.9482 12.3556 10.4532 10.6177 10.2768C8.86622 10.0976 7.13139 10.2538 5.45866 10.7362C4.99654 10.8674 4.51472 10.6032 4.38291 10.1412C4.24957 9.68 4.51623 9.19818 4.97683 9.065C6.86471 8.52061 8.82229 8.34621 10.7935 8.54621C12.7511 8.74561 14.6208 9.30318 16.3526 10.2056C16.7768 10.4276 16.9435 10.9524 16.7208 11.3782ZM17.1541 8.85121C17.0238 8.85121 16.892 8.82182 16.7662 8.76C14.945 7.85182 12.9859 7.28621 10.942 7.07879C8.89501 6.86939 6.85866 7.03121 4.88744 7.55758C4.42381 7.68061 3.94805 7.40561 3.8238 6.94121C3.69956 6.47742 3.97533 6.00061 4.44048 5.87682C6.61472 5.29621 8.8632 5.11939 11.1193 5.34879C13.3723 5.57682 15.5329 6.20121 17.542 7.20318C17.9723 7.41742 18.1465 7.94 17.9329 8.3694C17.7814 8.675 17.4738 8.85121 17.1541 8.85121Z" fill="white"/>
+            </svg>
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer Navigation",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "shop_logo",
+      "label": "SVG Brand Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "shop_nav",
+      "label": "'Shop' Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "about_nav",
+      "label": "'About' Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "help_nav",
+      "label": "'Help' Navigation"
+    },
+    {
+      "type": "text",
+      "id": "contact_number",
+      "label": "Phone number for text message contact",
+      "default": "65214 (U.S. Only)"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Email for contact",
+      "default": "store@crapeyewear.com"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram_link",
+      "label": "Instagram link"
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok_link",
+      "label": "TikTok link"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube_link",
+      "label": "Youtube link"
+    },
+    {
+      "type": "url",
+      "id": "social_spotify_link",
+      "label": "Spotify link"
+    }
+  ]
+}
+{% endschema %}
+
+

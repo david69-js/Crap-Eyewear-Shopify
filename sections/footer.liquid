@@ -1,0 +1,1110 @@
+<style>
+  .footer-image {width:100%;display:inline-block;}
+  .holder.menu {display:inline-block;}
+  .social-bar {padding:35px 0; color:#fff; margin-bottom:20px;}
+</style>
+<footer class="site-footer" role="contentinfo">
+    <div class="grid grid--no-gutters bar-grid">
+      {% for block in section.blocks limit: section.blocks.size %}
+      {% case block.settings.width %}     
+        {% when '25%' %}
+          {%- assign block_width = 'medium-down--one-whole medium-up--one-quarter' -%}    
+        {% when '50%' %}
+          {%- assign block_width = 'medium-down--one-whole medium-up--one-half' -%}
+        {% when '75%' %}
+          {%- assign block_width = 'medium-down--one-whole medium-up--three-quarters' -%}
+        {% when '100%' %}
+          {%- assign block_width = 'one-whole' -%}
+      {% endcase %}        
+      {% if block.type contains 'bar' %}
+        <div class="grid__item {{ block_width }} {{ block.settings.text_align }}">         
+      {% case block.type %}
+        {% when 'social_bar' %}
+        <div class="social-bar" style="background-color:{{ block.settings.bg_color }};">
+          <span class="heading">{{ block.settings.heading }}</span>
+          <ul class="list--inline site-footer__social-icons social-icons">
+            {% include 'social-links' %}
+          </ul>
+        </div>
+        {% when 'newsletter_bar' %}
+        <div class="newsletter-bar" style="background-color:{{ block.settings.bg_color }};{% if block.settings.bg_image_enable %}background-image:url('{{ block.settings.bg_image | img_url: '2048x2048' }}');{% endif %}">
+          <div class="site-footer__newsletter page-width">
+            {% form 'customer' %}
+              {{ form.errors | default_errors }}
+              {% if form.posted_successfully? %}
+                <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+              {% else %}
+                {% unless block.settings.newsletter_heading_hide %}<label for="Email" class="{{ block.settings.title_class }}" style="color:{{ block.settings.color }};">{{ 'general.newsletter_form.newsletter_title' | t }}</label>{% endunless %}
+            	{% if block.settings.newsletter_caption %}<p>{{ 'layout.footer.newsletter_caption' | t }}</p>{% endif %}
+                <div class="input-group" style="max-width:{{ block.settings.max_width }};">
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input type="email" name="contact[email]" id="Email" class="input-group__field newsletter__input" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}">
+                  <span class="input-group__btn">
+                    <button type="submit" class="btn {{ block.settings.button_class }} newsletter__submit" name="commit" id="Subscribe">
+                      <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                    </button>
+                  </span>
+                </div>
+              {% endif %}
+            {% endform %}
+          </div> 
+        </div>             
+      {% endcase %} 
+        </div>
+      {% endif %}
+      {% endfor %}
+    </div>  
+  <div class="page-width container">
+    <div class="grid grid--no-gutters main-footer">
+{% for block in section.blocks limit: section.blocks.size %}
+      {% case block.settings.width %}
+        {% when '15%' %}
+          {%- assign block_width = 'medium-up--three-twentieths' -%}
+        {% when '16%' %}
+          {%- assign block_width = 'medium-up--one-sixth' -%}      
+        {% when '20%' %}
+          {%- assign block_width = 'medium-up--one-fifth' -%}
+        {% when '25%' %}
+          {%- assign block_width = 'three columns' -%}
+        {% when '30%' %}
+          {%- assign block_width = 'medium-up--three-tenths' -%}      
+        {% when '33%' %}
+          {%- assign block_width = 'medium-up--one-third width-three' -%}
+        {% when '40%' %}
+          {%- assign block_width = 'medium-up--four-tenths' -%}         
+        {% when '50%' %}
+          {%- assign block_width = 'six columns' -%}
+        {% when '60%' %}
+          {%- assign block_width = 'medium-up--six-tenths' -%}      
+        {% when '66%' %}
+          {%- assign block_width = 'medium-up--two-thirds' -%}
+        {% when '75%' %}
+          {%- assign block_width = 'medium-up--three-quarters' -%}
+        {% when '100%' %}
+          {%- assign block_width = 'one-whole' -%}
+      {% endcase %}  
+	  {% unless block.type contains 'bar' %}
+      {% if block.type == 'clear' %}
+        <div class="clearfix" style="margin:0 0 85px;"></div> 
+      {% elsif block.type == 'bg_color' %}
+      <style>@media (max-width: 767px) {.credits{background-color:{{ block.settings.bg_color }};} .mobile-bg-color h4 {padding-top:56px;color:{{ block.settings.color }};} .mobile-bg-color {float:left;width:100%;background-color:{{ block.settings.bg_color }};color:{{ block.settings.color }};} .mobile-bg-color a, .mobile-bg-color path {fill:{{ block.settings.color }};color:{{ block.settings.color }};}} </style>
+        <div class="mobile-bg-color">  
+      {% elsif block.type == 'bg_color_end' %}    
+        <div class="clearfix"></div></div>
+      {% else %}
+      
+      <div class="grid__item {{ block_width }} item-{{forloop.index}} medium--{{ block.settings.medium_width }} small--{{ block.settings.small_width }} medium-up--{{ block.settings.text_align }} small--text-center {% if section.settings.mobile_accordion_menu %}{% case block.type %}{% when 'menu' %} mobile-accordion{% endcase %}{% endif %}">
+       {% case block.type %}
+        {% when 'image' %}   
+        {% if block.settings.heading.size > 0 %}<h4>{{ block.settings.heading }}</h4>{% endif %}
+        <a href="{{ block.settings.logo_link }}" target="_blank" class="{% if block.settings.logo_link  != blank %}{% else %}not-active{% endif %}">
+          <img data-src="{{ block.settings.logo | img_url: '2000x' }}" style="max-width:{{ block.settings.image_max_width }}px;" alt="{{ block.settings.logo.alt }}" class="{% if block.settings.logo_mobile != blank %}u-ls {% endif %}footer-image lazyload" /></a>   
+        {% if block.settings.logo_mobile != blank %}
+
+         <a href="{{ block.settings.logo_link }}" target="_blank" class="{% if block.settings.logo_link  != blank %}{% else %}not-active{% endif %}">
+          <img data-src="{{ block.settings.logo_mobile | img_url: '2000x' }}" style="max-width:{{ block.settings.image_max_width }}px;" alt="{{ block.settings.logo_mobile.alt }}" class="u-ss footer-image lazyload" />   
+        </a>
+          {% endif %}
+        {% when 'custom' %}  
+        	{% if block.settings.custom_heading.size > 0 %}<h4>{{ block.settings.custom_heading }}</h4>{% endif %}
+        	<div class="custom-html">
+				{{ block.settings.custom_html }}	  
+         	</div>
+          {% if block.settings.social_newsletter_enable %}
+          <h4 style="display:none;">{{ 'general.social.share_heading' | t }}</h4>
+          <ul class="list--inline site-footer__social-icons social-icons">
+			{% include 'social-links' %}
+            {% if template.name == 'blog' or template.name == 'article' %}
+              <li>
+                <a class="social-icons__link" href="{{ shop.url }}{{ blog.url }}.atom">
+                  {% include 'icon-rss' %}
+                  <span class="icon__fallback-text">RSS</span>
+                </a>
+              </li>
+            {% endif %}
+          </ul> 
+          {% endif %}        
+        {% when 'menu' %}
+        {%- assign footer_linklist = block.settings.footer_linklist -%}
+        {% if linklists[footer_linklist].links.size > 0 %}
+        <div class="holder menu {% if section.settings.mobile_accordion_menu %}small--hide{% endif %}">
+          {% unless block.settings.linklist_heading_hide %}<h4>{{ linklists[footer_linklist].title }}</h4>{% endunless %}
+          <ul class="site-footer__linklist{% if block.settings.inline_menu %} inline-list{% endif %}">
+            {% for link in linklists[footer_linklist].links %}
+              <li class="site-footer__linklist-item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% if section.settings.mobile_accordion_menu %}
+        <div class="holder menu medium--hide medium-up--hide js-shipping-accordion text-left" data-accordion>
+          {% unless block.settings.linklist_heading_hide %}<h4 data-control class="js-shipping-accordion-open">{{ linklists[footer_linklist].title }} <i class="fa fa-angle-down" aria-hidden="true"></i></h4>{% endunless %}
+          <ul class="site-footer__linklist" data-content>
+            {% for link in linklists[footer_linklist].links %}
+              <li class="site-footer__linklist-item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% when 'multi_menu' %}
+        {%- assign footer_linklist = block.settings.footer_linklist -%}
+        {%- assign footer_linklist1 = block.settings.footer_linklist1 -%}
+        {%- assign footer_linklist2 = block.settings.footer_linklist2 -%}
+        {% if linklists[footer_linklist].links.size > 0 %}
+        <div class="holder menu">
+          {% unless block.settings.linklist_heading_hide %}<h4 class="visby">{{ linklists[footer_linklist].title }}</h4>{% endunless %}
+          <ul class="site-footer__linklist{% if block.settings.inline_menu %} inline-list{% endif %}">
+            {% for link in linklists[footer_linklist].links %}
+              <li class="site-footer__linklist-item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if linklists[footer_linklist1].links.size > 0 %}
+        <div class="holder menu">
+          {% unless block.settings.linklist_heading_hide %}<h4 class="visby">{{ linklists[footer_linklist1].title }}</h4>{% endunless %}
+          <ul class="site-footer__linklist{% if block.settings.inline_menu %} inline-list{% endif %}">
+            {% for link in linklists[footer_linklist1].links %}
+              <li class="site-footer__linklist-item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if linklists[footer_linklist2].links.size > 0 %}
+        <div class="holder menu">
+          {% unless block.settings.linklist_heading_hide %}<h4 class="visby">{{ linklists[footer_linklist2].title }}</h4>{% endunless %}
+          <ul class="site-footer__linklist{% if block.settings.inline_menu %} inline-list{% endif %}">
+            {% for link in linklists[footer_linklist2].links %}
+              <li class="site-footer__linklist-item">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}                
+        {% when 'social_solo' %}
+          {% unless block.settings.social_heading_hide %}<h4>{{ 'general.social.share_heading' | t }}</h4>{% endunless %}
+          <ul class="list--inline site-footer__social-icons social-icons">
+			        {% include 'social-links' %}
+          </ul>         
+        {% when 'newsletter' %}
+          <div class="site-footer__newsletter">
+            {% if block.settings.thirdparty_action_link != blank  %}
+			<form action="{{ block.settings.thirdparty_action_link }}" method="post" id="contact_form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    			{% unless block.settings.newsletter_heading_hide %}<label for="Email" class="h4" style="color:{{ block.settings.color }};">{{ 'general.newsletter_form.newsletter_title' | t }}</label>{% endunless %}
+  				{% if block.settings.newsletter_caption %}<p>{{ 'layout.footer.newsletter_caption' | t }}</p>{% endif %}
+              	<div id="mc_embed_signup_scroll">
+					<div id="mce-responses" class="clear">
+						<div class="response" id="mce-error-response" style="display:none"></div>
+						<div class="response" id="mce-success-response" style="display:none"></div>
+					</div>    
+				<div class="input-group" style="max-width:360px;">
+					<input type="email" value="" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}" name="EMAIL" class="input-group__field newsletter__input required email" id="mce-EMAIL">
+    				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      				<span class="input-group__btn"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="newsletter__submit btn {{ block.settings.button_class }}"></span>
+    			</div>
+   				</div>
+			</form>              
+            {% else %}
+            {% form 'customer' %}
+              {{ form.errors | default_errors }}
+              {% if form.posted_successfully? %}
+                <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+              {% else %}
+                {% unless block.settings.newsletter_heading_hide %}<label for="Email" class="h4">{{ 'general.newsletter_form.newsletter_title' | t }}</label>{% endunless %}
+            	{% if block.settings.newsletter_caption %}<p>{{ 'layout.footer.newsletter_caption' | t }}</p>{% endif %}
+                <div class="input-group">
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input type="email" name="contact[email]" id="Email" class="input-group__field newsletter__input" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}">
+                  <span class="input-group__btn">
+                    <button type="submit" class="btn newsletter__submit {{ block.settings.button_class }}" name="commit" id="Subscribe">
+                      <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                    </button>
+                  </span>
+                </div>
+              {% endif %}
+            {% endform %}
+            {% endif %}
+          </div> 
+          {% if block.settings.social_newsletter_enable %}
+          {% unless block.settings.social_heading_hide %}<h4>{{ 'general.social.share_heading' | t }}</h4>{% endunless %}
+          <ul class="list--inline site-footer__social-icons social-icons">
+			{% include 'social-links' %}
+          </ul> 
+          {% endif %}        
+        {% endcase %}
+      </div> 
+      {% endif %}
+      {% endunless %}
+     {% endfor %}
+    </div>
+	{% if section.settings.show_payment_icons %}
+    <div class="grid grid--no-gutters">
+      <div class="grid__item{% if section.settings.footer_newsletter_enable and social_icons == true %} medium-up--one-half{% else %} text-center{% endif %}">
+        <div class="site-footer__copyright{% if social_icons and section.settings.footer_newsletter_enable != blank %} site-footer__copyright--right medium-up--text-right{% elsif social_icons == false and section.settings.footer_newsletter_enable %} medium-up--text-left{% endif %}">
+          {% if section.settings.show_payment_icons %}
+            <div class="site-footer__payment-icons{% unless social_icons or section.settings.footer_newsletter_enable == blank %} site-footer__payment-icons--right{% endunless %}">
+              {% unless shop.enabled_payment_types == empty %}
+                {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,stripe,visa' | split: ',' -%}
+                <ul class="payment-icons list--inline">
+                  {% for type in shop.enabled_payment_types %}
+                    {% if payment_icons_available contains type %}
+                      <li class="payment-icon">
+                        {%- assign icon_name = type | prepend: 'icon-' -%}
+                        {% include icon_name %}
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              {% endunless %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    
+  </div>
+
+{% if section.settings.footer_credits_enable == 'bottom' %}
+<div class="{% unless section.settings.remove_credits_wrapper %}page-width {% endunless %}credits">
+<div class="grid grid--no-gutters {{ section.settings.text_align }}">
+      <div class="site-footer__copyright--bottom">
+        <span class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }} <a href="https://crapeyewear.com">Crap® Eyewear</a> ~ {{ section.settings.additional_copyright_text }}</span>
+      </div>
+  	{% if section.settings.credits_linklist != blank %}
+      <ul class="site-footer__linklist inline-list">
+          {% for link in linklists[section.settings.credits_linklist].links %}
+             {% if forloop.last %}& {% endif %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% if forloop.first %},{% endif %}
+          {% endfor %}
+      </ul>  
+  	{% endif %}
+</div>
+</div>
+{% endif %}
+</footer>
+{% if section.settings.mobile_accordion_menu %}
+        {{ 'jquery.accordion.js' | asset_url | script_tag }}
+        <script>
+            $('.js-shipping-accordion').accordion({
+    			transitionSpeed: 300,
+    			transitionEasing: 'ease',
+    			controlElement: '[data-control]',
+    			contentElement: '[data-content]',
+   				groupElement: '[data-accordion-group]',
+				singleOpen: true
+    		});
+          $( ".mobile-accordion" ).last().css( "margin-bottom", "30px" );
+  		</script>
+<style>
+  .mobile-accordion.grid__item {margin-bottom:0;}
+
+</style>
+{% endif %}
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "label": "Mobile Accordion menu",
+        "id": "mobile_accordion_menu",
+        "type": "checkbox"
+      },
+      {
+        "type": "header",
+        "content": "Credits"
+      },
+      {
+        "type": "select",
+        "id": "footer_credits_enable",
+        "label": "Show credits",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          },
+          {
+            "value": "top",
+            "label": "Top"
+          }
+        ]
+      },
+      {
+       "label": "Credits menu",
+       "id": "credits_linklist",
+       "type": "link_list"
+      },
+      {
+       "type": "select",
+       "id": "text_align",
+       "label": "Alignment",
+       "options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+      },
+      {
+        "type": "checkbox",
+        "id": "remove_credits_wrapper",
+        "label": "Remove credits wrapper"
+      },
+      {
+        "type": "text",
+        "id": "additional_copyright_text",
+        "label": "Additional Copyright Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Footer Menu",
+        "settings": [
+          {
+            "label": "Menu",
+            "id": "footer_linklist",
+            "type": "link_list"
+          },
+          {
+            "label": "Inline menu",
+            "id": "inline_menu",
+            "type": "checkbox"
+          },
+          {
+            "label": "Hide heading",
+            "id": "linklist_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "60%",
+                "label": "60%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Text Alignment",
+        	"options": [
+          	{
+            "value": "text-left",
+            "label": "Left"
+          	},
+          	{
+            "value": "text-center",
+            "label": "Center"
+          	},
+          	{
+            "value": "text-right",
+            "label": "Right"
+          	}
+          ]
+      	 }
+        ]
+      },
+      {
+        "type": "multi_menu",
+        "name": "Footer Multi Menu",
+        "settings": [
+          {
+            "label": "Menu",
+            "id": "footer_linklist",
+            "type": "link_list"
+          },
+          {
+            "label": "Menu 2",
+            "id": "footer_linklist1",
+            "type": "link_list"
+          },
+          {
+            "label": "Menu 3",
+            "id": "footer_linklist2",
+            "type": "link_list"
+          },
+          {
+            "label": "Inline menu",
+            "id": "inline_menu",
+            "type": "checkbox"
+          },
+          {
+            "label": "Hide heading",
+            "id": "linklist_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "60%",
+                "label": "60%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Text Alignment",
+        	"options": [
+          	{
+            "value": "text-left",
+            "label": "Left"
+          	},
+          	{
+            "value": "text-center",
+            "label": "Center"
+          	},
+          	{
+            "value": "text-right",
+            "label": "Right"
+          	}
+          ]
+      	 }
+        ]
+      },
+      {
+        "type": "social_bar",
+        "name": "Social Bar",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Social Heading"
+          },
+      	  {
+        	"type": "color",
+        	"id": "bg_color",
+        	"label": "Background Color",
+			"default": "#fff"
+      	  },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Alignment",
+        	"options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "100%",
+            "options": [
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "newsletter_bar",
+        "name": "Newsletter Bar",
+        "settings": [
+          {
+            "label": "Use background image",
+            "id": "bg_image_enable",
+            "type": "checkbox"
+          },
+          {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Newsletter bg"
+          },
+          {
+            "label": "Hide heading",
+            "id": "newsletter_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "label": "Show newsletter caption",
+            "id": "newsletter_caption",
+            "type": "checkbox"
+          },
+      	  {
+        	"type": "color",
+        	"id": "color",
+        	"label": "Heading Color"
+      	  },
+      	  {
+        	"type": "color",
+        	"id": "bg_color",
+        	"label": "Background Color",
+			"default": "#fff"
+      	  },
+      	  {
+        	"type": "text",
+        	"id": "max_width",
+        	"label": "Form max width"
+      	  },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Alignment",
+        	"options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "100%",
+            "options": [
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo or image"
+          },
+          {
+            "type": "url",
+            "id": "logo_link",
+            "label": "Link"
+            },
+          {
+            "type": "image_picker",
+            "id": "logo_mobile",
+            "label": "Logo or image - mobile"
+          },
+          {
+            "type": "text",
+            "id": "image_max_width",
+            "label": "Max Width in pixels"
+          },
+          {
+            "label": "Heading",
+            "id": "heading",
+            "type": "text"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Alignment",
+        	"options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+          }
+        ]
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter",
+        "settings": [
+          {
+            "label": "Hide heading",
+            "id": "newsletter_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "label": "Enable social links",
+            "id": "social_newsletter_enable",
+            "type": "checkbox"
+          },
+          {
+            "label": "Hide social heading",
+            "id": "social_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Alignment",
+        	"options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+          }
+        ]
+      },
+      {
+        "type": "social_solo",
+        "name": "Social Icons",
+        "settings": [
+          {
+            "label": "Hide heading",
+            "id": "social_heading_hide",
+            "type": "checkbox"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "30%",
+                "label": "30%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Text Alignment",
+        	"options": [
+          	{
+            "value": "text-left",
+            "label": "Left"
+          	},
+          	{
+            "value": "text-center",
+            "label": "Center"
+          	},
+          	{
+            "value": "text-right",
+            "label": "Right"
+          	}
+          ]
+      	 }
+        ]
+      },
+      {
+        "type": "custom",
+        "name": "Custom Content",
+        "settings": [
+          {
+            "label": "Heading",
+            "id": "custom_heading",
+            "type": "text"
+          },
+          {
+            "label": "Custom content",
+            "id": "custom_html",
+            "type": "textarea"
+          },
+          {
+            "type": "select",
+            "id": "width",
+            "label": "Block width",
+            "default": "33%",
+            "options": [
+              {
+                "value": "15%",
+                "label": "15%"
+              },
+              {
+                "value": "16%",
+                "label": "16.6%"
+              },
+              {
+                "value": "20%",
+                "label": "20%"
+              },
+              {
+                "value": "25%",
+                "label": "25%"
+              },
+              {
+                "value": "30%",
+                "label": "30%"
+              },
+              {
+                "value": "33%",
+                "label": "33.3%"
+              },
+              {
+                "value": "40%",
+                "label": "40%"
+              },
+              {
+                "value": "50%",
+                "label": "50%"
+              },
+              {
+                "value": "66%",
+                "label": "66%"
+              },
+              {
+                "value": "75%",
+                "label": "75%"
+              },
+              {
+                "value": "100%",
+                "label": "100%"
+              }
+            ]
+          },
+      	  {
+        	"type": "select",
+        	"id": "text_align",
+        	"label": "Alignment",
+        	"options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+          }
+        ]
+      },
+      {
+        "type": "clear",
+        "name": "Clear",
+        "settings": [
+        ]
+      },
+      {
+        "type": "bg_color",
+        "name": "Background color",
+        "settings": [
+          {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "label": "Text color"
+          },
+          {
+            "type": "text",
+            "id": "width",
+            "label": "Block width",
+            "default": "100%"
+          }
+        ]
+      },
+      {
+        "type": "bg_color_end",
+        "name": "Background color end",
+        "settings": [
+        ]
+      }
+    ]
+  }
+{% endschema %}

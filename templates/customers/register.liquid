@@ -1,0 +1,45 @@
+<section class="accounts">
+
+<!-- START HEADER -->
+<div id="header-view">
+    <div class="container">
+        <h1>Create Account</h1>
+    </div>
+</div>
+<!-- END HEADER -->
+
+<!-- START LOGIN -->
+<div id="login">
+    <div class="container">
+        <div class="six columns offset-by-three">
+            {% form 'create_customer' %}
+                <div class="error">{{ form.errors | default_errors }}</div>
+                <div id="first_name" class="clearfix large_form">
+                    <label for="first_name" class="label">First Name</label>
+                    <input type="text" value="" name="customer[first_name]" id="first_name" class="field" />
+                </div>
+                <div id="last_name" class="clearfix large_form">
+                    <label for="last_name" class="label">Last Name</label>
+                    <input type="text" value="" name="customer[last_name]" id="last_name" class="field" />
+                </div>
+
+                <div id="email" class="clearfix large_form">
+                    <label for="email" class="label">Email Address</label>
+                    <input type="email" value="" name="customer[email]" id="email" class="field" />
+                </div>
+
+                <div id="password" class="clearfix large_form">
+                    <label for="password" class="label">Password</label>
+                    <input type="password" value="" name="customer[password]" id="password" class="password field" />
+                </div>
+                <div class="actions">
+                    <input class="button button-primary" type="submit" value="Create Account" />
+                    <span class="rte">&nbsp; or <a href="{{ shop.url }}">Return to Store</a></span>
+                </div>
+            {% endform %}		
+        </div>
+    </div>
+</div>
+<!-- END LOGIN -->
+
+</section>

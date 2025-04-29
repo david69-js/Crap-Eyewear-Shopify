@@ -1,0 +1,40 @@
+{% comment %} --- Product Schema --- {% endcomment %}
+{%- liquid
+
+assign sameAsString = settings.social_twitter_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_facebook_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_pinterest_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_instagram_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_tiktok_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_tumblr_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_snapchat_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_youtube_link
+assign sameAsString = sameAsString | append: "|###|" | append: settings.social_vimeo_link
+assign sameAs = sameAsString | split: "|###|"
+assign commaOutput = false
+
+-%}
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Organization",
+	"name": {{ shop.name | json }},
+	{% if section.settings.logo_image -%}
+	{% assign image_size = section.settings.logo_image.width | append: "x" %}
+	"logo": {{ section.settings.logo_image | img_url: image_size | prepend: "https:" | json }},
+	{% endif -%}
+	"sameAs": [
+		{%- for link in sameAs -%}
+			{%- if commaOutput != true and link != blank -%}
+				{%- assign commaOutput = true -%}
+			{%- elsif commaOutput == true and link != blank -%}
+				,
+			{%- endif -%}
+			{%- if link != blank -%}
+				"{{- link -}}"
+			{%- endif -%}
+		{%- endfor -%}
+	],
+	"url": {{ shop.url | append: page.url | json }}
+}
+</script>

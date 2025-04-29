@@ -1,0 +1,54 @@
+<div class="flex flex-col md:flex-row w-full px-[15px] md:px-[30px] my-[60px] md:my-[120px]">
+    <div class="md:w-full m-auto content-paragraph_conjured">
+        {{ section.settings.content }}
+    </div>
+    
+    <div class="md:w-full m-0 md:m-auto">
+      <script async="" src="https://app.conjured.co/shopify/referral/widget.js?shop=crapeyewear.myshopify.com&amp;cmp=6514"></script>
+      <div id="conjured_referral"></div>
+    </div>
+</div>
+<script>
+  const interval = setInterval(() => {
+    const nameInput = document.getElementById("conjured_referral_name");
+    const emailInput = document.getElementById("conjured_referral_email");
+  
+    if (nameInput && emailInput) {
+      const nameLabel = document.createElement("label");
+      nameLabel.setAttribute("for", "conjured_referral_name");
+      nameLabel.innerText = "Ur name";
+      nameLabel.classList.add("ur-label");
+      nameInput.before(nameLabel);
+  
+      const emailLabel = document.createElement("label");
+      emailLabel.setAttribute("for", "conjured_referral_email");
+      emailLabel.innerText = "Ur email";
+      emailLabel.classList.add("ur-label");
+      emailInput.before(emailLabel);
+  
+      clearInterval(interval);
+    }
+  }, 500);
+  
+  
+</script>
+{% schema %}
+  {
+    "name": "Conjured Refer",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<h1>Hook your friends up with $20 off their first order & score a $20 credit for urself once they do.</h1>"
+        }
+    ],
+
+    "presets": [
+      {
+        "name": "Conjured Refer"
+      }
+    ]
+    
+  }
+{% endschema %}

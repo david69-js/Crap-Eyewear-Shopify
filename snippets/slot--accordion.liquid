@@ -1,0 +1,49 @@
+{%- comment %}
+                                                                                                    /**
+                                                                                                     * @param {string} heading
+                                                                                                     * @param {string} content
+                                                                                                     * @param {string} page
+                                                                                                     * @param {string} icon
+                                                                                                     * @param {boolean} open
+                                                                                                     */
+                                                                                                    
+                                                                                                    TODO: Dynamic Metafield hookup
+                                                                                                    TODO: Bind abstractions, move classes
+{% endcomment -%}
+{%- liquid
+
+assign heading = heading | default: "Collapsible tab"
+assign headingClasses = headingClasses | default: "leading-none py-4 text-[length:24px] tracking-normal"
+assign content = content | default: ""
+assign page = page
+assign icon = icon | default: "plus"
+assign attributes = attributes | default: ""
+assign animation = animation | default: ""
+assign class_list = classes | default: ""
+assign summary_classes = summaryClasses | default: "" 
+assign strokeColor = iconColor | default: "#1E1E1E"
+assign open = open | default: false
+assign overflow = overflow | default: false
+assign headingTag = headingTag | default: 'h4' 
+
+if page != blank
+	assign content = page.content
+endif
+-%}
+<accordion-tab>
+    <details style="--stroke-color: {{ strokeColor }};" {%- if open == true %} open {%- endif %} class="{%- if class_list != blank %} {{ class_list }} {%- endif -%}" {%- if attributes != blank %} {{ attributes -}} {%- endif -%} {%- if animation != blank %} data-animation="{{- animation -}}" {%- endif -%}>
+        <summary class="list-none flex justify-between items-center cursor-pointer {{ summary_classes }}">
+            <h3 class="{{ headingClasses }}">{{- heading | escape -}}</h3>
+            <div class="min-w-[var(--icon-inline-size)] max-w-[var(--icon-inline-size)]">
+                <svg class="ml-auto w-[18px] h-[18px] dk:w-[23px] dk:h-[23px]" aria-label="Icon toggle icon plus & icon minus when summary is open/hide" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 13V1" class="plus-vertical" stroke="var(--stroke-color)" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M13 7L1 7" stroke="var(--stroke-color)" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+        </summary>
+        <div class="response richtext pb-4 {%- if overflow == false %} overflow-x-hidden {%- endif -%}">
+            {%- render "output--shortcodes", input: content -%}
+        </div>
+    </details>
+    <div class="{{ borderClasses }}"></div>
+</accordion-tab>

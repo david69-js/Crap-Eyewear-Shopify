@@ -1,0 +1,189 @@
+{% if section.settings.collection_source == nil %}
+    {% assign hit_collection = collections['best-sellers'] %}
+{% else %}
+    {% assign hit_collection = section.settings.collection_source %}
+{% endif %}
+
+{% if section.settings.favorites_tab == false and section.settings.recently_viewed_tab == false %}
+    {% assign has_tabs = false %}
+{% else %}
+    {% assign has_tabs = true %}
+{% endif %}
+<div class="recommended-products cx my-[40px] dk:my-[60px] pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.margin_bottom}}" data-animation="{{- section.settings.animation -}}">
+    <tabs-wrap>
+        <div class="flex flex-wrap items-end justify-between">
+            <h2 class="h4 py-0 mb-[20px] md:mb-0">{{ section.settings.heading }}</h2>
+            <div class="tabs flex w-full dk:max-w-[400px] gap-4 {% if has_tabs == false %} hidden {% endif %}">
+                <div data-tab="best-sellers" class="tab-btn cursor-pointer flex-grow border-b-2 border-off-black">{{ hit_collection.title }}</div>
+                {% if section.settings.favorites_tab == true %}
+                    <div style="opacity: 0.65 !important; font-weight: 800;" data-tab="favorites" class="tab-btn cursor-pointer flex-grow border-b-2 border-off-black opacity-20">Favorites</div>
+                {% endif %}
+                {% if section.settings.recently_viewed_tab == true %}
+                    <div style="opacity: 0.65 !important; font-weight: 800;" data-tab="recently-viewed" class="tab-btn cursor-pointer flex-grow border-b-2 border-off-black opacity-20">Recently Viewed</div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="relative">
+            <!-- Collection; sets height of tabs -->
+            <div class="tab-content active relative tab-best-sellers grid grid-cols-12 gap-4 w-full mt-[20px] dk:mt-[60px] gap-y-[30px] dk:gap-y-[60px]">
+                {% for product in hit_collection.products %}
+                    {% if product.metafields.custom.hide_product == true %}
+                        {% if content_for_header contains "previewBarInjector.init();" %}
+                            {% assign show_product = true %}
+                        {% elsif content_for_header contains "Shopify.designMode" %}
+                            {% assign show_product = true %}
+                        {% else %}
+                            {% assign show_product = false %}
+                        {% endif %}
+                        {% if settings.hide_products == true %}
+                            {% if content_for_header contains "Shopify.designMode" %}
+                                {% assign show_product = true %}
+                            {% else %}
+                                {% assign show_product = false %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    {% if product.metafields.custom.hide_product != true %}
+                        {% assign show_product = true %}
+                    {% endif %}
+                    {% if show_product == true %}
+                        <div class="col-span-6 dk:col-span-3">
+                            {% render "component--product-card", product: product %}
+                        </div>
+                    {% endif %}
+                    {% if forloop.index0 == 3 %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {% if section.settings.cta_text != blank %}
+                    <a href="{% if section.settings.cta_url != blank %}{{ section.settings.cta_url }}{% else %}{{ hit_collection.url }}{% endif %}" class="btn btn-primary col-span-12 mx-auto">{{ section.settings.cta_text }}</a>
+                {% endif %}
+            </div>
+
+            <!-- Favorites -->
+            {% if section.settings.favorites_tab == true %}
+                {% capture empty_state %}
+                    <div class="flex justify-center empty-state items-center col-span-12 self-end h-full">
+                        <h6>No favorites yet :(</h6>
+                    </div>
+                {% endcapture %}
+                <div class="opacity-0 pointer-events-none absolute top-0 h-full tab-content tab-favorites grid grid-cols-12 gap-4 w-full mt-[20px] dk:mt-[60px] gap-y-[30px] dk:gap-y-[60px]">
+
+                    {% render 'module--favorites-grid', grid_columns: "4", hide_atc: true, limit: 4, empty_state: empty_state %}
+
+                    <a href="/account/" class="btn btn-primary col-span-12 mx-auto">Shop Favorites</a>
+                </div>
+            {% endif %}
+
+            <!-- Recently Viewed -->
+            {% if section.settings.recently_viewed_tab == true %}
+                <div class="opacity-0 pointer-events-none absolute top-0 h-full tab-content tab-recently-viewed grid grid-cols-12 gap-4 w-full gap-y-[30px] dk:gap-y-[60px]">
+                    <recently-viewed data-current-product="{{ product.id }}" data-show="{% if hit_collection.products_count > 2 %}4{% else %}2{%endif%}">
+                        {% if product %}
+                            <div data-id="card-setter" class="hidden">
+                                {% render "component--product-card", product: product %}
+                            </div>
+                        {% endif %}
+                        <div data-id="cards-container" class="hidden flex-1 items-center grid-cols-12 gap-4 w-full gap-y-[30px] dk:gap-y-[60px] mt-[20px] dk:mt-[60px]">{% comment %} Product cards for recently viewed items are set here from localStorage {% endcomment %}
+                        </div>
+                        <div data-id="empty-state" class="hidden justify-center items-center flex-1 ">
+                            <h6>Nothing yet :(</h6>
+                        </div>
+                    </recently-viewed>
+                    <a href="/collections/all" class="btn btn-primary md:!w-fit whitespace-nowrap col-span-12 mx-auto">Browse All Products</a>
+                </div>
+            {% endif %}
+        </div>
+    </tabs-wrap>
+</div>
+{% style %}
+    recently-viewed {
+        grid-column: span 12 / span 12;
+        display: flex;
+        flex-direction: column;
+    }
+{% endstyle %}
+{% schema %}
+    {
+        "name": "Recommended Products",
+        "tag": "section",
+        "class": "recommended-products pdp-async",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "U might also dig"
+            },
+            {
+                "type": "collection",
+                "id": "collection_source",
+                "label": "Pull from"
+            }, {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA Url",
+                "info": "If not selected, defaults to collection page for collection chosen."
+            }, {
+                "type": "text",
+                "id": "cta_text",
+                "label": "CTA Text",
+                "default": "Shop The Hits"
+            }, {
+                "type": "checkbox",
+                "id": "favorites_tab",
+                "label": "Show favorites tab"
+            }, {
+                "type": "checkbox",
+                "id": "recently_viewed_tab",
+                "label": "Show recently viewed tab"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Recommended Products"
+            }
+        ],
+        "enabled_on": {
+            "templates": ["*"]
+        }
+    }
+{% endschema %}

@@ -1,0 +1,40 @@
+{%- comment %}
+/**
+ * An HTML (text) tag output component
+ * @typedef {object} ShopifySnippet
+ * @param {string} align - The alignment of the text in this HTML tag
+ * @param {string} classes - The list of custom classnames to include on this HTML tag
+ * @param {string} content - The text that will output into this HTML tag, in theory could suppose <span>
+ * @param {string} font - The font style, can be "body" or "display"
+ * @param {(string|number)} font_scale - The font scale
+ * @param {string} tag - The HTML tag
+ * @example {%- render "component--text", align: ALIGNMENT, classes: CLASSLIST, content: TEXTCONTENT, font: "body|display", font_scale: FONTSCALE, tag: HTMLTAG -%}
+ */
+{% endcomment -%}
+{%- liquid
+
+assign alignment = align | default: "left"
+assign class_list = classes | default: ""
+assign class_anim = anim_class | default: ""
+assign html_tag = tag | default: "p"
+assign scale = font_scale | default: "100"
+assign text = content | default: "&nbsp;"
+assign text_style = font | default: "display"
+
+assign class_string = "text-" | append: alignment | append: " text-" | append: scale | append: " " | append: class_list
+
+if html_tag == "subheading"
+	assign html_tag = "h4"
+	assign class_string = class_string | append: " subhead"
+endif
+
+-%}
+<{{- html_tag }} class="{{- class_string }} text-[color:var(--font-color)] {%- if class_anim != blank %} {{ class_anim -}} {%- endif -%}">
+	{%- if scale != "100" -%}
+		<span class="text-x{{ font_scale }}">
+	{%- endif -%}
+	{{- text -}}
+	{%- if scale != "100" -%}
+		</span>
+	{%- endif -%}
+</{{- html_tag -}}>

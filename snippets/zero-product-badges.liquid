@@ -1,0 +1,122 @@
+{% assign badgeClass = "none" %}
+{% assign badgeImg = "" %}
+{% assign soldoutbadge = 'nope' %}
+
+{% for tag in product.tags %}
+  {% assign tagDown = tag | downcase %}
+  {% if tag contains 'badge:' %}
+    {% assign tagDown = tag | remove: 'badge:' | strip %}
+    {% case tagDown %}
+      {% when 'out now' %}
+        {% if product.available %}
+          {% assign badgeClass = "badge-outnow" %}
+          {% assign badgeImg = "Crap_Eyewear-Sticker_Gifs-out_now-blue_yellow-web_480px_9e731338-94b2-4749-b1be-6008922c6418.gif" %}
+        {% endif %}
+    {% endcase %}
+  {% endif %}
+{% endfor %}
+
+
+{% unless page_title contains 'New Arrivals' %}
+  {% for tag in product.tags %}
+    {% assign tagDown = tag | downcase %}
+    {% if tag contains 'badge:' %}
+      {% assign tagDown = tag | remove: 'badge:' | strip %}
+      {% case tagDown %}
+        {% when 'new' %}
+          {% if product.available %}
+            {% assign badgeClass = "badge-newarrival" %}
+            {% assign badgeImg = "Crap_Eyewear-Sticker_Gifs-new_sparkle-purple_green-web_480px_5d90ada2-bc10-485d-9134-7fc96d463506.gif" %}
+          {% endif %}
+        {% when 'new2' %}
+          {% if product.available %}
+            {% assign badgeClass = "badge-newarrival2" %}
+            {% assign badgeImg = "ezgif.com-gif-maker_3.gif" %}
+          {% endif %}
+      {% endcase %}
+    {% endif %}
+  {% endfor %}
+{% endunless %}
+
+
+{% for tag in product.tags %}
+  {% assign tagDown = tag | downcase %}
+  {% if tag contains 'badge:' %}
+    {% assign tagDown = tag | remove: 'badge:' | strip %}
+    {% case tagDown %}
+      {% when 'hot' %}
+        {% if product.available %}
+          {% assign badgeClass = "badge-hot" %}
+          {% assign badgeImg = "ezgif.com-gif-maker_5.gif" %}
+        {% endif %}
+    {% endcase %}
+  {% endif %}
+{% endfor %}
+
+{% for tag in product.tags %}
+  {% assign tagDown = tag | downcase %}
+  {% if tag contains 'badge:' %}
+    {% assign tagDown = tag | remove: 'badge:' | strip %}
+    {% case tagDown %}
+      {% when 'back in stock' %}
+        {% if product.available %}
+          {% assign badgeClass = "badge-backin" %}
+          {% assign badgeImg = "ezgif.com-gif-maker_2.gif" %}
+        {% endif %}
+    {% endcase %}
+  {% endif %}
+{% endfor %}
+
+
+
+
+
+
+
+
+{% assign lowStock = false %}
+{% assign onSale = false %}
+{% assign soldOut = false %}
+{% assign InveQuanTot = 0 %}
+
+{% for variant in product.variants %}
+  {% assign InveQuanTot = InveQuanTot | plus: variant.inventory_quantity %}
+{% endfor %}
+
+{% if InveQuanTot <= 5 %}
+  {% assign lowStock = true %}
+{% endif %}
+
+{% if InveQuanTot < 1 %}
+  {% assign soldOut = true %}
+  {% assign lowStock = false %}
+{% endif %}
+
+{% for tag in product.tags %}
+  {% assign tagDown = tag | downcase %}
+  {% if tag contains 'sold-out' %}
+    {% assign soldOut = true %}
+  {% endif %}
+{% endfor %}
+
+{% if lowStock == true %}
+  {% assign badgeClass = 'badge-lowstock' %}
+  {% assign badgeImg = "ezgif.com-gif-maker_4.gif" %}
+{% endif %}
+
+{% if soldOut == true %}
+    {% assign badgeClass = "none" %}
+{% endif %}
+
+{% if badgeClass != "none" and soldOut != true %}
+  {% for tag in product.tags %}
+    {% if tag contains 'badge: preorder-' %}
+      {% assign badgeClass = "none" %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if badgeClass != "none" %}
+  <span class="preload product-badge {{ badgeClass }}" data-preload-desktop="{{ badgeImg | file_img_url: '380x' }}" data-preload-mobile="{{ badgeImg | file_img_url: '240x' }}">&nbsp;</span>
+{% endif %}
+

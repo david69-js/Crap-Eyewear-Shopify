@@ -1,0 +1,16 @@
+{%- comment -%}
+/**
+ * Slot element for a grouping of accordion blocks
+ */
+{%- endcomment -%}
+{%- liquid
+
+assign slot = slot | default: ""
+assign category = category | default: ""
+
+-%}
+{%- if slot != blank -%}
+	<accordion-group {%- if category != blank %} data-label="{{- category -}}" data-category="{{- category | handleize -}}" {%- endif -%}>
+		{{- slot -}}
+	</accordion-group>
+{%- endif -%}

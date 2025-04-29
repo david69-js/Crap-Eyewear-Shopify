@@ -1,0 +1,484 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "b09676c9-7f34-45cc-b62a-55a2fe842bf9": {
+      "type": "module--one-col-hero",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "half_height": false,
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "image_1": "shopify://shop_images/Crap_Eyewear-2024-Marias_Submarine-Lookbook-look_01-25-web_lookbooks_1col_hero.jpg",
+        "image_1_mobile": "shopify://shop_images/Crap_Eyewear-2024-Marias_Submarine-Lookbook-look_01-20-web_lookbooks_hero_mobile.jpg",
+        "image_1_brightness": 0,
+        "title_richtext": "<h2><strong>Submarine<br/></strong><em>by</em> The Marías</h2>",
+        "title_indent": "even",
+        "body_richtext": "",
+        "desktop_content_width": 80,
+        "cta_text": "View Lookbook",
+        "cta_url": "shopify://pages/the-marias-submarine",
+        "button_style": "btn-primary"
+      }
+    },
+    "59e33a61-b0a7-4336-ba7a-be2294b9fcd5": {
+      "type": "section--lookbook-grid",
+      "blocks": {
+        "lookbook_yDmeqD": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Radio Haze</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Radio_Haze-Off_Black-Wes-10-web_lookbooks_grid.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-2025-radio_haze",
+            "col_span": 1
+          }
+        },
+        "lookbook_YVVnHQ": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Speed Charm</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Speed_Charm-Crystal_Stone-Mahogany-08-2-web_lookbooks_grid.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-2025-speed_charm",
+            "col_span": 1
+          }
+        },
+        "lookbook_jD9U88": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Spring 2025</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2025_Spring-Lookbook-look_2-Heavy_Tropix_Crystal_Earth_Bio-Sweet_Leaf_Rootbeer-07-2-social-web_lookbooks_grid.jpg",
+            "link": "shopify://pages/lookbooks-2025-spring",
+            "col_span": 1
+          }
+        },
+        "lookbook_AL3kjf": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Soccer Mommy x Crap® Eyewear</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-410034-web_lookbooks_carousel.png",
+            "link": "https://www.crapeyewear.com/pages/soccer-mommy",
+            "col_span": 1
+          }
+        },
+        "lookbook_t6HX7r": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Idle Daze</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Idle_Daze-Black_Moondust-Mahogany-30021-web_lookbooks_carousel.jpg",
+            "link": "shopify://pages/lookbooks-idle-daze",
+            "col_span": 1
+          }
+        },
+        "lookbook_eaDYWK": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Holiday 2024</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Fall-Holiday-Untitled_Halo-21-web_lookbooks_landing_08629a01-f475-4983-b80d-9f6dc95352cd.jpg",
+            "link": "shopify://pages/lookbooks-2024-holiday",
+            "col_span": 1
+          }
+        },
+        "lookbook_Yh6NbT": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Kush Cowboy</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Kush_Cowboy-Black-11-web_lookbooks_grid.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-2025-kush_cowboy",
+            "col_span": 2
+          }
+        },
+        "lookbook_R3JdaH": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Eyedress x Crap® Eyewear</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-8-web_lookbook_grid.jpg",
+            "link": "shopify://pages/eyedress",
+            "col_span": 1
+          }
+        },
+        "lookbook_D6x7aK": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Summer No Waves</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-18-web_lookbook_grid.jpg",
+            "link": "shopify://pages/lookbooks-2024-summer-no_wave",
+            "col_span": 1
+          }
+        },
+        "lookbook_exTVDB": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Heavy Tropix Sport</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Heavy_Tropix_Sport-look_02-Polar_Sangria-Polar_G15-2-web_lookbook_grid.jpg",
+            "link": "shopify://pages/lookbooks-2024-ht-sport",
+            "col_span": 1
+          }
+        },
+        "lookbook_KK3MhD": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Summer 2024</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "link": "shopify://pages/lookbook-2024-summer",
+            "col_span": 1
+          }
+        },
+        "lookbook_eYiw3k": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Glass Bubble</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-30-web_lookbooks_hero.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-glass-bubble",
+            "col_span": 1
+          }
+        },
+        "lookbook_3aG6N8": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Hike Clerb x Crap® Eyewear</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Warp_Zone-971-web_lookbook_grid.jpg",
+            "link": "https://www.crapeyewear.com/hikeclerb",
+            "col_span": 2
+          }
+        },
+        "lookbook_ezykxF": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Marquee Rox</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lookbook_grid.jpg",
+            "link": "shopify://pages/lookbook-marquee-rox",
+            "col_span": 1
+          }
+        },
+        "lookbook_phqtPG": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Spring 2024</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond-web.jpg",
+            "link": "shopify://pages/lookbook-2024-spring",
+            "col_span": 1
+          }
+        },
+        "lookbook_3qprC9": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Warp Zone</strong></h6>",
+            "image": "shopify://shop_images/20-Crap_Eyewear-2024_Spring-Warp_Zone-look-03-Metallic_Olive-Black_Cherry-11-web_lookbooks_landing.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-warp-zone",
+            "col_span": 1
+          }
+        },
+        "lookbook_iqxjAb": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The No Wave</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-No_Wave-Look_02-Licorice-Black_Tort-2-we_lookbooks_carousel.jpg",
+            "link": "https://www.crapeyewear.com/pages/lookbooks-no-wave",
+            "col_span": 1
+          }
+        },
+        "lookbook_ChYNJP": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Void Pixie</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-5-web_lookbooks_hero_desktop_099dd0b6-924b-45f7-8bbc-812c2bd515ee.jpg",
+            "link": "shopify://pages/lookbooks-void-pixie",
+            "col_span": 1
+          }
+        },
+        "75cf2d8a-a953-4b63-9efd-9426f5de56c3": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Petal Bomb</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1-web_lookbooks_landing.jpg",
+            "link": "shopify://pages/lookbooks-petal-bomb",
+            "col_span": 1
+          }
+        },
+        "lookbook_weLNNY": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>iggy x Crap® Eyewear</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2024-iggy-lookbook-collage-Nico_3-web_lookbooks_carousel.jpg",
+            "link": "shopify://pages/iggy",
+            "col_span": 2
+          }
+        },
+        "62833ab8-89b8-4160-ba7b-3e8e796d8b1b": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Gothic Breeze</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-gothic-breeze",
+            "col_span": 1
+          }
+        },
+        "aacc46aa-28f2-47af-8232-f37d1245b4f8": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Funk Daddy</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-funk-daddy",
+            "col_span": 1
+          }
+        },
+        "lookbook_ExYBTH": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Black Image Center</strong></h6>",
+            "image": "shopify://shop_images/9-Crap_Eyewear-2024_Spring-Black_Image_Center-19-web_lookbooks_landing.jpg",
+            "link": "shopify://pages/blackimagecenter",
+            "col_span": 1
+          }
+        },
+        "b1aa194b-f0c8-4816-ad8d-9b968b108df7": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Dream Cassette</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-dream-cassette",
+            "col_span": 1
+          }
+        },
+        "fe2f519a-e03c-458c-bd43-28b539c3319b": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Supa Phreek II</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-04-web_lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-supa-phreek-ii",
+            "col_span": 1
+          }
+        },
+        "lookbook_8GXNKR": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Fall 2023</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-01-web_lookbooks_landing.jpg",
+            "link": "shopify://pages/fall-2023-lookbook",
+            "col_span": 1
+          }
+        },
+        "73c9c919-e88d-435c-9043-17afa901e954": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Glam Rodeo</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Summer-Lookbook-Jack_Greer-look1-4-web_lookbooks_landing.jpg",
+            "link": "shopify://pages/lookbooks-glam-rodeo",
+            "col_span": 1
+          }
+        },
+        "edd43aa0-3e08-4b63-88eb-65670217273b": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Anti Matter</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-anti-matter",
+            "col_span": 1
+          }
+        },
+        "deda80c7-f5cf-47e1-8717-c212f417ce25": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>CINEMA by The Marías</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2022-The_Marias_Cinema-Lookbook-Ashley_Olah-17-web_lookbooks_large_682e7156-2122-495a-a7a6-8bf5760efddc.jpg",
+            "link": "shopify://pages/the-marias-cinema",
+            "col_span": 2
+          }
+        },
+        "a45f5f95-a299-4e71-be1e-2649f2696a1b": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Perma Joy</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_index_d1ba5524-9f9a-4adb-9632-7cc5bbc8246b.jpg",
+            "link": "shopify://pages/lookbooks-perma-joy",
+            "col_span": 1
+          }
+        },
+        "2707cc34-f4a9-448e-a209-deeec742173c": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>The Chaos Vault</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_index.jpg",
+            "link": "shopify://pages/lookbooks-chaos-vault",
+            "col_span": 1
+          }
+        },
+        "1f87a277-5091-4429-b311-4fc20608492e": {
+          "type": "lookbook",
+          "disabled": true,
+          "settings": {
+            "title": "<h6><strong>Hot Lava x Crap® Eyewear</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_index.jpg",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "0eb66be6-e94b-404b-a556-fc9498d1a72d": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<h6><strong>Spring 2023</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_index.jpg",
+            "link": "shopify://pages/spring-2023-lookbook",
+            "col_span": 1
+          }
+        },
+        "5570ca40-4519-4b8a-a71c-0271817ed849": {
+          "type": "lookbook",
+          "disabled": true,
+          "settings": {
+            "title": "<h6><strong>Summer 2023</strong></h6>",
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-08-web_lookbooks_landing.jpg",
+            "link": "shopify://pages/summer-2023-lookbook",
+            "col_span": 1
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_yDmeqD",
+        "lookbook_YVVnHQ",
+        "lookbook_jD9U88",
+        "lookbook_AL3kjf",
+        "lookbook_t6HX7r",
+        "lookbook_eaDYWK",
+        "lookbook_Yh6NbT",
+        "lookbook_R3JdaH",
+        "lookbook_D6x7aK",
+        "lookbook_exTVDB",
+        "lookbook_KK3MhD",
+        "lookbook_eYiw3k",
+        "lookbook_3aG6N8",
+        "lookbook_ezykxF",
+        "lookbook_phqtPG",
+        "lookbook_3qprC9",
+        "lookbook_iqxjAb",
+        "lookbook_ChYNJP",
+        "75cf2d8a-a953-4b63-9efd-9426f5de56c3",
+        "lookbook_weLNNY",
+        "62833ab8-89b8-4160-ba7b-3e8e796d8b1b",
+        "aacc46aa-28f2-47af-8232-f37d1245b4f8",
+        "lookbook_ExYBTH",
+        "b1aa194b-f0c8-4816-ad8d-9b968b108df7",
+        "fe2f519a-e03c-458c-bd43-28b539c3319b",
+        "lookbook_8GXNKR",
+        "73c9c919-e88d-435c-9043-17afa901e954",
+        "edd43aa0-3e08-4b63-88eb-65670217273b",
+        "deda80c7-f5cf-47e1-8717-c212f417ce25",
+        "a45f5f95-a299-4e71-be1e-2649f2696a1b",
+        "2707cc34-f4a9-448e-a209-deeec742173c",
+        "1f87a277-5091-4429-b311-4fc20608492e",
+        "0eb66be6-e94b-404b-a556-fc9498d1a72d",
+        "5570ca40-4519-4b8a-a71c-0271817ed849"
+      ],
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "2e8f010c-9ab5-4bf6-a342-e1b4af729886": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "e1137261-3e72-40ea-965f-e6c90efdcf03": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023 Lookbook",
+            "url": "shopify://pages/spring-2023-lookbook-old"
+          }
+        },
+        "a7f7dbc7-af9d-4aea-89b8-f2aa77ebc8a8": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-web_lookbooks_carousel.jpg",
+            "caption": "Hot Lava x Crap® Eyewear",
+            "url": "shopify://pages/lookbooks-hot-lava-2023"
+          }
+        },
+        "e15b237b-e725-46cd-ab45-a9de6689113e": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "Gothic Breeze",
+            "url": "shopify://pages/lookbooks-gothic-breeze"
+          }
+        },
+        "2fad17c4-c93a-4d8f-bfec-dbad6512c270": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify://pages/lookbooks-anti-matter-old"
+          }
+        },
+        "2da2f7ca-cc56-43f0-b861-c31a5b5874e4": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify://pages/lookbooks-chaos-vault"
+          }
+        },
+        "9f4d6c7f-bae6-4af1-8d88-c4f9b349873b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify://pages/lookbooks-funk-daddy"
+          }
+        }
+      },
+      "block_order": [
+        "e1137261-3e72-40ea-965f-e6c90efdcf03",
+        "a7f7dbc7-af9d-4aea-89b8-f2aa77ebc8a8",
+        "e15b237b-e725-46cd-ab45-a9de6689113e",
+        "2fad17c4-c93a-4d8f-bfec-dbad6512c270",
+        "2da2f7ca-cc56-43f0-b861-c31a5b5874e4",
+        "9f4d6c7f-bae6-4af1-8d88-c4f9b349873b"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h2>Lookbook <em>Archive</em></h2>",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "646d7ce7-6a60-48c4-88d5-fbc1144d832f": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/Rectangle_161_2.png",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3><strong>$20 OFF</strong> when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/refer-a-friend",
+        "image_2": "shopify://shop_images/Rectangle_161_3.png",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom<br/></strong>228 Main St. #14,<br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": "#"
+      }
+    }
+  },
+  "order": [
+    "b09676c9-7f34-45cc-b62a-55a2fe842bf9",
+    "59e33a61-b0a7-4336-ba7a-be2294b9fcd5",
+    "2e8f010c-9ab5-4bf6-a342-e1b4af729886",
+    "646d7ce7-6a60-48c4-88d5-fbc1144d832f"
+  ]
+}

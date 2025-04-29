@@ -1,0 +1,46 @@
+  <section class="recirculation-footer img-load-section">
+      <div class="top">
+
+        <h2>{{ collection.metafields.c_f['Footer Title'] }}</h2> 
+
+        <div class="recirculation-slider">
+
+        <a class="recirculation-block" href="{{ collection.metafields.c_f['Footer Collab 1 Link'] }}">
+          {% assign ri_arr = collection.metafields.c_f['Footer Collab 1 Image'] | split: '/' %}
+          {% assign ri = ri_arr | last %}
+          <div class="preload img-scaled" data-preload-desktop="{{ ri | | file_img_url: '500x' }}" data-preload-mobile="{{ ri | | file_img_url: '300x' }}">
+          </div>
+          <p class="caption">{{ collection.metafields.c_f['Footer Collab 1 Title'] }}</p>
+        </a>
+        <a class="recirculation-block" href="{{ collection.metafields.c_f['Footer Collab 2 Link'] }}">
+          {% assign ri_arr = collection.metafields.c_f['Footer Collab 2 Image'] | split: '/' %}
+          {% assign ri = ri_arr | last %}
+          <div class="preload img-scaled" data-preload-desktop="{{ ri | | file_img_url: '500x' }}" data-preload-mobile="{{ ri | | file_img_url: '300x' }}">
+          </div>
+          <p class="caption">{{ collection.metafields.c_f['Footer Collab 2 Title'] }}</p>
+        </a>
+        <a class="recirculation-block" href="{{ collection.metafields.c_f['Footer Collab 3 Link'] }}">
+          {% assign ri_arr = collection.metafields.c_f['Footer Collab 3 Image'] | split: '/' %}
+          {% assign ri = ri_arr | last %}
+          <div class="preload img-scaled" data-preload-desktop="{{ ri | | file_img_url: '500x' }}" data-preload-mobile="{{ ri | | file_img_url: '300x' }}">
+          </div>
+          <p class="caption">{{ collection.metafields.c_f['Footer Collab 3 Title'] }}</p>
+        </a>
+        <a class="recirculation-block" href="{{ collection.metafields.c_f['Footer Collab 4 Link'] }}">
+          {% assign ri_arr = collection.metafields.c_f['Footer Collab 4 Image'] | split: '/' %}
+          {% assign ri = ri_arr | last %}
+          <div class="preload img-scaled" data-preload-desktop="{{ ri | | file_img_url: '500x' }}" data-preload-mobile="{{ ri | | file_img_url: '300x' }}">
+          </div>
+          <p class="caption">{{ collection.metafields.c_f['Footer Collab 4 Title'] }}</p>
+        </a>
+        <div class="spacer"></div>
+
+        </div>
+      </div>
+      <div class="bottom">
+        <h3>{{ collection.metafields.c_f['Footer Recirc Headline'] }}</h3>
+        <div class="force-center">
+          <a class="zero-button empty large" href="{{ collection.metafields.c_f['Footer Recirc Link'] }}">{{ collection.metafields.c_f['Footer Recirc CTA'] }}</a>
+        </div>
+      </div>
+  </section>

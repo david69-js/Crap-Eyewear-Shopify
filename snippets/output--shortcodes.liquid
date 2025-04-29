@@ -1,0 +1,128 @@
+{%- comment -%}
+
+Component to output inline shortcode syntax for richtext/text/textarea
+
+TODO: Parse string for component syntax, output components
+TODO: Wrapping Characters to test:
+		- {{ }}
+		- {{ CAROUSEL }}
+		- {{ ENDCAROUSEL }}
+
+
+	{% %}
+Supported shortcodes:
+
+{%- endcomment -%}
+{%- liquid
+
+assign string = input | default: ""
+assign shortcodeTags = string | split: "{{"
+assign start = false
+assign end = false
+assign inTag = false
+assign innerMarkup = ""
+
+-%}
+
+{%- if shortcodeTags.size <= 0 -%}
+	{{- input -}}
+{%- else -%}
+
+	{%- for segment in shortcodeTags -%}
+
+		{%- assign str = segment | replace: "\n", "" | split: "}}" -%}
+		{%- assign tag = "" -%}
+		{%- assign nextStr = "" -%}
+		{%- assign reset = false -%}
+
+		{%- if str[1] != blank -%}
+			{%- capture tag -%}
+				{%- render "output--clean-string", string: str[0], lowercase: true -%}
+			{%- endcapture -%}
+			{%- assign nextStr = str[1] | remove_first: "</p>" -%}
+			{%- assign inTag = true -%}
+		{%- endif -%}
+
+		{%- comment -%} --- Our Tag cases --- {%- endcomment -%}
+		{%- case tag -%}
+			{%- when "carousel" -%}
+				{%- assign innerMarkup = innerMarkup | append: nextStr -%}
+
+			{%- when "endcarousel" -%}
+
+				{%- comment -%}
+				// TODO: Need video case?
+				{%- endcomment -%}
+				{%- assign imageMarkupSplit = innerMarkup | split: '<img src="' -%}
+				{%- capture carouselMarkup -%}
+					{%- for image in imageMarkupSplit -%}
+						{%- assign imgSrc = image | split: '" alt' -%}
+						{%- assign pathSplit = imgSrc[0] | split: "/files/" -%}
+
+						{%- if pathSplit[2] == blank -%}
+							{%- continue -%}
+						{%- endif -%}
+
+						{%- assign imgSplits = pathSplit[2] | split: "_" -%}
+						{%- assign splitIdx = imgSplits | size | minus: 1 -%}
+						{%- assign checkIdx = imgSplits | size | minus: 2 -%}
+						{%- assign fileExtSplit = imgSplits[splitIdx] | split: "." -%}
+						{%- assign querySplit = fileExtSplit[1] | split: "?" -%}
+						{%- assign fileExt = "." | append: querySplit[0] -%}
+						{%- assign img = "" -%}
+
+						{%- for imgPart in imgSplits -%}
+							{%- if forloop.index0 == splitIdx -%}
+								{%- assign img = img | append: fileExt -%}
+							{%- elsif forloop.index0 == checkIdx -%}
+								{%- assign img = img | append: imgSplits[forloop.index0] -%}
+							{%- else -%}
+								{%- assign img = img | append: imgSplits[forloop.index0] | append: "_" -%}
+							{%- endif -%}
+						{%- endfor -%}
+
+							{%- if fileExt contains "jpg" or fileExt contains "png" or fileExt contains "gif" -%}
+								{%- assign fullImage = images[img] -%}
+								<div class="w-full h-0 pb-[75%] relative slide">
+									{%- render "component--responsive-image", image: fullImage, maxSize: 800, objectFit: true -%}
+								</div>
+							{%- endif -%}
+
+					{%- endfor -%}
+				{%- endcapture -%}
+
+				{%- comment -%}
+				{%- endcomment -%}
+				{%- render "slot--carousel", slot: carouselMarkup, arrows: true, height: 400, gutter: 15 -%}
+				{{- nextStr -}}
+
+				{%- assign reset = true -%}
+
+			{%- else -%}
+
+				{%- if inTag == true -%}
+					{%- assign innerMarkup = innerMarkup | append: segment -%}
+				{%- else -%}
+					{%- comment -%} --- Count open & closing <p> tags --- {%- endcomment -%}
+					{%- assign openPs = segment | json | split: "\u003cp\u003e" -%}
+					{%- assign closePs = segment | json | split: "\u003c\/p\u003e" -%}
+
+					{%- comment -%} --- Sanitize garbage <p>, idk why this works ... --- {%- endcomment -%}
+					{%- if openPs.size > closePs.size -%}
+						{{- segment | split: "<p>" | join: "<p>" -}}
+					{%- else -%}
+						{{- segment -}}
+					{%- endif -%}
+				{%- endif -%}
+
+		{%- endcase -%}
+
+		{%- if reset == true -%}
+			{%- assign innerMarkup = "" -%}
+			{%- assign inTag = false -%}
+		{%- endif -%}
+	{%- endfor -%}
+	{%- comment -%}
+	{%- render "debug--json", object: shortcodeTags -%}
+	{%- endcomment -%}
+{%- endif -%}

@@ -1,0 +1,214 @@
+@media screen and (min-width: 768px) {
+  .stamped-summary-photos-container .stamped-photos-carousel .photo.stamped-photo img {
+    width: 147px !important;
+    min-height: 183px !important;
+  }
+}
+.average-rating-text {
+  font-family: "Alte Haas Grotesk" !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  color: #000000 !important;
+  margin-left: 5px !important;
+}
+.stamped-summary {
+  display: grid !important;
+  grid-template-columns: auto auto !important;
+  justify-content: space-between !important;
+}
+.stamped-summary-actions {
+  display: none !important;
+}
+
+.stamped-photos-carousel div {
+  display: flex !important;
+}
+.stamped-photos-carousel div div {
+  width: 100% !important;
+  height: auto !important;
+}
+.stamped-photos-carousel div div:nth-child(n+6) {
+  display: none !important;
+}
+.stamped-summary-ratings {
+  display: none !important;
+}
+.stamped-summary-text {
+  display: none !important;
+}
+.fa-star, .fa-star-checked, .fa-star-half-o, .fa-star-o, .stamped-fa-star, .stamped-fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star-o {
+  color: #1E1E1E !important;
+}
+.stamped-form-review-rating .fa-star-half-o:before, .stamped-form-review-rating .fa-star-o:before, .stamped-form-review-rating .fa-star:before, .stamped-form-review-rating .stamped-fa-star-half-o:before, .stamped-form-review-rating .stamped-fa-star-o:before, .stamped-form-review-rating .stamped-fa-star:before, .stamped-summary-starrating i:before, .stamped-ugc-modal-caption .fa:before, .stamped-ugc-modal-caption .stamped-fa:before {
+  font-size: 50px !important;
+}
+.stamped-filters-wrapper {
+  display: none !important;
+}
+.stamped-reviews-filter-label {
+  display: none !important;
+}
+.stamped-reviews {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.stamped-reviews .stamped-review {
+  order: 2 !important;
+}
+.stamped-reviews .stamped-review .author {
+  font-family: "Courier" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+.stamped-reviews .stamped-review .created {
+  font-family: "Courier" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+.stamped-reviews .stamped-review .stamped-verified-badge {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #000000 !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-options {
+  order: 2 !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-options ul li {
+  flex-direction: row !important;
+  font-size: 14px !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-options ul li strong {
+  font-size: 14px !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-body {
+  order: 1 !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-body .stamped-review-product {
+  font-size: 14px !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-body .stamped-review-variant {
+  font-size: 14px !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-body .stamped-review-footer {
+  display: none !important;
+}
+.stamped-reviews .stamped-review .stamped-review-content .stamped-review-header-title {
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  margin-bottom: 20px !important;
+  line-height: 120% !important;
+}
+.stamped-reviews .stamped-reviews-ul {
+  order: 1 !important;
+}
+.stamped-header-title {
+  display: none !important;
+}
+.summary-overview {
+  display: flex !important;
+  flex-direction: column !important;
+  order: 1 !important;
+}
+.summary-overview .stamped-summary-caption-1 {
+  order: 2 !important;
+}
+.summary-overview .stamped-summary-caption-1 .stamped-summary-text-1 {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+.summary-overview .stamped-summary-caption-2 {
+  order: 1 !important;
+}
+.stamped-summary-photos {
+  order: 2 !important;
+}
+@media screen and (min-width: 758px) {
+  .stamped-summary-photos {
+    max-width: 100% !important;
+  }
+}
+.stamped-tab-container {
+  display: none !important;
+}
+.stamped-review-header .review-location {
+  display: none !important;
+}
+.stamped-review-header .stamped-review-avatar {
+  display: none !important;
+}
+.stamped-reviews-search-text .stamped-reviews-search-icon {
+  left: auto !important;
+  right: 20px !important;
+}
+.stamped-reviews-search-text input.stamped-reviews-search-input {
+  width: 440px !important;
+  height: 50px !important;
+  border-radius: 0 !important;
+  border: 1px solid #1E1E1E !important;
+  font-family: "Alte Haas Grotesk" !important;
+  font-style: normal !important;
+}
+.stamped-reviews-search-text input.stamped-reviews-search-input::-moz-placeholder {
+  color: #000000 !important;
+  font-family: "Alte Haas Grotesk" !important;
+  font-style: normal !important;
+}
+.stamped-reviews-search-text input.stamped-reviews-search-input::placeholder {
+  color: #000000 !important;
+  font-family: "Alte Haas Grotesk" !important;
+  font-style: normal !important;
+}
+@media screen and (max-width: 425px) {
+  .stamped-form-review-rating .fa-star-half-o:before, .stamped-form-review-rating .fa-star-o:before, .stamped-form-review-rating .fa-star:before, .stamped-form-review-rating .stamped-fa-star-half-o:before, .stamped-form-review-rating .stamped-fa-star-o:before, .stamped-form-review-rating .stamped-fa-star:before, .stamped-summary-starrating i:before, .stamped-ugc-modal-caption .fa:before, .stamped-ugc-modal-caption .stamped-fa:before {
+    font-size: 25px !important;
+  }
+  .stamped-summary {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .stamped-photos-carousel div div {
+    height: 55px !important;
+  }
+  .stamped-photos-carousel div div a {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .stamped-reviews-filter[data-show-filters=true] .stamped-summary-actions-mobile-filter {
+    display: none !important;
+  }
+  .stamped-reviews .stamped-review .stamped-review-content .stamped-review-options ul {
+    min-width: 100% !important;
+  }
+  .stamped-reviews .stamped-review .stamped-review-content .stamped-review-options ul li {
+    min-width: 100% !important;
+  }
+}
+.stamped-review-header span img{
+  display: none;
+}
+.stamped-review-header-title {
+  display: none;
+}
+.stamped-pagination li.page.active {
+  text-decoration: none !important;
+  border-bottom: 1px solid #000;
+}
+.title_sticky-add-to-cart {
+  font-size: 32px;
+}
+@media (min-width: 769px) {
+  .title_sticky-add-to-cart {
+      font-size: 48px;
+      line-height: 90%;
+  }
+}
+

@@ -1,0 +1,164 @@
+<style>
+    .product-collection_fadeIn {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards; 
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+</style>
+{% capture cards %}
+    {% for prod in section.settings.collection.products limit: 8 %}
+        {% if prod.metafields.custom.hide_product == true %}
+            {% if content_for_header contains "previewBarInjector.init();" %}
+                {% assign show_product = true %}
+            {% elsif content_for_header contains "Shopify.designMode" %}
+                {% assign show_product = true %}
+            {% else %}
+                {% assign show_product = false %}
+            {% endif %}
+        {% endif %}
+        {% if prod.metafields.custom.hide_product != true %}
+            {% assign show_product = true %}
+        {% endif %}
+        {% if show_product == true %}
+            <div class="basis-[calc(50%-20px)] md:basis-[calc(25%-30px)]">
+                {% render "component--product-card" 
+                   , product: prod,
+                   hover_image: true, %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endcapture %}
+
+<div class="w-full cx pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] {% if section.settings.animation == "Fade" %} product-collection_fadeIn {% endif %} " style="{{section.settings.margin_bottom}} background: {{ section.settings.background_color }};">
+    {% if section.settings.title != empty %}
+        <div class="h2 richtext mx-auto text-center" style="color: {{ section.settings.font_color }};">
+            {{ section.settings.richtext }}
+        </div>
+    {% endif %}
+    <div class="flex flex-wrap gap-[40px]">
+        {{ cards }}
+    </div>
+    {% for block in section.blocks %}
+        {% if block.settings.title != null %}
+            <a href="{{ block.settings.link }}" class="btn mt-[30px] dk:mt-[50px] {{ section.settings.button_style }} mx-auto cx">{{ block.settings.title-}}</a>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "Product Collection",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "richtext",
+                "id": "richtext",
+                "label": "Title"
+            }, {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+            }, {
+                "type": "select",
+                "id": "button_style",
+                "label": "Button Color",
+                "options": [
+                    {
+                        "value": "btn-primary",
+                        "label": "Green"
+                    }, {
+                        "value": "btn-secondary",
+                        "label": "White"
+                    }, {
+                        "value": "",
+                        "label": "Black"
+                    }
+                ],
+                "default": "btn-primary"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Add CTA",
+                "type": "button_collection",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Button CTA"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "Collection Link"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Product Collection"
+            }
+        ]
+    }
+{% endschema %}

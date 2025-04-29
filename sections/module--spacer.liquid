@@ -1,0 +1,43 @@
+<div class="w-full h-[120px]" style="{%- if section.settings.background_color != blank %} background:{{- section.settings.background_color -}}; {%- endif %} "></div>
+
+<div class="w-full h-[length:var(--mb-m)] md:h-[length:var(--mb-d)]" style="{{section.settings.margin_bottom}} {%- if section.settings.background_color != blank %} background:{{- section.settings.background_color -}}; {%- endif %} "></div>
+
+{% schema %}
+    {
+        "name": "Spacer",
+        "tag": "div",
+        "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }
+        ],
+        "blocks": [],
+        "presets": [
+            {
+                "name": "Spacer"
+            }
+        ]
+    }
+{% endschema %}

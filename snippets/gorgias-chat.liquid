@@ -1,0 +1,45 @@
+<!-- Gorgias Chat Widget Start -->
+<div id="gorgias-chat">
+<script>window.gorgiasChatParameters = {}</script>
+<script src="https://config.gorgias.io/production/Oro0V7Ld8Z79d83N/chat/VvEzB7ND0b6beky0.js" defer></script>
+<script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=5054" ></script>
+<script>
+  window.GORGIASCHAT_DISABLE_AUTO_OPEN = true
+
+  var initGorgiasChatPromise = (window.GorgiasChat) ? window.GorgiasChat.init() : new Promise(function (resolve) { window.addEventListener('gorgias-widget-loaded', function () { resolve();})});
+
+  initGorgiasChatPromise.then(async () => {
+      // custom code
+      const chatButtonIframe = document.querySelectorAll('iframe#chat-button')[0];
+      GorgiasChat.on('widget:opened', () => {
+        chatButtonIframe.style.display = "block"
+      })
+      GorgiasChat.on('widget:closed', () => {
+        chatButtonIframe.style.display = "none"
+      })
+      if (location.search == '?gorgias=true'){
+        var deleteItem = localStorage.getItem('gorgias.seen-campaigns-ids');
+     
+        if(deleteItem){
+         localStorage.removeItem('gorgias.seen-campaigns-ids');
+ 
+        }
+      }
+  })
+
+</script>
+</div>
+<!-- Gorgias Chat Widget End -->
+<style>
+  iframe#chat-button {
+    display: none;
+  }  
+#gorgias-web-messenger-container {
+  margin-right: -13px;
+  {% if template contains 'product' %}
+  bottom: 60px;
+  {% else %}
+  bottom: 0;
+  {% endif %}
+}
+</style>

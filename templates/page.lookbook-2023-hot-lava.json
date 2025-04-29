@@ -1,0 +1,426 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>Hot Lava<\/strong> x Crap® Eyewear<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "b7ca7d64-ef4b-44c5-b7c0-55cd431d83a4": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "38f03ccf-88e6-4a88-9744-7639b30f38db": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-funk-daddy-hot-lava-recycled-peach-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "38f03ccf-88e6-4a88-9744-7639b30f38db"
+      ],
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Product-07-web.jpg",
+        "caption": ""
+      }
+    },
+    "0b78f075-cd36-4b24-8a6f-5d159b01c8eb": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "bbdc6cd5-7641-4074-bde2-5fa05c0a1a21": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We designed a capsule with our friends at Hot Lava that'll take you to the outer limits of spring.<\/h5><h5>The collection introduces two new earth-friendlier elements: recycled acetate frames, and a newly concepted case made from tree fiber.<\/h5><h5>Limited edition and available now.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "bbdc6cd5-7641-4074-bde2-5fa05c0a1a21"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-01-insta-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "57069e23-6353-401d-ba54-0ce13677911e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bbb3293f-6e80-4960-93f1-dff640e21d12": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_2-skylight-08-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bbb3293f-6e80-4960-93f1-dff640e21d12",
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "hot-lava",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Funk_Daddy-Hot_Lava-Peach-Tamia-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "71c0d065-45a2-4435-8b27-cefcab2f1b8f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "58ce2e83-8a72-42a5-a4d8-f3e87a191628": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_1-04-insta-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "58ce2e83-8a72-42a5-a4d8-f3e87a191628"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_1-01-web.jpg",
+            "caption": ""
+          }
+        },
+        "a055a470-1d60-454d-99c8-0b6eca972c5b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_1-02-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd",
+        "a055a470-1d60-454d-99c8-0b6eca972c5b"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b79cdddf-c022-4009-957e-aee86fb516ea": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Product-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "690d453d-70bb-49b4-a912-c2d25d1db580": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-chaos-vault-hot-lava-recycled-chrome-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a",
+        "690d453d-70bb-49b4-a912-c2d25d1db580"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "40fe074f-b0d9-44fa-8937-5ab3f1242a04": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e8a7f86f-f9db-46bd-baea-0afdeec9ec7c": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Hot_Lava-Look_1-09-insta-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "e8a7f86f-f9db-46bd-baea-0afdeec9ec7c"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "5fcb4c6d-b8db-4028-8975-9a8de532d5bd": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "hot-lava",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Chaos_Vault-chrome-Tamia-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row-reverse",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "hot-lava",
+        "cta_url": "",
+        "cta_text": "Shop The Hits",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Hot Lava x Crap® Eyewear<\/strong><br\/>Shot at Hot Lava HQ in Los Angeles, 2023.<\/p><p>Starring: Tamia Johnson (<a href=\"https:\/\/www.instagram.com\/tamiablue\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/tamiablue\/\">@tamiablue<\/a>)<br\/>Photographer: Isa Dimaranan (<a href=\"https:\/\/www.instagram.com\/isa.dimaranan\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/isa.dimaranan\/\">@isa.dimaranan<\/a>)<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marleyarviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marleyarviso\/\">@marleyarviso<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "92d2b488-2c7e-4b67-b19d-ab632bdf7329": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook-old"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "92d2b488-2c7e-4b67-b19d-ab632bdf7329",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "0c157896-df2f-4297-ad50-783a2ff1021c"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "b7ca7d64-ef4b-44c5-b7c0-55cd431d83a4",
+    "0b78f075-cd36-4b24-8a6f-5d159b01c8eb",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "57069e23-6353-401d-ba54-0ce13677911e",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "71c0d065-45a2-4435-8b27-cefcab2f1b8f",
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2",
+    "b79cdddf-c022-4009-957e-aee86fb516ea",
+    "40fe074f-b0d9-44fa-8937-5ab3f1242a04",
+    "5fcb4c6d-b8db-4028-8975-9a8de532d5bd",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

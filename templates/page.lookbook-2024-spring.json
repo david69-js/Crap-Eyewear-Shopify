@@ -1,0 +1,740 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><\/h1><h1><\/h1><h1><em>Spring<\/em> 2024<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx ct",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "module_fullscreen_embed_egqUxH": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=wwFDVXHlreM",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "lookbook_two_col_JkhnWT": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_fKiTCy": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-Crap_Eyewear-2024_Spring-Lookbook-Look4-4-Head_Rattle_light_smoke.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_fKiTCy"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "e78b027c-3043-43b1-b857-ee2c5198169e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_HjpR3D": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-Crap_Eyewear-2024_Spring-Lookbook-Look4-7-Supa_Phreek_II_slate.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_TLNCbH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5-Crap_Eyewear-2024_Spring-Lookbook-Look4-Product2-Supa_Phreek_II_slate.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_wDa8H7": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-supa-phreek-ii-crystal-slate-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_HjpR3D",
+        "media_col_TLNCbH",
+        "product_widget_wDa8H7"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_fullscreen_iEcRcW": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/6-Crap_Eyewear-2024_Spring-Lookbook-Look4-1-Head_Rattle_light_smoke-Supa_Phreek_II_slate.jpg",
+        "caption": ""
+      }
+    },
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7-Crap_Eyewear-2024_Spring-Lookbook-Look4-10-Head_Rattle_light_smoke.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_k8GRfW": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9-Crap_Eyewear-2024_Spring-Lookbook-Look4-Product3-Head_Rattle_light_smoke.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_MRzQkz": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-head-rattle-black-tortoise-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847",
+        "media_col_k8GRfW",
+        "product_widget_MRzQkz"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "lookbook_two_col_eyxUNN": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_XDUe6j": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/10-Crap_Eyewear-2024_Spring-Lookbook-Look3-4-Heavy_Tropix_desert_tortoise-Sweet_Leaf_black_cherry.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-heavy-tropix-desert-tortoise-bioacetate-polarized-sunglasses\" title=\"The Heavy Tropix - Desert Tortoise Bio Polarized\">The Heavy Tropix<\/a>, <a href=\"\/products\/the-sweet-leaf-crystal-black-cherry-red-bioacetate-oval-sunglasses\" title=\"The Sweet Leaf - Crystal Black Cherry Bio\">The Sweet Leaf<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_XDUe6j"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f3104c75-b75f-4e7a-8351-203dd2936139": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11-Crap_Eyewear-2024_Spring-Lookbook-Look3-5-Sweet_Leaf_black_cherry.jpg",
+            "caption": ""
+          }
+        },
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/13-Crap_Eyewear-2024_Spring-Lookbook-Look3-Product1-Sweet_Leaf_black_cherry.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_bp3XqJ": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-crystal-black-cherry-red-bioacetate-oval-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b",
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55",
+        "product_widget_bp3XqJ"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b81e283c-e8e5-4661-a9bd-df112d802e70": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/16-Crap_Eyewear-2024_Spring-Lookbook-Look3-13-Heavy_Tropix_desert_tortoise.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/17-Crap_Eyewear-2024_Spring-Lookbook-Look3-Product6-Heavy_Tropix_desert_tortoise.jpg",
+            "caption": ""
+          }
+        },
+        "40798995-7947-4c4c-b2eb-2da608c681d4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/15-Crap_Eyewear-2024_Spring-Lookbook-Look3-11-Heavy_Tropix_desert_tortoise.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_GQDHnt": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-heavy-tropix-desert-tortoise-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf",
+        "40798995-7947-4c4c-b2eb-2da608c681d4",
+        "product_widget_GQDHnt"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_DPG8NW": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_BacNnj": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/18-Crap_Eyewear-2024_Spring-Lookbook-Look3-2-Sweet_Leaf_black_cherry.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_BacNnj"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "lookbook_two_col_dFQdjz": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_YNLbxL": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/21-Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-funk-daddy-recycled-metallic-plum-wraparound-sunglasses\" title=\"The Funk Daddy - Recycled Metallic Plum\">Funk Daddy<\/a>, <a href=\"\/products\/the-gothic-breeze-frond-green-bioacetate-polarized-sunglasses\" title=\"The Gothic Breeze - Frond Bio Polarized\">Gothic Breeze<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_YNLbxL"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "132ae262-c79e-455e-92af-9439118f128d": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "88df3f9b-0790-40c1-8196-3c4ed8b3322d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/24-Crap_Eyewear-2024_Spring-Lookbook-Look1-Product1-Funk_Daddy_plum.jpg",
+            "caption": ""
+          }
+        },
+        "04fe461b-dace-4fcc-a35c-8cd04be649eb": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/23-Crap_Eyewear-2024_Spring-Lookbook-Look1-9-Funk_Daddy_plum.jpg",
+            "caption": ""
+          }
+        },
+        "26e7364a-027d-4f79-978b-b57ac10d9e12": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-funk-daddy-recycled-metallic-plum-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "88df3f9b-0790-40c1-8196-3c4ed8b3322d",
+        "04fe461b-dace-4fcc-a35c-8cd04be649eb",
+        "26e7364a-027d-4f79-978b-b57ac10d9e12"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_6XcYnx": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_cctbVL": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/28-Crap_Eyewear-2024_Spring-Lookbook-Look1-4-Funk_Daddy_plum-Gothic_Breeze_frond.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_cctbVL"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "65110524-efac-44a9-8854-ae5e99599884": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_CPby9L": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/26-Crap_Eyewear-2024_Spring-Lookbook-Look1-10-Gothic_Breeze_frond.jpg",
+            "caption": ""
+          }
+        },
+        "63677bc7-5e1b-493d-8eb2-e8b7df919ef5": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/27-Crap_Eyewear-2024_Spring-Lookbook-Look1-Product3-Gothic_Breeze_frond.jpg",
+            "caption": ""
+          }
+        },
+        "90d4437d-0df8-4382-8a8a-49744b83c123": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-gothic-breeze-frond-green-bioacetate-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_CPby9L",
+        "63677bc7-5e1b-493d-8eb2-e8b7df919ef5",
+        "90d4437d-0df8-4382-8a8a-49744b83c123"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_FnbBgV": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_ryHLND": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/29-Crap_Eyewear-2024_Spring-Lookbook-Look1-5-Funk_Daddy_plum-Gothic_Breeze_frond.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_ryHLND"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "lookbook_two_col_7eQAUR": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_r9P3GH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/30-Crap_Eyewear-2024_Spring-Lookbook-Look2-1-Lucid_Blur_syrup-Spaced_Ranger_blue.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-lucid-blur-crystal-syrup-bioacetate-polarized-sunglasses\" title=\"The Lucid Blur - Crystal Syrup Bio Polarized\">Lucid Blur<\/a>, <a href=\"\/products\/the-spaced-ranger-black-moondust-blue-tint-bioacetate-sunglasses\" title=\"The Spaced Ranger - Blue Tint Bio\">Spaced Ranger<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_r9P3GH"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_gJDkrq": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_bXCMNX": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/31-Crap_Eyewear-2024_Spring-Lookbook-Look2-2-Lucid_Blur_syrup-Spaced_Ranger_blue.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_qeft7g": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/32-Crap_Eyewear-2024_Spring-Lookbook-Look2-Product1-Spaced_Ranger_blue.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_jkDVpV": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-spaced-ranger-black-moondust-blue-tint-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_bXCMNX",
+        "media_col_qeft7g",
+        "product_widget_jkDVpV"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_bEiCN4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_3NHemn": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/34-Crap_Eyewear-2024_Spring-Lookbook-Look2-6-Spaced_Ranger_blue.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_3NHemn"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 70,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_KqrBtz": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_bXJqpF": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/37-Crap_Eyewear-2024_Spring-Lookbook-Look2-Product4-Lucid_Blur_syrup.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_Bwgbj9": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/36-Crap_Eyewear-2024_Spring-Lookbook-Look2-9-Lucid_Blur_syrup.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_dDVUNt": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-lucid-blur-crystal-syrup-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_bXJqpF",
+        "media_col_Bwgbj9",
+        "product_widget_dDVUNt"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_fullscreen_pAfyGB": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/39-Crap_Eyewear-2024_Spring-Lookbook-Look2-4-Lucid_Blur_syrup-Spaced_Ranger_blue.jpg",
+        "caption": ""
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "new-arrivals",
+        "cta_url": "",
+        "cta_text": "Shop New",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Spring 2024 Lookbook<\/strong><br\/>Shot on location in Los Angeles, 2024.<\/p><p>Starring: Bishop (<a href=\"https:\/\/instagram.com\/spitfirecowboy\" title=\"https:\/\/instagram.com\/spitfirecowboy\">@spitfirecowboy<\/a>) & Diego Johnson (<a href=\"https:\/\/instagram.com\/diegjohnson\" title=\"https:\/\/instagram.com\/diegjohnson\">@diegjohnson<\/a>)<br\/>Photographer: Tony Accosta<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/instagram.com\/marley.arviso\" target=\"_blank\" title=\"https:\/\/instagram.com\/marley.arviso\">@marley.arviso<\/a>) & Tony Accosta<br\/>Styling: Genesis Durán (<a href=\"https:\/\/instagram.com\/genesisdurn\" title=\"https:\/\/instagram.com\/genesisdurn\">@genesisdurn<\/a>)<br\/>Video & Edit: Cole Walton (<a href=\"https:\/\/instagram.com\/colewaltonbro\" title=\"https:\/\/instagram.com\/colewaltonbro\">@colewaltonbro<\/a>)<br\/>Song: '\"Adieu\" by kelz (<a href=\"https:\/\/instagram.com\/kelzmusic\" title=\"https:\/\/instagram.com\/kelzmusic\">@kelzmusic<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Jack_Greer-look1-4-web_lookbooks_carousel.jpg",
+            "caption": "The Glam Rodeo",
+            "url": "shopify:\/\/pages\/lookbooks-glam-rodeo"
+          }
+        },
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1-web_lookbooks_carousel.jpg",
+            "caption": "The Petal Bomb",
+            "url": "shopify:\/\/pages\/lookbooks-petal-bomb"
+          }
+        },
+        "741264a1-771f-4755-8cde-b67218404b6c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-04-web_lookbooks_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-08-web_lookbooks_carousel.jpg",
+            "caption": "Summer 2023",
+            "url": "shopify:\/\/pages\/summer-2023-lookbook"
+          }
+        },
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_lookbooks_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b",
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0",
+        "741264a1-771f-4755-8cde-b67218404b6c",
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83",
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "7772ca3d-f499-4e62-9134-c65c0f389197"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><\/h1><h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "module_fullscreen_embed_egqUxH",
+    "lookbook_two_col_JkhnWT",
+    "e78b027c-3043-43b1-b857-ee2c5198169e",
+    "lookbook_fullscreen_iEcRcW",
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa",
+    "lookbook_two_col_eyxUNN",
+    "f3104c75-b75f-4e7a-8351-203dd2936139",
+    "b81e283c-e8e5-4661-a9bd-df112d802e70",
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49",
+    "lookbook_two_col_DPG8NW",
+    "lookbook_two_col_dFQdjz",
+    "132ae262-c79e-455e-92af-9439118f128d",
+    "lookbook_two_col_6XcYnx",
+    "65110524-efac-44a9-8854-ae5e99599884",
+    "lookbook_two_col_FnbBgV",
+    "lookbook_two_col_7eQAUR",
+    "lookbook_two_col_gJDkrq",
+    "lookbook_two_col_bEiCN4",
+    "lookbook_two_col_KqrBtz",
+    "lookbook_fullscreen_pAfyGB",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

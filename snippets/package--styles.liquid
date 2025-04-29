@@ -1,0 +1,9 @@
+{%- if template -%}
+  {%- if template contains 'customers' -%}
+    {%- capture template_styles -%}{{ "bundle.customers.css" | asset_url }}{%- endcapture -%}
+  {%- else -%}
+    {%- assign template_style_name = 'bundle.' | append: template.name | append: '.css' -%}
+    {%- capture template_styles -%}{{ template_style_name | asset_url }}{%- endcapture -%}
+  {%- endif -%}
+  <link href="{{ template_styles }}" rel="stylesheet" type="text/css" media="all">
+{% endif %}

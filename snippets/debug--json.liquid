@@ -1,0 +1,11 @@
+{%- comment -%}
+/**
+ * Debug helper for JSON objects
+ *	- Will pretty print the object to the page
+ */
+{%- endcomment -%}
+{%- capture id -%}
+{%- render "output--random-number" -%}
+{%- endcapture -%}
+<pre id="{{ id }}" class="mt-4 text-xs whitespace-pre"></pre>
+<script type="text/javascript">document.getElementById("{{ id }}").textContent = JSON.stringify({{ object | json }}, null, 4);</script>

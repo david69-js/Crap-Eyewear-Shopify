@@ -1,0 +1,14 @@
+<div class="basis-1/2 h-full relative flex flex-col gap-4 items-center justify-center">
+    <div class="flex gap-2 z-10">
+        {% render 'icon--star' %}
+        {% render 'icon--star' %}
+        {% render 'icon--star' %}
+        {% render 'icon--star' %}
+        {% render 'icon--star' %}
+    </div>
+    <p class="grotesk-bold h5 z-10 text-center">{{ block.settings.quote_text }}</p>
+    <p class="z-10">{{ block.settings.name }}</p>
+    <div class="background-shape absolute inset-0 z-0">
+        {% render 'icon--lib' shape: block.settings.bg_shape %}
+    </div>
+</div>

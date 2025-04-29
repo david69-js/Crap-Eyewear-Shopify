@@ -1,0 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cabf25c8-e1c7-41ad-b3f6-dd795d6b9708": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "c8d94f45-a56d-4224-8d2b-fa17ad6bd8bf": {
+      "type": "module--storelocator",
+      "settings": {}
+    },
+    "13f763ff-8df4-4ffe-a570-55c254b9776e": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify:\/\/files\/videos\/Crap_Eyewear-meet_the_favs-heavy_tropix-deep_rose-web_home_primary.mp4",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h4>Meet Our<br\/><em>Favorites<\/em><\/h4>",
+        "cta_1_text": "Shop the Hits",
+        "cta_1_url": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_3.png",
+        "image_2_brightness": 0,
+        "richtext_2": "<h4><strong>Venice Showroom<br\/><\/strong>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h4>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "cabf25c8-e1c7-41ad-b3f6-dd795d6b9708",
+    "c8d94f45-a56d-4224-8d2b-fa17ad6bd8bf",
+    "13f763ff-8df4-4ffe-a570-55c254b9776e"
+  ]
+}

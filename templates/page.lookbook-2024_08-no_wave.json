@@ -1,0 +1,731 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><\/h1><h1><\/h1><h1><em>The<\/em> No Wave<\/h1><h1> <\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx ct",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "module_fullscreen_embed_QGr9YN": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "youtube_video": "www.youtube.com\/watch?v=qz71YvcifdI",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "lookbook_two_col_JkhnWT": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_fibzUp": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-16-web.jpg",
+            "caption": "<p>Featuring: <a href=\"\/products\/the-no-wave-desert-tortoise-bioacetate-plum-polarized-sunglasses\" target=\"_blank\" title=\"The No Wave - Desert Tortoise Bio Polarized\">The No Wave<\/a><\/p><p> <\/p><p>    <\/p><p>   <\/p>"
+          }
+        },
+        "media_col_pPTVx9": {
+          "type": "media_col",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-13-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_fibzUp",
+        "media_col_pPTVx9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "e78b027c-3043-43b1-b857-ee2c5198169e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_TLNCbH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-01-24-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_HjpR3D": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-01-15.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_wDa8H7": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-seaweed-green-bioacetate-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_TLNCbH",
+        "media_col_HjpR3D",
+        "product_widget_wDa8H7"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_N4GfKt": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_6VimYj": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-01-30.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_ziBEj6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-01-6-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_6VimYj",
+        "media_col_ziBEj6"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 70,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_KMmQWA": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_4P7Wqx": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-01-8-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_MErn9a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-01-14-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_JpcciY": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-desert-tortoise-bioacetate-plum-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_4P7Wqx",
+        "media_col_MErn9a",
+        "product_widget_JpcciY"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_PbwLCC": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_jK49i6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-13-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_gcrXDH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-31-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_jK49i6",
+        "media_col_gcrXDH"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_e6yiMt": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_eKQ3cH": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-02-3-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_PriQtC": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-02-15-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_WbdFzX": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-seaweed-green-bioacetate-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_eKQ3cH",
+        "media_col_PriQtC",
+        "product_widget_WbdFzX"
+      ],
+      "settings": {
+        "media_aspect_ratio": "1",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_JGj6Dt": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_8qAeKV": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-02-19-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_8qAeKV"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 80,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_k8GRfW": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-02-38-web.jpg",
+            "caption": ""
+          }
+        },
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-02-21-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_MRzQkz": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-desert-tortoise-bioacetate-plum-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_k8GRfW",
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847",
+        "product_widget_MRzQkz"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_4b7RRP": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_7CiMpD": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-02-31-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_tckPzp": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-02-7-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_7CiMpD",
+        "media_col_tckPzp"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 75,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_TBUXLM": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_Rc3LKm": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-02-26-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_Rc3LKm"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 85,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_HNE8GU": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_FtYcmq": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-look-02-30-web.jpg",
+            "caption": ""
+          }
+        },
+        "media_col_naPaVK": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-desert_tort-look-02-25-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_Bx6hBA": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-seaweed-green-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        },
+        "product_widget_4eDnpY": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-no-wave-desert-tortoise-bioacetate-plum-polarized-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "media_col_FtYcmq",
+        "media_col_naPaVK",
+        "product_widget_Bx6hBA",
+        "product_widget_4eDnpY"
+      ],
+      "settings": {
+        "media_aspect_ratio": "3 \/ 4",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Glass_Bubble-Lilac_Wash-MondeUFO-15-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_XtjxTB": {
+          "type": "product_widget",
+          "disabled": true,
+          "settings": {
+            "product": "the-glass-bubble-silver-lilac-wash-aviator-sunglasses",
+            "col": "0"
+          }
+        },
+        "40798995-7947-4c4c-b2eb-2da608c681d4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Glass_Bubble-Lilac_Wash-MondeUFO-7-web.jpg",
+            "caption": ""
+          }
+        },
+        "product_widget_WBYAgR": {
+          "type": "product_widget",
+          "disabled": true,
+          "settings": {
+            "product": "the-glass-bubble-gold-vintage-mustard-aviator-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf",
+        "product_widget_XtjxTB",
+        "40798995-7947-4c4c-b2eb-2da608c681d4",
+        "product_widget_WBYAgR"
+      ],
+      "disabled": true,
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "lookbook_two_col_f3XxFz": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "media_col_eyJiiN": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-01-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "media_col_eyJiiN"
+      ],
+      "disabled": true,
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 85,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>No Wave Lookbook<\/strong><br\/>Shot on location in Los Angeles, 2024.<\/p><p>Starring: Veronica Molidor (<a href=\"https:\/\/www.instagram.com\/veronica.molidor\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/veronica.molidor\/\">@veronica.molidor<\/a>) & Masa Sun (<a href=\"https:\/\/www.instagram.com\/_masasun_\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/_masasun_\/\">@_masasun_<\/a>)<br\/>Photographer: Tony Accosta<br\/>Video & Edit: Nick Green (<a href=\"https:\/\/www.instagram.com\/nickgrreen\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/nickgrreen\/\">@nickgrreen<\/a>)<br\/>Song: 'Blood Wears Thin' by (<a href=\"https:\/\/www.instagram.com\/_trit95\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/_trit95\/\">@_trit95<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "marquee_card_6CM3iH": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-Marias_Submarine-Lookbook-look_01-12-web_lookbook_carousel.jpg",
+            "caption": "Submarine by The Marías",
+            "url": "shopify:\/\/pages\/the-marias-submarine"
+          }
+        },
+        "marquee_card_DKWygD": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Glass_Bubble-MondeUFO-30-web_lookbooks_hero.jpg",
+            "caption": "The Glass Bubble",
+            "url": "shopify:\/\/pages\/lookbooks-glass-bubble"
+          }
+        },
+        "marquee_card_7YymBi": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Summer-Lookbook-Look_1-09-Sweet_Leaf_black-Spaced_Ranger_dark_tortoise-web_lookbook_carousel.jpg",
+            "caption": "Summer 2024",
+            "url": "shopify:\/\/pages\/lookbook-2024-summer"
+          }
+        },
+        "marquee_card_zkeiCE": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024-iggy-lookbook-collage-Nico_3-web_lookbooks_carousel.jpg",
+            "caption": "iggy. NYC x Crap® Eyewear",
+            "url": "shopify:\/\/pages\/iggy"
+          }
+        },
+        "marquee_card_b774hp": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lifestyle_card.png",
+            "caption": "The Marquee Rox",
+            "url": "shopify:\/\/pages\/lookbook-marquee-rox"
+          }
+        },
+        "marquee_card_9XVtNU": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-No_Wave-Look_02-Licorice-Black_Tort-2-we_lookbooks_carousel.jpg",
+            "caption": "The No Wave",
+            "url": "shopify:\/\/pages\/lookbooks-no-wave"
+          }
+        },
+        "marquee_card_JPUAfH": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20-Crap_Eyewear-2024_Spring-Warp_Zone-look-03-Metallic_Olive-Black_Cherry-11-web_lookbooks-carousel.jpg",
+            "caption": "The Warp Zone",
+            "url": ""
+          }
+        },
+        "marquee_card_dja4Un": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Lookbook-Look1-3-Funk_Daddy_plum-Gothic_Breeze_frond-web.jpg",
+            "caption": "Spring 2024",
+            "url": "shopify:\/\/pages\/lookbook-2024-spring"
+          }
+        },
+        "marquee_card_nRmXe3": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3-Crap_Eyewear-2024_Spring-Black_Image_Center-06-web_lookbooks_landing.jpg",
+            "caption": "Black Image Center",
+            "url": "shopify:\/\/pages\/blackimagecenter"
+          }
+        },
+        "marquee_card_hVid3i": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Void_Pixie-Look_2-5-web_lookbooks_hero_desktop_099dd0b6-924b-45f7-8bbc-812c2bd515ee.jpg",
+            "caption": "The Void Pixie",
+            "url": "shopify:\/\/pages\/lookbooks-void-pixie"
+          }
+        },
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Jack_Greer-look1-4-web_lookbooks_carousel.jpg",
+            "caption": "The Glam Rodeo",
+            "url": "shopify:\/\/pages\/lookbooks-glam-rodeo"
+          }
+        },
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1-web_lookbooks_carousel.jpg",
+            "caption": "The Petal Bomb",
+            "url": "shopify:\/\/pages\/lookbooks-petal-bomb"
+          }
+        },
+        "741264a1-771f-4755-8cde-b67218404b6c": {
+          "type": "marquee-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-04-web_lookbooks_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-08-web_lookbooks_carousel.jpg",
+            "caption": "Summer 2023",
+            "url": "shopify:\/\/pages\/summer-2023-lookbook"
+          }
+        },
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_lookbooks_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_card_6CM3iH",
+        "marquee_card_DKWygD",
+        "marquee_card_7YymBi",
+        "marquee_card_zkeiCE",
+        "marquee_card_b774hp",
+        "marquee_card_9XVtNU",
+        "marquee_card_JPUAfH",
+        "marquee_card_dja4Un",
+        "marquee_card_nRmXe3",
+        "marquee_card_hVid3i",
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b",
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0",
+        "741264a1-771f-4755-8cde-b67218404b6c",
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83",
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "7772ca3d-f499-4e62-9134-c65c0f389197"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><\/h1><h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "module_fullscreen_embed_QGr9YN",
+    "lookbook_two_col_JkhnWT",
+    "e78b027c-3043-43b1-b857-ee2c5198169e",
+    "lookbook_two_col_N4GfKt",
+    "lookbook_two_col_KMmQWA",
+    "lookbook_two_col_PbwLCC",
+    "lookbook_two_col_e6yiMt",
+    "lookbook_two_col_JGj6Dt",
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa",
+    "lookbook_two_col_4b7RRP",
+    "lookbook_two_col_TBUXLM",
+    "lookbook_two_col_HNE8GU",
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49",
+    "lookbook_two_col_f3XxFz",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

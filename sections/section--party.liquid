@@ -1,0 +1,985 @@
+{%- comment -%}
+    /**
+     * Collection Template
+     */
+{%- endcomment -%}
+{%- liquid
+
+capture filter_string
+
+endcapture
+
+unless collection
+	assign collection = collections["all"]
+endunless
+
+assign sort_by = collection.sort_by | default: collection.default_sort_by
+assign terms = collection.terms | escape
+assign query_url = "?q=" | append: terms | append: sort_by
+assign request_url = collection.url | append: query_url
+
+capture variant_id
+	render "output--get-variant-from-url"
+endcapture
+
+assign heading_size = settings.product_heading_size | default: 24
+assign col_string = "4,4,4,4,4,4"
+
+assign total_active = 0
+assign products_rendered = 0
+
+for filter in collection.filters
+
+	assign total_active = total_active | plus: filter.active_values.size
+
+endfor
+
+-%}
+{% assign render_business = false %}
+{% assign business_only = false %}
+{% if section.settings.enable_filtering == true and section.settings.default_mode == 'business' %}
+    {% assign business_only = true %}
+{% endif %}
+{% if total_active > 0 or sort_by != 'manual' %}
+    {% assign render_business = true %}
+{% endif %}
+
+<div data-animation="{{- section.settings.animation -}}" class="collection-section-wrapper">
+    <div class="w-full cx richtext">
+        {{ section.settings.heading }}
+    </div>
+    {%- paginate collection.products by section.settings.products_per_page -%}
+
+        {%- comment -%} --- No Results --- {%- endcomment -%}
+        {%- if collection.products.size == 0 -%}
+
+            <div class="cx collection-grid flex-grow w-full" style="" data-id="{{- section.id -}}">
+                <div class="loading-overlay gradient"></div>
+                <div class="title-wrapper center richtext">
+                    {{ section.settings.empty_collection_message }}
+                </div>
+            </div>
+
+        {%- else -%}
+            {%- comment -%} --- Grid filter/sort actions & active filters --- {%- endcomment -%}
+            <div class="w-full cx cy">
+
+                <div class="flex gap-[10px] items-center">
+                    {%- if section.settings.enable_filtering == true -%}
+                        <toggle-filters>
+                            <button class="js-trigger-dd btn btn-secondary border-off-black font-primary flex h-[50px] max-w-[270px] items-center">
+                                <span class="">Filter & Sort</span>
+                            </button>
+                        </toggle-filters>
+                    {%- endif -%}
+                    <p class="font-secondary text-[12px] collection-count" data-count="{{collection.products_count}}">{{ collection.products_count }} Results</p>
+                <div class="party-toggles flex ml-auto {% if section.settings.hide_mode_toggle %} hidden {% endif %}">
+                    <button style="--fill-color: #1E1E1E;" class="toggle-btn js-party-on border border-[var(--fill-color)] w-[50px] h-[50px] flex items-center justify-center {% if section.settings.default_mode == 'party' and total_active < 1 %} active {% endif %}">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="12" height="26" fill="var(--fill-color)" />
+                            <rect x="14" width="12" height="26" fill="var(--fill-color)" />
+                        </svg>
+                    </button>
+                    <button style="--fill-color: #1E1E1E;" class="toggle-btn js-party-off border border-[var(--fill-color)] w-[50px] h-[50px] flex items-center justify-center {% if section.settings.default_mode == 'business' or total_active > 0 %} active {% endif %}">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="6.89796" height="26" fill="#1E1E1E"/>
+                            <rect x="9.55078" width="6.89796" height="26" fill="#1E1E1E"/>
+                            <rect x="19.1016" width="6.89796" height="26" fill="#1E1E1E"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+                {%- comment -%} --- Active Filters --- {%- endcomment -%}
+                {%- render "molecule--filter-sort-active", results: collection, total_active: total_active -%}
+                {%- render "molecule--filter-sort", results: collection, enable_filtering: section.settings.enable_filtering, filter_style: section.settings.filter_style, enable_sorting: section.settings.enable_sorting, total_active: total_active, open: section.settings.filter_open, sub_nav: section.settings.filter_nav -%}
+            </div>
+            <div class="flex">
+                {% if business_only == false and render_business == false %}
+                    <div class="collection-grid party-grid flex-grow w-full {% if section.settings.default_mode == 'business' or total_active > 0 %} business {% endif %}" style="" data-id="{{- section.id -}}" data-default-mode="{{ section.settings.default_mode }}">
+                        {%- capture slottedEl -%}
+                        <div class="pagination-result col-span-4 flex flex-wrap">
+                                {%- for item in collection.products -%}
+                                    {% if item.metafields.custom.hide_product == true %}
+                                        {% if content_for_header contains "previewBarInjector.init();" %}
+                                            {% assign show_product = true %}
+                                        {% elsif content_for_header contains "Shopify.designMode" %}
+                                            {% assign show_product = true %}
+                                        {% else %}
+                                            {% assign show_product = false %}
+                                        {% endif %}
+                                        {% if settings.hide_products == true %}
+                                            {% if content_for_header contains "Shopify.designMode" %}
+                                                {% assign show_product = true %}
+                                            {% else %}
+                                                {% assign show_product = false %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if item.metafields.custom.hide_product != true %}
+                                        {% assign show_product = true %}
+                                    {% endif %}
+                                    {% unless show_product == false %}
+                                    {% if forloop.first or products_rendered == 0  %}
+                                        {% assign is_feature = true %}
+                                        {% assign is_first_section = true %}
+                                        {% assign feat_image = section.settings.column_bg_image %}
+                                        {% if section.settings.column_bg_video %}
+                                            {% assign feat_image = section.settings.column_bg_video %}
+                                        {% endif %}
+                                        {% assign pip_video = section.settings.column_pip_video %}
+                                        {% assign hover_video = section.settings.fetured_card_video %}
+                                        {% assign feat_product = section.settings.column_pip_product %}
+                                        {% if section.settings.column_sticker_image != nil or section.settings.column_svg != blank  %}
+                                            {% capture sticker_markup %}
+                                                {% render 'component--sticker'
+                                                , sticker: section,
+                                                is_column: true,
+                                                anim_class: fadeClass %}
+                                            {% endcapture %}
+                                        {% else %}
+                                            {% assign sticker_markup = nil %}
+                                        {% endif %}
+                                        {% if section.settings.show_end_banner %}
+                                            {% assign banner_displayed = false %}
+                                            {% capture section_banner %}
+                                                <div style="background: {{ section.settings.background_color }};" class="mullet basis-full cy-2x relative">
+                                                    <div style="color: {{ section.settings.font_color }};" class="richtext z-[1] relative">
+                                                        {{ section.settings.content }}
+                                                    </div>
+                                                    {% if section.settings.background_image != nil %}
+                                                    <div class="bg-image absolute inset-0 z-0">
+                                                        {% render "component--responsive-image", image: section.settings.background_image, objectFit: true %}
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                            {% endcapture %}
+                                            {% else %}
+                                            {% assign banner_displayed = true %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {%- assign indexOffset = products_rendered | plus: offset -%}
+                                    {% assign end_product_section = false %}
+                                    {% assign feature_offset = indexOffset | plus: 1  %}
+                                    {% for block in section.blocks %}
+                                        {% if feature_offset == block.settings.product_end %}
+                                            {% assign last_card = false %}
+                                            {% for block in section.blocks %}
+                                                {% if block.settings.card_position == feature_offset  %}
+                                                    {% capture last_card %}
+                                                        {% case block.type %}
+                                                            {% when 'featured_review' %}
+                                                            {% render 'component--pcp-featured-review', block: block %}
+                                                            {% when 'block_quote' %}
+                                                            <div class="mullet basis-[calc(50%-(var(--site-gutter)/2))]">
+                                                                {% render 'component--pcp-block-quote', block: block %}
+                                                            </div>
+                                                            {% when 'lifestyle_card' %}
+                                                            <div class="mullet basis-[calc(50%-(var(--site-gutter)/2))]">
+                                                                {% render 'component--pcp-lifestyle-card', block: block %}
+                                                            </div>
+                                                        {% endcase %}
+                                                    {% endcapture %}
+                                                    {% break %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% assign end_product_section = true %}
+                                            {% assign feat_image = block.settings.column_bg_image %}
+                                            {% if block.settings.column_bg_video %}
+                                                {% assign feat_image = block.settings.column_bg_video %}
+                                            {% endif %}
+                                            {% assign pip_video = block.settings.column_pip_video %}
+                                            {% assign feat_product = block.settings.column_pip_product %}
+                                            {% assign hover_video = block.settings.fetured_card_video %}
+                                            {% if block.settings.column_sticker_image != nil or block.settings.column_svg != blank  %}
+                                                {% capture sticker_markup %}
+                                                    {% render 'component--sticker'
+                                                    , sticker: block,
+                                                    is_column: true,
+                                                    anim_class: fadeClass %}
+                                                {% endcapture %}
+                                            {% else %}
+                                                {% assign sticker_markup = nil %}
+                                            {% endif %}
+                                            {% if block.settings.show_end_banner %}
+                                            {% assign block_banner_displayed = false %}
+                                            {% assign block_banner_offset = feature_offset | minus: 1  %}
+                                            {% capture block_banner %}
+                                                <div style="background: {{ block.settings.background_color }};" class="mullet basis-full cy-2x relative">
+                                                    <div style="color: {{ block.settings.font_color }};" class="richtext z-[1] relative">
+                                                        {{ block.settings.content }}
+                                                    </div>
+                                                    {% if block.settings.background_image != nil %}
+                                                    <div class="bg-image absolute inset-0 z-0">
+                                                        {% render "component--responsive-image", image: block.settings.background_image, objectFit: true %}
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                            {% endcapture %}
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if is_feature == true %}
+                                        <div class="pip-column basis-full dk:basis-1/2 bg-faded-lime mullet z-[3]">
+                                            <div class="w-full top-0 z-10 dk:h-full">
+                                                {% render 'component--pcp-pip', product: feat_product, bg_image: feat_image, pip_video: pip_video, sticker: sticker_markup %}
+                                            </div>
+                                        </div>
+                                        <div class="product-column basis-full dk:basis-1/2 px-[var(--site-gutter)] flex flex-wrap gap-x-[var(--site-gutter)] gap-y-[var(--site-gutter)] pb-[var(--site-gutter)] self-start">
+                                            <div class="product-card-wrap basis-full">
+                                                {% render "component--product-card", product: item, showPrice: true, hover_image: true, hover_video: hover_video  %}
+                                            </div>
+                                        {% else %}
+                                            {%- for block in section.blocks -%}
+                                                {% assign card_off = block.settings.card_position %}
+                                                {%- if card_off == indexOffset -%}
+                                                    {% case block.type %}
+                                                        {% when 'featured_review' %}
+                                                        {% render 'component--pcp-featured-review', block: block %}
+                                                        {% when 'block_quote' %}
+                                                        <div class="mullet basis-[calc(50%-(var(--site-gutter)/2))]">
+                                                            {% render 'component--pcp-block-quote', block: block %}
+                                                        </div>
+                                                        {% when 'lifestyle_card' %}
+                                                        <div class="mullet basis-[calc(50%-(var(--site-gutter)/2))]">
+                                                            {% render 'component--pcp-lifestyle-card', block: block %}
+                                                        </div>
+                                                    {% endcase %}
+                                                    {% break %}
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                            <div class="product-card-wrap basis-[calc(50%-(var(--site-gutter)/2))]">
+                                                {% render "component--product-card", product: item, showPrice: true, hover_image: true %}
+                                            </div>
+                                            {% if last_card != false %}
+                                                {{ last_card }}
+                                                {% assign last_card = false %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if end_product_section %}
+                                        </div>
+                                            {% assign is_feature = true %}
+                                            {% if block_banner_displayed == false and block_banner_offset != products_rendered %}
+                                                {{ block_banner  }} 
+                                                {% assign block_banner_displayed = true %}
+                                            {% endif %}
+                                            {% if banner_displayed == false and is_first_section %}
+                                                {{ section_banner }}
+                                                {% assign banner_displayed = true %}
+                                                {% assign is_first_section = false %}
+                                            {% endif %}
+                                            {% else %}
+                                            {% assign is_feature = false %}
+                                        {% endif %}
+                                        {% if forloop.last %}
+                                            </div>
+                                            {% if block_banner_displayed == false %}
+                                                {{ block_banner  }}
+                                                {% assign block_banner_displayed = true %}
+                                            {% endif %}
+                                            {% if banner_displayed == false and is_first_section %}
+                                                {{ section_banner }}
+                                                {% assign banner_displayed = true %}
+                                                {% assign is_first_section = false %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% assign products_rendered = products_rendered | plus: 1  %}
+                                    {% endunless %}
+                                    {% endfor -%}
+                                </div>
+                            {%- endcapture -%}
+
+                            {%- render "slot--grid"
+                                , cols: col_string,
+                                slot: slottedEl,
+                                classes: "pagination-grid" -%}
+
+                            {%- if paginate.pages > 1 -%}
+                                <div class="w-full cy-1/2 flex justify-center">
+                                    {% render "molecule--pagination", paginate: paginate %}
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                    {% else %}
+                        <div class="collection-grid flex-grow w-full" style="" data-id="{{- section.id -}}">
+                            {%- capture slottedEl -%}
+                                {%- for item in collection.products -%}
+                                    {% if item.metafields.custom.hide_product == true %}
+                                        {% if content_for_header contains "previewBarInjector.init();" %}
+                                            {% assign show_product = true %}
+                                        {% elsif content_for_header contains "Shopify.designMode" %}
+                                            {% assign show_product = true %}
+                                        {% else %}
+                                            {% assign show_product = false %}
+                                        {% endif %}
+                                        {% if settings.hide_products == true %}
+                                            {% if content_for_header contains "Shopify.designMode" %}
+                                                {% assign show_product = true %}
+                                            {% else %}
+                                                {% assign show_product = false %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if item.metafields.custom.hide_product != true %}
+                                        {% assign show_product = true %}
+                                    {% endif %}
+                                    {% if show_product == true %}
+                                        <div class="product-card-wrap pagination-result col-span-1" forloop="{{ forloop.index }}">
+                                            {% render "component--product-card", product: item, showPrice: true, hover_image: true, forloop: forloop.index %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor -%}
+                            {%- endcapture -%}
+
+                            {%- assign col_string = "2,2,2,2,3,3" -%}
+
+                            {%- render "slot--grid" 
+                                , cols: col_string,
+                                slot: slottedEl,
+                                class_list: "",
+                                classes: "cx pagination-grid gap-x-[var(--site-gutter)] gap-y-[var(--site-gutter)]" -%}
+
+                            {%- if paginate.pages > 1 -%}
+                                <div class="w-full cy-1/2 flex justify-center">
+                                    {% render "molecule--pagination", paginate: paginate %}
+                                </div>
+                            {%- endif -%}
+                        </div>
+                {% endif %}
+            </div>
+        {%- endif -%}
+    {% endpaginate %}
+</div>
+{% schema %}
+    {
+        "name": "Party",
+        "tag": "section",
+        "class": "section-product-collection",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "empty_collection_message",
+                "label": "Empty Collection Message",
+                "info": "This message will display when there are no products in the collection."
+            },
+            {
+                "type": "richtext",
+                "id": "no_results_message",
+                "label": "No Results Message",
+                "info": "This message will display when there are no results for the current filters."
+            },
+            {
+                "type": "select",
+                "id": "pagination_type",
+                "options": [
+                    {
+                        "value": "infinite",
+                        "label": "Infinite scroll"
+                    }, {
+                        "value": "load-more",
+                        "label": "Load More button"
+                    }, {
+                        "value": "pages",
+                        "label": "Pages"
+                    }
+                ],
+                "default": "infinite",
+                "label": "Pagination type"
+            },
+            {
+                "type": "number",
+                "id": "products_per_page",
+                "default": 250,
+                "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+            }, {
+                "type": "text",
+                "id": "media_file",
+                "label": "Media - Video/Lottie",
+                "info": "A full URL or print the full file name in your Shopify Files folder"
+            }, {
+                "type": "checkbox",
+                "id": "enable_filtering",
+                "default": true,
+                "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+                "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+            }, {
+                "type" : "checkbox",
+                "id": "hide_mode_toggle",
+                "default": false,
+                "label": "Hide mode toggle"
+            }, {
+                "type": "select",
+                "id": "default_mode",
+                "options": [
+                    {
+                        "value": "party",
+                        "label": "Party"
+                    }, {
+                        "value": "business",
+                        "label": "Business"
+                    }
+                ],
+                "default": "party",
+                "label": "Default mode"
+            }, {
+                "type": "link_list",
+                "id": "filter_nav",
+                "label": "t:settings_schema.general.settings.filter_nav.label",
+                "info": "t:settings_schema.general.settings.filter_nav.info"
+            }, {
+                "type": "checkbox",
+                "id": "filter_group_name",
+                "default": true,
+                "label": "t:settings_schema.general.settings.filter_group_name.label"
+            }, {
+                "type": "checkbox",
+                "id": "filter_open",
+                "default": true,
+                "label": "t:settings_schema.general.settings.filter_open.label"
+            }, {
+                "type": "checkbox",
+                "id": "enable_sorting",
+                "default": true,
+                "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+            }, {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "video",
+                "id": "fetured_card_video",
+                "label": "Featured Card Video"
+            },
+            {
+                "type": "header",
+                "content": "Column Media"
+            },
+            {
+                "type": "image_picker",
+                "id": "column_bg_image",
+                "label": "Column Background Image"
+            },
+            {
+                "type": "video",
+                "id": "column_bg_video",
+                "label": "Column Background Video"
+            },
+            {
+                "type": "video",
+                "id": "column_pip_video",
+                "label": "Column PIP Video"
+            },
+            {
+                "type": "product",
+                "id": "column_pip_product",
+                "label": "Column PIP Product"
+            },
+            {
+                        "type": "image_picker",
+                        "id": "column_sticker_image",
+                        "label": "Sticker Image"
+                    }, {
+                        "type": "textarea",
+                        "id": "column_svg",
+                        "label": "Sticker SVG Code"
+                    }, {
+                        "type": "range",
+                        "id": "column_sticker_width",
+                        "label": "Sticker Width (%)",
+                        "info": "Applies to image only",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 100
+                    }, {
+                        "type": "range",
+                        "id": "column_sticker_width_mobile",
+                        "label": "Mobile Sticker Width (%)",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25
+                    }, {
+                        "type": "select",
+                        "id": "column_sticker_position",
+                        "label": "Sticker position",
+                        "options": [
+                            {
+                                "label": "default",
+                                "value": ""
+                            },
+                            {
+                                "label": "Top Left",
+                                "value": "tl"
+                            },
+                            {
+                                "label": "Top Right",
+                                "value": "tr"
+                            },
+                            {
+                                "label": "Bottom Left",
+                                "value": "bl"
+                            }, {
+                                "label": "Bottom right",
+                                "value": "br"
+                            }
+                        ],
+                        "default": ""
+                    },{
+                        "type": "header",
+                        "content": "End of Section Banner"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "show_end_banner",
+                        "label": "Show Banner"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background_color",
+                        "label": "t:settings_schema.general.settings.background_color.label",
+                        "info": "t:settings_schema.general.settings.background_color.info",
+                        "default": "#FFFFFF"
+                    },
+                    {
+                        "type": "color",
+                        "id": "font_color",
+                        "label": "t:settings_schema.general.settings.font_color.label",
+                        "info": "t:settings_schema.general.settings.font_color.info",
+                        "default": "#1E1E1E"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "background_image",
+                        "label": "Background image"
+                    }, {
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Content"
+                    }, {
+                        "type": "select",
+                        "id": "section_padding",
+                        "label": "t:settings_schema.components.settings.section_padding.label",
+                        "info": "t:settings_schema.components.settings.section_padding.info",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "t:settings_schema.general.settings.section_padding.none.label"
+                            },
+                            {
+                                "value": "ca",
+                                "label": "t:settings_schema.general.settings.section_padding.all.label"
+                            },
+                            {
+                                "value": "cx",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal.label"
+                            },
+                            {
+                                "value": "cx ct",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal_top.label"
+                            }, {
+                                "value": "cx cb",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal_bottom.label"
+                            }, {
+                                "value": "cy",
+                                "label": "t:settings_schema.general.settings.section_padding.vertical.label"
+                            }, {
+                                "value": "ct",
+                                "label": "t:settings_schema.general.settings.section_padding.top.label"
+                            }, {
+                                "value": "cb",
+                                "label": "t:settings_schema.general.settings.section_padding.bottom.label"
+                            }
+                        ],
+                        "default": "ca"
+                    }, {
+                        "type": "checkbox",
+                        "id": "section_padding_halved",
+                        "label": "t:settings_schema.components.settings.section_padding_halved.label",
+                        "info": "t:settings_schema.components.settings.section_padding_halved.info",
+                        "default": false
+                    }, {
+                        "type": "checkbox",
+                        "id": "section_padding_extra",
+                        "label": "t:settings_schema.components.settings.section_padding_extra.label",
+                        "info": "t:settings_schema.components.settings.section_padding_extra.info",
+                        "default": false
+                    }
+        ],
+        "blocks": [
+            {
+                "type": "featured_review",
+                "name": "Featured Review",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "info": "Renmaes Block Title for management purposes"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "review_image",
+                        "label": "Review Image"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "Video"
+                    },
+                    {
+                        "type": "text",
+                        "id": "review_text",
+                        "label": "Review Text"
+                    },
+                    {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Name"
+                    }, {
+                        "type": "range",
+                        "id": "card_position",
+                        "min": 1,
+                        "max": 101,
+                        "step": 1,
+                        "default": 5,
+                        "label": "Display after product"
+                    }, {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Associated Product"
+                    }
+                ]
+            },
+            {
+                "type": "lifestyle_card",
+                "name": "Lifestyle Card",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "info": "Renmaes Block Title for management purposes"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "caption",
+                        "label": "Caption"
+                    },
+                    {
+                        "type": "select",
+                        "id": "caption_alignment",
+                        "label": "Caption Alignment",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            }, {
+                                "value": "center",
+                                "label": "Center"
+                            }, {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "left"
+                    },
+                    {
+                        "type": "product",
+                        "id": "associated_product",
+                        "label": "Associated Product"
+                    }, {
+                        "type": "range",
+                        "id": "card_position",
+                        "min": 1,
+                        "max": 101,
+                        "step": 1,
+                        "default": 7,
+                        "label": "Display after product"
+                    }
+                ]
+            },
+            {
+                "type": "block_quote",
+                "name": "Block Quote",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "info": "Renmaes Block Title for management purposes"
+                    },
+                    {
+                        "type": "text",
+                        "id": "quote_text",
+                        "label": "Quote Text"
+                    }, {
+                        "type": "text",
+                        "id": "name",
+                        "label": "Name"
+                    },
+                    {
+                        "type": "select",
+                        "id": "bg_shape",
+                        "label": "Background Shape",
+                        "options": [
+                            {
+                                "value": "buzz1",
+                                "label": "buzz1"
+                            }, {
+                                "value": "buzz2",
+                                "label": "buzz2"
+                            }, {
+                                "value": "shape1",
+                                "label": "shape1"
+                            }, {
+                                "value": "shape2",
+                                "label": "shape2"
+                            }, {
+                                "value": "shape3",
+                                "label": "shape3"
+                            }, {
+                                "value": "shape4",
+                                "label": "shape4"
+                            }, {
+                                "value": "shape5",
+                                "label": "shape5"
+                            }, {
+                                "value": "shape6",
+                                "label": "shape6"
+                            }, {
+                                "value": "shape7",
+                                "label": "shape7"
+                            }, {
+                                "value": "shape8",
+                                "label": "shape8"
+                            }, {
+                                "value": "shape9",
+                                "label": "shape9"
+                            }, {
+                                "value": "shape10",
+                                "label": "shape10"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "range",
+                        "id": "card_position",
+                        "min": 1,
+                        "max": 101,
+                        "step": 1,
+                        "default": 5,
+                        "label": "Display after product"
+                    }
+                ]
+            }, {
+                "type": "section_break",
+                "name": "Product Section",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title",
+                        "info": "Renmaes Block Title for management purposes"
+                    },
+                    {
+                        "type": "number",
+                        "id": "product_end",
+                        "label": "Featured Product"
+                    },
+                    {
+                        "type": "video",
+                        "id": "fetured_card_video",
+                        "label": "Featured Card Video"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Column Media"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "column_bg_image",
+                        "label": "Column Background Image"
+                    },
+                    {
+                        "type": "video",
+                        "id": "column_bg_video",
+                        "label": "Column Background Video"
+                    },
+                    {
+                        "type": "video",
+                        "id": "column_pip_video",
+                        "label": "Column PIP Video"
+                    },
+                    {
+                        "type": "product",
+                        "id": "column_pip_product",
+                        "label": "Column PIP Product"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "column_sticker_image",
+                        "label": "Sticker Image"
+                    }, {
+                        "type": "textarea",
+                        "id": "column_svg",
+                        "label": "Sticker SVG Code"
+                    }, {
+                        "type": "range",
+                        "id": "column_sticker_width",
+                        "label": "Sticker Width (%)",
+                        "info": "Applies to image only",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 100
+                    }, {
+                        "type": "range",
+                        "id": "column_sticker_width_mobile",
+                        "label": "Mobile Sticker Width (%)",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25
+                    }, {
+                        "type": "select",
+                        "id": "column_sticker_position",
+                        "label": "Sticker position",
+                        "options": [
+                            {
+                                "label": "default",
+                                "value": ""
+                            },
+                            {
+                                "label": "Top Left",
+                                "value": "tl"
+                            },
+                            {
+                                "label": "Top Right",
+                                "value": "tr"
+                            },
+                            {
+                                "label": "Bottom Left",
+                                "value": "bl"
+                            }, {
+                                "label": "Bottom right",
+                                "value": "br"
+                            }
+                        ],
+                        "default": ""
+                    }, {
+                        "type": "header",
+                        "content": "End of Section Banner"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "show_end_banner",
+                        "label": "Show Banner"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background_color",
+                        "label": "t:settings_schema.general.settings.background_color.label",
+                        "info": "t:settings_schema.general.settings.background_color.info",
+                        "default": "#FFFFFF"
+                    },
+                    {
+                        "type": "color",
+                        "id": "font_color",
+                        "label": "t:settings_schema.general.settings.font_color.label",
+                        "info": "t:settings_schema.general.settings.font_color.info",
+                        "default": "#1E1E1E"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "background_image",
+                        "label": "Background image"
+                    }, {
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Content"
+                    }, {
+                        "type": "select",
+                        "id": "section_padding",
+                        "label": "t:settings_schema.components.settings.section_padding.label",
+                        "info": "t:settings_schema.components.settings.section_padding.info",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": "t:settings_schema.general.settings.section_padding.none.label"
+                            },
+                            {
+                                "value": "ca",
+                                "label": "t:settings_schema.general.settings.section_padding.all.label"
+                            },
+                            {
+                                "value": "cx",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal.label"
+                            },
+                            {
+                                "value": "cx ct",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal_top.label"
+                            }, {
+                                "value": "cx cb",
+                                "label": "t:settings_schema.general.settings.section_padding.horizontal_bottom.label"
+                            }, {
+                                "value": "cy",
+                                "label": "t:settings_schema.general.settings.section_padding.vertical.label"
+                            }, {
+                                "value": "ct",
+                                "label": "t:settings_schema.general.settings.section_padding.top.label"
+                            }, {
+                                "value": "cb",
+                                "label": "t:settings_schema.general.settings.section_padding.bottom.label"
+                            }
+                        ],
+                        "default": "ca"
+                    }, {
+                        "type": "checkbox",
+                        "id": "section_padding_halved",
+                        "label": "t:settings_schema.components.settings.section_padding_halved.label",
+                        "info": "t:settings_schema.components.settings.section_padding_halved.info",
+                        "default": false
+                    }, {
+                        "type": "checkbox",
+                        "id": "section_padding_extra",
+                        "label": "t:settings_schema.components.settings.section_padding_extra.label",
+                        "info": "t:settings_schema.components.settings.section_padding_extra.info",
+                        "default": false
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Party"
+            }
+        ],
+        "templates": ["collection", "list-collections"]
+    }
+{% endschema %}

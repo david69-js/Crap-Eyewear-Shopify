@@ -1,0 +1,17 @@
+{% unless collection.metafields.c_f['Inline Review Text'] == blank %}
+<div class="main-collection-item u-center half inline-grid-review">
+  <article id="starburst-review" class="">
+    <div class="starburst-wrapper">
+      {% include 'zero-starburst' %}
+    </div>
+    <div class="wrapper">
+      <div class="review-stars" style="--text-color: #1f1f1f">
+        {% include 'zero-review-stars' %}
+      </div>
+      <h1>{{ collection.metafields.c_f['Inline Review Title'] }}</h1>
+      <p>{{ collection.metafields.c_f['Inline Review Text'] }}</p>
+      <p class="name">{{ collection.metafields.c_f['Inline Review Name'] }}</p>
+    </div>
+  </article>
+</div>
+{% endunless %}

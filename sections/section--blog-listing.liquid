@@ -1,0 +1,194 @@
+{% render 'module--blog-list'
+   , blog: blog,
+   blocks: section.blocks,
+   articleCount: section.settings.article_count %}
+
+{% schema %}
+    {
+        "name": "Blog Listing",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "article_count",
+                "min": 4,
+                "max": 40,
+                "step": 1,
+                "default": 12,
+                "label": "Article cards per page",
+                "info": "Add blocks to the section to add other kinds of cards."
+            }
+        ],
+        "blocks": [
+            {
+                "type": "blog_card",
+                "name": "Flex Card",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "Video"
+                    },
+                    {
+                        "type": "text",
+                        "id": "cta_text",
+                        "label": "Button Text",
+                        "default": "Button Text"
+                    },
+                    {
+                        "type": "url",
+                        "id": "cta_url",
+                        "label": "Button URL"
+                    }, {
+                        "type": "range",
+                        "id": "card_pos",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "default": 5,
+                        "label": "Card Postion"
+                    }, {
+                        "type": "range",
+                        "id": "card_width",
+                        "label": "Card Width (Columns)",
+                        "min": 1,
+                        "max": 3,
+                        "step": 1,
+                        "default": 1
+                    }
+                ]
+            }, {
+                "type": "review_card",
+                "name": "Review Card",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "script_text",
+                        "label": "Script Text",
+                        "default": "Review of the Month"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "review_text",
+                        "label": "Review Text",
+                        "default": "<h5>"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "sub_text",
+                        "label": "Sub Text",
+                        "default": "<p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "card_pos",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "default": 5,
+                        "label": "Card Postion"
+                    }, {
+                        "type": "range",
+                        "id": "card_width",
+                        "label": "Card Width (Columns)",
+                        "min": 1,
+                        "max": 3,
+                        "step": 1,
+                        "default": 1
+                    }
+                ]
+            }, {
+                "type": "blog_sticker",
+                "name": "Sticker",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image",
+                        "info": "Image"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "svg",
+                        "label": "SVG Code"
+                    },
+                    {
+                        "type": "text",
+                        "id": "alt",
+                        "label": "alt text",
+                        "info": "Text to describe the image"
+                    },
+                    {
+                        "type": "range",
+                        "id": "width",
+                        "label": "Sticker Width (%)",
+                        "info": "Applies to image only",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 100
+                    }, {
+                        "type": "range",
+                        "id": "width_mobile",
+                        "label": "Mobile Sticker Width (%)",
+                        "min": 5,
+                        "max": 100,
+                        "step": 1,
+                        "default": 25
+                    }, {
+                        "type": "select",
+                        "id": "position",
+                        "label": "Sticker position",
+                        "options": [
+                            {
+                                "label": "default",
+                                "value": ""
+                            },
+                            {
+                                "label": "Top Left",
+                                "value": "tl"
+                            },
+                            {
+                                "label": "Top Right",
+                                "value": "tr"
+                            },
+                            {
+                                "label": "Bottom Left",
+                                "value": "bl"
+                            }, {
+                                "label": "Bottom right",
+                                "value": "br"
+                            }
+                        ],
+                        "default": ""
+                    }, {
+                        "type": "checkbox",
+                        "id": "offset",
+                        "label": "Offset",
+                        "default": false
+                    }, {
+                        "type": "range",
+                        "id": "card_pos",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "default": 1,
+                        "label": "Card Postion",
+                        "info": "Only applies to blog posts. Will not apply to a Flex or Review Card."
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Blog Listing"
+            }
+        ],
+        "templates": ["blog"]
+    }
+{% endschema %}

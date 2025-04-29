@@ -1,0 +1,106 @@
+{%- comment %}
+/**
+ * @property {integer} index
+ * @property {integer} offset
+ * @property {string} type
+ * @property {object[]} data
+ * @property {string} data.nav_label
+ * @property {string} data.nav_url
+ * @property {string} data.nav_list
+ * @property {string} data.nav_columns
+ * @property {string} data.font_color
+ * @property {string} data.background_color
+ */
+
+TODO: Support 3rd level "grandchild" links
+TODO: navLabel - Icon support
+TODO: Fullscreen (Juvee global--navigation.liquid:95) / Dropdown nav drawer types
+{% endcomment -%}
+{%- liquid
+
+assign data = data | default: nil
+assign navTag = "div"
+assign navLabel = data.nav_label | default: "Label"
+assign type = type | default: "mega-menu"
+assign offset = offset | default: 0
+assign margin = margin | default: "mr"
+assign idx = index | default: nil
+
+if data.nav_url != blank and data.nav_list == blank
+	assign navTag = "a"
+endif
+
+if data.nav_label == blank and data.nav_list != blank
+	assign navLabel = data.nav_list.title
+endif
+
+if type == "mega-menu"
+	assign classString = "absolute h-0 invisible w-full flex items-end left-0 overflow-hidden"
+	assign innerClassString = "cx-1/2 cy-1/2 w-full"
+elsif type == "fullscreen"
+	assign classString = ""
+	assign innerClassString = ""
+elsif type == "dropdown"
+	assign classString = ""
+	assign innerClassString = ""
+endif
+
+-%}
+
+<nav role="navigation" aria-label="{{- navLabel }} Navigation" data-index="{{- idx -}}">
+	<{{- navTag -}} {%- if data.nav_url != blank %} href="{{- data.nav_url -}}" {%- endif %} class="{%- if data.nav_list != blank -%} has-dropdown {% endif -%} {{- margin -}}-8" tabindex="{%- if data.nav_url != blank or type == "dropdown" or type == "mega-menu" -%} 0 {%- else -%} -1 {%- endif -%}">
+		{{- navLabel -}}
+	</{{- navTag -}}>
+	{%- if data.nav_list != blank -%}
+		{%- comment %} --- Mega Menu --- {%- endcomment %}
+		{%- if type == "mega-menu" -%}
+			<div style="--offset: {{- offset -}}px;" class="menu top-[length:var(--offset)] {%- if classString != blank %} {{- classString -}} {%- endif -%}">
+				<ul class="{%- if innerClassString != blank -%} {{- innerClassString }} {%- endif -%} bg-[image:var(--background-color)] text-[color:var(--font-color)]" style="{%- if data.font_color != blank -%} --font-color: {{- data.font_color -}}; {%- endif -%} {%- if data.background_color != blank %} --background-color: {{- data.background_color -}}; {%- endif -%}">
+				{%- for link in data.nav_list.links -%}
+					{%- assign idx2 = forloop.index -%}
+					<li class="mb-2 last:mb-0" data-index="{{- idx2 -}}">
+						<a href="{{- link.url -}}" class="{%- if link.current -%} active {%- endif -%}" {%- if link.current == true %} aria-current="page" {%- endif -%}>
+							{{- link.title | capitalize | escape -}}
+						</a>
+						{%- if link.links.size > 0 -%}
+							<ul class="mt-2">
+							{%- for childlink in link.links -%}
+								<li class="mb-2 last:mb-0">
+									<a href="{{- childlink.url -}}" class="{%- if childlink.current -%} active {%- endif -%}" {%- if childlink.current == true %} aria-current="page" {%- endif -%}>
+										{{- childlink.title | capitalize | escape -}}
+									</a>
+									{%- comment %}
+									TODO: Third level links?
+									<ul>
+									{%- for grandChildlink in childlink.links -%}
+									<li>
+										<a href="{{ grandChildlink.url }}" class="{% if grandChildlink.current %}{% endif %}"{% if grandChildlink.current %} aria-current="page"{% endif %}>
+											{{ grandChildlink.title | escape }}
+										</a>
+									</li>
+									{%- endfor -%}
+									</ul>
+									{%- endcomment %}
+								</li>
+							{%- endfor -%}
+							</ul>
+						{%- endif -%}
+					</li>
+				{%- endfor -%}
+				</ul>
+			</div>
+		{%- comment %} --- Printed List --- {%- endcomment %}
+		{%- elsif type == "footer" -%}
+			<ul>
+				{%- for link in data.nav_list.links -%}
+					{%- assign idx2 = forloop.index -%}
+					<li class="mb-2 last:mb-0" data-index="{{- idx2 -}}">
+						<a href="{{- link.url -}}" class="{%- if link.current -%} active {%- endif -%}" {%- if link.current %} aria-current="page" {%- endif -%}>
+							{{- link.title | capitalize | escape -}}
+						</a>
+					</li>
+				{%- endfor -%}
+			</ul>
+		{%- endif -%}
+	{%- endif -%}
+</nav>

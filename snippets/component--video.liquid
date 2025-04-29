@@ -1,0 +1,27 @@
+{%- comment %}
+/** @typedef {object} json
+ * @property {object[]} data
+ * @property {string} data.source
+ * @property {string} data.content
+ * @property {number} data.mobile_width
+ * @property {number} data.desktop_width
+ * @property {string} data.justify
+ */
+// TODO: https://developers.google.com/search/docs/advanced/structured-data/video
+// TODO: Video object - https://shopify.dev/api/liquid/objects#video
+{% endcomment -%}
+{% liquid
+
+assign videoClasses = "w-x" | append: data.mobile_width | append: " dk:w-x" | append: data.desktop_width
+
+if data.content != blank
+	assign videoDesc = data.content
+endif
+
+%}
+<div class="flex flex-col {% if type == "one-column_richtext" %}cy-1/2{% endif %} items-{{ data.justify }}">
+	{% render "component--responsive-video", classes: videoClasses, data: data %}
+	{% if videoDesc != blank %}
+		<small class="{{ videoClasses }} mt-2">{{ videoDesc | replace: "<p>", "" | replace: "</p>", "" }}</small>
+	{% endif %}
+</div>

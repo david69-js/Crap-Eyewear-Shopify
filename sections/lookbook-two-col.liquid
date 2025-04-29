@@ -1,0 +1,222 @@
+{%- if section.settings.media_aspect_ratio == 'false' -%}
+    {%- assign aspect_lock = false -%}
+{%- else %}
+    {%- assign aspect_lock = true -%}
+{%- endif -%} 
+{%- assign aspect = 'unset' -%}
+{%- if aspect_lock -%}
+    {%- assign aspect = section.settings.media_aspect_ratio -%}
+{%- endif -%}
+
+
+{% capture column_widgets_0 %}
+{%- for item in section.blocks -%}
+    {%- if item.type == 'product_widget' and item.settings.col == '0' -%}
+        {% assign temp = item.settings.product.title | split: '-' %}
+        {% render "component--product-widget", product: item.settings.product, display_text: temp[0], hover_state: 'false', card_placement:'above' %}
+    {%- endif -%}
+{%- endfor -%}
+{% endcapture %}
+
+{% capture column_widgets_1 %}
+    {%- for item in section.blocks -%}
+        {%- if item.type == 'product_widget' and item.settings.col == '1' -%}
+            {% assign temp = item.settings.product.title | split: '-' %}
+            {% render "component--product-widget", product: item.settings.product, display_text: temp[0], hover_state: 'false', card_placement:'above' %}
+        {%- endif -%}
+    {%- endfor -%}
+{% endcapture %}
+
+
+{%- capture columns -%}
+    {% for item in section.blocks %}
+        {% if item.type == 'media_col' %}
+            <div class="basis-full dk:basis-[calc(var(--column-basis)-(var(--site-gutter)/2))] mx-auto">
+                {% if item.settings.video != nil %}
+                <div class="relative">
+                    <video class="w-full h-auto object-cover lazy aspect-[var(--media-aspect)]" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="{{item.settings.video.sources[1].url}}">
+                        <source src="{{item.settings.video.sources[1].url}}" type="video/mp4"></source>
+                    </video>
+                    <div class="absolute bottom-4 right-4 flex gap-2" style="z-index: 1;">
+                        {% if forloop.index0 == 0 and column_widgets_0 != '' %}
+                            {{ column_widgets_0  }}
+                        {% endif %}
+                        {% if forloop.index0 == 1 and column_widgets_1 != '' %}
+                            {{ column_widgets_1  }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="aspect-[var(--media-aspect)] relative">
+                    {%- render "component--responsive-image", image: item.settings.image, objectFit: aspect_lock -%}
+                    <div class="absolute bottom-4 right-4 flex gap-2" style="z-index: 1;">
+                        {% if forloop.index0 == 0 and column_widgets_0 != '' %}
+                            {{ column_widgets_0  }}
+                        {% endif %}
+                        {% if forloop.index0 == 1 and column_widgets_1 != '' %}
+                            {{ column_widgets_1  }}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+                {%- if item.settings.caption != '' -%}
+                    <div class="richtext mt-[10px]">
+                        {{ item.settings.caption }}
+                    </div>
+                {%- endif -%}
+            </div>
+        {% endif %}
+    {% endfor %}
+{%- endcapture -%}
+
+<div 
+    style="--column-basis: {{ section.settings.column_basis }}%; --media-aspect: {{ aspect }}; {{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} " 
+class="cx flex flex-wrap items-center gap-[var(--site-gutter)] {%if section.settings.margin_bottom == "--mb-m: 60px; --mb-d: 120px;" %} pb-[calc(40px+var(--mb-m))] {%else%} pb-[length:var(--mb-m)] {%endif%} dk:pb-[length:var(--mb-d)]"
+    data-animation="{{- section.settings.animation -}}"
+    >
+    {{ columns }}
+</div>
+{% schema %}
+{
+    "name": "Lookbook - Media Section",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "media_aspect_ratio",
+            "label": "Lock Aspect Ratio",
+            "info": "t:settings_schema.general.settings.aspect_ratio.info",
+            "options": [
+                {
+                    "value": "false",
+                    "label": "Original"
+                },
+                {
+                    "value": "1",
+                    "label": "1 / 1"
+                },
+                {
+                    "value": "4 / 3",
+                    "label": "4 / 3"
+                },
+                {
+                    "value": "3 / 4",
+                    "label": "3 / 4"
+                },
+                {
+                    "value": "1 / 2",
+                    "label": "1 / 2"
+                }
+            ],
+            "default": "false"
+        },
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        },
+        {
+            "type": "range",
+            "id": "column_basis",
+            "label": "Column Width",
+            "info": "Leave at 50% if you are using two images; increase if you are using just one.",
+            "min": 40,
+            "max": 90,
+            "step": 5,
+            "default": 50
+        },
+        {
+            "type": "select",
+            "id": "margin_bottom",
+            "label": "Bottom Margin",
+            "info": "Optional space at bottom of section",
+            "options": [
+                {
+                    "value": "--mb-m: 0px; --mb-d: 0px;",
+                    "label": "No margin"
+                },
+                {
+                    "value": "--mb-m: 30px; --mb-d: 60px;",
+                    "label": "Small Margin"
+                },
+                {
+                    "value": "--mb-m: 60px; --mb-d: 120px;",
+                    "label": "Large Margin"
+                }
+            ],
+            "default": "--mb-m: 0px; --mb-d: 0px;"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "media_col",
+            "name": "Media",
+            "limit": 2,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "video",
+                    "id": "video",
+                    "label": "Video"
+                },
+                {
+                    "type": "richtext",
+                    "id": "caption",
+                    "label": "Caption"
+                }
+            ]
+        },
+        {
+            "type": "product_widget",
+            "name": "Product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                },
+                {
+                    "type": "select",
+                    "id": "col",
+                    "label": "Tagged Column",
+                    "options": [
+                        {
+                            "label": "first",
+                            "value": "0"
+                        },
+                        {
+                            "label": "second",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Lookbook - Media Section"
+        }
+    ]
+}
+{% endschema %}

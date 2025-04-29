@@ -1,0 +1,184 @@
+{% include 'spurit_po2_section_snippet', product: null, products: collections[section.settings.collection].products %}
+<div class="hp-load-section product-carousel {% unless section.settings.remove_wrapper %}container{% endunless %}" style="padding:75px 0;">
+  {% if section.settings.title != blank %}
+    <div class="section-header {{ section.settings.text_align_heading }}">
+      <a href="/collections/{{ section.settings.collection }}"><h3 class="{{ section.settings.title_class }}">{{ section.settings.title | escape }}</h3></a>
+    </div>
+  {% endif %}
+  
+  {%- assign collection = collections[section.settings.collection] -%}
+
+  <div class="collection-grid">
+    <div class="grid--uniform carousel invert" id="pc-{{ section.id }}">
+      {% for product in collection.products limit:16 %}    
+        <div class="carousel-item text-center" {{ block.shopify_attributes }}>
+          {%- assign collection = collections[block.settings.collection] -%}
+          {% include 'product-grid-item', grid_image_width: '600x' %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% if section.settings.button_label != blank %}
+  <div class="text-center">
+          <a href="{{ section.settings.button_url }}" class="button {{ section.settings.button_class }}">
+            <span class="button-fix">{{ section.settings.button_label }}</span>
+          </a>
+  </div>
+  {% endif %}   
+</div>
+
+{% schema %}
+  {
+    "name": "Product carousel",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "remove_wrapper",
+        "label": "Remove Wrapper"
+      },
+      {
+        "type": "text",
+        "id": "title_class",
+        "label": "Heading Class",
+        "default": "h4",
+		"info": "h1, h2, h3, h4, h5 or h6"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured Products"
+      },
+      {
+        "type": "select",
+        "id": "text_align_heading",
+        "label": "Heading Alignment",
+        "options": [
+          	 {
+               "value": "text-center",
+               "label": "Center"
+          	  },
+          	  {
+               "value": "text-left",
+               "label": "Left"
+          	  },
+              {
+               "value": "text-right",
+               "label": "Right"
+          	  }
+        	]
+      },
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_price",
+        "label": "Hide Price"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_reviews",
+        "label": "Hide Reviews"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quick_add",
+        "label": "Show quick add"
+      },
+      {
+        "type": "text",
+        "id": "carousel_featured_products_num",
+        "label": "Number of products shown",
+        "default": "4"
+      },
+      {
+        "type": "text",
+        "id": "carousel_featured_products_num_1200",
+        "label": "Number of products shown 1200px",
+        "default": "4"
+      },
+      {
+        "type": "text",
+        "id": "carousel_featured_products_num_1024",
+        "label": "Number of products shown 1024px",
+        "default": "3"
+      },
+      {
+        "type": "text",
+        "id": "carousel_featured_products_num_768",
+        "label": "Number of products shown 768px",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "carousel_featured_products_num_480",
+        "label": "Number of products shown 480px",
+        "default": "1"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product carousel",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+$(document).ready(function(){
+  $('#pc-{{ section.id }}').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  adaptiveHeight: true,
+  arrows:true,  
+  slidesToShow: {{ section.settings.carousel_featured_products_num }},
+  slidesToScroll: {{ section.settings.carousel_featured_products_num }},
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: {{ section.settings.carousel_featured_products_num_1200 }},
+        slidesToScroll: {{ section.settings.carousel_featured_products_num_1200 }}
+      }
+    },    
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: {{ section.settings.carousel_featured_products_num_1024 }},
+        slidesToScroll: {{ section.settings.carousel_featured_products_num_1024 }}
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: {{ section.settings.carousel_featured_products_num_768 }},
+        slidesToScroll: {{ section.settings.carousel_featured_products_num_768 }}
+      }
+    },
+    {
+      breakpoint: 549,
+      settings: {
+        slidesToShow: {{ section.settings.carousel_featured_products_num_480 }},
+        slidesToScroll: {{ section.settings.carousel_featured_products_num_480 }}
+      }
+    }
+  ]
+});
+}); 
+</script>

@@ -1,0 +1,23 @@
+{%- comment %}
+        /**
+         * Global Header
+         *	- Will contain the wrap for Navigation
+         */
+{% endcomment -%}
+<header id="header-content" class="w-full hide-nav-on-scroll fixed top-0 z-30 flex flex-col">
+    {% section "global--pencil-bar" -%}
+    {% section "navigation" -%}
+    {% section "endpoint--predictive-search" -%}
+</header>
+
+{%- if settings.mini_cart_enabled == true -%}
+
+    {%- capture slottedEl -%}
+        {%- section "section--cart-items" -%}
+    {%- endcapture -%}
+
+    {% render "slot--minicart" 
+       , slot: slottedEl,
+       drawerId: "cart-drawer"
+       triggerId: "cart-trigger" %}
+{%- endif -%}

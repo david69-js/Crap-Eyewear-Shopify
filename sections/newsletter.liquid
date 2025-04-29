@@ -1,0 +1,155 @@
+{% unless section.settings.hide %}
+<style>   
+      .index-section--newsletter .section-header h2, .index-section--newsletter .section-header p  {
+        color:{{ section.settings.newsletter_color }};
+      }  
+    .newsletter-home .button {background:{{ section.settings.button_bg_color }};}
+    .newsletter-home .button:hover {background:{{ section.settings.button_hover_bg_color }};border-color:{{ section.settings.button_hover_border_color }};}
+    .newsletter__submit-text--large {color:{{ section.settings.button_color }};}
+    .newsletter-home .button:hover .newsletter__submit-text--large {color:{{ section.settings.button_hover_color }};}
+  </style>
+<div style="background-color: {{ section.settings.bg_color }};padding:70px 0 120px;">
+{% if customer.accepts_marketing %}  
+<div class="tell-ur-friends newsletter-home container">  
+  <div class="holder">
+  <div class="section-header text-center">  
+  	<h2>{{ section.settings.title_refer }}</h2>
+  	<p>{{ section.settings.subtitle_refer }}</p>
+  	<a href="/pages/refer-a-friend"><div class="button" style="background-color:{{ section.settings.button_bg_color }};color:{{ section.settings.button_color }};">Refer a friend</div></a>
+  </div>
+  </div>
+</div>
+{% else %}  
+<div class="newsletter-home container">
+  <div class="holder">
+  <div class="section-header text-center">
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="success-hide">{{ section.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+  <p class="form--success text-center" style="display:none;color:#fff;margin-bottom:0;">Welcome to the fam 💥</p>
+  {% form 'customer' %}
+    {% if form.posted_successfully? %}
+      <p class="form--success text-center" style="display:none;color:#fff;margin-bottom:0;">Welcome to the fam 💥</p>
+    {% endif %} 
+    
+        {{ form.errors | default_errors }}
+    
+       <div class="input-group password__input-group success-hide">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label style="display:none;" for="Email">Email</label> 
+        <input type="email" name="contact[email]" id="Email" class="input-group__field newsletter__input" value="{% if customer %}{{ customer.email }}{% endif %}"
+          placeholder="Ur email here :)" autocorrect="off" autocapitalize="off">
+        <span class="input-group__btn">
+          <button type="submit" class="button newsletter__submit" name="commit">
+            <span class="newsletter__submit-text--large"><span class="button-fix">{{ section.settings.button_text }}</span></span>
+          </button>
+        </span>
+      </div>
+  {% endform %}
+  </div>
+</div>
+{% endif %}  
+</div>
+<script>
+$(document).ready(function () {
+  var url = window.location.href;
+  if (url.indexOf('newsletter&form_type=customer#contact_form') > -1) {
+   $('.form--success').show(); 
+   $('.success-hide').hide(); 
+  };
+});    
+</script>
+{% endunless %}
+{% schema %}
+  {
+    "name": "Newsletter",
+    "class": "index-section index-section--newsletter",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtext",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      },
+      {
+        "id": "button_color",
+        "type": "color",
+        "label": "Button color"
+      },
+      {
+        "id": "button_bg_color",
+        "type": "color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_border_color",
+        "label": "Button hover border color",
+		"default": "#000"
+      },
+      {
+        "id": "button_hover_color",
+        "type": "color",
+        "label": "Button hover text color",
+		"default": "#000"
+      },
+      {
+        "id": "button_hover_bg_color",
+        "type": "color",
+        "label": "Button hover background color",
+		"default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "newsletter_color",
+        "label": "Text Color",
+        "default": "#000"
+      },
+      {
+        "id": "bg_color",
+        "type": "color",
+        "label": "Background color"
+      },
+      {
+        "type": "header",
+        "content": "Refer a Friend"
+      },
+      {
+        "type": "text",
+        "id": "title_refer",
+        "label": "Referr a Friend Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subtitle_refer",
+        "label": "Refer a Friend Subtext",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter signup",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,114 @@
+{% capture cards %}
+    {% for block in section.blocks %}
+
+        <div class="w-[calc(50%-(var(--grid-gutter-x)/2))]">
+            {% if block.settings.href %}
+                <a href="{{ block.settings.href }}">
+                {% endif %}
+                <div class="h-0 pb-[125%] relative">
+                    {% render "component--responsive-image", image: block.settings.image, objectFit: true %}
+                </div>
+                <p class="h1 richtext mt-2 md:mt-4 text-[20px] md:text-[80px]">
+                    <strong>{{ block.settings.fam_name }}</strong>
+                </p>
+                <p class="richtext font-script mt-2 md:mb-4 md:text-[32px]">{{ block.settings.fam_role }}</p>
+                {% if block.settings.href != empty %}
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endcapture %}
+
+<div class="w-full pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] px-[var(--grid-gutter-x)]" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} color: {{ section.settings.font_color }}; background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}" data-animation="{{- section.settings.animation -}}">
+    <div class="flex gap-[var(--grid-gutter-x)] flex-wrap w-full">
+        {{ cards }}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Two Col Grid",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }, {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            }, {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "card",
+                "name": "Card",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image of person"
+                    }, {
+                        "type": "url",
+                        "id": "href",
+                        "label": "Optional link"
+                    }, {
+                        "type": "text",
+                        "id": "fam_name",
+                        "label": "Name of person"
+                    }, {
+                        "type": "text",
+                        "id": "fam_role",
+                        "label": "What the person does"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Two Col Grid"
+            }
+        ]
+    }
+{% endschema %}

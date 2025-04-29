@@ -1,0 +1,33 @@
+{%- comment %}
+/**
+ * Modal
+ * @typedef {object} json
+ * @property {object[]} data  section.settings
+ * @property {string} data.animation
+ * @property {boolean} data.autoplay
+ * @property {boolean} data.centered
+ * @property {number} data.timing
+ * @property {boolean} data.loops
+ *
+ */
+{% endcomment -%}
+{%- liquid
+
+assign external = external | default: ""
+assign slotTrigger = slotTrigger | default: "<button class='js-trigger'>Open Modal</button>"
+
+-%}
+<modal-overlay {%- if external != blank %} data-external-trigger="{{- external -}}" {%- endif -%}>
+	{%- if external == blank %}
+		<div class="modal-trigger">
+			{{- slotTrigger -}}
+		</div>
+	{%- endif -%}
+	<div class="modal-wrapper">
+		<div class="modal-bg h-full w-full bg-[color:var(--overlay-bg)] opacity-[var(--overlay-opacity)] pointer-events-auto"></div>
+		<div class="absolute ca-1/2 max-w-[calc(100%_-_(var(--grid-gutter-x)_*_2))] bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform pointer-events-auto">
+			<div class="js-close" aria-label="Close Modal">{%- render "output--icon", icon: "close" -%}</div>
+			{{- slot -}}
+		</div>
+	</div>
+</modal-overlay>

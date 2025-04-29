@@ -1,0 +1,503 @@
+{%- liquid
+
+	assign type = section.settings.form_types | default: "customer_login"
+	
+	capture currentUrl
+		render "output--full-url"
+	endcapture
+	
+	assign fadeClass = ""
+	
+	if section.settings.animation == "StaggerFade"
+		assign fadeClass = "js-stagger"
+	endif
+	
+	assign section_padding_class = section.settings.section_padding
+	
+	if section.settings.section_padding_halved == true
+		assign section_padding_class = section.settings.section_padding | append: "-1/2"
+	endif
+	
+	-%}
+
+{%- capture media -%}
+    <div class="w-full h-full absolute top-0 left-0 {{ fadeClass -}}">
+        {%- unless video != blank -%}
+            {%- render "component--responsive-image", image: section.settings.image, objectFit: true, placeholder: true -%}
+        {%- else -%}
+            {%- render "component--responsive-video", video: section.settings.video -%}
+        {%- endunless -%}
+    </div>
+{%- endcapture -%}
+
+<div class="bg-[image:var(--background-image)] w-full flex relative p-0 {%- if section_padding_class != blank %} {{ section_padding_class }} {%- endif %}" style="--background-image: {{- section.settings.background_gradient }};" data-trigger="observe">
+    <div class="w-full h-full flex flex-grow relative mt-20 lg:pt-24 mb-10 {%- if section.settings.card_alignment == "left" %} justify-start {%- elsif section.settings.card_alignment == "center" %} justify-center {%- else -%} justify-end {%- endif %}">
+        {%- if section.settings.image != blank or section.settings.video != blank -%}
+            {{- media -}}
+        {%- endif -%}
+        <div class="cy-1/2 cx-1/2 box-content w-full max-w-[588px] shopify-form relative z-1">
+            <div class="mt-5 ca-1/2 box-border rounded-[length:var(--btn-border-radius)] {{ fadeClass -}}" style="--card-background-color: {{- section.settings.card_background_color -}}; --font-color: {{- section.settings.font_color -}}">
+                <div class="mb-4">
+                    {%- if section.settings.form_title != blank -%}
+                        <div id="hide-login-title">
+                            {%- render "component--text", tag: "h1", classes: "h2", content: section.settings.form_title, align: section.settings.alignment, anim_class: fadeClass -%}
+                        </div>
+                        <div id="hide-recover_title" class="hidden w-full">
+                            {%- render "component--text", tag: "h1", classes: "h2", content: section.settings.reset_title, align: section.settings.alignment, anim_class: fadeClass -%}
+                        </div>
+                    {%- else -%}
+                        {%- assign text = type | replace: "_", " " | capitalize -%}
+                        {%- render "component--text", tag: "h1", classes: "h2", content: text, align: section.settings.alignment, anim_class: fadeClass -%}
+                    {%- endif -%}
+                    {%- if section.settings.form_description != blank -%}
+                        {%- render "component--richtext", content: section.settings.form_description, align: section.settings.alignment, anim_class: fadeClass -%}
+                    {%- endif -%}
+                </div>
+                <account-form data-type="{{- type -}}" data-current-url="{{- currentUrl -}}" class="bg-black">
+                    {%- if fadeClass != blank -%}
+                        <div class="{{- fadeClass -}}">
+                        {%- endif -%}
+                        {%- case type -%}
+                            {%- when "create_customer" -%}
+
+                            {%- form "create_customer", novalidate: "novalidate" -%}
+                                <div class="flex flex-col items-center w-full">
+                                    {%- comment -%} --- Errors --- {%- endcomment -%}
+                                    {%- if form.errors -%}
+                                        {%- assign msg = "templates.contact.form.error_heading" | t -%}
+                                        {%- render "molecule--form-message", form: form, message: msg -%}
+                                    {%- endif -%}
+                                    {%- comment -%} --- First Name --- {%- endcomment -%}
+                                    {%- assign first_name_label = section.settings.name_label -%}
+                                    <div class="w-full max-w-[439px]">
+                                        {%- render "component--input-field", form: form, defaultValue: form.first_name, type: "text", name: "customer[first_name]", label: first_name_label, required: true -%}
+                                    </div>
+                                    {%- comment -%} --- Email --- {%- endcomment -%}
+                                    {%- assign email_label = section.settings.email_label -%}
+                                    {%- if form.errors contains "email" -%}
+                                        {%- assign emailErr = form.errors.translated_fields["email"] | capitalize | append: " " | append: form.errors.messages["email"] -%}
+                                    {%- endif -%}
+                                    <div class="w-full max-w-[439px]">
+                                        {%- render "component--input-field", form: form, defaultValue: form.email, type: "email", name: "customer[email]", label: email_label, required: true, error: emailErr -%}
+                                    </div>
+                                    {%- comment -%} --- Password --- {%- endcomment -%}
+                                    {%- assign password_label = section.settings.password_label -%}
+                                    {%- if form.errors contains "password" -%}
+                                        {%- assign passwordErr = form.errors.translated_fields["password"] | capitalize | append: " " | append: form.errors.messages["password"] -%}
+                                    {%- endif -%}
+                                    <div class="w-full max-w-[439px]">
+                                        {%- render "component--input-field", form: form, type: "password", name: "customer[password]", label: password_label, required: true, error: passwordErr -%}
+                                    </div>
+                                    {%- comment -%} --- Confirm Password --- {%- endcomment -%}
+                                    {%- assign password_label = section.settings.confirm_password_label -%}
+                                    {%- if form.errors contains "password_confirmation" -%}
+                                        {%- assign passwordErr = form.errors.translated_fields["password_confirmation"] | capitalize | append: " " | append: form.errors.messages["password_confirmation"] -%}
+                                    {%- endif -%}
+                                    <div class="w-full max-w-[439px]">
+                                        {%- render "component--input-field", form: form, type: "confirm_password", name: "customer[password_confirmation]", label: password_label, required: true, error: passwordErr -%}
+                                    </div>
+                                    {%- comment -%} --- Buttons --- {%- endcomment -%}
+                                    {%- assign btnText = section.settings.button_create_account -%}
+                                        <div class=" max-w-[439px] w-full">
+                                        {%- comment -%}{%- render "component--button", classes: "btn", type: "submit", label: btnText -%}{%- endcomment -%}
+                                        <button class="btn btn-primary w-full max-w-none max-h-[49px] !mt-0 !cursor-pointer" type="submit">{{ btnText }}</button>
+                                    </div>
+                                    <ul class="{%- if section.settings.alignment == "center" -%} text-center {%- elsif section.settings.alignment == "right" -%} text-right {%- else -%} text-left {%- endif -%}">
+                                        <li class="mt-5 no-js-hidden">
+                                            <a href="/account/login" class="font-bold underline text-xs !cursor-pointer">
+                                                Already have an account? Login here
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="{%- if section.settings.alignment == "center" -%} text-center {%- elsif section.settings.alignment == "right" -%} text-right {%- else -%} text-left {%- endif -%}">
+                                        <li class="mt-5 no-js-hidden">
+                                            <a href="{{ section.settings.url_to_login }}" class="font-bold underline text-xs" id="hide-to-login">
+                                                {{- section.settings.account_created -}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {%- endform -%}
+
+                            {%- when "activate_customer_password" -%}
+
+                                {%- form "activate_customer_password" -%}
+                                    <div class="w-full items-center flex flex-col">
+                                        <div class="error">{{ form.errors | default_errors }}</div>
+                                        <div class="w-full max-w-[439px]">
+                                            <div class="input-field !mb-5">
+                                                <label class="text-xs mb-1" class="label" for="password">Password</label>
+                                                <input class="!rounded-none max-w-[439px] min-h-[49px]" type="password" value="" name="customer[password]" id="customer_password" class="field" />
+                                            </div>
+                                        </div>
+                                        <div class="w-full max-w-[439px]">
+                                            <div class="input-field !mb-5">
+                                                <label class="text-xs mb-1" class="label" for="password_confirmation">Password Confirmation</label>
+                                                <input class="!rounded-none max-w-[439px] min-h-[49px]" type="password" value="" name="customer[password_confirmation]" id="customer_password_confirmation" class="field" />
+                                            </div>
+                                        </div>
+                                        <div class="w-full flex flex-col items-center gap-4">
+                                            <div class="w-full max-w-[439px]">
+                                                <input class="max-h-[49px] btn btn-primary w-full text-[15px] max-w-none !mt-0 !cursor-pointer mb-5" type="submit" value="Activate Account" />
+                                                <span class="flex flex-row gap-2 max-h-[49px] btn btn-submit w-full text-[15px] max-w-none !cursor-pointer">&nbsp; or <a href="/">Decline Invitation</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {%- endform -%}
+
+                            {%- when "reset_customer_password" -%}
+
+                                {%- form "reset_customer_password" -%}
+                                {%- comment -%} --- Errors --- {%- endcomment -%}
+                                {%- if form.errors -%}
+                                    {%- assign msg = "templates.contact.form.error_heading" | t -%}
+                                    {%- render "molecule--form-message", form: form, message: msg -%}
+                                {%- endif -%}
+                                {%- comment -%} --- Password --- {%- endcomment -%}
+                                {%- assign password_label = "customer.reset_password.password" | t -%}
+                                {%- if form.errors contains "password" -%}
+                                    {%- assign passwordErr = form.errors.translated_fields["password"] | capitalize | append: " " | append: form.errors.messages["password"] -%}
+                                {%- endif -%}
+                                {%- render "component--input-field", form: form, type: "password", name: "customer[password]", label: password_label, required: true, error: passwordErr -%}
+                                {%- comment -%} --- Confirm Password --- {%- endcomment -%}
+                                {%- assign password_label = "customer.reset_password.password_confirm" | t -%}
+                                {%- if form.errors contains "password_confirmation" -%}
+                                    {%- assign passwordErr = form.errors.translated_fields["password_confirmation"] | capitalize | append: " " | append: form.errors.messages["password_confirmation"] -%}
+                                {%- endif -%}
+                                {%- render "component--input-field", form: form, type: "confirm_password", name: "customer[password_confirmation]", label: password_label, required: true, error: passwordErr -%}
+                                {%- comment -%} --- Buttons --- {%- endcomment -%}
+                                {%- assign btnText = "customer.reset_password.submit" | t -%}
+                                {%- render "component--button", classes: "btn", type: "submit", label: btnText -%}
+
+                            {%- endform -%}
+
+                            {%- when "customer_login" -%}
+
+                            {%- comment -%} --- Recover Form --- {%- endcomment -%}
+                            {%- if template.name == "login" -%}
+                                <div id="hide-recover" class="hidden">
+                                    <div id="recover" class="js-tab ">
+                                        {%- form "recover_customer_password" -%}
+                                            <div class="mb-10">
+                                                {%- assign subtext = "customer.recover_password.subtext" | t -%}
+                                                {%- render "component--richtext", content: subtext, align: section.settings.alignment -%}
+                                            </div>
+                                            <div class="flex flex-col items-center">
+                                                {%- comment -%} --- Errors --- {%- endcomment -%}
+                                                {%- assign success = form.posted_successfully? -%}
+                                                {%- assign aria = section.id | append: "_" | append: type -%}
+                                                {%- if form.errors -%}
+                                                    {%- assign msg = "templates.contact.form.error_heading" | t -%}
+                                                    {%- render "molecule--form-message", form: form, message: msg, id: aria -%}
+                                                {%- endif -%}
+                                                {%- if success == true -%}
+                                                    {%- assign msg = "customer.recover_password.success" | t -%}
+                                                    {%- render "molecule--form-message", form: form, message: msg, success: true -%}
+                                                {%- endif -%}
+                                                {%- comment -%} --- Email --- {%- endcomment -%}
+                                                {%- assign email_label = section.settings.email_label -%}
+                                                <div class="w-full max-w-[439px]">
+                                                    {%- render "component--input-field", form: form, type: "email", name: "email", label: email_label, required: true, described: aria -%}
+                                                </div>
+                                                {%- comment -%} --- Buttons --- {%- endcomment -%}
+                                                {%- assign btnText = "customer.login_page.submit" | t -%}
+                                                <div class="max-w-[439px] w-full max-h-[49px]">
+                                                    {%- render "component--button", classes: "btn !cursor-pointer", type: "submit", label: btnText -%}
+                                                </div>
+                                                <ul class="{%- if section.settings.alignment == "center" -%} text-center {%- elsif section.settings.alignment == "right" -%} text-right {%- else -%} text-left {%- endif -%}">
+                                                    <li class="mt-5 no-js-hidden">
+                                                        <a class="font-bold underline text-xs !cursor-pointer" id="hide-to-login">
+                                                            {{- "customer.login_page.cancel" | t -}}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        {%- endform -%}
+                                    </div>
+                                </div>
+                            {%- endif -%}
+
+                            {%- comment -%} --- Login Form --- {%- endcomment -%}
+                            <div id="hide-login">
+                                <div id="{%- if template.name == "login" -%} login" class="js-tab {%- else -%} {{- section.id | append: "_login" -}} {%- endif -%}">
+                                    {%- form "customer_login", novalidate: "novalidate" -%}
+                                        <div class="flex flex-col items-center">
+                                            {%- comment -%} --- Errors --- {%- endcomment -%}
+                                            {%- if form.errors -%}
+                                                {%- assign msg = "templates.contact.form.error_heading" | t -%}
+                                                {%- render "molecule--form-message", form: form, message: msg -%}
+                                            {%- endif -%}
+                                            {%- comment -%} --- Email --- {%- endcomment -%}
+                                            {%- assign email_label = section.settings.email_label -%}
+                                            {%- if form.errors contains "email" -%}
+                                                {%- assign emailErr = form.errors.translated_fields["email"] | capitalize | append: " " | append: form.errors.messages["email"] -%}
+                                            {%- endif -%}
+                                            <div class="w-full max-w-[439px]">
+                                                {%- render "component--input-field", form: form, type: "email", name: "customer[email]", label: email_label, required: true, error: emailErr -%}
+                                            </div>
+                                            {%- comment -%} --- Password --- {%- endcomment -%}
+                                            {%- if form.password_needed -%}
+                                                {%- assign password_label = section.settings.password_label -%}
+                                                {%- if form.errors contains "password" -%}
+                                                    {%- assign passwordErr = form.errors.translated_fields["password"] | capitalize | append: " " | append: form.errors.messages["password"] -%}
+                                                {%- endif -%}
+                                                <div class="w-full text-xs max-w-[439px]">
+                                                    {%- render "component--input-field", form: form, type: "password", name: "customer[password]", label: password_label, required: true, error: passwordErr -%}
+                                                </div>
+                                            {%- endif -%}
+                                            {%- comment -%} --- Buttons --- {%- endcomment -%}
+                                            {%- assign btnText = section.settings.button_signIn -%}
+                                            {%- assign btnTextCreate = section.settings.button_create_account -%}
+                                            <div class="w-full flex flex-col items-center gap-4">
+                                                <div class="w-full max-w-[439px]">
+                                                    {% comment %}{%- render "component--button", classes: "btn", type: "submit", label: btnText -%}{% endcomment %}
+                                                    <button class="max-h-[49px] btn btn-primary w-full text-[15px] max-w-none !mt-0 !cursor-pointer mb-5" type="submit">{{ btnText }}</button>
+                                                    <a href="{{- routes.account_register_url -}}" class="max-h-[49px] btn btn-submit w-full text-[15px] max-w-none !cursor-pointer">
+                                                        {{ btnTextCreate }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <ul class="{%- if section.settings.alignment == "center" -%} text-center {%- elsif section.settings.alignment == "right" -%} text-right {%- else -%} text-left {%- endif -%}">
+                                                <li class="mt-5 no-js-hidden">
+                                                    <a id="recover-password" class="font-bold underline text-xs !cursor-pointer">
+                                                        {{- "customer.login_page.forgot_password" | t -}}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    {%- endform -%}
+                                </div>
+                            </div>
+
+                            {%- if shop.checkout.guest_login -%}
+                                <div class="">
+                                    <h2>{{- "customer.login_page.guest_title" | t -}}</h2>
+                                    {%- form "guest_login" -%}
+                                        {%- assign btnText = "customer.login_page.guest_continue" | t -%}
+                                        {%- render "component--button", classes: "btn", type: "submit", label: btnText -%}
+                                    {%- endform -%}
+                                </div>
+                            {%- endif -%}
+                        {%- endcase -%}
+                        {%- if fadeClass != blank -%}
+                        </div>
+                    {%- endif -%}
+                </account-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Customer Form",
+        "settings": [
+            {
+                "type": "select",
+                "id": "form_types",
+                "label": "t:settings_schema.general.settings.form_types.label",
+                "info": "t:settings_schema.general.settings.form_types.info",
+                "options": [
+                    {
+                        "value": "customer_login",
+                        "label": "t:settings_schema.general.settings.form_types.customer_login.label"
+                    },
+                    {
+                        "value": "create_customer",
+                        "label": "t:settings_schema.general.settings.form_types.create_customer.label"
+                    },
+                    {
+                        "value": "activate_customer_password",
+                        "label": "t:settings_schema.general.settings.form_types.activate_customer_password.label"
+                    },
+                    {
+                        "value": "reset_customer_password",
+                        "label": "t:settings_schema.general.settings.form_types.reset_customer_password.label"
+                    }, {
+                        "value": "edit",
+                        "label": "t:settings_schema.general.settings.form_types.edit.label"
+                    }
+                ],
+                "default": "customer_login"
+            },
+            {
+                "type": "text",
+                "id": "form_title",
+                "label": "t:settings_schema.general.settings.form_title.label",
+                "info": "t:settings_schema.general.settings.form_title.info"
+            },
+            {
+                "type": "richtext",
+                "id": "reset_title",
+                "label": "Reset Password Title",
+                "info": "t:settings_schema.general.settings.form_title.info"
+            },
+            {
+                "type": "richtext",
+                "id": "form_description",
+                "label": "t:settings_schema.general.settings.form_description.label",
+                "info": "t:settings_schema.general.settings.form_description.info"
+            }, {
+                "type": "color_background",
+                "id": "background_gradient",
+                "label": "t:settings_schema.general.settings.background_gradient.label",
+                "info": "t:settings_schema.general.settings.background_gradient.info",
+                "default": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)"
+            }, {
+                "type": "select",
+                "id": "alignment",
+                "label": "t:settings_schema.general.settings.alignment.label",
+                "info": "t:settings_schema.general.settings.alignment.info",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "t:settings_schema.general.settings.alignment.left.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.alignment.center.label"
+                    }, {
+                        "value": "right",
+                        "label": "t:settings_schema.general.settings.alignment.right.label"
+                    }
+                ],
+                "default": "left"
+            }, {
+                "type": "select",
+                "id": "card_alignment",
+                "label": "t:settings_schema.general.settings.card_alignment.label",
+                "info": "t:settings_schema.general.settings.card_alignment.info",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "t:settings_schema.general.settings.alignment.left.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.alignment.center.label"
+                    }, {
+                        "value": "right",
+                        "label": "t:settings_schema.general.settings.alignment.right.label"
+                    }
+                ],
+                "default": "left"
+            }, {
+                "type": "color",
+                "id": "card_background_color",
+                "label": "t:settings_schema.general.settings.card_background_color.label",
+                "info": "t:settings_schema.general.settings.card_background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            }, {
+                "type": "image_picker",
+                "id": "image",
+                "label": "t:settings_schema.general.settings.image.label",
+                "info": "t:settings_schema.general.settings.image.info"
+            }, {
+                "type": "video",
+                "id": "video",
+                "label": "t:settings_schema.general.settings.video.label",
+                "info": "t:settings_schema.general.settings.video.info"
+            }, {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "section_padding",
+                "label": "t:settings_schema.components.settings.section_padding.label",
+                "info": "t:settings_schema.components.settings.section_padding.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.general.settings.section_padding.none.label"
+                    },
+                    {
+                        "value": "ca",
+                        "label": "t:settings_schema.general.settings.section_padding.all.label"
+                    },
+                    {
+                        "value": "cx",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal.label"
+                    },
+                    {
+                        "value": "cx ct",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal_top.label"
+                    }, {
+                        "value": "cx cb",
+                        "label": "t:settings_schema.general.settings.section_padding.horizontal_bottom.label"
+                    }, {
+                        "value": "cy",
+                        "label": "t:settings_schema.general.settings.section_padding.vertical.label"
+                    }, {
+                        "value": "ct",
+                        "label": "t:settings_schema.general.settings.section_padding.top.label"
+                    }, {
+                        "value": "cb",
+                        "label": "t:settings_schema.general.settings.section_padding.bottom.label"
+                    }
+                ],
+                "default": "ca"
+            }, {
+                "type": "checkbox",
+                "id": "section_padding_halved",
+                "label": "t:settings_schema.components.settings.section_padding_halved.label",
+                "info": "t:settings_schema.components.settings.section_padding_halved.info",
+                "default": false
+            }, {
+                "type": "text",
+                "id": "email_label",
+                "label": "Email Title",
+                "default": "Ur email"
+            }, {
+                "type": "text",
+                "id": "password_label",
+                "label": "Password Title",
+                "default": "Ur password"
+            }, {
+                "type": "text",
+                "id": "confirm_password_label",
+                "label": "Confirm Password Title",
+                "default": "Confirm password"
+            }, {
+                "type": "text",
+                "id": "name_label",
+                "label": "Name Title",
+                "default": "Ur name"
+            }, {
+                "type": "text",
+                "id": "button_signIn",
+                "label": "Sign In Button",
+                "default": "Sign In"
+            }, {
+                "type": "text",
+                "id": "button_create_account",
+                "label": "Create account Button",
+                "default": "Create Account"
+            }
+        ],
+        "blocks": [],
+        "presets": [
+            {
+                "name": "Customer Form"
+            }
+        ]
+    }
+{% endschema %}

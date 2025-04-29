@@ -1,0 +1,117 @@
+{% assign display_text = display_text | default: 'View Product' %}
+{% assign hover_state = hover_state | default: 'true' %}
+{% assign card_placement = card_placement | default: 'above' %}
+
+<div>
+    {% comment %} <button data-widget="btn" class="widget-btn relative flex items-center mb-2 w-auto bg-white border-black border hover:bg-faded-lime transition-colors ease-in-out duration-300">
+        <div data-widget="_placeholder" class="w-[30px] h-[30px]"></div>
+        <svg data-widget="svg" class="absolute top-0 bottom-0" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path data-widget="plus" d="M15.1193 20C14.9867 20 14.8608 19.9934 14.7416 19.9802C14.609 19.967 14.5162 19.9208 14.4632 19.8416C14.3837 19.736 14.3439 19.5974 14.3439 19.4257C14.3439 19.2541 14.3439 19.0759 14.3439 18.8911L14.3439 16.8317C14.3439 16.6601 14.3439 16.4818 14.3439 16.297C14.3439 16.1254 14.3108 15.9868 14.2445 15.8812C14.165 15.7624 14.0391 15.6964 13.8668 15.6832C13.6945 15.67 13.5156 15.6634 13.33 15.6634L11.1233 15.6634C10.9112 15.6634 10.7058 15.6568 10.507 15.6436C10.3082 15.6436 10.169 15.5776 10.0895 15.4455C10.0497 15.3927 10.0232 15.3135 10.0099 15.2079C9.99669 15.1155 9.99669 15.0165 10.0099 14.9109C10.0232 14.8185 10.0431 14.7261 10.0696 14.6337C10.0961 14.5545 10.1292 14.5016 10.169 14.4752C10.275 14.396 10.4142 14.3564 10.5865 14.3564C10.7588 14.3564 10.9377 14.3564 11.1233 14.3564L13.2107 14.3564C13.3963 14.3564 13.5951 14.3498 13.8072 14.3366C14.006 14.3366 14.1451 14.2838 14.2247 14.1782C14.3042 14.0726 14.3439 13.9274 14.3439 13.7426C14.3439 13.5578 14.3439 13.3729 14.3439 13.1881L14.3439 11.1089C14.3439 10.9373 14.3439 10.7657 14.3439 10.5941C14.3439 10.4224 14.3837 10.2838 14.4632 10.1782C14.503 10.1122 14.5626 10.0726 14.6421 10.0594C14.7084 10.0594 14.7879 10.0462 14.8807 10.0198C14.9072 10.0066 14.947 10 15 10C15.053 10.0132 15.0928 10.0198 15.1193 10.0198C15.2121 10.0462 15.285 10.0594 15.338 10.0594C15.3777 10.0594 15.4307 10.0858 15.497 10.1386C15.603 10.2046 15.6561 10.3366 15.6561 10.5347C15.6561 10.7459 15.6561 10.9439 15.6561 11.1287L15.6561 13.2079C15.6561 13.3927 15.6627 13.571 15.6759 13.7426C15.6759 13.9274 15.7091 14.0726 15.7753 14.1782C15.8681 14.2838 16.0139 14.3366 16.2127 14.3366C16.3983 14.3498 16.5838 14.3564 16.7694 14.3564L18.996 14.3564C19.1948 14.3564 19.3804 14.363 19.5527 14.3762C19.725 14.3894 19.8443 14.4554 19.9105 14.5743C19.9503 14.6271 19.9768 14.6997 19.9901 14.7921C20.0033 14.8977 20.0033 14.9967 19.9901 15.0891C19.9768 15.1947 19.9569 15.2871 19.9304 15.3663C19.9039 15.4587 19.8708 15.5182 19.831 15.5446C19.725 15.6238 19.5858 15.6634 19.4135 15.6634C19.2412 15.6634 19.0623 15.6634 18.8767 15.6634L16.7893 15.6634C16.6037 15.6634 16.4115 15.6634 16.2127 15.6634C16.0139 15.6766 15.8681 15.736 15.7753 15.8416C15.6958 15.9472 15.6561 16.099 15.6561 16.297C15.6561 16.5083 15.6561 16.7063 15.6561 16.8911L15.6561 18.8119C15.6561 18.9571 15.6627 19.1155 15.6759 19.2871C15.6759 19.4719 15.6561 19.6172 15.6163 19.7228C15.55 19.8548 15.4506 19.9406 15.3181 19.9802C15.2386 19.9802 15.1723 19.9868 15.1193 20Z" fill="#1E1E1E" />
+        </svg>
+        <span class="whitespace-nowrap pr-4 z-[1] relative w-auto {% if hover_state == 'true' %}opacity-0{% endif %}" data-widget="text" style="{% if hover_state == 'true' %}display:none; {% else %} display:inline; {% endif %}">{{ display_text }}</span>
+    </button> {% endcomment %}
+    <button data-widget="btn" class="expand-button relative overflow-hidden widget-btn relative flex items-center mb-2 w-auto bg-white border-black border hover:bg-faded-lime transition-colors ease-in-out duration-300" data-flip-id="auto-1">
+        <div data-widget="_placeholder" class="w-[30px] h-[30px]"></div>
+        <svg data-widget="svg" class="absolute top-0 bottom-0" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>Icon plus</title>
+            <path data-widget="plus" d="M15.1193 20C14.9867 20 14.8608 19.9934 14.7416 19.9802C14.609 19.967 14.5162 19.9208 14.4632 19.8416C14.3837 19.736 14.3439 19.5974 14.3439 19.4257C14.3439 19.2541 14.3439 19.0759 14.3439 18.8911L14.3439 16.8317C14.3439 16.6601 14.3439 16.4818 14.3439 16.297C14.3439 16.1254 14.3108 15.9868 14.2445 15.8812C14.165 15.7624 14.0391 15.6964 13.8668 15.6832C13.6945 15.67 13.5156 15.6634 13.33 15.6634L11.1233 15.6634C10.9112 15.6634 10.7058 15.6568 10.507 15.6436C10.3082 15.6436 10.169 15.5776 10.0895 15.4455C10.0497 15.3927 10.0232 15.3135 10.0099 15.2079C9.99669 15.1155 9.99669 15.0165 10.0099 14.9109C10.0232 14.8185 10.0431 14.7261 10.0696 14.6337C10.0961 14.5545 10.1292 14.5016 10.169 14.4752C10.275 14.396 10.4142 14.3564 10.5865 14.3564C10.7588 14.3564 10.9377 14.3564 11.1233 14.3564L13.2107 14.3564C13.3963 14.3564 13.5951 14.3498 13.8072 14.3366C14.006 14.3366 14.1451 14.2838 14.2247 14.1782C14.3042 14.0726 14.3439 13.9274 14.3439 13.7426C14.3439 13.5578 14.3439 13.3729 14.3439 13.1881L14.3439 11.1089C14.3439 10.9373 14.3439 10.7657 14.3439 10.5941C14.3439 10.4224 14.3837 10.2838 14.4632 10.1782C14.503 10.1122 14.5626 10.0726 14.6421 10.0594C14.7084 10.0594 14.7879 10.0462 14.8807 10.0198C14.9072 10.0066 14.947 10 15 10C15.053 10.0132 15.0928 10.0198 15.1193 10.0198C15.2121 10.0462 15.285 10.0594 15.338 10.0594C15.3777 10.0594 15.4307 10.0858 15.497 10.1386C15.603 10.2046 15.6561 10.3366 15.6561 10.5347C15.6561 10.7459 15.6561 10.9439 15.6561 11.1287L15.6561 13.2079C15.6561 13.3927 15.6627 13.571 15.6759 13.7426C15.6759 13.9274 15.7091 14.0726 15.7753 14.1782C15.8681 14.2838 16.0139 14.3366 16.2127 14.3366C16.3983 14.3498 16.5838 14.3564 16.7694 14.3564L18.996 14.3564C19.1948 14.3564 19.3804 14.363 19.5527 14.3762C19.725 14.3894 19.8443 14.4554 19.9105 14.5743C19.9503 14.6271 19.9768 14.6997 19.9901 14.7921C20.0033 14.8977 20.0033 14.9967 19.9901 15.0891C19.9768 15.1947 19.9569 15.2871 19.9304 15.3663C19.9039 15.4587 19.8708 15.5182 19.831 15.5446C19.725 15.6238 19.5858 15.6634 19.4135 15.6634C19.2412 15.6634 19.0623 15.6634 18.8767 15.6634L16.7893 15.6634C16.6037 15.6634 16.4115 15.6634 16.2127 15.6634C16.0139 15.6766 15.8681 15.736 15.7753 15.8416C15.6958 15.9472 15.6561 16.099 15.6561 16.297C15.6561 16.5083 15.6561 16.7063 15.6561 16.8911L15.6561 18.8119C15.6561 18.9571 15.6627 19.1155 15.6759 19.2871C15.6759 19.4719 15.6561 19.6172 15.6163 19.7228C15.55 19.8548 15.4506 19.9406 15.3181 19.9802C15.2386 19.9802 15.1723 19.9868 15.1193 20Z" fill="#1E1E1E" />
+        </svg>        
+        <span class="whitespace-nowrap z-[1] relative w-auto expanded-state" data-widget="text">View Product</span>
+    </button>
+    
+    <div data-widget="card" class="absolute {% if card_placement == 'above' %}right-0 bottom-12{% endif %}" style="height: 0; pointer-events: none; overflow: hidden;">
+        <div class="bg-white border border-black w-[300px]">
+            {% render 'molecule--small-product-card' product: product %}
+        </div>
+    </div>
+</div>
+<style>
+    .expand-button {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .expand-button:hover .expanded-state {
+        width: 100px !important;
+        padding-right: 10px !important;
+      }
+      
+      .expand-button .initial-state {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+      
+      .expand-button:hover .initial-state {
+        transform: translateX(-100%);
+      }
+      
+      .expand-button .expanded-state {
+        display: inline-block;
+        width: 0;
+        transition: width 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      
+    </style>      
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const expandButtons = document.querySelectorAll("[data-widget='btn']");
+    
+        expandButtons.forEach(function(expandButton) {
+            const plusPath = expandButton.querySelector("[data-widget='plus']");
+            const cardContainer = expandButton.nextElementSibling;
+            const expandSpan = expandButton.querySelector("[data-widget='text']");
+            let isExpanded = false;
+            let currentHeight = 0;
+            const maxHeight = 60;
+            
+            expandButton.addEventListener("click", function() {
+                if (!isExpanded) {
+                    cardContainer.style.pointerEvents = "auto";
+                    expandHeight();
+                    modifySpanStyle();
+                    plusPath.setAttribute("transform", "matrix(0.70711,0.70711,-0.70711,0.70711,15,-6.2133)");
+                    isExpanded = true;
+                } else {
+                    reduceHeight();
+                    resetSpanStyle();
+                    plusPath.setAttribute("transform", "");
+                    isExpanded = false;
+                }
+            });
+    
+            function expandHeight() {
+                if (currentHeight < maxHeight) {
+                    currentHeight += 1;
+                    cardContainer.style.height = `${currentHeight}px`;
+                    setTimeout(expandHeight, 5); // Incremento más suave
+                }
+            }
+    
+            function reduceHeight() {
+                if (currentHeight > 0) {
+                    currentHeight -= 1;
+                    cardContainer.style.height = `${currentHeight}px`;
+                    setTimeout(reduceHeight, 5); // Decremento más suave
+                } else {
+                    cardContainer.style.pointerEvents = "none";
+                }
+            }
+    
+            function modifySpanStyle() {
+                expandSpan.style.width = "100px";
+                expandSpan.style.paddingRight = "10px";
+            }
+    
+            function resetSpanStyle() {
+                expandSpan.style.width = "";
+                expandSpan.style.paddingRight = "";
+            }
+        });
+    });
+    
+    
+    </script>

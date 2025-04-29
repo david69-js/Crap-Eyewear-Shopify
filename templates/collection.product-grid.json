@@ -1,0 +1,170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "section--collection",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "collection_nav": "",
+        "enable_filtering": true,
+        "filter_style": "drawer",
+        "filter_nav": "",
+        "filter_group_name": false,
+        "filter_open": false,
+        "enable_sorting": true,
+        "pagination_type": "pages"
+      }
+    },
+    "9f84f50c-eada-4546-a846-440995f4ef69": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88": {
+      "type": "section--party",
+      "settings": {
+        "heading": "<h1>Shop {{ collection.title }}<\/h1>",
+        "pagination_type": "infinite",
+        "products_per_page": 250,
+        "media_file": "",
+        "enable_filtering": true,
+        "hide_mode_toggle": true,
+        "default_mode": "business",
+        "filter_nav": "",
+        "filter_group_name": true,
+        "filter_open": true,
+        "enable_sorting": true,
+        "animation": "",
+        "column_pip_product": "",
+        "column_svg": "",
+        "column_sticker_width": 100,
+        "column_sticker_position": "",
+        "show_end_banner": false,
+        "background_color": "#ffffff",
+        "font_color": "#deff7b",
+        "content": "",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "f648bd3f-994f-48a2-ba65-18b4e7418e4d": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "898359e2-d34a-4768-b0ef-8a0bfb09babd": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "ed895492-9936-445e-b857-e2ebd39ccc98": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758_f89dbc4c-9ee8-4e3f-86b0-3b650ce16aa1.jpg",
+            "caption": "Fall 2021 Lookbook",
+            "url": ""
+          }
+        },
+        "50dfc4fd-a8aa-4206-9414-8efebb175840": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758-2.jpg",
+            "caption": "Fall 2022 Lookbook",
+            "url": ""
+          }
+        },
+        "4ab9cd0a-ef73-4022-9a72-62861ff03f02": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758-3.jpg",
+            "caption": "The Funk Daddy",
+            "url": ""
+          }
+        },
+        "74d21cbd-d9de-42da-8e2f-234f8184f0f5": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758_f89dbc4c-9ee8-4e3f-86b0-3b650ce16aa1.jpg",
+            "caption": "Placeholder",
+            "url": ""
+          }
+        },
+        "2ba94eb9-fc86-45a4-8f93-19a20ecf6030": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758-2.jpg",
+            "caption": "Crap to update",
+            "url": ""
+          }
+        },
+        "82f3e99f-d3f8-4939-9b9f-848535dd3df9": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758-3.jpg",
+            "caption": "FPO",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ed895492-9936-445e-b857-e2ebd39ccc98",
+        "50dfc4fd-a8aa-4206-9414-8efebb175840",
+        "4ab9cd0a-ef73-4022-9a72-62861ff03f02",
+        "74d21cbd-d9de-42da-8e2f-234f8184f0f5",
+        "2ba94eb9-fc86-45a4-8f93-19a20ecf6030",
+        "82f3e99f-d3f8-4939-9b9f-848535dd3df9"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "dynamic_width": false,
+        "ambient_scroll": true,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>Browse <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "5ba13fa6-cfb8-49e1-86e8-b9cea1d00fa9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Rectangle_161_2.png",
+        "image_1_brightness": 0.5,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/refer-a-friend",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_3.png",
+        "image_2_brightness": 0.5,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9f84f50c-eada-4546-a846-440995f4ef69",
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88",
+    "f648bd3f-994f-48a2-ba65-18b4e7418e4d",
+    "898359e2-d34a-4768-b0ef-8a0bfb09babd",
+    "5ba13fa6-cfb8-49e1-86e8-b9cea1d00fa9"
+  ]
+}

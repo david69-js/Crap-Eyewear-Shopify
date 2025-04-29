@@ -1,0 +1,39 @@
+{% assign width = width | default: "710" %}
+{% style %}
+    tabs-wrap {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        height: 100%;
+    }
+{% endstyle %}
+<slot-minicart id="{{- drawerId -}}" data-trigger="{{- triggerId -}}">
+    <div class="backdrop fixed top-0 right-0 bottom-0 left-0 bg-black z-[100]" style="opacity: 0; pointer-events: none;"></div>
+    <div class="flex flex-col drawer-c fixed top-0 bottom-0 right-0 h-full z-[110] border-l-[5px] border-[rgba(255,255,255,0.2)] w-[95%] md:w-full max-w-[600px] translate-x-full" style="transform: translateX(100%); --mc-width: {{ width }}px;">
+        <tabs-wrap class="relative">
+            <button class="close-drawer absolute top-[15px] md:top-[20px] right-[20px] w-[20px] z-20">
+                {%- render "icon--close", stroke_width: 1.5 -%}
+            </button>
+            <div class="absolute z-10 bg-white flex gap-12 w-full tabs h-[45px] pt-[15px] md:h-[60px] px-[15px] text-off-black">
+                <h3 style="line-height: normal;" data-tab="cart" class="cursor-pointer tab-btn text-[14px] md:text-[22px] pb-1 md:pb-2 border-b-4 border-off-black font-primary-bold">Cart (<span data-display-quantity>{{- cart.item_count -}}</span>)</h3>
+                {% if settings.favorite_button %}
+                    <p data-tab="favorites" class="cursor-pointer tab-btn text-[14px] md:text-[22px] pb-1 md:pb-2 font-primary-bold border-b-4 border-[color:rgba(0,0,0,0)]" style="opacity: 0.2;">Favorites (<favorites-count id="faves-count" data-customer="{{customer.id}}" data-favorites='{{ customer.metafields.customer_fields.favorites }}'>0</favorites-count>)</p>
+                {% endif %}
+                <div class=" h-[1px] absolute bottom-0 left-[15px] right-[15px] bg-off-black opacity-20"></div>
+            </div>
+            <div class="relative h-full">
+                {% render "component--shipping-tracker" %}
+                {{ slot }}
+                <div class="mx-auto cx pt-[90px] pb-[15px] opacity-0 pointer-events-none absolute bg-white inset-0 tab-content tab-favorites flex gap-4 w-full max-h-full overflow-y-scroll">
+                    {% capture empty_state %}
+                        <div aria-label="You cart is empty :(" role="contentinfo" class="flex justify-center items-center col-span-12 self-end h-full empty-state">
+                            <p class="body text-[16px] text-center">No favorites yet :(</p>
+                        </div>
+                    {% endcapture %}
+                    {% render 'module--favorites-grid', empty_state: empty_state %}
+                </div>
+            </div>
+        </tabs-wrap>
+    </div>
+</slot-minicart>

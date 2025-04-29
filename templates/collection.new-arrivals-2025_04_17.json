@@ -1,0 +1,228 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "module_one_col_hero_qRDtAG": {
+      "type": "module--one-col-hero",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "half_height": false,
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "image_1": "shopify://shop_images/desktop_banner_refer.jpg",
+        "image_1_mobile": "shopify://shop_images/mobile_banner_refer.jpg",
+        "image_1_brightness": 0,
+        "title_richtext": "<h2><em>New<br/></em>Arrivals </h2>",
+        "title_indent": "none",
+        "body_richtext": "",
+        "desktop_content_width": 50,
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "e253d211-0ffe-4478-8742-83dec33196c0": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "65ee445d-e1be-4d93-b033-0098cc853cde": {
+      "type": "section--party",
+      "blocks": {
+        "lifestyle_card_gzL68n": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Soccer_Mommy-Sweet_Leaf-420022-web_home_main-V2.jpg",
+            "caption": "Soccer Mommy x Crap®",
+            "caption_alignment": "left",
+            "associated_product": "the-sweet-leaf-soccer-mommy-faded-berry-bioacetate-sunglasses",
+            "card_position": 5
+          }
+        },
+        "lifestyle_card_V4EFCp": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-Spring-2025-Kush_Cowboy-Black-11-web-home-main.jpg",
+            "caption": "The Kush Cowboy",
+            "caption_alignment": "left",
+            "associated_product": "the-kush-cowboy-black-polarized-bioacetate-sunglasses",
+            "card_position": 12
+          }
+        },
+        "lifestyle_card_eRxw7x": {
+          "type": "lifestyle_card",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Fall-Holiday-Untitled_Halo-34-web_PDP_lifestyle.jpg",
+            "caption": "2024 Holiday",
+            "caption_alignment": "left",
+            "associated_product": "",
+            "card_position": 15
+          }
+        },
+        "lifestyle_card_JaApKH": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Eydress-look-02-8-web_lookbook_grid.jpg",
+            "caption": "A New Pair of Eyes by Eyedress",
+            "caption_alignment": "left",
+            "associated_product": "eyedress-black-wraparound-sunglasses",
+            "card_position": 21
+          }
+        },
+        "lifestyle_card_h83xUM": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-2024-Hike_Clerb-Lookbook-Void_Pixie-557-web_lookbook_marquee.jpg",
+            "caption": "Hike Clerb x Crap®",
+            "caption_alignment": "left",
+            "associated_product": "the-void-pixie-hike-clerb-dusty-seafoam-bioacetate-sunglasses",
+            "card_position": 23
+          }
+        },
+        "lifestyle_card_zWBUKB": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/Crap_Eyewear-2024_Summer-No_Wave-Vern_Masa-seaweed-desert_tort-look-01-18-web_lookbook_grid.jpg",
+            "caption": "Summer No Waves",
+            "caption_alignment": "left",
+            "associated_product": "",
+            "card_position": 28
+          }
+        },
+        "section_break_NeAN4P": {
+          "type": "section_break",
+          "settings": {
+            "title": "",
+            "product_end": 17,
+            "column_bg_image": "shopify://shop_images/Crap_Eyewear-2024-Marias_Submarine-Lookbook-look_01-12-web_new_arrivals_hero.jpg",
+            "column_pip_product": "",
+            "column_svg": "",
+            "column_sticker_width": 100,
+            "column_sticker_width_mobile": 25,
+            "column_sticker_position": "",
+            "show_end_banner": false,
+            "background_color": "#ffffff",
+            "font_color": "#1e1e1e",
+            "content": "",
+            "section_padding": "ca",
+            "section_padding_halved": false,
+            "section_padding_extra": false
+          }
+        }
+      },
+      "block_order": [
+        "lifestyle_card_gzL68n",
+        "lifestyle_card_V4EFCp",
+        "lifestyle_card_eRxw7x",
+        "lifestyle_card_JaApKH",
+        "lifestyle_card_h83xUM",
+        "lifestyle_card_zWBUKB",
+        "section_break_NeAN4P"
+      ],
+      "settings": {
+        "heading": "<h1><strong>New </strong>Arrivals</h1>",
+        "empty_collection_message": "",
+        "no_results_message": "",
+        "pagination_type": "infinite",
+        "products_per_page": 30,
+        "media_file": "",
+        "enable_filtering": false,
+        "hide_mode_toggle": false,
+        "default_mode": "party",
+        "filter_nav": "",
+        "filter_group_name": true,
+        "filter_open": true,
+        "enable_sorting": true,
+        "animation": "",
+        "column_bg_image": "shopify://shop_images/Crap_Eyewear-2025_Spring-Lookbook-look_2-Heavy_Tropix_Crystal_Earth_Bio-Sweet_Leaf_Rootbeer-11-3-web_new_arrivals_hero.jpg",
+        "column_pip_product": "",
+        "column_svg": "",
+        "column_sticker_width": 100,
+        "column_sticker_width_mobile": 25,
+        "column_sticker_position": "",
+        "show_end_banner": false,
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "content": "",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "module_meet_the_favs_bQ8rGd": {
+      "type": "module--meet-the-favs",
+      "blocks": {
+        "button_collection_U4AkVT": {
+          "type": "button_collection",
+          "settings": {
+            "title": "Shop Best Sellers",
+            "link": "shopify://collections/best-sellers"
+          }
+        }
+      },
+      "block_order": [
+        "button_collection_U4AkVT"
+      ],
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "<h3><br/>Shop The <strong>Hits</strong></h3>",
+        "collection": "best-sellers",
+        "button_style": "btn-primary"
+      }
+    },
+    "f44f832d-31a3-4b44-a693-281c3ca4d65f": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "47ee32d9-30bc-4ae5-81b0-7109496e0496": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF </strong>when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/refer-a-friend",
+        "image_2": "shopify://shop_images/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.1,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14, Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "module_one_col_hero_qRDtAG",
+    "e253d211-0ffe-4478-8742-83dec33196c0",
+    "65ee445d-e1be-4d93-b033-0098cc853cde",
+    "module_meet_the_favs_bQ8rGd",
+    "f44f832d-31a3-4b44-a693-281c3ca4d65f",
+    "47ee32d9-30bc-4ae5-81b0-7109496e0496"
+  ]
+}

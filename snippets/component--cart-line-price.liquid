@@ -1,0 +1,79 @@
+{%- comment -%}
+                                    /**
+                                     * Cart Line Item Pricing Display
+                                     */
+{%- endcomment -%}
+{%- liquid
+
+assign price = price | default: "0.00"
+assign compare = compare | default: false
+
+if selling_plan
+	assign price = selling_plan.price
+	assign compare = selling_plan.compare_at_price
+endif
+
+assign displayPrice = price | money_without_trailing_zeros
+assign compareDisplayPrice = compare | money_without_trailing_zeros
+assign splitPrice = displayPrice | split: "."
+
+if settings.superscript_price
+
+	assign displayPrice = splitPrice[0]
+
+	if splitPrice[1] != blank
+		assign displayPrice = displayPrice | append: "." | append: "<sup>" | append: splitPrice[1] | append: "</sup>"
+	endif
+endif
+
+if compare != blank and compare > price
+
+	assign compareSplitPrice = compareDisplayPrice | split: "."
+
+	if settings.superscript_price
+
+		assign compareDisplayPrice = compareSplitPrice[0]
+
+		if compareSplitPrice[1] != blank
+			assign compareDisplayPrice = compareDisplayPrice | append: "." | append: "<sup>" | append: compareSplitPrice[1] | append: "</sup>"
+		endif
+	endif
+endif
+
+if settings.currency_code_enabled == true
+
+	assign displayPrice = displayPrice | append: " " | append: shop.currency
+
+	if compareDisplayPrice
+		assign compareDisplayPrice = compareDisplayPrice | append: " " | append: shop.currency
+	endif
+endif
+
+unless liveTotal
+	assign liveTotal = false
+endunless
+
+unless liveDiscount
+	assign liveDiscount = false
+endunless
+
+-%}
+<div class="js-price-display grid md:flex max-w-[180px] dk:max-w-[380px] flex-wrap {{ classes }}">
+    <div class="flex flex-wrap">
+		<p class="grotesk-bold {% if compare != blank %} ml-2 {% endif %}" data-price="{{- price -}}" data-sup="{{- settings.superscript_price -}}" {%- if settings.currency_code_enabled == true %} data-currency="{{- currency.iso_code -}}" {%- endif -%} {%- if liveTotal == true %} data-display-total {%- endif -%} {%- if liveDiscount == true %} data-display-discount {%- endif -%}>{{- displayPrice -}}</p>
+		{% if price != originalPrice or compare != blank %}
+			<p class="grotesk-bold opacity-30 after:content-['_'] after:absolute after:h-px after:bg-current after:w-full after:top-[50%] after:left-0 relative mx-2">
+				{% if compare != blank %}
+					{{ compareDisplayPrice }}
+				{% else %}
+					{{- originalPrice | money_without_trailing_zeros -}}{% endif %}
+			</p>
+			{% for discount in discounts %}
+				<p class="text-burnt-orange hidden md:block">{{ discount.discount_application.title }}</p>
+			{% endfor %}
+		{% endif %}
+	</div>
+	 {% for discount in discounts %}
+            <p class="text-burnt-orange block md:hidden">{{ discount.discount_application.title }}</p>
+    {% endfor %}
+</div>

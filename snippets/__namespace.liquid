@@ -1,0 +1,5 @@
+{%- assign namespace = template.name -%}
+{%- if template.suffix != nil and template.name != "collection" and template.name != "product" -%}
+{%- assign namespace = template.name | append: "-" | append: template.suffix -%}
+{%- endif -%}
+{{- namespace -}}

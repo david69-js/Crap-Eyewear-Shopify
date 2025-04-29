@@ -1,0 +1,456 @@
+{% comment %} 
+    CSS for grid layout in _components/navigation.scss 
+{% endcomment %}
+ <style>
+    .p_to_headign {
+        font-family: brush-script-std, "serif";
+        font-size: 200%;
+        text-decoration: none !important;
+        letter-spacing: 0;
+        line-height: 1.2;
+        margin-bottom: 0px !important;
+    }
+    @media screen and (min-width: 769px) {
+        .card_subtitle-h4 {
+            font-size: 32px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .card_subtitle-h4 {
+            font-size: 26px;
+        }
+    }
+    .card_subtitle-h4 {
+        font-family: Alte Haas Grotesk, Helvetica, Arial, "sans-serif";
+        letter-spacing: -.03em;
+        line-height: .9;
+    }
+</style>
+{%- capture shape_slides -%}
+    {%- for link in section.settings.shop_by_shape_nav.links -%}
+        <a href="{{ link.url }}" class="slide shape-card">
+            <div style="padding-bottom: 56.25%; height: 0; background-image: url({{ link.object.metafields.custom.navigation_thumbnail | img_url }}); background-position: center; background-repeat: no-repeat; background-size: contain;"></div>
+            <h3 class="p_to_headign">{{ link.title }}</h3>
+        </a>
+    {%- endfor -%}
+{%- endcapture -%}
+
+{% capture fitNav %}
+    <div class="mobile-shop-fits flex flex-col gap-[15px]">
+        {%- for link in section.settings.shop_by_fit_nav.links -%}
+            <a href="{{ link.url }}" class="body text-x120 !no-underline">{{ link.title }}</a>
+        {%- endfor -%}
+        {% if section.settings.shop_tab_cta_url != blank %}
+            <a href="{{ section.settings.shop_tab_cta_url }}" class="underline text-x90 relative bottom-[3px]" aria-label="{{ section.settings.shop_tab_cta_text }}">{{ section.settings.shop_tab_cta_text }}</a>
+        {% endif %}
+    </div>
+{% endcapture %}
+
+{% capture shapeNav %}
+    <div class="mobile-shop-shapes">
+        {% render "slot--carousel" 
+           , slot: shape_slides,
+           pagination: false,
+           arrows: false,
+           mobileOnly: true, %}
+    </div>
+{% endcapture %}
+
+<nav-menu id="nav-menu">
+    <div class="nav-bar">
+        <div class="logo">
+            <div class="logo-inner">
+                <label class="visually-hidden" for="homeLogo">Home link logo</label>
+                <a id="homeLogo" href="/" class="w-[40px] md:w-[60px] flex justify-center" aria-label="Home link logo">
+                    {%- render "icon--logo" -%}
+                </a>
+            </div>
+        </div>
+
+        <div class="menu-toggle md:hidden" data-trigger="shop">
+            <span class="bg-off-black absolute origin-center block h-[1px] w-[18px] translate-y-[-5px]"></span>
+            <span class="bg-off-black absolute origin-center block h-[1px] w-[18px]"></span>
+            <span class="bg-off-black absolute origin-center block h-[1px] w-[18px] translate-y-[5px]"></span>
+        </div>
+
+        <div class="nav-tab-triggers">
+            <div class="triggers-inner">
+                <div class="tab-trigger" data-trigger="shop">Shop</div>
+                <div class="tab-trigger" data-trigger="new">What's New</div>
+                <div class="tab-trigger" data-trigger="about">About</div>
+            </div>
+        </div>
+
+        <div class="nav-icons">
+            <div class="tab-trigger w-[18px]" data-trigger="search">
+                {%- render "icon--search" -%}
+            </div>
+            <label class="visually-hidden" for="accountLink">Account link page</label>
+            <a id="accountLink" href="/account" class="account-link w-[18px]" aria-label="Account link Page">
+                {%- render "icon--account" -%}
+            </a>
+            <div id="cart-summary" class="relative close-dropdown ">
+                <cart-trigger class="cursor-pointer flex justify-center items-center" aria-label="Cart">
+                    <div class="w-[18px] h-[19px] relative">
+                        {%- render "icon--cart" %}
+                        <div class="absolute inset-0">
+                            <span class=" text-off-black text-[10px] pt-[5px] h-full w-full flex items-center justify-center" aria-hidden="true" data-display-quantity>{{ cart.item_count }}</span>
+                            <span class="visually-hidden" data-display-quantity>{{ "sections.header.cart_count" | t: count: cart.item_count }}</span>
+                        </div>
+                        <svg data-display-quantity id="little-cart-heart" class="hidden absolute top-[2px] right-[-2px]" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.37483 1.63132C7.54181 0.790277 6.19094 0.790277 5.35791 1.63132C5.20859 1.78209 5.09606 1.95331 5.00007 2.13153C4.90407 1.95331 4.79154 1.78155 4.64168 1.63078C3.80866 0.789739 2.45779 0.789739 1.62477 1.63078C0.791744 2.47183 0.791744 3.8357 1.62477 4.67674L5.00007 8L8.37483 4.67674C9.20839 3.8357 9.20839 2.47237 8.37483 1.63132Z" fill="#E0281A" stroke="#1E1E1E" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                </cart-trigger>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="shop-tab tab" data-tab="shop" style="opacity:0;pointer-events:none;">
+            <div class="shop-tab-main">
+                <div class="shop-tab-main-inner">
+                    <div class="shop-menu">
+                        {%- for link in section.settings.shop_nav.links -%}
+                            <a href="{{ link.url }}" class="h4">{{ link.title }}</a>
+                        {%- endfor -%}
+                    </div>
+                    <div class="mobile-shop-bys md:hidden">
+                        <h2>Shop by</h2>
+                        {%- render "slot--accordion" 
+                            , heading: "Shape",
+                            content: shapeNav, -%}
+                        {%- render "slot--accordion" 
+                            , heading: "Fit",
+                            content: fitNav, -%}
+                    </div>
+
+                    <div class="shop-bys hidden md:block flex-1">
+                        <div class="shop-shapes">
+                            <h2>{{ section.settings.shop_by_shape_nav.title }}</h2>
+                            {% render "slot--carousel" 
+                               , slot: shape_slides,
+                               pagination: false,
+                               arrows: true,
+                               mouse: true,
+                               mobileOnly: false,
+                               overflowHidden: true, %}
+                        </div>
+                        <div class="shop-fit">
+                            <h2>{{ section.settings.shop_by_fit_nav.title }}</h2>
+                            <div class="flex gap-[40px] items-end">
+                                {%- for link in section.settings.shop_by_fit_nav.links -%}
+                                    <a href="{{ link.url }}" class="body text-x130">{{ link.title }}</a>
+                                {%- endfor -%}
+                                {% if section.settings.shop_tab_cta_text != blank or section.settings.shop_tab_cta_url != blank %}
+                                    <a href="{{ section.settings.shop_tab_cta_url }}" class="underline text-x90 relative bottom-[3px]" aria-label="{{ section.settings.shop_tab_cta_text }}">{{ section.settings.shop_tab_cta_text }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {%- render "component--email-capture" -%}
+
+            {%- render "component--utility-nav", utility_nav: section.settings.utility_nav -%}
+
+            <div class="radio-snippet">
+                {% capture marquee %}
+                    <div class="richtext flex items-center text-x120" style="color: {{ section.settings.marquee_text_color }}">
+                        {% for block in section.blocks %}
+                            {% case block.type %}
+                                {% when "marquee_block" %}
+                                <span class="pr-[0.5em] inline-flex flex-row items-center">
+                                    {% if block.settings.badge %}
+                                        <span class="inline-block pr-[0.5em]">{{ block.settings.badge }}</span>
+                                    {% endif %}
+                                    <span>{{ block.settings.text }}</span>
+                                </span>
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                {% endcapture %}
+
+                {% render "slot--marquee"
+                   , slot: marquee,
+                   speed: section.settings.marquee_speed,
+                   bgColor: section.settings.marquee_background_color,
+                   wrapperClasses: "py-2" %}
+            </div>
+
+        </div>
+
+        <div class="about-tab tab" data-tab="about" style="opacity:0;pointer-events:none;">
+            <div class="about-main">
+                <div class="about-main-inner">
+                    <div class="about-menu">
+                        {%- for link in section.settings.about_nav.links -%}
+                            <a href="{{ link.url }}" class="h4">{{ link.title }}</a>
+                        {%- endfor -%}
+                    </div>
+                    <div class="about-img flex-1">
+                        {% render 'component--responsive-image' 
+                           , image: section.settings.about_image,
+                           imageMobile: section.settings.about_image_mobile,
+                           maxSize: 1920 %}
+                    </div>
+                </div>
+            </div>
+
+            {%- render "component-email-capture-2" -%}
+
+            {%- render "component--utility-nav", utility_nav: section.settings.utility_nav -%}
+
+            <div class="radio-snippet">
+                {% capture marquee2 %}
+                    <a href="{{ section.settings.marquee_link }}" class="richtext flex items-center text-x120" style="color: {{ section.settings.marquee_text_color }}">
+                        {% for block in section.blocks %}
+                            {% case block.type %}
+                                {% when "marquee_block" %}
+                                <span class="pr-[0.5em] inline-flex flex-row items-center">
+                                    {% if block.settings.badge %}
+                                        <span class="inline-block pr-[0.5em]">{{ block.settings.badge }}</span>
+                                    {% endif %}
+                                    <span>{{ block.settings.text }}</span>
+                                </span>
+                            {% endcase %}
+                        {% endfor %}
+                    </a>
+                {% endcapture %}
+
+                {% render "slot--marquee"
+                   , slot: marquee2,
+                   speed: section.settings.marquee_speed,
+                   bgColor: section.settings.marquee_background_color,
+                   wrapperClasses: "py-2" %}
+            </div>
+        </div>
+
+        <div class="whats-new-tab tab" data-tab="new" style="opacity:0;pointer-events:none;">
+            <div class="card-links">
+                {%- for block in section.blocks -%}
+                    {%- case block.type %}
+                        {%- when "card" %}
+                        <a href="{{block.settings.card_url}}" class="card-link block">
+                            <div class="card-link-inner">
+                                {% render 'component--responsive-image' 
+                                   , image: block.settings.card_image,
+                                   maxSize: 1920 %}
+                                <h3>{{ block.settings.card_title }}</h3>
+                                <h4 class="card_subtitle-h4">{{ block.settings.card_subtitle }}</h4>
+                            </div>
+                        </a>
+                    {%- endcase %}
+                {%- endfor -%}
+            </div>
+
+            <div class="link-btn">
+                <a href="{{ section.settings.whats_new_cta_url }}" class="link-btn-inner">{{ section.settings.whats_new_cta_text }}</a>
+            </div>
+        </div>
+
+        <div class="search-tab tab" data-tab="search" style="opacity:0;pointer-events:none;">
+            <label class="visually-hidden" for="searchClose">Search close icon</label>
+            <button id="searchClose" class="search-close">
+                <span class="search-close-inner">
+                    {%- render "icon--close" -%}
+                </span>
+            </button>
+            <div class="search-card">
+                <div class="search-card-inner">
+                    <predictive-search class="block h-full flex flex-col overflow-hidden">
+                        <form class="search-input-wrapper" action="{{ routes.search_url }}" method="get" role="search">
+                            <div class="w-[20px]">
+                                {% render "icon--search" %}
+                            </div>
+                            <label for="Search">Search</label>
+                            <input id="Search" type="search" name="q" placeholder="Search" value="{{ search.terms | escape }}" {%- if settings.predictive_search_enabled -%}role="combobox"aria-expanded="false"aria-owns="predictive-search-results-list"aria-controls="predictive-search-results-list"aria-haspopup="listbox"aria-autocomplete="list"autocorrect="off"autocomplete="off"autocapitalize="off"spellcheck="false"{%- endif -%}>
+                            <input name="options[prefix]" type="hidden" value="last">
+
+                            <div class="w-[20px]">
+                                {% render "icon--arrow-next" %}
+                            </div>
+                        </form>
+
+                        <div class="search-terms">
+                            <h2>Top Searches</h2>
+                            {%- for block in section.blocks -%}
+                                {%- case block.type %}
+                                    {%- when "term" %}
+                                    <button class="preset-search-term" data-term="{{ block.settings.title }}">{{ block.settings.title }}</button>
+                                {%- endcase %}
+                            {%- endfor -%}
+                        </div>
+                        <div class="featured-collection" id="top-searches">
+                            <h2>{{ section.settings.search_featured_collection.title }}</h2>
+                            <div class="collection-wrapper">
+                                {%- for prod in section.settings.search_featured_collection.products -%}
+                                    <div class="basis-[calc(50%-20px)]">
+                                        {% render "component--product-card", product: prod, imgClass: 'h-[100px] dk:h-[200px] object-contain' %}
+                                    </div>
+                                {%- endfor -%}
+                            </div>
+                        </div>
+                        <div id="predictive-search" class="overflow-scroll"></div>
+                    </predictive-search>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-background" style="opacity:0;pointer-events:none;"></div>
+</nav-menu>
+
+{% schema %}
+    {
+        "name": "Crap Navigation",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "link_list",
+                "id": "shop_nav",
+                "label": "Main 'Shop' Navigation"
+            },
+            {
+                "type": "link_list",
+                "id": "shop_by_shape_nav",
+                "label": "'Shop by shape' Navigation"
+            },
+            {
+                "type": "link_list",
+                "id": "shop_by_fit_nav",
+                "label": "'Shop by fit' Navigation"
+            },
+            {
+                "type": "text",
+                "id": "shop_tab_cta_text",
+                "label": "'Shop' tab CTA text",
+                "default": "Fit Guide"
+            }, {
+                "type": "url",
+                "id": "shop_tab_cta_url",
+                "label": "'Shop' tab CTA URL"
+            }, {
+                "type": "text",
+                "id": "whats_new_cta_text",
+                "label": "'Whats New' tab CTA text",
+                "default": "Explore All Crappenings"
+            }, {
+                "type": "url",
+                "id": "whats_new_cta_url",
+                "label": "'Whats New' tab CTA URL"
+            }, {
+                "type": "link_list",
+                "id": "about_nav",
+                "label": "Main 'About' Navigation"
+            }, {
+                "type": "image_picker",
+                "id": "about_image",
+                "label": "'About' tab image"
+            }, {
+                "type": "image_picker",
+                "id": "about_image_mobile",
+                "label": "'About' tab image (mobile)"
+            }, {
+                "type": "link_list",
+                "id": "utility_nav",
+                "label": "Utility Navigation"
+            }, {
+                "type": "collection",
+                "id": "search_featured_collection",
+                "label": "Featured Collection in 'Search' tab"
+            }, {
+                "type": "header",
+                "content": "Radio Marquee"
+            }, {
+                "type": "paragraph",
+                "content": "Populate by adding Marquee Blocks to the Crap Navigation section."
+            }, {
+                "type": "range",
+                "id": "marquee_speed",
+                "min": 0,
+                "max": 75,
+                "step": 5,
+                "default": 35,
+                "label": "Speed",
+                "info": "Lower speed == faster marquee. Set to zero to disable movement."
+            }, {
+                "type": "color",
+                "id": "marquee_background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "color",
+                "id": "marquee_text_color",
+                "label": "Text color"
+            }, {
+                "type": "url",
+                "id": "marquee_link",
+                "label": "Link"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "card",
+                "name": "'Whats New' card",
+                "limit": 4,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "card_title",
+                        "label": "Card title"
+                    }, {
+                        "type": "text",
+                        "id": "card_subtitle",
+                        "label": "Card subtitle"
+                    }, {
+                        "type": "url",
+                        "id": "card_url",
+                        "label": "Card URL"
+                    }, {
+                        "type": "image_picker",
+                        "id": "card_image",
+                        "label": "Card image"
+                    }
+                ]
+            }, {
+                "type": "term",
+                "name": "Top Search Term",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Search term"
+                    }
+                ]
+            }, {
+                "type": "marquee_block",
+                "name": "Marquee Block",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Label",
+                        "info": "For easy reference from the customizer.",
+                        "default": "Marquee: "
+                    }, {
+                        "type": "html",
+                        "id": "badge",
+                        "label": "Badge (SVG)",
+                        "info": "Optional SVG badge that appears before text content"
+                    }, {
+                        "type": "html",
+                        "id": "text",
+                        "label": "Block Text",
+                        "info": "Wrap text in <em></em> for script, in <strong></strong> for bold, and in <sup></sup> for superscript"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

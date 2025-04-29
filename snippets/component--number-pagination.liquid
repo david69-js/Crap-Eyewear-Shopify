@@ -1,0 +1,75 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled flex gap-4 ca justify-center items-center" role="list">
+        
+          <li>
+            <a {% if paginate.previous %} href="{{ paginate.previous.url }}{{ anchor }}" {% endif %}
+              class="block mr-1 pagination__item pagination__item--next pagination__item-arrow link motion-reduce"
+              aria-label="{{ 'general.pagination.previous' | t }}"
+            >
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 1L1 5L5 9" stroke="black" stroke-linecap="round"/>
+                    <path d="M1 5L10 5" stroke="black" stroke-linecap="round"/>
+                </svg>        
+            </a>
+          </li>
+        
+
+        {%- for part in paginate.parts -%}
+          <li>
+            {%- if part.is_link -%}
+              <a
+                href="{{ part.url }}{{ anchor }}"
+                class="pagination__item text-off-black font-primary hover:underline"
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+              >
+                {{- part.title -}}
+              </a>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <a
+                  role="link"
+                  aria-disabled="true"
+                  class="pagination__item pagination__item--current text-off-black font-primary-bold underline"
+                  aria-current="page"
+                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                >
+                  {{- part.title -}}
+                </a>
+              {%- else -%}
+                <span class="pagination__item">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+        
+          <li>
+            <a {% if paginate.next %} href="{{ paginate.next.url }}{{ anchor }}" {% endif %}
+              class="block ml-1 pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
+              aria-label="{{ 'general.pagination.next' | t }}"
+            >
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L10 5L6 1" stroke="black" stroke-linecap="round"/>
+                    <path d="M10 5L1 5" stroke="black" stroke-linecap="round"/>
+                </svg>            
+            </a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

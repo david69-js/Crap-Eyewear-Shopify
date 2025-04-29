@@ -1,0 +1,129 @@
+{% liquid
+	assign title = title | default: blog.title | escape
+%}
+
+{% assign paginationConst = articleCount %}
+
+<div class="main-blog cx">
+    {% paginate blog.articles by paginationConst %}
+    {% assign paginationOffset = paginate.current_page | minus: 1 | times: paginationConst %}
+    <div data-id="{{ section.id }}">
+        <div class="blog-articles pagination-grid grid grid-cols-3 gap-[30px] mb-[40px]">
+            {% for article in blog.articles %}
+                {%- assign indexOffset = forloop.index  -%}
+                {%- assign blockOffset = forloop.index | plus: paginationOffset  -%}
+                {% assign has_sticker = false %}
+                {% unless canonical_url contains "tagged" %}
+                {%- for block in section.blocks -%}
+                    {%- if block.settings.card_pos == blockOffset -%}
+
+                        {%- case block.type -%}
+                            {%- when 'blog_card' %}
+                            <div style="--card-cols: span {{block.settings.card_width}};" class="col-span-3 dk:col-[var(--card-cols)] flex flex-col items-center">
+                                {%- if block.settings.image != nil and block.settings.video == nil -%}
+                                    {% render 'component--responsive-image', image: block.settings.image, placeholder: true, classes: "w-full h-auto" %}
+                                {%- endif -%}
+                                {%- if block.settings.video != nil -%}
+                                    {%- render "component--responsive-video" 
+                                        , cover: false,
+                                        autoplay: true,
+                                        muted: true,
+                                        loop: true,
+                                        desktop_video: block.settings.video,
+                                        mobile_video: block.settings.video -%}
+                                {%- endif -%}
+                                {%- if block.settings.cta_url != nil -%}
+                                    <a href="#" class="btn btn-primary mt-[30px]">{{ block.settings.cta_text }}</a>
+                                {%- endif -%}
+                            </div>
+                            {%- when 'review_card' %}
+                            <div style="--card-cols: span {{block.settings.card_width}};" class="col-span-3 dk:col-[var(--card-cols)] flex flex-col justify-center items-center relative aspect-square">
+                                <div class="flex gap-2 mb-3">
+                                    {% render 'icon--star' %}
+                                    {% render 'icon--star' %}
+                                    {% render 'icon--star' %}
+                                    {% render 'icon--star' %}
+                                    {% render 'icon--star' %}
+                                </div>
+                                <h6 class="font-script mb-4">
+                                    {{ block.settings.script_text }}
+                                </h6>
+                                <div class="text-center max-w-[80%] mb-5">
+                                    {{ block.settings.review_text }}
+                                </div>
+                                <div class="text-lg [&>*_a]:underline">
+                                    {{ block.settings.sub_text }}
+                                </div>
+                                <div class="bg-shape absolute inset-0 pointer-events-none z-[-1]">
+                                    <svg class="w-full h-full" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M440 220C286.641 262.704 243.392 297.309 165.141 440C158.023 297.309 132.054 262.704 0 220C153.359 177.296 196.608 142.691 274.859 0C281.977 142.691 307.946 177.296 440 220Z" fill="#DEFF7B" />
+                                    </svg>
+                                </div>
+                            </div>
+                            {%- when 'blog_sticker' %}
+                                {% assign has_sticker = true %}
+                                {%- case block.settings.position -%}
+                                    {%- when 'tl' %}
+                                    {% assign positions = 'top: -2rem; left: 1rem; right: unset; bottom: unset;' %}
+                                    {%- when 'tr' %}
+                                    {% assign positions = 'top: -2rem; left: unset; right: 1rem; bottom: unset;' %}
+                                    {%- when 'bl' %}
+                                    {% assign positions = 'top: unset; left: 1rem; right: unset; bottom: -2rem;' %}
+                                    {%- when 'br' %}
+                                    {% assign positions = 'top: unset; left: unset; right: 1rem; bottom: -2rem;' %}
+                                {%- else -%}
+                                    {% assign positions = 'top: -2rem; left: unset; right: 1rem; bottom: unset;' %}
+                                {%- endcase -%}
+                            {% if block.settings.svg != blank %}
+                                {% assign sticker_markup = block.settings.svg %}
+                            {% else %}
+                                {% assign width = block.settings.width | divided_by: 100.00 %}
+                                {% assign width = width | times: 200 %}
+                                {% capture sticker_markup %}
+                                    <div style="--sticker-width: {{ width }}px;" class="max-w-[var(--sticker-width)]">
+                                        {% render 'component--responsive-image', image: block.settings.image, placeholder: true, classes: "w-auto h-auto" %}
+                                    </div>
+                                {% endcapture %}
+                            {% endif %}
+                        {%- endcase -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                {% endunless %}
+
+                <div class="col-span-3 {% if forloop.index0 == 0 or forloop.index0 == 10 %} dk:col-span-2 {% else %} dk:col-span-1 {% endif %} flex flex-col relative pagination-result">
+                    <a href="{{ article.url }}">
+                        <div class="relative">
+                            {% if has_sticker %}
+                                <div style="{{ positions }}" class="absolute z-[2] pointer-events-none">
+                                    {{ sticker_markup }}
+                                </div>
+                            {% endif %}
+
+                            {% if article.metafields.custom.video != nil %}
+                                {% render 'component--responsive-video', desktop_video: article.metafields.custom.video.value, mobile_video: article.metafields.custom.video.value, autoplay: true, muted: true %}
+                            {% elsif article.image %}
+                            {% render 'component--responsive-image', image: article.image, placeholder: true, classes: "w-full h-auto" %}
+                            
+                            {% else %}
+                                <div class="h-[143vw] dk:h-auto relative">
+                                    {% render 'component--responsive-image', 
+                                    image: article.metafields.custom.featured_image.value, 
+                                    objectFit: 'mobile' 
+                                    %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <h6 class="grotesk-bold mt-3">{{ article.title }}</h6>
+                    </a>
+                    <div class="tags mt-3">
+                        {% render 'component--tag-list', tags: article.tags %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {%- if paginate.pages > 1 -%}
+    {% render 'component--number-pagination', paginate: paginate %}
+  {%- endif -%}
+    {% endpaginate %}
+</div>

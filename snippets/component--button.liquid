@@ -1,0 +1,36 @@
+{%- comment %}
+          /**
+          * @property {string} type
+          * @property {string} label
+          * @property {string} classes
+          */
+{% endcomment -%}
+{%- liquid
+
+assign type = type | default: "link"
+assign button_link = link | default: "javascript:void(0);"
+assign button_style = style | default: "btn-primary"
+assign button_text = label | default: button_link.title
+assign button_value = value | default: ""
+assign class_list = classes | default: ""
+assign class_anim = anim_class | default: ""
+assign align = align | default: "left"
+
+if button_text == blank
+	assign button_text = "Read More"
+endif
+
+-%}
+{%- comment -%}
+      /**
+      * Debug this object by using the render line
+      */
+      {%- render "debug--json", object: cart %}
+    {%- #if type == "link" -%} 
+{% endcomment %}<a href="{{- button_link -}}" class="{% unless button_style == 'link' -%} btn {% endunless -%} {{ button_style -}} {%- if class_list != blank %} {{ class_list }} {%- endif -%} {%- if class_anim != blank %} {{ class_anim -}} {%- endif -%} {%- if align == "center" %} mx-auto {%- endif -%}">
+    {{- button_text -}}</a>
+{% comment %}
+          {%- else -%}
+          <button class="{%- if class_list != blank %} {{ class_list -}} {%- endif -%} {%- if class_anim != blank %} {{ class_anim -}} {%- endif -%} {%- if align == "center" %} mx-auto {%- endif -%}" type="{{- type -}}" {%- if button_value != blank %} value="{{- button_value -}}" {%- endif -%}>{{- button_text -}}</button>
+        {%- endif -%} 
+{% endcomment %}

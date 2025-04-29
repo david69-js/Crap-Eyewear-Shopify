@@ -1,0 +1,29 @@
+<div class="mullet flex flex-wrap dk:flex-nowrap gap-[var(--site-gutter)] basis-full items-center">
+    <div class="flex items-center justify-center basis-full dk:basis-1/2">
+        {% if block.settings.video != nil %}
+            <video class="w-full h-auto object-cover lazy" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" preload="metadata" src="{{block.settings.video.sources[1].url}}">
+                <source src="{{block.settings.video.sources[1].url}}" type="video/mp4"></source>
+            </video>
+            {% else %}
+                {%- render "component--responsive-image", image: block.settings.review_image -%}
+        {% endif %}
+    </div>
+    <div class="basis-full dk:basis-1/2">
+        <div class="flex justify-between">
+            <div class="flex gap-2">
+                {% render 'icon--star' %}
+                {% render 'icon--star' %}
+                {% render 'icon--star' %}
+                {% render 'icon--star' %}
+                {% render 'icon--star' %}
+            </div>
+            <h6 class="font-script">Featured Review</h6>
+        </div>
+        <h6 class="py-2">{{ block.settings.review_text }}</h6>
+        {% if block.settings.product %}
+            <div>
+                {% render 'molecule--small-product-card' product: block.settings.product, name: block.settings.name, hide_favorite: true %}
+            </div>
+        {% endif %}
+    </div>
+</div>

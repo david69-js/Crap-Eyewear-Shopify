@@ -1,0 +1,163 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{%- comment %}
+                                                                                                                                    /** @typedef {object} json
+                                                                                                                                     * @property {object[]} product
+                                                                                                                                     * @property {object[]} settings
+                                                                                                                                     * @property {string} form_id
+                                                                                                                                     * 
+                                                                                                                                     */
+{% endcomment -%}{%- liquid
+
+assign variant_index = variant_index | default: 0
+assign quantity_index = quantity_index | default: 1
+assign show_dynamic_checkout = show_dynamic_checkout | default: false
+assign btn_radius = btn_radius | default: 0
+assign btn_classes = btn_classes | default: '' 
+assign atcId = atcId | default: '' 
+
+assign default_request = product.url | split: "?" | first
+assign request_url = request_url | default: default_request
+
+assign append_id = append_id | default: ""
+assign update = update | default: true
+assign variant_override = variant_override | default: product.selected_or_first_available_variant
+
+assign base_id = form_id | append: append_id
+
+capture quantity_selector_markup
+	render "component--quantity-input", product: product, quantity: 1, id: base_id
+endcapture
+%}
+
+{% assign preorder = false %}
+    {% for tag in product.tags %}
+        {% if tag contains 'preorder-' %}
+    {% assign preorder = true %}
+{% endif %}
+{% endfor %}
+
+    <product-form class="product-form {% if product.title contains 'Gift Card' %} gift-card {% endif %}" data-append="{{- append_id -}}" data-update="{{- update -}}"> {%- assign id = base_id | append: "_form" -%}
+        {%- form "product", product, id: id, class: "form", novalidate: "novalidate", data-type: "add-to-cart-form" -%}
+        <input type="hidden" name="id" value="{{ variant_override.id }}" disabled />
+        {% if quantity != true -%}
+            <input type="hidden" name="quantity" value="1" />
+        {% endif -%}
+        <input type="hidden" name="data" value='{"product_id":{{ product.id }},"variant_id":{{ variant_override.id }},"variant":"{{ variant_override.title | escape }}","sku":"{{ variant_override.sku }}","category":"{{ product.type | escape }}","name":"{{ product.title | escape }}","brand":"{{ product.vendor | escape }}","price":"{{ variant_override.price | money_without_currency }}","currency":"{{ shop.currency }}","url":"/products/{{ product.handle }}/","image_url":"{{ product.featured_image | img_url }}"}' disabled />
+        <input type="hidden" name="sku" value="{{- variant_override.sku -}}" disabled />
+        {%- unless product.has_only_default_variant %}
+            {%- for option in product.options %}
+                <div class="hidden options option-{{ forloop.index0 }}">{{ option }}</div>
+            {%- endfor %}
+        {%- endunless %}
+
+        {%- if quantity == true and quantity_index < variant_index -%}
+            {{ quantity_selector_markup }}
+        {%- endif -%}
+
+        {%- unless product.has_only_default_variant %}
+            {%- if variants == true -%}
+                {%- comment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    				Visual variant selectors
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                				{%- endcomment -%}
+                {%- if variant_picker == "button" -%}
+                    <variant-radios class="no-js-hidden" data-section="{{- section.id -}}" data-url="{{- request_url -}}" {{ block.shopify_attributes }}>
+                        {%- for option in product.options_with_values -%}
+                            {%- assign variant_option_index = option.position | minus: 1 -%}
+                            <fieldset class="variant flex flex-wrap mb-4 gap-[10px]">
+                                <legend class="utility mb-1">{{- option.name -}}</legend>
+                                {%- for value in option.values -%}
+                                    <input class="btn-hidden btn-secondary max-w-unset screen-hidden" type="radio" id="{{- id -}}_{{- option.position -}}_{{- forloop.index0 -}}" name="{{- option.name -}}" value="{{- value | escape -}}" form="{{- id -}}" {% if variant_override.options[variant_option_index] == value -%}checked{%- endif %}>
+                                    <label class="p-4 btn btn-secondary max-w-none basis-[calc(50%-5px)] inline-flex w-auto rounded-[{{- button_radius -}}px]" for="{{- id -}}_{{- option.position -}}_{{- forloop.index0 -}}">{{- value -}}</label>
+                                {%- endfor -%}
+                            </fieldset>
+                        {%- endfor -%}
+                        <input type="hidden" name="variants" value="{{- product.variants | json | escape -}}" disabled />
+                    </variant-radios>
+                {%- else -%}
+                    <variant-selects class="no-js-hidden" data-section="{{- section.id -}}" data-url="{{- request_url -}}" {{- block.shopify_attributes -}}>
+                        Dropdown
+                        <input type="hidden" name="variants" value="{{- product.variants | json | escape -}}" disabled />
+                    </variant-selects>
+                {%- endif -%}
+            {%- endif -%}
+        {%- endunless %}
+
+        {%- if quantity == true and quantity_index > variant_index -%}
+            {{ quantity_selector_markup }}
+        {%- endif -%}
+
+        {% comment %}
+                                                                                                                                                                                                                                                                                                                                                                                                            		/**
+                                                                                                                                                                                                                                                                                                                                                                                                            		* Subscription
+                                                                                                                                                                                                                                                                                                                                                                                                            		*/
+                                                                                                                                                                                                                                                                        		{% endcomment %}
+        {%- if product.selling_plan_groups.size > 0 %}
+            {%- liquid
+
+			assign comparePrice = variant_override.price | money_without_currency
+			assign discount = 0
+
+			if product.selling_plan_groups.size > 0
+
+				assign salePrice = variant_override.selling_plan_allocations[0].price | money_without_currency
+
+				if comparePrice != salePrice
+
+					assign difference = salePrice | divided_by: comparePrice | times: 100
+					assign discount = 100 | minus: difference | round
+
+				endif
+
+			endif
+
+			-%}
+            <div id="{{ id }}_subscription" class="subscription-wrapper" data-section="{{ section.id }}" data-url="{{- request_url -}}" {{ block.shopify_attributes }}>
+                {% if product.selling_plan_groups.size > 0 %}
+                    <div class="subscription-toggle">
+                        <div class="radio-button flex items-center mb-2">
+                            <input tabindex="-1" type="radio" id="radio_{{ id }}_true" name="selling_plan" value="true" checked="checked" />
+                            <label class="js-tabshow mb-[2px] ml-2 mr-2 cursor-pointer" tabindex="0" for="radio_{{ id }}_true">Subscribe & Save ({{ discount }}%)</label>
+                            <span class="line-item-price" data-orig-price="{{ variant_override.price | money_without_currency }}">{{ variant_override.selling_plan_allocations[0].price | money }}</span>
+                        </div>
+                        <div class="subscription-selection select-group mb-2">
+                            <select class="select" name="selling_plan">
+                                {% for group in product.selling_plan_groups %}
+                                    {% for selling_plan in group.selling_plans %}
+                                        <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+                                    {% endfor %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="radio-button flex items-center mb-2">
+                            <input tabindex="-1" type="radio" id="radio_{{ id }}_false" name="selling_plan" value="" />
+                            <label class="js-tabshow mb-[2px] ml-2 mr-2 cursor-pointer" tabindex="0" for="radio_{{ id }}_false">One-Time Purchase</label>
+                            <span class="line-item-price" data-orig-price="{{ variant_override.price | money_without_currency }}">{{ variant_override.price | money }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {%- endif %}
+        <button {% if atcId == "notify-me" %} id="hero-atc" {% endif %} {% if atcId == "notify-me" and variant_override.available == false %}{% unless product.tags contains "hide-notify-me" %}style="display: none;"{% endunless %}{% endif %} type="submit" name="add" class="max-w-none btn {{ btn_classes }}  {% if show_dynamic_checkout == true and product.selling_plan_groups == empty %}btn-primary{% else %}btn-primary{% endif %} {% if show_dynamic_checkout == true %}mb-5{% endif %}" {% if variant_override.available == false or product.tags contains "sold-out" %}disabled{% endif %}>
+            <span>
+                {%- unless variant_override.available == false or product.tags contains "sold-out" -%}
+                    {% if preorder == true %}Pre-Order
+                    {% else %}
+                        {{- "products.product.add_to_cart" | t -}}{% endif %}
+                {%- else -%}
+                    {{- "products.product.sold_out" | t -}}
+                {%- endunless -%}
+            </span>
+        </button>
+        {% unless product.tags contains "hide-notify-me" %}
+            <div id="{{ atcId }}"></div>
+        {% endunless %}
+        {%- if show_dynamic_checkout == true -%}
+            {{ form | payment_button }}
+        {%- endif -%}
+    {%- endform -%}
+
+    <div class="error-message-wrapper" role="alert" hidden>
+        {%- render "icon--error" %}
+        <span class="error-message"></span>
+    </div>
+</product-form>

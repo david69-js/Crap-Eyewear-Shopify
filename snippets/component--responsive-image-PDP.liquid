@@ -1,0 +1,158 @@
+{% comment %}
+  /**
+  *	Responsive Image Snippet
+  *
+  *	Attributes:
+  *
+  *	imgSource: where the image is served
+  *		'file' 			- image is uploaded to Shopify's Files section
+  *		'asset'			- image is in theme's Assets folder
+  *		'customfield'	- image is managed through custom fields
+  *
+  *	imgAlt: alt text for the image (same across all viewports)
+  *
+  *	imgBreakpoint: integer to determine when to switch from portrait to desktop
+  *
+  *	imgPortrait: image to be used when viewport < imgBreakpoint
+  *
+  *	imgLandscape: image to be used when viewport >= imgBreakpoint
+  *
+  */
+
+  initialize variables if they are not already set
+  If only 1 image is set, use it for both portrait & landscape
+
+  Required:
+
+  - image
+
+  Optional:
+
+  - imageMobile
+  - maxSize: 2048
+  - mobileBreakpoint: 768
+  - stepSize: 200
+
+  {% render 'component--responsive-image', image: object, imageMobile: object, maxSize: integer %}
+
+
+  // TODO: Half function
+  // TODO: Image Max Width
+{% endcomment %}
+{%- liquid
+  unless image
+    echo 'Image object is required for this component'
+  endunless
+
+  if anim_class == blank
+    assign anim_class = ''
+  endif
+
+  assign imageMobile = imageMobile
+  assign maxSize = maxSize | default: 2048
+
+  if imageMobile == blank
+    assign imageMobile = image
+  endif
+
+  if maxSize > image.width
+    assign maxSize = image.width
+  endif
+
+  assign mobileBreakpoint = mobileBreakpoint | default: 768
+  assign stepSize = stepSize | default: 200
+  assign objectFit = objectFit | default: false
+  assign placeholder = placeholder | default: false
+  assign classes = classes | default: ''
+  assign half = half | default: false
+  assign divisor = 1
+
+  if half
+    assign divisor = 2
+  endif
+
+  assign maxImageSize = maxSize | append: 'x'
+  assign maxSteps = maxSize | divided_by: stepSize | floor
+
+  capture breakpoints
+    for i in (1..maxSteps)
+      assign thisSize = i | times: stepSize
+      assign thisSizeString = thisSize | append: 'x'
+      if thisSize > mobileBreakpoint
+        assign thisImage = image.src | img_url: thisSizeString
+      else
+        continue
+      endif
+      assign breakpointImage = thisImage | append: ' ' | append: thisSize | append: 'w'
+      if i < maxSteps
+        assign breakpointImage = breakpointImage | append: ', '
+      endif
+      echo breakpointImage
+    endfor
+  endcapture
+
+  capture mobileBreakpoints
+    for i in (1..maxSteps)
+      assign thisSize = i | times: stepSize
+      assign thisSizeString = thisSize | append: 'x'
+      if thisSize > mobileBreakpoint
+        continue
+      else
+        assign thisImage = imageMobile.src | img_url: thisSizeString
+      endif
+      assign breakpointImage = thisImage | append: ' ' | append: thisSize | append: 'w'
+      if i < maxSteps
+        assign breakpointImage = breakpointImage | append: ', '
+      endif
+      echo breakpointImage
+    endfor
+  endcapture
+
+  # TODO: output 2x & 3x sourceset
+-%}
+<picture class="{{ anim_class }} {%- if objectFit == true -%} ar-image {%- elsif objectFit == 'mobile' %} ar-image-mobile {% endif -%} {{- classes -}}">
+  {%- if request.design_mode -%}
+    {%- unless maxSize < mobileBreakpoint -%}
+      <source media="(min-width: {{ mobileBreakpoint | plus: 1 }}px)" srcset="{{ breakpoints | strip }}">
+    {%- endunless -%}
+    <source
+      {%- if maxSize > mobileBreakpoint %}
+        media="(max-width: {{ mobileBreakpoint }}px)"
+      {%- endif %}
+      srcset="{{ mobileBreakpoints | strip }}"
+    >
+    <img
+      {% if forloop.index == 1 %}
+        loading="eager"
+      {% else %}
+        fetchpriority="high" loading="eager"
+      {% endif %}
+      alt="{{ image.alt | strip }}-{{ prod.title }}-{{ forloop.index }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      src="{{ image.src | img_url: maxImageSize }}"
+    >
+  {%- else -%}
+    {%- unless maxSize < mobileBreakpoint -%}
+      <source media="(min-width: {{ mobileBreakpoint | plus: 1 }}px)" data-srcset="{{ breakpoints | strip }}">
+    {%- endunless -%}
+    <source
+      {%- if maxSize > mobileBreakpoint %}
+        media="(max-width: {{ mobileBreakpoint }}px)"
+      {%- endif %}
+      data-srcset="{{ mobileBreakpoints | strip }}"
+    >
+    <img
+      alt="{{ image.alt | strip }}-{{ prod.title }}-{{ forloop.index }}"
+      {% if forloop.index == 1 %}
+        fetchpriority="high" loading="eager"
+      {% else %}
+        loading="lazy"
+      {% endif %}
+      class="lazy"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      src="{{ image.src | img_url: maxImageSize }}"
+    >
+  {%- endif %}
+</picture>

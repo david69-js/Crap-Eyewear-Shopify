@@ -1,0 +1,15 @@
+<!--      CALLOUT MODULE -- IMAGE WITH CTA -->
+
+<div class="callout--img-cta featured img-load-section" style="--background-color: {{ collection.metafields.c_f['Image CTA Bg Color'] }}; --text-color: {{ collection.metafields.c_f['Image CTA Color'] }};">
+  <a class="img-wrap" href="{{ collection.metafields.c_f['Image CTA Link'] }}">
+    {% assign ci_arr = collection.metafields.c_f['Image CTA Image'] | split: '/' %}
+    {% assign ci = ci_arr | last %}
+    <img class="preload featured-img {{ collection.metafields.c_f['Image CTA Image Style'] }}" alt="" data-preload-desktop="{{ ci | | file_img_url: '650x' }}" data-preload-mobile="{{ ci | | file_img_url: '400x' }}">
+  </a>
+  <div class="cta-wrapper">
+    <p class="eyebrow">{{ collection.metafields.c_f['Image CTA Eyebrow'] }}</p>
+    <h3>{{ collection.metafields.c_f['Image CTA Headline'] }}</h3>
+    <p class="description">{{ collection.metafields.c_f['Image CTA Text'] }}</p>
+    <a class="zero-button small" href="{{ collection.metafields.c_f['Image CTA Link'] }}">{{ collection.metafields.c_f['Image CTA CTA'] }}</a>
+  </div>
+</div>

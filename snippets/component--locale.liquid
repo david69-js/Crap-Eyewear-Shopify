@@ -1,0 +1,74 @@
+{%- comment %}
+/**
+ *	Locale
+ */
+{%- endcomment -%}
+{%- liquid
+
+
+-%}
+{%- if localization.available_languages.size > 1 or localization.available_countries.size > 1 -%}
+	<div class="ml-8">
+
+		{%- comment -%} --- Modal Trigger Markup --- {%- endcomment -%}
+		{%- capture slotTrigger -%}
+			<button class="flex items-center py-1 js-trigger">
+				<div class="mr-2 w-[8px]" aria-hidden="true">
+					{%- render "output--icon", icon: "pin-drop" -%}
+				</div>
+				<span>
+					{{- localization.country.name }} ({{- localization.country.currency.iso_code }} {{ localization.country.currency.symbol -}})
+					<span class="sr-only">See all languages</span>
+				</span>
+				<span class="ml-2 w-[10px]" aria-hidden="true">
+					{%- render "output--icon", icon: "caret" -%}
+				</span>
+			</button>
+		{%- endcapture -%}
+
+		{%- comment -%} --- Modal Markup --- {%- endcomment -%}
+		{%- capture slot -%}
+			<div class="text-black">
+				<h3 class="h2" tabindex="-1">Location</h3>
+				<localization-form>
+					{%- form "localization" -%}
+						{%- if localization.available_languages.size > 1 -%}
+							{%- capture languages -%}
+								{%- for language in localization.available_languages -%}
+									{%- assign selected = nil -%}
+									{%- if localization.language.iso_code == language.iso_code -%}
+										{%- assign selected = true -%}
+									{%- endif -%}
+									{%- render "component--input-field", type: "option", name: language.endonym_name | capitalize, value: language.iso_code, checked: selected -%}
+								{%- endfor -%}
+							{%- endcapture -%}
+							{%- render "component--input-field", type: "select", name: "locale_code", label: "Language", slot: languages, form: form, required: "false", id: "localization_form" -%}
+						{%- endif -%}
+						{%- if localization.available_countries.size > 1 and settings.show_currency_options == true -%}
+							{%- capture countries -%}
+								{%- for country in localization.available_countries -%}
+									{%- assign selected = nil -%}
+									{%- capture label -%}
+										{{- country.name | capitalize }} ({{- country.currency.iso_code }} {{ country.currency.symbol -}})
+									{%- endcapture -%}
+									{%- capture flag_attributes -%}
+										data-flag='{%- render "output--flags", country_code: country.currency.iso_code, url: true -%}'
+									{%- endcapture -%}
+									{%- if localization.country.iso_code == country.iso_code -%}
+										{%- assign selected = true -%}
+									{%- endif -%}
+									{%- render "component--input-field", type: "option", name: label, value: country.iso_code, checked: selected, attributes: flag_attributes -%}
+								{%- endfor -%}
+							{%- endcapture -%}
+							{%- render "component--input-field", type: "select", name: "country_code", label: "Currency", slot: countries, form: form, required: "false", id: "localization_form" -%}
+						{%- endif -%}
+						{%- render "component--button", classes: "btn", type: "submit", label: "Save", form: form -%}
+					{%- endform -%}
+				</localization-form>
+			</div>
+		{%- endcapture -%}
+
+		{%- comment -%} --- Modal --- {%- endcomment -%}
+		{%- render "slot--modal", slot: slot, slotTrigger: slotTrigger -%}
+	</div>
+{%- endif -%}

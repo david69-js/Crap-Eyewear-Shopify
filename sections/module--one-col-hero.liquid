@@ -1,0 +1,367 @@
+{% liquid
+  assign heroImageMobile = section.settings.image_1_mobile
+  assign heroImageDesktop = section.settings.image_1
+
+  if section.settings.image_1 == null
+    assign heroImageDesktop = section.settings.image_1_mobile
+  endif
+
+  if section.settings.image_1_mobile == null
+    assign heroImageMobile = section.settings.image_1
+  endif
+%}
+
+<style>
+  #shopify-section-{{ section.id }} .one-col-hero-grid {
+      display: grid;
+      height: 170vw;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr min-content min-content;
+      grid-template-areas: "." "content" "cta"
+  }
+  #shopify-section-{{ section.id }} .one-col-hero-grid.half-height {
+      height: 90vw;
+  }
+
+  #shopify-section-{{ section.id }} .one-col-hero-content {
+      grid-area: content;
+  }
+
+  #shopify-section-{{ section.id }} .richtext.indent-odd h1:nth-child(odd) {
+      padding-left: 60px;
+  }
+  #shopify-section-{{ section.id }} .richtext.indent-even h1:nth-child(even) {
+      padding-left: 60px;
+  }
+  #shopify-section-{{ section.id }} .one-col-hero-content p {
+      margin-bottom: 0;
+  }
+  #shopify-section-{{ section.id }} .one-col-hero-cta {
+      grid-area: cta;
+  }
+  #shopify-section-{{ section.id }} .one-col-hero-image-1 {
+      grid-row: 1 / 4;
+      grid-column: 1 / 2;
+  }
+  @media screen and (min-width: 768px) {
+      #shopify-section-{{ section.id }} .one-col-hero-grid {
+          display: grid;
+          height: 56.25vw;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: min({{ section.settings.desktop_content_width }}%, calc(100% - 250px)) 1fr;
+          grid-template-areas: ". ." "content cta";
+      }
+      #shopify-section-{{ section.id }} .one-col-hero-grid.copy-align-right {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: ". ." "cta content";
+      }
+      #shopify-section-{{ section.id }} .one-col-hero-grid.half-height {
+          height: 66vh;
+      }
+
+      #shopify-section-{{ section.id }} .one-col-hero-content {
+          grid-area: content;
+      }
+      #shopify-section-{{ section.id }} .one-col-hero-image-1 {
+          grid-row: 1 / 4;
+          grid-column: 1 / 3;
+      }
+
+      #shopify-section-{{ section.id }} .richtext.indent-odd p:nth-child(odd) {
+          padding-left: 60px;
+      }
+      #shopify-section-{{ section.id }} .richtext.indent-even p:nth-child(even) {
+          padding-left: 60px;
+      }
+      #shopify-section-{{ section.id }} .one-col-hero-content p {
+          margin-bottom: 0;
+      }
+      #shopify-section-{{ section.id }} .one-col-hero-cta {
+          grid-area: cta;
+      }
+      {% if section.settings.video_1 != null %}
+          #shopify-section-{{ section.id }} .one-col-hero-image-1 .one-col-image-wrapper {
+              display: none;
+          }
+      {% elsif section.settings.image_1 != null %}
+          #shopify-section-{{ section.id }} .one-col-hero-image-1 video {
+              display: none;
+          }
+      {% endif %}
+
+  }
+  @media screen and (max-width: 768px) {
+      {% if section.settings.video_1_mobile != null %}
+          #shopify-section-{{ section.id }} .one-col-hero-image-1 .one-col-image-wrapper {
+              display: none;
+          }
+      {% elsif section.settings.image_1_mobile != null %}
+          #shopify-section-{{ section.id }} .one-col-hero-image-1 video {
+              display: none;
+          }
+      {% endif %}
+  }
+</style>
+
+<div
+  class="one-col-hero-grid pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] {% if section.settings.copy_alignment == 'right' %} copy-align-right{% endif %} {% if section.settings.half_height == true %} half-height {% endif %}"
+  style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}"
+  data-animation="{{- section.settings.animation -}}"
+>
+  <div class="relative one-col-hero-image-1">
+    {% if section.settings.video_1 %}
+      <div class="h-full">
+        {%- render 'component--responsive-video-Hero',
+          cover: true,
+          autoplay: true,
+          muted: true,
+          loop: true,
+          desktop_video: section.settings.video_1,
+          mobile_video: section.settings.video_1_mobile,
+          image_poster_desktop: section.settings.poster_image_desktop,
+          image_poster_mobile: section.settings.poster_image_mobile
+        -%}
+      </div>
+    {% else %}
+      <div class="one-col-image-wrapper">
+        {%- render 'component--responsive-image-Hero',
+          image: heroImageDesktop,
+          imageMobile: heroImageMobile,
+          objectFit: true,
+          maxSize: 1280
+        -%}
+      </div>
+    {% endif %}
+    <div
+      class="absolute inset-0 bg-black pointer-events-none"
+      style="opacity: {{section.settings.image_1_brightness}};"
+    ></div>
+  </div>
+
+  <div
+    class="one-col-hero-content relative md:self-end ca pointer-events-none {% if section.settings.copy_alignment == 'right' %}md:pl-[50%] pr-4{% endif %}"
+    style="color: {{ section.settings.font_color }};"
+  >
+    {% if section.settings.body_richtext == blank %}
+      <div class="richtext pointer-events-none {% if section.settings.body_richtext == blank %} has-xl-h {% endif %} {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+        {{ section.settings.title_richtext }}
+      </div>
+    {% else %}
+      <div class="richtext pointer-events-none has-xl-h {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+        {{ section.settings.title_richtext }}
+      </div>
+    {% endif %}
+    {% if section.settings.body_richtext != '' %}
+      <div class="w-full">
+        <div class="richtext pointer-events-none">
+          {{ section.settings.body_richtext }}
+        </div>
+        {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+          <a
+            href="{{section.settings.cta_url}}"
+            class="btn pointer-events-auto {{ section.settings.button_style }} w-max !no-underline mt-6 md:w-auto"
+          >
+            {{- section.settings.cta_text -}}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.cta_text != blank
+    and section.settings.cta_url != blank
+    and section.settings.body_richtext == blank
+  %}
+    <div class="one-col-hero-cta relative px-4 mb-6  md:self-end md:px-6">
+      <a href="{{section.settings.cta_url}}" class="btn {{ section.settings.button_style }} w-max md:w-auto md:ml-auto">
+        {{- section.settings.cta_text -}}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "One Column Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "t:settings_schema.animations.settings.animation.label",
+      "info": "t:settings_schema.animations.settings.animation.info",
+      "options": [
+        {
+          "value": "",
+          "label": "t:settings_schema.animations.settings.none.label"
+        },
+        {
+          "value": "Fade",
+          "label": "t:settings_schema.animations.settings.fade.label"
+        },
+        {
+          "value": "StaggerFade",
+          "label": "t:settings_schema.animations.settings.stagger_fade.label"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "label": "Bottom Margin",
+      "info": "Optional space at bottom of section",
+      "options": [
+        {
+          "value": "--mb-m: 0px; --mb-d: 0px;",
+          "label": "No margin"
+        },
+        {
+          "value": "--mb-m: 30px; --mb-d: 60px;",
+          "label": "Small Margin"
+        },
+        {
+          "value": "--mb-m: 60px; --mb-d: 120px;",
+          "label": "Large Margin"
+        }
+      ],
+      "default": "--mb-m: 0px; --mb-d: 0px;"
+    },
+    {
+      "type": "checkbox",
+      "id": "half_height",
+      "label": "Half Height Hero"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "t:settings_schema.general.settings.font_color.label",
+      "info": "t:settings_schema.general.settings.font_color.info",
+      "default": "#1E1E1E"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings_schema.general.settings.background_color.label",
+      "info": "t:settings_schema.general.settings.background_color.info",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1_mobile",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_desktop",
+      "label": "Poster Image (Desktop) for video"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image_mobile",
+      "label": "Poster Image (Mobile) for video"
+    },
+    {
+      "type": "video",
+      "id": "video_1",
+      "label": "Background Video"
+    },
+    {
+      "type": "video",
+      "id": "video_1_mobile",
+      "label": "Background Video (Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "image_1_brightness",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "Darken Background Media",
+      "default": 0.5
+    },
+    {
+      "type": "richtext",
+      "id": "title_richtext",
+      "label": "Title Text",
+      "info": "Use H1 for XL Heading on both desktop and mobile. Use H2 for XL Heading on desktop only."
+    },
+    {
+      "type": "select",
+      "id": "title_indent",
+      "label": "Title Indentation Pattern",
+      "options": [
+        {
+          "value": "even",
+          "label": "Even numbered lines"
+        },
+        {
+          "value": "odd",
+          "label": "Odd numbered lines"
+        },
+        {
+          "value": "none",
+          "label": "No indentation"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "richtext",
+      "id": "body_richtext",
+      "label": "Body Text"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_width",
+      "label": "Desktop Content Width",
+      "min": 40,
+      "max": 90,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Color",
+      "options": [
+        {
+          "value": "btn-primary",
+          "label": "Green"
+        },
+        {
+          "value": "btn-secondary",
+          "label": "White"
+        },
+        {
+          "value": "",
+          "label": "Black"
+        }
+      ],
+      "default": "btn-primary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "One Column Hero"
+    }
+  ]
+}
+{% endschema %}

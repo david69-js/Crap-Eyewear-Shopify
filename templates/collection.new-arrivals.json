@@ -1,0 +1,94 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "e253d211-0ffe-4478-8742-83dec33196c0": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "65ee445d-e1be-4d93-b033-0098cc853cde": {
+      "type": "section--party",
+      "settings": {
+        "heading": "",
+        "pagination_type": "infinite",
+        "products_per_page": 250,
+        "media_file": "",
+        "enable_filtering": true,
+        "hide_mode_toggle": false,
+        "default_mode": "party",
+        "filter_nav": "",
+        "filter_group_name": true,
+        "filter_open": true,
+        "enable_sorting": true,
+        "animation": "",
+        "column_pip_product": "",
+        "column_svg": "",
+        "column_sticker_width": 100,
+        "column_sticker_position": "",
+        "show_end_banner": false,
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "content": "",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "f44f832d-31a3-4b44-a693-281c3ca4d65f": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "012441ab-1aee-4bb0-a4e9-f7aa1961e047": {
+      "type": "module--image-marquee",
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "47ee32d9-30bc-4ae5-81b0-7109496e0496": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1_brightness": 0.5,
+        "richtext_1": "",
+        "cta_1_text": "",
+        "cta_1_url": "",
+        "image_2_brightness": 0.5,
+        "richtext_2": "",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "e253d211-0ffe-4478-8742-83dec33196c0",
+    "65ee445d-e1be-4d93-b033-0098cc853cde",
+    "f44f832d-31a3-4b44-a693-281c3ca4d65f",
+    "012441ab-1aee-4bb0-a4e9-f7aa1961e047",
+    "47ee32d9-30bc-4ae5-81b0-7109496e0496"
+  ]
+}

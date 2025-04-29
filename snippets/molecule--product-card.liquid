@@ -1,0 +1,103 @@
+{%- liquid
+
+
+
+
+unless request_url
+	assign request_url = product.url
+endunless
+
+unless variant
+	assign variant = product.selected_or_first_available_variant
+endunless
+
+assign headline_classes = "leading-none"
+assign appended_id = "_quickshop_" | append: product.id
+assign id = section.id | append: appended_id
+
+
+
+-%}
+
+{% assign title_format = product.title | split: '-' %}
+    <article class="relative  overflow-hidden" data-product="{{- product.id -}}">
+    <div class="w-full" data-animation="Fade">
+        <div>
+
+            {%- if settings.show_multiple_variants == true -%}
+                {%- else -%}
+                    <a href="{{- product.url -}}" class="relative block w-full h-auto">
+
+                        {% if product.featured_image != blank -%}
+                            {% render "component--responsive-image", image: product.featured_image, placeholder: true %}
+                        {%- endif -%}
+                        {%- comment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            					TODO: IF "Hover" 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        					{%- endcomment -%}
+                    </a>
+            {%- endif -%}
+        </div>
+        <div class="p-4">
+            {%- comment -%} --- Product Reviews --- {%- endcomment -%}
+            {%- if settings.reviews_summary_visible == true and product.metafields.reviews.rating_count != blank -%}
+                <div class="flex items-center justify-center">
+                    {%- render "component--review-summary", stars: product.metafields.reviews.rating.value, count: product.metafields.reviews.rating_count, half: true -%}
+                </div>
+            {%- endif -%}
+
+            {%- comment -%} --- Product Title & Price --- {%- endcomment -%}
+            <div class="flex items-center justify-between">
+                <div>
+                    {%- if settings.show_product_type == true -%}
+                        {%- render "component--text", tag: "small", content: product.type | escape -%}
+                    {%- endif -%}
+                    <a href="{{- product.url -}}">
+                        <h3 class="grotesk-bold text-[80%] dk:text-[120%]">{{ title_format[0] }}</h3>
+                    </a>
+                </div>
+                <div class="w-[16px] favorite-btn">
+                    {%- render "icon--heart" %}
+                </div>
+            </div>
+            <p class="text-[80%] mt-[5px]">{{ product.variants[0].title }}</p>
+            <div class="flex items-center justify-between">
+                <p class="color-info text-[80%] mt-[5px]">(+{{ product.metafields.custom.primary_collection.value.all_products_count }} Colors)</p>
+                {%- if settings.show_product_type == true -%}
+                    {%- render "component--price", product: product, price_class: "text-right flex-col", use_varies: settings.show_variable_pricing -%}
+                {%- else -%}
+                    {%- render "component--price", product: product, price_class: "text-right", use_varies: settings.show_variable_pricing -%}
+                {%- endif -%}
+            </div>
+
+            {%- comment -%} --- Product Descriptions --- {%- endcomment -%}
+            {%- if product.description != blank and settings.show_product_description == true -%}
+                {%- render "component--richtext", content: product.description | escape -%}
+            {%- endif -%}
+
+            {%- comment -%} --- Quickshop Trigger / ATC --- {%- endcomment -%}
+            {%- if settings.show_quickshop == true -%}
+                {%- if product.variants.size > 1 -%}
+                    <quickshop-trigger data-target="{{- section.id -}}{{- appended_id -}}">
+                        <button class="btn btn-primary mt-4">Quick Shop</button>
+                    </quickshop-trigger>
+                {%- else -%}
+                    <div class="mt-4">
+                        {%- render "component--add-to-cart", product: product, variant_override: variant, request_url: request_url, variants: false, quantity: false, variant_index: 1, quantity_index: 0, form_id: section.id, append_id: appended_id, show_dynamic_checkout: false, update: false -%}
+                    </div>
+                {%- endif -%}
+            {%- endif -%}
+        </div>
+    </div>
+
+    {%- comment -%} --- Quickshop Drawer --- {%- endcomment -%}
+    {%- if settings.show_quickshop == true and product.variants.size > 1 -%}
+        {%- render "molecule--quickshop", product: product, variant: variant, id: id, url: request_url -%}
+    {%- endif -%}
+</article>
+
+{%- comment -%}
+                                                                                    /**
+                                                                                     * Debug this object by using the render line
+                                                                                     */
+                                                                                    {%- render "debug--json", object: cart %}
+{%- endcomment -%}

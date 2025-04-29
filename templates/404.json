@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1bc97cdc-4653-4031-8be7-f8dc6070761e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "section--404",
+      "disabled": true,
+      "settings": {}
+    },
+    "54438d35-ca5c-4192-be0f-591d10641d7c": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "c0d9c57a-4245-4e7a-b9e0-f4f64bad5e18": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richtext": "<h1>404 <strong>page <\/strong><\/h1><h1><strong>cannot<\/strong> <em>be<\/em> found<\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "fa51b9ca-8572-4ed5-ac32-797c37d3fa00": {
+          "type": "xl_heading",
+          "settings": {
+            "richtext": "<h1>404 <strong>page <\/strong><\/h1><h1><strong>cannot<\/strong> <em>be<\/em> found<\/h1>",
+            "alignment": "left"
+          }
+        },
+        "4fff444e-74e5-416e-9215-297b5958c35a": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/collections\/all",
+            "text": "Shop Now",
+            "button_style": "btn-primary",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "c0d9c57a-4245-4e7a-b9e0-f4f64bad5e18",
+        "fa51b9ca-8572-4ed5-ac32-797c37d3fa00",
+        "4fff444e-74e5-416e-9215-297b5958c35a"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    }
+  },
+  "order": [
+    "1bc97cdc-4653-4031-8be7-f8dc6070761e",
+    "main",
+    "54438d35-ca5c-4192-be0f-591d10641d7c"
+  ]
+}

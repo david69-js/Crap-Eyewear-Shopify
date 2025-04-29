@@ -1,0 +1,378 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "489d350f-9e7d-4637-bedb-66c4cf5c1436": {
+      "type": "module--one-col-hero",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "half_height": true,
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "image_1": "shopify://shop_images/Family-Hero.jpg",
+        "image_1_mobile": "shopify://shop_images/Family-Hero-Mobile.jpg",
+        "image_1_brightness": 0,
+        "title_richtext": "<h1>Meet</h1><h1><strong>The FAM</strong></h1>",
+        "title_indent": "even",
+        "body_richtext": "",
+        "desktop_content_width": 50,
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "75b91035-a953-4f6e-914f-307b43444e14": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "afc5ce8d-ecab-4245-86d1-ddd2a2c63019": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>True to the core of our brand, we are happy to support <strong>an unrivaled roster of skateboarders and surfers</strong>—the <em>“Crap Family.”</em></h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "afc5ce8d-ecab-4245-86d1-ddd2a2c63019"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "81d96b7c-4ab8-4acb-beb2-566f5395dc52": {
+      "type": "module--two-col-grid",
+      "blocks": {
+        "e7f58fd7-6f68-4306-ab49-ceaf05580191": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Blake-Johnson.jpg",
+            "href": "",
+            "fam_name": "Blake Johnson",
+            "fam_role": "Skate"
+          }
+        },
+        "69f90cd9-741b-4d1f-bf27-bce4337296ee": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Breana_Geering-web-fam.jpg",
+            "href": "",
+            "fam_name": "Breana Geering",
+            "fam_role": "Skate"
+          }
+        },
+        "99d5b988-acd3-4838-83c3-ddf9aa0543f6": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Elijah.jpg",
+            "href": "",
+            "fam_name": "Elijah Berle",
+            "fam_role": "Skate"
+          }
+        },
+        "90e7b041-4bdc-492f-8b73-1ea4555c9a6f": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Frankie_Harrer-web-fam.jpg",
+            "href": "",
+            "fam_name": "Frankie Harrer",
+            "fam_role": "Surf"
+          }
+        },
+        "1cbabd2c-0b30-4a72-824f-c11e37af6d94": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Jared-Mell.jpg",
+            "href": "",
+            "fam_name": "Jared Mell",
+            "fam_role": "Surf"
+          }
+        },
+        "38a9971f-195d-4ceb-a3da-18ce0f685930": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Karina_Rozunko-web-fam.jpg",
+            "href": "",
+            "fam_name": "Karina Rozunko",
+            "fam_role": "Surf"
+          }
+        },
+        "8eaf9d18-880c-4fb2-a99a-752f19da09fa": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Kevin-Bradley.jpg",
+            "href": "",
+            "fam_name": "Kevin Bradley",
+            "fam_role": "Skate"
+          }
+        },
+        "1c287a1d-e86f-43c7-a6be-15b9c01bdf33": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Kevin_White-web-fam.jpg",
+            "href": "",
+            "fam_name": "Kevin White",
+            "fam_role": "Skate"
+          }
+        },
+        "639434ea-8a3f-4145-a626-77c60bc86a5a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/noah_collins-web-fam.jpg",
+            "href": "",
+            "fam_name": "Noah Collins",
+            "fam_role": "Surf"
+          }
+        },
+        "2b617aa0-5a3f-4f05-87a4-c4bfb04d10c4": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Ozzie-web-fam.jpg",
+            "href": "",
+            "fam_name": "Ozzie Wright",
+            "fam_role": "Surf"
+          }
+        },
+        "faef4416-08af-428a-8549-d97bf548e58c": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Skip-Family.jpg",
+            "href": "",
+            "fam_name": "Skip McCullough",
+            "fam_role": "Surf"
+          }
+        }
+      },
+      "block_order": [
+        "e7f58fd7-6f68-4306-ab49-ceaf05580191",
+        "69f90cd9-741b-4d1f-bf27-bce4337296ee",
+        "99d5b988-acd3-4838-83c3-ddf9aa0543f6",
+        "90e7b041-4bdc-492f-8b73-1ea4555c9a6f",
+        "1cbabd2c-0b30-4a72-824f-c11e37af6d94",
+        "38a9971f-195d-4ceb-a3da-18ce0f685930",
+        "8eaf9d18-880c-4fb2-a99a-752f19da09fa",
+        "1c287a1d-e86f-43c7-a6be-15b9c01bdf33",
+        "639434ea-8a3f-4145-a626-77c60bc86a5a",
+        "2b617aa0-5a3f-4f05-87a4-c4bfb04d10c4",
+        "faef4416-08af-428a-8549-d97bf548e58c"
+      ],
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff"
+      }
+    },
+    "d9699281-297b-45a5-8a4a-d22b8b97e0fe": {
+      "type": "module--three-col",
+      "blocks": {
+        "4f4047be-907f-408b-8886-89cb74506a11": {
+          "type": "card",
+          "settings": {
+            "article": "",
+            "card_title": "Vibe Check: Karina Rozunko",
+            "card_url": "",
+            "card_image": "shopify://shop_images/Vibe-Check.jpg"
+          }
+        },
+        "a20676f7-5a77-415a-b704-0c36a126e595": {
+          "type": "card",
+          "settings": {
+            "article": "",
+            "card_title": "A Convo With Noah",
+            "card_url": "",
+            "card_image": "shopify://shop_images/A-Convo-Noah.jpg"
+          }
+        },
+        "3d4e11e6-a818-404b-b8d1-e8f603f0dc17": {
+          "type": "card",
+          "settings": {
+            "article": "",
+            "card_title": "Welcome To The Fam, Ozzie!",
+            "card_url": "",
+            "card_image": "shopify://shop_images/Meet-the-Fam-Crappenings.png"
+          }
+        }
+      },
+      "block_order": [
+        "4f4047be-907f-408b-8886-89cb74506a11",
+        "a20676f7-5a77-415a-b704-0c36a126e595",
+        "3d4e11e6-a818-404b-b8d1-e8f603f0dc17"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "<h3>Fam <strong>crappenings</strong></h3>",
+        "cta_text": "All Crappenings",
+        "cta_url": "shopify://blogs/crappenings",
+        "button_style": "btn-primary"
+      }
+    },
+    "2e427794-db9f-4fb0-b864-1b20f2ca7ce7": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "a0ac5f12-5f9f-4511-aa83-d42a7c4d4de7": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>Fam Signatures</em></h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "a0ac5f12-5f9f-4511-aa83-d42a7c4d4de7"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "b9bf2123-c642-4f22-b746-4f9953c09a30": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "richtext": "<h1><em>The</em> <strong>BIKINI VISION</strong> by Jared Mell</h1>",
+        "collection": "the-bikini-vision",
+        "collection_video": "shopify://files/videos/Jared_BikiniVision.mp4",
+        "image_brightness": 0.1,
+        "carousel_side": "row-reverse",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "19a7bebd-9ec1-49e6-b704-bcaeefc32625": {
+      "type": "module--two-col-carousel",
+      "disabled": true,
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "richtext": "<h1><em>The</em> <strong>KISS OF DUME</strong> by Frankie Harrer</h1>",
+        "collection": "the-kiss-of-dume",
+        "collection_video": "shopify://files/videos/Frankie_KissOfDume.mp4",
+        "image_brightness": 0.5,
+        "carousel_side": "row-reverse",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "be78fd1f-08c2-4551-a42b-435b8af71661": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "richtext": "<h1><em>The</em> <strong>SPEEDWAY</strong> by Blake Johnson</h1>",
+        "collection": "the-speedway",
+        "collection_video": "shopify://files/videos/Blake_Speedway.mp4",
+        "image_brightness": 0.1,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "3b9323b5-a1a9-4920-986a-8f2f6aff4b2f": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "b887a2a1-9c38-4eda-a417-8b5f4cf5cc1c": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>Fam Favorites</em></h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "b887a2a1-9c38-4eda-a417-8b5f4cf5cc1c"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "bfbefba0-421e-4da1-8cd0-c1c5f7738a1c": {
+      "type": "module--product-slider",
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "collection": "fam-favs",
+        "cta_text": "Shop Fam Favs",
+        "cta_url": "shopify://collections/fam-favs",
+        "button_style": "btn-primary"
+      }
+    },
+    "8f0ad713-65f6-4969-85a8-928da7c37cd6": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3><strong>$20 OFF</strong> when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/refer-a-friend",
+        "image_2": "shopify://shop_images/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14,<br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "489d350f-9e7d-4637-bedb-66c4cf5c1436",
+    "75b91035-a953-4f6e-914f-307b43444e14",
+    "81d96b7c-4ab8-4acb-beb2-566f5395dc52",
+    "d9699281-297b-45a5-8a4a-d22b8b97e0fe",
+    "2e427794-db9f-4fb0-b864-1b20f2ca7ce7",
+    "b9bf2123-c642-4f22-b746-4f9953c09a30",
+    "19a7bebd-9ec1-49e6-b704-bcaeefc32625",
+    "be78fd1f-08c2-4551-a42b-435b8af71661",
+    "3b9323b5-a1a9-4920-986a-8f2f6aff4b2f",
+    "bfbefba0-421e-4da1-8cd0-c1c5f7738a1c",
+    "8f0ad713-65f6-4969-85a8-928da7c37cd6"
+  ]
+}

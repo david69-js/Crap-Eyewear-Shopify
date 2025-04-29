@@ -1,0 +1,539 @@
+{% include 'shogun-content-handler' %}
+<html lang="en">
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]--> 
+
+  <title>
+  {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
+    {% unless template contains 'product' or template contains 'collection' %}
+    {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    {% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W5V9PJ6');</script>
+	<!-- End Google Tag Manager -->
+
+  {% include 'open-graph-tags' %}
+  {% include 'twitter-card' %}
+
+  {{ content_for_header }}
+  
+  <link href="https://vjs.zencdn.net/5.8.7/video-js.css" rel="stylesheet">
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'social/social-icons.css' | global_asset_url | stylesheet_tag }}
+  
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
+
+  <!-- Mailchimp Code -->
+  
+  <script type="text/javascript">
+	var $mcGoal = {'settings':{'uuid':'9065f6e81d87539298194c94d','dc':'us4'}};
+	(function() {
+		 var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
+		sp.src = ('https:' == document.location.protocol ? 'https://s3.amazonaws.com/downloads.mailchimp.com' : 'http://downloads.mailchimp.com') + '/js/goal.min.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
+	})(); 
+  </script>
+
+  <!-- End Mailchimp Code -->
+  
+  <meta name="google-site-verification" content="wLgYZr7xukq_9S4UiuoTDl1g9Gw3IOtEt8-NcPUBvPM" />
+  
+  <!-- START: Brickspace Lab / ST#10925 / TK -->
+  <script>
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['site', 'site-01e26a51-www.crapeyewear.com']);
+    window['friendbuy'].push(['track', 'customer',{
+      id: '{{ customer.id }}',
+      email: '{{ customer.email }}',
+      first_name: '{{ customer.first_name }}',
+      last_name: '{{ customer.last_name }}'
+    }]);
+    (function (f, r, n, d, b, y) {
+      b = f.createElement(r), y = f.getElementsByTagName(r)[0];b.async = 1;b.src = n;y.parentNode.insertBefore(b, y);
+    })(document, 'script', '//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js');
+  </script>
+  <script>
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['widget', "dUq-owk"]);
+  </script>
+  <!-- END: Brickspace Lab -->  
+
+  
+  {% if template contains 'customers' %}
+  {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %} 
+  {{ 'shopify_common.js'  | asset_url | script_tag }}  
+  <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=J52WT9" defer></script>
+  <!-- Hotjar Tracking Code for www.crapeyewear.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1249099,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+  <!-- Global Site Tag (gtag.js) - Google AdWords: 956219375 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-956219375" defer></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-956219375', {'send_page_view': false});
+</script> 
+
+  {% render 'shogun-head' %}
+</head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5V9PJ6"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js' | script_tag }}   
+  <!-- NEWSLETTER-OVERLAY -->
+  <div id="lightbox" style="display: none;">
+    <div class="overlay-x"></div>
+    <!-- NEWSLETTER POP UP -->
+    <div id="newsletterPopup" class="container" style="display: none;">
+      <div class="row">
+        <div class="six columns offset-by-three">
+          <div class="newsletter-overlay-container">
+            <img src="{{ 'newsletter_form_image.jpg' | asset_url }}" />
+            <h2>{{ settings.newsletter_form_heading }}</h2>
+            <form method="post" action="{{ settings.newsletter_form_action }}">
+              <input type="email" name="EMAIL" placeholder="Enter your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email address'" /><input type="submit" value="Subscribe" />
+            </form>
+            <p>{{ settings.newsletter_form_summary }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /NEWSLETTER POP UP -->
+    {% if template == 'product' or template == 'cart' %}
+      <div id="shippingPopup" class="container" style="display: none;">
+        <h2>{{ pages[settings['product_returns_popup']].title }}</h2>
+        <div class="row">
+          <div class="twelve columns rte">
+            {{ pages[settings['product_returns_popup']].content }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+	<div id="searchPopup" class="container" style="display: none;">
+		<form action="/search" method="get" class="search-form" role="search" autocomplete="off">
+            <label for="search-overlay-field" style="display:none;">Search Field</label>
+		    <input type="hidden" name="type" value="product">
+            <input class="u-pull-left" name="q" type="search" id="search-overlay-field" placeholder="Enter Keyword..." value="">
+            <input class="u-pull-right" type="submit" id="search-overlay-submit" value="GO">
+        </form>
+	</div>
+  </div>
+  <!-- /NEWSLETTER-OVERLAY -->
+  <div id="CartDrawer" class="cart-drawer drawer drawer--right">
+    <div class="cart-drawer-inner">
+      <div class="cart-drawer__header">
+        <div class="cart-drawer__status">
+          <span class="js-ajaxcart-close icon-wrapper">
+            {% include 'icon-close' %}
+          </span>
+          
+          <span class="cart-drawer__spinner icon-wrapper">
+            <i class="icon-spinner"></i>
+          </span>
+          
+          <div class="cart-drawer__logo">
+            <span class="icon-wrapper">
+              {% include 'icon-smiling-sun' %}
+            </span>
+          </div>
+          
+          <div class="cart-drawer__free-shipping" data-region="us">
+            <div class="free-shipping__status">
+              <span class="js-free-shipping-left"></span>
+              <span class="free-shipping__region-toggle"><i></i></span>
+			</div>
+            <div class="free-shipping__progress progress-bar">
+              <span class="js-free-shipping-progress"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul id="CartBody" class="cart-drawer__bd">
+      </ul>
+    </div>
+  </div>
+
+  <!-- MOBILE-SIDR -->
+  <div id="mobile-sidr" class="drawer drawer--left">
+    <div class="holder">
+
+    <nav class="main-menu mod-sidr">
+      {% capture mainMenuMarkup %}
+        {% for link in linklists['main-menu'].links %}
+          {% assign subList = blank %}
+          {% if link.url contains '/#list-' %}
+            {% assign subList = link.url | remove: '/#list-' %}
+          {% endif %}
+          {% if linklists[subList] != blank %}
+            <a class="main-menu-nav-link mod-sidr accordion-link {{ link.title | handleize }}" data-main="{{ link.title | handleize }}" href="#">{{ link.title }} <span>+</span></a>
+            <div class="main-menu-accordion-tab mod-sidr sub-{{ link.title | handleize }}">
+              {% for subLink in linklists[subList].links %}
+                <a href="{{ subLink.url }}" class="main-menu-nav-link-sub mod-sidr">{{ subLink.title }}</a>
+              {% endfor %}
+              <!-- START: Brickspace Lab / ST#10925 / TK -->
+              {% if forloop.index == 3 %}
+                <a href="/pages/refer-a-friend" class="main-menu-nav-link-sub mod-sidr">Get $20</a>
+              {% endif %}
+              <!-- END: Brickspace Lab -->
+            </div>
+          {% else %}
+            <a href="{{ link.url }}" class="main-menu-nav-link mod-sidr">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {{ mainMenuMarkup }}
+      
+    </nav>
+    <div class="bottom-links">
+      <a href="/account/" class="btn first">My Account</a>
+      <a href="{{ settings.right_button_link }}" class="btn second">{{ settings.right_button_title }}</a>
+      <div class="clearfix"></div>
+    </div>
+    </div>
+  </div>
+  <!-- /MOBILE-SIDR -->
+
+  <!-- DESKTOP-SIDR -->
+  <div id="desktop-sidr">
+    <div class="main-menu-close"></div>
+    <nav class="main-menu mod-sidr">
+      {{ mainMenuMarkup }}
+    </nav>
+  </div>
+  <!-- /DESKTOP-SIDR -->
+  <div id="page-container">
+	<!-- HEADER -->
+	{% section 'header' %}
+    <!-- /HEADER -->
+    
+    <!-- MAIN -->
+    <section class="main">
+      <div class="menu-overlay"></div>
+      {{ content_for_layout }}
+    </section>
+    <!-- /MAIN -->
+    
+    <!-- FOOTER -->
+	{% section 'footer' %}
+    <!-- /FOOTER -->
+  </div>
+
+   {% if product.available %} 
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+  
+  {% if template contains 'product' %}
+  {{ 'iphone-inline-video.min.js' | asset_url | script_tag }} 
+  {% else %}
+<!--   <script src="https://vjs.zencdn.net/5.8.7/video.js"></script> -->
+  {% endif %}
+  
+  {{ 'shopify-api.js' | asset_url | script_tag }}
+  {{ 'theme.plugins.js' | asset_url | script_tag }}
+  {{ 'theme.js'  | asset_url | script_tag }}
+  {% include 'ajaxcart-template' %} 
+ 
+  {% include 'sumo' %}
+  {% include 'gorgias-chat' %}
+  <script async type="text/javascript" data-api-key="" id="stamped-script-widget" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"></script>
+<script>   
+{% if settings.enable_discount %}
+$(document).ready(function(){  
+  setTimeout(function(){
+		$(".ajaxcart__subtotal .subtotal span").css('visibility','hidden');
+    	var numx = $(".discount-row .discount").data("total").replace("$", "");
+    	var totalx = $(".ajaxcart__subtotal .subtotal span").text().replace("$", "");
+    	var convertedToNumber = parseFloat(numx);
+    	var discount = convertedToNumber * 0.3;
+       	var newtotal = (totalx - discount).toFixed(2);
+    	$(".ajaxcart__subtotal .subtotal").append(' $'+newtotal);
+    	$(".ajaxcart__subtotal .discount").html('-$'+discount);
+    if ( $( '.cart-drawer' ).hasClass( "on" ) ) {
+    if(newtotal >= 75) { 
+      $(".js-shipping-msg").text('FREE');
+    } else if (newtotal > 1  && newtotal < 75) {
+      $(".js-shipping-msg").text('---');
+      var awayx = (75 - newtotal).toFixed(2);
+      $('.js-free-shipping-progress').css('width', '70%');
+      $(".js-free-shipping-left").text("You're $"+ awayx  +" away from free shipping");
+    }
+    } else {
+    if(newtotal >= 50) { 
+      $(".js-shipping-msg").text('FREE');
+    } else if (newtotal > 1  && newtotal < 50) {
+      $(".js-shipping-msg").text('---');
+      var awayx = 50 - newtotal;
+      $('.js-free-shipping-progress').css('width', '75%');
+      $(".js-free-shipping-left").text("You're $"+ awayx  +" away from free shipping");
+    }        
+   }  
+  }, 1200); 
+})
+{% endif %}
+</script>   
+<script>  
+    $(document).ready(function(){
+      $('.s4com-panel a').attr('href', 'https://www.crapeyewear.com/pages/contact-form');
+      $('.s4com-panel a').attr('onclick', '');
+    });
+$(".mobile-hamburger").click(function(){
+    $("body").addClass('js-drawer-open');
+    $("body").addClass('js-drawer-open-left');
+	$("html").addClass('js-drawer-open');
+    $("html").addClass('js-drawer-open-left');
+    $("body").css('position','fixed');
+    $(".mod-sidr.accordion-link.shop span").html('-');
+        $(".mobile-hamburger").fadeOut();
+        $(".mobile-close").fadeIn();
+    	$(".menu-overlay").fadeIn();
+}); 
+$(".menu-overlay").click(function(){
+    $("body").removeClass('js-drawer-open');
+    $("body").removeClass('js-drawer-open-left');
+	$("html").removeClass('js-drawer-open');
+    $("html").removeClass('js-drawer-open-left');  
+    $("body").css('position','relative');
+    $(".menu-overlay").fadeOut();
+    $(".mobile-hamburger").fadeIn();
+    $(".mobile-close").fadeOut();  
+});    
+$(".mobile-close").click(function(){
+    $("body").removeClass('js-drawer-open');
+    $("body").removeClass('js-drawer-open-left');
+	$("html").removeClass('js-drawer-open');
+    $("html").removeClass('js-drawer-open-left'); 
+    $("body").css('position','relative');
+    $(".menu-overlay").fadeOut();
+    $(".mobile-hamburger").fadeIn();
+    $(".mobile-close").fadeOut();  
+});
+$(".help-menu a").click(function(){
+    $(".help-menu .site-nav__dropdown").show();  
+});
+$(".account-link a").click(function(){
+    $(".account-link .site-nav__dropdown").show();  
+});    
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('.site-header .bars').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);    
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+      if(st > 10){
+        $('.site-header .bars').slideUp();       
+      }
+      if(st < 10){
+        $('.site-header .bars').slideDown();
+      }  
+      
+    lastScrollTop = st;
+}; 
+
+  if (/Mobi|Android|iPhone|iPad|Mac/i.test(navigator.userAgent)) {
+    $('.button-fix').css('top', '2px');  
+  }
+$(".js-ajaxcart-open, .js-drawer-open-right").click(function(){  
+  setTimeout(function(){
+    if (/Mobi|Android|iPhone|iPad|Mac/i.test(navigator.userAgent)) {
+    $('.button-fix').css('top', '2px');  
+  }
+    }, 400); 
+});    
+</script>
+ {% include 'smile-initializer' %}
+{{ 'anchor-code.js'  | asset_url | script_tag }}   
+{% if customer %} <div id="shopmsg-customer-helper" data-id="{{ customer.id }}" style="display:none;"></div>{% endif %}
+<!-- google dynamic remarketing tag for theme.liquid -->
+{% if template contains 'product' %}
+<script type="text/javascript">
+  var json_product = {{ product | json }};
+</script>
+<script>
+  var ecomm_prodid=[];
+  for(var i=0;i<json_product.variants.length;i++)
+    ecomm_prodid.push('shopify_US_{{product.id}}_'+json_product.variants[i].id);
+</script>
+<script type="text/javascript">
+  var google_tag_params = {
+    ecomm_prodid: ecomm_prodid,
+    ecomm_pagetype: 'product',
+    ecomm_totalvalue: parseFloat('{{ product.price | money_without_currency | remove: ","}}')
+  };
+</script>
+{% elsif template contains 'collection' %}
+<script type="text/javascript">
+  var google_tag_params = {
+    ecomm_pagetype: 'category'
+  };
+</script>
+{% elsif template contains 'cart' %}
+<script type="text/javascript">
+  var id = new Array();
+  {% for item in cart.items %}
+  id.push('shopify_US_{{item.product.id}}_{{item.variant.id}}');
+   {% endfor %}
+
+   var google_tag_params = {
+     ecomm_prodid: id,
+     ecomm_pagetype: 'cart',
+     ecomm_totalvalue: parseFloat('{{ cart.total_price | money_without_currency | remove: ","}}')
+   };
+</script>
+{% elsif template contains 'search' %}
+<script type="text/javascript">
+  var google_tag_params = {
+    ecomm_pagetype: 'searchresults'
+  };
+</script>
+{% elsif template contains 'index' %}
+<script type="text/javascript">
+  var google_tag_params = {
+    ecomm_pagetype: 'home'
+  };
+</script>
+{% else %}
+<script type="text/javascript">
+  var google_tag_params = {
+    ecomm_pagetype: 'other'
+  };
+</script>
+{% endif %}
+<script>
+  gtag('event', 'page_view', {'send_to': 'AW-956219375',
+                              'ecomm_prodid':window.google_tag_params.ecomm_prodid,
+                              'ecomm_pagetype': window.google_tag_params.ecomm_pagetype,
+                              'ecomm_totalvalue':window.google_tag_params.ecomm_totalvalue
+                             });
+</script>
+  <script>
+  __attentive_domain="crapeyewear.attn.tv",function(){window.__attentive={invoked:!1,show:function(){this.invoked=!0}};var t=!1,e=function(){if(document.readyState&&!/loaded|complete/.test(document.readyState))return void setTimeout(e,10);if(!t)return t=!0,void setTimeout(e,50);var n=document.createElement("script");n.setAttribute("async","true"),n.type="text/javascript",n.src="https://cdn.attn.tv/loader.js",((document.getElementsByTagName("head")||[null])[0]||document.getElementsByTagName("script")[0].parentNode).appendChild(n)};if(document.readyState && /loaded|complete/.test(document.readyState))e();else window.addEventListener?window.addEventListener("load",e,!1):window.attachEvent("onload",e)}(),window.__attentive.show();
+</script>
+</body>
+</html>
+
+<style type="text/css">
+
+       p.afterpay-paragraph {
+              color: inherit !important;
+              font-family: inherit !important;
+         	  text-align: left !important;
+         	  font-size: 10px !important;
+              margin-top: 1em !important;
+        }
+  		
+  		p.afterpay-paragraph::first-letter {
+          	  text-transform: uppercase;
+          
+        }
+
+        .afterpay-instalments {
+              font-weight: bold !important;
+        }
+
+        .afterpay-link-inner {
+              font-size: 12px;
+              margin-left: 2px;
+        }
+
+        .afterpay-logo {
+               width: 6.5em !important;
+               height: auto !important;
+        }
+
+        .afterpay-text2 {
+              margin-right: 1px;
+        }
+  
+  		.main-cart-actions p.afterpay-paragraph {
+          text-align: right !important;
+        }
+
+        @media only screen and (max-width : 480px) {
+            p.afterpay-paragraph {
+                font-size: 9px !important;
+            }
+
+            .afterpay-link-inner {
+                font-size: 12px;
+            }
+
+              .afterpay-logo {
+/*                    width: 6em !important;
+                   height: auto !important; */
+            }
+        }
+
+</style>
+
+<!-- <script>
+var afterpay_svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" style='width:15px; vertical-align:text-bottom; margin-left: 3px;'>
+<g>
+	<g>
+		<g>
+			<circle cx="256" cy="378.5" r="25"></circle>
+			<path d="M256,0C114.516,0,0,114.497,0,256c0,141.484,114.497,256,256,256c141.484,0,256-114.497,256-256     C512,114.516,397.503,0,256,0z M256,472c-119.377,0-216-96.607-216-216c0-119.377,96.607-216,216-216     c119.377,0,216,96.607,216,216C472,375.377,375.393,472,256,472z"></path>
+			<path d="M256,128.5c-44.112,0-80,35.888-80,80c0,11.046,8.954,20,20,20s20-8.954,20-20c0-22.056,17.944-40,40-40     c22.056,0,40,17.944,40,40c0,22.056-17.944,40-40,40c-11.046,0-20,8.954-20,20v50c0,11.046,8.954,20,20,20     c11.046,0,20-8.954,20-20v-32.531c34.466-8.903,60-40.26,60-77.469C336,164.388,300.112,128.5,256,128.5z"></path>
+		</g>
+	</g>
+</g>
+</svg>`;
+function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+r(function(){
+    $('.afterpay-link-inner').html(afterpay_svg);
+    $('span.afterpay-text1').html('Or 4 interest-free installments of ');
+});
+  
+</script> -->

@@ -1,0 +1,163 @@
+{% unless product.handle contains 'gift-card' %}
+{% assign badgeClass = blank %}
+{% assign soldout = 'nope' %}
+{% for tag in product.tags %}
+  {% assign tagDown = tag | downcase %}
+  {% if tag contains 'badge:' %}
+    {% assign tagDown = tag | remove: 'badge:' | strip %}
+    {% case tagDown %}
+      {% when 'sale' %}
+        {% comment %}
+	      Disable sale badge for Aug-28 Sale
+		{% endcomment %}
+          {% assign badgeClass = 'badge-sale' %}
+        
+      {% when 'sold out' %}
+      {% if product.available %}
+        {% assign badgeClass = 'badge-soldout'  %}
+	  {% elsif soldoutx == 'yesum' %}
+		  {% assign badgeClass = 'badge-soldout'  %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+      {% when 'low stock' %}
+	  {% if soldoutx == 'yesum' %}
+		  {% assign badgeClass = 'badge-soldout'  %}
+	  {% else %}	
+	  {% if product.available %}
+          {% assign badgeClass = 'badge-low' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+	  {% endif %}
+      {% when 'web exclusive' %}
+      {% if product.available %}
+          {% assign badgeClass = 'badge-exclusive' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+      {% when 'polarized' %}
+      {% if product.available %}
+          {% assign badgeClass = 'badge-polarized' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+      {% when 'zero base' %}
+       {% if product.available %}
+          {% assign badgeClass = 'badge-zero-base' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+      {% when 'preorder' %}
+       {% if product.available %}
+          {% assign badgeClass = 'badge-preorder' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+	  {% when 'none' %}
+		{% if product.available %}
+          {% assign badgeClass = 'badge-exclusive' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}
+    {% endcase %}
+  {% else %}
+    {% break %}
+  {% endif %}
+  {% if tag contains 'badge: preorder-' %}
+       {% if product.available %}
+          {% assign badgeClass = 'badge-preorder' %}
+        {% else %}
+          {% assign badgeClass = 'badge-soldout'  %}
+        {% endif %}		
+  {% endif %}
+{% endfor %}
+{% comment %}
+{% if badgeClass != blank %}<span class="product-badge {{ badgeClass }}">&nbsp;</span>{% endif %}
+{% endcomment %}
+{% assign soldoutx = 'nope' %}
+{% for tag in product.tags %}
+  {% if tag == 'sold-out' %}
+	{% assign soldoutx = 'yesum' %}
+  {% endif %}	
+{% endfor %}
+{% if template contains 'collection' or template contains 'product' %}
+  {% if badgeClass == blank %}
+    {% assign lowStock = false %}
+    {% assign onSale = false %}
+    {% assign soldOut = false %}
+	  {% assign InveQuanTot = 0 %}
+
+    {% for variant in product.variants %}
+		{% assign InveQuanTot = InveQuanTot | plus: variant.inventory_quantity %}
+    {% endfor %}
+
+    {% if InveQuanTot <= 5 %}
+      {% assign lowStock = true %}
+    {% endif %}
+
+    {% if InveQuanTot < 1 %}
+      {% assign soldOut = true %}
+      {% assign lowStock = false %}
+    {% endif %}
+	
+    {% comment %}
+      Disable sale badge for Aug-28 Sale
+{% endcomment %}
+        {% if product.compare_at_price and product.compare_at_price > product.price and onSale == false %}
+            {% assign onSale = true %}
+        {% endif %}
+    
+
+    {% if soldOut == true or soldoutx == 'yesum' %}
+      {% assign badgeClass = 'badge-soldout' %}
+	  {% elsif lowStock == true %}
+      {% assign badgeClass = 'badge-low' %}
+    {% elsif onSale == true %}
+      {% assign badgeClass = 'badge-sale' %}
+    {% endif %}
+
+{% if product.type == 'gift card' %}
+{% assign lowStock = false %}
+{% endif %}
+
+
+  {% endif %}
+{% endif %}
+
+{% comment %} 
+Quick fix to make sure sale badge is always prioritised on the fiter views
+If you remove this it won't be
+{% endcomment %}
+{% comment %}
+	Disable sale badge for Aug-28 Sale
+{% endcomment %}
+  {% if product.compare_at_price %}
+  {% assign badgeClass = 'badge-sale' %}
+  {% endif %}
+{% for tag in product.tags %}
+  {% if tag contains 'badge: preorder-' %}
+       {% if product.available %}
+          {% assign badgeClass = 'badge-preorder' %}
+        {% else %}
+          {% assign badgeClass = 'badge-preorder'  %}
+        {% endif %}		
+  {% endif %}
+{% endfor %}
+{% comment %} 
+Quick fix to make sure sold out badge is always prioritised on the fiter views
+If you remove this it won't be — Chase
+{% endcomment %}
+{% if product.available == false or soldoutx == 'yesum' %}
+{% assign badgeClass = 'badge-soldout' %}
+{% endif %}
+{% if soldoutx == 'yesum' %}
+<div style="display:none;">hi</div>
+{% endif %}
+{% if soldoutx == 'yesum' %}
+<span class="product-badge badge-soldout">&nbsp;</span>
+{% else %}
+<span class="product-badge {{ badgeClass }}">&nbsp;</span>
+{% endif %}
+
+{% endunless %}

@@ -1,0 +1,775 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "9d8153cb-b0cb-4aaa-941c-3553f07e64d1": {
+      "type": "module--one-col-hero",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "half_height": false,
+        "font_color": "#deff7b",
+        "background_color": "#ffffff",
+        "image_1": "shopify://shop_images/Crap_Eyewear-2021_Fall-Lookbook_Victoria_Moura_photo-look_01-06-supa_phreek_lucid_blur-web_hero.jpg",
+        "image_1_mobile": "shopify://shop_images/Crap_Eyewear-2021_Fall-Lookbook_Victoria_Moura_photo-look_01-05-lucid_blur_supa_phreek-web_hero_mobile.jpg",
+        "image_1_brightness": 0.1,
+        "title_richtext": "",
+        "title_indent": "odd",
+        "body_richtext": "<h3>We’re an<strong> independent sunglass brand </strong>designed and tested beachside in <em>Los Angeles, California</em>. </h3>",
+        "desktop_content_width": 50,
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "4095fa5e-f72e-4f5d-88d2-c69a0860ac0a": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "fd7f75d1-1f99-40b1-93c4-fe8b0d67ebd7": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3>Born in reaction to an overpriced and overly serious sunglass market, <strong>we’re on a mission to create funky, earth-friendlier eyewear</strong> without the heavy retail markup.<br/></h3>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "fd7f75d1-1f99-40b1-93c4-fe8b0d67ebd7"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "6336c2cf-ca1c-400b-8744-40a55d724365": {
+      "type": "module--two-column-general",
+      "blocks": {
+        "c66e7b32-c99e-4f95-be86-bd96c6dc9f7c": {
+          "type": "inline_image",
+          "settings": {
+            "image": "shopify://shop_images/Group_634221.png",
+            "svg": "",
+            "fit_mobile_image": false,
+            "alt": ""
+          }
+        },
+        "bfe54d18-9963-4655-a750-14216b5138ec": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/Crap_StickerGroup_1.svg",
+            "svg": "",
+            "alt": "",
+            "width": 25,
+            "width_mobile": 25,
+            "position": "tr"
+          }
+        }
+      },
+      "block_order": [
+        "c66e7b32-c99e-4f95-be86-bd96c6dc9f7c",
+        "bfe54d18-9963-4655-a750-14216b5138ec"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "image": "shopify://shop_images/Crap_Eyewear-2019_Summer-Lookbook-05_04-the_heavy_tropix-web_about.jpg",
+        "justify": "right",
+        "aspect_ratio": "",
+        "col_span": "7",
+        "media_position": "center",
+        "section_padding": "",
+        "section_padding_halved": false,
+        "footer_cta_text": "",
+        "footer_cta_url": "",
+        "footer_cta_style": "btn-primary"
+      }
+    },
+    "c7718171-7d41-4fb6-b186-a5a5c8a15ab1": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "3bafa182-c1ce-4950-a5d5-04a16150cbf2": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>Crappy name,<strong> serious quality</strong></h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "c1de43f1-4ab6-4087-9689-dda661b205d1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Don’t let our name fool ya. We make the best priced premium quality sunglasses on the market, working with the same factories and suppliers as leading luxury brands.</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "3bafa182-c1ce-4950-a5d5-04a16150cbf2",
+        "c1de43f1-4ab6-4087-9689-dda661b205d1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cx ct",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "02f29356-f7b1-438d-87cb-061801d96759": {
+      "type": "product--materials",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "product": "the-heavy-tropix-dark-tortoise-rose-tint-square-sunglasses",
+        "heading": "",
+        "is_accordion": false,
+        "open": false,
+        "description_1": "",
+        "description_2": "",
+        "description_3": ""
+      }
+    },
+    "9c608052-dfe3-4bac-9fb0-cecaa9b74eab": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "22461f44-cb92-4c78-8bcc-9c9ca57f2a80": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>Earth-friendlier </strong>eyewear</h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "acb135f8-8db5-439a-81e1-2782a6f3ca47": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We design our shades a block from the beach at our Venice HQ—sun protection matters to us, and so does its impact. Along with our use of lighter-footprint materials, we’re a certified carbon neutral business and a proud member of 1% for the planet.</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "22461f44-cb92-4c78-8bcc-9c9ca57f2a80",
+        "acb135f8-8db5-439a-81e1-2782a6f3ca47"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "e5335433-44b8-47b4-8a79-2ced3f6c7ca2": {
+      "type": "module--two-column-general",
+      "blocks": {
+        "b3d36d3e-5e4c-4efe-b95a-99022353b83c": {
+          "type": "inline_image",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2019_Holiday-Product_Lifestyle_Nick_Green-13-web_planet.jpg",
+            "svg": "",
+            "fit_mobile_image": false,
+            "alt": ""
+          }
+        },
+        "4888cdb2-470e-4736-aff7-93677986b83d": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/Flower_7_7fa1ed49-e5ae-4916-90ae-62c39b9e8030.svg",
+            "svg": "",
+            "alt": "",
+            "width": 25,
+            "width_mobile": 25,
+            "position": "tr"
+          }
+        }
+      },
+      "block_order": [
+        "b3d36d3e-5e4c-4efe-b95a-99022353b83c",
+        "4888cdb2-470e-4736-aff7-93677986b83d"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "image": "shopify://shop_images/Crap_Eyewear-2021-Product_Lifestyle-Nick_Green-Funk_Punk_deep_blue-22A-web_planet.jpg",
+        "justify": "left",
+        "aspect_ratio": "",
+        "col_span": "7",
+        "media_position": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "footer_cta_text": "View Planet Page",
+        "footer_cta_url": "shopify://pages/environmental-responsibility",
+        "footer_cta_style": "btn-primary"
+      }
+    },
+    "91b49938-ea76-4fff-a837-4d13545b3906": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "a1249517-a8d9-4a8c-8f5d-1e224ff42be7": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>Independent</strong> since 2009</h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "459bbe83-06ca-4ba8-b5a6-0fbbf6d3fd5b": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We’ve been designing eyewear with our friends for the past 15 years. Our brand is deeply rooted in the rich countercultures of Southern California.</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "a1249517-a8d9-4a8c-8f5d-1e224ff42be7",
+        "459bbe83-06ca-4ba8-b5a6-0fbbf6d3fd5b"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "0fd8ee6b-5a77-42f8-b37b-ffdbf2f00a57": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "fa4136f9-5035-4287-9439-ca3fbccf59e8": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2012-tumblr-josh_landau_shrine_stolen_nova_lair.jpg",
+            "caption": "Josh at The Lair, 2012",
+            "url": ""
+          }
+        },
+        "bf5ab9bd-dad4-4561-a857-6cd24f115928": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015-beach_minis.jpg",
+            "caption": "Beach Minis, 2015",
+            "url": ""
+          }
+        },
+        "c26e2add-6e7b-4e1a-b202-22798cb5d524": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2017_Spring-Cherry_Glazerr-Lookbook-Daria_Ritch-Final-Full-11.jpg",
+            "caption": "Cherry Glazerr, 2017",
+            "url": ""
+          }
+        },
+        "15adc8e1-0d39-4a11-bdd6-0218586e65ad": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2017-Evan_Mock_Keith_Oshiro-BTS_TONY-7.jpg",
+            "caption": "Evan & Keith, 2017",
+            "url": ""
+          }
+        },
+        "60adcdb5-e98f-4539-9be8-4a5438ee3284": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2013-Tumblr-CBG-15800005.jpg",
+            "caption": "CBG, 2013",
+            "url": ""
+          }
+        },
+        "bdc6d470-cd3a-4b51-abf8-9a78db7db47c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2019-Emma_Chamberlain-2019_Lookbook-Photo_Keith_Oshiro-02-Prima_Donna_insta.jpg",
+            "caption": "Emma Chamberlain, 2019",
+            "url": ""
+          }
+        },
+        "833a597c-9663-4992-9efa-35d3c9f0bf5d": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-shrine-la_record_ad_photo.jpg",
+            "caption": "The Shrine, 2014",
+            "url": ""
+          }
+        },
+        "373f34d2-d17c-4748-9c36-27fadda5ee6f": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-tony_coconut-01280030.jpg",
+            "caption": "Tony, 2014",
+            "url": ""
+          }
+        },
+        "d459ade8-a2b0-4d20-b26c-cc053c944616": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2013-froth_townhouse_holiday_campaign_party-facebook.jpg",
+            "caption": "Froth, 2013",
+            "url": ""
+          }
+        },
+        "177dd907-2415-4590-b1a0-5f7b58cff573": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2019-Frankie_Harrer-1.jpg",
+            "caption": "Frankie, 2019",
+            "url": ""
+          }
+        },
+        "6cff1d19-8353-45e4-a9ff-a9fae7da188d": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015-Kali_UchisCRAP_2.jpg",
+            "caption": "Kali Uchis, 2015",
+            "url": ""
+          }
+        },
+        "df7bc698-b013-4d3d-ab3f-821f08e0bbc6": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2018-Peter_Blake_Johnson-_DSC0900.jpg",
+            "caption": "Peter & Blake, 2018",
+            "url": ""
+          }
+        },
+        "0d455231-f795-4d94-a51e-bc5b381cf341": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2017_Sanrio-Hello_Kitty-Lookbook-Daria_Ritch-02-hires.jpg",
+            "caption": "Hello Kitty® x Crap, 2017",
+            "url": ""
+          }
+        },
+        "db18bd57-168b-40d7-940c-433c53793784": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2013-tumblr-shaper_supply_display-R1-06087-022A.jpg",
+            "caption": "2013",
+            "url": ""
+          }
+        },
+        "7fc88b2a-9522-45a1-9306-07383f1a9755": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2019_Paramore-The_Rosie_Boy_Lookbook-Photo_Zac_Farro-12.jpg",
+            "caption": "Paramore x Crap, 2019",
+            "url": ""
+          }
+        },
+        "df3a28eb-e768-4f49-ba40-eb1d5f13feeb": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015_Spring-Lookbook_Hello_Yellow-01.jpg",
+            "caption": "Marley & Jeff, 2015",
+            "url": ""
+          }
+        },
+        "a95dcc08-fb5c-43c4-acef-8363fa6570eb": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015_Resort_Venice_Originals_Product_Shot-25.jpg",
+            "caption": "Julian, 2015",
+            "url": ""
+          }
+        },
+        "afe38bc9-70d4-48ea-80b4-5644ed3155f5": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2016-YG_Blake_Anderson-16-06-11_Crap_YG_1028.jpg",
+            "caption": "Blake & YG, 2016",
+            "url": ""
+          }
+        },
+        "c0b86025-5b1b-456f-a3f0-63646baabd8e": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-steven_venice_blvd_HQ-00340031_copy.jpg",
+            "caption": "Steven, 2014",
+            "url": ""
+          }
+        },
+        "fbc94d50-0b85-4869-9dc5-4f9359247c98": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015-tumblr-Crap_HQ_Venice_Blvd-00220035.jpg",
+            "caption": "Old Venice Blvd HQ, 2015",
+            "url": ""
+          }
+        },
+        "1a9bba64-3406-412d-8844-045f3128c546": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-guantanamo_baywatch_seafood_feast_2014.jpg",
+            "caption": "Guantanamo Baywatch, 2014",
+            "url": ""
+          }
+        },
+        "c34573bb-c107-41b3-927f-1a71b5a42ef5": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2016-tumblr-starcrawler_arrow-daydream_a_go_go-__0_2039.jpg",
+            "caption": "Arrow, 2016",
+            "url": ""
+          }
+        },
+        "efed33a2-c310-4b7b-ba19-611abcf20404": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015-tumblr-kevin_bradley_kevin_white02520034.jpg",
+            "caption": "Kevin & Kevin, 2015",
+            "url": ""
+          }
+        },
+        "d735e1ff-6cdd-4ced-aaf9-a5d9229ecf8f": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-truman_hooker_pacific_drive-03970007.jpg",
+            "caption": "Truman, 2014",
+            "url": ""
+          }
+        },
+        "d22bff9f-603f-4eda-9a22-0a8ec1941476": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2018-Rihanna_Paradise_machine_01-insta-met_gala.jpg",
+            "caption": "Rihanna, 2018",
+            "url": ""
+          }
+        },
+        "f1b510c1-5828-47da-bb4c-f04643b0b9f3": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2012-tumblr-Dante_Julian-00000006.jpg",
+            "caption": "Dante & Julian, 2012",
+            "url": ""
+          }
+        },
+        "bf737de5-54df-429d-8449-9fc5bb89bef5": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/CRAP_Eyewear-Summer_2013_Lookbook-2-hires-alexa_demie.jpg",
+            "caption": "Alexa Demie, 2013",
+            "url": ""
+          }
+        },
+        "5df5c325-8972-42fa-9d4b-754436e54b58": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014_lifestyle-Mens-The_Hanoi_Weekend-Dirty_Fences1.jpg",
+            "caption": "Dirty Fences, 2014",
+            "url": ""
+          }
+        },
+        "8527c310-8591-4034-8ecf-f04bffa35d73": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-fat_tony_wax_museum_tony_hawk.jpg",
+            "caption": "Fat Tony, 2014",
+            "url": ""
+          }
+        },
+        "6f7cffd3-8f8f-46aa-98fd-cfc4d61ddc9f": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-tumblr-blake_tony_steven_venice_skatepark.jpg",
+            "caption": "Blake, Steven & Tony, 2013",
+            "url": ""
+          }
+        },
+        "f5d6096b-a0e5-46a2-8f9a-76f5bc293c01": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-alexander_spit-01190030.jpg",
+            "caption": "Alexander Spit, 2014",
+            "url": ""
+          }
+        },
+        "4e90141e-d9c7-474c-a646-ed7059a4a8b1": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2015-tumblr-jason_landau_responsibility-00280001.jpg",
+            "caption": "Jason, 2015",
+            "url": ""
+          }
+        },
+        "cec0d59a-6ac7-426b-8247-1b593801a0a9": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014-tumblr-derek_dunfee_windansea-03980024.jpg",
+            "caption": "Derek Dunfee, 2014",
+            "url": ""
+          }
+        },
+        "c150cf1f-79ed-4789-a72f-a8608be10286": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2014_lifestyle-Mens-The_TV_Eye-Perry_Shall-guitar1.jpg",
+            "caption": "Perry, 2014",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "fa4136f9-5035-4287-9439-ca3fbccf59e8",
+        "bf5ab9bd-dad4-4561-a857-6cd24f115928",
+        "c26e2add-6e7b-4e1a-b202-22798cb5d524",
+        "15adc8e1-0d39-4a11-bdd6-0218586e65ad",
+        "60adcdb5-e98f-4539-9be8-4a5438ee3284",
+        "bdc6d470-cd3a-4b51-abf8-9a78db7db47c",
+        "833a597c-9663-4992-9efa-35d3c9f0bf5d",
+        "373f34d2-d17c-4748-9c36-27fadda5ee6f",
+        "d459ade8-a2b0-4d20-b26c-cc053c944616",
+        "177dd907-2415-4590-b1a0-5f7b58cff573",
+        "6cff1d19-8353-45e4-a9ff-a9fae7da188d",
+        "df7bc698-b013-4d3d-ab3f-821f08e0bbc6",
+        "0d455231-f795-4d94-a51e-bc5b381cf341",
+        "db18bd57-168b-40d7-940c-433c53793784",
+        "7fc88b2a-9522-45a1-9306-07383f1a9755",
+        "df3a28eb-e768-4f49-ba40-eb1d5f13feeb",
+        "a95dcc08-fb5c-43c4-acef-8363fa6570eb",
+        "afe38bc9-70d4-48ea-80b4-5644ed3155f5",
+        "c0b86025-5b1b-456f-a3f0-63646baabd8e",
+        "fbc94d50-0b85-4869-9dc5-4f9359247c98",
+        "1a9bba64-3406-412d-8844-045f3128c546",
+        "c34573bb-c107-41b3-927f-1a71b5a42ef5",
+        "efed33a2-c310-4b7b-ba19-611abcf20404",
+        "d735e1ff-6cdd-4ced-aaf9-a5d9229ecf8f",
+        "d22bff9f-603f-4eda-9a22-0a8ec1941476",
+        "f1b510c1-5828-47da-bb4c-f04643b0b9f3",
+        "bf737de5-54df-429d-8449-9fc5bb89bef5",
+        "5df5c325-8972-42fa-9d4b-754436e54b58",
+        "8527c310-8591-4034-8ecf-f04bffa35d73",
+        "6f7cffd3-8f8f-46aa-98fd-cfc4d61ddc9f",
+        "f5d6096b-a0e5-46a2-8f9a-76f5bc293c01",
+        "4e90141e-d9c7-474c-a646-ed7059a4a8b1",
+        "cec0d59a-6ac7-426b-8247-1b593801a0a9",
+        "c150cf1f-79ed-4789-a72f-a8608be10286"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": true,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "c4834bef-2651-452f-827d-b9e4c1a728e1": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "2a90186c-bb13-4a13-b582-d34b4170659f": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>The Crap <strong>family</strong></h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "e6d7b68f-4154-465c-ba41-38ce65000d16": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>We’re proud to support an unrivaled roster of skateboarders and surfers.</h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "2a90186c-bb13-4a13-b582-d34b4170659f",
+        "e6d7b68f-4154-465c-ba41-38ce65000d16"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "ad212c05-4805-4709-abf9-60cc85e7002e": {
+      "type": "module--two-column-general",
+      "blocks": {
+        "c914eec4-07f8-4f7c-a463-7003c841b369": {
+          "type": "inline_image",
+          "settings": {
+            "image": "shopify://shop_images/Crap_Eyewear-2022-Surf_Fam_Bali-crap-jazz-film-14-web_about.jpg",
+            "svg": "",
+            "fit_mobile_image": false,
+            "alt": ""
+          }
+        },
+        "daa17c7f-ef46-4213-b625-fc870aed2063": {
+          "type": "sticker",
+          "settings": {
+            "image": "shopify://shop_images/Crap_StickerGroup_10.svg",
+            "svg": "",
+            "alt": "",
+            "width": 30,
+            "width_mobile": 25,
+            "position": "tr"
+          }
+        }
+      },
+      "block_order": [
+        "c914eec4-07f8-4f7c-a463-7003c841b369",
+        "daa17c7f-ef46-4213-b625-fc870aed2063"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "image": "shopify://shop_images/Crap_Eyewear-2014_lifestyle-Skate-bay_area_surf_safari1-web_about.jpg",
+        "justify": "right",
+        "aspect_ratio": "",
+        "col_span": "7",
+        "media_position": "center",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "footer_cta_text": "Meet our family",
+        "footer_cta_url": "shopify://pages/family",
+        "footer_cta_style": "btn-primary"
+      }
+    },
+    "5dbf10e8-09dc-4097-b487-523da414fdcb": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "ac05ac42-b7ef-439c-b29d-0e5bfab31d1e": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1>What started as a joke has grown into a serious independent business.</h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "ac05ac42-b7ef-439c-b29d-0e5bfab31d1e"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cx ct",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "28090e94-2065-44c5-b46e-4d9d1921fddf": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "1227effa-f681-42b9-b33f-c473082a7a08": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5></h5><h5>Our tight knit team of 12 (and growing) is based out of our dog-friendly Venice HQ, many of us having been with the brand since the early days. It’s been a wild ride, and whether this is your first or 10th pair of Craps, <strong>THANK YOU</strong>—we truly appreciate you being a part of this &lt;3</h5><p></p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "6ff48e74-b0ad-49b2-9c0c-17c7e42135f5": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>- <em>The Crap Family<br/><br/></em></h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "1227effa-f681-42b9-b33f-c473082a7a08",
+        "6ff48e74-b0ad-49b2-9c0c-17c7e42135f5"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 90,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "two-col-cta": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify://files/videos/Crap_Eyewear-meet_the_favs-heavy_tropix-deep_rose-web_home_primary.mp4",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3>Meet Our<br/><em>Favorites</em></h3>",
+        "cta_1_text": "Shop The Hits",
+        "cta_1_url": "shopify://collections/best-sellers",
+        "image_2": "shopify://shop_images/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14, <br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "9d8153cb-b0cb-4aaa-941c-3553f07e64d1",
+    "4095fa5e-f72e-4f5d-88d2-c69a0860ac0a",
+    "6336c2cf-ca1c-400b-8744-40a55d724365",
+    "c7718171-7d41-4fb6-b186-a5a5c8a15ab1",
+    "02f29356-f7b1-438d-87cb-061801d96759",
+    "9c608052-dfe3-4bac-9fb0-cecaa9b74eab",
+    "e5335433-44b8-47b4-8a79-2ced3f6c7ca2",
+    "91b49938-ea76-4fff-a837-4d13545b3906",
+    "0fd8ee6b-5a77-42f8-b37b-ffdbf2f00a57",
+    "c4834bef-2651-452f-827d-b9e4c1a728e1",
+    "ad212c05-4805-4709-abf9-60cc85e7002e",
+    "5dbf10e8-09dc-4097-b487-523da414fdcb",
+    "28090e94-2065-44c5-b46e-4d9d1921fddf",
+    "two-col-cta"
+  ]
+}

@@ -1,0 +1,149 @@
+{% liquid
+  # Position can be attributed by passing a string or a section settings justification JSON
+  assign pos = context.settings.justify | default: sticker.settings.position
+
+  assign width = sticker.settings.width | default: 50
+  assign width = width | append: '%'
+
+  assign mobile_width = sticker.settings.width_mobile | default: 50
+  assign mobile_width = mobile_width | append: '%'
+
+  if sticker.settings.column_sticker_image
+    assign sticker_img = sticker.settings.column_sticker_image
+  else
+    assign sticker_img = sticker.settings.image
+  endif
+  if sticker.settings.column_svg
+    assign sticker_svg = sticker.settings.column_svg
+  else
+    assign sticker_svg = sticker.settings.svg
+  endif
+
+
+  if anim_class == blank
+    assign anim_class = ''
+  endif
+
+  assign yOffset = "0%"
+  assign xOffset = "0%"
+
+  case pos
+    when 'tl'
+      assign left = 0
+      assign right = 'auto'
+      assign top = 0
+      assign bottom = 'auto'
+      assign yOffset = "-50%"
+      assign xOffsetMobile = "15px"
+      assign xOffsetDesktop = "30px"
+
+    when 'tr'
+      assign left = 'auto'
+      assign right = 0
+      assign top = 0
+      assign bottom = 'auto'
+      assign yOffset = "-50%"
+      assign xOffsetMobile = "-15px"
+      assign xOffsetDesktop = "-30px"
+
+    when 'bl'
+      assign left = 0
+      assign right = 'auto'
+      assign top = 'auto'
+      assign bottom = 0
+      assign yOffset = "50%"
+      assign xOffsetMobile = "15px"
+      assign xOffsetDesktop = "30px"
+
+    when 'br'
+      assign left = 'auto'
+      assign right = 0
+      assign top = 'auto'
+      assign bottom = 0
+      assign yOffset = "50%"
+      assign xOffsetMobile = "-15px"
+      assign xOffsetDesktop = "-30px"
+
+      # if inherits from section justification
+    else
+      if pos == 'right'
+        assign left = 'auto'
+        assign right = '12px'
+      else
+        assign left = '12px'
+        assign right = 'auto'
+      endif
+  endcase
+
+  assign is_column = is_column | default: false
+  if is_column == true
+    assign width = sticker.settings.column_sticker_width | default: 50
+    assign width = width | append: '%'
+    assign mobile_width = sticker.settings.column_sticker_width_mobile | default: 50
+    assign mobile_width = mobile_width | append: '%'
+  case sticker.settings.column_sticker_position
+    when 'tl'
+      assign left = '1rem'
+      assign right = 'auto'
+      assign top = '1rem'
+      assign bottom = 'auto'
+      assign yOffset = "0"
+      assign xOffsetMobile = "0"
+      assign xOffsetDesktop = "0"
+
+    when 'tr'
+      assign left = 'auto'
+      assign right = '1rem'
+      assign top = '1rem'
+      assign bottom = 'auto'
+      assign yOffset = "0"
+      assign xOffsetMobile = "0"
+      assign xOffsetDesktop = "0"
+
+    when 'bl'
+      assign left = '1rem'
+      assign right = 'auto'
+      assign top = 'auto'
+      assign bottom = '1rem'
+      assign yOffset = "0"
+      assign xOffsetMobile = "0"
+      assign xOffsetDesktop = "0"
+
+    when 'br'
+      assign left = 'auto'
+      assign right = '1rem'
+      assign top = 'auto'
+      assign bottom = '1rem'
+      assign yOffset = "0"
+      assign xOffsetMobile = "0"
+      assign xOffsetDesktop = "0"
+
+      # if inherits from section justification
+    else
+      if pos == 'right'
+        assign left = 'auto'
+        assign right = '12px'
+      else
+        assign left = '12px'
+        assign right = 'auto'
+      endif
+  endcase
+  endif
+%}
+
+<div class="!mb-0 {{ anim_class }} translate-y-[var(--y-offset)] translate-x-[var(--x-offset-mobile)] md:translate-x-[var(--x-offset-desktop)] sticker z-20 absolute left-[var(--left)] top-[var(--top)] bottom-[var(--bottom)] right-[var(--right)] [&_svg]:w-full [&_img]:w-full [&_svg]:object-contain [&_img:object-contain] overflow-visible w-[var(--width-mobile)] dk:w-[var(--width)]" style="--left: {{ left -}} ; --right: {{ right -}}; --top: {{ top }}; --bottom: {{ bottom }}; --width: {{ width }}; --width-mobile: {{ mobile_width }}; --y-offset: {{ yOffset }}; --x-offset-mobile: {{ xOffsetMobile }}; --x-offset-desktop: {{ xOffsetDesktop }}">
+    {% unless sticker_svg != blank %}
+        {%- render 'component--responsive-image' 
+            , image: sticker_img,
+            objectFit: contain,
+            placeholder: true,
+            max_width: sticker.settings.max_width,
+            use_max_width: sticker.settings.use_max_width,
+            classes: '' -%}
+
+    {% else %}
+        <div class="inline-svg">
+            {{- sticker_svg -}}
+        </div>
+    {% endunless %}
+</div>

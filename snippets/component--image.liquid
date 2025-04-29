@@ -1,0 +1,35 @@
+{%- comment %}
+/** @typedef {object} json
+ * @property {object[]} data
+ * @property {object} data.image
+ * @property {number} data.image.height
+ * @property {number} data.image.width
+ * @property {number} data.mobile_width
+ * @property {number} data.desktop_width
+ * @property {string} data.justify
+ */
+{% endcomment -%}
+{% liquid
+
+assign imageWidth = data.image.width
+
+if data.image.width > 1680
+	assign imageWidth = 1680
+endif
+
+assign imageClasses = "w-x" | append: data.mobile_width | append: " dk:w-x" | append: data.desktop_width
+assign imageRatio = data.desktop_width | append: ".00" | divided_by: 100
+assign imageWidth = imageWidth | times: imageRatio
+assign imageDesc = data.image.alt
+
+if data.content != blank
+	assign imageDesc = data.content
+endif
+
+%}
+<div class="flex flex-col {% if type == "one-column_richtext" %}cy-1/2{% endif %} items-{{ data.justify }}">
+	{% render "component--responsive-image", classes: imageClasses, maxSize: imageWidth, image: data.image %}
+	{% if imageDesc != blank %}
+		<small class="{{ imageClasses }} mt-2">{{ imageDesc | replace: "<p>", "" | replace: "</p>", "" }}</small>
+	{% endif %}
+</div>

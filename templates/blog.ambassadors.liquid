@@ -1,0 +1,129 @@
+<div class="ambassadors-template">
+  <!-- AMBASSADORS-HERO -->
+  <div class="about-hero ambassadors">
+    <div class="main-hero-slide">
+      <img src="{{ 'ambassadors-hero.jpg' | asset_url }}" />
+      <div class="main-hero-slide-content">
+        <div>
+          <h1>{{ settings.ambassadors_hero_text }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-collection-filters-list u-center">
+    <div class="container">
+      <ul>
+        {% for tag in blog.all_tags %}
+            <li><a {% if current_tags contains tag %} class="mod-selected"{% endif %} href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>
+  <div class="ambassadors-template-intro u-center">
+    <div class="container">
+      <p>{{ settings.ambassadors_introduction_text }}</p>
+    </div>
+  </div>
+
+  <div class="ambassadors-template-grid">
+    <div class="container">
+
+    {% for article in blog.articles %}
+      {% cycle 'section-group-start': '<div class="row">', '', '' %}
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="{{ article.url }}">
+              <img src="{{ article.image.src | img_url: 'medium' }}" />
+              <h3>{{ article.title }}</h3>
+
+              {% for tag in article.tags %}
+                {% unless tag.handle == 'all' %}
+                  <h5>{{ tag }}</h5>
+                {% endunless %}
+              {% endfor %}
+            </a>
+          </div>
+        </div>
+        {% if forloop.last %}</div>{% else %}
+        {% cycle 'section-group-end': '', '', '</div>' %}
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+
+  {% for product in collections[settings.ambassadors_collection].products %}
+    {% if forloop.first %}
+      <div class="main-best-sellers u-center">
+        <div class="container">
+          <div class="row">
+            <h2>{{ settings.ambassadors_slider_title }}</h2>
+
+          <div class="main-best-sellers-slider">
+          {% endif %}
+          <div class="main-collection-item u-center">
+                <a href="{{ product.url }}">
+                  <div class="main-collection-item-image">
+                    <img class="top" src="{{ product.images[0] | img_url: 'large'}}" alt="{{ product.title }}">
+                    {% if product.images.size > 1 %}
+                      <img class="bottom" src="{{ product.images[1] | img_url: 'large'}}" alt="{{ product.title }}">
+                    {% endif %}
+                  </div>
+                  <div class="main-collection-item-details">
+                    <h3>{{ product.title | split: ' - ' | first }}</h3>
+                    <p>{{ product.metafields.c_f['Product Mini Description'] }}</p>
+                    <p class="price">{{ product.price | money }}</p>
+                  </div>
+                </a>
+              </div>
+          {% if forloop.last %}
+            </div>
+        </div>
+          <div class="row">
+            <a href="{{ settings.ambassadors_slider_button_link }}" class="button">{{ settings.ambassadors_slider_button_text }}</a>
+          </div>
+        </div>
+      </div>
+      <!-- /MAIN-BEST-SELLERS -->
+    {% endif %}
+  {% else %}
+  {% endfor %}
+
+  {% comment %}
+  <div class="blog-grid">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endcomment %}
+
+  </div>

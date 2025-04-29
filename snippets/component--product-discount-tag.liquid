@@ -1,0 +1,4 @@
+<div class="bg-faded-lime mt-4 w-fit px-3 py-1 text-[10px]">
+{%  capture salebanner_discount %}{{ settings.salebanner_discount | divided_by: 100.0 | times: product.price }}{% endcapture %}
+{{ product.price | minus: salebanner_discount | money }} with {{settings.salebanner_code }}
+</div>

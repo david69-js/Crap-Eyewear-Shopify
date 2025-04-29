@@ -1,0 +1,15 @@
+<div class="flex flex-col h-full">
+    {% if block.settings.associated_product != nil %}
+        <a href="{{block.settings.associated_product.url}}" class="block w-full">
+            {% render 'component--responsive-image' image: block.settings.image %}
+        </a>
+    {% else %}
+        <div class="w-full">
+            {% render 'component--responsive-image' image: block.settings.image %}
+        </div>
+    {% endif %}
+    {% if block.settings.caption != nil %}
+        {% assign variable = 'text-' | append: block.settings.caption_alignment %}
+        <div class="font-secondary grow-0 {{ variable }}">{{ block.settings.caption }}</div>
+    {% endif %}
+</div>

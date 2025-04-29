@@ -1,0 +1,10 @@
+<script src="{{- "_main.js" | asset_url -}}" type="text/javascript" defer="defer"></script>
+{%- if template -%}
+	{%- if template contains "customers" -%}
+		{%- capture template_scripts -%}{{ "bundle.customers.js" | asset_url }}{%- endcapture -%}
+	{%- else -%}
+		{%- assign template_script_name = "bundle." | append: template.name | append: ".js" -%}
+		{%- capture template_scripts -%}{{ template_script_name | asset_url }}{%- endcapture -%}
+	{%- endif -%}
+	<script src="{{ template_scripts }}" type="text/javascript" defer="defer"></script>
+{%- endif -%}

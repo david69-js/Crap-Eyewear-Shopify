@@ -1,0 +1,14 @@
+{% comment %}
+                                        assign product and pulls from associated media gallery
+{% endcomment %}
+
+<div>
+    {% for media in product.media %}
+        {% assign check = media | split: '-right' %}
+        {% assign troof = check | size %}
+
+        {% if troof > 1 %}
+            {% render "component--responsive-image", image: media, objectFit: false %}
+        {% endif %}
+    {% endfor %}
+</div>

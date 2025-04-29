@@ -1,0 +1,233 @@
+{% unless section.settings.hide %}
+<div class="hp-load-section hero feature-row{% if section.settings.bg_color_remove %} mobile-remove-bgcolor{% endif %}" style="{% if section.settings.bg_color.size > 0 %}background-color:{{ section.settings.bg_color }};{% endif %}">
+  {% if section.settings.pattern_image != blank %}<img class="preload-critical pattern-image u-ls" data-preload-desktop="{{ section.settings.pattern_image | img_url: '2000x900', crop:'center' }}" data-preload-mobile="{{ section.settings.pattern_image | img_url: '1000x450', crop:'center' }}">{% endif %}  
+  <div class="{% unless section.settings.remove_wrapper %}container{% endunless %}">
+  {% capture image_layout %}
+    <div class="feature-row__item feature-row__image" style="position: relative;">
+      {% if section.settings.image != blank %}
+        <div class="ar-wrapper {% if section.settings.image_mobile != blank %} u-ls{% endif %}" >
+          <img class="preload-critical default-size_responsive" data-preload-desktop="{{ section.settings.image | img_url: '800x1000', crop:'center' }}" data-preload-mobile="{{ section.settings.image | img_url: '600x750', crop:'center' }}" />
+        </div>
+        {% if section.settings.image_mobile != blank %}
+          <img class="preload-critical default-size_responsive {% if section.settings.image_mobile != blank %} u-ss{% endif %}" data-preload-desktop="{{ section.settings.image_mobile | img_url: '1000x1000', crop:'center' }}" data-preload-mobile="{{ section.settings.image_mobile | img_url: '1000x1000', crop:'center' }}" />
+      	{% endif %}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+      <div class="mobile-buttons u-ss">
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="button one" style="color:{{ section.settings.button_color }};background-color:{{ section.settings.button_bg_color }};">
+          <span class="button-fix">{{ section.settings.button_label }}</span>
+        </a>
+      {% endif %}
+      {% if section.settings.button_label2 != blank %}
+        <a href="{{ section.settings.button_link2 }}" class="button two" style="color:{{ section.settings.button_color }};background-color:{{ section.settings.button_bg_color }};">
+          <span class="button-fix">{{ section.settings.button_label2 }}</span>
+        </a>
+      {% endif %}
+      </div>      
+    </div>
+  {% endcapture %}
+
+  <div class="feature-row">
+    {% if section.settings.layout == 'left' %}
+      {{ image_layout }}
+    {% endif %}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} {{ section.settings.text_align }}" {% if section.settings.padding.size > 0 %}style="padding:{{ section.settings.padding }};"{% endif %}>
+      {% if section.settings.title != blank %}
+        <h1 class="u-ls" style="text-align:{{ section.settings.text_align | split: 'text-' | last }};{% if section.settings.color.size > 0 %}color:{{ section.settings.color }};{% endif %}">{{ section.settings.title }}</h1>
+        <h1 class="u-ss" style="text-align:{{ section.settings.text_align | split: 'text-' | last }};{% if section.settings.color_mobile.size > 0 %}color:{{ section.settings.color_mobile }};{% endif %}">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="u-ls rte-setting featured-row__subtext" style="{% if section.settings.max_width.size > 0 %}max-width:{{ section.settings.max_width }};{% endif %}{% if section.settings.color.size > 0 %}color:{{ section.settings.color }};{% endif %}">{{ section.settings.text }}</div>
+        <div class="u-ss rte-setting featured-row__subtext" style="{% if section.settings.max_width.size > 0 %}max-width:{{ section.settings.max_width }};{% endif %}{% if section.settings.color_mobile.size > 0 %}color:{{ section.settings.color_mobile }};{% endif %}">{{ section.settings.text }}</div>
+      {% endif %}
+      <div class="u-ls">
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="button one">
+          <span class="button-fix">{{ section.settings.button_label }}</span>
+        </a>
+      {% endif %}
+      {% if section.settings.button_label2 != blank %}
+        <a href="{{ section.settings.button_link2 }}" class="button two">
+          <span class="button-fix">{{ section.settings.button_label2 }}</span>
+        </a>
+      {% endif %}
+      </div>
+    </div>
+	{% if section.settings.background_image == blank %}
+    {% if section.settings.layout == 'right' %}
+      {{ image_layout }}
+    {% endif %}
+    {% endif %}
+  </div>
+  </div>
+</div>
+<style>.hero .button {color:{{ section.settings.button_color }};background:{{ section.settings.button_bg_color }};} .hero a.button:hover, .hero a.button:focus {background:{{ section.settings.button_hover_bg_color }} !important;color:{{ section.settings.button_hover_color }} !important;border-color:{{ section.settings.button_bg_color_border }};}</style>
+{% endunless %}
+{% schema %}
+  {
+    "name": "Hero",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide",
+        "label": "Hide"
+      },
+      {
+        "type": "checkbox",
+        "id": "remove_wrapper",
+        "label": "Remove Wrapper"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Split Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Split Image mobile"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review."
+      },
+      {
+        "type": "text",
+        "id": "max_width",
+        "label": "Max width"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text Alignment",
+        "options": [
+          {
+            "value": "text-center",
+            "label": "Center"
+          },
+          {
+            "value": "text-left",
+            "label": "Left"
+          },
+          {
+            "value": "text-right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "padding",
+        "label": "Padding"
+      },
+      {
+        "type": "image_picker",
+        "id": "pattern_image",
+        "label": "Pattern Image",
+		"info": "Will override background color"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color"
+      },
+      {
+        "type": "checkbox",
+        "id": "bg_color_remove",
+        "label": "Remove background color mobile"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "color_mobile",
+        "label": "Text color - mobile"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "button_label2",
+        "label": "Button label 2"
+      },
+      {
+        "type": "url",
+        "id": "button_link2",
+        "label": "Button link 2"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button text color"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Button background color"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color_border",
+        "label": "Button hover border color",
+		"default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_bg_color",
+        "label": "Button hover background color",
+		"default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_color",
+        "label": "Button hover text color",
+		"default": "#000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero - split",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

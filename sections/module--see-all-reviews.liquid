@@ -1,0 +1,119 @@
+{% capture section_markup %}
+    {% for block in section.blocks %}
+        {% render block %}
+    {% endfor %}
+{% endcapture %}
+
+{% capture headingWithReviews %}
+    {{ section.settings.heading }} {% if product.metafields.stamped.reviews_count %}({{ product.metafields.stamped.reviews_count }}){% else%}{% endif %} {% endcapture %}
+
+{% unless product.tags contains "exclude-all-reviews" %}
+    <div class="fit pt-[var(--site-gutter)] pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]" style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %}" data-animation="{{- section.settings.animation -}}">
+        {% if section.settings.is_accordion %}
+            {% render 'slot--accordion' heading: headingWithReviews, headingTag: 'h2', headingClasses: 'h4 py-4', content: section_markup, open: section.settings.open, summaryClasses: 'mx-[var(--site-gutter)] w-auto border-t border-t-light-gray', borderClasses: 'mx-[var(--site-gutter)] w-auto border-b border-b-light-gray' %}
+        {% else %}
+            <h2 class="h4 cy cx">{{ headingWithReviews }}</h2>
+            {{ section_markup }}
+        {% endif %}
+    </div>
+{% endunless %}
+<script>
+    function checkAndAddSpan() {
+        const averageRating = document.querySelector(".stamped-summary-caption-1");
+        if (averageRating) {
+          const existingSpan = averageRating.querySelector(".average-rating-text");
+          if (!existingSpan) {
+            const newSpan = document.createElement("span");
+            newSpan.classList.add("average-rating-text");
+            newSpan.textContent = "Average Rating";
+            averageRating.appendChild(newSpan);
+          }
+        } else {
+          setTimeout(checkAndAddSpan, 100);
+        }
+      }
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        checkAndAddSpan();
+      });
+      
+</script>
+{% schema %}
+{
+    "name": "All Reviews",
+    "tag": "section",
+    "class": "all-reviews",
+    "settings": [
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        },
+        {
+            "type": "select",
+            "id": "margin_bottom",
+            "label": "Bottom Margin",
+            "info": "Optional space at bottom of section",
+            "options": [
+                {
+                    "value": "--mb-m: 0px; --mb-d: 0px;",
+                    "label": "No margin"
+                },
+                {
+                    "value": "--mb-m: 20px; --mb-d: 40px;",
+                    "label": "Small Margin"
+                },
+                {
+                    "value": "--mb-m: 40px; --mb-d: 100px;",
+                    "label": "Large Margin"
+                }
+            ],
+            "default": "--mb-m: 0px; --mb-d: 0px;"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "See All Reviews"
+        },
+        {
+            "type": "checkbox",
+            "id": "is_accordion",
+            "default": false,
+            "label": "Make Section Accordion"
+        },
+        {
+            "type": "checkbox",
+            "id": "open",
+            "default": false,
+            "label": "Open"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "@app"
+        }
+    ],
+    "presets": [
+        {
+            "name": "All Reviews"
+        }
+    ]
+}
+{% endschema %}

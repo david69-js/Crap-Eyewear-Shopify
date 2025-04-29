@@ -1,0 +1,98 @@
+{% liquid
+
+  assign marquee_speed = section.settings.speed | default: 20
+  assign wrapper_classes = "py-2" | default: ""
+  assign text_classes = textClasses | default: ""
+
+%}
+<style>
+  .marquee-wrapper {
+    display: flex;
+    white-space: nowrap;
+  }
+</style>
+<simple-marquee
+  data-marquee-speed="{{ marquee_speed }}"
+  data-loop="true"
+>
+  <a href="{{ section.settings.link  }}" class="block overflow-hidden {{ wrapper_classes }}" style="background: {{ section.settings.background_color }}; --marquee-speed: {{ marquee_speed }}s">
+    <div class="w-max relative flex marquee-wrapper">
+      <div class="marquee-text shrink-0 flex items-center {{ text_classes }}">
+        <div
+          class="richtext flex items-center text-x120"
+          style="color: {{ section.settings.text_color }}">
+          {% for block in section.blocks %}
+            <span class="pr-[0.5em] inline-flex flex-row items-center">
+              {% if block.settings.badge %}
+                <span class="inline-block pr-[0.5em]">{{ block.settings.badge }}</span>
+              {% endif %}
+              <span>{{ block.settings.text }}</span>
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </a>
+</simple-marquee>
+
+{% schema %}
+  {
+    "name": "Text Marquee",
+    "settings": [
+      {
+        "type": "range",
+        "id": "speed",
+        "min": 0,
+        "max": 75,
+        "step": 1,
+        "default": 35,
+        "label": "Speed",
+        "info": "Lower speed == faster marquee. Set to zero to disable movement."
+      }, {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:settings_schema.general.settings.background_color.label",
+        "info": "t:settings_schema.general.settings.background_color.info",
+        "default": "#FFFFFF"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      }, {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Label",
+            "info": "For easy reference from the customizer."
+          },
+          {
+            "type": "html",
+            "id": "badge",
+            "label": "Badge (SVG)",
+            "info": "Optional SVG badge that appears before text content"
+          }, {
+            "type": "html",
+            "id": "text",
+            "label": "Block Text",
+            "info": "Wrap text in <em></em> for script, in <strong></strong> for bold, and in <sup></sup> for superscript"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+				"name": "Text Marquee"
+		  }
+    ]
+  }
+{% endschema %}

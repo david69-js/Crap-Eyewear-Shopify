@@ -1,0 +1,54 @@
+<drawer-overlay data-external-trigger="shipping-returns">
+    <div class="drawer-2 fixed z-40 top-0 bottom-0 right-0 h-full w-full max-w-[588px] bg-white translate-x-full overflow-y-auto">
+        <div class="bg-faded-lime cx cy flex items-center justify-between">
+            <h3 style="font-size: 24px;" class="grotesk-bold 22">Shipping & Returns</h3>
+            <div class="js-close w-[20px] cursor-pointer">
+                {% render 'icon--close' %}
+            </div>
+        </div>
+        <div class="inner cx cy">
+            {% for block in section.blocks %}
+                {% render 'slot--accordion' heading: block.settings.text, content: block.settings.richtext %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="drawer-bg js-close fixed inset-0 opacity-0 z-0 bg-off-black inset-0 opacity-0 pointer-events-none"></div>
+</drawer-overlay>
+{% schema %}
+{
+    "name": "Shipping & Returns",
+    "tag": "section",
+    "class": "relative z-40 pdp-async",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "accordion",
+            "name": "t:settings_schema.components.settings.accordion.name",
+            "settings": [
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "info": "t:settings_schema.components.settings.accordion.settings.text.info",
+                    "label": "t:settings_schema.general.settings.text.label"
+                },
+                {
+                    "type": "richtext",
+                    "id": "richtext",
+                    "info": "t:settings_schema.components.settings.accordion.settings.richtext.info",
+                    "label": "t:settings_schema.general.settings.richtext.label"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Shipping & Returns"
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "product"
+        ]
+    }
+}
+{% endschema %}

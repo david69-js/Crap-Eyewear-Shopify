@@ -1,0 +1,451 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "44876b03-1bba-4bfe-a900-8b35c4ed5d86": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>The<\/em> Kiss of Dume by Frankie Harrer<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "f05806af-b6b2-4392-81f0-bf8f73585a28": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "hosted_video": "shopify:\/\/files\/videos\/Crap_Eyewear-2022_Fall-The_Heavy_Tropix_P4P-Izzie-PIP.mp4",
+        "caption": ""
+      }
+    },
+    "aff67f6e-3d24-49d4-a743-a8239a9be08d": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "ed7cf056-fa3f-4533-bb63-d27201e0a577": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=dQw4w9WgXcQ",
+        "media_aspect_ratio": "16 \/ 9"
+      }
+    },
+    "532f0ed4-9d45-4a88-8d43-69ab934d4edb": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-fpo-1.jpg",
+            "caption": "<p>Frankie wearing <a href=\"\/products\/the-kiss-of-dume-lime-marble-bioacetate-sunglasses\" title=\"The Kiss of Dume - Lime Marble Bio\">The Kiss of Dume in Lime Marble Bio<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8bdb08b1-dbaa-4edf-89a9-c4a10ded46e6"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "fd7a47c1-e10b-441a-8703-057e6b776d66": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h5>Hailing from Malibu, CA, Frankie is a fixture in Los Angeles’ unique surf scene, known for her world class professional surfing and progressive style, in and out of the water.<\/h5>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "06a640d9-3f0d-4b1b-ba10-1ea08b0e8089"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fbdb3600-ae23-4015-a25b-103e1deaf5b5": {
+      "type": "lookbook-fullscreen",
+      "blocks": {
+        "71d1ea88-d46e-42d0-a195-410f98e4fe9d": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-bikini-vision-sunshine-demi-square-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "71d1ea88-d46e-42d0-a195-410f98e4fe9d"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/image_925.png",
+        "caption": ""
+      }
+    },
+    "2b41a1cd-feed-4bd7-92f7-fa0eb7ee2a25": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-kiss-of-dume",
+        "collection_image": "shopify:\/\/shop_images\/lookbook-2-col-carousel.jpg",
+        "image_brightness": 0.5,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Explore Collection"
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_926.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "2ed0cc55-5a45-45f0-9bbb-c27b07f8b511": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "24c79d6d-6960-4a8b-8cb7-c89c442d4998": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h4>The Kiss of Dume is a sleek, wraparound cat-eye, perfectly suited for both the beach and the streets.<\/h4><h4>We worked closely with Frankie to utilize earth-friendlier materials for her shades: bioacetate frame, mineral glass lenses, and a signature case made from recycled water bottles.<\/h4>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "24c79d6d-6960-4a8b-8cb7-c89c442d4998"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "c268be1c-6f92-410c-94f4-1353f7cb9474": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lookbook-fpo-1.jpg",
+            "caption": ""
+          }
+        },
+        "78b9e35e-06dd-432d-a826-2b542fb7c2bf": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-anti-matter-black-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "65437d6b-73a5-4b2a-8b4e-945316ac82e0",
+        "78b9e35e-06dd-432d-a826-2b542fb7c2bf"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><strong>“Lorem ipsum dolor sit amet consectetur. Habitant enim nunc ante aliquam euismod malesuada gravida ac. Lacinia ut pellentesque odio magna nisl tincidunt. Leo magna odio vitae id sapien amet.”<\/strong><\/h1>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        },
+        "26f871dc-972d-487e-8295-2c55f148d648": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6>Frankie Harrer<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "558292cc-b85a-4db0-a2ab-13e25b0c54e3",
+        "26f871dc-972d-487e-8295-2c55f148d648"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "77af1673-6c32-4e4e-a77a-363145146504": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "Fade",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Frankie-2_1.jpg",
+        "caption": ""
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h6><strong>The Kiss of Dume by Frankie Harrer<br\/><\/strong>Shot on location in Malibu, CA.<\/h6><h6>Starring: Frankie Harrer (@frankieharrer)<br\/>Film & Edit: Yasmine Diba (@yasminediba)<br\/>Photography: Tony Accosta (@tonyaccosta)<br\/>Music: 'Carnage Bargain' by The Paranoyds (@theparanoyds)<br\/>Song courtesy of Suicide Squeeze<\/h6>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "9ffe9f1d-a0c0-40e2-a706-6d098765bccd"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "fc209f1e-5112-4ec9-9322-6ce346334b64": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758.jpg",
+            "caption": "Fall 2021 Lookbook",
+            "url": ""
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image7758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image1758.jpg",
+            "caption": "Lookbook Caption",
+            "url": ""
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-2242.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        },
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image7758.jpg",
+            "caption": "Optional Caption",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "70db4fe7-6ddc-4692-b82f-3da80b4f1e81"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>More <em>Lookbooks<\/em><\/h1>",
+        "cta_text": "See All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "44876b03-1bba-4bfe-a900-8b35c4ed5d86",
+    "main",
+    "f05806af-b6b2-4392-81f0-bf8f73585a28",
+    "aff67f6e-3d24-49d4-a743-a8239a9be08d",
+    "ed7cf056-fa3f-4533-bb63-d27201e0a577",
+    "532f0ed4-9d45-4a88-8d43-69ab934d4edb",
+    "38f42697-b2ac-489b-8d55-b2621f7bfe00",
+    "fd7a47c1-e10b-441a-8703-057e6b776d66",
+    "fbdb3600-ae23-4015-a25b-103e1deaf5b5",
+    "2b41a1cd-feed-4bd7-92f7-fa0eb7ee2a25",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "2ed0cc55-5a45-45f0-9bbb-c27b07f8b511",
+    "c268be1c-6f92-410c-94f4-1353f7cb9474",
+    "69ce1047-6e05-40c9-8e2d-663a5afe5919",
+    "77af1673-6c32-4e4e-a77a-363145146504",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "d3117a64-e50f-449e-a4f5-29c53acc73a0",
+    "fc209f1e-5112-4ec9-9322-6ce346334b64",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

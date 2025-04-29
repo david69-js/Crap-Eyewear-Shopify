@@ -1,0 +1,121 @@
+{%- comment %}
+/**
+ * @property {string} name
+ * @property {string} label
+ * @property {string} value
+ * @property {array} options
+ * @property {boolean} required
+ * @property {boolean} autocomplete
+ * @property {string} classes
+ */
+{% endcomment -%}
+{%- liquid
+
+assign formData = form | default: "false"
+assign fieldType = type | default: "text"
+assign fieldName = name | default: ""
+assign fieldLabel = label | default: fieldName
+assign error = error | default: ""
+assign classes = classes | default: ""
+assign described = described | default: ""
+assign fieldIndex = idx | default: ""
+assign formId = formId | default: form.id
+assign sectionId = sectionId | default: section.id
+assign fieldId = fieldName | handleize | append: "_" | append: sectionId | append: "_" | append: formId
+assign placeholder = placeholder | default: ""
+assign required = required | default: "false"
+assign autocomplete = autocomplete | default: "false"
+assign slot = slot | default: nil
+assign checked = checked | default: "false"
+assign id = id | default: formId
+assign attributes = attributes | default: ""
+
+# UX Tip
+# Do not duplicate "labels" in placeholders, UX best practices for placeholders would be
+# text in addition to labels: https://www.nngroup.com/articles/form-design-placeholders/
+if placeholder == fieldLabel
+	assign placeholder = ""
+endif
+
+if fieldIndex != blank
+	assign fieldId = fieldId | append: "_" | append: fieldIndex
+endif
+
+assign defaultValue = value | default: ""
+assign required = required | default: true
+
+assign min = min | default: 0
+assign max = max | default: 99
+
+# TODO: required attributes & validation pattern
+-%}
+
+{%- if fieldType != "option" -%}
+	<div class="input-field !mb-5 {%- if classes != empty %} {{- classes -}} {%- endif -%} {%- if error != blank %} error {%- endif -%}">
+{%- endif -%}
+	{%- if fieldName == blank -%}
+		Liquid error: "name" parameter is required
+	{%- else -%}
+		{%- case fieldType -%}
+			{%- when "email" -%}
+				<label class="text-xs mb-1" for="{{- fieldId -}}">{%- if required == true -%} <sup></sup> {%- endif -%} {{- fieldLabel -}}</label>
+				<input class="!rounded-none max-w-[439px] min-h-[49px]" id="{{- fieldId -}}" type="email" name="{{- fieldName -}}" spellcheck="false" autocomplete="{%- if autocomplete != blank -%} {{- autocomplete -}} {%- else -%} email {%- endif -%}" autocorrect="off" autocapitalize="off" {%- if placeholder != blank %} placeholder="{{- placeholder -}}" {%- endif -%} {%- if required == true %} aria-required="{{- required -}}" required {%- endif -%} form="{{- formId -}}" {%- if defaultValue != blank %} value="{{- defaultValue -}}" {%- endif -%} {%- if formData.errors contains "email" %} aria-invalid="true" {%- if described != blank -%} aria-describedby="{{- described -}}" {%- endif %} {% endif -%} />
+
+			{%- when "number" -%}
+				<label for="{{- fieldId -}}">{%- if required == true -%} <sup>*</sup> {%- endif -%} {{- fieldLabel -}}</label>
+				<input id="{{- fieldId -}}" type="number" name="{{- fieldName -}}" min="{{- min -}}" max="{{- max -}}" {%- if required == true %} aria-required="{{- required -}}" required {%- endif -%} form="{{- formId -}}" {%- if defaultValue != blank %} value="{{- defaultValue -}}" {%- endif -%} {%- if formData.errors contains "form" %} aria-invalid="true" {% endif -%} />
+
+			{%- when "password" -%}
+				<label class="text-xs mb-1" for="{{- fieldId -}}">{%- if required == true -%} <sup></sup> {%- endif -%} {{- fieldLabel -}}</label>
+				<input class="!rounded-none max-w-[439px] min-h-[49px]" id="{{- fieldId -}}" type="password" name="{{- fieldName -}}" autocomplete="{%- if autocomplete != blank -%} {{- autocomplete -}} {%- else -%} current-password {%- endif -%}" {%- if placeholder != blank %} placeholder="{{- placeholder -}}" {%- endif -%} {%- if required == true %} aria-required="{{- required -}}" required {%- endif -%} form="{{- formId -}}" {%- if formData.errors contains "password" %} aria-invalid="true" {%- if described != blank -%} aria-describedby="{{- described -}}" {%- endif %} {% endif -%} />
+
+			{%- when "confirm_password" -%}
+				<label class="text-xs mb-1" for="{{- fieldId -}}">{%- if required == true -%} <sup></sup> {%- endif -%} {{- fieldLabel -}}</label>
+				<input class="!rounded-none max-w-[439px] min-h-[49px]" id="{{- fieldId -}}" type="password" name="{{- fieldName -}}" autocomplete="{%- if autocomplete != blank -%} {{- autocomplete -}} {%- else -%} new-password {%- endif -%}" {%- if placeholder != blank %} placeholder="{{- placeholder -}}" {%- endif -%} {%- if required == true %} aria-required="{{- required -}}" required {%- endif -%} form="{{- formId -}}" {%- if formData.errors contains "confirm_password" %} aria-invalid="true" {%- if described != blank -%} aria-describedby="{{- described -}}" {%- endif %} {% endif -%} />
+
+			{%- when "checkbox" -%}
+
+			{%- when "radio" -%}
+
+			{%- when "textarea" -%}
+
+			{%- when "option" -%}
+				<option value="{{- defaultValue -}}" {%- if checked == true %} selected="" {%- endif -%} {%- if attributes != blank %} {{ attributes }} {%- endif -%}>{{- fieldName -}}</option>
+
+			{%- when "select" -%}
+				{%- if slot != blank -%}
+					<label for="{{- fieldId -}}">{%- if required == true -%} <sup>*</sup> {%- endif -%} {{- fieldLabel -}}</label>
+					<select id="{{- fieldId -}}" name="{{- fieldName -}}" {%- if required == true %} aria-required="{{- required -}}" required {%- endif %} form="{{- id -}}">
+						{{- slot -}}
+					</select>
+				{%- endif -%}
+
+			{%- else -%}
+				{%- if fieldName contains "first_name" -%}
+					{%- assign autocompleteText = "given-name" -%}
+				{%- elsif fieldName contains "last_name" -%}
+					{%- assign autocompleteText = "family-name" -%}
+				{%- else -%}
+					{%- if autocomplete != blank -%}
+						{%- assign autocompleteText = autocomplete -%}
+					{%- else -%}
+						{%- assign autocompleteText = "" -%}
+					{%- endif -%}
+				{%- endif -%}
+				<label class="text-xs mb-1" for="{{- fieldId -}}">{%- if required == true -%} <sup></sup> {%- endif -%} {{- fieldLabel -}}</label>
+				<input class="!rounded-none max-w-[439px] min-h-[49px]" id="{{- fieldId -}}" type="{{- fieldType | downcase -}}" name="{{- fieldName -}}" {%- if placeholder != blank %} placeholder="{{- placeholder -}}" {%- endif -%} {%- if autocompleteText != blank %} autocomplete="{{- autocompleteText -}}" {%- endif -%} autocorrect="off" autocomplete="off" {%- if required == true %} aria-required="{{- required -}}" required {%- endif -%} form="{{- formId -}}" {%- if defaultValue != blank %} value="{{- defaultValue -}}" {% endif -%} />
+
+		{%- endcase -%}
+	{%- endif -%}
+	{%- if required == true -%}
+		<p>{{- error -}}</p>
+		<span>
+			{%- render "output--icon", icon: "error" -%}
+		</span>
+		{%- if strength == true -%}
+
+		{%- endif -%}
+	{%- endif -%}
+{%- if fieldType != "option" -%}
+	</div>
+{%- endif -%}

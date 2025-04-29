@@ -1,0 +1,215 @@
+{%- comment -%}
+                                                                /**
+                                                                 * Collection Template
+                                                                 */
+{%- endcomment -%}
+{%- liquid
+
+capture filter_string
+
+endcapture
+
+unless collection
+	assign collection = collections["all"]
+endunless
+
+assign sort_by = collection.sort_by | default: collection.default_sort_by
+assign terms = collection.terms | escape
+assign query_url = "?q=" | append: terms | append: "&sort_by=" | append: sort_by
+
+if terms == blank
+	assign query_url = "?sort_by=" | append: sort_by
+endif
+
+assign request_url = collection.url | append: query_url
+
+capture variant_id
+	render "output--get-variant-from-url"
+endcapture
+
+assign heading_size = settings.product_heading_size | default: 24
+assign col_string = "2,2,2,2,3,3,3"
+
+if section.settings.filter_style == "side" and template.name == "collection"
+	assign col_string = "2,2,2,2,3,3"
+endif
+
+assign total_active = 0
+
+for filter in collection.filters
+
+	assign total_active = total_active | plus: filter.active_values.size
+
+endfor
+
+-%}
+<div data-animation="{{- section.settings.animation -}}" class="collection-section-wrapper">
+    <div class="w-full cx richtext">
+    </div>
+    {%- paginate collection.products by 12 -%}
+
+        {%- comment -%} --- No Results --- {%- endcomment -%}
+        {%- if collection.products.size == 0 -%}
+
+            <div class="collection-grid flex-grow w-full" style="" data-id="{{- section.id -}}">
+                <div class="loading-overlay gradient"></div>
+                <div class="title-wrapper center">
+                    <h2 class="title title--primary">
+                        {{ 'sections.collection_template.empty' | t }}<br>
+                        {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+                    </h2>
+                </div>
+            </div>
+
+        {%- else -%}
+
+            {%- comment -%} --- Grid filter/sort actions & active filters --- {%- endcomment -%}
+            <div class="w-full cx cy">
+
+                <div class="flex justify-between gap-[10px]">
+                    {%- if section.settings.enable_filtering == true -%}
+                        <toggle-filters class="w-full">
+                            <button class="js-trigger-dd btn btn-secondary border-off-black font-primary flex h-[50px] max-w-[270px] items-center">
+                                <span class="">Filter & Sort</span>
+                            </button>
+                        </toggle-filters>
+                    {%- endif -%}
+                    {%- comment -%} --- Active Filters --- {%- endcomment -%}
+                    {%- render "molecule--filter-sort-active", results: collection, total_active: total_active -%}
+                    {%- render "molecule--filter-sort", results: collection, enable_filtering: section.settings.enable_filtering, filter_style: section.settings.filter_style, enable_sorting: section.settings.enable_sorting, total_active: total_active, open: section.settings.filter_open, sub_nav: section.settings.filter_nav -%}
+                </div>
+
+                <div class="flex">
+
+                    <div class="collection-grid flex-grow w-full" style="" data-id="{{- section.id -}}">
+                        {%- capture slottedEl -%}
+                            {%- for item in collection.products -%}
+                                {% if item.metafields.custom.hide_product == true %}
+                                    {% if content_for_header contains "previewBarInjector.init();" %}
+                                        {% assign show_product = true %}
+                                    {% elsif content_for_header contains "Shopify.designMode" %}
+                                        {% assign show_product = true %}
+                                    {% else %}
+                                        {% assign show_product = false %}
+                                    {% endif %}
+                                {% endif %}
+                                {% if item.metafields.custom.hide_product != true %}
+                                    {% assign show_product = true %}
+                                {% endif %}
+                                {% if show_product == true %}
+                                    <div class="product-card-wrap pagination-result col-span-1">
+                                        {% render "component--product-card", product: item, showPrice: true, hover_image: true %}
+                                    </div>
+                                {% endif %}
+                            {% endfor -%}
+                        {%- endcapture -%}
+
+                        {%- render "slot--grid" 
+                            , cols: col_string,
+                            slot: slottedEl,
+                            classes: "pagination-grid" -%}
+
+                        {%- if paginate.pages > 1 -%}
+                            <div class="w-full cy-1/2 flex justify-center">
+                                {% render "molecule--pagination", paginate: paginate %}
+                            </div>
+                        {%- endif -%}
+                    </div>
+
+                </div>
+            </div>
+        {%- endif -%}
+    {% endpaginate %}
+</div>
+
+{%- comment -%} --- Collection schema --- {%- endcomment -%}
+{%- render "schema--collection", collection: collection -%}
+
+{% schema %}
+    {
+        "name": "t:sections.main-collection-product-grid.name",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "link_list",
+                "id": "collection_nav",
+                "label": "t:settings_schema.general.settings.collection_nav.label",
+                "info": "t:settings_schema.general.settings.collection_nav.info"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_filtering",
+                "default": true,
+                "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+                "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+            },
+            {
+                "type": "select",
+                "id": "filter_style",
+                "label": "t:settings_schema.general.settings.filter_style.label",
+                "info": "t:settings_schema.general.settings.filter_style.info",
+                "options": [
+                    {
+                        "value": "side",
+                        "label": "t:settings_schema.general.settings.filter_style.side.label"
+                    }, {
+                        "value": "top",
+                        "label": "t:settings_schema.general.settings.filter_style.top.label"
+                    }, {
+                        "value": "drawer",
+                        "label": "t:settings_schema.general.settings.filter_style.drawer.label"
+                    }
+                ],
+                "default": "side"
+            }, {
+                "type": "link_list",
+                "id": "filter_nav",
+                "label": "t:settings_schema.general.settings.filter_nav.label",
+                "info": "t:settings_schema.general.settings.filter_nav.info"
+            }, {
+                "type": "checkbox",
+                "id": "filter_group_name",
+                "default": true,
+                "label": "t:settings_schema.general.settings.filter_group_name.label"
+            }, {
+                "type": "checkbox",
+                "id": "filter_open",
+                "default": true,
+                "label": "t:settings_schema.general.settings.filter_open.label"
+            }, {
+                "type": "checkbox",
+                "id": "enable_sorting",
+                "default": true,
+                "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+            }, {
+                "type": "select",
+                "id": "pagination_type",
+                "label": "Pagination Type",
+                "options": [
+                    {
+                        "value": "load-more",
+                        "label": "Load More"
+                    }, {
+                        "value": "infinite",
+                        "label": "Infinite"
+                    }, {
+                        "value": "pages",
+                        "label": "Page Numbers"
+                    }
+                ],
+                "default": "load-more"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Collection"
+            }
+        ],
+        "templates": ["collection", "list-collections"]
+    }
+{% endschema %}

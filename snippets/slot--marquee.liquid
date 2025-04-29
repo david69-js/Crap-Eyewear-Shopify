@@ -1,0 +1,20 @@
+{% liquid
+
+  assign marquee_speed = speed | default: 20
+  assign wrapper_classes = wrapperClasses | default: ""
+  assign text_classes = textClasses | default: ""
+
+%}
+
+<simple-marquee
+  data-marquee-speed="{{ marquee_speed }}"
+  data-loop="true"
+>
+  <div class="block overflow-hidden {{ wrapper_classes }}" style="background: {{ bgColor }}; --marquee-speed: {{ marquee_speed }}s">
+    <div class="w-max relative flex marquee-wrapper">
+      <div class="marquee-text shrink-0 flex items-center {{ text_classes }}">
+        {{ slot }}
+      </div>
+    </div>
+  </div>
+</simple-marquee>

@@ -1,0 +1,72 @@
+{%- comment %}
+  /** Pagination
+  * @property {string}
+  *
+  */
+{% endcomment -%}
+{%- liquid
+
+assign pageType = section.settings.pagination_type | default: "load-more"
+
+-%}
+
+{%- if paginate.parts.size > 0 -%}
+  <paginate-grid data-type="{{- pageType -}}" data-section="{{- section.id -}}">
+    {%- if pageType == "load-more" or pageType == "infinite" -%}
+      {%- if paginate.next -%}
+        <div class="text-center">
+          <a href="{{- paginate.next.url -}}">
+              <span class="btn !w-fit mx-auto mb-12">Loading...</span>
+          </a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <nav
+        class="pagination"
+        role="navigation"
+        aria-label="{{- "general.pagination.label" | t -}}">
+        <ul class="flex" role="list">
+          {%- if paginate.previous -%}
+            <li class="mx-2">
+              <a
+                href="{{- paginate.previous.url -}}"
+                class=""
+                aria-label="{{- "general.pagination.previous" | t -}}">
+                {%- render "icon--caret" -%}
+              </a>
+            </li>
+          {%- endif -%}
+          {%- for part in paginate.parts -%}
+            <li class="mx-2">
+              {%- if part.is_link -%}
+                <a
+                  href="{{ part.url }}"
+                  class="pagination__item link"
+                  aria-label="{{- "general.pagination.page" | t: number: part.title -}}">{{- part.title -}}</a>
+              {%- else -%}
+                {%- if part.title == paginate.current_page -%}
+                  <span
+                    class="underline"
+                    aria-current="page"
+                    aria-label="{{- "general.pagination.page" | t: number: part.title -}}">{{- part.title -}}</span>
+                {%- else -%}
+                  <span>{{- part.title -}}</span>
+                {%- endif -%}
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+          {%- if paginate.next -%}
+            <li class="mx-2">
+              <a
+                href="{{- paginate.next.url -}}"
+                class=""
+                aria-label="{{- "general.pagination.next" | t -}}">
+                {%- render "icon--caret" -%}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+  </paginate-grid>
+{%- endif -%}

@@ -1,0 +1,87 @@
+{%- comment -%}
+  /**
+  * Blog Hero
+  */
+{%- endcomment -%}
+{% liquid
+	assign new_title = article.metafields.custom.formatted_title
+%}
+
+<div 
+class="cx"
+style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} "
+data-animation="{{- section.settings.animation -}}"
+>
+  {% if new_title %}
+    {{ new_title | metafield_tag }}
+  {% else %}
+    <h1>{{- article.title -}}</h1>
+  {% endif %}
+
+  <div class="dk:flex mt-5 dk:mt-9 gap-x-4">
+    <div class="basis-3/5">
+      {{ article.excerpt }}
+    </div>
+
+    {% if article.tags.size > 0 %}
+      <div class="tags dk:justify-end items-start flex grow mt-4 dk:mt-0">
+        {% render 'component--tag-list', tags: article.tags %}
+      </div>
+    {% endif %}
+  </div>
+
+
+</div>
+{% if article.metafields.custom.featured_image %}
+  {% if article.metafields.custom.video %}
+    {% render 'component--responsive-video', desktop_video: article.metafields.custom.video.value, mobile_video: article.metafields.custom.video.value, autoplay: true, muted: true %}
+  {% else %}
+    <div class="h-[143vw] dk:h-auto relative">
+      <div class="h-[143vw] dk:h-auto relative">
+        {% render 'component--responsive-image', 
+        image: article.metafields.custom.featured_image.value, 
+        objectFit: 'mobile' 
+        %}
+    </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+    "name": "Blog Hero",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "select",
+            "id": "animation",
+            "label": "t:settings_schema.animations.settings.animation.label",
+            "info": "t:settings_schema.animations.settings.animation.info",
+            "options": [
+                {
+                    "value": "",
+                    "label": "t:settings_schema.animations.settings.none.label"
+                },
+                {
+                    "value": "Fade",
+                    "label": "t:settings_schema.animations.settings.fade.label"
+                },
+                {
+                    "value": "StaggerFade",
+                    "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                }
+            ],
+            "default": ""
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "Blog Hero"
+        }
+    ],
+    "templates": [
+        "article"
+    ]
+}
+{% endschema %}

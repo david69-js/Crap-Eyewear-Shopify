@@ -1,0 +1,78 @@
+{%- comment %}
+/** @typedef {object} json
+ * @property {string} slot
+ * 
+ */
+{% endcomment -%}
+{%- liquid
+
+if cols
+	assign cols = cols | split: ","
+else
+	assign cols = "1,2,4" | split: ","
+endif
+
+if gaps
+	assign gaps = gaps | split: ","
+else
+	assign gaps = "4,8" | split: ","
+endif
+
+assign len = cols | size
+assign gapLen = gaps | size
+assign tw = ",xs,sm,md,lg,xl,2xl,3xl,4xl" | split: ","
+
+capture flexClasses
+	for col in cols
+
+		assign thisIndex = forloop.index0
+
+		if len < 6
+			assign thisIndex = thisIndex | plus: thisIndex
+		endif
+
+		if prevCol == col
+			continue
+		else
+			assign prevCol = col
+		endif
+
+		if tw[thisIndex] != blank
+			echo tw[thisIndex] | append: ":flex-cols-" | append: col | append: " "
+		else
+			echo "flex-cols-" | append: col | append: " "
+		endif
+	endfor
+endcapture
+
+if noGap != true
+	capture gapClasses
+		for gap in gaps
+
+			assign thisIndex = forloop.index0
+
+			if gapLen < 6
+				assign thisIndex = thisIndex | plus: thisIndex
+			endif
+
+			if prevGap == gap
+				continue
+			else
+				assign prevGap = gap
+			endif
+
+			if tw[thisIndex] != blank
+				echo tw[thisIndex] | append: ":gap-" | append: gap | append: " "
+			else
+				echo "gap-" | append: gap | append: " "
+			endif
+		endfor
+	endcapture
+else
+	assign gapClasses = "gap-0 "
+endif
+
+-%}
+<div class="flex flex-wrap {{ gapClasses }}{{ flexClasses }}">
+	{{ slot }}
+</div>

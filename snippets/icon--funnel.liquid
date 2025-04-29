@@ -1,0 +1,7 @@
+{%- liquid
+
+assign stroke_width = stroke | default: 0
+assign id = id | default: ""
+
+-%}
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {%- if id != blank %} id="{{- id -}}" {% endif -%} focusable="false" role="presentation" class="icon icon-funnel pointer-events-none" fill="none" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.33333 15V13.75H11.6667V15H8.33333ZM2.5 6.25V5H17.5V6.25H2.5ZM5 10.625V9.375H15V10.625H5Z" fill="currentColor" stroke="currentColor" stroke-width="{{ stroke_width }}" /></svg>

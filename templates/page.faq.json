@@ -1,0 +1,542 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "c3e9aaa4-1966-4726-813c-8c6e11dc15c0": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "021a8033-fdb4-4510-a7bc-8d18d2e76d83": {
+      "type": "module--page-content",
+      "settings": {
+        "animation": "Fade",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "show_page_title": true,
+        "title_alignment": "left",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "start",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "885ee909-532f-4d5e-b548-9649e26758e3": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "b19f2cdb-46ab-4da4-bd41-a3a9a5e5b9e8": {
+          "type": "accordion",
+          "settings": {
+            "text": "What currency are your prices in?",
+            "richtext": "<p>All of our prices displayed are in US dollars (USD).</p>"
+          }
+        },
+        "0f2c8209-9471-46f4-9d57-edc7618492c5": {
+          "type": "accordion",
+          "settings": {
+            "text": "What is Afterpay?",
+            "richtext": "<p>Afterpay is a tool that allows you to shop now and pay later in four equal installments every two weeks.</p>"
+          }
+        },
+        "07ea7987-43f3-4414-8d32-1ff51dbcaf9e": {
+          "type": "accordion",
+          "settings": {
+            "text": "How do I use Afterpay?",
+            "richtext": "<p>To use Afterpay, choose your favorite shades and then head to checkout. At checkout, select Afterpay as your payment method and you will be directed to the Afterpay website to register and provide payment details. If you’ve used Afterpay before, just log into your Afterpay account. Then complete your order – easy! There are no additional fees to use Afterpay as long as payments are made on time. <br/><br/>Afterpay is eligible on orders between $35 - $1,000 USD. You must be over 18, a resident of the U.S. and meet additional eligibility criteria to qualify. Afterpay cannot be used on e-gift cards. </p>"
+          }
+        },
+        "26dc484f-1565-469a-9de4-927e534a353c": {
+          "type": "accordion",
+          "settings": {
+            "text": "Can I use Afterpay if I'm outside of the U.S.?",
+            "richtext": "<p>Afterpay is only available to U.S. customers at this time.</p>"
+          }
+        },
+        "2d163a3e-1626-4f71-b20f-e510fa667482": {
+          "type": "accordion",
+          "settings": {
+            "text": "Where can I find out more about Afterpay?",
+            "richtext": "<p>For more information, visit Afterpay’s <a href=\"https://help.afterpay.com/\"><span style=\"text-decoration:underline\">FAQ page</span></a>. If you have a question about your Afterpay account, please contact the Afterpay toll-free customer support line at 855-289-6014 or use the <a href=\"https://help.afterpay.com/hc/en-au/requests/new%3Cu\"><span style=\"text-decoration:underline\">contact form</span></a>.</p>"
+          }
+        },
+        "699187bd-5740-4a72-a3aa-14d4efa4cbd3": {
+          "type": "accordion",
+          "settings": {
+            "text": "Can I change or cancel my order?",
+            "richtext": "<p>We are unable to make any changes to an order once it's been placed. Please confirm that product details and address information are correct prior to completing your order. </p><p><strong>Crap Eyewear® is not responsible for lost orders due to an incorrect address provided by the customer</strong>. This includes but is not limited to the wrong apartment, wrong street address, street number, town etc. Please verify all information before completing your purchase. After an order has been delivered to the shipping address provided by the customer, <strong>we are not responsible for lost or stolen packages</strong>. Please ensure your delivery address is secure and that someone will be available to receive the package.</p><p>Please <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> ASAP to request an order cancellation. We will do our best to honor any cancellation requests but please keep in mind that our warehouse works fast and once an order is in our system we may not be able to cancel an order. </p><p>FTP orders cannot be cancelled once confirmed.</p>"
+          }
+        },
+        "6cef8fec-f0a0-41e7-be0a-ddf01268b6f0": {
+          "type": "accordion",
+          "settings": {
+            "text": "What's the status of my order?",
+            "richtext": "<p>To check your order status, log into your account through our <a href=\"https://www.crapeyewear.com/account/login\">Accounts Page</a>. There you can check your order status and tracking if available.</p><p>That link is also in our footer on this and every page of our site.</p><p>Orders containing a pre-order item will ship once the pre-order item is back in stock. If you would like your in-stock item to ship before then, please place separate orders; one for the pre-order item(s) and one for the in-stock item(s).</p>"
+          }
+        },
+        "2241fc5a-8cf6-4d48-9935-72b144fe9a9d": {
+          "type": "accordion",
+          "settings": {
+            "text": "Will I receive a tracking number for my order?",
+            "richtext": "<p>Yes, when your order ships, you'll receive an automatic email notification with your tracking number.</p><p>If you are still jonesing, you can <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a>.</p><p>**Orders containing a pre-order item will ship once the pre-order item is back in stock. If you would like your in-stock item to ship before then, please place separate orders; one for the pre-order item(s) and one for the in-stock item(s).</p>"
+          }
+        },
+        "d199fa62-41d8-4ae5-ac2a-94b4a9aaae1c": {
+          "type": "accordion",
+          "settings": {
+            "text": "How do I apply a discount code to my purchase?",
+            "richtext": "<p>To apply a discount code to your order, select the item(s) you want to purchase and go to checkout. At checkout, you'll see a box for gift card/discount codes - enter your code there and click \"Apply\". Once applied you'll see the adjusted order total and you can continue to complete the purchase.</p><p><strong>Please note</strong>: Discount codes cannot be combined and are only valid on full-price eyewear. FTP products are excluded from additional discounts and promotions. Discount codes cannot be retroactively applied to an order.</p>"
+          }
+        },
+        "63efcaa8-6a71-4191-a12e-478f0e430a7b": {
+          "type": "accordion",
+          "settings": {
+            "text": "I bought an item and now it's on sale, can I get my money back?",
+            "richtext": "<p>Totally! If you bought a full-price product only to discover it went on sale within 24 hours of purchase, we'll refund the difference**. Please note, the new order total may affect any shipping promotions applied to the original order and new rates may apply. Price adjustments do not apply to previous orders that were placed using a promo code or products previously purchased at a sale price. Price adjustments are only valid on full-price purchases.</p><p><strong>Please note</strong>: Items marked \"Final Sale\" are not eligible for return or exchange. </p><p></p><p>**BOGO promotion cannot be applied to previous purchases.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b19f2cdb-46ab-4da4-bd41-a3a9a5e5b9e8",
+        "0f2c8209-9471-46f4-9d57-edc7618492c5",
+        "07ea7987-43f3-4414-8d32-1ff51dbcaf9e",
+        "26dc484f-1565-469a-9de4-927e534a353c",
+        "2d163a3e-1626-4f71-b20f-e510fa667482",
+        "699187bd-5740-4a72-a3aa-14d4efa4cbd3",
+        "6cef8fec-f0a0-41e7-be0a-ddf01268b6f0",
+        "2241fc5a-8cf6-4d48-9935-72b144fe9a9d",
+        "d199fa62-41d8-4ae5-ac2a-94b4a9aaae1c",
+        "63efcaa8-6a71-4191-a12e-478f0e430a7b"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "Ordering",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "5ad2b128-c6c8-4044-940e-3a8beeca2f40": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "3ed69b91-5b04-4e36-846a-60bf678f20c9": {
+          "type": "accordion",
+          "settings": {
+            "text": "Where do your items ship from?",
+            "richtext": "<p>All of our orders ship from sunny Los Angeles. </p>"
+          }
+        },
+        "458b49bd-dc05-4e65-ae31-456abd651824": {
+          "type": "accordion",
+          "settings": {
+            "text": "When will I get my order?",
+            "richtext": "<p>Most orders ship next business day after we receive your purchase (business days exclude weekends and holidays). During occasional high volume events like major sales, holidays, busy seasons, etc., order processing may take a few days longer. </p><p>Orders containing a pre-order item will ship once the pre-order item is back in stock. If you would like your in-stock item to ship before then, please place separate orders; one for the pre-order item(s) and one for the in-stock item(s).</p><p>If you know your order needs to arrive by a certain date, please <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> and let us know the details— we'll do our best to make sure they arrive in time &lt;3</p><p>If you are unsure what shipping service you are using, please refer to your order confirmation email.</p><p><strong>U.S. DOMESTIC</strong>: orders typically arrive within 1-5 business days from the ship date depending on location and ship service selected at checkout</p><ul><li><em><strong>Standard</strong></em>: 3-5 business days -</li><li><em><strong>Faster</strong></em>: 1-3 business days -</li><li><em><strong>Rush</strong></em>: 2 business days -</li><li><em><strong>Overnight</strong></em>: 1 business day -</li></ul><p><strong>INTERNATIONAL</strong>: orders typically arrive within 3-10 business days from the ship date depending on location and ship service selected at checkout</p><ul><li><em><strong>Standard</strong></em>: 1-2 weeks (*)- </li><li><em><strong>Rush</strong></em> : 3-5 business days -</li></ul><p>(*) We are currently seeing significant delays with our international carriers—please allow an additional 2-3 weeks for international delivery.</p>"
+          }
+        },
+        "6aebf131-f75a-45ce-a0ef-4c94765f7f61": {
+          "type": "accordion",
+          "settings": {
+            "text": "Do you offer express shipping?",
+            "richtext": "<p>Yes! </p><p>If you chose a specific express service, i.e. \"Faster\", \"Rush\" or \"Overnight\" delivery, please factor in our processing time. Orders usually ship in 1-2 business days (excludes weekends and holidays). During promotions please allow for a few extra days. We're hustling hard to get your orders out. Bottom line, please make sure to account for any additional internal processing if you paid for overnight shipping, just to be safe.</p><p>Having said that, we try to prioritize all overnight orders as best we can to get them out ASAP. If you selected an express shipping option and want to make sure your glasses will arrive by a deadline, feel free to <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> (don't forget to include your order number!) and we'll do our best to help you out. </p><p>**Orders containing a pre-order item will ship once the pre-order item is back in stock. If you would like your in-stock item to ship before then, please place separate orders; one for the pre-order item(s) and one for the in-stock item(s).</p>"
+          }
+        },
+        "dbbe0479-ece3-4274-9cfb-3e9bed2d485b": {
+          "type": "accordion",
+          "settings": {
+            "text": "What are your domestic (U.S.) shipping rates?",
+            "richtext": "<p>We offer FREE shipping on all domestic U.S. orders $50+. $5 flat-rate shipping is available for orders under $50. Orders will arrive within 3-5 business days from the ship date.</p><p>We offer Faster shipping for a $10 flat-rate, Rush shipping is available for a $25 flat-rate and Overnight is available for a $35 flat-rate.</p><p>Please note it usually takes 1-2 business days for our team to process and ship your order from our warehouse.</p>"
+          }
+        },
+        "e8027138-6419-424a-8d3e-43129c35d121": {
+          "type": "accordion",
+          "settings": {
+            "text": "What are your international shipping rates?",
+            "richtext": "<p>We offer FREE shipping on all international orders $75+. $10 flat-rate shipping is available for international orders less than $75.</p><p>We also offer $25 expedited shipping via UPS.</p><p><strong>Please keep in mind that customs may extend delivery windows slightly. </strong></p><ul><li><strong>Standard: </strong>1-2 weeks - </li><li><strong>Rush</strong>: 3-5 business days -<br/><br/>(*)We are currently seeing significant delays with our international carriers—please allow an additional 2-3 weeks for international delivery.</li></ul><p></p><p>You will receive a tracking number upon shipment of your order, which you can use to track and view your estimated delivery date. <strong>**Please note that depending on your country's specific import laws, you may be required to pay local duties and taxes. These fees are not included in your shipping cost.**</strong> Please include correct telephone contact information in your order to ensure that you can be reached in the case of a customs issue. For more information, please contact your local customs office.</p>"
+          }
+        },
+        "c56bbf04-59c9-46fe-9a38-f2124bf6b98e": {
+          "type": "accordion",
+          "settings": {
+            "text": "Am I responsible for import duties and taxes on my international order?",
+            "richtext": "<p>Yes. Depending on your country's specific import laws you may be required to pay local duties and taxes. These fees are not included in your shipping cost.</p><p>We know that pesky customs charges are the worst, and please trust us when we say that they are out of our control and are paid to your government and not us. For more information, please contact your local customs office.</p><p>Please include correct telephone contact information in your order to ensure that you can be reached in the case of a customs issue.</p>"
+          }
+        },
+        "8a16c813-60e3-49ac-9cde-49b02ed1b57e": {
+          "type": "accordion",
+          "settings": {
+            "text": "My package is lost!",
+            "richtext": "<p>If your order has been lost in transit, please <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> and we can provide next steps for trying to locate the package. </p><p><strong>Crap Eyewear® is not responsible for lost orders due to an incorrect address provided by the customer</strong>. This includes but is not limited to the wrong apartment, wrong street address, street number, town etc. Please verify all information before completing your purchase. After an order has been delivered to the shipping address provided by the customer, <strong>we are not responsible for lost or stolen packages</strong>. Please ensure your delivery address is secure and that someone will be available to receive the package.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "3ed69b91-5b04-4e36-846a-60bf678f20c9",
+        "458b49bd-dc05-4e65-ae31-456abd651824",
+        "6aebf131-f75a-45ce-a0ef-4c94765f7f61",
+        "dbbe0479-ece3-4274-9cfb-3e9bed2d485b",
+        "e8027138-6419-424a-8d3e-43129c35d121",
+        "c56bbf04-59c9-46fe-9a38-f2124bf6b98e",
+        "8a16c813-60e3-49ac-9cde-49b02ed1b57e"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "Shipping",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "ef106b70-e566-402a-a5f4-2c237a422393": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "ba9fa1a7-5333-463e-afe2-a730067ce593": {
+          "type": "accordion",
+          "settings": {
+            "text": "What is your return policy?",
+            "richtext": "<p>We offer <strong>free</strong> returns & exchanges on all U.S. domestic orders when claimed within 14 days of your order being delivered. Click <a href=\"https://www.crapeyewear.com/pages/returns-exchanges\" title=\"https://www.crapeyewear.com/pages/returns-exchanges\">here</a> to get started. You will be able to create one return shipment per order; please select all items you wish to return and include them in one package.</p><p>International orders (+ Puerto Rico) may be returned at your expense with the courier service of your choice. We recommend using a shipping method that is trackable and insured. Please include the order invoice in your package, and mail to:</p><p>Crap Eyewear Returns<br/>ATTN: Your Name<br/>228 Main St. #14<br/>Venice, CA 90291</p><p>Please note: Items marked \"Final Sale\" are not eligible for return or exchange. BOGO Sale returns and exchanges are subject to additional review. The promotion only applies if both items are kept. If one item is returned the order will be subject to the full payment of the kept item. Once you create your return you will receive an email with further instructions.</p>"
+          }
+        },
+        "17654f52-1dd5-426c-98f0-628979b83add": {
+          "type": "accordion",
+          "settings": {
+            "text": "How do I make a return?",
+            "richtext": "<p>We offer <strong>free</strong> returns & exchanges on all U.S. domestic orders when claimed within 14 days of your order being delivered. <a href=\"https://www.crapeyewear.com/pages/returns-exchanges\" title=\"https://www.crapeyewear.com/pages/returns-exchanges\">Click here</a> to get started.</p><p>International orders (+ Puerto Rico) may be returned at your expense with the courier service of your choice. We recommend using a shipping method that is trackable and insured. Please include the order invoice in your package, and mail to:</p><p>Crap Eyewear Returns<br/>ATTN: Your Name<br/>228 Main St. #14<br/>Venice, CA 90291</p><p>Please note: Items marked \"Final Sale\" are not eligible for return or exchange. Please <a href=\"mailto:store@crapeyewear.com\"><span style=\"text-decoration:underline\">contact us</span></a> if you need to set up an exchange for a BOGO purchase.</p>"
+          }
+        },
+        "196c4520-412b-4e45-8b49-b50a17f4c75d": {
+          "type": "accordion",
+          "settings": {
+            "text": "What is your exchange policy?",
+            "richtext": "<p>We offer <strong>free</strong> exchanges for all U.S. domestic orders if processed/returned within 14 days of delivery.</p><p>Click <a href=\"https://www.crapeyewear.com/pages/returns-exchanges\" title=\"https://www.crapeyewear.com/pages/returns-exchanges\">here</a> to create a return then select the item(s) you want to exchange and follow the steps to create a label. *Only in-stock items will be available to exchange. Pre-order items and new releases are excluded.* Once the return is approved, you'll receive a prepaid return label via email. Your exchange order will ship once your original order is returned. We encourage you to send back your original order as quickly as possible to avoid the exchanged item(s) selling out.</p><p>Sorry, we do not offer free exchanges for international orders (including Puerto Rico) at this time but we hope to make the returns process as painless as possible. Please send back anything you’re not 100% stoked on and place a new order for the style you need. International orders may be returned at your expense with the courier service of your choice. We recommend using a shipping method that is trackable and insured. Please include the order invoice in your package, and mail to:</p><p>Crap Eyewear Returns<br/>ATTN: Your Name<br/>228 Main St. #14<br/>Venice, CA 90291</p><p>Please note: Items marked \"Final Sale\" are not eligible for return or exchange. Please <a href=\"mailto:store@crapeyewear.com\"><span style=\"text-decoration:underline\">contact us</span></a> if you need to set up an exchange for a BOGO purchase.</p><p>For more info please review our <a href=\"https://www.crapeyewear.com/pages/shipping-returns\" title=\"https://www.crapeyewear.com/pages/shipping-returns\">return policy</a>.</p>"
+          }
+        },
+        "64e73b89-c549-4ff7-b348-c35e30b75d82": {
+          "type": "accordion",
+          "settings": {
+            "text": "I received the wrong product, what should I do?",
+            "richtext": "<p>If the product you received is not what you ordered, 1. we're sorry! 2. please don't wear it.</p><p>Please <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> ASAP for further assistance. When reaching out to our team, please include your order#, a description of the issue, product details(i.e. frame style, colorway) and last but not least, a few photos of the incorrect product. </p><p>We'll quickly respond, send you a free return shipping label and ship the correct goods.</p>"
+          }
+        },
+        "2324d31d-5cbd-4954-b0b8-c575884ad657": {
+          "type": "accordion",
+          "settings": {
+            "text": "I think my sunglasses arrived defective, what should I do?",
+            "richtext": "<p><a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">Contact us</a> ASAP and we'll help you out. When reaching out to our team, please include your order#, a description of the issue, product details(i.e. frame style, colorway) and last but not least, a few photos of the defective product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ba9fa1a7-5333-463e-afe2-a730067ce593",
+        "17654f52-1dd5-426c-98f0-628979b83add",
+        "196c4520-412b-4e45-8b49-b50a17f4c75d",
+        "64e73b89-c549-4ff7-b348-c35e30b75d82",
+        "2324d31d-5cbd-4954-b0b8-c575884ad657"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "Returns & Exchanges",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "8aa02b9c-d72b-4b57-90ff-e28cdff7083f": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "5c8736a0-b83a-4bee-b4ef-fafefca7c332": {
+          "type": "accordion",
+          "settings": {
+            "text": "Why premium, optical-grade materials?",
+            "richtext": "<p>Our brand has always been about providing exceptional value to our customers. We started as a reaction to a boring, overpriced sunglass market by making wild style shades at an affordable price. After more than a decade in the eyewear game we’re still on that mission: bringing you premium quality sunglasses with plenty of that extra Crap vibe that you know and love.</p><p>All our frames are made with high quality materials like stainless steel and earth-friendly bioacetate. Our lenses are made of scratch-resistant CR-39, the gold standard in sport optics.</p><p>P.S. Check out all the rad people who love and shared their Crap shades <a href=\"https://www.instagram.com/crapeyewear/tagged/\">here</a>. &lt;3</p>"
+          }
+        },
+        "d869c9c9-8fe9-4b9c-8e4f-b77749507e0a": {
+          "type": "accordion",
+          "settings": {
+            "text": "How are your shades made?",
+            "richtext": "<p>Our eyewear is handcrafted by skilled experts. Every step in the 50-point, 60+ day production process ensures a more durable, comfortable and beautiful sunglass.</p><p>First, raw material is hand mixed for the perfect color or tortoise and pressed into large bioacetate sheets. Each frame is then cut from those sheets and tumbled for days in cedar wood chips. After tumbling, they are then hand-shaped and fitted with optical grade hardware. A final, multiphase round of heavy polishing brings out the acetate’s vibrant color.</p><p>The result is a long-lasting, extra-comfortable pair of shades that also looks beautiful AF.</p><p>We work with highly technical eyewear manufacturers based in Shenzhen that are FDA & CE certified and meet all local regulations and standards.</p>"
+          }
+        },
+        "d1e5091e-766e-41bf-859b-922c62b45627": {
+          "type": "accordion",
+          "settings": {
+            "text": "What is bioacetate?",
+            "richtext": "<p>Acetate is the leading frame material used for premium, optical-quality eyewear. It's plant-based and semi-synthetic; cotton and wood pulp are combined with plasticizers to create a vibrant, durable frame that can be polished to a high gloss and custom-shaped by opticians.</p><p>Bioacetate shares acetate’s best properties, and is also biodegradable and petroleum-free. More bio-based content from renewable resources = greater sustainability.</p><p>P.S. Check out all the rad people who love and shared their Crap shades <a href=\"https://www.instagram.com/crapeyewear/tagged/\">here</a>. &lt;3</p>"
+          }
+        },
+        "a512441f-14a6-4a9f-b99b-735d31143fc8": {
+          "type": "accordion",
+          "settings": {
+            "text": "What type of lenses are in your sunglasses?",
+            "richtext": "<p>We use only high quality lens materials: CR-39, nylon and glass.</p><p>The majority of our sunglasses use CR-39 lenses. These lenses offer UV 400 protection and crystal clear vision. CR-39 has the second highest optical clarity available (behind glass), while being lightweight and shatter resistant.</p><p>Glass lenses have the highest clarity and ABBE value. We currently offer glass lenses in The <a href=\"https://www.crapeyewear.com/products/the-kiss-of-dume-lime-marble-bioacetate-sunglasses\"><span style=\"text-decoration:underline\">Kiss Of Dume</span></a> style.</p><p>Nylon lenses also have extremely high clarity. We use nylon lenses for our rimless frames due to their strength.</p><p>Check out all the rad people who love and shared their Crap shades <a href=\"https://www.instagram.com/crapeyewear/tagged/\">here</a>. &lt;3</p>"
+          }
+        },
+        "222bdeb3-9959-4f4e-8015-1d8b99c53e13": {
+          "type": "accordion",
+          "settings": {
+            "text": "Are any of your sunglasses polarized?",
+            "richtext": "<p>Yes, we offer polarized lenses in a variety of our frame styles – just look for “polarized” in the product color description. You can also see all our polarized styles in one place <a href=\"https://www.crapeyewear.com/collections/polarized\"><span style=\"text-decoration:underline\">here</span></a>.</p><p>Polarized lenses have unique filters that block unwanted glare reflected off water, snow and other bright surfaces. This ultimately increases your visibility and soothes your eyeballs, making them particularly great for the beach bum, water rat or just people especially sensitive to glare.</p><p>Our polarized lenses are of the highest quality — and come either in CR-39 or Nylon material. Beware of brands out there not upcharging for their polarized styles – they are usually made out of TAC (triacetate cellulose), a low quality, multi-layer composite.</p><p>P.S. Check out all the rad people who love and shared their Crap shades <a href=\"https://www.instagram.com/crapeyewear/tagged/\">here</a>. &lt;3</p>"
+          }
+        },
+        "5b77cfe3-196d-4cc5-b84f-704af3b6813b": {
+          "type": "accordion",
+          "settings": {
+            "text": "What sustainability measures do you take?",
+            "richtext": "<p>Brand:</p><p>As of January 2021, we taken the Climate Neutral pledge, working to measure and offset our 2021 carbon emissions to become Climate Neutral Certified.</p><p>Sunglasses:</p><p>We use bioacetate for 95%+ of our products. Bioacetate is a biodegradable and petroleum-free frame material.</p><p>Packaging:</p><p>We have eliminated all single-use plastic from our products. If you get hit with any plastic in your order, we’re sorry! Please give us a heads up so we are aware.</p><p>Our sunglass cases get their structure from recycled cardstock, eliminating the need for a plastic core.</p><p>Our sunglass boxes and shipping mailers are 100% recyclable –  thank you in advance for recycling :)</p><p>Future:</p><p>We are constantly working to lessen our footprint and increase our sustainability efforts. Please let us know you have any suggestions for materials or initiatives you’d like to see, we are always open to ideas!</p>"
+          }
+        },
+        "1da29f29-e3ad-4f72-a341-0da23e9da5bb": {
+          "type": "accordion",
+          "settings": {
+            "text": "Can I put prescription lenses in my Crap Eyewear shades?",
+            "richtext": "<p>Yes, all of our frames come RX-ready with optical-grade materials and can support prescription lenses.</p><p>We unfortunately do not offer prescription lens services ourselves. To put prescription lenses in your Crap frames, we recommend talking to your local optometrist, or checking out <a href=\"https://www.lensabl.com/\"><span style=\"text-decoration:underline\">Lensabl</span></a>.</p>"
+          }
+        },
+        "dbeb56c8-2667-4ecf-911e-8600b5f3a0e2": {
+          "type": "accordion",
+          "settings": {
+            "text": "A screw fell out of my favorite shades! What do I do now?",
+            "richtext": "<p>Bummer! Over time the repeated opening and closing your the arms on your favorite shades can cause the screws in your hinges to become loose and, if gone unnoticed and not retightened, fall out. Don't worry, we're happy to send you a replacement set on the house! Please <a href=\"mailto:store@crapeyewear.com\" title=\"mailto:store@crapeyewear.com\">contact us</a> and be sure to include the model of your sunglasses plus the best address to get them your way.</p>"
+          }
+        },
+        "08ac3c1d-3c35-4e67-9d31-299b4d85f312": {
+          "type": "accordion",
+          "settings": {
+            "text": "Do your products have any sort of warranty?",
+            "richtext": "<p>We stand by all our sunglasses with a warranty against defects in workmanship and materials for one year from order date and with proof of purchase.</p><p>If a warranty issue arises, please contact us with a description of the problem, some photos and your order number or proof of purchase. We strive to treat our customers like family and will do what we can to take care of you.</p><p>Our warranty does not cover against normal wear and tear, scratched or broken lenses, or misuse (i.e. sitting on your shades). Any alterations to the sunglasses will void warranty. We reserve the right to repair or replace, in part or in full, sunglasses returned for warranty or repair. Warranty claims and other repairs are at our complete discretion.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "5c8736a0-b83a-4bee-b4ef-fafefca7c332",
+        "d869c9c9-8fe9-4b9c-8e4f-b77749507e0a",
+        "d1e5091e-766e-41bf-859b-922c62b45627",
+        "a512441f-14a6-4a9f-b99b-735d31143fc8",
+        "222bdeb3-9959-4f4e-8015-1d8b99c53e13",
+        "5b77cfe3-196d-4cc5-b84f-704af3b6813b",
+        "1da29f29-e3ad-4f72-a341-0da23e9da5bb",
+        "dbeb56c8-2667-4ecf-911e-8600b5f3a0e2",
+        "08ac3c1d-3c35-4e67-9d31-299b4d85f312"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "Products",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "ad1a934e-972a-43dd-829a-b43dd2359262": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "60ac3bd9-c0f8-4c6b-9a83-b86abac7f446": {
+          "type": "accordion",
+          "settings": {
+            "text": "Do you have a physical store location I can visit?",
+            "richtext": "<p>Our Los Angeles Showroom is open for walk-ins seven days a week from 11-5pm. Come say wassup and shop our entire collection of sunglasses, zines, stickers and limited edition one-off colorways. </p><p></p><p><strong>Crap Eyewear Los Angeles Showroom</strong><br/>228 Main St. #14<br/>Venice, CA 90291<br/>(<a href=\"https://www.google.com/maps/dir//228+Main+St+%2314,+Venice,+CA+90291/@33.9728284,-118.4988668,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c2bace4faa700d:0x2311091724c504ce!2m2!1d-118.4781381!2d33.9972806\">Google Maps</a>)</p><p> </p><p>P.S. Check out all the rad people who love and shared their Crap shades <a href=\"https://www.instagram.com/crapeyewear/tagged/\">here</a>. &lt;3</p>"
+          }
+        },
+        "ac848614-05a3-4cc6-836b-86cf474e0a98": {
+          "type": "accordion",
+          "settings": {
+            "text": "I'd like to open a Crap Eyewear Wholesale account, what do I do?",
+            "richtext": "<p>Interested in learning more about our wholesale opportunities? Great! We'd love to learn more about you to see if we have a good fit. Apply <a href=\"https://wholesale.crapeyewear.com/pages/register\"><span style=\"text-decoration:underline\">here</span></a>.</p>"
+          }
+        },
+        "234fd018-a86d-496e-9437-c5047603778d": {
+          "type": "accordion",
+          "settings": {
+            "text": "Who can I contact for press or partnership inquiries?",
+            "richtext": "<p>Please DM us on Instagram<strong> </strong><a href=\"https://www.instagram.com/crapeyewear\" title=\"https://www.instagram.com/crapeyewear\"><span style=\"text-decoration:underline\">@crapeyewear</span></a> with any influencer collabs/requests.</p><p>Email us at <a href=\"mailto:info@crapeyewear.com\">partnerships@crapeyewear.com</a> with any press or partnership inquiries. Please include the following details:</p><ul><li>Your name</li><li>Name of the publication</li><li>Pull request/shoot info</li><li>Call in date</li></ul>"
+          }
+        },
+        "7b350b84-f441-484d-93ed-108f6d0d8a8a": {
+          "type": "accordion",
+          "settings": {
+            "text": "Are you hiring?",
+            "richtext": "<p>We are always on the lookout for top talent and appreciate your interest in bringing your unique set of skills, experience, and perspective to our independent, growing sunglass brand.</p><p>Please check our <a href=\"https://www.crapeyewear.com/pages/careers\">careers page</a> to see if there are any open positions.</p><p>If you're a qualified candidate for a position, send us an email to careers@crapeyewear.com. If we feel you're a good fit for our company, we promise to connect with you via email within two weeks (make sure to add this email to your address book so we don’t get sent to your spam folder).</p><p>In the meantime, please be sure to follow us on <a href=\"https://www.linkedin.com/company/crapeyewear/\">LinkedIn</a>, as new career opportunities will continue to be posted regularly.</p>"
+          }
+        },
+        "4bcb1d42-0b85-4541-a18e-9b081636dd7f": {
+          "type": "accordion",
+          "settings": {
+            "text": "Do you guys make stickers?",
+            "richtext": "<p>If you would like some stickers (U.S. only), please send a Self Address Stamped Envelope (S.A.S.E.) to: </p><p><br/>ATTN: Stickers <br/>Crap Eyewear <br/>228 Main St. #14<br/>Venice, CA 90291 </p><p><br/>To the groms out there who grew up on email, <a href=\"http://www.wikihow.com/Send-an-S.A.S.E.-(Self-Addressed-%20%20%20%20Stamped-Envelope)\">here's how you send a S.A.S.E.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "60ac3bd9-c0f8-4c6b-9a83-b86abac7f446",
+        "ac848614-05a3-4cc6-836b-86cf474e0a98",
+        "234fd018-a86d-496e-9437-c5047603778d",
+        "7b350b84-f441-484d-93ed-108f6d0d8a8a",
+        "4bcb1d42-0b85-4541-a18e-9b081636dd7f"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "Misc.",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "bd745bc2-81df-44cf-b7cd-c7428948f693": {
+      "type": "module--accordion-group",
+      "blocks": {
+        "cdffcf23-bada-4908-bf33-7d0ad0370f95": {
+          "type": "accordion",
+          "settings": {
+            "text": "How many shades can I purchase?",
+            "richtext": "<p>Limit of one per colorway.</p>"
+          }
+        },
+        "68b89d81-1fc1-44fc-a7ba-a513f83a761e": {
+          "type": "accordion",
+          "settings": {
+            "text": "When will I get my order?",
+            "richtext": "<p>FTP products will ship within 3-5 business days (excludes weekends and holidays).</p><p>If you are unsure what shipping service you are using, please refer to your order confirmation email.</p><p><strong>U.S. DOMESTIC</strong>: orders typically arrive within 1-5 business days from the ship date, depending on location and ship service selected at checkout.</p><ul><li><em><strong>Standard</strong></em>: 3-5 business days -</li><li><em><strong>Faster</strong></em>: 1-3 business days -</li><li><em><strong>Rush</strong></em>: 2 business days -</li><li><em><strong>Overnight</strong></em>: 1 business day -</li></ul><p><strong>INTERNATIONAL</strong>: orders typically arrive within 3-10 business days from the ship date, depending on location and ship service selected at checkout.</p><ul><li><em><strong>Standard</strong></em>: 1-2 weeks - </li><li><em><strong>Rush</strong></em> : 3-5 business days -</li></ul>"
+          }
+        },
+        "b36b9104-1808-42a1-838b-776f60f82be5": {
+          "type": "accordion",
+          "settings": {
+            "text": "Can I change or cancel my order?",
+            "richtext": "<p>FTP orders cannot be modified or cancelled. Please confirm all order details are correct prior to completing your order.</p>"
+          }
+        },
+        "25c716cb-02a1-42f6-9c82-68e7fb8237d0": {
+          "type": "accordion",
+          "settings": {
+            "text": "What is your return policy?",
+            "richtext": "<p>FTP products are FINAL SALE and are not eligible for return or exchange. If you have any questions, please <a href=\"mailto:store@crapeyewear.com\" target=\"_blank\" title=\"mailto:store@crapeyewear.com\">contact us</a> prior to placing your order.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "cdffcf23-bada-4908-bf33-7d0ad0370f95",
+        "68b89d81-1fc1-44fc-a7ba-a513f83a761e",
+        "b36b9104-1808-42a1-838b-776f60f82be5",
+        "25c716cb-02a1-42f6-9c82-68e7fb8237d0"
+      ],
+      "settings": {
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "category": "FTP x Crap® Eyewear",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "end"
+      }
+    },
+    "d610c1cf-6cda-4e41-8bb6-8970699fee89": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "79a5156a-101b-424f-afbf-cc33751a45e9": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "a98e80b7-4ec3-4636-82cb-fb8cb87e033f": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h3><strong>Still have questions?</strong> Give us a shout :)</h3>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        },
+        "8a678f46-624f-4d6b-b933-2936b23a4e8b": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>We’re online daily, 11am-5pm PST</strong></p>",
+            "alignment": "center",
+            "body_size": "body-large"
+          }
+        },
+        "9a5a2691-3357-462b-99e5-fbf04a3b18e6": {
+          "type": "triple_buttons",
+          "settings": {
+            "link_1": "mailto:store@crapeyewear.com",
+            "text_1": "Email",
+            "button_style_1": "btn-black",
+            "link_2": "tel:65214",
+            "text_2": "Text (U.S. Only)",
+            "button_style_2": "btn-black"
+          }
+        }
+      },
+      "block_order": [
+        "a98e80b7-4ec3-4636-82cb-fb8cb87e033f",
+        "8a678f46-624f-4d6b-b933-2936b23a4e8b",
+        "9a5a2691-3357-462b-99e5-fbf04a3b18e6"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 100,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cy",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "e07101eb-6db1-442c-b856-05efe4c94567": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify://files/videos/2021_Spring-The_Heavy_Tropix-Deep_Rose (1).mp4",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3>Meet Our<strong><br/></strong><em>Favorites</em></h3>",
+        "cta_1_text": "Shop The Hits",
+        "cta_1_url": "shopify://collections/best-sellers",
+        "image_2": "shopify://shop_images/Rectangle_161_3.png",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14,<br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "c3e9aaa4-1966-4726-813c-8c6e11dc15c0",
+    "021a8033-fdb4-4510-a7bc-8d18d2e76d83",
+    "885ee909-532f-4d5e-b548-9649e26758e3",
+    "5ad2b128-c6c8-4044-940e-3a8beeca2f40",
+    "ef106b70-e566-402a-a5f4-2c237a422393",
+    "8aa02b9c-d72b-4b57-90ff-e28cdff7083f",
+    "ad1a934e-972a-43dd-829a-b43dd2359262",
+    "bd745bc2-81df-44cf-b7cd-c7428948f693",
+    "d610c1cf-6cda-4e41-8bb6-8970699fee89",
+    "79a5156a-101b-424f-afbf-cc33751a45e9",
+    "e07101eb-6db1-442c-b856-05efe4c94567"
+  ]
+}

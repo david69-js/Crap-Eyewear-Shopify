@@ -1,0 +1,102 @@
+{% comment %}Removed trynow here {% endcomment %}
+    {% schema %}
+    {
+      "name": "TryNow_now_how_it_works",
+      "max_blocks": 3,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "display-all-content",
+          "label": "Display How It Works Content",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Try at home"
+        },
+        {
+          "type": "color",
+          "id": "background-color",
+          "label": "Background Color"
+        },
+        {
+          "type": "checkbox",
+          "id": "cta-show",
+          "default": true,
+          "label": "Show CTA"
+        },
+        {
+          "id": "cta-link",
+          "type": "url",
+          "label": "CTA button link"
+        },
+        {
+          "type": "text",
+          "id": "cta-text",
+          "label": "CTA text",
+          "default": "Try at home $0"
+        },
+        {
+          "type": "color",
+          "id": "cta-1-background-color",
+          "label": "CTA Background Color"
+        },
+        {
+          "type": "checkbox",
+          "id": "cta-show-2",
+          "default": false,
+          "label": "Show 2nd CTA"
+        },
+        {
+          "id": "cta-link-2",
+          "type": "url",
+          "label": "CTA button link"
+        },
+        {
+          "type": "text",
+          "id": "cta-text-2",
+          "label": "CTA text",
+          "default": "Try for free $0"
+        },
+        {
+          "type": "color",
+          "id": "cta-2-background-color",
+          "label": "CTA Background Color"
+        }
+      ],
+      "blocks": [
+        {
+            "type": "image",
+            "name": "items-entry",
+            "settings": [
+                {
+                    "type": "html",
+                    "id": "item-step_number",
+                    "label": "Step Number"
+                },
+                {
+                    "type": "html",
+                    "id": "item-title",
+                    "label": "Title",
+                    "default": "Title of this section"
+                },
+                {
+                    "type": "html",
+                    "id": "item-description",
+                    "label": "Description",
+                    "default": "Description of this section"
+                }
+            ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "TryNow info banner",
+          "category": "TRYNOW"
+        }
+      ]
+    }
+    {% endschema %}
+    

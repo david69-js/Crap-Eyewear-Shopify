@@ -1,0 +1,112 @@
+{%- liquid
+
+-%}
+<cart-item class="block" data-product="{{ item.product_id }}" data-variant="{{ item.variant_id }}" data-selling-plan="{{ item.selling_plan_allocation.selling_plan.id }}" data-index="{{ index }}" data-section="{{ section.id }}">
+    <noscript>
+        <div class="visually-hidden">
+            {%- if item.selling_plan_allocation %}
+                <input type="" name="" value="{{  }}" />
+            {%- endif -%}
+        </div>
+    </noscript>
+    <div class="flex flex-grow py-4 border-b border-light-grey relative">
+        <a href={{ item.product.url }} class="mr-4 md:mr-8 w-full max-w-[100px] dk:max-w-[165px] relative">
+            {%- render "component--responsive-image", image: item.image, maxSize: 300, classes: "w-full" -%}
+        </a>
+        <div class="w-full flex flex-col">
+            {%- for block in blocks %}
+                {%- case block.type -%}
+
+                    {%- comment -%} --- App field --- {%- endcomment -%}
+                    {%- when "@app" %}
+                    {%- render block %}
+
+                    {%- comment -%} --- Price display --- {%- endcomment -%}
+                    {%- when "price" %}
+                    <div class="flex items-center justify-between mt-auto">
+                        {%- render "component--cart-line-price", classes: "text-[14px] md:text-[16px]" 
+                            , price: item.price,
+                            discounts: item.discount_allocations,
+                            totalDiscount: item.line_level_total_discount,
+                            originalPrice: item.original_price,
+                            compare: item.product.compare_at_price,
+                            selling_plan: item.selling_plan_allocation,
+                            currency: currency -%}
+                        {%- render "component--quantity-input", product: item, quantity: item.quantity, hide_label: true, name: "quantity" -%}
+                    </div>
+
+                    {%- comment -%} --- Link to product page --- {%- endcomment -%}
+                    {%- when "product_link" %}
+                    <p class="text-sm">
+                        <a class="underline" href="{{ item.url }}">{{ block.settings.link_text | escape }}</a>
+                    </p>
+
+                    {%- comment -%} --- Subscription swap functionality --- {%- endcomment -%}
+                    {%- when "subscription_edit" %}
+                    {%- if all_products[item.product.handle].selling_plan_groups != blank and all_products[item.product.handle].selling_plan_groups.size > 0 -%}
+                        {%- assign product = all_products[item.product.handle] -%}
+                        <div class="subscription-toggle">
+                            <div class="radio-button flex items-center mb-2">
+                                <input tabindex="-1" type="checkbox" id="checkbox_{{ form_id }}_{{ index }}_toggle" name="selling_plan_update" value="true" {% if item.selling_plan_allocation -%}checked="checked"{%- endif %} />
+                                <label class="js-tabshow mb-[2px] ml-2 mr-2 cursor-pointer" tabindex="0" for="checkbox_{{ form_id }}_{{ index }}_toggle">Subscribe & Save ({{ product.selling_plan_groups[0].selling_plans[0].price_adjustments[0].value }}%)</label>
+                            </div>
+                            {%- if block.settings.show_interval == true -%}
+                                <div class="subscription-selection select-group mb-2">
+                                    <select class="select" name="selling_plan" form="{{ form_id }}">
+                                        {% for group in item.product.selling_plan_groups %}
+                                            {% for selling_plan in group.selling_plans %}
+                                                <option value="{{ selling_plan.id }}">{{ selling_plan.name }}</option>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            {%- else -%}
+                                <div class="hidden visually-hidden">
+                                    <input type="text" name="selling_plan" value="{{- item.product.selling_plan_groups[0].selling_plans[0].id -}}" />
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    {%- endif -%}
+
+                    {%- comment -%} --- Subscription type/name display --- {%- endcomment -%}
+                    {%- when "subscription_display" %}
+                    {%- if item.selling_plan_allocation %}
+                        {%- render "component--text", tag: "p", classes: "text-sm mb-2", content: item.selling_plan_allocation.selling_plan.name | escape %}
+                    {%- else %}
+                        {%- render "component--heading", heading_tag: "p", classes: "text-sm mb-2", heading: "One-time purchase" | escape, data: block.settings %}
+                    {%- endif %}
+
+                    {%- comment -%} --- Product title --- {%- endcomment -%}
+                    {%- when "title" %}
+                    {% assign titleWithoutVariant = item.product.title | split: ' - ' %}
+                    {%- render "component--heading", heading_tag: "h1", classes: "text-[14px] md:text-[20px] leading-3 grotesk-bold mb-[10px]", heading: titleWithoutVariant[0] | escape, data: block.settings %}
+
+                    {%- comment -%} --- Variant title --- {%- endcomment -%}
+                    {%- when "variant_title" %}
+                    {%- unless item.product_has_only_default_variant -%}
+                        {%- render "component--heading", heading_tag: "p", classes: "text-[12px] md:text-[14px]", heading: item.variant.title | escape, data: block.settings %}
+                    {%- endunless -%}
+                    <p>
+                        {% if item.variant.inventory_quantity < 10 and item.variant.inventory_quantity > 0 %}**Low Stock**{% endif %}
+                    </p>
+                    {% unless item.product.title contains 'Gift Card' %}
+                        {% if item.product.tags contains "sold-out" or item.product.tags contains 'badge: preorder-' %}
+                            <div class="bg-faded-lime w-fit px-3 py-1 mt-[10px] text-[12px] {% if request.path == '/cart' %} mb-5 {% endif %}">Pre-order</div>
+                        {% endif %}
+                    {% endunless %}
+
+                    {%- comment -%} --- Vendor --- {%- endcomment -%}
+                    {%- when "vendor" %}
+                    {%- render "component--heading", heading_tag: "h2", classes: "h4", heading: item.product.vendor | escape, data: block.settings %}
+
+                {%- endcase -%}
+            {%- endfor %}
+        </div>
+    </div>
+</cart-item>
+{%- comment -%}
+                                                                                                                                                            /**
+                                                                                                                                                             * Debug this object by using the render line
+                                                                                                                                                             */
+                                                                                                                                                            {%- render "debug--json", object: item %}
+{%- endcomment -%}

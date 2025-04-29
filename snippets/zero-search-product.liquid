@@ -1,0 +1,122 @@
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+{% assign similarProducts = "" %}
+{% for tag in product.tags %}           
+  {% if tag contains 'group:' %}{% assign group = tag %}{% endif %}
+{% endfor %}
+
+{% assign product1 = product.title | split: '-' | first %} 
+
+{% paginate collections['all'].products by 199 %}
+{% for productz in collections['all'].products %}               
+  {% assign productz1 = productz.title | split: '-' | first %}
+  {% if productz1 == product1 and productz.title != product.title and productz.available %}
+      {% assign similarProducts = similarProducts | append: productz.handle | append: '|' %}
+  {% endif %}
+{% endfor %}
+{% endpaginate %}
+
+
+{% assign variants = similarProducts | remove_last: '|' | split: '|' %}
+{% assign variants_avail = 0 %}
+{% for handle in variants %}
+  {% assign variants_avail = variants_avail | plus: 1 %}
+{% endfor %}
+
+
+
+<div class="main-collection-item u-center half">
+  <a href="{{ product.url }}">
+    {% include 'zero-product-badges' %}
+    <div class="main-collection-item-image">
+      <img class="top" alt="{{ product.title }}" src="{{ product.images[0] | img_url: '720x'}}">
+      {% if product.images.size > 1 %}
+        <img class="bottom" alt="{{ product.title }}" src="{{ product.images[1] | img_url: '720x'}}">
+      {% endif %}
+    </div>
+    <div class="main-collection-item-details">
+      {% assign product_title = product.title | split: ' - ' %}
+      <h3>{{ product_title[0] }}</h3>
+      <p>
+      {% for tag in product.tags %}
+        {% assign tagDown = tag | downcase %}
+        {% if tag contains 'badge: bioacetate'%}
+          <span class="type-marker">{% include 'zero-bioacetate' %}</span>
+        {% endif %}
+      {% endfor %}
+      {{ product.metafields.c_f['Product Mini Description'] }}</p>
+
+      {% assign preorder = false %}
+      {% for tag in product.tags %}
+        {% assign tagDown = tag | downcase %}
+        {% if tag contains 'preorder' %}
+          {% assign preorder = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign soldoutbadge = false %}
+      {% for tag in product.tags %}
+        {% assign tagDown = tag | downcase %}
+        {% if tag contains 'sold' %}
+          {% assign soldoutbadge = true %}
+        {% endif %}
+      {% endfor %}
+	{% if product.tags contains 'salebanner' %}
+      {% if settings.enable_promo %}
+      <div class="product-test__a">
+      <p class="price">{{ product.price | money }}{% if preorder == true %} <span class="preorder">(pre-order)</span>{% endif %}</p>
+      </div>
+      {% else %}
+            {% if product.available and soldoutbadge == false %}
+        {% if on_sale %}
+            <p class="price sale"><s class="compare-at-price">{{ product.compare_at_price | money }}</s> {{ product.price | money }}{% if preorder == 'yup' %} <span class="preorder">(pre-order)</span>{% endif %}</p>
+        {% else %}
+          <p class="price">{{ product.price | money }}{% if preorder == true %} <span class="preorder">(pre-order)</span>{% endif %}</p>
+        {% endif %}
+      {% else %}
+          <p class="price soldout">Sold Out</p>
+      {% endif %}
+      {% endif %}
+      {% else %}
+      {% if product.available and soldoutbadge == false %}
+        {% if on_sale %}
+            <p class="price sale"><s class="compare-at-price">{{ product.compare_at_price | money }}</s> {{ product.price | money }}{% if preorder == 'yup' %} <span class="preorder">(pre-order)</span>{% endif %}</p>
+        {% else %}
+          <p class="price">{{ product.price | money }}{% if preorder == true %} <span class="preorder">(pre-order)</span>{% endif %}</p>
+        {% endif %}
+      {% else %}
+          <p class="price soldout">Sold Out</p>
+      {% endif %}
+      {% endif %}
+      
+        {% if variants_avail > 0 %}
+          {% assign color = "Color" %}
+          {% if variants_avail > 1 %}
+            {% assign color = "Colors" %}
+          {% endif %}
+          {% unless product.available %}
+            <p class="colors">(+{{ variants_avail }} {{ color }} Avail)<p>
+          {% else %}
+            <p class="colors">(+{{ variants_avail }} {{ color }})</p>
+          {% endunless %}
+        {% endif %}
+      {% if settings.enable_promo %}
+      {% if product.tags contains 'salebanner' %}
+      {% comment %}PROMO START{% endcomment %}
+      <div class="product-test__a">
+        <div class="product-test__a-cp">
+          <p class="green-price">
+            {% assign multiplier = settings.promo_amount | plus: 0 %}
+            {{ product.price | times: multiplier | money }} {{ settings.promo_code }}
+          </p>
+        </div>
+      </div>
+      {% comment %}PROMO END{% endcomment %}
+      {% endif %}
+      {% endif %}
+    </div>
+  </a>
+</div>

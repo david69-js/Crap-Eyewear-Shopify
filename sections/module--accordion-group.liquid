@@ -1,0 +1,154 @@
+{%- comment -%}
+        
+{%- endcomment -%}
+{%- liquid
+
+assign fadeClass = ""
+
+if section.settings.animation == "StaggerFade"
+	assign fadeClass = " js-stagger"
+endif
+
+# add any custom classes you might need for each accordion child
+assign accordion_classes = "relative" | append: " border-t " | append: fadeClass
+
+-%}
+
+<div class="flex flex-col cx pb-[40px] md:pb-[60px] mb-[length:var(--mb-m)] dk:mb-[length:var(--mb-d)] text-[color:var(--font-color)]" style="{{section.settings.margin_bottom}} {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} --justify: {{- section.settings.flex -}}; --font-color: {{- section.settings.font_color -}}; --mobile-width: {{- section.settings.mobile_width -}}%; --desktop-width: {{- section.settings.desktop_width -}}%; {%- if section.settings.background_color != blank %} background:{{- section.settings.background_color -}}; {%- endif %} align-items: var(--justify);" data-animation="{{- section.settings.animation -}}" data-trigger="observe">
+    {%- if section.settings.category != blank -%}
+        <h3 class="mb-[40px] md:mb-[60px] {{ fadeClass }} self-start">{{- section.settings.category -}}</h3>
+    {%- endif -%}
+    <div class="w-[length:var(--mobile-width)] dk:w-[length:var(--desktop-width)] [&>*]:mb-4 [&>:last-child]:mb-0 border-b">
+        {%- capture group -%}
+
+            {%- for block in section.blocks -%}
+                {%- render "slot--accordion", heading: block.settings.text, headingClasses: "leading-none py-4 text-[length:24px] md:text-[length:32px] tracking-normal", content: block.settings.richtext, page: block.settings.page, icon: block.settings.icon, classes: accordion_classes -%}
+            {%- endfor -%}
+        {%- endcapture -%}
+        {%- render "molecule--accordion-group", slot: group, category: section.settings.category -%}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Accordion Group",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "text",
+                "id": "category",
+                "label": "t:settings_schema.general.settings.category.label",
+                "info": "t:settings_schema.general.settings.category.info"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            }, {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "range",
+                "id": "desktop_width",
+                "label": "Width - Desktop",
+                "min": 20,
+                "max": 100,
+                "step": 10,
+                "default": 80
+            }, {
+                "type": "range",
+                "id": "mobile_width",
+                "label": "Width - Mobile",
+                "min": 20,
+                "max": 100,
+                "step": 10,
+                "default": 100
+            }, {
+                "type": "select",
+                "id": "flex",
+                "label": "t:settings_schema.general.settings.flex.label",
+                "info": "t:settings_schema.general.settings.flex.info",
+                "options": [
+                    {
+                        "value": "start",
+                        "label": "t:settings_schema.general.settings.flex.start.label"
+                    }, {
+                        "value": "center",
+                        "label": "t:settings_schema.general.settings.flex.center.label"
+                    }, {
+                        "value": "end",
+                        "label": "t:settings_schema.general.settings.flex.end.label"
+                    }
+                ],
+                "default": "start"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "accordion",
+                "name": "t:settings_schema.components.settings.accordion.name",
+                "settings": [
+                    {
+                        "type": "textarea",
+                        "id": "text",
+                        "info": "t:settings_schema.components.settings.accordion.settings.text.info",
+                        "label": "t:settings_schema.general.settings.text.label"
+                    }, {
+                        "type": "richtext",
+                        "id": "richtext",
+                        "info": "t:settings_schema.components.settings.accordion.settings.richtext.info",
+                        "label": "t:settings_schema.general.settings.richtext.label"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Accordion Group"
+            }
+        ]
+    }
+{% endschema %}

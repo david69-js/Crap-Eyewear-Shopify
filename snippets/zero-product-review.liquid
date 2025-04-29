@@ -1,0 +1,27 @@
+    <!--      CALLOUT MODULE -- PRODUCT WITH REVIEW     -->
+    
+<!-- emma-chamberlain-the-supa-phreek-turquoise-square-sunglasses -->
+
+
+    <div class="product-review-callout featured img-load-section" style="--background-color: {{ collection.metafields.c_f['Review Callout Bg Color'] }}; --text-color: {{ collection.metafields.c_f['Review Callout Text Color'] }};">
+      <a href="{{all_products[collection.metafields.c_f['Review Callout Product']].url}}" class="product-callout-wrapper">
+        <div class="img-wrap">
+          {% assign ri_arr = collection.metafields.c_f['Review Callout Image'] | split: '/' %}
+          {% assign ri = ri_arr | last %}
+          <img class="preload {{ collection.metafields.c_f['Review Callout Image Style'] }}" alt="" data-preload-desktop="{{ ri | | file_img_url: '650x' }}" data-preload-mobile="{{ ri | | file_img_url: '400x' }}">
+        </div>
+        {% assign product_title = all_products[collection.metafields.c_f['Review Callout Product']].title | split: ' - ' %}
+        <h3>{{ product_title[0] }}</h3>
+
+        <p>{{ all_products[collection.metafields.c_f['Review Callout Product']].metafields.c_f['Product Mini Description'] }}</p>
+        <p class="price">{{all_products[collection.metafields.c_f['Review Callout Product']].price | money}}</p>
+      </a>
+      <article class="user-review-wrapper">
+        <div class="review-stars">
+          {% include 'zero-review-stars' %}
+        </div>
+        <h1>{{ collection.metafields.c_f['Review Callout Title'] }}</h1>
+        <p>{{ collection.metafields.c_f['Review Callout Text'] }}</p>
+        <p class="name">{{ collection.metafields.c_f['Review Callout Name'] }}</p>
+      </article>
+    </div>

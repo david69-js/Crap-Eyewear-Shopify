@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "e37e66a0-d0c0-4aeb-969c-25e8a4a9ea3a": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "20517355-7cc8-4fce-9de5-f87064557db8": {
+      "type": "section--blog-nav",
+      "blocks": {
+        "3049228c-1ffb-49d5-a853-902295f847ff": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Lookbooks"
+          }
+        },
+        "1e9abc0f-73a7-4f75-82b0-7515c50836bc": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Shades"
+          }
+        },
+        "aa5fbac3-7bef-4d4c-8333-eee61bbaf120": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Fam"
+          }
+        },
+        "67400e10-f2a6-4ed3-8b32-ce20eab5c7ab": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Events"
+          }
+        },
+        "897c6f7d-bb55-4a45-8bd9-f4f6860f85cd": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Music"
+          }
+        }
+      },
+      "block_order": [
+        "3049228c-1ffb-49d5-a853-902295f847ff",
+        "1e9abc0f-73a7-4f75-82b0-7515c50836bc",
+        "aa5fbac3-7bef-4d4c-8333-eee61bbaf120",
+        "67400e10-f2a6-4ed3-8b32-ce20eab5c7ab",
+        "897c6f7d-bb55-4a45-8bd9-f4f6860f85cd"
+      ],
+      "settings": {}
+    },
+    "listing": {
+      "type": "section--blog-listing",
+      "settings": {
+        "article_count": 12
+      }
+    },
+    "f29628ba-92d7-4306-b1a2-bd2b098570cf": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h4><strong>$20 OFF<\/strong> when you refer a <em>Friend<\/em><\/h4>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "",
+        "image_2": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h4><strong>Venice Showroom  <\/strong>228 Main St. #14, Venice, CA11 — 5PM, <em>Everyday<\/em><\/h4>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "e37e66a0-d0c0-4aeb-969c-25e8a4a9ea3a",
+    "20517355-7cc8-4fce-9de5-f87064557db8",
+    "listing",
+    "f29628ba-92d7-4306-b1a2-bd2b098570cf"
+  ]
+}

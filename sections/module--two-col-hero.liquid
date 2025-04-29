@@ -1,0 +1,316 @@
+<div class="two-col-hero-grid pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] {% if section.settings.copy_alignment == 'right' %} copy-align-right{% endif %}" style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} background: {{ section.settings.background_color }}; {{section.settings.margin_bottom}}" data-animation="{{- section.settings.animation -}}">
+    <div class="relative two-col-hero-image-1 {% if section.settings.image_for_mobile == 'right' %} hidden md:block {% endif %}">
+        {% if section.settings.video_1 %}
+            <div class="h-full">
+                {%- render "component--responsive-video" 
+                    , cover: true,
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    desktop_video: section.settings.video_1,
+                    mobile_video: section.settings.video_1, -%}</div>
+        {% else %}
+            {%- render "component--responsive-image" 
+                , image: section.settings.image_1, objectFit: true,
+                maxSize: 1280 -%}
+        {% endif %}
+        <div class="absolute inset-0 bg-black" style="opacity: {{section.settings.image_1_brightness}};"></div>
+    </div>
+
+    <div class="relative two-col-hero-image-2 {% if section.settings.image_for_mobile == 'left' %} hidden md:block {% endif %}">
+        {% if section.settings.video_2 %}
+            <div class="h-full">
+                {%- render "component--responsive-video" 
+                    , cover: true,
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    desktop_video: section.settings.video_2,
+                    mobile_video: section.settings.video_2, -%}</div>
+        {% else %}
+            {%- render "component--responsive-image" 
+                , image: section.settings.image_2, objectFit: true,
+                maxSize: 1280 -%}
+        {% endif %}
+        <div class="absolute inset-0 bg-black pointer-events-none" style="opacity: {{section.settings.image_2_brightness}};"></div>
+    </div>
+
+    <div class="two-col-hero-content pointer-events-none relative md:self-end ca {% if section.settings.copy_alignment == 'right' %}md:pl-[50%] pr-4{% endif %}" style="color: {{ section.settings.font_color }};">
+        {% if section.settings.body_richtext == blank %}
+            <div class="richtext {% if section.settings.body_richtext == blank %} has-xl-h {% endif %} {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+                {{ section.settings.title_richtext }}
+            </div>
+        {% else %}
+            <div class="richtext {% if section.settings.title_indent == 'even' %} indent-even {% elsif section.settings.title_indent == 'odd' %} indent-odd {% endif %}">
+                {{ section.settings.title_richtext }}
+            </div>
+        {% endif %}
+
+        {% if section.settings.body_richtext != "" %}
+            <div class="w-1/2 pointer-events-none {% if section.settings.copy_alignment == 'right' %} md:w-full {% endif %}">
+                {{ section.settings.body_richtext }}
+                {% if section.settings.cta_text != blank and section.settings.cta_url != blank %}
+                    <a href="{{section.settings.cta_url}}" class="btn pointer-events-auto {{ section.settings.button_style }} w-max mt-6 md:w-auto">{{ section.settings.cta_text }}</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    {% if section.settings.cta_text != blank and section.settings.cta_url != blank and section.settings.body_richtext == blank %}
+        <div class="two-col-hero-cta relative px-4 mb-6  md:self-end md:px-6">
+            <a href="{{section.settings.cta_url}}" class="btn {{ section.settings.button_style }} w-max md:w-auto md:ml-auto">{{ section.settings.cta_text }}</a>
+        </div>
+    {% endif %}
+
+</div>
+<style>
+    .two-col-hero-grid {
+        display: grid;
+        height: 170vw;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr min-content min-content;
+        grid-template-areas: "." "content" "cta"
+    }
+
+    .two-col-hero-content {
+        grid-area: content;
+    }
+
+    .richtext.indent-odd h1:nth-child(odd) {
+        padding-left: 60px;
+    }
+    .richtext.indent-even h1:nth-child(even) {
+        padding-left: 60px;
+    }
+    .two-col-hero-content p {
+        margin-bottom: 0;
+    }
+    .two-col-hero-cta {
+        grid-area: cta;
+    }
+    .two-col-hero-image-1 {
+        grid-row: 1 / 4;
+        grid-column: 1 / 2;
+    }
+    .two-col-hero-image-2 {
+        grid-row: 1 / 4;
+        grid-column: 1 / 2;
+    }
+    @media screen and (min-width: 1024px) {
+        .two-col-hero-grid {
+            display: grid;
+            height: 56.25vw;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: ". ." "content cta";
+        }
+        .two-col-hero-grid.copy-align-right {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: ". ." "cta content";
+        }
+
+        .two-col-hero-content {
+            grid-area: content;
+        }
+        .two-col-hero-image-2 {
+            grid-row: 1 / 4;
+            grid-column: 2 / 3;
+        }
+
+        .richtext.indent-odd p:nth-child(odd) {
+            padding-left: 60px;
+        }
+        .richtext.indent-even p:nth-child(even) {
+            padding-left: 60px;
+        }
+        .two-col-hero-content p {
+            margin-bottom: 0;
+        }
+        .two-col-hero-cta {
+            grid-area: cta;
+        }
+        .two-col-hero-image-1 {
+            grid-row: 1 / 4;
+            grid-column: 1 / 2;
+        }
+    }
+</style>
+
+{% schema %}
+    {
+        "name": "Two Column Hero",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "color",
+                "id": "font_color",
+                "label": "t:settings_schema.general.settings.font_color.label",
+                "info": "t:settings_schema.general.settings.font_color.info",
+                "default": "#1E1E1E"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "t:settings_schema.general.settings.background_color.label",
+                "info": "t:settings_schema.general.settings.background_color.info",
+                "default": "#FFFFFF"
+            }, {
+                "type": "image_picker",
+                "id": "image_1",
+                "label": "Left Column Image"
+            }, {
+                "type": "video",
+                "id": "video_1",
+                "label": "Left Column Video"
+            }, {
+                "type": "range",
+                "id": "image_1_brightness",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "label": "Darken Left Column Media",
+                "default": 0.5
+            }, {
+                "type": "image_picker",
+                "id": "image_2",
+                "label": "Right Column Image"
+            }, {
+                "type": "video",
+                "id": "video_2",
+                "label": "Right Column Video"
+            }, {
+                "type": "range",
+                "id": "image_2_brightness",
+                "min": 0,
+                "max": 1,
+                "step": 0.1,
+                "label": "Darken Right Column Media",
+                "default": 0.5
+            }, {
+                "type": "select",
+                "id": "image_for_mobile",
+                "label": "Media Shown On Mobile",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left Column"
+                    }, {
+                        "value": "right",
+                        "label": "Right Column"
+                    }
+                ],
+                "default": "left"
+            }, {
+                "type": "richtext",
+                "id": "title_richtext",
+                "label": "Title Text",
+                "info": "Use H1 for XL Heading on both desktop and mobile. Use H2 for XL Heading on desktop only."
+            }, {
+                "type": "select",
+                "id": "title_indent",
+                "label": "Title Indentation Pattern",
+                "options": [
+                    {
+                        "value": "even",
+                        "label": "Even numbered lines"
+                    }, {
+                        "value": "odd",
+                        "label": "Odd numbered lines"
+                    }, {
+                        "value": "none",
+                        "label": "No indentation"
+                    }
+                ],
+                "default": "none"
+            }, {
+                "type": "richtext",
+                "id": "body_richtext",
+                "label": "Body Text"
+            }, {
+                "type": "text",
+                "id": "cta_text",
+                "label": "CTA Text"
+            }, {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA URL"
+            }, {
+                "type": "select",
+                "id": "button_style",
+                "label": "Button Color",
+                "options": [
+                    {
+                        "value": "btn-primary",
+                        "label": "Green"
+                    }, {
+                        "value": "btn-secondary",
+                        "label": "White"
+                    }, {
+                        "value": "",
+                        "label": "Black"
+                    }
+                ],
+                "default": "btn-primary"
+            }, {
+                "type": "select",
+                "id": "copy_alignment",
+                "label": "Desktop Copy Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left Column"
+                    }, {
+                        "value": "right",
+                        "label": "Right Column"
+                    }
+                ],
+                "default": "left"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Two Column Hero"
+            }
+        ]
+    }
+{% endschema %}

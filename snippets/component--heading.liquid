@@ -1,0 +1,42 @@
+{%- comment %}
+/** @typedef {object} json
+ * @property {object[]} data
+ * @property {string} data.align
+ * @property {number} data.font_scale
+ * @property {string} data.heading
+ * @property {string} data.heading_tag
+ */
+{% endcomment -%}
+{% liquid
+
+assign alignment = "left"
+
+if data.align
+	assign alignment = data.align
+endif
+
+unless classes
+	assign classes = ""
+endunless
+
+if data.font_scale
+	assign font_scale = data.font_scale
+endif
+
+unless font_scale
+	assign font_scale = "100"
+endunless
+
+if data.heading_tag
+	assign heading_tag = data.heading_tag
+endif
+
+unless heading_tag
+	assign heading_tag = "h3"
+endunless
+
+unless heading
+	assign heading = data.heading
+endunless
+%}
+<{{- heading_tag }} class="text-{{ alignment }} {{ classes }}"><span class="text-x{{ font_scale }}">{{ heading }}</span></{{- heading_tag -}}>

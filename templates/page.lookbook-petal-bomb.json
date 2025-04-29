@@ -1,0 +1,702 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "da410d9b-49c4-4449-9a48-a1861af91632": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><em>The<\/em> Petal Bomb<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=fB8OAu3m0cg",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-17.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "57a7ddfe-96e0-46b7-8264-19fc54556eb1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "57069e23-6353-401d-ba54-0ce13677911e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bbb3293f-6e80-4960-93f1-dff640e21d12": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-3.jpg",
+            "caption": ""
+          }
+        },
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-4.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bbb3293f-6e80-4960-93f1-dff640e21d12",
+        "f5db5372-1bb4-41b2-8329-615ff8ff1413"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6a429f48-b630-452b-9dc1-bc165f98ea7d": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "1c742371-c1c1-49ae-97d2-757610a7b086": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Product-1-insta.jpg",
+            "caption": ""
+          }
+        },
+        "05c2b024-7ed2-468d-ae51-c83c16883edf": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-petal-bomb-moss-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "1c742371-c1c1-49ae-97d2-757610a7b086",
+        "05c2b024-7ed2-468d-ae51-c83c16883edf"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b79cdddf-c022-4009-957e-aee86fb516ea": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-5.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "3a639341-246b-42ec-bfbf-aaeb2b51bc1a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "01913645-c052-4b6d-95f4-bfb5dd6e1497": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "1efd1fa4-3fbf-4bc3-be66-3b83f8c3ce17": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-6.jpg",
+            "caption": ""
+          }
+        },
+        "ab82d721-dbca-4c29-ad73-06b03c04b024": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-7.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "1efd1fa4-3fbf-4bc3-be66-3b83f8c3ce17",
+        "ab82d721-dbca-4c29-ad73-06b03c04b024"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "dcd55982-bc4a-4f27-af7c-317b1986f321": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Product-10-insta.jpg",
+            "caption": ""
+          }
+        },
+        "8728d075-1d94-418d-b351-a97ad20fb97c": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-petal-bomb-black-moondust-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "dcd55982-bc4a-4f27-af7c-317b1986f321",
+        "8728d075-1d94-418d-b351-a97ad20fb97c"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-8.jpg",
+            "caption": ""
+          }
+        },
+        "a055a470-1d60-454d-99c8-0b6eca972c5b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-12.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "42c1e00d-04f7-4325-a761-3d4459e23bcd",
+        "a055a470-1d60-454d-99c8-0b6eca972c5b"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "7efc9106-5ad8-45fd-9976-f31c11a78caa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "16350621-ca44-40c2-9450-90843da3101c": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-9.jpg",
+            "caption": ""
+          }
+        },
+        "342a748e-f41e-4585-9fc9-11c71e5899cc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-14.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "16350621-ca44-40c2-9450-90843da3101c",
+        "342a748e-f41e-4585-9fc9-11c71e5899cc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "0d068913-5fef-4b7b-95e5-a144d75b0772": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "0f2328ce-f3a7-4e37-8c5e-62a5d02e77da": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-2.jpg",
+            "caption": ""
+          }
+        },
+        "70e63588-a395-4078-be28-9512c11f7aa3": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-1.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "0f2328ce-f3a7-4e37-8c5e-62a5d02e77da",
+        "70e63588-a395-4078-be28-9512c11f7aa3"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "617214a6-c1d5-4731-8b10-2ad9229e4218": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "149a8d43-33b7-47a9-ad62-a99bd6f34204": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_1-16.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "149a8d43-33b7-47a9-ad62-a99bd6f34204"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419": {
+      "type": "module--two-col-carousel",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "richtext": "",
+        "collection": "the-petal-bomb",
+        "collection_video": "shopify:\/\/files\/videos\/Crap_Eyewear-The_Petal_Bomb-Moss-West-fit.mp4",
+        "image_brightness": 0,
+        "carousel_side": "row",
+        "button_style": "btn-primary",
+        "button_text": "Shop Style"
+      }
+    },
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "abc5f652-be05-468e-8fcb-9c5390e36d07": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1.jpg",
+            "caption": ""
+          }
+        },
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-3.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "abc5f652-be05-468e-8fcb-9c5390e36d07",
+        "0bbc9b72-0725-485e-95ea-41af3b1df1df"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6780517d-eae0-4703-bdc4-3fcce8dcd961": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "202ac9e7-38e8-4579-b948-12bb95143d86": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Product-9.jpg",
+            "caption": ""
+          }
+        },
+        "3d560468-21db-40b1-9c22-5b77fef8e07b": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-petal-bomb-saturn-demi-bioacetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "202ac9e7-38e8-4579-b948-12bb95143d86",
+        "3d560468-21db-40b1-9c22-5b77fef8e07b"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "579408ea-3530-4958-9a8b-40c72545223a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "9127d268-574c-4d7a-869d-29edaea8acc2": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-4.jpg",
+            "caption": ""
+          }
+        },
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-6.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "9127d268-574c-4d7a-869d-29edaea8acc2",
+        "e14446aa-030a-45cd-9be5-72f1549b2dc4"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "5dca5032-f893-46c9-8c51-d1f9757607c4": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "31edb7c2-ac9f-4249-8746-416163d4303d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-10.jpg",
+            "caption": ""
+          }
+        },
+        "8a546e7f-587c-494a-b755-a4695e0546c8": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-11.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "31edb7c2-ac9f-4249-8746-416163d4303d",
+        "8a546e7f-587c-494a-b755-a4695e0546c8"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "7e04b8f5-467f-4466-9748-644e5277f0c3": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "65d5de60-3a1a-4812-b662-596acc2f8d14": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-12.jpg",
+            "caption": ""
+          }
+        },
+        "451a2a3b-44e1-43f1-881e-10a5d7b5d00b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Product-5.jpg",
+            "caption": ""
+          }
+        },
+        "00f54a81-95e7-41b6-b350-495bfeb88eec": {
+          "type": "product_widget",
+          "settings": {
+            "product": "",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "65d5de60-3a1a-4812-b662-596acc2f8d14",
+        "451a2a3b-44e1-43f1-881e-10a5d7b5d00b",
+        "00f54a81-95e7-41b6-b350-495bfeb88eec"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "d1230857-f6b4-45b2-ba29-4d3021a3a24b": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "32f27966-42f6-4195-a4b5-1be8ab4e933c": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-13.jpg",
+            "caption": ""
+          }
+        },
+        "b2fdbd65-7cac-45aa-9dbc-a521d0a41baf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-14.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "32f27966-42f6-4195-a4b5-1be8ab4e933c",
+        "b2fdbd65-7cac-45aa-9dbc-a521d0a41baf"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "37226ef0-e00b-4f9f-93c6-63d05ded682f": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "a363b92e-a901-43cb-8e9f-d10f730b13a4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-16.jpg",
+            "caption": ""
+          }
+        },
+        "a4117274-5550-48ab-b228-237ff7549b48": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-17.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "a363b92e-a901-43cb-8e9f-d10f730b13a4",
+        "a4117274-5550-48ab-b228-237ff7549b48"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>The Petal Bomb<\/strong><br\/>Shot on location in Los Angeles, 2023.<\/p><p>Starring: Priscilla Robinson (<a href=\"https:\/\/www.instagram.com\/artichoke_me\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/artichoke_me\/\">@artichoke_me<\/a>) & West Adler (<a href=\"https:\/\/www.instagram.com\/westadler\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/westadler\/\">@westadler<\/a>)<br\/>Photographer: Nick Green (<a href=\"https:\/\/www.instagram.com\/nickgrreen\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/nickgrreen\/\">@nickgrreen<\/a>)<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marleyarviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marleyarviso\/\">@marleyarviso<\/a>) & Tony Accosta<br\/>Video & Edit: Nick Green (<a href=\"https:\/\/www.instagram.com\/nickgrreen\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/nickgrreen\/\">@nickgrreen<\/a>)<br\/>Song: 'Haters Anthem' by Toner (<a href=\"https:\/\/www.instagram.com\/toner.k2\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/toner.k2\/\">@toner.k2<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_collection_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "2d6fc86b-8f2a-4e80-b0c2-c0b8caca2010": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-01-reedit-web_collection_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_carousel.jpg",
+            "caption": "The Perma Joy",
+            "url": "shopify:\/\/pages\/lookbooks-perma-joy"
+          }
+        }
+      },
+      "block_order": [
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "5197de1b-947e-42a3-8b4a-7e333ccbdfaa",
+        "2d6fc86b-8f2a-4e80-b0c2-c0b8caca2010",
+        "138fa7de-0e9c-4e2f-a72a-dc80e7c4dafe",
+        "7772ca3d-f499-4e62-9134-c65c0f389197",
+        "8db7b0fa-9422-4991-a1d5-0d4fe70a6b58"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/about-us",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "da410d9b-49c4-4449-9a48-a1861af91632",
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "1de9c35e-ff6a-4e15-8fc7-3fb752cc0c93",
+    "57069e23-6353-401d-ba54-0ce13677911e",
+    "6a429f48-b630-452b-9dc1-bc165f98ea7d",
+    "b79cdddf-c022-4009-957e-aee86fb516ea",
+    "01913645-c052-4b6d-95f4-bfb5dd6e1497",
+    "7d7c2ff2-fb9c-4032-8e53-3cbcc1a3357f",
+    "39b801a7-79ba-4887-a4c0-2b40a36a80e2",
+    "7efc9106-5ad8-45fd-9976-f31c11a78caa",
+    "0d068913-5fef-4b7b-95e5-a144d75b0772",
+    "617214a6-c1d5-4731-8b10-2ad9229e4218",
+    "f5bdd6b5-62b8-4570-b30f-58f2f8b03419",
+    "c0cf2a5a-fcfe-47f2-a39e-3225698979c4",
+    "6780517d-eae0-4703-bdc4-3fcce8dcd961",
+    "579408ea-3530-4958-9a8b-40c72545223a",
+    "5dca5032-f893-46c9-8c51-d1f9757607c4",
+    "7e04b8f5-467f-4466-9748-644e5277f0c3",
+    "d1230857-f6b4-45b2-ba29-4d3021a3a24b",
+    "37226ef0-e00b-4f9f-93c6-63d05ded682f",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "4610e1e3-1bac-4885-a419-79b97c48ff3e",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

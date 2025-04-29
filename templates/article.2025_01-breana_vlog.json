@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "module_spacer_rGbmBF": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "module_one_column_richtext_PEQMMP": {
+      "type": "module--one-column-richtext",
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "main": {
+      "type": "section--blog-hero",
+      "settings": {
+        "animation": ""
+      }
+    },
+    "body": {
+      "type": "section--blog-content",
+      "settings": {
+        "animation": ""
+      }
+    },
+    "module_product_slider_rfbVYc": {
+      "type": "module--product-slider",
+      "settings": {
+        "animation": "",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "collection": "2025_01-breana_vlog",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "module_spacer_i8P3d8": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "81cdde8e-aeb7-4915-afc7-fd3a189cd18a": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify://shop_images/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h3><strong>$20 OFF</strong> when you<br/>refer a <em>Friend</em></h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify://pages/refer-a-friend",
+        "image_2": "shopify://shop_images/Rectangle_161_1.png",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h3><strong>Venice Showroom</strong><br/>228 Main St. #14, <br/>Venice, CA<br/>11 — 5PM, <em>Everyday</em></h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "module_spacer_rGbmBF",
+    "module_one_column_richtext_PEQMMP",
+    "main",
+    "body",
+    "module_product_slider_rfbVYc",
+    "module_spacer_i8P3d8",
+    "81cdde8e-aeb7-4915-afc7-fd3a189cd18a"
+  ]
+}

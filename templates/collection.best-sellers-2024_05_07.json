@@ -1,0 +1,443 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "section--collection",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "collection_nav": "",
+        "enable_filtering": true,
+        "filter_style": "drawer",
+        "filter_nav": "",
+        "filter_group_name": false,
+        "filter_open": false,
+        "enable_sorting": true,
+        "pagination_type": "pages"
+      }
+    },
+    "9f84f50c-eada-4546-a846-440995f4ef69": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88": {
+      "type": "section--party",
+      "blocks": {
+        "b9326c20-5d68-414e-955d-39ded77ce564": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "Section 1: Lifestyle Card",
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look2-05-retouched-web_pcp_lifstyle_card.jpg",
+            "caption": "The Dream Cassette",
+            "caption_alignment": "left",
+            "associated_product": "the-dream-cassette-lunar-tortoise-bioacetate-polarized-sunglasses",
+            "card_position": 3
+          }
+        },
+        "0a0e80d5-9165-4435-83af-87b785816661": {
+          "type": "featured_review",
+          "settings": {
+            "title": "Section 1: Featured Review",
+            "review_image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Funk_Punk-review-black-cecilia-s.jpg",
+            "review_text": "\"LOVE these. They seem like they should be $300. Very well made and high quality!\"",
+            "name": "Cecelia S.",
+            "card_position": 6,
+            "product": "the-funk-punk-black-wraparound-sunglasses"
+          }
+        },
+        "1df5199b-3999-447b-a36f-a02cb95f10ca": {
+          "type": "block_quote",
+          "settings": {
+            "title": "Section 2: Inline Review",
+            "quote_text": "\"My new shadies made me realize I was going only half force... full blast z best\"",
+            "name": "Cole R.",
+            "bg_shape": "buzz2",
+            "card_position": 12
+          }
+        },
+        "0bcd4ff5-c116-488b-8771-b0ec03d60b1a": {
+          "type": "section_break",
+          "settings": {
+            "title": "Section 2: Featured Image",
+            "product_end": 10,
+            "column_bg_image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Spaced_Ranger-Nick_Green-look1-11-web_pcp_section_hero.jpg",
+            "column_pip_product": "",
+            "column_sticker_image": "shopify:\/\/shop_images\/About-Sticker-1.png",
+            "column_svg": "",
+            "column_sticker_width": 26,
+            "column_sticker_width_mobile": 34,
+            "column_sticker_position": "tl",
+            "show_end_banner": false,
+            "background_color": "#ffffff",
+            "font_color": "#deff7b",
+            "background_image": "shopify:\/\/shop_images\/Rectangle_161_934acc26-d9a9-4960-b155-51bbd8830605.png",
+            "content": "<h2>Earth-friendlier, optical-grade materials. Certified carbon neutral. 100% protection from UV rays and bad vibes.<\/h2>",
+            "section_padding": "ca",
+            "section_padding_halved": false,
+            "section_padding_extra": false
+          }
+        },
+        "0d1af4e9-4668-40f2-b956-c6b23ec78eb7": {
+          "type": "section_break",
+          "settings": {
+            "title": "Section 3: Featured Image",
+            "product_end": 18,
+            "column_bg_image": "shopify:\/\/shop_images\/Crap_Eyewear-2021_Spring-Noah-Lucid_Blur-3-retouch-web_pcp_section_hero.jpg",
+            "column_pip_product": "",
+            "column_sticker_image": "shopify:\/\/shop_images\/Crap_StickerGroup_10.svg",
+            "column_svg": "",
+            "column_sticker_width": 32,
+            "column_sticker_width_mobile": 34,
+            "column_sticker_position": "",
+            "show_end_banner": false,
+            "background_color": "#ffffff",
+            "font_color": "#1e1e1e",
+            "content": "",
+            "section_padding": "ca",
+            "section_padding_halved": false,
+            "section_padding_extra": false
+          }
+        },
+        "373f3a52-3c67-4b14-9d3d-db59ca849ec2": {
+          "type": "lifestyle_card",
+          "settings": {
+            "title": "Section 3: Lifestyle Card",
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2024_Spring-Marquee_Rox-Look_02-10-web_lifestyle_card.png",
+            "caption": "The Marquee Rox",
+            "caption_alignment": "left",
+            "associated_product": "the-marquee-rox-black-bioacetate-sunglasses",
+            "card_position": 21
+          }
+        }
+      },
+      "block_order": [
+        "b9326c20-5d68-414e-955d-39ded77ce564",
+        "0a0e80d5-9165-4435-83af-87b785816661",
+        "1df5199b-3999-447b-a36f-a02cb95f10ca",
+        "0bcd4ff5-c116-488b-8771-b0ec03d60b1a",
+        "0d1af4e9-4668-40f2-b956-c6b23ec78eb7",
+        "373f3a52-3c67-4b14-9d3d-db59ca849ec2"
+      ],
+      "settings": {
+        "heading": "<h1><em>The<\/em> <strong>HITS<\/strong><\/h1>",
+        "empty_collection_message": "",
+        "no_results_message": "",
+        "pagination_type": "infinite",
+        "products_per_page": 250,
+        "media_file": "",
+        "enable_filtering": true,
+        "hide_mode_toggle": false,
+        "default_mode": "party",
+        "filter_nav": "",
+        "filter_group_name": true,
+        "filter_open": true,
+        "enable_sorting": true,
+        "animation": "",
+        "column_bg_video": "shopify:\/\/files\/videos\/Crap_Eyewear-2023_04-Best_sellers_sizzle-web_pcp_section_hero-1.mp4",
+        "column_pip_product": "",
+        "column_svg": "",
+        "column_sticker_width": 100,
+        "column_sticker_width_mobile": 25,
+        "column_sticker_position": "",
+        "show_end_banner": true,
+        "background_color": "#ffffff",
+        "font_color": "#deff7b",
+        "background_image": "shopify:\/\/shop_images\/EarthFreindlier.jpg",
+        "content": "<h1><strong>Earth-friendlier<\/strong>, optical-grade materials. Certified carbon neutral. <strong>100% protection<\/strong> from UV rays and <em>bad vibes.<\/em><\/h1>",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "a361e91c-322c-4b0a-80a8-2abc86c5eebf": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "9c8e524f-485d-415c-9402-7dff8bdb1eb2": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "f9d5ea2d-4190-49c8-aad7-f2f085b75484": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Paradise_Machine-social-black_notcheetos.jpg",
+            "caption": "@notcheetos",
+            "url": "shopify:\/\/products\/the-paradise-machine-black-thin-square-sunglasses"
+          }
+        },
+        "1ed7b198-d38d-4814-ba37-60fde11af702": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Funk_Punk-social-black-yungtaco.jpg",
+            "caption": "@yungtaco",
+            "url": "shopify:\/\/products\/the-funk-punk-black-wraparound-sunglasses"
+          }
+        },
+        "e1006177-213e-4b63-b145-8ecc08d39cae": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Chaos_Vault-social-frost-rhianteasdale.jpg",
+            "caption": "@rhianteasdale",
+            "url": "shopify:\/\/products\/the-chaos-vault-frost-bioacetate-reflective-wraparound-sunglasses"
+          }
+        },
+        "ddac718b-11a7-4be8-9bb0-8a267d2ea949": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Funk_Daddy-social-hot_lava_peach-amine-1_ca2ac101-9ba5-4c6e-9e15-7b211a778a7d.jpg",
+            "caption": "@amine",
+            "url": "shopify:\/\/products\/the-funk-daddy-hot-lava-recycled-peach-wraparound-sunglasses"
+          }
+        },
+        "cd2316f1-cff2-4344-b042-eb53dbe37747": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Supa_Phreek-social-marble-jonahill.jpg",
+            "caption": "@jonahhill",
+            "url": "shopify:\/\/products\/the-supa-phreek-cream-marble-rectangular-square-bioacetate-sunglasses"
+          }
+        },
+        "f0f944a9-3c5f-46fa-8745-2f07f794397d": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Heavy_Tropix-social-deep_rose-brenda_billion.jpg",
+            "caption": "@brenda_billion",
+            "url": "shopify:\/\/products\/the-heavy-tropix-dark-tortoise-rose-tint-square-sunglasses"
+          }
+        },
+        "0d29ff8a-645b-4141-b9ca-22cbec938ecc": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Dream_Cassette-social-lunar_tortoise-zac_farro.jpg",
+            "caption": "@zacfarro",
+            "url": "shopify:\/\/products\/the-dream-cassette-lunar-tortoise-bioacetate-polarized-sunglasses"
+          }
+        },
+        "00194829-d611-432e-9950-86cb25002b07": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Bikini_Vision-social-kelp-chillymanga.jpg",
+            "caption": "@chillymanga",
+            "url": "shopify:\/\/products\/the-bikini-vision-crystal-kelp-square-sunglasses"
+          }
+        },
+        "5e82879f-f515-4610-9bef-201c9424b687": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Spaced_Ranger-social-gold-nombz.jpg",
+            "caption": "@nombz_",
+            "url": "shopify:\/\/products\/the-spaced-ranger-crystal-hemp-gold-gradient-bioacetate-sunglasses"
+          }
+        },
+        "16517e40-16aa-48db-ac05-1d24031d6452": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Supa_Phreek-social-marble-haleyluhoo.jpg",
+            "caption": "@haleyluhoo",
+            "url": "shopify:\/\/products\/the-supa-phreek-cream-marble-rectangular-square-bioacetate-sunglasses"
+          }
+        },
+        "bea88844-9e38-4cb3-9590-a21740fd3a95": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Head_Rattle-social-black-duckwrth.jpg",
+            "caption": "@duckwrth",
+            "url": "shopify:\/\/products\/the-head-rattle-black-bioacetate-plum-tint-sunglasses"
+          }
+        },
+        "acfdb2a0-d096-490f-aa25-9362b1f3f863": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Funk_Daddy-social-black-noahcollinsdesign.jpg",
+            "caption": "@noahcollinsdesign",
+            "url": "shopify:\/\/products\/the-funk-daddy-black-bioacetate-polarized-oversized-wraparound-sunglasses"
+          }
+        },
+        "172ddceb-2d77-44d7-901e-e5b2725da340": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-The_Sweet_Leaf-social-olive-breannamonster.png",
+            "caption": "@breannamonster",
+            "url": "shopify:\/\/products\/the-sweet-leaf-olive-green-bioacetate-oval-sunglasses"
+          }
+        }
+      },
+      "block_order": [
+        "f9d5ea2d-4190-49c8-aad7-f2f085b75484",
+        "1ed7b198-d38d-4814-ba37-60fde11af702",
+        "e1006177-213e-4b63-b145-8ecc08d39cae",
+        "ddac718b-11a7-4be8-9bb0-8a267d2ea949",
+        "cd2316f1-cff2-4344-b042-eb53dbe37747",
+        "f0f944a9-3c5f-46fa-8745-2f07f794397d",
+        "0d29ff8a-645b-4141-b9ca-22cbec938ecc",
+        "00194829-d611-432e-9950-86cb25002b07",
+        "5e82879f-f515-4610-9bef-201c9424b687",
+        "16517e40-16aa-48db-ac05-1d24031d6452",
+        "bea88844-9e38-4cb3-9590-a21740fd3a95",
+        "acfdb2a0-d096-490f-aa25-9362b1f3f863",
+        "172ddceb-2d77-44d7-901e-e5b2725da340"
+      ],
+      "settings": {
+        "animation": "",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h2>In The <strong>Wild<\/strong><\/h2>",
+        "cta_text": "",
+        "cta_url": "",
+        "button_style": "btn-primary"
+      }
+    },
+    "c6fa9143-b069-4d13-b031-973368a0432d": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "b049129a-0629-4744-9f49-3025e58e3cac": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "0cd3d775-1c33-4182-a0b3-85e0a5322e40": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_collection_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "9ae55b4a-24ff-44e2-826f-af68dae065e0": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring_01-Nick_Green-look_1_16-web_lookbooks_carousel.jpg",
+            "caption": "Spring 2023",
+            "url": "shopify:\/\/pages\/spring-2023-lookbook"
+          }
+        },
+        "35826aab-54f4-49b6-9283-2c0430c74978": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "395b1bc1-fced-467b-afbf-c6ec6bee9b0e": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "5bc98424-c523-437a-96ec-bafcafa46ed2": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look1-01-reedit-web_collection_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "642149ea-6fda-43f2-a995-c090fce33241": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter"
+          }
+        },
+        "e710bf9b-9c4d-4db5-b3ea-e6ce3431b811": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Perma_Joy-Lookbook-look_2-07-web_lookbooks_carousel.jpg",
+            "caption": "The Perma Joy",
+            "url": "shopify:\/\/pages\/lookbooks-perma-joy"
+          }
+        },
+        "b9d87bbe-8446-4da0-b56d-3673d022e542": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "0cd3d775-1c33-4182-a0b3-85e0a5322e40",
+        "9ae55b4a-24ff-44e2-826f-af68dae065e0",
+        "35826aab-54f4-49b6-9283-2c0430c74978",
+        "395b1bc1-fced-467b-afbf-c6ec6bee9b0e",
+        "5bc98424-c523-437a-96ec-bafcafa46ed2",
+        "642149ea-6fda-43f2-a995-c090fce33241",
+        "e710bf9b-9c4d-4db5-b3ea-e6ce3431b811",
+        "b9d87bbe-8446-4da0-b56d-3673d022e542"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "font_color": "#1e1e1e",
+        "background_color": "#ffffff",
+        "title": "<h1>Lookbooks<\/h1>",
+        "cta_text": "All Lookbooks",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "8de62160-c4ca-4f92-98a7-fad7f5cab9b6": {
+      "type": "module--spacer",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "66119483-a371-4c74-a989-b44a5305e45a": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/refer-a-friend",
+        "image_2": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "9f84f50c-eada-4546-a846-440995f4ef69",
+    "1058d18c-09f8-4e66-b494-4dd0229d0b88",
+    "a361e91c-322c-4b0a-80a8-2abc86c5eebf",
+    "9c8e524f-485d-415c-9402-7dff8bdb1eb2",
+    "c6fa9143-b069-4d13-b031-973368a0432d",
+    "b049129a-0629-4744-9f49-3025e58e3cac",
+    "8de62160-c4ca-4f92-98a7-fad7f5cab9b6",
+    "66119483-a371-4c74-a989-b44a5305e45a"
+  ]
+}

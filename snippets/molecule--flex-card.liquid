@@ -1,0 +1,67 @@
+{%- comment -%}
+/** Flex Collection Card
+ * @property {string}
+ *
+ */
+
+{%- endcomment -%}
+{%- liquid
+
+assign cover = false
+
+if section.settings.aspect_ratio != blank
+	assign cover = true
+endif
+
+assign type = type | default: "collection"
+assign max_width = "380px"
+assign text_align = "left"
+
+if block.settings.flex_justification == "center"
+	assign text_align = "center"
+endif
+
+-%}
+
+{%- capture media -%}
+	<div class="w-full h-0 md:h-full pb-[65%] md:pb-0 relative md:absolute top-0 left-0" style="--media-position:{{- block.settings.media_position -}};">
+		{%- if block.settings.image != blank or block.settings.video != blank -%}
+			{%- unless block.settings.video != blank -%}
+				{%- render "component--responsive-image", image: block.settings.image, objectFit: true, placeholder: true, maxSize: 1280 -%}
+			{%- else -%}
+				{%- render "component--responsive-video", video: block.settings.video -%}
+			{%- endunless -%}
+		{%- else -%}
+			<div class="absolute w-full h-full top-0 left-0 z-0 bg-[color:var(--background-color)]"></div>
+		{%- endif -%}
+	</div>
+{%- endcapture -%}
+
+{%- capture info -%}
+	{%- if type == "collection" -%}
+		<div class="w-full sm:h-full sm:absolute top-0 left-0 z-[1] flex {%- if block.settings.background_color != blank %} {%- if block.settings.card_column_width == 1 %} sm:p-[var(--grid-gutter-x)] {% else %} sm:p-[calc(var(--grid-gutter-x)_*_2)] {% endif -%} {%- endif -%}" style="align-items: {{- block.settings.flex_alignment -}}; justify-content: {{- block.settings.flex_justification -}};">
+			<div class="w-full {%- if block.settings.card_column_width == 1 %} {% else %} sm:w-[calc(100%_-_(var(--site-gutter)_*_2))] {% endif -%} sm:max-w-[var(--card-max-width)]">
+				{%- if block.settings.heading_text != blank or block.settings.richtext != blank or block.settings.button_link != blank -%}
+					<div class="w-auto [&>*]:mb-4 [&>:last-child]:mb-0 {%- if block.settings.background_color != blank and block.settings.background_color != "rgba(0,0,0,0)" %} p-[var(--grid-gutter-x)] {%- endif %} text-[color:var(--font-color)] bg-[color:var(--background-color)]" style="text-align: {{- text_align -}};">
+						{%- if block.settings.heading_text != blank -%}
+							{%- render "component--text", tag: block.settings.heading_tag, content: block.settings.heading_text, align: text_align, font_scale: block.settings.heading_font_scale, classes: "leading-none" -%}
+						{%- endif -%}
+						{%- if block.settings.richtext != blank -%}
+							{%- render "component--richtext", content: block.settings.richtext, align: text_align -%}
+						{%- endif -%}
+						{%- if block.settings.button_link != blank -%}
+							{%- render "component--button", link: block.settings.button_link, label: block.settings.button_text, style: block.settings.button_style -%}
+						{%- endif -%}
+					</div>
+				{%- endif -%}
+			</div>
+		</div>
+	{%- else -%}
+		{%- comment %} --- Other Card types? --- {% endcomment -%}
+	{%- endif -%}
+{%- endcapture -%}
+
+<section class="relative md:pb-[65%] w-full border-[thin] overflow-hidden sm:col-[length:var(--promo-width)] auto-cols-max" style="--background-color: {{- block.settings.background_color -}}; --font-color: {{- block.settings.font_color -}}; --promo-width: span {{ block.settings.card_column_width -}}; --card-max-width: {{- max_width -}};">
+	{{- media -}}
+	{{- info -}}
+</section>

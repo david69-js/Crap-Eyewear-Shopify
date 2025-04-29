@@ -1,0 +1,69 @@
+
+
+<div class="lookbook-template">
+  <h1>{{ blog.title }}</h1>
+  <div class="lookbook-slideshow">
+    {% for article in blog.articles %}
+      {% unless article.handle contains 'lookbook-page-content' %}
+        <div>
+          <img src="{{ article.image.src | img_url: 'master' }}" />
+          <div class="title">{{ article.title }}</div>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+
+  <div class="lookbook-template-content">
+    <div class="container">
+      <div class="row">
+
+        {% for article in blog.articles %}
+          {% if article.handle contains 'lookbook-page-content' %}
+              {% assign collectiondesc = article.metafields.c_f['Lookbook Product Collection'] %}
+              {% for product in collections[collectiondesc].products limit: 2 %}
+                <div class="three columns">
+                  <div class="main-collection-item u-center">
+                    <a href="{{ product.url }}">
+                      <div class="main-collection-item-image">
+                        <img class="top" src="{{ product.images[0] | img_url: 'large'}}" alt="{{ product.title }}">
+                        {% if product.images.size > 1 %}
+                          <img class="bottom" src="{{ product.images[1] | img_url: 'large'}}" alt="{{ product.title }}">
+                        {% endif %}
+                      </div>
+                      <div class="main-collection-item-details">
+                        <h3>{{ product.title | split: ' - ' | first }}</h3>
+                        <p>{{ product.metafields.c_f['Product Mini Description'] }}</p>
+                        <p class="price">{{ product.price | money }}</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            <div class="three columns">
+              <div class="lookbook-template-video">
+                <img src="{{ article.metafields.c_f['Lookbook video poster'] }}" />
+              </div>
+            </div>
+            <div class="video-overlay">
+              <div class="close"></div>
+              <div class="video-container">
+                {{ article.metafields.c_f['Lookbook video code'] }}
+              </div>
+            </div>
+            <div class="three columns">
+              <div class="lookbook-template-credits">
+                {{ article.content }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="lookbook-template-cta">
+              <a href="{{ article.metafields.c_f['Lookbook button link'] }}" class="button">{{ article.metafields.c_f['Lookbook button text'] }}</a>
+            </div>
+          </div>
+
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</div>

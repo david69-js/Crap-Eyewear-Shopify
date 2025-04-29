@@ -1,0 +1,18 @@
+{%- comment %}
+  /** @typedef {object} json
+  * @property {object[]} data
+  * @property {string} data.align
+  * @property {string} data.content
+  */
+{% endcomment -%}
+{%- liquid
+
+assign content = content | default: ""
+assign alignment = align | default: "left"
+assign paragraph_size = body_size | default: ""
+assign class_list = classes | default: ""
+assign class_anim = anim_class | default: ""
+
+-%}
+
+<div class="richtext font-primary {{ paragraph_size }} text-{{- alignment }}  [&>*]:mb-[var(--richtext-spacing)] [&>:last-child]:mb-0 {%- if class_list != blank %} {{ class_list }} {%- endif -%} {%- if class_anim != blank %} {{ class_anim -}} {%- endif -%}">{{- content -}}</div>

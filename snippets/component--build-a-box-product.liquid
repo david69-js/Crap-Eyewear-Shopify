@@ -1,0 +1,54 @@
+{%- comment -%}
+/**
+ * @property {string} view  "full", "partial", "summary", "input"
+ */
+{%- endcomment -%}
+{%- liquid
+
+# TODO: set error state
+if box_product == blank
+	
+endif
+
+unless variant
+	assign variant = box_product.variants[0]
+endunless
+
+unless view
+	assign view = "summary"
+endunless
+
+unless points
+	assign points = 1
+endunless
+
+if box_product.metafields.custom.product_points != blank
+	assign points = box_product.metafields.custom.product_points
+endif
+
+if variant.metafields.custom.product_points != blank
+	assign points = variant.metafields.custom.product_points
+endif
+
+if section.settings.default_subscription == true
+	for group in product.selling_plan_groups
+		for selling_plan in group.selling_plans
+			assign selling_plan_id = selling_plan.id
+		endfor
+	endfor
+endif
+-%}
+{%- if box_product != blank -%}
+<build-a-box-product id="{{- section.id -}}_{{- variant.id -}}_{{- view -}}" data-view="{{- view -}}" data-points="{{- points -}}" {% if selling_plan_id != blank -%}data-selling-plan-id="{{- selling_plan_id -}}"{%- endif %} data-product-id="{{- box_product.id -}}" data-variant-id="{{- variant.id -}}" data-section-id="{{- section.id -}}">
+
+	{%- if view == "summary" -%}
+		{%- comment -%}
+		TODO: JOE -- Loop through cart for line qty
+		{%- endcomment -%}
+		<input type="hidden" name="quantity" type="number" value="" />
+	{%- else -%}
+		{%- comment -%} --- Quantity Selector --- {%- endcomment -%}
+		{%- render "component--quantity-input", product: box_product, quantity: 0, hide_label: true, name: "quantity" -%}
+	{%- endif -%}
+</build-a-box-product>
+{%- endif -%}

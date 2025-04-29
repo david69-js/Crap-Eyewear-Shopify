@@ -1,0 +1,729 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "8218651a-101e-45af-b080-b5177b0ef8e1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<h1><\/h1><h1><\/h1><h1><em>Fall<\/em> 2023<\/h1>",
+            "alignment": "center",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "8218651a-101e-45af-b080-b5177b0ef8e1"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "center",
+        "section_padding": "cx cb",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "090b0877-513d-4b20-a745-b02f2a32bd05": {
+      "type": "module--fullscreen-embed",
+      "settings": {
+        "animation": "",
+        "margin_x": false,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;",
+        "youtube_video": "https:\/\/www.youtube.com\/watch?v=fEOq3vcHZA8",
+        "media_aspect_ratio": "4 \/ 3"
+      }
+    },
+    "70c0bebc-f318-4084-999d-04be0b61bcb1": {
+      "type": "lookbook-fullscreen",
+      "settings": {
+        "animation": "",
+        "media_aspect_ratio": "false",
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-01-web.jpg",
+        "caption": ""
+      }
+    },
+    "3beb77a1-1ac8-4c8d-85e4-1fa3d3df70c3": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "e079d129-5152-430e-b54c-6802269326fc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-09-web.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-lucid-blur-crystal-slate-bioacetate-polarized-sunglasses\" title=\"The Lucid Blur - Crystal Slate Bio Polarized\">The Lucid Blur<\/a>, <a href=\"\/products\/the-sweet-leaf-mustard-seed-bioacetate-oval-sunglasses\" title=\"The Sweet Leaf - Mustard Seed Bio\">The Sweet Leaf<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e079d129-5152-430e-b54c-6802269326fc"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "e78b027c-3043-43b1-b857-ee2c5198169e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "b11d4980-b4ac-419d-8a41-7ff3bf6aca08": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-10-web.jpg",
+            "caption": ""
+          }
+        },
+        "46742201-1884-43d4-bb2a-080dd0bb241a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-07-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "b11d4980-b4ac-419d-8a41-7ff3bf6aca08",
+        "46742201-1884-43d4-bb2a-080dd0bb241a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-04-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "51e72a7c-4d7e-4b9a-913a-3b042ca88847"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "4d1ca2b2-793e-48ac-bf0a-479f8b5b1e5e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "869fa79f-656f-43ca-9ee5-16aac7de72e7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-product-05-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "d3b1120b-c2ea-43ce-9508-9bfa3ac67741": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-sweet-leaf-mustard-seed-bioacetate-oval-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "869fa79f-656f-43ca-9ee5-16aac7de72e7",
+        "d3b1120b-c2ea-43ce-9508-9bfa3ac67741"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "b66eedf6-df64-4f5c-9b5d-af194dec4cba": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "003235d5-e23f-43e8-ae9c-b745553e79da": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-06-web.jpg",
+            "caption": ""
+          }
+        },
+        "66905e06-70ca-4d73-be41-dc821ca2af96": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-11-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "003235d5-e23f-43e8-ae9c-b745553e79da",
+        "66905e06-70ca-4d73-be41-dc821ca2af96"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "5a971678-587b-486f-a267-c08cc9802b61": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "a51e9f45-bec1-4fad-a01d-06c2c4ea69f0": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "f65c1d9e-4fec-440e-8a8e-eca2047506d1": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_2-03-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "a51e9f45-bec1-4fad-a01d-06c2c4ea69f0",
+        "f65c1d9e-4fec-440e-8a8e-eca2047506d1"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "2492211f-7ec0-4512-8490-214c0a6fac50": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ec59ee31-38f2-4d07-8b20-2725217257da": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-product-07-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "237f11b3-15dd-404b-9043-05537d9f0950": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-lucid-blur-crystal-slate-bioacetate-polarized-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "ec59ee31-38f2-4d07-8b20-2725217257da",
+        "237f11b3-15dd-404b-9043-05537d9f0950"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "f3104c75-b75f-4e7a-8351-203dd2936139": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-02-web.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-funk-daddy-mustard-seed-gradient-bioacetate-oversized-wraparound-sunglasses\" title=\"The Funk Daddy - Mustard Seed Gradient Bio\">The Funk Daddy<\/a>, <a href=\"\/products\/the-paradise-machine-metallic-espresso-recycled-acetate-sunglasses\" title=\"The Paradise Machine - Recycled Metallic Espresso\">The Paradise Machine<\/a>.<\/p>"
+          }
+        },
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-01-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "12e80821-1fce-4eee-9997-2cf02a7c4e3b",
+        "0d1be022-88ea-433d-a0bf-9eb9c42c0d55"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "6c7dbbb4-7e5e-4c3a-a224-f565f703d2f0": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "38bef947-fbf5-4889-a046-204ea5e4c81d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-03-web.jpg",
+            "caption": ""
+          }
+        },
+        "06f2a60a-a329-4591-a6cd-be4c48db5f38": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-09-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "38bef947-fbf5-4889-a046-204ea5e4c81d",
+        "06f2a60a-a329-4591-a6cd-be4c48db5f38"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "63d612fe-5378-440f-97db-f4902986d29a": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "c2910479-988a-427c-b4c0-7cd479728216": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-product-02-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "28c4fd7e-9283-4e28-850d-05329521a4c8": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-funk-daddy-mustard-seed-gradient-bioacetate-oversized-wraparound-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "c2910479-988a-427c-b4c0-7cd479728216",
+        "28c4fd7e-9283-4e28-850d-05329521a4c8"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-04-web.jpg",
+            "caption": ""
+          }
+        },
+        "40798995-7947-4c4c-b2eb-2da608c681d4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-06-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "ceb6437a-baba-4bc4-a9e5-15ecca1d2caf",
+        "40798995-7947-4c4c-b2eb-2da608c681d4"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "b81e283c-e8e5-4661-a9bd-df112d802e70": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall-Product-Paradise_Machine-4-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "c79488b6-eb9a-4bed-beba-4f2697c97c0c": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-paradise-machine-metallic-espresso-recycled-acetate-sunglasses",
+            "col": "0"
+          }
+        }
+      },
+      "block_order": [
+        "885097d9-63cd-48a7-9ecd-084c9ace64cc",
+        "c79488b6-eb9a-4bed-beba-4f2697c97c0c"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "1300bc44-a51d-4312-b553-3b17898ea008": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "6c51c761-d354-41bc-b68b-2488f04ad6c7": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-12-web.jpg",
+            "caption": ""
+          }
+        },
+        "aa6c2210-dd1d-4ec1-82de-4ff8e2363840": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_1-13-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "6c51c761-d354-41bc-b68b-2488f04ad6c7",
+        "aa6c2210-dd1d-4ec1-82de-4ff8e2363840"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "6d4b3714-936f-4fb1-b10b-5b1ee387c19e": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "9043f9c5-959a-4a28-be0b-4675ac43e287": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_3-01-web.jpg",
+            "caption": "<p>Featured: <a href=\"\/products\/the-groove-pilot-white-gold-moss-green-square-sunglasses\" title=\"The Groove Pilot - Moss\">The Groove Pilot<\/a>, <a href=\"\/products\/the-dream-cassette-desert-tortoise-bioacetate-sunglasses\" title=\"The Dream Cassette - Desert Tortoise Bio\">The Dream Cassette<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "9043f9c5-959a-4a28-be0b-4675ac43e287"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;"
+      }
+    },
+    "1879d6f5-1750-43c1-a98d-14cb44d95c56": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "bc594b2e-189b-416b-a690-5b3e739e4eab": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_3-02-web.jpg",
+            "caption": ""
+          }
+        },
+        "97f38428-5d8c-4504-b183-f1d2ecb7269a": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_3-04-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "bc594b2e-189b-416b-a690-5b3e739e4eab",
+        "97f38428-5d8c-4504-b183-f1d2ecb7269a"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "132ae262-c79e-455e-92af-9439118f128d": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "88df3f9b-0790-40c1-8196-3c4ed8b3322d": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_3-05-web.jpg",
+            "caption": ""
+          }
+        },
+        "04fe461b-dace-4fcc-a35c-8cd04be649eb": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-product-08-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "26e7364a-027d-4f79-978b-b57ac10d9e12": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-dream-cassette-desert-tortoise-bioacetate-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "88df3f9b-0790-40c1-8196-3c4ed8b3322d",
+        "04fe461b-dace-4fcc-a35c-8cd04be649eb",
+        "26e7364a-027d-4f79-978b-b57ac10d9e12"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "65110524-efac-44a9-8854-ae5e99599884": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "667a1145-ceed-4075-8176-a0f4b3f3c6bf": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-look_3-07-web.jpg",
+            "caption": ""
+          }
+        },
+        "63677bc7-5e1b-493d-8eb2-e8b7df919ef5": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Fall-Fall_colorways-Lookbook_Nick_Green-product-09-insta-web.jpg",
+            "caption": ""
+          }
+        },
+        "90d4437d-0df8-4382-8a8a-49744b83c123": {
+          "type": "product_widget",
+          "settings": {
+            "product": "the-groove-pilot-white-gold-moss-green-square-sunglasses",
+            "col": "1"
+          }
+        }
+      },
+      "block_order": [
+        "667a1145-ceed-4075-8176-a0f4b3f3c6bf",
+        "63677bc7-5e1b-493d-8eb2-e8b7df919ef5",
+        "90d4437d-0df8-4382-8a8a-49744b83c123"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "Fade",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 60px; --mb-d: 120px;"
+      }
+    },
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000": {
+      "type": "module--recommended-products",
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "heading": "Featured Products",
+        "collection_source": "new-arrivals",
+        "cta_url": "",
+        "cta_text": "Shop New",
+        "favorites_tab": false,
+        "recently_viewed_tab": false
+      }
+    },
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1": {
+          "type": "richtext",
+          "settings": {
+            "richtext": "<p><strong>Fall 2023 Lookbook<\/strong><br\/>Shot on location in Los Angeles, 2023.<\/p><p>Starring: Quiana Reeves (<a href=\"https:\/\/www.instagram.com\/jellybeancupcake\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/jellybeancupcake\/\">@jellybeancupcake<\/a>) & Masa Sun (<a href=\"https:\/\/www.instagram.com\/_masasun_\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/_masasun_\/\">@_masasun_<\/a>)<br\/>Photographer: Nick Green (<a href=\"https:\/\/www.instagram.com\/nickgrreen\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/nickgrreen\/\">@nickgrreen<\/a>)<br\/>Production Design: Marley Arviso (<a href=\"https:\/\/www.instagram.com\/marley.arviso\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/marley.arviso\/\">@marley.arviso<\/a>) & Tony Accosta<br\/>Styling: Kailee Takashima (<a href=\"https:\/\/www.instagram.com\/kaileetakashima\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/kaileetakashima\/\">@kaileetakashima<\/a>)<br\/>Video & Edit: Nick Green (<a href=\"https:\/\/www.instagram.com\/nickgrreen\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/nickgrreen\/\">@nickgrreen<\/a>)<br\/>Song: 'Tell Me' by Rahill (<a href=\"https:\/\/www.instagram.com\/radiorahill\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/radiorahill\/\">@radiorahill<\/a>)<\/p>",
+            "alignment": "left",
+            "body_size": "body-primary"
+          }
+        }
+      },
+      "block_order": [
+        "db08b5fc-9c0c-4027-9790-1123204bb9a1"
+      ],
+      "settings": {
+        "background_color": "#deff7b",
+        "font_color": "#1e1e1e",
+        "animation": "StaggerFade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": true
+      }
+    },
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0": {
+      "type": "module--image-marquee",
+      "blocks": {
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Jack_Greer-look1-4-web_lookbooks_carousel.jpg",
+            "caption": "The Glam Rodeo",
+            "url": "shopify:\/\/pages\/lookbooks-glam-rodeo"
+          }
+        },
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Petal_Bomb_Lookbook-Tony_Accosta-Look_2-1-web_lookbooks_carousel.jpg",
+            "caption": "The Petal Bomb",
+            "url": "shopify:\/\/pages\/lookbooks-petal-bomb"
+          }
+        },
+        "741264a1-771f-4755-8cde-b67218404b6c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Supa_Phreek_II-Victoria_Moura-look2-04-web_lookbooks_carousel.jpg",
+            "caption": "The Supa Phreek II",
+            "url": "shopify:\/\/pages\/lookbooks-supa-phreek-ii"
+          }
+        },
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Summer-Lookbook-Tony_Accosta-look4-08-web_lookbooks_carousel.jpg",
+            "caption": "Summer 2023",
+            "url": "shopify:\/\/pages\/summer-2023-lookbook"
+          }
+        },
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Dream_Cassette-Victoria_Moura-look1-02-retouched-web_lookbooks_carousel.jpg",
+            "caption": "The Dream Cassette",
+            "url": "shopify:\/\/pages\/lookbooks-dream-cassette"
+          }
+        },
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-The_Gothic_Breeze-Lookbook-look_1-06-web_lookbooks_carousel.jpg",
+            "caption": "The Gothic Breeze",
+            "url": "shopify:\/\/pages\/lookbooks-gothic-breeze"
+          }
+        },
+        "0c157896-df2f-4297-ad50-783a2ff1021c": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Anti_Matter-Victoria_Moura-look1-05-web_lookbooks_carousel.jpg",
+            "caption": "The Anti Matter",
+            "url": "shopify:\/\/pages\/lookbooks-anti-matter-old"
+          }
+        },
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Nick_Green-Funk_Daddy-look_02-04-web_lookbook_carousel.jpg",
+            "caption": "The Funk Daddy",
+            "url": "shopify:\/\/pages\/lookbooks-funk-daddy"
+          }
+        },
+        "7772ca3d-f499-4e62-9134-c65c0f389197": {
+          "type": "marquee-card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_Spring-Chaos_Vault-Victoria_Moura-look2-02-web_lookbooks_carousel.jpg",
+            "caption": "The Chaos Vault",
+            "url": "shopify:\/\/pages\/lookbooks-chaos-vault"
+          }
+        }
+      },
+      "block_order": [
+        "e108b8ce-fc4f-4bed-a586-42b24a032e5b",
+        "e383594f-55b8-4ea5-9c8c-16d831fe4ae0",
+        "741264a1-771f-4755-8cde-b67218404b6c",
+        "54d2be71-00eb-4e38-9eeb-9bf4ab438c83",
+        "e3a8445f-6f04-4ac0-8392-6ec117dbe50b",
+        "545ef6c2-5fa8-486b-8c31-e2daed96924c",
+        "0c157896-df2f-4297-ad50-783a2ff1021c",
+        "73fdb4c6-1aec-4485-8086-268c1bab62ab",
+        "7772ca3d-f499-4e62-9134-c65c0f389197"
+      ],
+      "settings": {
+        "animation": "Fade",
+        "dynamic_width": false,
+        "ambient_scroll": false,
+        "margin_bottom": "--mb-m: 30px; --mb-d: 60px;",
+        "font_color": "#000000",
+        "background_color": "#ffffff",
+        "title": "<h1><\/h1><h1><em>More<\/em> Lookbooks<\/h1>",
+        "cta_text": "View All",
+        "cta_url": "shopify:\/\/pages\/lookbooks",
+        "button_style": "btn-primary"
+      }
+    },
+    "c102d251-d514-4935-9527-d706d2e101c9": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/pre-footer-refer-friend.jpg",
+        "image_1_brightness": 0,
+        "richtext_1": "<h3><strong>$20 OFF<\/strong> when you<br\/>refer a <em>Friend<\/em><\/h3>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "shopify:\/\/pages\/about-us",
+        "image_2": "shopify:\/\/shop_images\/pre-footer-showroom.jpg",
+        "image_2_brightness": 0,
+        "richtext_2": "<h3><strong>Venice Showroom<\/strong><br\/>228 Main St. #14,<br\/>Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h3>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "090b0877-513d-4b20-a745-b02f2a32bd05",
+    "70c0bebc-f318-4084-999d-04be0b61bcb1",
+    "3beb77a1-1ac8-4c8d-85e4-1fa3d3df70c3",
+    "e78b027c-3043-43b1-b857-ee2c5198169e",
+    "3cc5fd42-cb48-4b3d-805b-815b19e7cafa",
+    "4d1ca2b2-793e-48ac-bf0a-479f8b5b1e5e",
+    "b66eedf6-df64-4f5c-9b5d-af194dec4cba",
+    "5a971678-587b-486f-a267-c08cc9802b61",
+    "2492211f-7ec0-4512-8490-214c0a6fac50",
+    "f3104c75-b75f-4e7a-8351-203dd2936139",
+    "6c7dbbb4-7e5e-4c3a-a224-f565f703d2f0",
+    "63d612fe-5378-440f-97db-f4902986d29a",
+    "94938b7a-965c-4ca9-8141-0ef3d14a1f49",
+    "b81e283c-e8e5-4661-a9bd-df112d802e70",
+    "1300bc44-a51d-4312-b553-3b17898ea008",
+    "6d4b3714-936f-4fb1-b10b-5b1ee387c19e",
+    "1879d6f5-1750-43c1-a98d-14cb44d95c56",
+    "132ae262-c79e-455e-92af-9439118f128d",
+    "65110524-efac-44a9-8854-ae5e99599884",
+    "ff5e4512-7806-4106-b6ba-aeb07dae1000",
+    "6dc8c259-a15d-4593-921b-2d3c4e1f811b",
+    "f76325d7-e4ed-4692-aaf5-133a70c40bb0",
+    "c102d251-d514-4935-9527-d706d2e101c9"
+  ]
+}

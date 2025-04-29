@@ -1,0 +1,173 @@
+{% assign slide_count = 0 %}
+{%- capture wild_slides_obj %}
+    {%- for item in section.settings.collection_source.metafields.custom.in_the_wild_slider.value %}
+        {% assign format_title = item.product.value.metafields.custom.variant_short_title %}
+        <div class="slide relative {% if section.settings.dynamic_width == true %}!w-fit{% endif %}">
+            <div class="inner relative block h-[425px] md:h-[600px] w-auto max-w-none mb-2" style="--dynamic-mobile: {{item.video.value.aspect_ratio | times: 425 | round }}px; --dynamic-desktop: {{item.video.value.aspect_ratio | times: 600 | round }}px;">
+                {% if section.settings.dynamic_width == true %}
+                    {% if item.video.value %}
+                        {%- render "component--responsive-video" 
+                            autoplay: true,
+                            muted: true,
+                            loop: true,
+                            containerClasses: "dynamic-container",
+                            classes: "h-[425px] md:h-[600px]",
+                            desktop_video: item.video.value,
+                            mobile_video: item.video.value, -%}
+                    {% else %}
+                        <img class="h-[425px] md:h-[600px] w-auto max-w-none lazy" src="{{ item.image.value | image_url }}" alt="">
+                    {% endif %}
+                {% else %}
+                    {% if item.video.value %}
+                        {%- render "component--responsive-video" 
+                            autoplay: true,
+                            muted: true,
+                            loop: true,
+                            cover: true,
+                            desktop_video: item.video.value,
+                            mobile_video: item.video.value, -%}
+                    {% else %}
+                        {% render "component--responsive-image", image: item.image.value, objectFit: true %}
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <a href="{{item.product.value.url}}">
+                <p class="text-sm ml-[5px]">{{ item.user }}</p>
+                {% if item.product.value.available %}
+                    <p class="text-sm font-secondary ml-[5px]">in {{ format_title }}</p>
+                {% endif %}
+            </a>
+        </div>
+        {% assign slide_count = slide_count | plus: 1 %}
+    {%- endfor %}
+{%- endcapture %}
+
+{% assign marqueeSpeed = 300 %}
+{% if section.settings.ambient_scroll == true %}
+    {% assign marqueeSpeed = 6000 %}
+{% endif %}
+
+{% assign marqueeDrag = true %}
+{% if section.settings.ambient_scroll == true %}
+    {% assign marqueeDrag = false %}
+{% endif %}
+<div style="{% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} {{section.settings.margin_bottom}}" class="{% if slide_count == 0 %} hidden {% endif %} grid grid-cols-12 gap-y-[var(--site-gutter)]  pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)] " data-animation="{{- section.settings.animation -}}">
+    <div class="cx col-span-12">
+        <h2 class="h4">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="col-span-12 overflow-hidden {% if section.settings.ambient_scroll == true %} ambient-scroll {% endif %}">
+        {% if section.settings.dynamic_width == true %}
+            {% render "slot--carousel" 
+               , slot: wild_slides_obj,
+               pagination: false,
+               mobileOnly: false,
+               gutter: 0,
+               centered: section.settings.ambient_scroll,
+               autoplay: section.settings.ambient_scroll,
+               loops: section.settings.ambient_scroll,
+               speed: marqueeSpeed,
+               timing: 0,
+               drag: marqueeDrag %}
+        {% else %}
+            {% render 'slot--carousel' 
+               , slot: wild_slides_obj,
+               pagination: false,
+               mobileOnly: false,
+               gutter: 0,
+               slidesPerView: 3.2,
+               slidesPerViewMobile: 1.15,
+               centered: section.settings.ambient_scroll,
+               autoplay: section.settings.ambient_scroll,
+               loops: section.settings.ambient_scroll,
+               speed: marqueeSpeed,
+               timing: 0,
+               drag: marqueeDrag %}
+        {% endif %}
+    </div>
+</div>
+{% style %}
+    .in-the-wild .dynamic-container {
+        width: var(--dynamic-mobile);
+    }
+    @media screen and (min-width: 750px) {
+        .in-the-wild .dynamic-container {
+            width: var(--dynamic-desktop);
+        }
+    }
+{% endstyle %}
+{% schema %}
+    {
+        "name": "In The Wild",
+        "tag": "section",
+        "class": "in-the-wild pdp-async",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            },
+            {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "In The Wild"
+            },
+            {
+                "type": "collection",
+                "id": "collection_source",
+                "label": "Pull from"
+            }, {
+                "type": "checkbox",
+                "id": "dynamic_width",
+                "label": "Dynamic Width",
+                "info": "All images will be the same height but will vary in width.",
+                "default": false
+            }, {
+                "type": "checkbox",
+                "id": "ambient_scroll",
+                "label": "Ambient Scroll",
+                "info": "Carousel will autoplay.",
+                "default": false
+            }
+        ],
+        "presets": [
+            {
+                "name": "In The Wild"
+            }
+        ]
+    }
+{% endschema %}

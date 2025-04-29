@@ -1,0 +1,17 @@
+<afterpay-placement 
+    data-locale="en_US"
+    data-currency="USD" 
+    {% if price %} data-amount="{{ price | divided_by: 100.0  }}"{% endif %}
+    {% if selector %} data-amount-selector="{{ selector }}"{% endif %}
+    data-intro-text="In"
+    data-show-interest-free="false"
+    data-size="sm"
+    data-modal-theme="white"
+    data-logo-type="lockup"
+></afterpay-placement>
+{%  style  %}
+    afterpay-placement {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+{% endstyle %}

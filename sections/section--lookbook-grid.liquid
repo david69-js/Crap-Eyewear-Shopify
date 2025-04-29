@@ -1,0 +1,108 @@
+<div data-animation="{{- section.settings.animation -}}" style="{{section.settings.margin_bottom}} --leading-heading: 0px; {% if section.settings.animation == "Fade" %} opacity: 0; {% endif %} " class="cx grid grid-cols-3 gap-y-[30px] dk:gap-y-[var(--site-gutter)] gap-[var(--site-gutter)] pb-[length:var(--mb-m)] dk:pb-[length:var(--mb-d)]">
+    {% for lookbook in section.blocks %}
+        <a style="--card-cols: span {{lookbook.settings.col_span}};" href="{{- lookbook.settings.link -}}" class="col-span-3 dk:col-[var(--card-cols)] flex flex-col">
+            {% if lookbook.settings.video != nil %}
+                {%- render "component--responsive-video" 
+                    , cover: false,
+                    autoplay: true,
+                    muted: true,
+                    loop: true,
+                    desktop_video: lookbook.settings.video,
+                    mobile_video: lookbook.settings.video -%}
+            {% else %}
+                {% render 'component--responsive-image' image: lookbook.settings.image %}
+            {% endif %}
+            <div class="richtext mt-2.5">
+                {{ lookbook.settings.title }}
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% schema %}
+    {
+        "name": "Lookbook Grid",
+        "settings": [
+            {
+                "type": "select",
+                "id": "animation",
+                "label": "t:settings_schema.animations.settings.animation.label",
+                "info": "t:settings_schema.animations.settings.animation.info",
+                "options": [
+                    {
+                        "value": "",
+                        "label": "t:settings_schema.animations.settings.none.label"
+                    }, {
+                        "value": "Fade",
+                        "label": "t:settings_schema.animations.settings.fade.label"
+                    }, {
+                        "value": "StaggerFade",
+                        "label": "t:settings_schema.animations.settings.stagger_fade.label"
+                    }
+                ],
+                "default": ""
+            }, {
+                "type": "select",
+                "id": "margin_bottom",
+                "label": "Bottom Margin",
+                "info": "Optional space at bottom of section",
+                "options": [
+                    {
+                        "value": "--mb-m: 0px; --mb-d: 0px;",
+                        "label": "No margin"
+                    }, {
+                        "value": "--mb-m: 30px; --mb-d: 60px;",
+                        "label": "Small Margin"
+                    }, {
+                        "value": "--mb-m: 60px; --mb-d: 120px;",
+                        "label": "Large Margin"
+                    }
+                ],
+                "default": "--mb-m: 0px; --mb-d: 0px;"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Lookbook",
+                "type": "lookbook",
+                "settings": [
+                    {
+                        "type": "richtext",
+                        "id": "title",
+                        "label": "Lookbook Title",
+                        "default": "<h6>"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "video",
+                        "id": "video",
+                        "label": "Video"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link",
+                        "label": "Page Link"
+                    }, {
+                        "type": "range",
+                        "id": "col_span",
+                        "min": 1,
+                        "max": 3,
+                        "default": 1,
+                        "label": "Column Width",
+                        "step": 1
+                    }
+                ]
+            }
+        ],
+        "tag": "section",
+        "class": "lookbook-grid",
+        "presets": [
+            {
+                "name": "Lookbook Grid"
+            }
+        ]
+    }
+{% endschema %}

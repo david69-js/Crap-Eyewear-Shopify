@@ -1,0 +1,34 @@
+<div class="h-[45px] w-full absolute top-[45px] md:top-[60px] z-10 ">
+  <shipping-tracker data-usa="{{ settings.usa_threshold }}" data-intl="{{ settings.intl_threshold }}">
+    <div role="contentinfo" class="flex-1">
+      <p class="amount-tracker">You're <span class="display-difference">{{ settings.usa_threshold | money }}</span> away from free shipping</p>    
+      <div class="hidden success-state">Free shipping unlocked!</div>
+      <div class="w-full border border-off-black h-[4px]">
+        <div
+          data-threshold="{{ settings.usa_threshold }}"
+          data-total="0" 
+          id="shipping-tracker-bar"
+          class="bg-faded-lime w-0 h-full border-r border-off-black">
+        </div>
+      </div>
+    </div>    
+    <div class="flex region-btns">
+      <button data-on-click="usa" class="bg-off-black text-white px-1 border-off-black border">USA</button>
+      <button data-on-click="intl" class="bg-white text-off-black px-1 border-off-black border">Intl.</button>
+    </div>
+  </shipping-tracker>
+</div>
+{% style %}
+  shipping-tracker {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+    align-items: center;
+    height: 100%;
+    font-size: 12px !important;
+    gap: 30px;
+  }
+  shipping-tracker #shipping-tracker-bar {
+    transition: all 0.4s ease;
+  }
+{% endstyle %}

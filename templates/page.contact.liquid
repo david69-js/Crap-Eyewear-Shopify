@@ -1,0 +1,58 @@
+{% include 'shogun-products', content: page %}
+<div class="container contact-page">
+  <div class="row">
+    <div class="twelve columns rte generic">
+      <div class="column intro">{{ page.content }}</div>
+      
+        {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
+
+          {{ form.errors | default_errors }}
+
+            <div class="column">
+              <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">Email*</label>
+              <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}" required>
+            </div>
+            <div class="column">
+              <label for="ContactFormName">Name*</label>
+              <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+            </div>
+      		<div class="column">
+          		<label for="ContactFormReason">What can we help you with?*</label>
+              	<select id="ContactFormReason" name="contact[reason]">
+                  <option value="my order">My Order</option>
+                  <option value="shipping">Shipping</option>
+                  <option value="return/exchanges">Return/Exchange</option>
+                  <option value="products">Products</option>
+                  <option value="press/collab">Press/Collab</option>
+                  <option value="wholesale">Wholesale</option>
+                  <option value="careers">Careers</option>
+              	</select>
+      		</div>
+      		<div class="column">
+          		<label for="ContactFormOrderNumber">Order Number</label>
+          		<input type="text" id="ContactFormOrderNumber" name="contact[ordernumber]" value="{% if form[ordernumber] %}{{ form[ordernumber] }}{% endif %}">
+      		</div>
+      		<div class="column">
+          		<label for="ContactFormSubject">Subject*</label>
+          		<input type="text" id="ContactFormSubject" name="contact[subject]" value="{% if form[subject] %}{{ form[subject] }}{% endif %}">
+      		</div>      
+      		<div class="column">
+          		<label for="ContactFormMessage">Message*</label>
+          		<textarea rows="10" id="ContactFormMessage" name="contact[body]" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      		</div>
+          <input type="submit" class="button" value="Send">
+        {% endform %}      
+    </div>
+  </div>
+</div>
+
+<script>
+$("#chat-button").click(function(){
+	 $("#messenger-button").trigger('click');
+});  
+</script>

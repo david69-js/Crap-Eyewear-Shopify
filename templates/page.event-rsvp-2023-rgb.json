@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cabf25c8-e1c7-41ad-b3f6-dd795d6b9708": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "67f3b621-2b15-4e9b-9f6a-0f1df87b87b1": {
+      "type": "lookbook-two-col",
+      "blocks": {
+        "08451778-55ee-4efa-b4c3-1d6b792cbaa4": {
+          "type": "media_col",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-2023_June-Showroom_Artist_Feature-Rewina-flyer-v1-web.jpg",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "08451778-55ee-4efa-b4c3-1d6b792cbaa4"
+      ],
+      "settings": {
+        "media_aspect_ratio": "false",
+        "animation": "",
+        "column_basis": 50,
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "a2ef0357-ca57-4cc8-a507-2b4f3f6422fa": {
+      "type": "module--page-content",
+      "settings": {
+        "animation": "Fade",
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "show_page_title": false,
+        "title_alignment": "center",
+        "desktop_width": 80,
+        "mobile_width": 100,
+        "flex": "center",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "c49b7c84-9d97-437a-bdb7-7994a6f83e7e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "13f763ff-8df4-4ffe-a570-55c254b9776e": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "video_1": "shopify:\/\/files\/videos\/Crap_Eyewear-meet_the_favs-heavy_tropix-deep_rose-web_home_primary.mp4",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h4>Meet Our<br\/><em>Favorites<\/em><\/h4>",
+        "cta_1_text": "Shop the Hits",
+        "cta_1_url": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/Rectangle_161_3.png",
+        "image_2_brightness": 0,
+        "richtext_2": "<h4><strong>Venice Showroom<br\/><\/strong>228 Main St. #14, Venice, CA<br\/>11 — 5PM, <em>Everyday<\/em><\/h4>",
+        "cta_2_text": "",
+        "cta_2_url": ""
+      }
+    }
+  },
+  "order": [
+    "cabf25c8-e1c7-41ad-b3f6-dd795d6b9708",
+    "67f3b621-2b15-4e9b-9f6a-0f1df87b87b1",
+    "a2ef0357-ca57-4cc8-a507-2b4f3f6422fa",
+    "c49b7c84-9d97-437a-bdb7-7994a6f83e7e",
+    "13f763ff-8df4-4ffe-a570-55c254b9776e"
+  ]
+}

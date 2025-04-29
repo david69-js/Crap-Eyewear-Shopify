@@ -1,0 +1,283 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "4bcac2d9-37e0-4bc8-a451-a9003d6b266e": {
+      "type": "module--spacer",
+      "settings": {
+        "background_color": "#ffffff",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "d4643ecd-8e55-4eb5-b716-4768297bae27": {
+      "type": "module--one-column-richtext",
+      "blocks": {
+        "60dfccd1-22db-42f7-920b-8cc7dbb1d7a3": {
+          "type": "xl_heading",
+          "settings": {
+            "richtext": "<h1>Crappenings<\/h1>",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "60dfccd1-22db-42f7-920b-8cc7dbb1d7a3"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "font_color": "#1e1e1e",
+        "animation": "Fade",
+        "desktop_width": 85,
+        "mobile_width": 100,
+        "flex": "start",
+        "section_padding": "ca",
+        "section_padding_halved": false,
+        "section_padding_extra": false
+      }
+    },
+    "b1398eba-eb6b-4ea4-af8b-b85cc7cb2ac4": {
+      "type": "section--blog-nav",
+      "blocks": {
+        "fe151a5a-8897-4402-9e95-fdbb9ce68179": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Lookbooks"
+          }
+        },
+        "530edb7f-eece-4d4c-9a67-5e76f037497a": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Shades"
+          }
+        },
+        "0debfa2c-8c95-48ad-b7d4-2966a5886df1": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Fam"
+          }
+        },
+        "bd98d75d-ff21-40b0-bde2-737fe6883b03": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Music"
+          }
+        },
+        "969c26d7-1e95-4b70-b3f5-b0bcf593ee55": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Events"
+          }
+        },
+        "8c669f4a-b7d9-4871-8ce8-778c75d752e2": {
+          "type": "tag",
+          "settings": {
+            "tag_name": "Head Rattles"
+          }
+        }
+      },
+      "block_order": [
+        "fe151a5a-8897-4402-9e95-fdbb9ce68179",
+        "530edb7f-eece-4d4c-9a67-5e76f037497a",
+        "0debfa2c-8c95-48ad-b7d4-2966a5886df1",
+        "bd98d75d-ff21-40b0-bde2-737fe6883b03",
+        "969c26d7-1e95-4b70-b3f5-b0bcf593ee55",
+        "8c669f4a-b7d9-4871-8ce8-778c75d752e2"
+      ],
+      "settings": {}
+    },
+    "59e33a61-b0a7-4336-ba7a-be2294b9fcd5": {
+      "type": "section--lookbook-grid",
+      "blocks": {
+        "2707cc34-f4a9-448e-a209-deeec742173c": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<p><strong>Spring 2022<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/image_924_1.png",
+            "link": "#",
+            "col_span": 2
+          }
+        },
+        "deda80c7-f5cf-47e1-8717-c212f417ce25": {
+          "type": "lookbook",
+          "settings": {
+            "title": "<p><strong>Backstage With The Marias<\/strong><\/p>",
+            "image": "shopify:\/\/shop_images\/image_904_1.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "93da02d5-f246-4ffe-8c0f-007f6c25bc7a": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Group_42.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "b9703606-d420-4723-a7bc-50d307b27b29": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_903.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "62beedf3-be5e-4945-a9ff-5c73bd1822dc": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Crap_Eyewear-Sticker_Gifs-sun-green_yellow-giphy_1.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "91ecd734-6bed-4cac-99dc-7e5394789d1b": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Group_634414.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "71dac9f5-7898-4ef8-a8d8-75d507ae0e03": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "video": "shopify:\/\/files\/videos\/Crap_Eyewear-2022_Fall-The_Heavy_Tropix_P4P-Mat-webres_alt.mp4",
+            "link": "#",
+            "col_span": 2
+          }
+        },
+        "93ebfa1f-4774-45dd-83f1-9bd344d0ea68": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_903_2.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "6da6c36d-ee8e-4ade-9e34-c645f19b9082": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_904_2.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "d60010b7-bd73-4746-a8a8-e768efa1711d": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Group_634297.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "2aedfd7d-3d95-4ce9-81b1-3e4c95446a65": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_903_3.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "638c4735-3315-4f6d-8a4a-deece75817cc": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Group_634414_1.png",
+            "link": "",
+            "col_span": 2
+          }
+        },
+        "1d0e8b14-e38e-4fb2-93a8-c845801c6aeb": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_903_4.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "aef9043b-7af9-4989-9452-58fc031af908": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/image_903_5.png",
+            "link": "",
+            "col_span": 1
+          }
+        },
+        "cdecd2d1-cae7-436c-874b-c18bdd11ff41": {
+          "type": "lookbook",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Mask_group_13.png",
+            "link": "",
+            "col_span": 1
+          }
+        }
+      },
+      "block_order": [
+        "2707cc34-f4a9-448e-a209-deeec742173c",
+        "deda80c7-f5cf-47e1-8717-c212f417ce25",
+        "93da02d5-f246-4ffe-8c0f-007f6c25bc7a",
+        "b9703606-d420-4723-a7bc-50d307b27b29",
+        "62beedf3-be5e-4945-a9ff-5c73bd1822dc",
+        "91ecd734-6bed-4cac-99dc-7e5394789d1b",
+        "71dac9f5-7898-4ef8-a8d8-75d507ae0e03",
+        "93ebfa1f-4774-45dd-83f1-9bd344d0ea68",
+        "6da6c36d-ee8e-4ade-9e34-c645f19b9082",
+        "d60010b7-bd73-4746-a8a8-e768efa1711d",
+        "2aedfd7d-3d95-4ce9-81b1-3e4c95446a65",
+        "638c4735-3315-4f6d-8a4a-deece75817cc",
+        "1d0e8b14-e38e-4fb2-93a8-c845801c6aeb",
+        "aef9043b-7af9-4989-9452-58fc031af908",
+        "cdecd2d1-cae7-436c-874b-c18bdd11ff41"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;"
+      }
+    },
+    "646d7ce7-6a60-48c4-88d5-fbc1144d832f": {
+      "type": "module--two-col-image-cta",
+      "settings": {
+        "background_color": "#ffffff",
+        "animation": "Fade",
+        "margin_bottom": "--mb-m: 0px; --mb-d: 0px;",
+        "image_1": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Spring-Elijah_Berle-The_Good_Bad_black_polarized-9-web_footer_cta_block.jpg",
+        "image_1_brightness": 0.1,
+        "richtext_1": "<h4><strong>$20 OFF<\/strong> when you refer a <em>Friend<\/em><\/h4>",
+        "cta_1_text": "Learn More",
+        "cta_1_url": "#",
+        "image_2": "shopify:\/\/shop_images\/Crap_Eyewear-2022_Fall-Showroom-4-web_footer_cta_block.jpg",
+        "image_2_brightness": 0.2,
+        "richtext_2": "<h4><strong>Venice Showroom  <\/strong>228 Main St. #14, Venice, CA11 — 5PM, <em>Everyday<\/em><\/h4>",
+        "cta_2_text": "",
+        "cta_2_url": "#"
+      }
+    }
+  },
+  "order": [
+    "4bcac2d9-37e0-4bc8-a451-a9003d6b266e",
+    "d4643ecd-8e55-4eb5-b716-4768297bae27",
+    "b1398eba-eb6b-4ea4-af8b-b85cc7cb2ac4",
+    "59e33a61-b0a7-4336-ba7a-be2294b9fcd5",
+    "646d7ce7-6a60-48c4-88d5-fbc1144d832f"
+  ]
+}

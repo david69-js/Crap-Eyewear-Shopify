@@ -1,0 +1,387 @@
+<!-- /snippets/ajax-cart-template.liquid -->
+{% comment %}
+
+  This snippet provides the default handlebars.js templates for
+  the ajax cart plugin. Use the raw liquid tags to keep the
+  handlebar.js template tags as available hooks.
+
+{% endcomment %}
+{% for item in cart.items %}
+	{% if item.product.type contains 'Sunglasses' %}
+		{% capture amountx %}{{ totalx | plus: item.line_price }}{% endcapture %}
+	{% endif %} 
+	{% assign totalx = amountx | times: 1 %} 
+{% endfor %}
+  <script id="CartTemplate" type="text/template">
+    {% raw %}
+    {{#if isEmpty}}
+    {% endraw %}
+      <div class="ajaxcart__empty-cart">
+        <p class="ajaxcart__empty-message">{{settings.ajaxcart_empty_message}}</p>
+        {% if settings.ajaxcart_empty_colection_1 != '' %}
+        	{% assign empty_collection_1 = collections[settings.ajaxcart_empty_colection_1] %}
+        	<p><a href="{{empty_collection_1.url}}" class="button"><span class="button-fix">{{empty_collection_1.title}}</span></a></p>
+        {% endif %}
+        {% if settings.ajaxcart_empty_colection_2 != ''%}
+        	{% assign empty_collection_2 = collections[settings.ajaxcart_empty_colection_2] %}
+        	<p><a href="{{empty_collection_2.url}}" class="button"><span class="button-fix">{{empty_collection_2.title}}</span></a></p>
+        {% endif %}
+        {% if settings.ajaxcart_empty_colection_3 != ''%}
+        	{% assign empty_collection_3 = collections[settings.ajaxcart_empty_colection_3] %}
+        	<p><a href="{{empty_collection_3.url}}" class="button"><span class="button-fix">{{empty_collection_3.title}}</span></a></p>
+        {% endif %}
+      </div>
+    {% raw %}
+    {{else}}
+    {% endraw %}
+      <form action="/cart" method="post" novalidate class="ajaxcart">
+      {% if settings.enable_discount %}
+      <input class="js-form-discount" type="hidden" name="discount" value="{{ settings.coupon_code }}">
+      {% endif %}
+        <div class="ajaxcart-bd">
+          {% raw %}
+          {{#items}}
+            <div class="ajaxcart__row" data-line="{{line}}">
+              <a class="ajaxcart__item-image" href="{{url}}">
+                <img src="{{img}}" alt="{{name}}">
+              </a>
+
+              <div class="ajaxcart__item-bd">
+                <p class="ajaxcart__item-title"><a href="{{url}}">{{title}}</a></p>
+                
+                <span class="ajaxcart__btn-remove icon-wrapper" data-id="{{#if variantId}}{{variantId}}{{/if}}">
+                  {% endraw %}
+                    {% include 'icon-close' %}
+                  {% raw %}
+                </span>
+                
+                {{#if variation}}
+                  <p class="ajaxcart__item-meta">{{variation}}</p>
+                {{/if}}
+                
+                                
+                <div class="ajaxcart__qty">
+                  <button class="ajaxcart__qty-adjust ajaxcart__qty-minus icon-wrapper" data-id="{{key}}" data-line="{{line}}">
+                    {% endraw %}
+                      {% include 'icon-minus' %}
+                    {% raw %}
+                  </button>
+                  <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" data-id="{{key}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*" autocomplete="off">
+                  <button class="ajaxcart__qty-adjust ajaxcart__qty-plus icon-wrapper" data-id="{{key}}" data-line="{{line}}">
+                    {% endraw %}
+                      {% include 'icon-plus' %}
+                    {% raw %}
+                  </button>
+                </div>
+                <p class="ajaxcart__item-price">
+                  {{#if discountsApplied}}
+                    <span>{{{linePrice}}}</span>
+                    <small>
+                      <s>{{{originalLinePrice}}}</s>
+                    </small>
+                  {{else}}
+                    <span>{{{linePrice}}}</span>
+                  {{/if}}
+                </p>
+
+                {{#if discountsApplied}}
+                  <p class="ajaxcart-item__discount">
+                    {{#each discounts}}
+                      <small>{{ this.title }}</small><br>
+                    {{/each}}
+                  </p>
+                {{/if}}
+              </div>
+            </div>
+          {{/items}}
+          </div>
+		  
+          {%endraw%}
+		  {% unless settings.ajaxcart_addon_below_checkout %}
+          {%raw%}
+          {{#if showAddons}}
+          <div class="ajaxcart__addons upper_addons">
+            {{#if showFirstAddon}}
+            {%endraw%}
+            {% if settings.addon_1 %}
+              {% if settings.ajaxcart_addon_1 %}
+                {% assign addon_1 = all_products[settings.ajaxcart_addon_1] %}
+                {% assign titleParts = addon_1.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				
+                <div class="test">
+                  <div class="ajaxcart__row">
+                    <p class="ajaxcart__row-header">{{settings.ajaxcart_1_title}}</p>
+                    <div class="ajaxcart__row-bd">
+                      <a class="ajaxcart__item-image" href="{{addon_1.url}}">
+                        <img src="{{addon_1.featured_image | img_url: '200x'}}" alt="{{title}}">
+                      </a>
+
+                      <div class="ajaxcart__item-bd">
+                        <p class="ajaxcart__item-title"><a href="{{addon_1.url}}">{{title}}</a></p>
+                        <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                        <button type="submit"{% unless addon_1.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_1.selected_or_first_available_variant.id}}">{% if addon_1.available %}{{ settings.addon_1_btn}}{% else %}Sold Out{% endif %}</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              {% endif %}
+              {% endif %}
+            {%raw%}
+            {{/if}}
+              
+            {{#if showSecondAddon}}
+            {%endraw%}
+            {% if settings.addon_2 %}
+              {% if settings.ajaxcart_addon_2 %}
+                {% assign addon_2 = all_products[settings.ajaxcart_addon_2] %}
+                {% assign titleParts = addon_2.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				<div class="test">
+                
+                  <div class="ajaxcart__row">
+                    <p class="ajaxcart__row-header">{{settings.ajaxcart_2_title}}</p>
+
+                    <div class="ajaxcart__row-bd">
+                      <a class="ajaxcart__item-image" href="{{addon_2.url}}">
+                        <img src="{{addon_2.featured_image | img_url: '200x'}}" alt="{{title}}">
+                      </a>
+
+                      <div class="ajaxcart__item-bd">
+                        <p class="ajaxcart__item-title"><a href="{{addon_2.url}}">{{title}}</a></p>
+                        <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                      <button type="button"{% unless addon_2.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_2.selected_or_first_available_variant.id}}">{% if addon_2.available %}{{ settings.addon_2_btn}}{% else %}Sold Out{% endif %}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% endif %}
+            {%raw%}
+            {{/if}}
+              
+            {{#if showThirdAddon}}
+            {%endraw%}
+            {% if settings.addon_3 %}
+              {% if settings.ajaxcart_addon_3 %}
+                {% assign addon_3 = all_products[settings.ajaxcart_addon_3] %}
+                {% assign titleParts = addon_3.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				
+                <div class="test">
+                  <div class="ajaxcart__row">
+                    <p class="ajaxcart__row-header">{{settings.ajaxcart_3_title}}</p>
+                    <div class="ajaxcart__row-bd">
+                      <a class="ajaxcart__item-image" href="{{addon_3.url}}">
+                        <img src="{{addon_3.featured_image | img_url: '200x'}}" alt="{{title}}">
+                      </a>
+
+                      <div class="ajaxcart__item-bd">
+                        <p class="ajaxcart__item-title"><a href="{{addon_3.url}}">{{title}}</a></p>
+                        <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                      <button type="button"{% unless addon_3.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_3.selected_or_first_available_variant.id}}">{% if addon_3.available %}{{ settings.addon_3_btn}}{% else %}Sold Out{% endif %}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+               {% endif %}
+            {%raw%}
+            {{/if}}
+    	  </div>
+          {{/if}}
+          {%endraw%}
+		  {% endunless %}
+          
+          {% if settings.cart_notes_enable %}
+          {% raw %}
+            <div>
+              <label for="CartSpecialInstructions">Cart Note</label>
+              <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ note }}</textarea>
+            </div>
+          {% endraw %}
+          {% endif %}
+          {% raw %}
+        </div>
+
+        <div class="ajaxcart-footer">
+          <div class="ajax-cart__summary">
+          {% endraw %}{% if settings.enable_discount %}
+            <p class="ajaxcart__subtotal flex--center-between discount-row">
+              <span>30% off savings</span><span class="discount" data-total="{{ totalx | money }}"></span>
+            </p> 
+          {% endif %}{% raw %}
+            <p class="ajaxcart__subtotal flex--center-between">
+              <span>Subtotal</span><span class="subtotal"><span>{{{totalPrice}}}</span></span>
+            </p>
+
+            <p class="ajaxcart__shipping-message">
+              <span>Shipping</span><span class="js-shipping-msg">---</span>
+            </p>
+
+            <p>
+              <button type="submit" class="button ajaxcart__btn-checkout" name="checkout">
+                <span class="button-fix">Checkout</span>
+              </button>
+            </p>
+          </div>
+          {%endraw%}
+		  {% if settings.ajaxcart_addon_below_checkout %}
+          {%raw%}
+          {{#if showAddons}}
+          <div class="ajaxcart__addons">
+            {{#if showFirstAddon}}
+            {%endraw%}
+            {% if settings.addon_1 %}
+              {% if settings.ajaxcart_addon_1 %}
+                {% assign addon_1 = all_products[settings.ajaxcart_addon_1] %}
+                {% assign titleParts = addon_1.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				
+                <div class="test-2">
+                  <div class="ajaxcart__row">
+                    <p class="ajaxcart__row-header">{{settings.ajaxcart_1_title}}</p>
+                    <div class="ajaxcart__row-bd">
+                      <a class="ajaxcart__item-image" href="{{addon_1.url}}">
+                        <img src="{{addon_1.featured_image | img_url: '200x'}}" alt="{{title}}">
+                      </a>
+
+                      <div class="ajaxcart__item-bd">
+                        <p class="ajaxcart__item-title"><a href="{{addon_1.url}}">{{title}}</a></p>
+                        <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                        <button type="submit"{% unless addon_1.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_1.selected_or_first_available_variant.id}}">{% if addon_1.available %}{{ settings.addon_1_btn}}{% else %}Sold Out{% endif %}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% endif %}
+            {%raw%}
+            {{/if}}
+              
+            {{#if showSecondAddon}}
+            {%endraw%}
+            {% if settings.addon_2 %}
+              {% if settings.ajaxcart_addon_2 %}
+                {% assign addon_2 = all_products[settings.ajaxcart_addon_2] %}
+                {% assign titleParts = addon_2.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				<div class="test-2">
+                <div class="ajaxcart__row">
+                  <p class="ajaxcart__row-header">{{settings.ajaxcart_2_title}}</p>
+
+                  <div class="ajaxcart__row-bd">
+                    <a class="ajaxcart__item-image" href="{{addon_2.url}}">
+                      <img src="{{addon_2.featured_image | img_url: '200x'}}" alt="{{title}}">
+                    </a>
+
+                    <div class="ajaxcart__item-bd">
+                      <p class="ajaxcart__item-title"><a href="{{addon_2.url}}">{{title}}</a></p>
+                      <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                      <button type="button"{% unless addon_2.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_2.selected_or_first_available_variant.id}}">{% if addon_2.available %}{{ settings.addon_2_btn}}{% else %}Sold Out{% endif %}</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              {% endif %}
+              {% endif %}
+            {%raw%}
+            {{/if}}
+              
+            {{#if showThirdAddon}}
+            {%endraw%}
+            {% if settings.addon_3 %}
+              {% if settings.ajaxcart_addon_3 %}
+                {% assign addon_3 = all_products[settings.ajaxcart_addon_3] %}
+                {% assign titleParts = addon_3.title | split: ' - ' %}
+                {% assign title = titleParts[0] | strip %}
+                {% assign frame = titleParts[1] | strip %}
+                {% assign lens = titleParts[2] | strip %}
+                {% assign type = titleParts[3] | strip %}
+				<div class="test-2">
+                <div class="ajaxcart__row">
+                  <p class="ajaxcart__row-header">{{settings.ajaxcart_3_title}}</p>
+                  <div class="ajaxcart__row-bd">
+                    <a class="ajaxcart__item-image" href="{{addon_3.url}}">
+                      <img src="{{addon_3.featured_image | img_url: '200x'}}" alt="{{title}}">
+                    </a>
+
+                    <div class="ajaxcart__item-bd">
+                      <p class="ajaxcart__item-title"><a href="{{addon_3.url}}">{{title}}</a></p>
+                      <p class="ajaxcart__item-meta">{{ frame }} {{ lens }}</p>
+                      <button type="button"{% unless addon_3.available %} disabled{% endunless %} class="ajaxcart__btn-quick-add button js-quick-add" data-properties="type:addon" data-variant-id="{{addon_3.selected_or_first_available_variant.id}}">{% if addon_3.available %}{{ settings.addon_3_btn}}{% else %}Sold Out{% endif %}</button>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              {% endif %}
+              {% endif %}
+            {%raw%}
+            {{/if}}
+    	  </div>
+          {{/if}}
+          {%endraw%}
+          {% endif %}
+          {%raw%}
+        </div>
+      </form>
+    {{/if}}
+    {% endraw %}
+  </script>
+
+
+  <script id="JsQty" type="text/template">
+  {% raw %}
+    <div class="js-qty">
+      <button type="button" class="js-qty__adjust js-qty__minus btn--link" data-id="{{key}}">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg class="icon icon-arrow-down" width="7px" height="4px" viewBox="0 0 7 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Product-Page-Mock-V2" transform="translate(-926.000000, -520.000000)" fill="#000000">
+                    <g id="Group-13" transform="translate(819.000000, 484.000000)">
+                        <g id="Group-11" transform="translate(63.000000, 0.000000)">
+                            <g id="Group-10" transform="translate(44.000000, 13.000000)">
+                                <polygon id="Arrow-Down" transform="translate(3.433860, 25.000000) rotate(-270.000000) translate(-3.433860, -25.000000) " points="2.49766544 22 1.67705041 22.9181034 3.53788167 25 1.67705041 27.0818966 2.49766544 28 5.19066968 25"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+      </button>
+      <input type="text" class="js-qty__num" value="{{itemQty}}" data-id="{{key}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}">
+      <button type="button" class="js-qty__adjust js-qty__plus btn--link" data-id="{{key}}">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg class="icon icon-arrow-up" width="7px" height="4px" viewBox="0 0 7 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Product-Page-Mock-V2" transform="translate(-926.000000, -497.000000)" fill="#000000">
+                    <g id="Group-13" transform="translate(819.000000, 484.000000)">
+                        <g id="Group-11" transform="translate(63.000000, 0.000000)">
+                            <g id="Group-10" transform="translate(44.000000, 13.000000)">
+                                <polygon id="Arrow-Up" transform="translate(3.433860, 2.000000) scale(1, -1) rotate(-270.000000) translate(-3.433860, -2.000000) " points="2.49766544 -1 1.67705041 -0.0818965517 3.53788167 2 1.67705041 4.08189655 2.49766544 5 5.19066968 2"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+      </button>
+    </div>
+  {% endraw %}
+  </script> 

@@ -1,0 +1,68 @@
+{% if block.settings.horizontal_dropdown %}<style>.site-nav--has-dropdown {position:static;} .site-nav__dropdown {right:0; text-align:center;}  .site-nav__dropdown li {display:inline-block;}</style>{% endif %}
+<ul class="site-nav list--inline {% if block.settings.menu_main %}main{% endif %}" id="SiteNav">
+  {% for link in linklists[block.settings.main_linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% if linklists[child_list_handle].links != blank %}	
+      <li class="{{ link.title | handleize }} {% if block.settings.product_menu_title == link.title %}product-menu {% endif %} site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}">
+        <a href="{{ link.url }}" class="site-nav__link site-nav__link--main" aria-has-popup="true" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+          <span class="button-fix">{{ link.title }}</span>
+          {% if block.settings.icon_arrow %}{% include 'icon-chevron-down' %}{% endif %}
+          <span class="visually-hidden">expand menu</span>
+        </a>
+
+        <div class="site-nav__dropdown" id="SiteNavLabel-{{ child_list_handle }}">         
+          <ul class="{% if block.settings.product_menu_title == link.title %}grid__item {{ push_width }} {{ block_width }}{% endif %}">
+            {% for childlink in linklists[child_list_handle].links %}
+            {% assign grand_child_list_handle = childlink.title | handle %}  
+            
+          {% if linklists[grand_child_list_handle] and linklists[grand_child_list_handle].links.size > 0 %}
+            <li class="site-nav--has-dropdown{% if childlink.active %} site-nav--active{% endif %}">
+              <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+          		<ul class="site-nav__dropdown">
+            		{% for grandchildlink in linklists[grand_child_list_handle].links %}
+            		<li>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__link">{{ grandchildlink.title | escape }}</a>
+            		</li>
+            		{% endfor %}
+          		</ul>              
+            </li>
+        {% else %}              
+              <li class="{% if childlink.active %}site-nav--active{% endif %}{% if block.settings.product_menu_title == link.title %} text-center{% endif %}">
+                {% if block.settings.product_menu_title == link.title %}
+                	<img src="{{ childlink.handle | append: '.png' | prepend: 'menu-' | file_url }}" />
+                {% endif %}                
+                <a href="{{ childlink.url }}" class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}">{{ childlink.title | escape }}</a>
+              </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+    {% else %}
+  		{% if link.title == 'Cart' or link.title == 'Shopping Bag' or link.title == 'Bag' %}
+  			<li class="site-nav__link"><a href="{% if settings.mini_cart_enable == 'mini_cart' %}#{% else %}/cart{% endif %}" class="site-nav__link site-nav__link--main{% if settings.mini_cart_enable == 'mini_cart' %} go_cart{% elsif settings.mini_cart_enable == 'side_cart' %} js-drawer-open-right{% endif %}" aria-controls="CartDrawer" aria-expanded="false">{% if block.settings.cart_icon_menu %}{% if section.settings.top_cart_icon == 'cart' %}<i class="fa fa-shopping-cart"></i>{% elsif section.settings.top_cart_icon == 'basket' %}<i class="fa fa-shopping-basket"></i>{% elsif section.settings.top_cart_icon == 'bag' %}<i class="fa fa-shopping-bag"></i>{% endif %}{% else %}{{ link.title }}{% endif %} {% unless block.settings.cart_count == 'none'  %}<span class="cart-count header-bar__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>{% endunless %}</a></li>
+  		{% elsif link.title == 'Search' and block.settings.search_icon_menu %}
+  			<li class="search-link site-nav__link"><a class="search-bar-toggle one site-nav__link site-nav__link--main" href="#"><span class="visually-hidden">Search</span><i class="fa fa-search"></i></a></li>
+  		{% elsif link.title == 'Search' %}
+  			<li class="search-link site-nav__link"><a class="search-bar-toggle one site-nav__link site-nav__link--main" href="#">Search</a></li> 
+  		{% elsif link.title == 'Social Links' %}
+  			<li class="social-links">{% include 'social-links' %}</li>
+   		{% elsif link.title == 'Logo' %}
+  			<div class="logo-holder" style="display:inline-block;">
+            <a href="/" itemprop="url" class="site-header__logo-image">
+              {% capture image_size %}{{ section.settings.logo_max_width }}px{% endcapture %}
+              <img src="{{ block.settings.logo | img_url: '1000x1000' }}"
+                   srcset="{{ block.settings.logo | img_url: '1000x1000' }} 1x, {{ block.settings.logo | img_url: '2000x2000', scale: 2 }} 2x"
+                   alt="{{ block.settings.logo.alt | default: shop.name }}"
+                   itemprop="logo" style="margin-bottom:-5px;">
+            </a>              
+  			</div> 
+  		{% else %}   
+      	<li class="no-drop {{ link.title | handleize }} {% if link.active %}site-nav--active{% endif %}">
+          <a href="{{ link.url }}" class="site-nav__link site-nav__link--main"><span class="button-fix">{{ link.title }}</span></a>
+      	</li>
+  		{% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>

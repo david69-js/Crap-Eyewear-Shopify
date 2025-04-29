@@ -1,0 +1,101 @@
+<style>
+.ticker-holder .h1 {font-size:{{ section.settings.font_size }}; color:{{ section.settings.text_color }};}
+@media (max-width: 767px) {
+  .ticker-holder .h1 {font-size:{{ section.settings.font_size_mobile }};}
+}  
+.ticker-holder{
+  overflow: hidden;
+  white-space: nowrap;
+  margin:0 auto;
+  width:100% !important;
+}
+
+.ticker__item.one {
+  display: inline-block;
+  animation: marquee 28s linear infinite;
+}
+
+.ticker__item.two {
+  display: inline-block;
+  animation: marquee2 28s linear infinite;
+  animation-delay: 14s;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+</style>
+
+<div class="ticker-holder" {% if section.settings.bg_color != blank %}style="background-color: {{ section.settings.bg_color }};"{% endif %}>
+<div class="ticker">
+  <span class="h1 ticker__item one">
+    <span>&nbsp;{{ section.settings.title }}</span>
+  </span>
+  <span class="h1 ticker__item two">
+    <span>&nbsp;{{ section.settings.title }}</span>
+  </span>
+</div>
+</div>
+<script>
+$('.ticker-holder').width($('.ticker__item.one').width());  
+</script>
+{% schema %}
+  {
+    "name": "Ticker",
+    "class": "index-section",
+    "settings": [
+      {
+        "id": "ticker_speed",
+        "type": "text",
+        "label": "Ticker speed",
+		"info": "Number 1 through 10",
+		"default": "5"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+      },
+      {
+        "id": "bg_color",
+        "type": "color",
+        "label": "Background color"
+      },
+      {
+        "id": "font_size",
+        "type": "text",
+        "label": "Font size - desktop"
+      },
+      {
+        "id": "font_size_mobile",
+        "type": "text",
+        "label": "Font size - mobile"
+      }
+    ],
+    "presets": [{
+      "name": "Ticker",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,38 @@
+{% unless collection.metafields.c_f['Inline Collab 1 Image'] == blank %}
+<div class="collab-item u-center half">
+
+
+
+  {% if collection.metafields.c_f['Inline Collab 1 Link'] == blank %}
+    <div class="collab-figure {{ collection.metafields.c_f['Inline Collab 1 Image Style'] }}">
+      {% unless collection.metafields.c_f['Inline Collab 1 Signature'] == blank %}
+          {% assign ci_arr = collection.metafields.c_f['Inline Collab 1 Signature'] | split: '/' %}
+          {% assign ci = ci_arr | last %}
+        <div class="preload signature" data-preload-desktop="{{ ci | | file_img_url: '300x' }}" data-preload-mobile="{{ ci | | file_img_url: '200x' }}">
+        </div>
+      {% endunless %}
+      {% assign ci_arr = collection.metafields.c_f['Inline Collab 1 Image'] | split: '/' %}
+      {% assign ci = ci_arr | last %}
+      <img class="preload featured-img {{ collection.metafields.c_f['Inline Collab 1 Image Style'] }}" alt="" data-preload-desktop="{{ ci | | file_img_url: '650x' }}" data-preload-mobile="{{ ci | | file_img_url: '400x' }}">
+      {% unless collection.metafields.c_f['Inline Collab 1 Caption'] == blank %}
+        <p class="figcaption">{{ collection.metafields.c_f['Inline Collab 1 Caption'] }}</p>
+      {% endunless %}
+    </div>
+  {% else %}
+    <a class="collab-figure {{ collection.metafields.c_f['Inline Collab 1 Image Style'] }}" href="{{ collection.metafields.c_f['Inline Collab 1 Link'] }}">
+      {% unless collection.metafields.c_f['Inline Collab 1 Signature'] == blank %}
+        {% assign ci_arr = collection.metafields.c_f['Inline Collab 1 Signature'] | split: '/' %}
+        {% assign ci = ci_arr | last %}
+        <div class="preload signature" data-preload-desktop="{{ ci | | file_img_url: '300x' }}" data-preload-mobile="{{ ci | | file_img_url: '200x' }}">
+        </div>
+      {% endunless %}
+      {% assign ci_arr = collection.metafields.c_f['Inline Collab 1 Image'] | split: '/' %}
+      {% assign ci = ci_arr | last %}
+      <img class="preload featured-img {{ collection.metafields.c_f['Inline Collab 1 Image Style'] }}" alt="" data-preload-desktop="{{ ci | | file_img_url: '650x' }}" data-preload-mobile="{{ ci | | file_img_url: '400x' }}">
+      {% unless collection.metafields.c_f['Inline Collab 1 Caption'] == blank %}
+        <p class="figcaption">{{ collection.metafields.c_f['Inline Collab 1 Caption'] }}</p>
+      {% endunless %}
+    </a>
+  {% endif %}
+</div>
+{% endunless %}

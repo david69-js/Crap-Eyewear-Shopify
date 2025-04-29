@@ -1,0 +1,193 @@
+<div class="ambassadors-template">
+  <!-- AMBASSADORS-HERO -->
+  <div class="about-hero ambassadors">
+    <div class="main-hero-slide">
+      <img src="{{ 'ambassadors-hero.jpg' | asset_url }}" />
+      <div class="main-hero-slide-content">
+        <div>
+          <h1>The Crap Family</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-collection-filters-list u-center">
+    <div class="container">
+      <ul>
+        <li><a href="#">All</a></li>
+        <li><a href="#">Skate</a></li>
+        <li><a href="#">Surf</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Art</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ambassadors-template-intro u-center">
+    <div class="container">
+      <p>Our company is deeply rooted in many of California’s rich countercultures — skateboarding, surfing, music and fashion are what make us happy and we strive to support these scenes with thoughtful integrity.</p>
+    </div>
+  </div>
+
+  <div class="ambassadors-template-grid">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="grid-item">
+            <a href="#">
+              <img src="{{ 'grid-item.jpg' | asset_url }}" />
+              <h3>Truman Hooker</h3>
+              <h5>Skate</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% for product in collections[settings.index_featured_collection].products %}
+    {% if forloop.first %}
+      <div class="main-best-sellers u-center">
+        <div class="container">
+          <div class="row">
+            <h2>{{ settings['index_featured_collection_title'] }}</h2>
+
+            <div class="main-best-sellers-slider">
+          {% endif %}
+          <div class="main-collection-item u-center">
+                <a href="{{ product.url }}">
+                  <div class="main-collection-item-image">
+                    <img class="top" src="{{ product.images[0] | img_url: 'large'}}" alt="{{ product.title }}">
+                    {% if product.images.size > 1 %}
+                      <img class="bottom" src="{{ product.images[1] | img_url: 'large'}}" alt="{{ product.title }}">
+                    {% endif %}
+                  </div>
+                  <div class="main-collection-item-details">
+                    <h3>{{ product.title | split: ' - ' | first }}</h3>
+                    <p>{{ product.metafields.c_f['Product Mini Description'] }}</p>
+                    <p class="price">{{ product.price | money }}</p>
+                  </div>
+                </a>
+              </div>
+          {% if forloop.last %}
+            </div>
+        </div>
+          <div class="row">
+            <a href="{{ collections[settings.index_featured_collection].url }}" class="button">{{ settings['index_featured_collection_cta_text'] }}</a>
+          </div>
+        </div>
+      </div>
+      <!-- /MAIN-BEST-SELLERS -->
+    {% endif %}
+  {% else %}
+  {% endfor %}
+
+  <div class="blog-grid">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+        <div class="one-third column">
+          <div class="blog-grid-item">
+            <a href="#">
+              <img src="{{ 'blog-grid-item.jpg' | asset_url }}" />
+              <h3>Unexplored skate spots</h3>
+              <h5>05.01.2016</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>

@@ -1,0 +1,637 @@
+
+{% assign titleParts = product.title | split: ' - ' %}
+{% assign title = titleParts[0] | strip %}
+{% assign frame = titleParts[1] | strip %}
+{% assign lens = titleParts[2] | strip %}
+{% assign type = titleParts[3] | strip %}
+<!-- MAIN-PRODUCT -->
+<div class="main-product">
+  <div class="main-product-top u-full-width">
+    <div class="row">
+      <div class="two-thirds column product-image-column">
+      {% include 'product-badges' %}
+        <div class="main-product-full-image">
+          {% for image in product.images %}
+            {% if forloop.first == true %}
+              {% assign first_product_image = image %}
+            {% endif %}
+            {% unless forloop.last %}<div><img src="{{ image | img_url: '1024x', scale: '2' }}" alt="{{ image.alt }}"></div>{% endunless %}
+          {% endfor %}
+        </div>
+        <div class="main-product-full-thumbnails">
+          {% for image in product.images %}
+            {% unless forloop.last %}<div><img src="{{ image | img_url: '175x', scale: '2' }}" alt="{{ image.alt }}"></div>{% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="one-third column">
+        <div class="main-product-details">
+          <h1>{{ title }}</h1>
+          <p class="vendor">{{ product.type }}</p>
+          <div class="clear"></div>
+          {% include 'product-reviews-badge' %}
+          <div class="clear"></div>
+          {% if product.description contains '<ul>' %}
+            {% assign description = product.description | split: '<ul>' | first | strip_html %}
+            {% assign features = product.description | split: '<ul>' | last | prepend: '<ul>' %}
+          {% else %}
+            {% assign description = product.description | strip_html %}
+            {% assign features = blank %}
+          {% endif %}
+          <div class="main-product-details-desc">
+            <div class="rtf">
+              <p>{{ description }}</p>
+            </div>
+          </div>
+          {%- comment -%}
+          <div class="main-product-details-features">
+            {% if product.compare_at_price_min > 0 %}
+            <ul>
+              <li><span style="color:red">All sale item purchases are final - no returns or exchanges</span></li>
+              <li>U.S. orders over $50 ship free</li>
+              <li>Int'l orders over $150 ship free - over $50 ship for $20 flat</li>
+              <li>One year warranty - quality guaranteed</li>
+            </ul>
+			
+            {% elsif product.compare_at_price_min <= 0 and product.tags contains 'FTP' %}
+         
+            <ul>
+              <li><span style="color:red"><b>FTP X Crap Eyewear products are Final Sale - no returns or exchanges</b></span></li>
+              <li>U.S. orders over $50 ship free</li>
+              <li>Int'l orders over $150 ship free - over $50 ship for $20 flat</li>
+              <li><em>Limited to 2 item(s) per purchase</em></li>
+            </ul>
+            {% else %}
+            <ul>
+              <li>U.S. orders over $50 ship free</li>
+              <li>Int'l orders over $150 ship free - over $50 ship for $20 flat</li>
+              <li>Free returns &amp; exchanges</li>
+              <li>One year warranty - quality guaranteed</li>
+            </ul>
+            {% endif %}
+            
+            {% if product.tags contains 'FTP' %}
+            <div><br /></div>
+            {% else %}
+            <p class="small"><a id="showShippingPopup" href="/pages/shipping-returns">Shipping &amp; Returns Details</a></p>
+            {% endif %}
+          </div>
+          {%- endcomment -%}
+              {% assign soldoutx = 'nope' %}
+          	  {% assign preorder = 'nope' %}
+              {% for tag in product.tags %}
+                {% if tag == 'sold-out' %}{% assign soldoutx = 'yesum' %}{% endif %}
+                {% if tag contains 'preorder-' %}
+          			{% assign preorder = 'yesum' %}
+          			{% assign potext = tag | split: 'preorder-' | last %}
+          		{% endif %}            
+                {% if tag contains 'group:' %}{% assign group = tag %}{% endif %}
+              {% endfor %}
+              {% paginate collections['all'].products by 200 %}
+                {% for prod in collections['all'].products %}
+                  {% if group != blank and prod.tags contains group and prod.handle != product.handle %}
+                    {% assign similarProducts = similarProducts | append: prod.handle | append: '|' %}
+                  {% endif %}
+                {% endfor %}
+              {% endpaginate %}
+              
+          <form class="main-product__form" action="/cart/add" method="post">
+            <div class="main-product-details-meta u-center">
+              <p class="price">
+                {{ product.selected_or_first_available_variant.price | money }}
+                {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+                  <span>{{ product.selected_or_first_available_variant.compare_at_price | money}}</span>
+                {% endif %}
+              </p>
+             
+              {% if product.tags contains 'finalsale' %}
+              <div style="display:block;">
+                <p style="font-family:Helvetica,Arial,sans-serif; color:red; text-align:left; font-size:11px; line-height:2.2rem; letter-spacing:1px; font-weight:400;">Final Sale - no returns or exchanges. Excluded from additional discounts and promotions.</p>
+              </div>
+              {% endif %}
+              
+              {% if product.tags contains 'finalsale-ftp19' %}
+              <div style="display:block;">
+                <p style="font-family:Helvetica,Arial,sans-serif; color:red; text-align:left; font-size:11px; line-height:2.2rem; letter-spacing:1px; font-weight:400;">FTP products are final sale - no returns or exchanges. Excluded from additional discounts and promotions.</p>
+              </div>
+              {% endif %}
+ 
+              {% if product.tags contains 'thegrowlers19' %}
+              <div style="display:block;">
+                <p style="font-family:Helvetica,Arial,sans-serif; color:red; text-align:left; font-size:11px; line-height:2.2rem; letter-spacing:1px; font-weight:400;">This product is not eligible for additional discounts and promotions.</p>
+              </div>
+              {% endif %}
+              
+              {% if product.tags contains 'exclude-discount' %}
+              <div style="display:block;">
+                <p style="font-family:Helvetica,Arial,sans-serif; color:red; text-align:left; font-size:11px; line-height:2.2rem; letter-spacing:1px; font-weight:400;">Excluded from additional discounts and promotions.</p>
+              </div>
+              {% endif %}
+              <hr>
+
+              <div class="specs-container">
+                <p class="specs" data-title="{{ frame | escape }} {{ lens | escape }}">{{ frame }} {{ lens }}</p>
+              </div>
+				{% if group != blank and similarProducts != blank %}
+                <div class="main-product-details-similar">
+                  {%- comment -%}
+                  <h4>Also available in:</h4>
+                  <span class="main-product-details-similar-title"></span>
+                  {%- endcomment -%}
+                  <div class="main-product-details-similar-slider">
+                    <ul>
+                      <li class="active" data-title="{{ frame | escape }} {{ lens | escape }}"><a href="javascript: void(0);"><img src="{{ first_product_image | img_url: '175x', scale: '2' }}" alt="{{ title | escape }}"></a></li>
+
+                      {% assign similarProducts = similarProducts | remove_last: '|' | split: '|' %}
+                      {% for handle in similarProducts limit: 15 %}{% assign similarTitleParts = all_products[handle].title | split: ' - ' %}<li data-title="{{ similarTitleParts[1] }} {{ similarTitleParts[2]  }}"><a href="{{ all_products[handle].url }}"><img src="{{ all_products[handle].featured_image | img_url: '175x' }}" alt="{{ all_products[handle].title }}"></a></li>{% endfor %}
+                    </ul>
+                    {% if similarProducts.size > 15 %}
+                      <p class="more"><a href="{{ product.collections[0].url }}/{{ group | handle }}">View more colors</a></p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if product.available %} 
+              
+              {% if product.variants.size == 1 and product.options[0] == 'Title' %}
+                <input class="single-option-selector" type="hidden" id="variant-id" name="id" value="{{ product.variants[0].id }}">
+              {% else %}
+                <select class="single-option-selector" name="id" id="product-select" style="display: none;">
+                  {% for variant in product.variants %}
+                    <option value="{{ variant.id }}"{% if variant == product.selected %} selected{% endif %}>{{ variant.title }}</option>
+                  {% endfor %}
+                </select>
+                
+                {% if product.available and product.variants.size > 1 %}
+                {% for option in product.options %}
+                {% include 'swatch' with option %}
+                {% endfor %}
+                {% endif %}
+              
+              {% endif %}
+              {% endif %} 
+            </div>
+            
+  		{% if soldoutx == 'yesum' %}
+            <button type="submit" class="button inverted" disabled value="Sold Out"><span class="button-fix">Sold Out</span></button>
+        {% else %}
+            <button type="submit" id="addToCart" {% if product.available %}class="btn__submit button"{% else %}class="button inverted" disabled{% endif %} value="{% if preorder == 'yesum' %}Pre-Order{% else %}{% if product.available %}Add To Cart{% else %}Sold Out{% endif %}{% endif %}"><span class="button-fix">{% if preorder == 'yesum' %}Pre-Order{% else %}{% if product.available %}Add To Cart{% else %}Sold Out{% endif %}{% endif %}</span></button>
+        {% endif %}
+            {% unless soldoutx == 'yesum' %}{% if preorder == 'yesum' %}<p class="pre-order-message text-center">{{ potext }}</p>{% endif %}{% endunless %}            
+            <div style="display:none; text-align: center;cursor: pointer;" class="gwbutton btn__submit button">Send Your Gift</div>
+            {% if product.title contains "Gift Card" %}
+              <style> #addToCart {display: none !important} </style>     
+            {%endif%}
+            
+            <!-- AVAILABLE AT RETAILER LINK -->
+		  {% for tag in product.tags %}
+          {% if tag == 'uo' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but this style is available at Urban Outfitters:</span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-the-tuff-safari-sunglasses3?category=SHOPBYBRAND&color=031" target="_blank" alt="Shop now at Urban Outfitters"><strong>Shop Now</strong></a></p>          
+          {% elsif tag == 'uo-spkiwi' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but this style is available at Urban Outfitters:</span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-the-tuff-safari-black-sunglasses?category=SHOPBYBRAND&color=001" target="_blank" alt="Shop now at Urban Outfitters"><strong>Shop Now</strong></a></p>          
+          {% elsif tag == 'uo-surose' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-suntan-underground-square-sunglasses?category=SHOPBYBRAND&color=060" target="_blank" alt="Shop now at Urban Outfitters"><strong>Urban Outfitters</strong></a></p>          
+          {% elsif tag == 'uo-swblue' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://shop.ccs.com/crap-eyewear-the-speedway-sunglasses-navy-blue-demi" target="_blank" alt="Shop now"><strong>CCS</strong></a></p>          
+          {% elsif tag == 'uo-swblack' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://shop.ccs.com/crap-eyewear-the-speedway-sunglasses-black" target="_blank" alt="Shop now"><strong>CCS</strong></a></p>          
+          {% elsif tag == 'uo-zpplum' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-zen-patrol-round-sunglasses?category=SHOPBYBRAND&color=050" target="_blank" alt="Shop now"><strong>Urban Outfitters</strong></a></p>          
+          {% elsif tag == 'uo-sptort' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-the-supa-phreek-sunglasses?category=SHOPBYBRAND&color=015" target="_blank" alt="Shop now"><strong>Urban Outfitters</strong></a></p>          
+          {% elsif tag == 'uo-dpblack' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-the-downtown-purr-sunglasses?category=SHOPBYBRAND&color=001" target="_blank" alt="Shop now"><strong>Urban Outfitters</strong></a></p>          
+          {% elsif tag == 'uo-httortflash' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.urbanoutfitters.com/shop/crap-eyewear-heavy-tropix-sunglasses?category=SHOPBYBRAND&color=020" target="_blank" alt="Shop now"><strong>Urban Outfitters</strong></a></p>          
+          {% elsif tag == 'uo-splilac' and product.available == false %}
+          <p class="small"><span style="color:#171717">We're sold out here, but u can still snag these at </span> <a href="https://www.bando.com/products/the-supa-phreek-stripes" target="_blank" alt="Shop now"><strong>ban.do</strong></a></p>          
+
+            {% endif %}
+          {% endfor %}
+          <!-- END AVAILABLE AT RETAILER LINK -->
+            
+          </form>
+            <hr>
+
+            <div class="shipping-icon">
+              <div class="icon"><img src="{{ 'icon_sun.svg' | asset_url }}" alt="Free Shipping Worldwide" width="35" height="35" /></div>
+              <span>Free shipping worldwide</span>
+            </div>
+            <div class="shipping-icon">
+              <div class="icon"><img src="{{ 'icon_palm.svg' | asset_url }}" alt="Free Shipping Worldwide" width="35" height="35" /></div>
+              <span>Free n' easy returns &amp; exchanges</span>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  {% if product.metafields.c_f['Product Video 1'] != blank and product.metafields.c_f['Product Video 2'] != blank %}
+    <div class="main-product-videos u-full-width">
+      <div class="row">
+        {% for i in (1..2) %}
+          {% assign video = 'Product Video ' | append: i %}
+          {% assign poster = 'Product Video ' | append: i | append: ' Poster' %}
+          <div class="main-product-videos-single">
+            <video muted playsinline id="product-video-{{ i }}" class="video-js vjs-default-skin" preload="auto" poster="{{ product.metafields.c_f[poster] }}" data-setup='{ "responsive": true, "aspectRatio": "16:9" }'>
+              <source src="{{ product.metafields.c_f[video] }}" type="video/mp4">
+              <img src="{{ product.metafields.c_f[poster] }}">
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+            <a id="product-play-{{ i }}"><b class="srt play-video">Play Video</b></a>
+          </div>
+        {% endfor %}
+      </div>
+    {% elsif product.metafields.c_f['Product Video 1'] != blank or product.metafields.c_f['Product Video 2'] != blank %}
+      {% if product.metafields.c_f['Product Video 1'] != blank %}
+        {% assign video = 'Product Video 1' %}
+        {% assign poster = 'Product Video 1 Poster' %}
+      {% else %}
+        {% assign video = 'Product Video 2' %}
+        {% assign poster = 'Product Video 2 Poster' %}
+      {% endif %}
+        <div class="main-product-videos container mod-single">
+          <div class="row">
+            <div class="main-product-videos-single">
+              <video muted playsinline id="product-video-1" class="video-js vjs-default-skin" preload="auto" poster="{{ product.metafields.c_f[poster] }}" data-setup='{ "responsive": true, "aspectRatio": "16:9" }'>
+                <source src="{{ product.metafields.c_f[video] }}" type="video/mp4">
+                <img src="{{ product.metafields.c_f[poster] }}">
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </video>
+              <a id="product-play-1"><b class="srt play-video">Play Video</b></a>
+            </div>
+          </div>
+        </div>
+    {% endif %}
+  </div>
+  <div class="clear"></div>
+  {% if product.metafields.c_f['Product Feature Title 1'] %}
+    <div class="main-product-showcase">
+      <div class="container">
+        <div class="row">
+          <div class="one-half column u-ss" style="margin-right:4%;">
+            <div class="main-product-showcase-wrap">
+              <div class="main-product-showcase-image">
+                <img src="{{ product.images.last | img_url: '650x', scale: '2' }}" alt="{{ product.title }}" title="{{ product.title }}">
+              </div>
+            </div>
+          </div>          
+          <div class="one-half column" style="margin:0;">
+            <div class="text-wrap">
+              <div class="main-product-showcase-text">
+                {% for i in (1..3) %}
+                  {% assign featureTitle = 'Product Feature Title ' | append: i %}
+                  {% assign featureSummary = 'Product Feature Summary ' | append: i %}
+                  {% if product.metafields.c_f[featureTitle] != blank and product.metafields.c_f[featureSummary] != blank %}
+                    <h2>{{ product.metafields.c_f[featureTitle] }}</h2>
+                    <p>{{ product.metafields.c_f[featureSummary] }}</p>
+                  {% endif %}
+                {% endfor %}
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="one-half column u-ls">
+            <div class="main-product-showcase-wrap">
+              <div class="main-product-showcase-image">
+                <img src="{{ product.images.last | img_url: '650x', scale: '2' }}" alt="{{ product.title }}" title="{{ product.title }}">
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.c_f['Technical Specs Title 1'] != blank %}
+    <div class="main-product-technical">
+      <div class="container">
+        <div class="row">
+          <div class="one-half column">
+            <div class="main-product-technical-wrap">
+              <div class="main-product-technical-image">
+                <img src="{{ product.metafields.c_f['Technical Specs Image'] }}" alt="#" title="#" />
+              </div>
+            </div>
+          </div>
+          <div class="one-half column">
+            <div class="main-product-technical-text">
+              <h2>Technical Specs</h2>
+              {% for i in (1..2) %}
+                {% assign specsTitle = 'Technical Specs Title ' | append: i %}
+                {% assign specsSummary = 'Technical Specs Summary ' | append: i %}
+                {% if product.metafields.c_f[specsTitle] != blank and product.metafields.c_f[specsSummary] != blank %}
+                  <h4>{{ product.metafields.c_f[specsTitle] }}</h4>
+                  <ul>
+                    <li>
+                      {{ product.metafields.c_f[specsSummary] | newline_to_br | replace: '<br />', '</li><li>' }}
+                    </li>
+                  </ul>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+<div id="foursixty-hideable-container" style="display:none">
+  <div class="gram">
+    <h2>On the Gram</h2>
+    
+   <script src="//foursixty.com/media/scripts/fs.slider.v2.5.js" data-has-posts-selector="#foursixty-hideable-container"  data-product-ids="{% if group != blank and similarProducts != blank %}
+{% for fs_p in similarProducts %}{{all_products[fs_p].id}},{% endfor %}{% endif %}{{product.id}}"
+ data-feed-id="crapeyewear" data-theme="slider_v2_5" data-cell-size="20%"></script>
+    <style>.fs-has-links::after {  padding:  23px 34.5px; border: 3px solid rgb(0, 0, 0); color:rgb(0, 0, 0); content: "SHOP IT";  }.fs-has-links:hover:after { background-color: rgb(0, 0, 0); color: rgba(255, 255, 255, 0.59)}
+      .fs-wrapper { height: auto } .fs-entry-container { height: 0 !important; width: 20% !important; padding-top: 20% !important; }
+      .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title{font-family:Helvetica,Arial,sans-serif;font-style:normal;font-weight:normal;}
+      div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text{font-family:Helvetica,Arial,sans-serif;font-style:normal;font-weight:bold;}.fs-wrapper div.fs-text-container * {color:rgb(0, 0, 0)}.fs-wrapper div.fs-text-container {background-color:rgba(255, 255, 255, 0.59); margin: 0px}div.fs-entry-date{display:none}div.fs-entry-title{display:none}.fs-wrapper div.fs-timeline-entry{ margin: 1px }
+     div#fs-detail-products, div.fs-timeline-detail { font-family: Helvetica !important; }
+      .fs-add-to-cart-enabled .fs-view { white-space: initial }
+      .fs-wrapper { text-align: center !important }
+    </style>
+ 
+  </div>
+ </div>
+
+  {% capture youMightAlsoLike %}
+    {% if product.metafields.c_f['Might Also Like Collection'] != blank %}
+      {% assign alsoLikeCollection = collections[product.metafields.c_f['Might Also Like Collection']] %}
+    {% else %}
+      {% assign alsoLikeCollection = product.collections[0] %}
+    {% endif %}
+    {% for prod in alsoLikeCollection.products limit: 12 %}
+      {% unless prod.handle == product.handle %}
+        <div class="main-collection-item u-center">
+          <a href="{{ prod.url }}">
+            <div class="main-collection-item-image">
+              <img class="top" src="{{ prod.images[0] | img_url: '450x', scale: '2'}}" alt="{{ prod.title }}">
+              {% if prod.images.size > 1 %}
+                <img class="bottom" src="{{ prod.images[1] | img_url: '450x', scale: '2'}}" alt="{{ prod.title }}">
+              {% endif %}
+            </div>
+            <div class="main-collection-item-details">
+                <h3>{{ prod.title | split: ' - ' | first | strip }}</h3>
+                <p>{{ prod.metafields.c_f['Product Mini Description'] }}</p>
+                <p class="price">{{ prod.price | money }}{% if prod.compare_at_price > prod.price %}<s class="compare-at-price">{{ prod.compare_at_price | money }}</s>{% endif %}</p>
+             </div>
+          </a>
+        </div>
+      {% endunless %}
+    {% endfor %}
+  {% endcapture %}
+  {% unless product.tags contains 'exclude-widget' %}
+  <div class="clear"></div>
+  <div class="container product-reviews">
+    <div class="row">
+      <h2>Product Reviews</h2>
+      {% include 'product-reviews' %}
+    </div>
+  </div>
+  {% endunless %}
+  <div class="clear"></div>
+  {% assign youMightAlsoLike = youMightAlsoLike | strip %}
+  {% if youMightAlsoLike != blank %}
+    <!-- MAIN-BEST-SELLERS -->
+    <div class="main-best-sellers u-center">
+      <div class="container">
+        <div class="row">
+          <h2 data="{{ product.metafields.c_f['Might Also Like Collection'] }}">You Might Also Like...</h2>
+          <div class="main-best-sellers-slider">
+            {{ youMightAlsoLike }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /MAIN-BEST-SELLERS -->
+  {% endif %}
+  <div class="clear"></div>
+  <div class="main-collection-cta u-center" style="background-image: url('{{ 'collectioncta.jpg' | asset_url }}')">
+    <div class="main-collection-cta-content">
+      <h3>{{ settings.footer_cta_heading }}</h3>
+      <a href="{{ settings.footer_cta_link_url }}" class="button inverted"><span class="button-fix">{{ settings.footer_cta_link_text }}</span></a>
+    </div>
+  </div>
+  <div class="main-product-sticky-add-to-cart u-full-width u-center hide">
+    {% if product.variants.size == 1 %}
+ 	<img src="{{ product.images.last | img_url: 'x53.34' }}" alt="{{product.title}}">
+    
+    {% else %}
+      {% for option in product.options %}
+  		{% assign downcase_option = option | downcase %}
+  		{% if downcase_option == 'size'%}
+          <div class="sticky-variants">
+            <span class="sticky-active-variant button"><span class="sticky-active-variant-text">{{product.selected_or_first_available_variant.title | capitalize }}</span>{% include 'icon-arrow-down' %} </span>
+            <ul class="sticky-variants-dropdown" data-option-index="{{forloop0}}">
+              {% for variant in product.variants %}
+                <li data-index="{{ forloop.index0 }}">{{ variant.title | capitalize }}</option>
+              {% endfor %}
+            </ul>
+          </div>
+  		{% endif %}
+      {% endfor %}
+    {% endif %}
+  
+
+  {% if soldoutx == 'yesum' %}
+    <button class="button inverted disabled" disabled>
+      <span class="button-fix">Sold Out</span>
+      
+      <span class="price{% if product.available == false %} hide{% endif %}">
+        <span class="button-fix">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+          <span class="button-fix">{{ product.selected_or_first_available_variant.compare_at_price | money}}</span>
+        {% endif %}
+      </span>
+   	</button>  
+  {% else %}
+    <span id="StickyAddToCart" class="button{% if product.available == false %} inverted disabled{% endif %}">
+      <span class="btn__submit-text"><span class="button-fix">{% if preorder == 'yesum' %}Pre-Order{% else %}{% if product.available %}Add To Cart{%else%}Sold Out{% endif %}{% endif %}</span></span>
+      
+      <span class="price{% if product.available == false %} hide{% endif %}">
+        <span class="button-fix">{{ product.selected_or_first_available_variant.price | money }}</span>
+        {% if product.selected_or_first_available_variant.price < product.selected_or_first_available_variant.compare_at_price %}
+          <span class="button-fix">{{ product.selected_or_first_available_variant.compare_at_price | money}}</span>
+        {% endif %}
+      </span>
+   	</span>
+  {% endif %}   
+    
+    <span class="back-to-top" id="BackToTop">
+      {% include 'icon-arrow-up' %}
+    </span>
+  </div>
+<!-- /MAIN-PRODUCT -->
+
+{% comment %}
+  Adding support for product options. See here for details:
+  http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options
+{% endcomment %}
+
+<script>
+  var selectCallback = function(variant, selector) {
+
+    if (variant) {
+      // Select current variant options
+      var $form = jQuery('#' + selector.domIdPrefix).closest('form');
+      for (var i=0,length=variant.options.length; i<length; i++) {
+        var radioButton = $form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+        if (radioButton.size()) {
+          radioButton.get(0).checked = true;
+        }
+      }
+
+      // Set the active variant text in sticky add to cart
+      $('.sticky-active-variant-text').text(variant.options[0].charAt(0).toUpperCase() + variant.options[0].substring(1));
+
+      /**
+       * After clicking swatch inputs,
+       * change the value of the .single-option-selector and trigger change event to fire the selectCallback
+       */
+      var $swatchInputs = $form.find('.swatch input');
+      var $singleOptionSelectors = $form.find('.single-option-selector');
+      
+      
+      $swatchInputs.on('click', function() {
+        var optionIndex = $(this).closest('.swatch').data('option-index');
+        var value = $(this).val();
+        $singleOptionSelectors.eq(optionIndex).val(value).trigger('change');
+      });
+      
+      /**
+       * Below is not scoped to this product
+       */
+
+      // Swap image.
+      if (variant.featured_image) {
+        var newImage = variant.featured_image; // New image object.
+        var mainImageDomEl = jQuery('.product-photo-container img')[0]; // DOM element of main image we need to swap.
+        Shopify.Image.switchImage(newImage, mainImageDomEl, switchImage); // Define switchImage (the callback) in your theme's JavaScript file.
+      }
+
+      // Selected a valid variant that is available.
+      if (variant.available) {
+        
+        // Show Low Stock badge if inventory is < 5
+        if (variant.inventory_quantity < 5 && !$('.badge-low').length) {
+          $('.product-badge').addClass('badge-low');
+        }
+        {% comment %}
+	      Disable sale badge for Aug-28 Sale
+          // Show the On Sale badge if the compare_at_price is > than price.
+        
+          if (variant.compare_at_price > variant.price && !$('.badge-sale').length) {
+            $('.product-badge').addClass('badge-sale');
+          }
+        {% endcomment %}        
+        // Enabling add to cart button.
+        
+        {% unless preorder == 'yesum' %}
+        jQuery('#addToCart').removeClass('disabled').removeClass('inverted').prop('disabled', false).val('Add To Cart');
+        jQuery('#StickyAddToCart').removeClass('disabled').removeClass('inverted').prop('disabled', false).find('.btn__submit-text').text('Add To Cart').siblings('.price').removeClass('hide');
+		{% endunless %}
+        
+        // If item is backordered yet can still be ordered, we'll show special message.
+        if (variant.inventory_management && variant.inventory_quantity <= 0) {
+          jQuery('#selected-variant').html({{ product.title | json }}{% unless hide_default_title %} + ' - ' + variant.title{% endunless %});
+          jQuery('#backorder').removeClass("hidden");
+        } else {
+          jQuery('#backorder').addClass("hidden");
+        }
+
+      } else {
+        // Variant is sold out.
+        jQuery('#backorder').addClass('hidden');
+        jQuery('#addToCart').val('Sold out').addClass('disabled inverted').prop('disabled', true);
+        jQuery('#StickyAddToCart').addClass('disabled inverted').prop('disabled', true).find('.btn__submit-text').text('Sold Out').siblings('.price').addClass('hide');
+      }
+
+      // Whether the variant is in stock or not, we can update the price and compare at price.
+      if ( variant.compare_at_price > variant.price ) {
+        jQuery('.main-product-details-meta .price').html(theme.Currency.formatMoney(variant.price, "{{ shop.money_format }}") + '<span class="product-compare-price">' + theme.Currency.formatMoney(variant.compare_at_price, "{{ shop.money_format }}") + '</span>');
+        jQuery('.main-product-sticky-add-to-cart .price').html(theme.Currency.formatMoney(variant.price, "{%raw%}(${{amount_no_trailing_zeros}}{%endraw%}") + '<span class="product-compare-price">' + theme.Currency.formatMoney(variant.compare_at_price, "{%raw%}${{amount_no_trailing_zeros}}{%endraw%}") + '</span>)');
+      } else {
+        jQuery('.main-product-details-meta .price').html(theme.Currency.formatMoney(variant.price, "{{ shop.money_format }}"));
+        jQuery('.main-product-sticky-add-to-cart .price').html(theme.Currency.formatMoney(variant.price, "{%raw%}(${{amount_no_trailing_zeros}}){%endraw%}"));                                                                                                               
+      }
+    } else {
+      // variant doesn't exist.
+      jQuery('#product-price').empty();
+      jQuery('#backorder').addClass('hidden');
+      jQuery('#addToCart').val('UNAVAILABLE').addClass('disabled inverted').prop('disabled', true);
+      jQuery('#StickyAddToCart').addClass('disabled inverted').prop('disabled', true).find('.btn__submit-text').text('Unavailable').siblings('.price').addClass('hide');
+    }
+  };
+
+  {% if product.available %}
+    $(function($) {
+      new Shopify.OptionSelectors('product-select', { product: {{ product | json }}, onVariantSelected: selectCallback, enableHistoryState: false });
+
+      // Add label if only one product option and it isn't 'Title'.
+      {% if product.options.size == 1 and product.options.first != 'Title' %}
+        $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first }}</label>');
+      {% endif %}
+    });
+  {% endif %}
+</script>
+
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+
+<script type="application/javascript" src="https://static-us.afterpay.com/javascript/present-afterpay.js" defer></script>
+
+<script>
+const apConfig = {
+ 'priceSelector': "form > div.main-product-details-meta.u-center > p",   // REQUIRED: set to the div
+ 'locale': 'en_US',            // REQUIRED: set to the locale for your site
+ 'afterpayLogoColor': 'black', // optional: set to use black or white logo
+ 'amount': {{ product.price | json }},              // optional: set to the item price or total order amount
+ 'minMaxThreshold': {          // optional: set to your min and max order value
+     'min': 3500,
+     'max': 100000
+  },
+ };
+      window.onload = function() {
+        new presentAfterpay(apConfig).init();
+      }
+
+// var tooltip = document.getElementsByClassName(".tooltipster-base");
+// tooltip.style.z-index = "100";
+</script>

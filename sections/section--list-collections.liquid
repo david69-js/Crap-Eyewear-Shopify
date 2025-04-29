@@ -1,0 +1,18 @@
+{%- comment -%}
+TODO: Build Collections Listing Page
+{%- endcomment -%}
+
+LIST COLLECTIONS
+{%- for collection in collections -%}
+	<br><a href="{{ collection.url }}">{{ collection.title }}</a>
+{%- endfor -%}
+
+{% schema %}
+	{
+		"name": "List Collections",
+		"settings": [],
+		"blocks": [],
+		"default": {},
+		"templates": ["list-collections"]
+	}
+{% endschema %}
